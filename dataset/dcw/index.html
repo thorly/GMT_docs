@@ -1,0 +1,477 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>10.2 DCW: 世界数字图表 &mdash; GMT参考手册</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="10.3 earth_relief: 全球地形起伏数据" href="../earth_relief/" />
+    <link rel="prev" title="10.1 GSHHG: 全球高精度海岸线数据" href="../gshhg/" />
+ 
+<!-- favicons -->
+
+<link rel="shortcut icon" href="/_static/favicon.ico" type="image/x-icon" type="image/png" />
+
+<!-- Opera Speed Dial Icon -->
+<link rel="icon" href="/_static/apple-touch-icon-152x152.png" type="image/png" />
+
+<!-- Safari on iOS -->
+<link rel="apple-touch-icon" href="/_static/apple-touch-icon.png"  type="image/png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/_static/apple-touch-icon-57x57.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/_static/apple-touch-icon-72x72.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/_static/apple-touch-icon-76x76.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/_static/apple-touch-icon-114x114.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/_static/apple-touch-icon-120x120.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/_static/apple-touch-icon-144x144.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/_static/apple-touch-icon-152x152.png" type="image/png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon-180x180.png" type="image/png" />
+
+<!-- For tiles on Windows -->
+<meta name="msapplication-TileImage" content="/_static/apple-touch-icon-114x114.png"/>
+<meta name="msapplication-TileColor" content="#d83434"/>
+
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../" class="icon icon-home"> GMT参考手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.4.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../preface/">1 前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">2 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">3 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">4 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">5 绘图基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../io/">6 输入与输出</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">7 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">8 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">10 GMT数据集</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">10.1 GSHHG: 全球高精度海岸线数据</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">10.2 DCW: 世界数字图表</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">10.2.1 区域代码</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">洲代码</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">国家代码</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">省/州代码</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">10.2.2 使用说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">10.2.3 使用示例</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">绘制洲界</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">绘制国界</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">绘制省界</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">导出省界数据</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">10.2.4 备注</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../earth_relief/">10.3 earth_relief: 全球地形起伏数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/">10.4 GMT 数据库的建立</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../style/">11 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">12 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">13 附录</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT参考手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">Docs</a> &raquo;</li>
+        
+          <li><a href="../">10 GMT数据集</a> &raquo;</li>
+        
+      <li>10.2 DCW: 世界数字图表</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/dataset/dcw.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../earth_relief/" class="btn btn-neutral float-right" title="10.3 earth_relief: 全球地形起伏数据" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../gshhg/" class="btn btn-neutral" title="10.1 GSHHG: 全球高精度海岸线数据" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dcw">
+<h1>10.2 DCW: 世界数字图表<a class="headerlink" href="#dcw" title="永久链接至标题">¶</a></h1>
+<p>DCW，全称为 Digital Chart of the World。GMT提供的DCW数据包含了不同层级的行政边界，可以直接在GMT中使用某个指定国家的边界，也可以将所需的边界数据以纯文本格式导出。</p>
+<p><strong>GMT-DCW数据主页</strong>： <a class="reference external" href="http://www.soest.hawaii.edu/wessel/dcw/">http://www.soest.hawaii.edu/wessel/dcw/</a></p>
+<p>GMT提供的DCW数据是在原始DCW数据的基础上修改得到的，其数据格式为netCDF-4格式，GMT提供的DCW数据中主要包含了三个文件：</p>
+<ul class="simple">
+<li><cite>dcw-gmt.nc</cite>: netCDF格式的DCW数据</li>
+<li><cite>dcw-countries.txt</cite>: 辅助文件，内含国家代码</li>
+<li><cite>dcw-states.txt</cite>: 辅助文件，内含省界代码</li>
+</ul>
+<div class="section" id="id1">
+<h2>10.2.1 区域代码<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>GMT提供的DCW数据中包含了如下行政边界：</p>
+<ol class="arabic simple">
+<li>七大洲的洲界</li>
+<li>全球250个国家或地区的边界</li>
+<li>8个大国的省界/州界</li>
+</ol>
+<p>为了绘制某个特定行政区域的边界，则需要知道这些行政区域的代码。</p>
+<div class="section" id="id2">
+<h3>洲代码<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<p>七大洲都有各自的代码，其代码分别为:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">AF</span></code>: 非洲</li>
+<li><code class="docutils literal notranslate"><span class="pre">AN</span></code>: 南极洲</li>
+<li><code class="docutils literal notranslate"><span class="pre">AS</span></code>: 亚洲</li>
+<li><code class="docutils literal notranslate"><span class="pre">EU</span></code>: 欧洲</li>
+<li><code class="docutils literal notranslate"><span class="pre">OC</span></code>: 大洋洲</li>
+<li><code class="docutils literal notranslate"><span class="pre">NA</span></code>: 北美洲</li>
+<li><code class="docutils literal notranslate"><span class="pre">SA</span></code>: 南美洲</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>国家代码<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>每个国家也有各自的编码。国家代码可以从DCW的辅助文件 <code class="docutils literal notranslate"><span class="pre">dcw-countries.txt</span></code> 中查找，其文件格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>洲代码 国家代码 国家名
+</pre></div>
+</div>
+<p>该文件共计 250 个国家。文件内容大致如下:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>AS BH Bahrain
+AS BN Brunei
+AS BT Bhutan
+AS CN China
+AS CX Christmas Island
+AS GE Georgia
+AS HK Hong Kong
+AS HM Heard Island and McDonald Islands
+AS ID Indonesia
+AS IL Israel
+AS IN India
+</pre></div>
+</div>
+<p>其中可以看到，中国的国家代码为 <code class="docutils literal notranslate"><span class="pre">CN</span></code>。</p>
+</div>
+<div class="section" id="id4">
+<h3>省/州代码<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>目前有如下八个国家的省界/州界数据：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">AR</span></code>: 阿根廷</li>
+<li><code class="docutils literal notranslate"><span class="pre">AU</span></code>: 澳大利亚</li>
+<li><code class="docutils literal notranslate"><span class="pre">BR</span></code>: 巴西</li>
+<li><code class="docutils literal notranslate"><span class="pre">CA</span></code>: 加拿大</li>
+<li><code class="docutils literal notranslate"><span class="pre">US</span></code>: 美国</li>
+<li><code class="docutils literal notranslate"><span class="pre">CN</span></code>: 中国</li>
+<li><code class="docutils literal notranslate"><span class="pre">IN</span></code>: 印度</li>
+<li><code class="docutils literal notranslate"><span class="pre">RU</span></code>: 俄罗斯</li>
+</ul>
+<p>省代码可以从 DCW 辅助文件 <code class="docutils literal notranslate"><span class="pre">dcw-states</span></code> 中查找到，其文件格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>国家代码 省代码 省名
+</pre></div>
+</div>
+<p>以中国的数据为例，其包括全部 34 个省级行政区域：23 个省（包括台湾省），5 个自治区，4 个直辖市，以及香港，澳门 2 个特别行政区。中国的省代码是数字，和中国居民身份证号码相同:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>CN <span class="m">11</span> Beijing
+CN <span class="m">50</span> Chongqing
+CN <span class="m">31</span> Shanghai
+CN <span class="m">12</span> Tianjin
+CN <span class="m">34</span> Anhui
+CN <span class="m">35</span> Fujian
+CN <span class="m">62</span> Gansu
+CN <span class="m">44</span> Guangdong
+CN <span class="m">52</span> Guizhou
+CN <span class="m">46</span> Hainan
+CN <span class="m">13</span> Hebei
+CN <span class="m">23</span> Heilongjiang
+CN <span class="m">41</span> Henan
+CN <span class="m">42</span> Hubei
+CN <span class="m">43</span> Hunan
+CN <span class="m">32</span> Jiangsu
+CN <span class="m">36</span> Jiangxi
+CN <span class="m">22</span> Jilin
+CN <span class="m">21</span> Liaoning
+CN <span class="m">63</span> Qinghai
+CN <span class="m">61</span> Shaanxi
+CN <span class="m">37</span> Shandong
+CN <span class="m">14</span> Shanxi
+CN <span class="m">51</span> Sichuan
+CN <span class="m">71</span> Taiwan
+CN <span class="m">53</span> Yunnan
+CN <span class="m">33</span> Zhejiang
+CN <span class="m">45</span> Guangxi
+CN <span class="m">15</span> Nei Mongol
+CN <span class="m">64</span> Ningxia
+CN <span class="m">65</span> Xinjiang
+CN <span class="m">54</span> Xizang
+CN <span class="m">91</span> Xianggang <span class="o">(</span>Hong Kong<span class="o">)</span>
+CN <span class="m">92</span> Aomen <span class="o">(</span>Macao<span class="o">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>10.2.2 使用说明<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>GMT中至少有两处会使用DCW数据：</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">-R&lt;code1&gt;,&lt;code2&gt;,...</span></code>: 通过指定区域代码 <code class="docutils literal notranslate"><span class="pre">&lt;code&gt;</span></code> 间接指定绘图范围</li>
+<li><code class="docutils literal notranslate"><span class="pre">coast</span></code> 模块 <code class="docutils literal notranslate"><span class="pre">-E&lt;code1&gt;,&lt;code2&gt;,...</span></code> 选项调用 DCW 数据绘制或导出国界/省界</li>
+</ol>
+<p>洲代码、国家代码和省代码都是字母，GMT通过如下方式区分：</p>
+<ul class="simple">
+<li>在洲代码前加上 <code class="docutils literal notranslate"><span class="pre">=</span></code> 号表示某个大洲，比如 <code class="docutils literal notranslate"><span class="pre">=AS</span></code> 表示亚洲</li>
+<li>国家代码不需要做任何处理格式，比如 <code class="docutils literal notranslate"><span class="pre">GB</span></code> 表示英国</li>
+<li>省代码的格式为 <code class="docutils literal notranslate"><span class="pre">country.state</span></code>，即必须在省代码前加上国家代码才可以，比如 <code class="docutils literal notranslate"><span class="pre">US.TX</span></code> 表示美国 Texas 州</li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h2>10.2.3 使用示例<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id7">
+<h3>绘制洲界<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>绘制全部亚洲国家的边界：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -R15/180/-20/70 -JM12c -Baf -E<span class="o">=</span>AS+p0.25p,red &gt; dataset_dcw_01.ps
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="../../_images/dcw-gmtplot-0.png" src="../../_images/dcw-gmtplot-0.png" />
+</div>
+</div>
+<div class="section" id="id8">
+<h3>绘制国界<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>绘制中国大陆边界（不含台湾、香港、澳门），这里可以不使用 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -JM15c -Baf -ECN+p0.25p,red -R70/140/10/60 &gt; dataset_dcw_02.ps
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="../../_images/dcw-gmtplot-1.png" src="../../_images/dcw-gmtplot-1.png" />
+</div>
+</div>
+<div class="section" id="id9">
+<h3>绘制省界<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<p>绘制内蒙古，并修改边界和填充颜色:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -JM12c -Baf -ECN.15+p1p,blue+gred -R90/130/35/55 &gt; dataset_dcw_03.ps
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="../../_images/dcw-gmtplot-2.png" src="../../_images/dcw-gmtplot-2.png" />
+</div>
+</div>
+<div class="section" id="id10">
+<h3>导出省界数据<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<p>导出内蒙古的边界数据:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -ECN.15 -M &gt; neimenggu.dat
+</pre></div>
+</div>
+<p>这里只需要使用 <code class="docutils literal notranslate"><span class="pre">-M</span></code> 选项即可。</p>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>10.2.4 备注<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<p>DCW以及其它类似的国界数据均不符合中国的领土主张，在正式刊物中发表使用此类国界数据的图件时都可能存在问题。此处展示的国界仅用于展示如何使用数据，</p>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989'],
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../earth_relief/" class="btn btn-neutral float-right" title="10.3 earth_relief: 全球地形起伏数据" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../gshhg/" class="btn btn-neutral" title="10.1 GSHHG: 全球高精度海岸线数据" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014-2018, GMT中文社区
+      最后更新于 2019年01月08日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
