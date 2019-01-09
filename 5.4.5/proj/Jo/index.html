@@ -257,71 +257,10 @@
 <img alt="../../_images/Jo-gmtplot-0.png" src="../../_images/Jo-gmtplot-0.png" />
 <p class="caption"><span class="caption-number">图 9.25 </span><span class="caption-text">使用 <code class="docutils literal notranslate"><span class="pre">-Joc</span></code> 倾斜Mercator投影</span></p>
 </div>
-<p><a class="reference download internal" download="" href="../../_downloads/6726c0f729c529ac03939c0f71b814fd/Jo-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
-<div class="figure align-center">
-<img alt="../../_images/Jo-gmtplot-1.png" src="../../_images/Jo-gmtplot-1.png" />
-</div>
 <p>在使用倾斜投影时，直接指定整个区域相对地图中心的相对投影坐标更为方便，下面的示例中使用了 <code class="docutils literal notranslate"><span class="pre">-Rk-1000/1000/-500/500</span></code> 来指定相对投影坐标。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="c1"># Oblique Mercator map for NZ using complementary poles</span>
-<span class="nv">ps</span><span class="o">=</span>GMT_obl_nz.ps
-<span class="nv">lon</span><span class="o">=</span><span class="m">173</span>:17:02E
-<span class="nv">lat</span><span class="o">=</span><span class="m">41</span>:16:15S
-<span class="nv">az</span><span class="o">=</span><span class="m">35</span>
-<span class="nv">w</span><span class="o">=</span><span class="m">2000</span>
-<span class="nv">h</span><span class="o">=</span><span class="m">1000</span>
-<span class="nv">plon</span><span class="o">=</span><span class="m">180</span>
-<span class="nv">plat</span><span class="o">=</span>40S
-<span class="c1"># Centered</span>
-<span class="nv">w2</span><span class="o">=</span><span class="sb">`</span>gmt math -Q <span class="nv">$w</span> <span class="m">2</span> <span class="nv">DIV</span> <span class="o">=</span><span class="sb">`</span>
-<span class="nv">h2</span><span class="o">=</span><span class="sb">`</span>gmt math -Q <span class="nv">$h</span> <span class="m">2</span> <span class="nv">DIV</span> <span class="o">=</span><span class="sb">`</span>
-<span class="nv">R</span><span class="o">=</span>-Rk-<span class="si">${</span><span class="nv">w2</span><span class="si">}</span>/<span class="nv">$w2</span>/-<span class="si">${</span><span class="nv">h2</span><span class="si">}</span>/<span class="nv">$h2</span>
-gmt pscoast <span class="nv">$R</span> -JOA<span class="nv">$lon</span>/<span class="nv">$lat</span>/<span class="nv">$az</span>/3i -Ba5f5g5 -Gred -Dh -P -K -TdjBR+w0.5i+l+o0.2i/-0.05i --FONT_TITLE<span class="o">=</span>9p --MAP_ANNOT_OBLIQUE<span class="o">=</span><span class="m">34</span> --FORMAT_GEO_MAP<span class="o">=</span>dddF &gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="nv">$plon</span> <span class="nv">$plat</span> <span class="p">|</span> gmt psxy -R -J -O -K -Sc0.2c -Gblue -W0.25p &gt;&gt; <span class="nv">$ps</span>
-gmt psxy -R0/3/0/1.5 -Jx1i -O -K -W0.25p,- <span class="s">&lt;&lt; EOF &gt;&gt; $ps</span>
-<span class="s">&gt;</span>
-<span class="s">0	0.75</span>
-<span class="s">3	0.75</span>
-<span class="s">&gt;</span>
-<span class="s">1.5	0</span>
-<span class="s">1.5	1.5</span>
-<span class="s">EOF</span>
-gmt psxy -R -J -O -K -Sv0.2i+e -Gblack -W2p -N --MAP_VECTOR_SHAPE<span class="o">=</span><span class="m">0</span>.5 <span class="s">&lt;&lt; EOF &gt;&gt; $ps</span>
-<span class="s">1.5	0.75	0	1.5i</span>
-<span class="s">1.5	0.75	90	0.75i</span>
-<span class="s">EOF</span>
-<span class="nb">echo</span> <span class="m">1</span>.5 <span class="m">0</span>.75 <span class="p">|</span> gmt psxy -R -J -O -K -Sc0.1c -Wfaint -Gwhite &gt;&gt; <span class="nv">$ps</span>
-gmt pstext -R -J -O -K -F+f12p,Times-Italic+j -Dj0.1i -Gwhite <span class="s">&lt;&lt; EOF &gt;&gt; $ps</span>
-<span class="s">3	0.75	TR	x</span>
-<span class="s">1.5	1.5	TR	y</span>
-<span class="s">EOF</span>
-<span class="nb">echo</span> <span class="nv">$plon</span> <span class="nv">$plat</span> <span class="p">|</span> gmt mapproject -R -JoA<span class="nv">$lon</span>/<span class="nv">$lat</span>/<span class="nv">$az</span>/1:1 -Fk -C
-<span class="nv">az</span><span class="o">=</span><span class="m">215</span>
-gmt pscoast <span class="nv">$R</span> -JOA<span class="nv">$lon</span>/<span class="nv">$lat</span>/<span class="nv">$az</span>/3i -Ba5f5g5 -Gred -Dh -O -K -X3.4i -TdjTL+w0.5i+l+o0.2i/-0.05i --FONT_TITLE<span class="o">=</span>9p --MAP_ANNOT_OBLIQUE<span class="o">=</span><span class="m">34</span> --FORMAT_GEO_MAP<span class="o">=</span>dddF &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="nv">$plon</span> <span class="nv">$plat</span> <span class="p">|</span> gmt psxy -R -J -O -K -Sc0.2c -Gblue -W0.25p &gt;&gt; <span class="nv">$ps</span>
-gmt psxy -R0/3/0/1.5 -Jx1i -O -K -W0.25p,- <span class="s">&lt;&lt; EOF &gt;&gt; $ps</span>
-<span class="s">&gt;</span>
-<span class="s">0	0.75</span>
-<span class="s">3	0.75</span>
-<span class="s">&gt;</span>
-<span class="s">1.5	0</span>
-<span class="s">1.5	1.5</span>
-<span class="s">EOF</span>
-gmt psxy -R -J -O -K -Sv0.2i+e -Gblack -W2p -N --MAP_VECTOR_SHAPE<span class="o">=</span><span class="m">0</span>.5 <span class="s">&lt;&lt; EOF &gt;&gt; $ps</span>
-<span class="s">1.5	0.75	0	1.5i</span>
-<span class="s">1.5	0.75	90	0.75i</span>
-<span class="s">EOF</span>
-<span class="nb">echo</span> <span class="m">1</span>.5 <span class="m">0</span>.75 <span class="p">|</span> gmt psxy -R -J -O -K -Sc0.1c -Wfaint -Gwhite &gt;&gt; <span class="nv">$ps</span>
-gmt pstext -R -J -O -F+f12p,Times-Italic+j -Dj0.1i -Gwhite <span class="s">&lt;&lt; EOF &gt;&gt; $ps</span>
-<span class="s">3	0.75	TR	x</span>
-<span class="s">1.5	1.5	TR	y</span>
-<span class="s">EOF</span>
-<span class="nb">echo</span> <span class="nv">$plon</span> <span class="nv">$plat</span> <span class="p">|</span> gmt mapproject -R -JoA<span class="nv">$lon</span>/<span class="nv">$lat</span>/<span class="nv">$az</span>/1:1 -Fk -C
-rm gmt.*
-</pre></div>
-</div>
+<p><a class="reference download internal" download="" href="../../_downloads/6726c0f729c529ac03939c0f71b814fd/Jo-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center" id="id2">
-<img alt="../../_images/Jo-gmtplot-2.png" src="../../_images/Jo-gmtplot-2.png" />
+<img alt="../../_images/Jo-gmtplot-1.png" src="../../_images/Jo-gmtplot-1.png" />
 <p class="caption"><span class="caption-number">图 9.26 </span><span class="caption-text">使用 <code class="docutils literal notranslate"><span class="pre">-JOa</span></code> 倾斜Mercator投影</span></p>
 </div>
 <p>(左) <code class="docutils literal notranslate"><span class="pre">-JOa173:17:02E/41:16:15S/35/3i</span></code>
