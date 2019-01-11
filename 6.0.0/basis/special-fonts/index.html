@@ -215,24 +215,35 @@
             
   <div class="section" id="id1">
 <h1>5.7 特殊字体<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<p>在介绍字体时说过，12号字体（Symbol）和34号字体（ZapfDingbats）比较特殊，这一节专门介绍一下。</p>
-<p>能从键盘直接输入的字符是有限的，只有大小写的26个字母、0-9的阿拉伯数字以及几个常见的符号。有时候可能想要输入一些特殊的字符，比如希腊字母。</p>
-<p>以字符 <code class="docutils literal notranslate"><span class="pre">a</span></code> 为例，使用除12号和34号外的其他字体时，显示的永远是字符 <code class="docutils literal notranslate"><span class="pre">a</span></code> ，只是样子可能有些不一样。如果将字符 <code class="docutils literal notranslate"><span class="pre">a</span></code> 设置为12号字体，显示的是 <span class="math notranslate nohighlight">\(\alpha\)</span> ；如果将字符 <code class="docutils literal notranslate"><span class="pre">a</span></code> 设置为34号字体，则显示的是一个类似花的图案。本质上，12号和34字体与其他字体并没有什么本质的区别，可以理解为这两个字体显示的时候变化比较大。</p>
-<p>由于输入的字符 <code class="docutils literal notranslate"><span class="pre">a</span></code> 与实际显示的字符 <span class="math notranslate nohighlight">\(\alpha\)</span> 的差别太大，所以要一一对应就变得很困难。因而在使用12号和34号字体时通常使用一个三位的八进制码表示一个字符，每个二进制码对应一个字符。</p>
-<p>下图给出了12号字体（Symbol字符集）和34字体（Pifont ZapfDingbats）的字符与八进制码对应关系：</p>
-<p><a class="reference download internal" download="" href="../../_downloads/277a2ad28793b0f75935a31042fc74d8/special-fonts-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
-<div class="figure align-center">
-<img alt="../../_images/special-fonts-gmtplot-0.png" src="../../_images/special-fonts-gmtplot-0.png" />
+<p>GMT默认支持的35种字体中，12号字体（Symbol）和34号字体（ZapfDingbats）比较特殊，专门用于在图上显示一些特殊的字符，比如希腊字母。特殊字符无法从键盘直接输入，只能通过一个三位的八进制码表示一个字符。</p>
+<p>GMT中12号字体（Symbol字符集）和34号字体（Pifont ZapfDingbats）所包含的字符集及其对应的八进制码如下图所示：</p>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/GMT_symbol_dingbats.png"><img alt="../../_images/GMT_symbol_dingbats.png" src="../../_images/GMT_symbol_dingbats.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">图 5.1 </span><span class="caption-text">Symbol和Pifont字体八进制码</span></p>
 </div>
-<p>比如需要字符 <span class="math notranslate nohighlight">\(\beta\)</span> ，则首先设置文本的字体为12号字体，查上表可知，字符 <span class="math notranslate nohighlight">\(\beta\)</span> 位于 <code class="docutils literal notranslate"><span class="pre">\14x</span></code> 行 <code class="docutils literal notranslate"><span class="pre">2</span></code> 列，因而其对应的八进制码为 <code class="docutils literal notranslate"><span class="pre">\142</span></code> 。同理， <span class="math notranslate nohighlight">\(\theta\)</span> 的八进制码为 <code class="docutils literal notranslate"><span class="pre">\161</span></code> 。同样是八进制码 <code class="docutils literal notranslate"><span class="pre">\161</span></code> ，如果设置字体为34号，则是右边图中对应的类似矩形的符号了。</p>
-<p>下图给出了一些示例：</p>
-<p><a class="reference download internal" download="" href="../../_downloads/4c9fa869c64c64f0f1d68eab396e62cf/special-fonts-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
-<div class="figure align-center">
-<img alt="../../_images/special-fonts-gmtplot-1.png" src="../../_images/special-fonts-gmtplot-1.png" />
+<p><strong>下载：</strong>
+<a class="reference download internal" download="" href="../../_downloads/08b2ea3f1b845104c4fb0bae75ba380b/GMT_symbol_dingbats.pdf"><code class="xref download docutils literal notranslate"><span class="pre">特殊字体八进制码</span> <span class="pre">PDF版</span></code></a> |
+<a class="reference download internal" download="" href="../../_downloads/e343248a913ac45f94c68193b3bec2b7/GMT_symbol_dingbats.png"><code class="xref download docutils literal notranslate"><span class="pre">特殊字体八进制码</span> <span class="pre">PNG版</span></code></a></p>
+<p>如何使用这些八进制码实现显示特殊字符的目的的？以字符 <span class="math notranslate nohighlight">\(\beta\)</span> 为例：</p>
+<ol class="arabic simple">
+<li>查找上表，发现Symbol字体中包含该字符，则设置文本的字体为12号字体</li>
+<li>在Symbol字体中，字符 <span class="math notranslate nohighlight">\(\beta\)</span> 位于 <code class="docutils literal notranslate"><span class="pre">\14x</span></code> 行 <code class="docutils literal notranslate"><span class="pre">2</span></code> 列，则其对应的八进制码为 <code class="docutils literal notranslate"><span class="pre">\142</span></code></li>
+<li>在需要输入 <span class="math notranslate nohighlight">\(\beta\)</span> 的地方输入八进制码 <code class="docutils literal notranslate"><span class="pre">\142</span></code> 即可</li>
+</ol>
+<p>示例如下:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pstext -JX10c/10c -R0/10/0/10 -F+f15p,12 &gt; test1.ps <span class="s">&lt;&lt; EOF</span>
+<span class="s">5 5 \141</span>
+<span class="s">EOF</span>
+
+<span class="nb">echo</span> <span class="m">5</span> <span class="m">5</span> <span class="s1">&#39;\141&#39;</span> <span class="p">|</span> gmt pstext -JX10c/10c -R0/10/0/10 -F+f15p,12 &gt; test2.ps
+</pre></div>
 </div>
-<p>对于26个希腊字母的大小写而言，由于其与26个英语字母的大小写一一对应，所以如果熟悉的话，完全可以用英文字母写文本，然后设置字体为12号字体，如第一行所示，这样的做法比第二行用八进制码1要简单些。但是对于其他特殊字符，由于不存在这种有规律的对应关系，所以最好使用八进制码表示。</p>
-<p>用户可通过转义字符 &#64;~ 或 &#64;%% 来使用上述特殊字体，例如:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R0/10/0/10 -JX10c/10c -BWSne -Bx2+l<span class="s2">&quot;@~\161@~ or @%12%\161@%%&quot;</span> -By2+l<span class="s2">&quot;@%34%\164@%%&quot;</span> &gt; test.ps
+<p>上面的示例中，<code class="docutils literal notranslate"><span class="pre">-F+f15p,12</span></code> 指定了使用12号字体。两个示例分别采用了两种不同的方式输入数据。需要格外注意，在第二种方式下，由于bash中的echo命令会自动将 <code class="docutils literal notranslate"><span class="pre">\141</span></code>
+转换成 <code class="docutils literal notranslate"><span class="pre">141</span></code>，因而实际 pstext 模块接收到的是 <code class="docutils literal notranslate"><span class="pre">141</span></code> 而不是 <code class="docutils literal notranslate"><span class="pre">\141</span></code>。为了解决这一问题，此处需要用 <code class="docutils literal notranslate"><span class="pre">'\141'</span></code> 或 <code class="docutils literal notranslate"><span class="pre">\\141</span></code>，而不能直接用 <code class="docutils literal notranslate"><span class="pre">\141</span></code>。在其他脚本语言中也存在类似的问题。</p>
+<p>有时需要在一堆正常的字符中出现一些特殊字符。这种情况下，则需要通过转义字符
+<code class="docutils literal notranslate"><span class="pre">&#64;~</span></code> 或 <code class="docutils literal notranslate"><span class="pre">&#64;%%</span></code> 临时将字体切换为特殊字符。转义字符的具体用法在后面会介绍，此处仅举一例:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R0/10/0/10 -JX10c/10c -BWSne <span class="se">\</span>
+    -Bx2+l<span class="s2">&quot;@~\161@~ or @%12%\161@%%&quot;</span> -By2+l<span class="s2">&quot;@%34%\164@%%&quot;</span> &gt; test.ps
 </pre></div>
 </div>
 </div>
@@ -279,7 +290,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月09日.
+      最后更新于 2019年01月11日.
 
     </p>
   </div>

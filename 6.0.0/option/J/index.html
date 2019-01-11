@@ -503,7 +503,7 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-JEPSG:4326+to+proj<span class="o">=</span>aeqd+ellps<span class="o">=</span>WGS84+units<span class="o">=</span>m
 </pre></div>
 </div>
-<p>对于使用 <code class="docutils literal notranslate"><span class="pre">mapproject</span></code> 和 <code class="docutils literal notranslate"><span class="pre">grdproject</span></code> 进行点和网格文件的转换，GMT可以使用所有的 <a class="reference external" href="http://proj4.org/projections/index.html">PROJ.4投影</a>。但对于绘图而言，其用处却很有限。一方面，只有一部分 PROJ.4 的投影方式可以被映射到GMT的投影语法中。另一方面，由于PROJ.4不是一个绘图库，其不支持设置地图比例尺或地图大小。因而，GMT为PROJ.4语法引入了两个扩展： <code class="docutils literal notranslate"><span class="pre">+width=</span></code> 和 <code class="docutils literal notranslate"><span class="pre">+scale=1:xxxx</span></code>
+<p>对于使用 <code class="docutils literal notranslate"><span class="pre">mapproject</span></code> 和 <code class="docutils literal notranslate"><span class="pre">grdproject</span></code> 进行点和网格文件的转换，GMT可以使用所有的 <a class="reference external" href="https://proj4.org/operations/projections/index.html">PROJ.4投影</a>。但对于绘图而言，其用处却很有限。一方面，只有一部分 PROJ.4 的投影方式可以被映射到GMT的投影语法中。另一方面，由于PROJ.4不是一个绘图库，其不支持设置地图比例尺或地图大小。因而，GMT为PROJ.4语法引入了两个扩展： <code class="docutils literal notranslate"><span class="pre">+width=</span></code> 和 <code class="docutils literal notranslate"><span class="pre">+scale=1:xxxx</span></code>
 使得其与经典的GMT中的工作方式相似。也可以在投影参数的最后加上字符串 <code class="docutils literal notranslate"><span class="pre">/1:xxx</span></code>
 来指定比例尺。</p>
 </div>
@@ -551,7 +551,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月09日.
+      最后更新于 2019年01月11日.
 
     </p>
   </div>
