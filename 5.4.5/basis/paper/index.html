@@ -229,10 +229,8 @@
 </div>
 <div class="section" id="id2">
 <h2>5.1.1 画布尺寸<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p>GMT默认的画布尺寸为A4，即 <code class="docutils literal notranslate"><span class="pre">210mmx297mm</span></code> 。</p>
+<p>GMT默认的画布尺寸为A4，即 <code class="docutils literal notranslate"><span class="pre">210mmx297mm</span></code>。</p>
 <p>通过修改 GMT 参数 <a class="reference internal" href="../../conf/ps/#ps-media"><span class="std std-ref">PS_MEDIA</span></a> 可以控制画布的默认尺寸。GMT提供了几十种预定义的画布尺寸，还支持自定义尺寸，详情见 <a class="reference internal" href="../../conf/ps/#ps-media"><span class="std std-ref">PS_MEDIA</span></a> 的说明。</p>
-<p>一般不建议随便修改纸张尺寸，一方面期刊对于图件的尺寸可能有要求，另一方面非 A4
-尺寸的图直接打印的效果可能很差。</p>
 </div>
 <div class="section" id="id3">
 <h2>5.1.2 画布颜色<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
@@ -249,7 +247,8 @@
 <div class="figure align-center">
 <img alt="../../_images/paper-gmtplot-0.png" src="../../_images/paper-gmtplot-0.png" />
 </div>
-<p>图中左边把纸张竖着放的称为Portrait（肖像）模式，右边把纸张横着放的方式称为Landscape（风景）模式。记起来也很简单，人是瘦长的，所以人的肖像照需要竖着拍，风景是矮胖的，就需要横着拍。</p>
+<p>图中左边把纸张竖着放的称为Portrait（肖像）模式，右边把纸张横着放的方式称为
+Landscape（风景）模式。记起来也很简单，人是瘦长的，所以人的肖像照需要竖着拍，风景是矮胖的，就需要横着拍。</p>
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
 <p>对于Portrait模式和Landscape模式，还有另外一种理解方式，即认为画布总是竖着放的。</p>
@@ -268,18 +267,6 @@
 <p class="first admonition-title">小技巧</p>
 <p class="last">Linux下默认的PS阅读器evince可以自动识别两种模式，Landscape模式的PS文件横着放，Portrait模式的文件竖着放，所以看上去总是对的。而 <code class="docutils literal notranslate"><span class="pre">gs</span></code> 无法自动识别两种模式，总是将文件竖着放，因而用gs看Landscape模式的PS文件时就会很别扭。</p>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">注解</p>
-<p>从底层来看，Landscape模式和Portait模式的PS文件之间的差异在于，Landspace 模式下的PS代码为:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>V <span class="m">595</span> <span class="m">0</span> T <span class="m">90</span> R <span class="m">0</span>.06 <span class="m">0</span>.06 scale
-</pre></div>
-</div>
-<p>而 Portrait 模式下的 PS 代码为:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>V <span class="m">0</span>.06 <span class="m">0</span>.06 scale
-</pre></div>
-</div>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">595</span> <span class="pre">0</span> <span class="pre">T</span> <span class="pre">90</span> <span class="pre">R</span></code> 的含义应该是将坐标系移动（ <strong>T</strong>ransition）到 <code class="docutils literal notranslate"><span class="pre">(595,0)</span></code> 再旋转（ <strong>R</strong>otate）90度，即由Portrait模式变成Landscape模式。</p>
-</div>
 </div>
 <div class="section" id="id5">
 <h2>5.1.4 底图原点<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
@@ -292,8 +279,8 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R0/10/0/10 -JX10c/10c -B1 -B+glightblue &gt; map.ps
 </pre></div>
 </div>
-<p>该命令中， <code class="docutils literal notranslate"><span class="pre">-JX10c/10c</span></code> 规定了底图的宽和高都是 10 cm，可以看到，底图的左边界位于
-<code class="docutils literal notranslate"><span class="pre">1i</span></code> ，右边界位于 <code class="docutils literal notranslate"><span class="pre">1i+10c</span></code> 处，下边界位于 <code class="docutils literal notranslate"><span class="pre">1i</span></code> ，上边界位于 <code class="docutils literal notranslate"><span class="pre">1i+10c</span></code> 处。</p>
+<p>该命令中，<code class="docutils literal notranslate"><span class="pre">-JX10c/10c</span></code> 规定了底图的宽和高都是 10 cm，可以看到，底图的左边界位于
+<code class="docutils literal notranslate"><span class="pre">1i</span></code>，右边界位于 <code class="docutils literal notranslate"><span class="pre">1i+10c</span></code> 处，下边界位于 <code class="docutils literal notranslate"><span class="pre">1i</span></code>，上边界位于 <code class="docutils literal notranslate"><span class="pre">1i+10c</span></code> 处。</p>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
 <p class="last">此处提到的底图原点是指矩形底图的坐标轴的左下角相对于画布左下角的位置，而不包括坐标轴的标注或标签部分。</p>
@@ -344,7 +331,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月09日.
+      最后更新于 2019年01月11日.
 
     </p>
   </div>

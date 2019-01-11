@@ -216,23 +216,26 @@
   <div class="section" id="id1">
 <h1>5.8 特殊字符<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>所有的字符在计算机中都是用二进制表示的，不过二进制看起来比长，所以也可以用等效的八进制或十六进制表示。GMT中用三位的八进制码表示一个字符。</p>
-<p>对于任意一个三位的八进制码，可以对应字符 <code class="docutils literal notranslate"><span class="pre">a</span></code> ，也可以对应字符 <code class="docutils literal notranslate"><span class="pre">f</span></code> ，具体哪个八进制码对应哪个字符呢？这就由字符编码规范决定。</p>
-<p>GMT支持多种字符编码，包括 <code class="docutils literal notranslate"><span class="pre">Standard</span></code> 、 <code class="docutils literal notranslate"><span class="pre">Standard+</span></code> 、 <code class="docutils literal notranslate"><span class="pre">ISOLation1</span></code> 、
-<code class="docutils literal notranslate"><span class="pre">ISOLatin1+</span></code> 以及 <code class="docutils literal notranslate"><span class="pre">ISO-8859-x</span></code> （x可以取1到10以及13到15）。</p>
-<p>GMT当前使用的字符编码方式由GMT参数 <a class="reference internal" href="../../conf/ps/#ps-char-encoding"><span class="std std-ref">PS_CHAR_ENCODING</span></a> 决定。若安装过程中使用的是国际单位制，则默认编码方式为 <code class="docutils literal notranslate"><span class="pre">ISOLatin1+</span></code> ，否则为 <code class="docutils literal notranslate"><span class="pre">Standard+</span></code> 。可以使用:</p>
+<p>对于任意一个三位的八进制码，其对应哪个字符呢？这是由字符编码规范决定的。</p>
+<p>GMT支持多种字符编码，包括 <code class="docutils literal notranslate"><span class="pre">Standard</span></code>、<code class="docutils literal notranslate"><span class="pre">Standard+</span></code>、<code class="docutils literal notranslate"><span class="pre">ISOLation1</span></code>、
+<code class="docutils literal notranslate"><span class="pre">ISOLatin1+</span></code> 以及 <code class="docutils literal notranslate"><span class="pre">ISO-8859-x</span></code>（x可以取1到10以及13到15）。</p>
+<p>GMT当前使用的字符编码方式由GMT参数 <a class="reference internal" href="../../conf/ps/#ps-char-encoding"><span class="std std-ref">PS_CHAR_ENCODING</span></a> 决定。若安装过程中使用的是国际单位制，则默认编码方式为 <code class="docutils literal notranslate"><span class="pre">ISOLatin1+</span></code>，否则为 <code class="docutils literal notranslate"><span class="pre">Standard+</span></code>。可以使用:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt get PS_CHAR_ENCODING
 </pre></div>
 </div>
 <p>查看GMT当前使用的字符编码。</p>
 <p>下图给出了 <code class="docutils literal notranslate"><span class="pre">Standard+</span></code> 和 <code class="docutils literal notranslate"><span class="pre">ISOLatin1+</span></code> 编码下八进制码与字符间的对应关系：</p>
-<p><a class="reference download internal" download="" href="../../_downloads/8ac01cd663c81d30e0a255495259f567/special-characters-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
-<div class="figure align-center">
-<img alt="../../_images/special-characters-gmtplot-0.png" src="../../_images/special-characters-gmtplot-0.png" />
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/GMT_stand+_iso+.png"><img alt="../../_images/GMT_stand+_iso+.png" src="../../_images/GMT_stand+_iso+.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">图 5.2 </span><span class="caption-text">Standard+和ISOLatin1+编码下的八进制码</span></p>
 </div>
+<p><strong>下载：</strong>
+<a class="reference download internal" download="" href="../../_downloads/c41d045025d9d01538a3519676dcfcc5/GMT_stand+_iso+.pdf"><code class="xref download docutils literal notranslate"><span class="pre">八进制码表</span> <span class="pre">PDF版</span></code></a> |
+<a class="reference download internal" download="" href="../../_downloads/87db8a20a7be9d9bcddbfcb4f1aeb78a/GMT_stand+_iso+.png"><code class="xref download docutils literal notranslate"><span class="pre">八进制码表</span> <span class="pre">PNG版</span></code></a></p>
 <p>其中，浅红色区域是保留给控制字符的八进制码，浅绿色区域是扩展字符（扩展字符即
-<code class="docutils literal notranslate"><span class="pre">Standard+</span></code> 编码相对于 <code class="docutils literal notranslate"><span class="pre">Standard</span></code> 编码多出的字符， <code class="docutils literal notranslate"><span class="pre">ISOLation1+</span></code> 同理。）。</p>
+<code class="docutils literal notranslate"><span class="pre">Standard+</span></code> 编码相对于 <code class="docutils literal notranslate"><span class="pre">Standard</span></code> 编码多出的字符，<code class="docutils literal notranslate"><span class="pre">ISOLation1+</span></code> 同理。）。</p>
 <p>这张图应该如何读呢？以 <code class="docutils literal notranslate"><span class="pre">ISOLation1+</span></code> 编码下的八进制码 <code class="docutils literal notranslate"><span class="pre">\144</span></code> 为例，
-<code class="docutils literal notranslate"><span class="pre">\14x</span></code> 行与 <code class="docutils literal notranslate"><span class="pre">4</span></code> 列的交界处就是该八进制码代表的字符，即 <code class="docutils literal notranslate"><span class="pre">d</span></code> 。</p>
+<code class="docutils literal notranslate"><span class="pre">\14x</span></code> 行与 <code class="docutils literal notranslate"><span class="pre">4</span></code> 列的交界处就是该八进制码代表的字符，即 <code class="docutils literal notranslate"><span class="pre">d</span></code>。</p>
 <p>下面的示例展示了修改GMT的文本编码，以及不同编码下同一八进制码的效果:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt <span class="nb">set</span> PS_CHAR_ENCODING Standard+
 $ <span class="nb">echo</span> <span class="m">1</span> <span class="m">1</span> <span class="s1">&#39;\260&#39;</span> <span class="p">|</span> gmt pstext -JX2c/2c -R0/2/0/2 -B1 &gt; standard.ps
@@ -240,9 +243,9 @@ $ gmt <span class="nb">set</span> PS_CHAR_ENCODING ISOLatin1+
 $ <span class="nb">echo</span> <span class="m">1</span> <span class="m">1</span> <span class="s1">&#39;\260&#39;</span> <span class="p">|</span> gmt pstext -JX2c/2c -R0/2/0/2 -B1 &gt; isolatin1.ps
 </pre></div>
 </div>
-<p>其中， <code class="docutils literal notranslate"><span class="pre">standard.ps</span></code> 中显示的是类似A的字符，而 <code class="docutils literal notranslate"><span class="pre">isolation1.ps</span></code> 中显示的则是弧度 <code class="docutils literal notranslate"><span class="pre">°</span></code> 符号。</p>
+<p>其中，<code class="docutils literal notranslate"><span class="pre">standard.ps</span></code> 中显示的是类似A的字符，而 <code class="docutils literal notranslate"><span class="pre">isolation1.ps</span></code> 中显示的则是弧度 <code class="docutils literal notranslate"><span class="pre">°</span></code> 符号。</p>
 <p>需要注意，反斜杠在GMT中用于表示八进制码，同时，反斜杠也是大多数脚本语言的转义字符。因而会存在反斜杠先被脚本语言转义再传递给GMT的情况。故而此处需要用 <code class="docutils literal notranslate"><span class="pre">'\260'</span></code> 或
-<code class="docutils literal notranslate"><span class="pre">\\260</span></code> ，而不能直接用 <code class="docutils literal notranslate"><span class="pre">\260</span></code> 。</p>
+<code class="docutils literal notranslate"><span class="pre">\\260</span></code>，而不能直接用 <code class="docutils literal notranslate"><span class="pre">\260</span></code>。</p>
 </div>
 
 
@@ -287,7 +290,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月09日.
+      最后更新于 2019年01月11日.
 
     </p>
   </div>

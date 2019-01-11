@@ -220,7 +220,7 @@
   <div class="section" id="id1">
 <h1>5.9 转义序列<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>前面已经介绍了如何设置字体属性以及如何输出特殊字符，但是这还不够，无法实现上标、下标，无法在一个字符串内随意切换字体和颜色。由此，GMT引入了转义字符，给文本加入了更丰富的效果。</p>
-<p>在C语言中，转义字符是 <code class="docutils literal notranslate"><span class="pre">\</span></code> ；在GMT中，转义字符是 <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> 。转义字符与一般字符合在一起构成了转义序列。GMT可以识别的转义字符在下表列出：</p>
+<p>GMT中的转义字符是 <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>。转义字符与一般字符合在一起构成了转义序列。GMT可以识别的转义字符在下表列出：</p>
 <table border="1" class="docutils" id="id4">
 <caption><span class="caption-number">表 5.3 </span><span class="caption-text">GMT转义字符</span><a class="headerlink" href="#id4" title="永久链接至表格">¶</a></caption>
 <colgroup>
@@ -249,13 +249,13 @@
 <td>打开/关闭下划线</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">&#64;%&lt;fontno&gt;%</span></code></td>
-<td>切换至另一字体； <code class="docutils literal notranslate"><span class="pre">&#64;%%</span></code> 重置回前一字体</td>
+<td>切换至另一字体；<code class="docutils literal notranslate"><span class="pre">&#64;%%</span></code> 重置回前一字体</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">&#64;:&lt;size&gt;:</span></code></td>
-<td>切换至另一文本尺寸； <code class="docutils literal notranslate"><span class="pre">&#64;::</span></code> 重置回前一尺寸</td>
+<td>切换至另一文本尺寸；<code class="docutils literal notranslate"><span class="pre">&#64;::</span></code> 重置回前一尺寸</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">&#64;;&lt;color&gt;;</span></code></td>
-<td>切换至另一文本颜色； <code class="docutils literal notranslate"><span class="pre">&#64;;;</span></code> 重置回前一颜色</td>
+<td>切换至另一文本颜色；<code class="docutils literal notranslate"><span class="pre">&#64;;;</span></code> 重置回前一颜色</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">&#64;!</span></code></td>
 <td>用接下来的两个字符创建组合字符</td>
@@ -266,7 +266,7 @@
 </tbody>
 </table>
 <p>对于一些常用的欧洲特殊字符，可以通过设置 <a class="reference internal" href="../../conf/ps/#ps-char-encoding"><span class="std std-ref">PS_CHAR_ENCODING</span></a>
-来实现，GMT为其中的部分常见字符提供了转义序列，如下表：</p>
+并使用八进制码表示。GMT为其中的部分常见字符提供了转义序列，如下表：</p>
 <table border="1" class="docutils" id="id5">
 <caption><span class="caption-number">表 5.4 </span><span class="caption-text">欧洲特殊字符</span><a class="headerlink" href="#id5" title="永久链接至表格">¶</a></caption>
 <colgroup>
@@ -380,7 +380,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月09日.
+      最后更新于 2019年01月11日.
 
     </p>
   </div>
