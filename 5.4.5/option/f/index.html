@@ -226,12 +226,12 @@
 <h1>7.13 <code class="docutils literal notranslate"><span class="pre">-f</span></code> 选项<a class="headerlink" href="#f" title="永久链接至标题">¶</a></h1>
 <p>在某些情况下，需要显式指明当前输入/输出数据中每一列的含义，这可以通过 <code class="docutils literal notranslate"><span class="pre">-f</span></code>
 选项来实现。</p>
-<p>默认情况下， <code class="docutils literal notranslate"><span class="pre">-f</span></code> 选项对输入输出同时有效， <code class="docutils literal notranslate"><span class="pre">-fi</span></code> 表明该选项仅对输入数据有效，
+<p>默认情况下，<code class="docutils literal notranslate"><span class="pre">-f</span></code> 选项对输入输出同时有效，<code class="docutils literal notranslate"><span class="pre">-fi</span></code> 表明该选项仅对输入数据有效，
 <code class="docutils literal notranslate"><span class="pre">-fo</span></code> 表明该选项仅对输出数据有效。</p>
-<p>输入/输出数据中每一列的含义可以通过一系列以逗号分隔的字符串来表示。每个字符串包括两部分：列号以及数据类型。数据类型可以取 <code class="docutils literal notranslate"><span class="pre">x</span></code> 、 <code class="docutils literal notranslate"><span class="pre">y</span></code> 、 <code class="docutils literal notranslate"><span class="pre">T</span></code> 、 <code class="docutils literal notranslate"><span class="pre">t</span></code> 、 <code class="docutils literal notranslate"><span class="pre">f</span></code> ，分别表示这一列是经度、纬度、绝对时间、相对时间或普通的浮点数。列号是一个从零开始起算的整数（比如第6列的列号为 <code class="docutils literal notranslate"><span class="pre">5</span></code> ），当多个连续的列有相同的数据类型时，也可以指定一个列号的范围，列号范围的格式为 <code class="docutils literal notranslate"><span class="pre">&lt;start&gt;[:&lt;inc&gt;]:&lt;stop&gt;</span></code> ，若未给定 <code class="docutils literal notranslate"><span class="pre">&lt;inc&gt;</span></code> 则默认为1，比如 <code class="docutils literal notranslate"><span class="pre">1:5</span></code> 表示第2至6列数据。</p>
-<p>例如， <code class="docutils literal notranslate"><span class="pre">-fi0y,1x,3:4T</span></code> 表明输入数据中第一列是纬度，第二列是经度，第3、4列是绝对时间，其他列数据则假定是默认的浮点数类型。</p>
+<p>输入/输出数据中每一列的含义可以通过一系列以逗号分隔的字符串来表示。每个字符串包括两部分：列号以及数据类型。数据类型可以取 <code class="docutils literal notranslate"><span class="pre">x</span></code>、<code class="docutils literal notranslate"><span class="pre">y</span></code>、<code class="docutils literal notranslate"><span class="pre">T</span></code>、<code class="docutils literal notranslate"><span class="pre">t</span></code>、<code class="docutils literal notranslate"><span class="pre">f</span></code>，分别表示这一列是经度、纬度、绝对时间、相对时间或普通的浮点数。列号是一个从零开始起算的整数（比如第6列的列号为 <code class="docutils literal notranslate"><span class="pre">5</span></code>），当多个连续的列有相同的数据类型时，也可以指定一个列号的范围，列号范围的格式为 <code class="docutils literal notranslate"><span class="pre">&lt;start&gt;[:&lt;inc&gt;]:&lt;stop&gt;</span></code>，若未给定 <code class="docutils literal notranslate"><span class="pre">&lt;inc&gt;</span></code> 则默认为1，比如 <code class="docutils literal notranslate"><span class="pre">1:5</span></code> 表示第2至6列数据。</p>
+<p>例如，<code class="docutils literal notranslate"><span class="pre">-fi0y,1x,3:4T</span></code> 表明输入数据中第一列是纬度，第二列是经度，第3、4列是绝对时间，其他列数据则假定是默认的浮点数类型。</p>
 <p><code class="docutils literal notranslate"><span class="pre">-fg</span></code> 是 <code class="docutils literal notranslate"><span class="pre">-f0x,1y</span></code> 的缩写，表明输入/输出是地理坐标。除此之外，还可以使用
-<code class="docutils literal notranslate"><span class="pre">-fp&lt;unit&gt;</span></code> ，该选项可以使用投影之后的坐标作为输入，在读入数据时投影后的坐标值会自动转换为经纬度值。</p>
+<code class="docutils literal notranslate"><span class="pre">-fp&lt;unit&gt;</span></code>，该选项可以使用投影之后的坐标作为输入，在读入数据时投影后的坐标值会自动转换为经纬度值。</p>
 </div>
 
 
@@ -276,7 +276,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月13日.
+      最后更新于 2019年01月15日.
 
     </p>
   </div>

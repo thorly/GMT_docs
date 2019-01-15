@@ -233,10 +233,10 @@
 <li><code class="docutils literal notranslate"><span class="pre">c</span></code> 表示使用bicubic插值算法（默认值）</li>
 <li><code class="docutils literal notranslate"><span class="pre">l</span></code> 表示bilinear插值算法</li>
 <li><code class="docutils literal notranslate"><span class="pre">n</span></code>  表示nearest-neighbor值。</li>
-<li><code class="docutils literal notranslate"><span class="pre">+a</span></code> ：关闭抗混淆（仅在算法支持的前提下有效）</li>
-<li><code class="docutils literal notranslate"><span class="pre">+b&lt;BC&gt;</span></code> ：设置网格的边界条件。 <code class="docutils literal notranslate"><span class="pre">&lt;BC&gt;</span></code> 可以取 <code class="docutils literal notranslate"><span class="pre">g</span></code> 、 <code class="docutils literal notranslate"><span class="pre">p</span></code> 、 <code class="docutils literal notranslate"><span class="pre">n</span></code> ，分别代表地理边界条件、周期边界条件和自然边界条件。对于后两种边界条件，可以在后面加上 <code class="docutils literal notranslate"><span class="pre">x</span></code> 或 <code class="docutils literal notranslate"><span class="pre">y</span></code> 表示边界条件仅对一个方向有效。比如 <code class="docutils literal notranslate"><span class="pre">-nb+bnxpy</span></code>
+<li><code class="docutils literal notranslate"><span class="pre">+a</span></code>：关闭抗混淆（仅在算法支持的前提下有效）</li>
+<li><code class="docutils literal notranslate"><span class="pre">+b&lt;BC&gt;</span></code>：设置网格的边界条件。<code class="docutils literal notranslate"><span class="pre">&lt;BC&gt;</span></code> 可以取 <code class="docutils literal notranslate"><span class="pre">g</span></code>、<code class="docutils literal notranslate"><span class="pre">p</span></code>、<code class="docutils literal notranslate"><span class="pre">n</span></code>，分别代表地理边界条件、周期边界条件和自然边界条件。对于后两种边界条件，可以在后面加上 <code class="docutils literal notranslate"><span class="pre">x</span></code> 或 <code class="docutils literal notranslate"><span class="pre">y</span></code> 表示边界条件仅对一个方向有效。比如 <code class="docutils literal notranslate"><span class="pre">-nb+bnxpy</span></code>
 表明X方向使用自然边界条件，Y方向使用周期边界条件</li>
-<li><code class="docutils literal notranslate"><span class="pre">+c</span></code> ：假设原网格的Z值范围为zmin到zmax，插值后的网格范围可能为超过这一范围，使用 <code class="docutils literal notranslate"><span class="pre">+c</span></code> 则将超过zmin和zmax的部分裁剪掉</li>
+<li><code class="docutils literal notranslate"><span class="pre">+c</span></code>：假设原网格的Z值范围为zmin到zmax，插值后的网格范围可能为超过这一范围，使用 <code class="docutils literal notranslate"><span class="pre">+c</span></code> 则将超过zmin和zmax的部分裁剪掉</li>
 <li><code class="docutils literal notranslate"><span class="pre">+t&lt;threshold&gt;</span></code> 见官方文档</li>
 </ul>
 </div>
@@ -283,7 +283,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月13日.
+      最后更新于 2019年01月15日.
 
     </p>
   </div>

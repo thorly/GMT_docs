@@ -228,16 +228,16 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-h<span class="o">[</span>i<span class="p">|</span>o<span class="o">][</span>&lt;n&gt;<span class="o">][</span>+c<span class="o">][</span>+d<span class="o">][</span>+r&lt;remark&gt;<span class="o">][</span>+t&lt;title&gt;<span class="o">]</span>
 </pre></div>
 </div>
-<p>其中 <code class="docutils literal notranslate"><span class="pre">&lt;n&gt;</span></code> 表示数据中的头段记录数。 <code class="docutils literal notranslate"><span class="pre">i</span></code> 和 <code class="docutils literal notranslate"><span class="pre">o</span></code> 表示仅对输入/输出有效。</p>
+<p>其中 <code class="docutils literal notranslate"><span class="pre">&lt;n&gt;</span></code> 表示数据中的头段记录数。<code class="docutils literal notranslate"><span class="pre">i</span></code> 和 <code class="docutils literal notranslate"><span class="pre">o</span></code> 表示仅对输入/输出有效。</p>
 <p>输入文件中的空行以及以“#”开头的行都会被自动当做头段记录，因而会被自动跳过，在指定 <code class="docutils literal notranslate"><span class="pre">&lt;n&gt;</span></code> 时不需要再考虑空行以及以“#”开头的行。</p>
 <p>几种常见的用法：</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">-h</span></code> ：使用GMT参数 <a class="reference internal" href="../../conf/io/#io-n-header-recs"><span class="std std-ref">IO_N_HEADER_RECS</span></a> 的值作为头段记录数（默认值为0）</li>
-<li><code class="docutils literal notranslate"><span class="pre">-h3</span></code> ：表示跳过3个头段记录</li>
+<li><code class="docutils literal notranslate"><span class="pre">-h</span></code>：使用GMT参数 <a class="reference internal" href="../../conf/io/#io-n-header-recs"><span class="std std-ref">IO_N_HEADER_RECS</span></a> 的值作为头段记录数（默认值为0）</li>
+<li><code class="docutils literal notranslate"><span class="pre">-h3</span></code>：表示跳过3个头段记录</li>
 </ol>
-<p>对于二进制输入文件， <code class="docutils literal notranslate"><span class="pre">&lt;n&gt;</span></code> 表示输入数据中要跳过的字节数，或输出数据中用空白字符补充的字节数。</p>
+<p>对于二进制输入文件，<code class="docutils literal notranslate"><span class="pre">&lt;n&gt;</span></code> 表示输入数据中要跳过的字节数，或输出数据中用空白字符补充的字节数。</p>
 <p>对于输出文件而言，默认情况下，会将输入文件中的头段信息原样输出。使用 <code class="docutils literal notranslate"><span class="pre">+d</span></code>
-以删除之前的头段信息，使用 <code class="docutils literal notranslate"><span class="pre">+c</span></code> 会将列名写到输出的头段记录中， <code class="docutils literal notranslate"><span class="pre">+r&lt;remark&gt;</span></code>
+以删除之前的头段信息，使用 <code class="docutils literal notranslate"><span class="pre">+c</span></code> 会将列名写到输出的头段记录中，<code class="docutils literal notranslate"><span class="pre">+r&lt;remark&gt;</span></code>
 和 <code class="docutils literal notranslate"><span class="pre">+t&lt;title&gt;</span></code> 则可以分别加一个remark和title语句到输出的头段记录。</p>
 </div>
 
@@ -283,7 +283,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月13日.
+      最后更新于 2019年01月15日.
 
     </p>
   </div>
