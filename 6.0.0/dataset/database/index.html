@@ -8,10 +8,12 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>10.4 GMT 数据库的建立 &mdash; GMT参考手册</title>
+  <title>12.4 GMT 数据库的建立 &mdash; GMT参考手册</title>
   
 
   
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
   
   
   
@@ -28,31 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="11 风格指南" href="../../style/" />
-    <link rel="prev" title="10.3 earth_relief: 全球地形起伏数据" href="../earth_relief/" />
- 
-<!-- favicons -->
-
-<link rel="shortcut icon" href="/_static/favicon.ico" type="image/x-icon" type="image/png" />
-
-<!-- Opera Speed Dial Icon -->
-<link rel="icon" href="/_static/apple-touch-icon-152x152.png" type="image/png" />
-
-<!-- Safari on iOS -->
-<link rel="apple-touch-icon" href="/_static/apple-touch-icon.png"  type="image/png" />
-<link rel="apple-touch-icon" sizes="57x57" href="/_static/apple-touch-icon-57x57.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="72x72" href="/_static/apple-touch-icon-72x72.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="76x76" href="/_static/apple-touch-icon-76x76.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="114x114" href="/_static/apple-touch-icon-114x114.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="120x120" href="/_static/apple-touch-icon-120x120.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="144x144" href="/_static/apple-touch-icon-144x144.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="152x152" href="/_static/apple-touch-icon-152x152.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon-180x180.png" type="image/png" />
-
-<!-- For tiles on Windows -->
-<meta name="msapplication-TileImage" content="/_static/apple-touch-icon-114x114.png"/>
-<meta name="msapplication-TileColor" content="#d83434"/>
-
+    <link rel="next" title="13 风格指南" href="../../style/" />
+    <link rel="prev" title="12.3 earth_relief: 全球地形起伏数据" href="../earth_relief/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -100,6 +79,7 @@
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -113,28 +93,48 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/">4 GMT初探</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../basis/">5 绘图基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../io/">6 输入与输出</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../option/">7 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">8 配置GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">10 GMT数据集</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../gshhg/">10.1 GSHHG: 全球高精度海岸线数据</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dcw/">10.2 DCW: 世界数字图表</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../earth_relief/">10.3 earth_relief: 全球地形起伏数据</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">10.4 GMT 数据库的建立</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">10.4.1 原理</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#linux-mac">10.4.2 Linux 和 Mac</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#windows">10.4.3 Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">8 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">9 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">11 投影方式</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">12 GMT数据集</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">12.1 GSHHG: 全球高精度海岸线数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dcw/">12.2 DCW: 世界数字图表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earth_relief/">12.3 earth_relief: 全球地形起伏数据</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">12.4 GMT 数据库的建立</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">12.4.1 原理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linux-mac">12.4.2 Linux 和 Mac</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#windows">12.4.3 Windows</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../style/">11 风格指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">12 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">13 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../style/">13 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://modules.gmt-china.org"><i class="fa fa-book fa-fw"></i> 模块手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
         </div>
       </div>
     </nav>
@@ -176,9 +176,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">10 GMT数据集</a> &raquo;</li>
+          <li><a href="../">12 GMT数据集</a> &raquo;</li>
         
-      <li>10.4 GMT 数据库的建立</li>
+      <li>12.4 GMT 数据库的建立</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -196,10 +196,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../../style/" class="btn btn-neutral float-right" title="11 风格指南" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../style/" class="btn btn-neutral float-right" title="13 风格指南" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../earth_relief/" class="btn btn-neutral" title="10.3 earth_relief: 全球地形起伏数据" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../earth_relief/" class="btn btn-neutral" title="12.3 earth_relief: 全球地形起伏数据" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -209,7 +209,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gmt">
-<h1>10.4 GMT 数据库的建立<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h1>
+<h1>12.4 GMT 数据库的建立<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h1>
 <p>在使用 GMT 绘图时，经常会用到某些数据，比如地形起伏数据、正确的国界线数据、中国地质构造分界线数据等等。社区已经提供了一个数据集，包含了一些常见的数据：<a class="reference external" href="https://gmt-china.org/datas/">https://gmt-china.org/datas/</a>。</p>
 <p>这些数据具有两个特性：</p>
 <ol class="arabic simple">
@@ -224,13 +224,13 @@
 <p>显然，以上两种方法都有其局限性。第一种方法会造成数据冗余，而且将地形起伏等大数据复制来复制去也不方便。第二种方法，绝对路径通常都比较长，写起来麻烦而且万一路径变了所有脚本都要修改，很麻烦。</p>
 <p>为了解决这一问题，可以为这些数据建立一个 GMT 数据库。</p>
 <div class="section" id="id1">
-<h2>10.4.1 原理<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>12.4.1 原理<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>从原理上说，当 GMT 在命令中遇到某个文件时，首先会在当前目录下寻找该文件，如果找不到，则会到环境变量 <code class="docutils literal notranslate"><span class="pre">GMT_DATADIR</span></code> 中寻找。若环境变量 <code class="docutils literal notranslate"><span class="pre">GMT_DATADIR</span></code> 未定义，则在默认路径下寻找（不同的操作系统，默认路径不同）。</p>
 <p>因而，最简单的做法就是把所有的地形数据、国界数据等等，都放在 GMT 默认路径下，构成一个自己的 GMT 数据库。此时，在 GMT 命令中直接使用文件名即可，既不需要将数据复制到当前目录，也不需要指定绝对路径。</p>
 <p>如果不想使用默认路径，则需要修改 <code class="docutils literal notranslate"><span class="pre">GMT_DATADIR</span></code> 环境变量。下面介绍不同系统的默认路径和 <code class="docutils literal notranslate"><span class="pre">GMT_DATADIR</span></code> 环境变量。</p>
 </div>
 <div class="section" id="linux-mac">
-<h2>10.4.2 Linux 和 Mac<a class="headerlink" href="#linux-mac" title="永久链接至标题">¶</a></h2>
+<h2>12.4.2 Linux 和 Mac<a class="headerlink" href="#linux-mac" title="永久链接至标题">¶</a></h2>
 <p>Linux 和 Mac 下的默认路径都是 <code class="docutils literal notranslate"><span class="pre">~/.gmt/</span></code> 。</p>
 <p>如果想要修改环境变量，则在 shell 的配置文件中加入 <code class="docutils literal notranslate"><span class="pre">GMT_DATADIR</span></code> 即可。在 bash 中是:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">GMT_DATADIR</span><span class="o">=</span>/path/to/my/gmt/database
@@ -243,14 +243,14 @@
 <p>需要注意的是，在 Linux 上 <code class="docutils literal notranslate"><span class="pre">GMT_DATADIR</span></code> 不具有递归性，即该路径的子路径是无效的，如果要包含，要自己再添加。而在 Mac 上子路径有效，GMT 会先找父路径再找子路径。</p>
 </div>
 <div class="section" id="windows">
-<h2>10.4.3 Windows<a class="headerlink" href="#windows" title="永久链接至标题">¶</a></h2>
+<h2>12.4.3 Windows<a class="headerlink" href="#windows" title="永久链接至标题">¶</a></h2>
 <p>Windows下的默认路径是 <code class="docutils literal notranslate"><span class="pre">C:\Users\用户名\.gmt</span></code> 。</p>
 <p>需要注意：正常情况下无法通过文件管理器直接建立名为 <code class="docutils literal notranslate"><span class="pre">.gmt</span></code> 文件夹。正确的做法是，打开“命令提示符”，执行命令 <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">.gmt</span></code> 以创建该文件夹。</p>
 <p>若C盘容量不够，可以在其他盘下建GMT数据库数据库。具体做法是，</p>
 <ol class="arabic simple">
 <li>建立GMT数据库目录 <code class="docutils literal notranslate"><span class="pre">F:\GMTDATABASE</span></code> （具体路径自行决定）</li>
 <li>打开“我的电脑”-&gt;“属性”-&gt;“高级”-&gt;“环境变量”</li>
-<li>添加环境变量，变量名为 <code class="docutils literal notranslate"><span class="pre">GMT_DATADIR</span></code> ，值为 <code class="docutils literal notranslate"><span class="pre">F:\GMTDATABASE</span></code></li>
+<li>添加环境变量，变量名为 <code class="docutils literal notranslate"><span class="pre">GMT_DATADIR</span></code>，值为 <code class="docutils literal notranslate"><span class="pre">F:\GMTDATABASE</span></code></li>
 <li>重启电脑使得环境变量生效</li>
 </ol>
 </div>
@@ -285,10 +285,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../style/" class="btn btn-neutral float-right" title="11 风格指南" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../style/" class="btn btn-neutral float-right" title="13 风格指南" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../earth_relief/" class="btn btn-neutral" title="10.3 earth_relief: 全球地形起伏数据" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../earth_relief/" class="btn btn-neutral" title="12.3 earth_relief: 全球地形起伏数据" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -298,7 +298,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月14日.
+      最后更新于 2019年01月17日.
 
     </p>
   </div>

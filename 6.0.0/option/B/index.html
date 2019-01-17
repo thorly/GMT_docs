@@ -8,10 +8,12 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7.3 -B 选项 &mdash; GMT参考手册</title>
+  <title>9.3 -B 选项 &mdash; GMT参考手册</title>
   
 
   
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
   
   
   
@@ -28,31 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="7.4 -V 选项" href="../V/" />
-    <link rel="prev" title="7.2 -J 选项" href="../J/" />
- 
-<!-- favicons -->
-
-<link rel="shortcut icon" href="/_static/favicon.ico" type="image/x-icon" type="image/png" />
-
-<!-- Opera Speed Dial Icon -->
-<link rel="icon" href="/_static/apple-touch-icon-152x152.png" type="image/png" />
-
-<!-- Safari on iOS -->
-<link rel="apple-touch-icon" href="/_static/apple-touch-icon.png"  type="image/png" />
-<link rel="apple-touch-icon" sizes="57x57" href="/_static/apple-touch-icon-57x57.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="72x72" href="/_static/apple-touch-icon-72x72.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="76x76" href="/_static/apple-touch-icon-76x76.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="114x114" href="/_static/apple-touch-icon-114x114.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="120x120" href="/_static/apple-touch-icon-120x120.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="144x144" href="/_static/apple-touch-icon-144x144.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="152x152" href="/_static/apple-touch-icon-152x152.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon-180x180.png" type="image/png" />
-
-<!-- For tiles on Windows -->
-<meta name="msapplication-TileImage" content="/_static/apple-touch-icon-114x114.png"/>
-<meta name="msapplication-TileColor" content="#d83434"/>
-
+    <link rel="next" title="9.4 -V 选项" href="../V/" />
+    <link rel="prev" title="9.2 -J 选项" href="../J/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -100,6 +79,7 @@
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -113,60 +93,81 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/">4 GMT初探</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../basis/">5 绘图基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../io/">6 输入与输出</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">7 标准选项</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../R/">7.1 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../J/">7.2 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 选项</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">7.3 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">7.3.1 边框设置</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">8 网格文件</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">9 标准选项</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../R/">9.1 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../J/">9.2 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 选项</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">9.3 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">9.3.1 边框设置</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#axes"><code class="docutils literal notranslate"><span class="pre">&lt;axes&gt;</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id2">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">7.3.2 轴设置</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">9.3.2 轴设置</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#p-s"><code class="docutils literal notranslate"><span class="pre">p|s</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#x-y-z"><code class="docutils literal notranslate"><span class="pre">x|y|z</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#interval"><code class="docutils literal notranslate"><span class="pre">&lt;interval&gt;</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">7.3.3 地理底图</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">7.3.4 笛卡尔线性轴</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#log10">7.3.5 笛卡尔log<sub>10</sub>轴</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">7.3.6 笛卡尔指数轴</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">7.3.7 时间轴</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">7.3.8 自定义轴</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">9.3.3 地理底图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">9.3.4 笛卡尔线性轴</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#log10">9.3.5 笛卡尔log<sub>10</sub>轴</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">9.3.6 笛卡尔指数轴</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">9.3.7 时间轴</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pi">9.3.8 弧度轴 <span class="math notranslate nohighlight">\(\pi\)</span> 的标注</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">9.3.9 自定义轴</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../V/">7.4 <code class="docutils literal notranslate"><span class="pre">-V</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../U/">7.5 <code class="docutils literal notranslate"><span class="pre">-U</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../XY/">7.6 <code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../a/">7.7 <code class="docutils literal notranslate"><span class="pre">-a</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../binary/">7.8 <code class="docutils literal notranslate"><span class="pre">-b</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../c/">7.9 <code class="docutils literal notranslate"><span class="pre">-c</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../d/">7.10 <code class="docutils literal notranslate"><span class="pre">-d</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../e/">7.11 <code class="docutils literal notranslate"><span class="pre">-e</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../f/">7.12 <code class="docutils literal notranslate"><span class="pre">-f</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../g/">7.13 <code class="docutils literal notranslate"><span class="pre">-g</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../h/">7.14 <code class="docutils literal notranslate"><span class="pre">-h</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../io/">7.15 <code class="docutils literal notranslate"><span class="pre">-i</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-o</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../n/">7.16 <code class="docutils literal notranslate"><span class="pre">-n</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gridreg/">7.17 <code class="docutils literal notranslate"><span class="pre">-r</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../perspective/">7.18 <code class="docutils literal notranslate"><span class="pre">-p</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../s/">7.19 <code class="docutils literal notranslate"><span class="pre">-s</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../t/">7.20 <code class="docutils literal notranslate"><span class="pre">-t</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../x/">7.21 <code class="docutils literal notranslate"><span class="pre">-x</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../colon/">7.22 <code class="docutils literal notranslate"><span class="pre">-:</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../V/">9.4 <code class="docutils literal notranslate"><span class="pre">-V</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../U/">9.5 <code class="docutils literal notranslate"><span class="pre">-U</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../XY/">9.6 <code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../a/">9.7 <code class="docutils literal notranslate"><span class="pre">-a</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binary/">9.8 <code class="docutils literal notranslate"><span class="pre">-b</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c/">9.9 <code class="docutils literal notranslate"><span class="pre">-c</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../d/">9.10 <code class="docutils literal notranslate"><span class="pre">-d</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../e/">9.11 <code class="docutils literal notranslate"><span class="pre">-e</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../f/">9.12 <code class="docutils literal notranslate"><span class="pre">-f</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../g/">9.13 <code class="docutils literal notranslate"><span class="pre">-g</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../h/">9.14 <code class="docutils literal notranslate"><span class="pre">-h</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">9.15 <code class="docutils literal notranslate"><span class="pre">-i</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-o</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../n/">9.16 <code class="docutils literal notranslate"><span class="pre">-n</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gridreg/">9.17 <code class="docutils literal notranslate"><span class="pre">-r</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../perspective/">9.18 <code class="docutils literal notranslate"><span class="pre">-p</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../s/">9.19 <code class="docutils literal notranslate"><span class="pre">-s</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../t/">9.20 <code class="docutils literal notranslate"><span class="pre">-t</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x/">9.21 <code class="docutils literal notranslate"><span class="pre">-x</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colon/">9.22 <code class="docutils literal notranslate"><span class="pre">-:</span></code> 选项</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">8 配置GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">10 GMT数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../style/">11 风格指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">12 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">13 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">11 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">12 GMT数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../style/">13 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://modules.gmt-china.org"><i class="fa fa-book fa-fw"></i> 模块手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
         </div>
       </div>
     </nav>
@@ -208,9 +209,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">7 标准选项</a> &raquo;</li>
+          <li><a href="../">9 标准选项</a> &raquo;</li>
         
-      <li>7.3 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项</li>
+      <li>9.3 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -228,10 +229,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../V/" class="btn btn-neutral float-right" title="7.4 -V 选项" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../V/" class="btn btn-neutral float-right" title="9.4 -V 选项" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../J/" class="btn btn-neutral" title="7.2 -J 选项" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../J/" class="btn btn-neutral" title="9.2 -J 选项" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -241,11 +242,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="b">
-<h1>7.3 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项<a class="headerlink" href="#b" title="永久链接至标题">¶</a></h1>
+<h1>9.3 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项<a class="headerlink" href="#b" title="永久链接至标题">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项用于控制底图边框的显示。</p>
 <p><code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项有两套语法，分别用于设置底图的边框以及每条轴的属性，因而在一个命令中可能需要多次使用 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项。若命令中没有出现 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项，则不绘制底图边框。</p>
 <div class="section" id="id1">
-<h2>7.3.1 边框设置<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>9.3.1 边框设置<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项在设置边框属性时的语法为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-B<span class="o">[</span>&lt;axes&gt;<span class="o">][</span>+b<span class="o">][</span>+g&lt;fill&gt;<span class="o">][</span>+n<span class="o">][</span>+o&lt;lon&gt;/&lt;lat&gt;<span class="o">][</span>+t&lt;title<span class="o">]</span>
 </pre></div>
@@ -262,7 +263,7 @@
 <p>通常情况下，只需要使用 <code class="docutils literal notranslate"><span class="pre">&lt;axes&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">+t&lt;title&gt;</span></code> 选项。</p>
 <div class="section" id="axes">
 <h3><code class="docutils literal notranslate"><span class="pre">&lt;axes&gt;</span></code><a class="headerlink" href="#axes" title="永久链接至标题">¶</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;axes&gt;</span></code> 用于控制要绘制哪些边以及这些边是否有刻度或标注。 <code class="docutils literal notranslate"><span class="pre">&lt;axes&gt;</span></code> 的格式为:</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;axes&gt;</span></code> 用于控制要绘制哪些边以及这些边是否有刻度或标注。<code class="docutils literal notranslate"><span class="pre">&lt;axes&gt;</span></code> 的格式为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>WSENZ<span class="o">[</span><span class="m">1234</span><span class="o">]</span>wesez<span class="o">[</span><span class="m">1234</span><span class="o">]</span>lrbtu
 </pre></div>
 </div>
@@ -279,7 +280,7 @@ gmt psbasemap -R0/10/0/10 -JX5c -B2 -BWSn &gt; test2.ps
 </pre></div>
 </div>
 <p>对于3D绘图来说，<code class="docutils literal notranslate"><span class="pre">&lt;axes&gt;</span></code> 还可以加上一个 <code class="docutils literal notranslate"><span class="pre">Z</span></code> 用于控制Z轴。同理，大写的 <code class="docutils literal notranslate"><span class="pre">Z</span></code>
-表示有刻度和标注，小写的 <code class="docutils literal notranslate"><span class="pre">z</span></code> 表示有刻度无标注， <code class="docutils literal notranslate"><span class="pre">u</span></code> 表示无刻度无标注。表示默认情况下，只会绘制一条Z轴，可以使用
+表示有刻度和标注，小写的 <code class="docutils literal notranslate"><span class="pre">z</span></code> 表示有刻度无标注，<code class="docutils literal notranslate"><span class="pre">u</span></code> 表示无刻度无标注。表示默认情况下，只会绘制一条Z轴，可以使用
 <code class="docutils literal notranslate"><span class="pre">1234</span></code> 的任意组合来表示要绘制哪些Z轴。其中 <code class="docutils literal notranslate"><span class="pre">1</span></code> 表示左下角的Z轴，其他Z轴按逆时针顺序编号。加上 <code class="docutils literal notranslate"><span class="pre">+b</span></code> 子选项，会绘制一个由 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项范围决定的长方体的12条边，即相当于一个box。如果Z轴有指定网格间距，则会在xz和yz平面内显示网格线。</p>
 <p>下面的命令展示了3D绘图中 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项的不同用法，读者可以自己一一测试，根据绘图效果理解 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项中各字母的含义。命令中的某些选项还没有介绍过，暂时可以不必理会其含义:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bz2 -BWSENZ -p45/45 &gt; test1.ps
@@ -300,14 +301,14 @@ gmt psbasemap -R0/10/0/10 -JX5c -Ba2g2 -BWS+glightblue+t<span class="s2">&quot;T
 </div>
 </div>
 <div class="section" id="id3">
-<h2>7.3.2 轴设置<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>9.3.2 轴设置<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>X轴、Y轴、Z轴，每条轴都有很多属性，包括刻度间隔、网格线间隔、轴标签以及标注的间隔、前缀和单位。轴属性可以用如下语法控制:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-B<span class="o">[</span>p<span class="p">|</span>s<span class="o">][</span>x<span class="p">|</span>y<span class="p">|</span>z<span class="o">]</span>&lt;intervals&gt;<span class="o">[</span>+l<span class="p">|</span>L&lt;label&gt;<span class="o">][</span>+p&lt;prefix&gt;<span class="o">][</span>+u&lt;unit&gt;<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-B<span class="o">[</span>p<span class="p">|</span>s<span class="o">][</span>x<span class="p">|</span>y<span class="p">|</span>z<span class="o">]</span>&lt;intervals&gt;<span class="o">[</span>+a&lt;angle&gt;<span class="p">|</span>n<span class="p">|</span>p<span class="o">][</span>+l<span class="p">|</span>L&lt;label&gt;<span class="o">][</span>+p&lt;prefix&gt;<span class="o">][</span>+u&lt;unit&gt;<span class="o">]</span>
 </pre></div>
 </div>
 <p>为了更加清晰，以上的语法也可以被分为两部分:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-B<span class="o">[</span>p<span class="p">|</span>s<span class="o">][</span>x<span class="p">|</span>y<span class="p">|</span>z<span class="o">]</span>&lt;intervals&gt;
--B<span class="o">[</span>p<span class="p">|</span>s<span class="o">][</span>x<span class="p">|</span>y<span class="p">|</span>z<span class="o">][</span>+l<span class="p">|</span>L&lt;label&gt;<span class="o">][</span>+p&lt;prefix&gt;<span class="o">][</span>+u&lt;unit&gt;<span class="o">]</span>
+-B<span class="o">[</span>p<span class="p">|</span>s<span class="o">][</span>x<span class="p">|</span>y<span class="p">|</span>z<span class="o">][</span>+a&lt;angle&gt;<span class="p">|</span>n<span class="p">|</span>p<span class="o">][</span>+l<span class="p">|</span>L&lt;label&gt;<span class="o">][</span>+s&lt;label&gt;<span class="o">][</span>+p&lt;prefix&gt;<span class="o">][</span>+u&lt;unit&gt;<span class="o">]</span>
 </pre></div>
 </div>
 <p>其中，</p>
@@ -315,19 +316,23 @@ gmt psbasemap -R0/10/0/10 -JX5c -Ba2g2 -BWS+glightblue+t<span class="s2">&quot;T
 <li><code class="docutils literal notranslate"><span class="pre">p|s</span></code> 主属性或次属性</li>
 <li><code class="docutils literal notranslate"><span class="pre">x|y|z</span></code> 设置哪一条轴的属性</li>
 <li><code class="docutils literal notranslate"><span class="pre">&lt;interval&gt;</span></code> 设置刻度、网格线、标注的间隔</li>
+<li><code class="docutils literal notranslate"><span class="pre">+a&lt;angle&gt;|n|p</span></code> 用于设置标注的倾斜角度，其中 <code class="docutils literal notranslate"><span class="pre">&lt;angle&gt;</span></code> 是相对于水平方向的旋转角度，取值范围为-90到90。<code class="docutils literal notranslate"><span class="pre">+an</span></code> 等效于 <code class="docutils literal notranslate"><span class="pre">+a90</span></code> 即垂直标注，
+<code class="docutils literal notranslate"><span class="pre">+ap</span></code> 等效于 <code class="docutils literal notranslate"><span class="pre">+a0</span></code> 即平行标注。对于Y轴标注而言，不支持任意角度的标注，仅支持 <code class="docutils literal notranslate"><span class="pre">+ap</span></code> 和 <code class="docutils literal notranslate"><span class="pre">+an</span></code>。</li>
 <li><code class="docutils literal notranslate"><span class="pre">+l&lt;label&gt;</span></code> 用于给指定的轴加标签。默认情况下，X轴标签文字方向平行于X轴，Y轴标签文字方向平行于Y轴。若Y轴标签文字很短，则Y轴可以使用 <code class="docutils literal notranslate"><span class="pre">+L&lt;label&gt;</span></code>
 选项，使得Y轴标签文字方向平行于X轴</li>
+<li><code class="docutils literal notranslate"><span class="pre">+s&lt;label&gt;</span></code> 与 <code class="docutils literal notranslate"><span class="pre">+l&lt;label&gt;</span></code> 类似，也用于给指定的轴添加标签。当同时使用
+<code class="docutils literal notranslate"><span class="pre">+l&lt;label&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">+s&lt;label&gt;</span></code> 时，前者用于指定左轴或下轴的标签，而后者用于指定右轴和上轴的标签。</li>
 <li><code class="docutils literal notranslate"><span class="pre">+p&lt;prefix&gt;</span></code> 选中的轴的标注加前缀</li>
 <li><code class="docutils literal notranslate"><span class="pre">+u&lt;unit&gt;</span></code> 给选中的轴的标注加单位。对于地图而言，标注的单位为度，该符号是自动添加的，由 <a class="reference internal" href="../../conf/format/#format-geo-map"><span class="std std-ref">FORMAT_GEO_MAP</span></a> 控制</li>
 </ul>
 <div class="section" id="p-s">
 <h3><code class="docutils literal notranslate"><span class="pre">p|s</span></code><a class="headerlink" href="#p-s" title="永久链接至标题">¶</a></h3>
 <p>对于每个轴来说，都有两个等级的属性可以设置，分别称为p（Primary）和s（Secondary）。</p>
-<p>对于地理坐标而言，通常只需要使用默认的Primary属性即可，而Secondary则主要用于坐标轴为时间轴的情况下，此时 <code class="docutils literal notranslate"><span class="pre">p</span></code> 和 <code class="docutils literal notranslate"><span class="pre">s</span></code> 分别用于指定不同尺度的时间间隔。在GMT默认的情况下， <code class="docutils literal notranslate"><span class="pre">p</span></code> 属性的标注比较靠近坐标轴，而 <code class="docutils literal notranslate"><span class="pre">s</span></code> 属性的标注离坐标轴稍远。 <code class="docutils literal notranslate"><span class="pre">p</span></code> 和 <code class="docutils literal notranslate"><span class="pre">s</span></code> 的用法与区别，可以参考后面给出的例子。</p>
+<p>对于地理坐标而言，通常只需要使用默认的Primary属性即可，而Secondary则主要用于坐标轴为时间轴的情况下，此时 <code class="docutils literal notranslate"><span class="pre">p</span></code> 和 <code class="docutils literal notranslate"><span class="pre">s</span></code> 分别用于指定不同尺度的时间间隔。在GMT默认的情况下，<code class="docutils literal notranslate"><span class="pre">p</span></code> 属性的标注比较靠近坐标轴，而 <code class="docutils literal notranslate"><span class="pre">s</span></code> 属性的标注离坐标轴稍远。<code class="docutils literal notranslate"><span class="pre">p</span></code> 和 <code class="docutils literal notranslate"><span class="pre">s</span></code> 的用法与区别，可以参考后面给出的例子。</p>
 </div>
 <div class="section" id="x-y-z">
 <h3><code class="docutils literal notranslate"><span class="pre">x|y|z</span></code><a class="headerlink" href="#x-y-z" title="永久链接至标题">¶</a></h3>
-<p>要设置哪些边的信息，默认值为 <code class="docutils literal notranslate"><span class="pre">xy</span></code> ，即同时设置X轴和Y轴的信息。可以指定单个轴（比如只有 <code class="docutils literal notranslate"><span class="pre">x</span></code> ），也可以同时指定多个轴（比如 <code class="docutils literal notranslate"><span class="pre">xy</span></code> 和 <code class="docutils literal notranslate"><span class="pre">xyz</span></code> ）。如果想要不同轴有不同的设置，则需要多次使用 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项，每个指定不同的轴。</p>
+<p>要设置哪些边的信息，默认值为 <code class="docutils literal notranslate"><span class="pre">xy</span></code>，即同时设置X轴和Y轴的信息。可以指定单个轴（比如只有 <code class="docutils literal notranslate"><span class="pre">x</span></code>），也可以同时指定多个轴（比如 <code class="docutils literal notranslate"><span class="pre">xy</span></code> 和 <code class="docutils literal notranslate"><span class="pre">xyz</span></code>）。如果想要不同轴有不同的设置，则需要多次使用 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项，每个指定不同的轴。</p>
 </div>
 <div class="section" id="interval">
 <h3><code class="docutils literal notranslate"><span class="pre">&lt;interval&gt;</span></code><a class="headerlink" href="#interval" title="永久链接至标题">¶</a></h3>
@@ -339,12 +344,12 @@ gmt psbasemap -R0/10/0/10 -JX5c -Ba2g2 -BWS+glightblue+t<span class="s2">&quot;T
 <p><code class="docutils literal notranslate"><span class="pre">&lt;interval&gt;</span></code> 可以用于设置这三个属性的间隔，它是一个或多个 <code class="docutils literal notranslate"><span class="pre">[&lt;t&gt;]&lt;stride&gt;[±&lt;phase&gt;][&lt;u&gt;]</span></code>
 的组合。</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;t&gt;</span></code> 可以取 <code class="docutils literal notranslate"><span class="pre">a</span></code> （标注）、 <code class="docutils literal notranslate"><span class="pre">f</span></code> （刻度）、 <code class="docutils literal notranslate"><span class="pre">g</span></code> （网格线），表明了要设置轴的哪部分的间隔</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;stride&gt;</span></code> 用于设置间隔， <code class="docutils literal notranslate"><span class="pre">stride</span></code> 为0，表示不绘制</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;t&gt;</span></code> 可以取 <code class="docutils literal notranslate"><span class="pre">a</span></code>（标注）、<code class="docutils literal notranslate"><span class="pre">f</span></code>（刻度）、<code class="docutils literal notranslate"><span class="pre">g</span></code>（网格线），表明了要设置轴的哪部分的间隔</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;stride&gt;</span></code> 用于设置间隔，<code class="docutils literal notranslate"><span class="pre">stride</span></code> 为0，表示不绘制</li>
 <li><code class="docutils literal notranslate"><span class="pre">±&lt;phase&gt;</span></code> 可以用于控制标注、刻度或网格线的起算点</li>
 <li><code class="docutils literal notranslate"><span class="pre">&lt;u&gt;</span></code> 是间隔的单位，主要用于指定时间间隔</li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项还有一个可以自动计算间隔的功能， <code class="docutils literal notranslate"><span class="pre">-Bafg</span></code> 会根据当前的区域大小等信息自动计算合适的间隔， <code class="docutils literal notranslate"><span class="pre">-Bxafg</span> <span class="pre">-Byafg</span></code> 则会对X轴和Y轴分别计算合适的间隔。</p>
+<p><code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项还有一个可以自动计算间隔的功能，<code class="docutils literal notranslate"><span class="pre">-Bafg</span></code> 会根据当前的区域大小等信息自动计算合适的间隔，<code class="docutils literal notranslate"><span class="pre">-Bxafg</span> <span class="pre">-Byafg</span></code> 则会对X轴和Y轴分别计算合适的间隔。</p>
 <p>读者可以将命令:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -JX10c/10c -R0/10/0/10 -Ba2f1g1 &gt; test.ps
 </pre></div>
@@ -359,75 +364,75 @@ gmt psbasemap -R0/10/0/10 -JX5c -Ba2g2 -BWS+glightblue+t<span class="s2">&quot;T
 </div>
 </div>
 <div class="section" id="id4">
-<h2>7.3.3 地理底图<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>9.3.3 地理底图<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>地理底图与一般的坐标轴不同，其底图类型 <a class="reference internal" href="../../conf/map/#map-frame-type"><span class="std std-ref">MAP_FRAME_TYPE</span></a>
 使用 <code class="docutils literal notranslate"><span class="pre">fancy</span></code> 形式。</p>
 <p><a class="reference download internal" download="" href="../../_downloads/419c0b1dfb07fd916978ca9bc0216e61/B-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center" id="id9">
 <img alt="../../_images/B-gmtplot-1.png" src="../../_images/B-gmtplot-1.png" />
-<p class="caption"><span class="caption-number">图 7.2 </span><span class="caption-text">地理底图示例1</span></p>
+<p class="caption"><span class="caption-number">图 9.2 </span><span class="caption-text">地理底图示例1</span></p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">-Ba1f15mg5m</span> <span class="pre">-BS</span></code></p>
-<p>下图同时使用了 <code class="docutils literal notranslate"><span class="pre">p</span></code> 和 <code class="docutils literal notranslate"><span class="pre">s</span></code> 两级属性。这里 <code class="docutils literal notranslate"><span class="pre">p</span></code> 属性用于显示弧度， <code class="docutils literal notranslate"><span class="pre">s</span></code>
+<p>下图同时使用了 <code class="docutils literal notranslate"><span class="pre">p</span></code> 和 <code class="docutils literal notranslate"><span class="pre">s</span></code> 两级属性。这里 <code class="docutils literal notranslate"><span class="pre">p</span></code> 属性用于显示弧度，<code class="docutils literal notranslate"><span class="pre">s</span></code>
 属性用于显示弧分。</p>
 <p><a class="reference download internal" download="" href="../../_downloads/7f58af89b61ee0a20383c52390fc911d/B-gmtplot-2.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center" id="id10">
 <img alt="../../_images/B-gmtplot-2.png" src="../../_images/B-gmtplot-2.png" />
-<p class="caption"><span class="caption-number">图 7.3 </span><span class="caption-text">地理底图示例2</span></p>
+<p class="caption"><span class="caption-number">图 9.3 </span><span class="caption-text">地理底图示例2</span></p>
 </div>
 <p>同时使用P和S两级属性 <code class="docutils literal notranslate"><span class="pre">-Bpa15mf5mg5m</span> <span class="pre">-BwSe</span> <span class="pre">-Bs1f30mg15m</span></code></p>
 </div>
 <div class="section" id="id5">
-<h2>7.3.4 笛卡尔线性轴<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<h2>9.3.4 笛卡尔线性轴<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>对于一般的线性轴而言，标注的格式由 <a class="reference internal" href="../../conf/format/#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a>
-决定，其默认值为 <code class="docutils literal notranslate"><span class="pre">%g</span></code> ，即根据数据的大小决定用一般表示还是指数表示，小数位的数目会根据 <code class="docutils literal notranslate"><span class="pre">&lt;stride&gt;</span></code> 自动决定。若设置 <a class="reference internal" href="../../conf/format/#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a>
+决定，其默认值为 <code class="docutils literal notranslate"><span class="pre">%g</span></code>，即根据数据的大小决定用一般表示还是指数表示，小数位的数目会根据 <code class="docutils literal notranslate"><span class="pre">&lt;stride&gt;</span></code> 自动决定。若设置 <a class="reference internal" href="../../conf/format/#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a>
 为其他值，则会严格使用其定义的格式，比如 <code class="docutils literal notranslate"><span class="pre">%.2f</span></code> 表示显示两位小数。</p>
 <p><a class="reference download internal" download="" href="../../_downloads/875318d1659de376a78bdb4c4fcc0397/B-gmtplot-3.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center" id="id11">
 <img alt="../../_images/B-gmtplot-3.png" src="../../_images/B-gmtplot-3.png" />
-<p class="caption"><span class="caption-number">图 7.4 </span><span class="caption-text">笛卡尔线性轴</span></p>
+<p class="caption"><span class="caption-number">图 9.4 </span><span class="caption-text">笛卡尔线性轴</span></p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">-R0/12/0/0.95</span> <span class="pre">-JX3i/0.3i</span> <span class="pre">-Ba4f2g1+lFrequency+u&quot;</span> <span class="pre">%&quot;</span> <span class="pre">-BS</span></code></p>
 </div>
 <div class="section" id="log10">
-<h2>7.3.5 笛卡尔log<sub>10</sub>轴<a class="headerlink" href="#log10" title="永久链接至标题">¶</a></h2>
-<p>由于对数坐标的特殊性， <code class="docutils literal notranslate"><span class="pre">&lt;stride&gt;</span></code> 参数具有特殊的含义。下面说明 <code class="docutils literal notranslate"><span class="pre">&lt;stride&gt;</span></code>
+<h2>9.3.5 笛卡尔log<sub>10</sub>轴<a class="headerlink" href="#log10" title="永久链接至标题">¶</a></h2>
+<p>由于对数坐标的特殊性，<code class="docutils literal notranslate"><span class="pre">&lt;stride&gt;</span></code> 参数具有特殊的含义。下面说明 <code class="docutils literal notranslate"><span class="pre">&lt;stride&gt;</span></code>
 在对数坐标下的特殊性：</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">&lt;stride&gt;</span></code> 必须是1、2、3或负整数-n。<ul>
-<li><code class="docutils literal notranslate"><span class="pre">1</span></code> ：每10的指数</li>
-<li><code class="docutils literal notranslate"><span class="pre">2</span></code> ：每10的指数的1、2、5倍</li>
-<li><code class="docutils literal notranslate"><span class="pre">3</span></code> ：每10的指数的0.1倍</li>
-<li><code class="docutils literal notranslate"><span class="pre">-n</span></code> ：每10的n次方出现一次</li>
+<li><code class="docutils literal notranslate"><span class="pre">1</span></code>：每10的指数</li>
+<li><code class="docutils literal notranslate"><span class="pre">2</span></code>：每10的指数的1、2、5倍</li>
+<li><code class="docutils literal notranslate"><span class="pre">3</span></code>：每10的指数的0.1倍</li>
+<li><code class="docutils literal notranslate"><span class="pre">-n</span></code>：每10的n次方出现一次</li>
 </ul>
 </li>
-<li>在 <code class="docutils literal notranslate"><span class="pre">&lt;stride&gt;</span></code> 后加 <code class="docutils literal notranslate"><span class="pre">l</span></code> ，则标注会以log<sub>10</sub>的值显示，比如100会显示成2</li>
-<li>在 <code class="docutils literal notranslate"><span class="pre">&lt;stride&gt;</span></code> 后加 <code class="docutils literal notranslate"><span class="pre">p</span></code> ，则标注会以10的n次方的形式显示，比如10<sup>-5</sup></li>
+<li>在 <code class="docutils literal notranslate"><span class="pre">&lt;stride&gt;</span></code> 后加 <code class="docutils literal notranslate"><span class="pre">l</span></code>，则标注会以log<sub>10</sub>的值显示，比如100会显示成2</li>
+<li>在 <code class="docutils literal notranslate"><span class="pre">&lt;stride&gt;</span></code> 后加 <code class="docutils literal notranslate"><span class="pre">p</span></code>，则标注会以10的n次方的形式显示，比如10<sup>-5</sup></li>
 </ul>
 <p><a class="reference download internal" download="" href="../../_downloads/0302520f3a32db686e7eff9864cfcca8/B-gmtplot-4.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center" id="id12">
 <img alt="../../_images/B-gmtplot-4.png" src="../../_images/B-gmtplot-4.png" />
-<p class="caption"><span class="caption-number">图 7.5 </span><span class="caption-text">对数坐标轴</span></p>
+<p class="caption"><span class="caption-number">图 9.5 </span><span class="caption-text">对数坐标轴</span></p>
 </div>
 <p>(上) <code class="docutils literal notranslate"><span class="pre">-R1/1000/0/1</span> <span class="pre">-JX3il/0.25i</span> <span class="pre">-Ba1f2g3</span></code>(中) <code class="docutils literal notranslate"><span class="pre">-R1/1000/0/1</span> <span class="pre">-JX3il/0.25i</span> <span class="pre">-Ba1f2g3l</span></code>(下) <code class="docutils literal notranslate"><span class="pre">-R1/1000/0/1</span> <span class="pre">-JX3il/0.25i</span> <span class="pre">-Ba1f2g3p</span></code></p>
 </div>
 <div class="section" id="id6">
-<h2>7.3.6 笛卡尔指数轴<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
-<p>正常情况下， <code class="docutils literal notranslate"><span class="pre">&lt;stride&gt;</span></code> 用于生成等间隔的标注或刻度，但是由于指数函数的特性，这样的标注会在坐标轴的某一端挤在一起。为了避免这个问题，可以在 <code class="docutils literal notranslate"><span class="pre">&lt;stride&gt;</span></code> 后加 <code class="docutils literal notranslate"><span class="pre">p</span></code> ，则标注会按照转换后的值等间隔出现，而标注本身依然使用未转换的值。比如，若stride=1，pow=0.5（即sqrt），则在1、4、处会出现标注。</p>
+<h2>9.3.6 笛卡尔指数轴<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>正常情况下，<code class="docutils literal notranslate"><span class="pre">&lt;stride&gt;</span></code> 用于生成等间隔的标注或刻度，但是由于指数函数的特性，这样的标注会在坐标轴的某一端挤在一起。为了避免这个问题，可以在 <code class="docutils literal notranslate"><span class="pre">&lt;stride&gt;</span></code> 后加 <code class="docutils literal notranslate"><span class="pre">p</span></code>，则标注会按照转换后的值等间隔出现，而标注本身依然使用未转换的值。比如，若stride=1，pow=0.5（即sqrt），则在1、4、处会出现标注。</p>
 <p><a class="reference download internal" download="" href="../../_downloads/7b61cda3009e117f0de4be5a00f9bda9/B-gmtplot-5.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center" id="id13">
 <img alt="../../_images/B-gmtplot-5.png" src="../../_images/B-gmtplot-5.png" />
-<p class="caption"><span class="caption-number">图 7.6 </span><span class="caption-text">指数投影坐标轴</span></p>
+<p class="caption"><span class="caption-number">图 9.6 </span><span class="caption-text">指数投影坐标轴</span></p>
 </div>
 <p>(上) <code class="docutils literal notranslate"><span class="pre">-R0/100/0/0.9</span> <span class="pre">-JX3ip0.5/0.25i</span> <span class="pre">-Ba20f10g5</span></code>
 (下) <code class="docutils literal notranslate"><span class="pre">-R0/100/0/0.9</span> <span class="pre">-JX3ip0.5/0.25i</span> <span class="pre">-Ba3f2g1p</span></code></p>
 </div>
 <div class="section" id="id7">
-<h2>7.3.7 时间轴<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
-<p>时间轴与其他轴不同的地方在于，时间轴可以有多种不同的标注方式。下面会用一系列示例来演示时间轴的灵活性。在下面的例子中，尽管只绘制了X轴（绘图时使用了 <code class="docutils literal notranslate"><span class="pre">-BS</span></code> ），实际上时间轴标注的各种用法使用于全部轴。</p>
+<h2>9.3.7 时间轴<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>时间轴与其他轴不同的地方在于，时间轴可以有多种不同的标注方式。下面会用一系列示例来演示时间轴的灵活性。在下面的例子中，尽管只绘制了X轴（绘图时使用了 <code class="docutils literal notranslate"><span class="pre">-BS</span></code>），实际上时间轴标注的各种用法使用于全部轴。</p>
 <p>在绘制时间轴时，需要指定时间间隔，时间间隔的单位可以取如下值：</p>
 <table border="1" class="docutils" id="id14">
-<caption><span class="caption-number">表 7.4 </span><span class="caption-text">GMT时间单位</span><a class="headerlink" href="#id14" title="永久链接至表格">¶</a></caption>
+<caption><span class="caption-number">表 9.4 </span><span class="caption-text">GMT时间单位</span><a class="headerlink" href="#id14" title="永久链接至表格">¶</a></caption>
 <colgroup>
 <col width="12%" />
 <col width="17%" />
@@ -521,9 +526,9 @@ gmt psbasemap -R2000-4-1T/2000-5-25T/0/1 -JX5i/0.2i -Bpa7Rf1d -Bsa1O -BS -P &gt;
 </div>
 <div class="figure align-center" id="id15">
 <img alt="../../_images/B-gmtplot-6.png" src="../../_images/B-gmtplot-6.png" />
-<p class="caption"><span class="caption-number">图 7.7 </span><span class="caption-text">时间轴示例1</span></p>
+<p class="caption"><span class="caption-number">图 9.7 </span><span class="caption-text">时间轴示例1</span></p>
 </div>
-<p>需要注意， <code class="docutils literal notranslate"><span class="pre">-Bsa1O</span></code> 指定了次级标注的间隔为一个月，由于此处使用的是大写的 <code class="docutils literal notranslate"><span class="pre">O</span></code> ，因而具体的显式方式由 <a class="reference internal" href="../../conf/format/#format-date-map"><span class="std std-ref">FORMAT_DATE_MAP</span></a> 决定。根据 <a class="reference internal" href="../../conf/format/#format-date-map"><span class="std std-ref">FORMAT_DATE_MAP</span></a> 的说明可知，其值为 <code class="docutils literal notranslate"><span class="pre">-o</span></code> 表明以月份名格式显式。破折号表示要去掉日期前面的前置零（即02变成2）。</p>
+<p>需要注意，<code class="docutils literal notranslate"><span class="pre">-Bsa1O</span></code> 指定了次级标注的间隔为一个月，由于此处使用的是大写的 <code class="docutils literal notranslate"><span class="pre">O</span></code>，因而具体的显式方式由 <a class="reference internal" href="../../conf/format/#format-date-map"><span class="std std-ref">FORMAT_DATE_MAP</span></a> 决定。根据 <a class="reference internal" href="../../conf/format/#format-date-map"><span class="std std-ref">FORMAT_DATE_MAP</span></a> 的说明可知，其值为 <code class="docutils literal notranslate"><span class="pre">-o</span></code> 表明以月份名格式显式。破折号表示要去掉日期前面的前置零（即02变成2）。</p>
 <p>下面的例子用两种不同的方式标注了1969年的两天。图中下面的例子使用周来标注，上面的例子使用日期来标注。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> FORMAT_DATE_MAP <span class="s2">&quot;o dd&quot;</span> FORMAT_CLOCK_MAP hh:mm FONT_ANNOT_PRIMARY +9p
 gmt psbasemap -R1969-7-21T/1969-7-23T/0/1 -JX5i/0.2i -Bpa6Hf1h -Bsa1K -BS -P -K &gt; GMT_-B_time2.ps
@@ -532,7 +537,7 @@ gmt psbasemap -R -J -Bpa6Hf1h -Bsa1D -BS -O -Y0.65i &gt;&gt; GMT_-B_time2.ps
 </div>
 <div class="figure align-center" id="id16">
 <img alt="../../_images/B-gmtplot-7.png" src="../../_images/B-gmtplot-7.png" />
-<p class="caption"><span class="caption-number">图 7.8 </span><span class="caption-text">时间轴示例2</span></p>
+<p class="caption"><span class="caption-number">图 9.8 </span><span class="caption-text">时间轴示例2</span></p>
 </div>
 <p>第三个例子展示了两年的时间，并标注了每年以及每三个月。年标注位于一年间隔的中间，月标注位于对应月的中间而不是三个月间隔的中间。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> FORMAT_DATE_MAP o FORMAT_TIME_PRIMARY_MAP Character FONT_ANNOT_PRIMARY +9p
@@ -541,7 +546,7 @@ gmt psbasemap -R1997T/1999T/0/1 -JX5i/0.2i -Bpa3Of1o -Bsa1Y -BS -P &gt; GMT_-B_t
 </div>
 <div class="figure align-center" id="id17">
 <img alt="../../_images/B-gmtplot-8.png" src="../../_images/B-gmtplot-8.png" />
-<p class="caption"><span class="caption-number">图 7.9 </span><span class="caption-text">时间示例3</span></p>
+<p class="caption"><span class="caption-number">图 9.9 </span><span class="caption-text">时间示例3</span></p>
 </div>
 <p>第四个例子展示了一天中的几个小时，通过在R选项中指定 <code class="docutils literal notranslate"><span class="pre">t</span></code> 来使用相对时间坐标。这里使用了 <code class="docutils literal notranslate"><span class="pre">p</span></code> 属性和 <code class="docutils literal notranslate"><span class="pre">s</span></code> 属性，12小时制，时间从右向左增加：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> <span class="nv">FORMAT_CLOCK_MAP</span><span class="o">=</span>-hham FONT_ANNOT_PRIMARY +9p TIME_UNIT d
@@ -550,7 +555,7 @@ gmt psbasemap -R0.2t/0.35t/0/1 -JX-5i/0.2i -Bpa15mf5m -Bsa1H -BS -P &gt; GMT_-B_
 </div>
 <div class="figure align-center" id="id18">
 <img alt="../../_images/B-gmtplot-9.png" src="../../_images/B-gmtplot-9.png" />
-<p class="caption"><span class="caption-number">图 7.10 </span><span class="caption-text">时间轴示例4</span></p>
+<p class="caption"><span class="caption-number">图 9.10 </span><span class="caption-text">时间轴示例4</span></p>
 </div>
 <p>第五个例子用两种方式展示了几周的时间：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> FORMAT_DATE_MAP u FORMAT_TIME_PRIMARY_MAP Character <span class="se">\</span>
@@ -562,7 +567,7 @@ gmt psbasemap -R -J -Bpa3Kf1k -Bsa1r -BS -O -Y0.65i &gt;&gt; GMT_-B_time5.ps
 </div>
 <div class="figure align-center" id="id19">
 <img alt="../../_images/B-gmtplot-10.png" src="../../_images/B-gmtplot-10.png" />
-<p class="caption"><span class="caption-number">图 7.11 </span><span class="caption-text">时间轴示例5</span></p>
+<p class="caption"><span class="caption-number">图 9.11 </span><span class="caption-text">时间轴示例5</span></p>
 </div>
 <p>第六个例子展示了1996年的前5个月，每个月用月份的简写以及两位年份标注：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> FORMAT_DATE_MAP <span class="s2">&quot;o yy&quot;</span> FORMAT_TIME_PRIMARY_MAP Abbreviated
@@ -571,7 +576,7 @@ gmt psbasemap -R1996T/1996-6T/0/1 -JX5i/0.2i -Ba1Of1d -BS -P &gt; GMT_-B_time6.p
 </div>
 <div class="figure align-center" id="id20">
 <img alt="../../_images/B-gmtplot-11.png" src="../../_images/B-gmtplot-11.png" />
-<p class="caption"><span class="caption-number">图 7.12 </span><span class="caption-text">时间轴示例6</span></p>
+<p class="caption"><span class="caption-number">图 9.12 </span><span class="caption-text">时间轴示例6</span></p>
 </div>
 <p>第七个例子：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> FORMAT_DATE_MAP jjj TIME_INTERVAL_FRACTION <span class="m">0</span>.05 FONT_ANNOT_PRIMARY +9p
@@ -580,11 +585,20 @@ gmt psbasemap -R2000-12-15T/2001-1-15T/0/1 -JX5i/0.2i -Bpa5Df1d -Bsa1Y -BS -P &g
 </div>
 <div class="figure align-center" id="id21">
 <img alt="../../_images/B-gmtplot-12.png" src="../../_images/B-gmtplot-12.png" />
-<p class="caption"><span class="caption-number">图 7.13 </span><span class="caption-text">时间轴示例7</span></p>
+<p class="caption"><span class="caption-number">图 9.13 </span><span class="caption-text">时间轴示例7</span></p>
+</div>
+</div>
+<div class="section" id="pi">
+<h2>9.3.8 弧度轴 <span class="math notranslate nohighlight">\(\pi\)</span> 的标注<a class="headerlink" href="#pi" title="永久链接至标题">¶</a></h2>
+<p>如果坐标轴以弧度为单位，用户可以直接指定 <span class="math notranslate nohighlight">\(\pi\)</span> 的整数倍或分数倍作为标注间隔，其格式为 <code class="docutils literal notranslate"><span class="pre">[+|-][s]pi[f]</span></code> ，其中 s 表示标注间隔是 <span class="math notranslate nohighlight">\(\pi\)</span> 的 s 倍，而 f 表示标注间隔为 <span class="math notranslate nohighlight">\(\pi\)</span> 的 f 分之一。</p>
+<p>示例:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -JX10c/5c -R-12pi/12pi/-1/1 -Bxa3pi -pdf test1
+gmt basemap -JX10c/5c -R-pi/pi/-1/1 -Bxapi4 -pdf test2
+</pre></div>
 </div>
 </div>
 <div class="section" id="id8">
-<h2>7.3.8 自定义轴<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<h2>9.3.9 自定义轴<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
 <p>GMT允许用户定义标注来实现不规则间隔的标注，用法是 <code class="docutils literal notranslate"><span class="pre">-Bc</span></code> 后接标注文件名。</p>
 <p>标注文件中以“#”开头的行为注释行，其余为记录行，记录行的格式为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>coord   <span class="nb">type</span>   <span class="o">[</span>label<span class="o">]</span>
@@ -594,15 +608,15 @@ gmt psbasemap -R2000-12-15T/2001-1-15T/0/1 -JX5i/0.2i -Bpa5Df1d -Bsa1Y -BS -P &g
 <li><code class="docutils literal notranslate"><span class="pre">coord</span></code> 是需要标注、刻度或网格线的位置</li>
 <li><code class="docutils literal notranslate"><span class="pre">type</span></code> 是如下几个字符的组合<ul>
 <li><code class="docutils literal notranslate"><span class="pre">a</span></code> 或 <code class="docutils literal notranslate"><span class="pre">i</span></code> 前者为annotation，后者表示interval annotation</li>
-<li>在一个标注文件中， <code class="docutils literal notranslate"><span class="pre">a</span></code> 和 <code class="docutils literal notranslate"><span class="pre">i</span></code> 只能出现其中的任意一个</li>
+<li>在一个标注文件中，<code class="docutils literal notranslate"><span class="pre">a</span></code> 和 <code class="docutils literal notranslate"><span class="pre">i</span></code> 只能出现其中的任意一个</li>
 <li><code class="docutils literal notranslate"><span class="pre">f</span></code> 表示刻度，即frame tick</li>
 <li><code class="docutils literal notranslate"><span class="pre">g</span></code> 表示网格线，即gridline</li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">label</span></code> 默认的标注为 <code class="docutils literal notranslate"><span class="pre">coord</span></code> 的值，若指定 <code class="docutils literal notranslate"><span class="pre">label</span></code> ，则使用 <code class="docutils literal notranslate"><span class="pre">label</span></code> 的值</li>
+<li><code class="docutils literal notranslate"><span class="pre">label</span></code> 默认的标注为 <code class="docutils literal notranslate"><span class="pre">coord</span></code> 的值，若指定 <code class="docutils literal notranslate"><span class="pre">label</span></code>，则使用 <code class="docutils literal notranslate"><span class="pre">label</span></code> 的值</li>
 </ul>
-<p>需要注意， <code class="docutils literal notranslate"><span class="pre">coord</span></code> 必须按递增顺序排列。</p>
-<p>下面的例子展示中展示了自定义标注的用法， <code class="docutils literal notranslate"><span class="pre">xannots.txt</span></code> 和 <code class="docutils literal notranslate"><span class="pre">yannots.txt</span></code>
+<p>需要注意，<code class="docutils literal notranslate"><span class="pre">coord</span></code> 必须按递增顺序排列。</p>
+<p>下面的例子展示中展示了自定义标注的用法，<code class="docutils literal notranslate"><span class="pre">xannots.txt</span></code> 和 <code class="docutils literal notranslate"><span class="pre">yannots.txt</span></code>
 分别是X轴和Y轴的标注文件：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat <span class="s">&lt;&lt; EOF &gt; xannots.txt</span>
 <span class="s">416.0 ig Devonian</span>
@@ -631,7 +645,7 @@ rm -f <span class="o">[</span>xy<span class="o">]</span>annots.txt
 </div>
 <div class="figure align-center" id="id22">
 <img alt="../../_images/B-gmtplot-13.png" src="../../_images/B-gmtplot-13.png" />
-<p class="caption"><span class="caption-number">图 7.14 </span><span class="caption-text">自定义坐标轴</span></p>
+<p class="caption"><span class="caption-number">图 9.14 </span><span class="caption-text">自定义坐标轴</span></p>
 </div>
 </div>
 </div>
@@ -665,10 +679,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../V/" class="btn btn-neutral float-right" title="7.4 -V 选项" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../V/" class="btn btn-neutral float-right" title="9.4 -V 选项" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../J/" class="btn btn-neutral" title="7.2 -J 选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../J/" class="btn btn-neutral" title="9.2 -J 选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -678,7 +692,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月14日.
+      最后更新于 2019年01月17日.
 
     </p>
   </div>

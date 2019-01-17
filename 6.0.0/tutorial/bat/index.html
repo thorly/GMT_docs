@@ -13,6 +13,8 @@
 
   
   
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
   
   
 
@@ -29,30 +31,7 @@
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
     <link rel="next" title="4.6 Unix常用工具" href="../unix-tools/" />
-    <link rel="prev" title="4.4 bash简明教程" href="../bash/" />
- 
-<!-- favicons -->
-
-<link rel="shortcut icon" href="/_static/favicon.ico" type="image/x-icon" type="image/png" />
-
-<!-- Opera Speed Dial Icon -->
-<link rel="icon" href="/_static/apple-touch-icon-152x152.png" type="image/png" />
-
-<!-- Safari on iOS -->
-<link rel="apple-touch-icon" href="/_static/apple-touch-icon.png"  type="image/png" />
-<link rel="apple-touch-icon" sizes="57x57" href="/_static/apple-touch-icon-57x57.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="72x72" href="/_static/apple-touch-icon-72x72.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="76x76" href="/_static/apple-touch-icon-76x76.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="114x114" href="/_static/apple-touch-icon-114x114.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="120x120" href="/_static/apple-touch-icon-120x120.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="144x144" href="/_static/apple-touch-icon-144x144.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="152x152" href="/_static/apple-touch-icon-152x152.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon-180x180.png" type="image/png" />
-
-<!-- For tiles on Windows -->
-<meta name="msapplication-TileImage" content="/_static/apple-touch-icon-114x114.png"/>
-<meta name="msapplication-TileColor" content="#d83434"/>
-
+    <link rel="prev" title="4.4 bash简明教程" href="../bash/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -100,6 +79,7 @@
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -139,17 +119,37 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../basis/">5 绘图基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../io/">6 输入与输出</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../option/">7 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">8 配置GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">10 GMT数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../style/">11 风格指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">12 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">13 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">8 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">9 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">11 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">12 GMT数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../style/">13 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://modules.gmt-china.org"><i class="fa fa-book fa-fw"></i> 模块手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
         </div>
       </div>
     </nav>
@@ -242,7 +242,7 @@
 </div>
 <div class="section" id="id4">
 <h3>重定向符号<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
-<p>常见的重定向符号有 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>。默认情况下，命令执行结果是输出到DOS窗口，使用重定向后，将改成输出到另一个位置（文件）。 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> 的区别在于
+<p>常见的重定向符号有 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>。默认情况下，命令执行结果是输出到DOS窗口，使用重定向后，将改成输出到另一个位置（文件）。<code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> 的区别在于
 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 会先将文件内容清空然后再将命令执行结果输入，而 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> 会将命令执行结果直接追加到文件末尾:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> 第一行 &gt; newfile.txt
 <span class="nb">echo</span> 第二行 &gt;&gt; newfile.txt
@@ -358,7 +358,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月14日.
+      最后更新于 2019年01月17日.
 
     </p>
   </div>

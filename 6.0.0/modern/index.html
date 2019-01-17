@@ -1,0 +1,325 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>GMT现代模式 &mdash; GMT参考手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../" class="icon icon-home"> GMT参考手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../preface/">1 前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/">2 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/">3 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/">4 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basis/">5 绘图基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../io/">6 输入与输出</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grid/">8 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../option/">9 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conf/">10 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proj/">11 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dataset/">12 GMT数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../style/">13 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/">14 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/">15 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://modules.gmt-china.org"><i class="fa fa-book fa-fw"></i> 模块手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">GMT参考手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../">Docs</a> &raquo;</li>
+        
+      <li>GMT现代模式</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/modern/index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gmt">
+<h1>GMT现代模式<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h1>
+<p>自GMT6起，GMT引入了一种全新的命令执行模式，称之为现代模式。GMT5以及之前的命令风格则称之为经典模式。</p>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">GMT6既支持经典模式也支持现代模式，因而GMT6可以完全兼容GMT5的代码。</p>
+</div>
+<div class="section" id="id1">
+<h2>经典模式存在的问题<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>一个GMT经典模式下的绘图脚本如下所示：</p>
+<p>从上面的示例脚本中以及实际使用经验中会发现GMT经典模式存在的一些明显的缺点或问题：</p>
+<ol class="arabic simple">
+<li>大部分命令需要使用 <code class="docutils literal notranslate"><span class="pre">-K</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-O</span></code> 选项，而且极其容易出错</li>
+<li>需要使用 <code class="docutils literal notranslate"><span class="pre">-P</span></code> 选项决定画布的摆放方式</li>
+<li>每个绘图命令都需要使用重定向符号 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 或 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code></li>
+<li>每个绘图命令中都需要给定PS文件的名字</li>
+<li>大部分命令都需要重复使用 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项，尽管具体数值可以省略</li>
+<li>需要调用单独的命令将生成的PS文件转换为PDF、JPG、PNG等格式</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>现代模式的优点<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>上面的示例在现代模式下可以改写为：</p>
+<p>现代模式下的GMT命令风格具有如下优点：</p>
+<ol class="arabic simple">
+<li>不再需要考虑 <code class="docutils literal notranslate"><span class="pre">-K</span></code>、<code class="docutils literal notranslate"><span class="pre">-O</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-P</span></code> 选项</li>
+<li>不再需要进行重定向，也无需为每个命令都指定PS文件名</li>
+<li>不再需要为每个命令都是用 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 选项</li>
+<li>最终可生成PDF、PNG等多种格式的图片文件，无需再转换</li>
+<li>自动确定纸张大小并进行裁剪</li>
+<li>整个脚本在独立的临时文件夹下执行，因而可以同时执行多个脚本而不互相干扰</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>从经典到现代<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>将一个经典模式的脚本改成现代模式下的脚本基本遵循如下几点：</p>
+<ol class="arabic simple">
+<li>绘图脚本以 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">begin</span> <span class="pre">figname</span> <span class="pre">pdf</span></code> 开头，以 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">end</span></code> 结束</li>
+<li>去掉 <code class="docutils literal notranslate"><span class="pre">-K</span></code>、<code class="docutils literal notranslate"><span class="pre">-O</span></code>、<code class="docutils literal notranslate"><span class="pre">-P</span></code>、重定向符号以及PS文件名</li>
+<li>去掉多余的 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 选项</li>
+<li>以 <code class="docutils literal notranslate"><span class="pre">ps</span></code> 开头的模块改名了，比如 <code class="docutils literal notranslate"><span class="pre">pscoast</span> <span class="pre">=&gt;</span> <span class="pre">coast</span></code>、<code class="docutils literal notranslate"><span class="pre">psbasemap</span> <span class="pre">=&gt;</span> <span class="pre">basemap</span></code>。几个例外包括 <code class="docutils literal notranslate"><span class="pre">psxy</span> <span class="pre">=&gt;</span> <span class="pre">plot</span></code>，<code class="docutils literal notranslate"><span class="pre">psxyz</span> <span class="pre">=&gt;</span> <span class="pre">plot3d</span></code>，<code class="docutils literal notranslate"><span class="pre">psscale</span> <span class="pre">=&gt;</span> <span class="pre">colorbar</span></code>。</li>
+</ol>
+<p>现代模式下提供了几个新的功能（详细用法见模块手册）：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">begin</span></code> 开始现代绘图模式</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">end</span></code> 结束现代绘图模式</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">figure</span></code> 设置当前图片的基本信息</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">subplot</span></code> 子图模式及相关设置</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>现代模式: 子图模式<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>可以解决绘制多个子图时的如下麻烦：</p>
+<ol class="arabic simple">
+<li>需要多次使用 <code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 调整原点位置</li>
+<li>需要使用 <code class="docutils literal notranslate"><span class="pre">pstext</span></code> 手动为子图添加标签 (a) (b) 等</li>
+<li>需要调用 <code class="docutils literal notranslate"><span class="pre">pstext</span></code> 为整张图添加标题</li>
+</ol>
+<p>经典模式下的一个多子图绘制脚本如下：</p>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">subplot</span></code> 后的现代模式绘图脚本如下：</p>
+<p>详细用法见 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">subplot</span></code> 的模块说明文档。</p>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989'],
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2019, GMT中文社区
+      最后更新于 2019年01月17日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -13,6 +13,8 @@
 
   
   
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
   
   
 
@@ -29,30 +31,7 @@
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
     <link rel="next" title="5.14 词汇表" href="../glossary/" />
-    <link rel="prev" title="5.12 锚点" href="../anchors/" />
- 
-<!-- favicons -->
-
-<link rel="shortcut icon" href="/_static/favicon.ico" type="image/x-icon" type="image/png" />
-
-<!-- Opera Speed Dial Icon -->
-<link rel="icon" href="/_static/apple-touch-icon-152x152.png" type="image/png" />
-
-<!-- Safari on iOS -->
-<link rel="apple-touch-icon" href="/_static/apple-touch-icon.png"  type="image/png" />
-<link rel="apple-touch-icon" sizes="57x57" href="/_static/apple-touch-icon-57x57.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="72x72" href="/_static/apple-touch-icon-72x72.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="76x76" href="/_static/apple-touch-icon-76x76.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="114x114" href="/_static/apple-touch-icon-114x114.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="120x120" href="/_static/apple-touch-icon-120x120.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="144x144" href="/_static/apple-touch-icon-144x144.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="152x152" href="/_static/apple-touch-icon-152x152.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon-180x180.png" type="image/png" />
-
-<!-- For tiles on Windows -->
-<meta name="msapplication-TileImage" content="/_static/apple-touch-icon-114x114.png"/>
-<meta name="msapplication-TileColor" content="#d83434"/>
-
+    <link rel="prev" title="5.12 锚点" href="../anchors/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -100,6 +79,7 @@
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -138,17 +118,37 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../io/">6 输入与输出</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../option/">7 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">8 配置GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">10 GMT数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../style/">11 风格指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">12 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">13 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">8 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">9 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">11 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">12 GMT数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../style/">13 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://modules.gmt-china.org"><i class="fa fa-book fa-fw"></i> 模块手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
         </div>
       </div>
     </nav>
@@ -263,12 +263,12 @@
 </div>
 <ol class="arabic simple">
 <li><code class="docutils literal notranslate"><span class="pre">x</span></code> 用<strong>绘图坐标</strong>指定参考点，即相对于绘图原点的偏移距离。例如
-<code class="docutils literal notranslate"><span class="pre">x2.75i/2c</span></code> ，这种方法类似于使用 <a class="reference internal" href="../../option/XY/"><span class="doc">-X 和 -Y 选项</span></a></li>
+<code class="docutils literal notranslate"><span class="pre">x2.75i/2c</span></code>，这种方法类似于使用 <a class="reference internal" href="../../option/XY/"><span class="doc">-X 和 -Y 选项</span></a></li>
 <li><code class="docutils literal notranslate"><span class="pre">n</span></code> 用<strong>归一化坐标</strong>指定参考点，X方向和Y方向的坐标范围都是0到1。比如 <code class="docutils literal notranslate"><span class="pre">n0.2/0.1</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">g</span></code> 用<strong>数据坐标</strong>指定参考点，比如 <code class="docutils literal notranslate"><span class="pre">g135W/20N</span></code> 表示参考点是西经135度北纬20度。当需要将修饰物放在某个特定坐标值时，建议使用该方式</li>
-<li><code class="docutils literal notranslate"><span class="pre">j</span></code> 指定底图的9个 <a class="reference internal" href="../anchors/"><span class="doc">锚点</span></a> 中的一个作为参考点。与此同时，也设置了修饰物默认使用相同的锚点。比如 <code class="docutils literal notranslate"><span class="pre">jBL</span></code> 指定底图左下角为参考点，同时也指定了修饰物的锚点为 <code class="docutils literal notranslate"><span class="pre">BL</span></code> ，因而底图的左上角将与修饰物的左上角重合，进而导致修饰物位于底图左上角的<strong>内部</strong>。当需要将修饰物放在底图内部某个角落、某条边的中心或图的中心时，建议使用 <code class="docutils literal notranslate"><span class="pre">j</span></code> ，最常见的是绘制图例。</li>
+<li><code class="docutils literal notranslate"><span class="pre">j</span></code> 指定底图的9个 <a class="reference internal" href="../anchors/"><span class="doc">锚点</span></a> 中的一个作为参考点。与此同时，也设置了修饰物默认使用相同的锚点。比如 <code class="docutils literal notranslate"><span class="pre">jBL</span></code> 指定底图左下角为参考点，同时也指定了修饰物的锚点为 <code class="docutils literal notranslate"><span class="pre">BL</span></code>，因而底图的左上角将与修饰物的左上角重合，进而导致修饰物位于底图左上角的<strong>内部</strong>。当需要将修饰物放在底图内部某个角落、某条边的中心或图的中心时，建议使用 <code class="docutils literal notranslate"><span class="pre">j</span></code>，最常见的是绘制图例。</li>
 <li><code class="docutils literal notranslate"><span class="pre">J</span></code> 与 <code class="docutils literal notranslate"><span class="pre">j</span></code> 类似，也是指定底图的某个 <a class="reference internal" href="../anchors/"><span class="doc">锚点</span></a> 为参考点。其与 <code class="docutils literal notranslate"><span class="pre">j</span></code> 的区别在于，其同时设置了修饰物默认使用与之镜像相反的锚点。比如
-<code class="docutils literal notranslate"><span class="pre">JTL</span></code> 将底图的左上角作为参考点，同时修饰物的锚点是 <code class="docutils literal notranslate"><span class="pre">BR</span></code> 即右下角，因而底图的左上角与修饰物的右下角重合，进而导致修饰物位于底图左上角的<strong>外部</strong>。当需要将修饰物放在底图的外部时，建议使用 <code class="docutils literal notranslate"><span class="pre">J</span></code> ，最常见的是绘制 colorbar</li>
+<code class="docutils literal notranslate"><span class="pre">JTL</span></code> 将底图的左上角作为参考点，同时修饰物的锚点是 <code class="docutils literal notranslate"><span class="pre">BR</span></code> 即右下角，因而底图的左上角与修饰物的右下角重合，进而导致修饰物位于底图左上角的<strong>外部</strong>。当需要将修饰物放在底图的外部时，建议使用 <code class="docutils literal notranslate"><span class="pre">J</span></code>，最常见的是绘制 colorbar</li>
 </ol>
 <p>若未指定使用何种方式，则默认使用 <code class="docutils literal notranslate"><span class="pre">x</span></code> 指定参考点。</p>
 </div>
@@ -280,7 +280,7 @@
 <ol class="arabic simple">
 <li>若使用 <code class="docutils literal notranslate"><span class="pre">j&lt;refpoint&gt;</span></code> 指定底图参考点，则修饰物锚点与底图锚点相同</li>
 <li>若使用 <code class="docutils literal notranslate"><span class="pre">J&lt;refpoint&gt;</span></code> 指定底图参考点，则修饰物锚点使用与底图参考点镜像相反的锚点</li>
-<li>若使用其他三种指定参考点的方式，对于玫瑰图和比例尺而言，锚点默认为 <code class="docutils literal notranslate"><span class="pre">MC</span></code> ，其他修饰物锚点默认为 <code class="docutils literal notranslate"><span class="pre">BL</span></code></li>
+<li>若使用其他三种指定参考点的方式，对于玫瑰图和比例尺而言，锚点默认为 <code class="docutils literal notranslate"><span class="pre">MC</span></code>，其他修饰物锚点默认为 <code class="docutils literal notranslate"><span class="pre">BL</span></code></li>
 </ol>
 </div>
 <div class="section" id="id5">
@@ -299,17 +299,17 @@
 </div>
 <ol class="arabic simple">
 <li><code class="docutils literal notranslate"><span class="pre">+g&lt;fill&gt;</span></code> 指定面板填充色，默认不填充</li>
-<li><code class="docutils literal notranslate"><span class="pre">+p&lt;pen&gt;</span></code> 绘制面板边框。 <code class="docutils literal notranslate"><span class="pre">&lt;pen&gt;</span></code> 为边框的画笔属性，若不指定 <code class="docutils literal notranslate"><span class="pre">&lt;pen&gt;</span></code>
+<li><code class="docutils literal notranslate"><span class="pre">+p&lt;pen&gt;</span></code> 绘制面板边框。<code class="docutils literal notranslate"><span class="pre">&lt;pen&gt;</span></code> 为边框的画笔属性，若不指定 <code class="docutils literal notranslate"><span class="pre">&lt;pen&gt;</span></code>
 则默认使用默认使用 <a class="reference internal" href="../../conf/map/#map-frame-pen"><span class="std std-ref">MAP_FRAME_PEN</span></a> 的值</li>
-<li><code class="docutils literal notranslate"><span class="pre">+r&lt;radius&gt;</span></code> 绘制圆角边框， <code class="docutils literal notranslate"><span class="pre">&lt;radius&gt;</span></code> 为圆角的半径</li>
-<li><code class="docutils literal notranslate"><span class="pre">+i&lt;gap&gt;/&lt;pen&gt;</span></code> 在边框内部绘制一个内边框， <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 是内外边框的空白距离（默认值为2p）， <code class="docutils literal notranslate"><span class="pre">&lt;pen&gt;</span></code> 为内边框的画笔属性，比如 <code class="docutils literal notranslate"><span class="pre">+i0.1c/thin,dahsed</span></code> ，默认使用 <a class="reference internal" href="../../conf/map/#map-default-pen"><span class="std std-ref">MAP_DEFAULT_PEN</span></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">+r&lt;radius&gt;</span></code> 绘制圆角边框，<code class="docutils literal notranslate"><span class="pre">&lt;radius&gt;</span></code> 为圆角的半径</li>
+<li><code class="docutils literal notranslate"><span class="pre">+i&lt;gap&gt;/&lt;pen&gt;</span></code> 在边框内部绘制一个内边框，<code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 是内外边框的空白距离（默认值为2p），<code class="docutils literal notranslate"><span class="pre">&lt;pen&gt;</span></code> 为内边框的画笔属性，比如 <code class="docutils literal notranslate"><span class="pre">+i0.1c/thin,dahsed</span></code>，默认使用 <a class="reference internal" href="../../conf/map/#map-default-pen"><span class="std std-ref">MAP_DEFAULT_PEN</span></a></li>
 <li><code class="docutils literal notranslate"><span class="pre">+c&lt;clearance&gt;</span></code> 设置修饰物与面板之间的空白距离。默认情况下面板的大小由修饰物的大小决定，可以使用该子选项为面板增加额外的尺寸：<ul>
 <li><code class="docutils literal notranslate"><span class="pre">+c&lt;gap&gt;</span></code> 为四个方向增加相同的空白距离</li>
 <li><code class="docutils literal notranslate"><span class="pre">+c&lt;xgap&gt;/&lt;ygap&gt;</span></code> 分别为X方向和Y方向指定不同的空白距离</li>
 <li><code class="docutils literal notranslate"><span class="pre">+c&lt;lgap&gt;/&lt;rgap&gt;/&lt;bgap&gt;/&lt;tgap&gt;</span></code> 分别为四个方向指定不同的空白距离</li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">+s&lt;dx&gt;/&lt;dy&gt;/&lt;fill&gt;</span></code> 下拉阴影区。 <code class="docutils literal notranslate"><span class="pre">&lt;dx&gt;/&lt;dy&gt;</span></code> 是阴影区相对于面板的偏移量，
+<li><code class="docutils literal notranslate"><span class="pre">+s&lt;dx&gt;/&lt;dy&gt;/&lt;fill&gt;</span></code> 下拉阴影区。<code class="docutils literal notranslate"><span class="pre">&lt;dx&gt;/&lt;dy&gt;</span></code> 是阴影区相对于面板的偏移量，
 <code class="docutils literal notranslate"><span class="pre">&lt;shade&gt;</span></code> 是阴影区的颜色，默认值为 <code class="docutils literal notranslate"><span class="pre">4p/-4p/gray50</span></code> 。</li>
 </ol>
 <p><a class="reference download internal" download="" href="../../_downloads/eb0a7157de60c87a287fcab90fc22c61/embellishments-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
@@ -317,7 +317,7 @@
 <img alt="../../_images/embellishments-gmtplot-1.png" src="../../_images/embellishments-gmtplot-1.png" />
 <p class="caption"><span class="caption-number">图 5.4 </span><span class="caption-text">GMT修饰物背景面板</span></p>
 </div>
-<p>左图使用了 <code class="docutils literal notranslate"><span class="pre">-F+glightgreen+r</span></code> ，右图使用了 <code class="docutils literal notranslate"><span class="pre">-F+p1p+i+s+gwhite+c0.1i</span></code></p>
+<p>左图使用了 <code class="docutils literal notranslate"><span class="pre">-F+glightgreen+r</span></code>，右图使用了 <code class="docutils literal notranslate"><span class="pre">-F+p1p+i+s+gwhite+c0.1i</span></code></p>
 </div>
 </div>
 
@@ -363,7 +363,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月14日.
+      最后更新于 2019年01月17日.
 
     </p>
   </div>

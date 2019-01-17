@@ -8,10 +8,12 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>8.1 GMT配置简介 &mdash; GMT参考手册</title>
+  <title>10.1 GMT配置简介 &mdash; GMT参考手册</title>
   
 
   
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
   
   
   
@@ -28,31 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="8.2 COLOR参数" href="../color/" />
-    <link rel="prev" title="8 配置GMT" href="../" />
- 
-<!-- favicons -->
-
-<link rel="shortcut icon" href="/_static/favicon.ico" type="image/x-icon" type="image/png" />
-
-<!-- Opera Speed Dial Icon -->
-<link rel="icon" href="/_static/apple-touch-icon-152x152.png" type="image/png" />
-
-<!-- Safari on iOS -->
-<link rel="apple-touch-icon" href="/_static/apple-touch-icon.png"  type="image/png" />
-<link rel="apple-touch-icon" sizes="57x57" href="/_static/apple-touch-icon-57x57.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="72x72" href="/_static/apple-touch-icon-72x72.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="76x76" href="/_static/apple-touch-icon-76x76.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="114x114" href="/_static/apple-touch-icon-114x114.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="120x120" href="/_static/apple-touch-icon-120x120.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="144x144" href="/_static/apple-touch-icon-144x144.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="152x152" href="/_static/apple-touch-icon-152x152.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon-180x180.png" type="image/png" />
-
-<!-- For tiles on Windows -->
-<meta name="msapplication-TileImage" content="/_static/apple-touch-icon-114x114.png"/>
-<meta name="msapplication-TileColor" content="#d83434"/>
-
+    <link rel="next" title="10.2 COLOR参数" href="../color/" />
+    <link rel="prev" title="10 配置GMT" href="../" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -100,6 +79,7 @@
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -113,38 +93,58 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/">4 GMT初探</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../basis/">5 绘图基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../io/">6 输入与输出</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../option/">7 标准选项</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">8 配置GMT</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">8.1 GMT配置简介</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">8.1.1 简介</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">8.1.2 设计思路</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">8.1.3 修改GMT配置</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">8.1.4 查看配置参数的值</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">8.1.5 删除配置文件</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">8.1.6 GMT配置示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">8 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">9 标准选项</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">10 配置GMT</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">10.1 GMT配置简介</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">10.1.1 简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">10.1.2 设计思路</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">10.1.3 修改GMT配置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">10.1.4 查看配置参数的值</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">10.1.5 删除配置文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">10.1.6 GMT配置示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../color/">8.2 COLOR参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dir/">8.3 DIR参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../font/">8.4 FONT参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../format/">8.5 FORMAT参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../io/">8.6 IO参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../map/">8.7 MAP参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../proj/">8.8 PROJ参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ps/">8.9 PS参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../time/">8.10 TIME参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/">8.11 其他参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">10.2 COLOR参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dir/">10.3 DIR参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../font/">10.4 FONT参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../format/">10.5 FORMAT参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">10.6 IO参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../map/">10.7 MAP参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../proj/">10.8 PROJ参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ps/">10.9 PS参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../time/">10.10 TIME参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/">10.11 其他参数</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">10 GMT数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../style/">11 风格指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">12 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">13 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">11 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">12 GMT数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../style/">13 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://modules.gmt-china.org"><i class="fa fa-book fa-fw"></i> 模块手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
         </div>
       </div>
     </nav>
@@ -186,9 +186,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">8 配置GMT</a> &raquo;</li>
+          <li><a href="../">10 配置GMT</a> &raquo;</li>
         
-      <li>8.1 GMT配置简介</li>
+      <li>10.1 GMT配置简介</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -206,10 +206,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../color/" class="btn btn-neutral float-right" title="8.2 COLOR参数" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../color/" class="btn btn-neutral float-right" title="10.2 COLOR参数" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../" class="btn btn-neutral" title="8 配置GMT" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../" class="btn btn-neutral" title="10 配置GMT" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -219,9 +219,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gmt">
-<h1>8.1 GMT配置简介<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h1>
+<h1>10.1 GMT配置简介<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id1">
-<h2>8.1.1 简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>10.1.1 简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>GMT中还有150多个配置参数，用于控制图像的外观（如底图边框的画笔粗细、颜色，文字标注的字体、大小和颜色等）和数据的处理方式（如默认的插值方式、地图投影使用的椭球等）。</p>
 <p>当执行一个GMT模块时，GMT首先会将所有配置参数初始化为GMT的默认值，然后去搜索 <code class="file docutils literal notranslate"><span class="pre">gmt.conf</span></code> 文件。若找到该文件，则会读取该文件中的参数值并覆盖GMT配置参数默认值。</p>
 <p>GMT参数配置文件 <code class="file docutils literal notranslate"><span class="pre">gmt.conf</span></code> 的搜索路径按优先级排序为：
@@ -229,7 +229,7 @@
 目录下寻找；若仍为找到，则在家目录下寻找。</p>
 </div>
 <div class="section" id="id2">
-<h2>8.1.2 设计思路<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>10.1.2 设计思路<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>GMT将这100多个配置参数单独放置在配置文件 <code class="file docutils literal notranslate"><span class="pre">gmt.conf</span></code> 中，主要是基于两方面的考虑：</p>
 <ol class="arabic simple">
 <li>让每个模块的命令行语法中都涵盖如此多的参数是不实际的，这些参数有些很少或几乎不需要改变（比如地图投影过程中使用的地球椭率）</li>
@@ -239,7 +239,7 @@
 </ol>
 </div>
 <div class="section" id="id3">
-<h2>8.1.3 修改GMT配置<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>10.1.3 修改GMT配置<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>GMT系统自带的 <code class="file docutils literal notranslate"><span class="pre">gmt.conf</span></code> 文件中对每个参数都给了一个合理的默认值，但有时用户需要修改这些参数值，GMT提供了多种方法来实现修改。</p>
 <ol class="arabic">
 <li><p class="first">用 <code class="docutils literal notranslate"><span class="pre">gmtset</span></code> 模块在脚本执行的过程中显式地修改GMT参数值</p>
@@ -279,7 +279,7 @@ gmt psxy ...
 </div>
 </div>
 <div class="section" id="id4">
-<h2>8.1.4 查看配置参数的值<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>10.1.4 查看配置参数的值<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>使用:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt defaults -D
 </pre></div>
@@ -292,11 +292,11 @@ gmt psxy ...
 <p>可以查看单个配置参数 <code class="docutils literal notranslate"><span class="pre">FORMAT_GEO_MAP</span></code> 的当前值。</p>
 </div>
 <div class="section" id="id5">
-<h2>8.1.5 删除配置文件<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<h2>10.1.5 删除配置文件<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>可以使用 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">clear</span> <span class="pre">conf</span></code> 命令删除配置文件 <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code>。</p>
 </div>
 <div class="section" id="id6">
-<h2>8.1.6 GMT配置示例<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<h2>10.1.6 GMT配置示例<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>下面列出部分会影响到绘图效果的GMT参数。</p>
 <p><a class="reference download internal" download="" href="../../_downloads/86d877694029760fcf3d1b505e328929/overview-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center">
@@ -342,10 +342,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../color/" class="btn btn-neutral float-right" title="8.2 COLOR参数" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../color/" class="btn btn-neutral float-right" title="10.2 COLOR参数" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../" class="btn btn-neutral" title="8 配置GMT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../" class="btn btn-neutral" title="10 配置GMT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -355,7 +355,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月14日.
+      最后更新于 2019年01月17日.
 
     </p>
   </div>

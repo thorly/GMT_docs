@@ -8,10 +8,12 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7.6 -X 和 -Y 选项 &mdash; GMT参考手册</title>
+  <title>9.6 -X 和 -Y 选项 &mdash; GMT参考手册</title>
   
 
   
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
   
   
   
@@ -28,31 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="7.7 -a 选项" href="../a/" />
-    <link rel="prev" title="7.5 -U 选项" href="../U/" />
- 
-<!-- favicons -->
-
-<link rel="shortcut icon" href="/_static/favicon.ico" type="image/x-icon" type="image/png" />
-
-<!-- Opera Speed Dial Icon -->
-<link rel="icon" href="/_static/apple-touch-icon-152x152.png" type="image/png" />
-
-<!-- Safari on iOS -->
-<link rel="apple-touch-icon" href="/_static/apple-touch-icon.png"  type="image/png" />
-<link rel="apple-touch-icon" sizes="57x57" href="/_static/apple-touch-icon-57x57.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="72x72" href="/_static/apple-touch-icon-72x72.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="76x76" href="/_static/apple-touch-icon-76x76.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="114x114" href="/_static/apple-touch-icon-114x114.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="120x120" href="/_static/apple-touch-icon-120x120.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="144x144" href="/_static/apple-touch-icon-144x144.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="152x152" href="/_static/apple-touch-icon-152x152.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon-180x180.png" type="image/png" />
-
-<!-- For tiles on Windows -->
-<meta name="msapplication-TileImage" content="/_static/apple-touch-icon-114x114.png"/>
-<meta name="msapplication-TileColor" content="#d83434"/>
-
+    <link rel="next" title="9.7 -a 选项" href="../a/" />
+    <link rel="prev" title="9.5 -U 选项" href="../U/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -100,6 +79,7 @@
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -113,41 +93,61 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/">4 GMT初探</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../basis/">5 绘图基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../io/">6 输入与输出</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">7 标准选项</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../R/">7.1 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../J/">7.2 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../B/">7.3 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../V/">7.4 <code class="docutils literal notranslate"><span class="pre">-V</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../U/">7.5 <code class="docutils literal notranslate"><span class="pre">-U</span></code> 选项</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">7.6 <code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../a/">7.7 <code class="docutils literal notranslate"><span class="pre">-a</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../binary/">7.8 <code class="docutils literal notranslate"><span class="pre">-b</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../c/">7.9 <code class="docutils literal notranslate"><span class="pre">-c</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../d/">7.10 <code class="docutils literal notranslate"><span class="pre">-d</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../e/">7.11 <code class="docutils literal notranslate"><span class="pre">-e</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../f/">7.12 <code class="docutils literal notranslate"><span class="pre">-f</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../g/">7.13 <code class="docutils literal notranslate"><span class="pre">-g</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../h/">7.14 <code class="docutils literal notranslate"><span class="pre">-h</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../io/">7.15 <code class="docutils literal notranslate"><span class="pre">-i</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-o</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../n/">7.16 <code class="docutils literal notranslate"><span class="pre">-n</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gridreg/">7.17 <code class="docutils literal notranslate"><span class="pre">-r</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../perspective/">7.18 <code class="docutils literal notranslate"><span class="pre">-p</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../s/">7.19 <code class="docutils literal notranslate"><span class="pre">-s</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../t/">7.20 <code class="docutils literal notranslate"><span class="pre">-t</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../x/">7.21 <code class="docutils literal notranslate"><span class="pre">-x</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../colon/">7.22 <code class="docutils literal notranslate"><span class="pre">-:</span></code> 选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">8 网格文件</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">9 标准选项</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../R/">9.1 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../J/">9.2 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../B/">9.3 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../V/">9.4 <code class="docutils literal notranslate"><span class="pre">-V</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../U/">9.5 <code class="docutils literal notranslate"><span class="pre">-U</span></code> 选项</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">9.6 <code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../a/">9.7 <code class="docutils literal notranslate"><span class="pre">-a</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binary/">9.8 <code class="docutils literal notranslate"><span class="pre">-b</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c/">9.9 <code class="docutils literal notranslate"><span class="pre">-c</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../d/">9.10 <code class="docutils literal notranslate"><span class="pre">-d</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../e/">9.11 <code class="docutils literal notranslate"><span class="pre">-e</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../f/">9.12 <code class="docutils literal notranslate"><span class="pre">-f</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../g/">9.13 <code class="docutils literal notranslate"><span class="pre">-g</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../h/">9.14 <code class="docutils literal notranslate"><span class="pre">-h</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">9.15 <code class="docutils literal notranslate"><span class="pre">-i</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-o</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../n/">9.16 <code class="docutils literal notranslate"><span class="pre">-n</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gridreg/">9.17 <code class="docutils literal notranslate"><span class="pre">-r</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../perspective/">9.18 <code class="docutils literal notranslate"><span class="pre">-p</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../s/">9.19 <code class="docutils literal notranslate"><span class="pre">-s</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../t/">9.20 <code class="docutils literal notranslate"><span class="pre">-t</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x/">9.21 <code class="docutils literal notranslate"><span class="pre">-x</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colon/">9.22 <code class="docutils literal notranslate"><span class="pre">-:</span></code> 选项</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">8 配置GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">10 GMT数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../style/">11 风格指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">12 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">13 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">11 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">12 GMT数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../style/">13 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://modules.gmt-china.org"><i class="fa fa-book fa-fw"></i> 模块手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
         </div>
       </div>
     </nav>
@@ -189,9 +189,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">7 标准选项</a> &raquo;</li>
+          <li><a href="../">9 标准选项</a> &raquo;</li>
         
-      <li>7.6 <code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 选项</li>
+      <li>9.6 <code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 选项</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -209,10 +209,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../a/" class="btn btn-neutral float-right" title="7.7 -a 选项" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../a/" class="btn btn-neutral float-right" title="9.7 -a 选项" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../U/" class="btn btn-neutral" title="7.5 -U 选项" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../U/" class="btn btn-neutral" title="9.5 -U 选项" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -222,15 +222,15 @@
            <div itemprop="articleBody">
             
   <div class="section" id="x-y">
-<h1>7.6 <code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 选项<a class="headerlink" href="#x-y" title="永久链接至标题">¶</a></h1>
+<h1>9.6 <code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 选项<a class="headerlink" href="#x-y" title="永久链接至标题">¶</a></h1>
 <p>绘图时需要指定绘图的原点在哪里。对于一个新图，GMT默认的原点位于离纸张左下角 (1i,1i) 处。留出1英寸是为了给边框外的标注和标签留下空间。</p>
-<p>在一张图上绘制多个子图时，通常需要控制底图原点的位置， <code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code>
+<p>在一张图上绘制多个子图时，通常需要控制底图原点的位置，<code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code>
 选项就用于移动底图原点。</p>
 <p><code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 的用法是一样的，所以下面仅以 <code class="docutils literal notranslate"><span class="pre">-X</span></code> 选项为例介绍其用法。其语法为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-X<span class="o">[</span>a<span class="p">|</span>c<span class="p">|</span>f<span class="p">|</span>r<span class="o">][</span>&lt;xshift&gt;<span class="o">[</span>&lt;u&gt;<span class="o">]]</span>
 </pre></div>
 </div>
-<p>其中 <code class="docutils literal notranslate"><span class="pre">&lt;xshift&gt;</span></code> 新原点相对于当前原点的X方向偏移量， <code class="docutils literal notranslate"><span class="pre">&lt;u&gt;</span></code> 为偏移量的单位。</p>
+<p>其中 <code class="docutils literal notranslate"><span class="pre">&lt;xshift&gt;</span></code> 新原点相对于当前原点的X方向偏移量，<code class="docutils literal notranslate"><span class="pre">&lt;u&gt;</span></code> 为偏移量的单位。</p>
 <p>在偏移量之前加上不同的字符表示不同的含义：</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">-X2i</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-Xr2i</span></code>：在<strong>原底图原点</strong>的基础上沿X方向偏移2英寸得到新底图原点</li>
@@ -240,30 +240,54 @@
 <li><code class="docutils literal notranslate"><span class="pre">-Xf4c</span></code>：在<strong>纸张左下角</strong>的基础上沿着X方向偏移4厘米得到新底图原点</li>
 </ul>
 <p>若只使用了 <code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 而不接任何额外参数，则使用前一个GMT命令使用该选项时的参数值。</p>
-<ol class="arabic simple">
-<li>第一个绘图命令的默认偏移量由 <a class="reference internal" href="../../conf/map/#map-origin-x"><span class="std std-ref">MAP_ORIGIN_X</span></a> 和
-<a class="reference internal" href="../../conf/map/#map-origin-y"><span class="std std-ref">MAP_ORIGIN_Y</span></a> 控制</li>
-<li>当PS文件中有多个底图时才需要使用 <code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 选项，不要仅仅为了在某个地方加几个文字就使用这两个选项</li>
-</ol>
 <p><code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 选项的用法介绍起来有些难度，多试试就好，下面举个简单的例子:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -JX5c/2c -R0/5/0/2 -B1 -K &gt; test.ps
-gmt psbasemap -J -R -B1 -K -O -X7c &gt;&gt; test.ps
-gmt psbasemap -J -R -B1 -K -O -X-7c -Y4c &gt;&gt; test.ps
-gmt psbasemap -J -R -B1 -K -O -X7c &gt;&gt; test.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin <span class="nb">test</span> pdf
+gmt basemap -JX5c/2c -R0/5/0/2 -B1
+gmt basemap -B1 -X7c
+gmt basemap -B1 -X-7c -Y4c
+gmt basemap -B1 -X7c
+gmt end
 </pre></div>
 </div>
-<p>上图用四个 <code class="docutils literal notranslate"><span class="pre">psbasemap</span></code> 命令绘制了四张底图，绘图效果如下：</p>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">本示例仅供演示，这张图更适合用现代模式下的 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">subplot</span></code> 实现。</p>
+</div>
+<p>上图用四个 <code class="docutils literal notranslate"><span class="pre">basemap</span></code> 命令绘制了四张底图，绘图效果如下：</p>
 <p><a class="reference download internal" download="" href="../../_downloads/e90736ed4a3db44b7ba768c2acaf8a0e/XY-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center">
 <img alt="../../_images/XY-gmtplot-0.png" src="../../_images/XY-gmtplot-0.png" />
 </div>
 <p>解释：</p>
 <ol class="arabic simple">
-<li>第一个命令的绘图原点位于纸张左下角 <code class="docutils literal notranslate"><span class="pre">(1i,1i)</span></code> 处，绘制底图1</li>
+<li>第一个命令的绘图原点位于纸张左下角，绘制底图1</li>
 <li>第二个将绘图原点右移了7 cm，绘制底图2</li>
 <li>为了绘制底图3，第三个命令将底图左移了7 cm，并上移4 cm</li>
 <li>第四个命令在底图3的基础上右移7 cm，绘制底图4</li>
 </ol>
+<p>实际绘图时会发现一些不方便的地方。比如 <code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 的偏移量与前一张底图的大小息息相关。若修改了前一张底图的大小，则下一张底图的偏移量也需要相应修改。为解决这一问题，GMT6为该选项引入了一种新的语法:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-X<span class="o">[</span>+<span class="p">|</span>-<span class="o">]</span>w<span class="o">[[</span>+<span class="p">|</span>-<span class="p">|</span>/<span class="o">]</span>&lt;xshift&gt;<span class="o">[</span>u<span class="o">]]</span>
+-Y<span class="o">[</span>+<span class="p">|</span>-<span class="o">]</span>h<span class="o">[[</span>+<span class="p">|</span>-<span class="p">|</span>/<span class="o">]</span>&lt;yshift&gt;<span class="o">[</span>u<span class="o">]]</span>
+</pre></div>
+</div>
+<p>其中 <code class="docutils literal notranslate"><span class="pre">w</span></code> 和 <code class="docutils literal notranslate"><span class="pre">h</span></code> 分别表示前一底图的宽度和高度。</p>
+<p>看上去语法很复杂，举几个例子：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">-Yh+2c</span></code>：沿着Y轴上移 <strong>前一底图高度+2厘米</strong></li>
+<li><code class="docutils literal notranslate"><span class="pre">-Xw-2c</span></code>：沿着X轴右移 <strong>前一底图宽度-2厘米</strong></li>
+<li><code class="docutils literal notranslate"><span class="pre">-Xw/2</span></code>：沿着X轴右移 <strong>前一底图宽度/2</strong></li>
+<li><code class="docutils literal notranslate"><span class="pre">-Y-h-2c</span></code>：沿着Y轴下移 <strong>前一底图高度+2厘米</strong></li>
+<li><code class="docutils literal notranslate"><span class="pre">-X-w+2c</span></code>：沿着X轴左移 <strong>前一底图宽度-2厘米</strong></li>
+</ul>
+<p>因而，上面的示例可以改写为更灵活的版本:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin <span class="nb">test</span> pdf
+gmt basemap -JX5c/2c -R0/5/0/2 -B1
+gmt basemap -B1 -Xw+2c
+gmt basemap -B1 -X-w-2c -Yh+2c
+gmt basemap -B1 -Xw+2c
+gmt end
+</pre></div>
+</div>
 </div>
 
 
@@ -295,10 +319,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../a/" class="btn btn-neutral float-right" title="7.7 -a 选项" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../a/" class="btn btn-neutral float-right" title="9.7 -a 选项" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../U/" class="btn btn-neutral" title="7.5 -U 选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../U/" class="btn btn-neutral" title="9.5 -U 选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -308,7 +332,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月14日.
+      最后更新于 2019年01月17日.
 
     </p>
   </div>
