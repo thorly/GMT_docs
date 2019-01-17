@@ -13,6 +13,8 @@
 
   
   
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
   
   
 
@@ -29,30 +31,7 @@
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
     <link rel="next" title="5.12 锚点" href="../anchors/" />
-    <link rel="prev" title="5.10 线条属性" href="../lines/" />
- 
-<!-- favicons -->
-
-<link rel="shortcut icon" href="/_static/favicon.ico" type="image/x-icon" type="image/png" />
-
-<!-- Opera Speed Dial Icon -->
-<link rel="icon" href="/_static/apple-touch-icon-152x152.png" type="image/png" />
-
-<!-- Safari on iOS -->
-<link rel="apple-touch-icon" href="/_static/apple-touch-icon.png"  type="image/png" />
-<link rel="apple-touch-icon" sizes="57x57" href="/_static/apple-touch-icon-57x57.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="72x72" href="/_static/apple-touch-icon-72x72.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="76x76" href="/_static/apple-touch-icon-76x76.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="114x114" href="/_static/apple-touch-icon-114x114.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="120x120" href="/_static/apple-touch-icon-120x120.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="144x144" href="/_static/apple-touch-icon-144x144.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="152x152" href="/_static/apple-touch-icon-152x152.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon-180x180.png" type="image/png" />
-
-<!-- For tiles on Windows -->
-<meta name="msapplication-TileImage" content="/_static/apple-touch-icon-114x114.png"/>
-<meta name="msapplication-TileColor" content="#d83434"/>
-
+    <link rel="prev" title="5.10 线条属性" href="../lines/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -100,6 +79,7 @@
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -134,17 +114,37 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../io/">6 输入与输出</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../option/">7 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">8 配置GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">10 GMT数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../style/">11 风格指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">12 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">13 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">8 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">9 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">11 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">12 GMT数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../style/">13 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://modules.gmt-china.org"><i class="fa fa-book fa-fw"></i> 模块手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
         </div>
       </div>
     </nav>
@@ -246,7 +246,7 @@
 </li>
 </ul>
 <p>以 <code class="docutils literal notranslate"><span class="pre">psxy</span></code> 模块为例，<code class="docutils literal notranslate"><span class="pre">-Sv</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-SV</span></code> 用于绘制笛卡尔矢量，
-<code class="docutils literal notranslate"><span class="pre">-Sm</span></code> 用于绘制弧形矢量， <code class="docutils literal notranslate"><span class="pre">-S=</span></code> 用于绘制地理矢量。</p>
+<code class="docutils literal notranslate"><span class="pre">-Sm</span></code> 用于绘制弧形矢量，<code class="docutils literal notranslate"><span class="pre">-S=</span></code> 用于绘制地理矢量。</p>
 <p>下面的例子分别绘制了三种矢量箭头：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1"># 笛卡尔矢量</span>
@@ -275,7 +275,7 @@ rm gmt.*
 </div>
 <p>绘制矢量时，默认只有矢量线没有矢量头，可以使用下面几个子选项为矢量加上矢量头：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">+b[t|c|a|i|A|I][l|r]</span></code> ：在矢量线的首端加上矢量头<ul>
+<li><code class="docutils literal notranslate"><span class="pre">+b[t|c|a|i|A|I][l|r]</span></code>：在矢量线的首端加上矢量头<ul>
 <li><code class="docutils literal notranslate"><span class="pre">t|c|a|i|A|I</span></code> 用于控制矢量头的形状，默认是 <code class="docutils literal notranslate"><span class="pre">a</span></code><ul>
 <li><code class="docutils literal notranslate"><span class="pre">t</span></code> 矢量头为终点线（垂直于矢量线的短线）</li>
 <li><code class="docutils literal notranslate"><span class="pre">c</span></code> 矢量头为圆圈</li>
@@ -288,8 +288,8 @@ rm gmt.*
 <li><code class="docutils literal notranslate"><span class="pre">l|r</span></code> 表示只绘制矢量的头的左半边或右半边（默认两边都绘制）</li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">+e[t|c|a|i|A|I][l|r]</span></code> ：在矢量线的尾端加上矢量头。其他同上</li>
-<li><code class="docutils literal notranslate"><span class="pre">+m[f|r][t|c|a][l|r]</span></code> ：在矢量线的中间加上矢量头。<ul>
+<li><code class="docutils literal notranslate"><span class="pre">+e[t|c|a|i|A|I][l|r]</span></code>：在矢量线的尾端加上矢量头。其他同上</li>
+<li><code class="docutils literal notranslate"><span class="pre">+m[f|r][t|c|a][l|r]</span></code>：在矢量线的中间加上矢量头。<ul>
 <li><code class="docutils literal notranslate"><span class="pre">f|r</span></code> 表示矢量头沿着正方向或逆方向（默认值从首端指向尾端）</li>
 <li>其他同上</li>
 </ul>
@@ -304,8 +304,8 @@ rm gmt.*
 <li><code class="docutils literal notranslate"><span class="pre">+a&lt;angle&gt;</span></code> 控制矢量箭头顶端的夹角，默认值为30度</li>
 <li><code class="docutils literal notranslate"><span class="pre">+l</span></code> 表示只绘制左半个箭头</li>
 <li><code class="docutils literal notranslate"><span class="pre">+r</span></code> 表示只绘制右半个箭头</li>
-<li><code class="docutils literal notranslate"><span class="pre">+g&lt;fill&gt;</span></code> 设置箭头填充色， <code class="docutils literal notranslate"><span class="pre">&lt;fill&gt;</span></code> 为 <code class="docutils literal notranslate"><span class="pre">-</span></code> 表示不填充，默认使用 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 指定的填充色</li>
-<li><code class="docutils literal notranslate"><span class="pre">+p[-][&lt;pen&gt;]</span></code> 设置矢量的画笔属性， <code class="docutils literal notranslate"><span class="pre">-&lt;pen&gt;</span></code> 表示不绘制矢量箭头的轮廓，默认使用 <code class="docutils literal notranslate"><span class="pre">-W</span></code> 所指定的画笔属性</li>
+<li><code class="docutils literal notranslate"><span class="pre">+g&lt;fill&gt;</span></code> 设置箭头填充色，<code class="docutils literal notranslate"><span class="pre">&lt;fill&gt;</span></code> 为 <code class="docutils literal notranslate"><span class="pre">-</span></code> 表示不填充，默认使用 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 指定的填充色</li>
+<li><code class="docutils literal notranslate"><span class="pre">+p[-][&lt;pen&gt;]</span></code> 设置矢量的画笔属性，<code class="docutils literal notranslate"><span class="pre">-&lt;pen&gt;</span></code> 表示不绘制矢量箭头的轮廓，默认使用 <code class="docutils literal notranslate"><span class="pre">-W</span></code> 所指定的画笔属性</li>
 </ul>
 <p>还有其他一些子选项：</p>
 <ul class="simple">
@@ -317,7 +317,7 @@ rm gmt.*
 </ul>
 <p>除了弧形矢量外，其他矢量还可以使用如下子选项：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">+j[b|c|e]</span></code> 默认情况下，输入数据中的XY坐标会作为矢量的首端坐标，该选项可以修改这一行为， <code class="docutils literal notranslate"><span class="pre">b|e|c</span></code> 分别代表输入数据中的XY坐标作为矢量的首端、尾端和中间</li>
+<li><code class="docutils literal notranslate"><span class="pre">+j[b|c|e]</span></code> 默认情况下，输入数据中的XY坐标会作为矢量的首端坐标，该选项可以修改这一行为，<code class="docutils literal notranslate"><span class="pre">b|e|c</span></code> 分别代表输入数据中的XY坐标作为矢量的首端、尾端和中间</li>
 <li><code class="docutils literal notranslate"><span class="pre">+s</span></code> 表明输入数据中的 <code class="docutils literal notranslate"><span class="pre">angle</span></code> 和 <code class="docutils literal notranslate"><span class="pre">length</span></code> 被解释为矢量的尾端XY坐标</li>
 </ul>
 <p>对于笛卡尔矢量而言，还可以使用：</p>
@@ -379,7 +379,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月15日.
+      最后更新于 2019年01月17日.
 
     </p>
   </div>

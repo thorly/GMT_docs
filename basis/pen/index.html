@@ -13,6 +13,8 @@
 
   
   
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
   
   
 
@@ -29,30 +31,7 @@
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
     <link rel="next" title="5.5 填充" href="../fill/" />
-    <link rel="prev" title="5.3 颜色" href="../color/" />
- 
-<!-- favicons -->
-
-<link rel="shortcut icon" href="/_static/favicon.ico" type="image/x-icon" type="image/png" />
-
-<!-- Opera Speed Dial Icon -->
-<link rel="icon" href="/_static/apple-touch-icon-152x152.png" type="image/png" />
-
-<!-- Safari on iOS -->
-<link rel="apple-touch-icon" href="/_static/apple-touch-icon.png"  type="image/png" />
-<link rel="apple-touch-icon" sizes="57x57" href="/_static/apple-touch-icon-57x57.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="72x72" href="/_static/apple-touch-icon-72x72.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="76x76" href="/_static/apple-touch-icon-76x76.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="114x114" href="/_static/apple-touch-icon-114x114.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="120x120" href="/_static/apple-touch-icon-120x120.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="144x144" href="/_static/apple-touch-icon-144x144.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="152x152" href="/_static/apple-touch-icon-152x152.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon-180x180.png" type="image/png" />
-
-<!-- For tiles on Windows -->
-<meta name="msapplication-TileImage" content="/_static/apple-touch-icon-114x114.png"/>
-<meta name="msapplication-TileColor" content="#d83434"/>
-
+    <link rel="prev" title="5.3 颜色" href="../color/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -100,6 +79,7 @@
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -135,17 +115,37 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../io/">6 输入与输出</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../option/">7 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">8 配置GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">10 GMT数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../style/">11 风格指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">12 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">13 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">8 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">9 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">11 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">12 GMT数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../style/">13 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://modules.gmt-china.org"><i class="fa fa-book fa-fw"></i> 模块手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
         </div>
       </div>
     </nav>
@@ -325,7 +325,7 @@
 <p>通过 <code class="docutils literal notranslate"><span class="pre">string:offset</span></code> 的形式可以自定义更复杂的线型。</p>
 <p><code class="docutils literal notranslate"><span class="pre">string</span></code> 是一系列由下划线 <code class="docutils literal notranslate"><span class="pre">_</span></code> 分隔的数字组成。这一系列数字中，第奇数个数字表示实线的长度，第偶数个数字表示空白的长度。通过实线和空白的长度的不同组合，即可构成多种复杂的线型。
 <code class="docutils literal notranslate"><span class="pre">offset</span></code> 表示线段开始处整个线型的初始相位移动。</p>
-<p>例如， <code class="docutils literal notranslate"><span class="pre">4_8_5_8:2</span></code> 表示线型首先是长度为 <code class="docutils literal notranslate"><span class="pre">4p</span></code> 的实线，然后是长度为 <code class="docutils literal notranslate"><span class="pre">8p</span></code>
+<p>例如，<code class="docutils literal notranslate"><span class="pre">4_8_5_8:2</span></code> 表示线型首先是长度为 <code class="docutils literal notranslate"><span class="pre">4p</span></code> 的实线，然后是长度为 <code class="docutils literal notranslate"><span class="pre">8p</span></code>
 的空白，紧接着长度为 <code class="docutils literal notranslate"><span class="pre">5p</span></code> 的实线和长度为 <code class="docutils literal notranslate"><span class="pre">8p</span></code> 的空白，然后按照该模式不断重复。此处的 <code class="docutils literal notranslate"><span class="pre">offset</span></code> 值为 <code class="docutils literal notranslate"><span class="pre">2p</span></code>，因而线段的最开始处，第一条实线的长度
 <code class="docutils literal notranslate"><span class="pre">4p</span></code> 经过相移后长度为 <code class="docutils literal notranslate"><span class="pre">2p</span></code>。</p>
 <p>线型中的这些数值，默认单位是 <code class="docutils literal notranslate"><span class="pre">p</span></code>，也可以使用 <code class="docutils literal notranslate"><span class="pre">c</span></code> 或 <code class="docutils literal notranslate"><span class="pre">i</span></code>。</p>
@@ -397,7 +397,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月15日.
+      最后更新于 2019年01月17日.
 
     </p>
   </div>

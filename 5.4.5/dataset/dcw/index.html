@@ -8,10 +8,12 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>10.2 DCW: 世界数字图表 &mdash; GMT参考手册</title>
+  <title>12.2 DCW: 世界数字图表 &mdash; GMT参考手册</title>
   
 
   
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
   
   
   
@@ -28,31 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="10.3 earth_relief: 全球地形起伏数据" href="../earth_relief/" />
-    <link rel="prev" title="10.1 GSHHG: 全球高精度海岸线数据" href="../gshhg/" />
- 
-<!-- favicons -->
-
-<link rel="shortcut icon" href="/_static/favicon.ico" type="image/x-icon" type="image/png" />
-
-<!-- Opera Speed Dial Icon -->
-<link rel="icon" href="/_static/apple-touch-icon-152x152.png" type="image/png" />
-
-<!-- Safari on iOS -->
-<link rel="apple-touch-icon" href="/_static/apple-touch-icon.png"  type="image/png" />
-<link rel="apple-touch-icon" sizes="57x57" href="/_static/apple-touch-icon-57x57.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="72x72" href="/_static/apple-touch-icon-72x72.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="76x76" href="/_static/apple-touch-icon-76x76.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="114x114" href="/_static/apple-touch-icon-114x114.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="120x120" href="/_static/apple-touch-icon-120x120.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="144x144" href="/_static/apple-touch-icon-144x144.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="152x152" href="/_static/apple-touch-icon-152x152.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon-180x180.png" type="image/png" />
-
-<!-- For tiles on Windows -->
-<meta name="msapplication-TileImage" content="/_static/apple-touch-icon-114x114.png"/>
-<meta name="msapplication-TileColor" content="#d83434"/>
-
+    <link rel="next" title="12.3 earth_relief: 全球地形起伏数据" href="../earth_relief/" />
+    <link rel="prev" title="12.1 GSHHG: 全球高精度海岸线数据" href="../gshhg/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -100,6 +79,7 @@
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -113,40 +93,60 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/">4 GMT初探</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../basis/">5 绘图基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../io/">6 输入与输出</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../option/">7 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">8 配置GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">10 GMT数据集</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../gshhg/">10.1 GSHHG: 全球高精度海岸线数据</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">10.2 DCW: 世界数字图表</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">10.2.1 区域代码</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">8 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">9 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">11 投影方式</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">12 GMT数据集</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">12.1 GSHHG: 全球高精度海岸线数据</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">12.2 DCW: 世界数字图表</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">12.2.1 区域代码</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id2">洲代码</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id3">国家代码</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id4">省/州代码</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">10.2.2 使用说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">10.2.3 使用示例</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">12.2.2 使用说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">12.2.3 使用示例</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id7">绘制洲界</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id8">绘制国界</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id9">绘制省界</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id10">导出省界数据</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">10.2.4 备注</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">12.2.4 备注</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../earth_relief/">10.3 earth_relief: 全球地形起伏数据</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/">10.4 GMT 数据库的建立</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earth_relief/">12.3 earth_relief: 全球地形起伏数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/">12.4 GMT 数据库的建立</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../style/">11 风格指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">12 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">13 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../style/">13 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://modules.gmt-china.org"><i class="fa fa-book fa-fw"></i> 模块手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
         </div>
       </div>
     </nav>
@@ -188,9 +188,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">10 GMT数据集</a> &raquo;</li>
+          <li><a href="../">12 GMT数据集</a> &raquo;</li>
         
-      <li>10.2 DCW: 世界数字图表</li>
+      <li>12.2 DCW: 世界数字图表</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -208,10 +208,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../earth_relief/" class="btn btn-neutral float-right" title="10.3 earth_relief: 全球地形起伏数据" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../earth_relief/" class="btn btn-neutral float-right" title="12.3 earth_relief: 全球地形起伏数据" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../gshhg/" class="btn btn-neutral" title="10.1 GSHHG: 全球高精度海岸线数据" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../gshhg/" class="btn btn-neutral" title="12.1 GSHHG: 全球高精度海岸线数据" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -221,7 +221,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="dcw">
-<h1>10.2 DCW: 世界数字图表<a class="headerlink" href="#dcw" title="永久链接至标题">¶</a></h1>
+<h1>12.2 DCW: 世界数字图表<a class="headerlink" href="#dcw" title="永久链接至标题">¶</a></h1>
 <p>DCW，全称为 Digital Chart of the World。GMT提供的DCW数据包含了不同层级的行政边界，可以直接在GMT中使用某个指定国家的边界，也可以将所需的边界数据以纯文本格式导出。</p>
 <p><strong>GMT-DCW数据主页</strong>： <a class="reference external" href="http://www.soest.hawaii.edu/wessel/dcw/">http://www.soest.hawaii.edu/wessel/dcw/</a></p>
 <p>GMT提供的DCW数据是在原始DCW数据的基础上修改得到的，其数据格式为netCDF-4格式，GMT提供的DCW数据中主要包含了三个文件：</p>
@@ -231,7 +231,7 @@
 <li><cite>dcw-states.txt</cite>: 辅助文件，内含省界代码</li>
 </ul>
 <div class="section" id="id1">
-<h2>10.2.1 区域代码<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>12.2.1 区域代码<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>GMT提供的DCW数据中包含了如下行政边界：</p>
 <ol class="arabic simple">
 <li>七大洲的洲界</li>
@@ -331,7 +331,7 @@ CN <span class="m">92</span> Aomen <span class="o">(</span>Macao<span class="o">
 </div>
 </div>
 <div class="section" id="id5">
-<h2>10.2.2 使用说明<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<h2>12.2.2 使用说明<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>GMT中至少有两处会使用DCW数据：</p>
 <ol class="arabic simple">
 <li><code class="docutils literal notranslate"><span class="pre">-R&lt;code1&gt;,&lt;code2&gt;,...</span></code>: 通过指定区域代码 <code class="docutils literal notranslate"><span class="pre">&lt;code&gt;</span></code> 间接指定绘图范围</li>
@@ -345,7 +345,7 @@ CN <span class="m">92</span> Aomen <span class="o">(</span>Macao<span class="o">
 </ul>
 </div>
 <div class="section" id="id6">
-<h2>10.2.3 使用示例<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<h2>12.2.3 使用示例<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <div class="section" id="id7">
 <h3>绘制洲界<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <p>绘制全部亚洲国家的边界：</p>
@@ -386,7 +386,7 @@ CN <span class="m">92</span> Aomen <span class="o">(</span>Macao<span class="o">
 </div>
 </div>
 <div class="section" id="id11">
-<h2>10.2.4 备注<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<h2>12.2.4 备注<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
 <p>DCW以及其它类似的国界数据均不符合中国的领土主张，在正式刊物中发表使用此类国界数据的图件时都可能存在问题。此处展示的国界仅用于展示如何使用数据，</p>
 </div>
 </div>
@@ -420,10 +420,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../earth_relief/" class="btn btn-neutral float-right" title="10.3 earth_relief: 全球地形起伏数据" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../earth_relief/" class="btn btn-neutral float-right" title="12.3 earth_relief: 全球地形起伏数据" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../gshhg/" class="btn btn-neutral" title="10.1 GSHHG: 全球高精度海岸线数据" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../gshhg/" class="btn btn-neutral" title="12.1 GSHHG: 全球高精度海岸线数据" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -433,7 +433,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月15日.
+      最后更新于 2019年01月17日.
 
     </p>
   </div>

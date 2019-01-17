@@ -13,6 +13,8 @@
 
   
   
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
   
   
 
@@ -29,30 +31,7 @@
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
     <link rel="next" title="5.4 画笔" href="../pen/" />
-    <link rel="prev" title="5.2 单位" href="../unit/" />
- 
-<!-- favicons -->
-
-<link rel="shortcut icon" href="/_static/favicon.ico" type="image/x-icon" type="image/png" />
-
-<!-- Opera Speed Dial Icon -->
-<link rel="icon" href="/_static/apple-touch-icon-152x152.png" type="image/png" />
-
-<!-- Safari on iOS -->
-<link rel="apple-touch-icon" href="/_static/apple-touch-icon.png"  type="image/png" />
-<link rel="apple-touch-icon" sizes="57x57" href="/_static/apple-touch-icon-57x57.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="72x72" href="/_static/apple-touch-icon-72x72.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="76x76" href="/_static/apple-touch-icon-76x76.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="114x114" href="/_static/apple-touch-icon-114x114.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="120x120" href="/_static/apple-touch-icon-120x120.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="144x144" href="/_static/apple-touch-icon-144x144.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="152x152" href="/_static/apple-touch-icon-152x152.png" type="image/png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/_static/apple-touch-icon-180x180.png" type="image/png" />
-
-<!-- For tiles on Windows -->
-<meta name="msapplication-TileImage" content="/_static/apple-touch-icon-114x114.png"/>
-<meta name="msapplication-TileColor" content="#d83434"/>
-
+    <link rel="prev" title="5.2 单位" href="../unit/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -100,6 +79,7 @@
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -138,17 +118,37 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../io/">6 输入与输出</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../option/">7 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">8 配置GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">10 GMT数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../style/">11 风格指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">12 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">13 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">8 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">9 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">11 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">12 GMT数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../style/">13 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://modules.gmt-china.org"><i class="fa fa-book fa-fw"></i> 模块手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
         </div>
       </div>
     </nav>
@@ -281,11 +281,11 @@
 </div>
 <div class="section" id="id3">
 <h2>5.3.5 灰色<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>灰色是常见的一种颜色，而灰色又可以根据灰的不同程度细分为不同的灰色。指定灰色的办法很简单，用一个数值表示灰度即可，其取值范围为0到255。例如 <code class="docutils literal notranslate"><span class="pre">0</span></code> 表示黑色， <code class="docutils literal notranslate"><span class="pre">255</span></code> 表示白色， <code class="docutils literal notranslate"><span class="pre">128</span></code> 表示灰色。</p>
+<p>灰色是常见的一种颜色，而灰色又可以根据灰的不同程度细分为不同的灰色。指定灰色的办法很简单，用一个数值表示灰度即可，其取值范围为0到255。例如 <code class="docutils literal notranslate"><span class="pre">0</span></code> 表示黑色，<code class="docutils literal notranslate"><span class="pre">255</span></code> 表示白色，<code class="docutils literal notranslate"><span class="pre">128</span></code> 表示灰色。</p>
 <p>除了用灰度表示之外，灰色还可以用前面提到的几种形式表示：</p>
 <ol class="arabic">
 <li><p class="first">用RGB表示灰度</p>
-<p>灰色本质上就是 R=G=B 的一种颜色。因而 <code class="docutils literal notranslate"><span class="pre">128/128/128</span></code> 代表灰度为 <code class="docutils literal notranslate"><span class="pre">128</span></code>， <code class="docutils literal notranslate"><span class="pre">200/200/200</span></code> 代表灰度是 <code class="docutils literal notranslate"><span class="pre">200</span></code>。</p>
+<p>灰色本质上就是 R=G=B 的一种颜色。因而 <code class="docutils literal notranslate"><span class="pre">128/128/128</span></code> 代表灰度为 <code class="docutils literal notranslate"><span class="pre">128</span></code>，<code class="docutils literal notranslate"><span class="pre">200/200/200</span></code> 代表灰度是 <code class="docutils literal notranslate"><span class="pre">200</span></code>。</p>
 </li>
 <li><p class="first">用GMT颜色名表示灰度</p>
 <p>GMT自定义了多个名字来表示不同程度的灰色。除了前面说过的 <code class="docutils literal notranslate"><span class="pre">gray</span></code>、<code class="docutils literal notranslate"><span class="pre">lightgray</span></code> 和 <code class="docutils literal notranslate"><span class="pre">darkgray</span></code> 之外，还有 <code class="docutils literal notranslate"><span class="pre">gray0</span></code>、<code class="docutils literal notranslate"><span class="pre">gray1</span></code> 一直到 <code class="docutils literal notranslate"><span class="pre">gray100</span></code>。其中 <code class="docutils literal notranslate"><span class="pre">gray0</span></code> 即黑色，<code class="docutils literal notranslate"><span class="pre">gray100</span></code> 即白色。</p>
@@ -354,7 +354,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月15日.
+      最后更新于 2019年01月17日.
 
     </p>
   </div>
