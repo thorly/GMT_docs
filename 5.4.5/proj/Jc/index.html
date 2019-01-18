@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>11.5 -Jc：Cassini圆柱投影 &mdash; GMT参考手册</title>
+  <title>10.5 -Jc：Cassini圆柱投影 &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="11.6 -Jcyl_stere：圆柱立体投影" href="../Jcyl_stere/" />
-    <link rel="prev" title="11.4 -Jb：Albers圆锥等面积投影" href="../Jb/" /> 
+    <link rel="next" title="10.6 -Jcyl_stere：圆柱立体投影" href="../Jcyl_stere/" />
+    <link rel="prev" title="10.4 -Jb：Albers圆锥等面积投影" href="../Jb/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -87,50 +87,49 @@
             
               <p class="caption"><span class="caption-text">目 录</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../preface/">1 前言</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../intro/">2 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../install/">3 安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">4 GMT初探</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../basis/">5 绘图基础</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../io/">6 输入与输出</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../grid/">8 网格文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../option/">9 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">11 投影方式</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../Jx/">11.1 -Jx：笛卡尔变换</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Jp/">11.2 -Jp：极坐标线性投影</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Ja/">11.3 -Ja：Lambert方位等面积投影</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Jb/">11.4 -Jb：Albers圆锥等面积投影</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">11.5 -Jc：Cassini圆柱投影</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Jcyl_stere/">11.6 -Jcyl_stere：圆柱立体投影</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Jd/">11.7 -Jd：等距圆锥投影</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Je/">11.8 -Je：方位等距投影</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Jf/">11.9 -Jf：球心方位投影</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Jg/">11.10 -Jg：正交投影</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Jh/">11.11 -Jh：等面积Hammer投影</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Ji/">11.12 -Ji：正弦曲线投影</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Jj/">11.13 -Jj：Miller圆柱投影</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Jk/">11.14 -Jk：Eckert投影</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Jl/">11.15 -Jl：Lambert圆锥保角投影</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Jm/">11.16 -Jm：Mercator投影</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Jn/">11.17 -Jn：Robinson投影</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Jo/">11.18 -Jo：倾斜Mercator投影</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Jpoly/">11.19 -Jpoly：多圆锥投影</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Jq/">11.20 -Jq：圆柱等距投影</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Jr/">11.21 -Jr：Winkel Tripel投影</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Js/">11.22 -Js：立体等角投影</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Jt/">11.23 -Jt：横向Mercator投影</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Ju/">11.24 -Ju：通用横向Mercator(UTM)投影</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Jv/">11.25 -Jv：Van der Grinten投影</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Jw/">11.26 -Jw：Mollweide投影</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Jy/">11.27 -Jy：圆柱等面积投影</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">6 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">7 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">9 配置GMT</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">10 投影方式</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Jx/">10.1 -Jx：笛卡尔变换</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jp/">10.2 -Jp：极坐标线性投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ja/">10.3 -Ja：Lambert方位等面积投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jb/">10.4 -Jb：Albers圆锥等面积投影</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">10.5 -Jc：Cassini圆柱投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jcyl_stere/">10.6 -Jcyl_stere：圆柱立体投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jd/">10.7 -Jd：等距圆锥投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Je/">10.8 -Je：方位等距投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jf/">10.9 -Jf：球心方位投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jg/">10.10 -Jg：正交投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jh/">10.11 -Jh：等面积Hammer投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ji/">10.12 -Ji：正弦曲线投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jj/">10.13 -Jj：Miller圆柱投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jk/">10.14 -Jk：Eckert投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jl/">10.15 -Jl：Lambert圆锥保角投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jm/">10.16 -Jm：Mercator投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jn/">10.17 -Jn：Robinson投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jo/">10.18 -Jo：倾斜Mercator投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jpoly/">10.19 -Jpoly：多圆锥投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jq/">10.20 -Jq：圆柱等距投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jr/">10.21 -Jr：Winkel Tripel投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Js/">10.22 -Js：立体等角投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jt/">10.23 -Jt：横向Mercator投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ju/">10.24 -Ju：通用横向Mercator(UTM)投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jv/">10.25 -Jv：Van der Grinten投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jw/">10.26 -Jw：Mollweide投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Jy/">10.27 -Jy：圆柱等面积投影</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">12 GMT数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../style/">13 风格指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 GMT数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../style/">12 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">13 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">14 附录</a></li>
 </ul>
 
             
@@ -194,9 +193,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">11 投影方式</a> &raquo;</li>
+          <li><a href="../">10 投影方式</a> &raquo;</li>
         
-      <li>11.5 -Jc：Cassini圆柱投影</li>
+      <li>10.5 -Jc：Cassini圆柱投影</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -212,22 +211,13 @@
   </ul>
 
   
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="../Jcyl_stere/" class="btn btn-neutral float-right" title="11.6 -Jcyl_stere：圆柱立体投影" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../Jb/" class="btn btn-neutral" title="11.4 -Jb：Albers圆锥等面积投影" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-  </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="jc-cassini">
-<h1>11.5 -Jc：Cassini圆柱投影<a class="headerlink" href="#jc-cassini" title="永久链接至标题">¶</a></h1>
+<h1>10.5 -Jc：Cassini圆柱投影<a class="headerlink" href="#jc-cassini" title="永久链接至标题">¶</a></h1>
 <p>维基链接：<a class="reference external" href="https://en.wikipedia.org/wiki/Cassini_projection">https://en.wikipedia.org/wiki/Cassini_projection</a></p>
 <p>此圆柱投影由César-François Cassini de Thury于1745年在调查法国时提出。其偶尔也被称为Cassini-Soldner投影，因为后者提供了更加精确的数学分析得到了椭球下的公式。</p>
 <p>此投影既不保角也不等面积，而是介于二者之间的一种投影方式。沿着中心经线的畸变最小，适合绘制南北方向区域范围较大的地图。其中，中心经线、距离中心经线90度的两条经线以及赤道是直线，其余经线和纬线都是复杂的曲线。</p>
@@ -243,7 +233,7 @@
 </div>
 <div class="figure align-center" id="id1">
 <img alt="../../_images/Jc-gmtplot-0.png" src="../../_images/Jc-gmtplot-0.png" />
-<p class="caption"><span class="caption-number">图 11.9 </span><span class="caption-text">Cassini投影绘制Sardinia岛</span></p>
+<p class="caption"><span class="caption-number">图 10.9 </span><span class="caption-text">Cassini投影绘制Sardinia岛</span></p>
 </div>
 </div>
 
@@ -276,10 +266,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../Jcyl_stere/" class="btn btn-neutral float-right" title="11.6 -Jcyl_stere：圆柱立体投影" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../Jcyl_stere/" class="btn btn-neutral float-right" title="10.6 -Jcyl_stere：圆柱立体投影" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../Jb/" class="btn btn-neutral" title="11.4 -Jb：Albers圆锥等面积投影" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../Jb/" class="btn btn-neutral" title="10.4 -Jb：Albers圆锥等面积投影" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -289,7 +279,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月17日.
+      最后更新于 2019年01月18日.
 
     </p>
   </div>

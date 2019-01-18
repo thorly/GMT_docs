@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6.3 NaN 数据 &mdash; GMT参考手册</title>
+  <title>5.3 NaN 数据 &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="6.4 兼容OGR的GMT矢量数据格式" href="../ogr-format/" />
-    <link rel="prev" title="6.2 表数据" href="../table-data/" /> 
+    <link rel="next" title="5.4 兼容OGR的GMT矢量数据格式" href="../ogr-format/" />
+    <link rel="prev" title="5.2 表数据" href="../table-data/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -87,28 +87,27 @@
             
               <p class="caption"><span class="caption-text">目 录</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../preface/">1 前言</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../intro/">2 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../install/">3 安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">4 GMT初探</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../basis/">5 绘图基础</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">6 输入与输出</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../format/">6.1 数据格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../table-data/">6.2 表数据</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.3 NaN 数据</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ogr-format/">6.4 兼容OGR的GMT矢量数据格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../postscript/">6.5 PostScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">5 输入与输出</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../format/">5.1 数据格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../table-data/">5.2 表数据</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.3 NaN 数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ogr-format/">5.4 兼容OGR的GMT矢量数据格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../postscript/">5.5 PostScript</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../grid/">8 网格文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../option/">9 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">11 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">12 GMT数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../style/">13 风格指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">6 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">7 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">9 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">10 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 GMT数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../style/">12 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">13 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">14 附录</a></li>
 </ul>
 
             
@@ -172,9 +171,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">6 输入与输出</a> &raquo;</li>
+          <li><a href="../">5 输入与输出</a> &raquo;</li>
         
-      <li>6.3 NaN 数据</li>
+      <li>5.3 NaN 数据</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -190,22 +189,13 @@
   </ul>
 
   
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="../ogr-format/" class="btn btn-neutral float-right" title="6.4 兼容OGR的GMT矢量数据格式" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../table-data/" class="btn btn-neutral" title="6.2 表数据" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-  </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="nan">
-<h1>6.3 NaN 数据<a class="headerlink" href="#nan" title="永久链接至标题">¶</a></h1>
+<h1>5.3 NaN 数据<a class="headerlink" href="#nan" title="永久链接至标题">¶</a></h1>
 <p>NaN，全称 Not-a-Number。</p>
 <p>在数据处理或绘图时，经常会遇到某个数据点丢失或未赋值的情况。遇到这种情况，以前的做法是给这一点赋一个特殊值（比如 <code class="docutils literal notranslate"><span class="pre">-9999.99</span></code> ）来表明这个数据点有问题，但这样的解决办法并不完美，因为有时 <code class="docutils literal notranslate"><span class="pre">-9999.99</span></code> 或其他选定的数依然可能是一个合理值，进而导致数据处理时出现问题。</p>
 <p>更现代的解决办法时使用 IEEE 规定的 NaN 来表示某个数据点丢失或未赋值。从数学上来说，当你进行一些未定义的数学操作（比如 0/0）的结果就是 NaN，在 ASCII 文件中，用字符 <code class="docutils literal notranslate"><span class="pre">NaN</span></code> 表示 NaN。</p>
@@ -247,10 +237,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../ogr-format/" class="btn btn-neutral float-right" title="6.4 兼容OGR的GMT矢量数据格式" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../ogr-format/" class="btn btn-neutral float-right" title="5.4 兼容OGR的GMT矢量数据格式" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../table-data/" class="btn btn-neutral" title="6.2 表数据" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../table-data/" class="btn btn-neutral" title="5.2 表数据" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -260,7 +250,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月17日.
+      最后更新于 2019年01月18日.
 
     </p>
   </div>

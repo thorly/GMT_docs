@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>9.2 -J 选项 &mdash; GMT参考手册</title>
+  <title>8.2 -J 选项 &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="9.3 -B 选项" href="../B/" />
-    <link rel="prev" title="9.1 -R 选项" href="../R/" /> 
+    <link rel="next" title="8.3 -B 选项" href="../B/" />
+    <link rel="prev" title="8.1 -R 选项" href="../R/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -87,50 +87,49 @@
             
               <p class="caption"><span class="caption-text">目 录</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../preface/">1 前言</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../intro/">2 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../install/">3 安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">4 GMT初探</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../basis/">5 绘图基础</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../io/">6 输入与输出</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../grid/">8 网格文件</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">9 标准选项</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../R/">9.1 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">9.2 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 选项</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#gmt">9.2.1 GMT投影代码</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#proj4">9.2.2 Proj4投影代码</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">6 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">7 网格文件</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">8 标准选项</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../R/">8.1 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8.2 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 选项</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gmt">8.2.1 GMT投影代码</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#proj4">8.2.2 Proj4投影代码</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../B/">9.3 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../P/">9.4 <code class="docutils literal notranslate"><span class="pre">-P</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../V/">9.5 <code class="docutils literal notranslate"><span class="pre">-V</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../U/">9.6 <code class="docutils literal notranslate"><span class="pre">-U</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../KO/">9.7 <code class="docutils literal notranslate"><span class="pre">-K</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-O</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../XY/">9.8 <code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../a/">9.9 <code class="docutils literal notranslate"><span class="pre">-a</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../binary/">9.10 <code class="docutils literal notranslate"><span class="pre">-b</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../d/">9.11 <code class="docutils literal notranslate"><span class="pre">-d</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../e/">9.12 <code class="docutils literal notranslate"><span class="pre">-e</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../f/">9.13 <code class="docutils literal notranslate"><span class="pre">-f</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../g/">9.14 <code class="docutils literal notranslate"><span class="pre">-g</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../h/">9.15 <code class="docutils literal notranslate"><span class="pre">-h</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../io/">9.16 <code class="docutils literal notranslate"><span class="pre">-i</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-o</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../n/">9.17 <code class="docutils literal notranslate"><span class="pre">-n</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gridreg/">9.18 <code class="docutils literal notranslate"><span class="pre">-r</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../perspective/">9.19 <code class="docutils literal notranslate"><span class="pre">-p</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../s/">9.20 <code class="docutils literal notranslate"><span class="pre">-s</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../t/">9.21 <code class="docutils literal notranslate"><span class="pre">-t</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../x/">9.22 <code class="docutils literal notranslate"><span class="pre">-x</span></code> 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../colon/">9.23 <code class="docutils literal notranslate"><span class="pre">-:</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../B/">8.3 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../P/">8.4 <code class="docutils literal notranslate"><span class="pre">-P</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../V/">8.5 <code class="docutils literal notranslate"><span class="pre">-V</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../U/">8.6 <code class="docutils literal notranslate"><span class="pre">-U</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../KO/">8.7 <code class="docutils literal notranslate"><span class="pre">-K</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-O</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../XY/">8.8 <code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../a/">8.9 <code class="docutils literal notranslate"><span class="pre">-a</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binary/">8.10 <code class="docutils literal notranslate"><span class="pre">-b</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../d/">8.11 <code class="docutils literal notranslate"><span class="pre">-d</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../e/">8.12 <code class="docutils literal notranslate"><span class="pre">-e</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../f/">8.13 <code class="docutils literal notranslate"><span class="pre">-f</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../g/">8.14 <code class="docutils literal notranslate"><span class="pre">-g</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../h/">8.15 <code class="docutils literal notranslate"><span class="pre">-h</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">8.16 <code class="docutils literal notranslate"><span class="pre">-i</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-o</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../n/">8.17 <code class="docutils literal notranslate"><span class="pre">-n</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gridreg/">8.18 <code class="docutils literal notranslate"><span class="pre">-r</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../perspective/">8.19 <code class="docutils literal notranslate"><span class="pre">-p</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../s/">8.20 <code class="docutils literal notranslate"><span class="pre">-s</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../t/">8.21 <code class="docutils literal notranslate"><span class="pre">-t</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x/">8.22 <code class="docutils literal notranslate"><span class="pre">-x</span></code> 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colon/">8.23 <code class="docutils literal notranslate"><span class="pre">-:</span></code> 选项</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">11 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">12 GMT数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../style/">13 风格指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">9 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">10 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 GMT数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../style/">12 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">13 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">14 附录</a></li>
 </ul>
 
             
@@ -194,9 +193,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">9 标准选项</a> &raquo;</li>
+          <li><a href="../">8 标准选项</a> &raquo;</li>
         
-      <li>9.2 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 选项</li>
+      <li>8.2 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 选项</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -212,25 +211,16 @@
   </ul>
 
   
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="../B/" class="btn btn-neutral float-right" title="9.3 -B 选项" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../R/" class="btn btn-neutral" title="9.1 -R 选项" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-  </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="j">
-<h1>9.2 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 选项<a class="headerlink" href="#j" title="永久链接至标题">¶</a></h1>
+<h1>8.2 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 选项<a class="headerlink" href="#j" title="永久链接至标题">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">-J</span></code> 选项用于指定将数据投影到画布上所采用的函数，即坐标变换或投影方式。</p>
 <div class="section" id="gmt">
-<h2>9.2.1 GMT投影代码<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
+<h2>8.2.1 GMT投影代码<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">-J</span></code> 选项有两种写法：</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">-J&lt;δ&gt;[&lt;parameters&gt;/]&lt;scale&gt;</span></code></li>
@@ -262,7 +252,7 @@
 </ul>
 <p>下表列出了GMT所支持的全部投影方式，详细介绍见 <a class="reference internal" href="../../proj/"><span class="doc">投影方式</span></a>。</p>
 <table border="1" class="docutils" id="id1">
-<caption><span class="caption-number">表 9.2 </span><span class="caption-text">GMT投影代码</span><a class="headerlink" href="#id1" title="永久链接至表格">¶</a></caption>
+<caption><span class="caption-number">表 8.2 </span><span class="caption-text">GMT投影代码</span><a class="headerlink" href="#id1" title="永久链接至表格">¶</a></caption>
 <colgroup>
 <col width="49%" />
 <col width="51%" />
@@ -370,7 +360,7 @@
 </table>
 </div>
 <div class="section" id="proj4">
-<h2>9.2.2 Proj4投影代码<a class="headerlink" href="#proj4" title="永久链接至标题">¶</a></h2>
+<h2>8.2.2 Proj4投影代码<a class="headerlink" href="#proj4" title="永久链接至标题">¶</a></h2>
 <p>GMT用单个字母指定投影方式，但英文字母只有26个，而投影方式却不止26个，因而，从GMT 4.3.0开始，GMT开始支持 <code class="docutils literal notranslate"><span class="pre">Proj4</span></code> 包的命名方式。与上面介绍的不同，
 <code class="docutils literal notranslate"><span class="pre">Proj4</span></code> 包不是使用单个字符指定投影方式，而是通过一个单词指定。比如墨卡托投影既可以用 <code class="docutils literal notranslate"><span class="pre">-Jm</span></code> 指定也可以用 <code class="docutils literal notranslate"><span class="pre">-Jmerc</span></code> 指定。</p>
 <p>其语法为:</p>
@@ -380,7 +370,7 @@
 </div>
 <p>类似的，若投影代码的首字母为大写，则最后一个参数表示底图宽度；若投影代码为小写，则最后一个参数表述底图比例尺。</p>
 <table border="1" class="docutils" id="id2">
-<caption><span class="caption-number">表 9.3 </span><span class="caption-text">Proj4投影代码</span><a class="headerlink" href="#id2" title="永久链接至表格">¶</a></caption>
+<caption><span class="caption-number">表 8.3 </span><span class="caption-text">Proj4投影代码</span><a class="headerlink" href="#id2" title="永久链接至表格">¶</a></caption>
 <colgroup>
 <col width="52%" />
 <col width="48%" />
@@ -538,10 +528,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../B/" class="btn btn-neutral float-right" title="9.3 -B 选项" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../B/" class="btn btn-neutral float-right" title="8.3 -B 选项" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../R/" class="btn btn-neutral" title="9.1 -R 选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../R/" class="btn btn-neutral" title="8.1 -R 选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -551,7 +541,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月17日.
+      最后更新于 2019年01月18日.
 
     </p>
   </div>

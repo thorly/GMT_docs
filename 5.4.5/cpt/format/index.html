@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7.3 CPT文件格式 &mdash; GMT参考手册</title>
+  <title>6.3 CPT文件格式 &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="7.4 调整CPT" href="../generate-cpt/" />
-    <link rel="prev" title="7.2 使用CPT" href="../usage/" /> 
+    <link rel="next" title="6.4 调整CPT" href="../generate-cpt/" />
+    <link rel="prev" title="6.2 使用CPT" href="../usage/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -87,35 +87,34 @@
             
               <p class="caption"><span class="caption-text">目 录</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../preface/">1 前言</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../intro/">2 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../install/">3 安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">4 GMT初探</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../basis/">5 绘图基础</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../io/">6 输入与输出</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">7 CPT文件</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../overview/">7.1 CPT简介</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../usage/">7.2 使用CPT</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">7.3 CPT文件格式</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">7.3.1 分类CPT文件</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">7.3.2 常规CPT文件</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">7.3.3 周期性CPT文件</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">7.3.4 动态CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">6 CPT文件</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview/">6.1 CPT简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/">6.2 使用CPT</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.3 CPT文件格式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">6.3.1 分类CPT文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">6.3.2 常规CPT文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">6.3.3 周期性CPT文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">6.3.4 动态CPT</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../generate-cpt/">7.4 调整CPT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../builtin-cpt/">7.5 GMT内置CPT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../resources/">7.6 其他CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generate-cpt/">6.4 调整CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../builtin-cpt/">6.5 GMT内置CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/">6.6 其他CPT</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../grid/">8 网格文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../option/">9 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">11 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">12 GMT数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../style/">13 风格指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">7 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">9 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">10 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 GMT数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../style/">12 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">13 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">14 附录</a></li>
 </ul>
 
             
@@ -179,9 +178,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">7 CPT文件</a> &raquo;</li>
+          <li><a href="../">6 CPT文件</a> &raquo;</li>
         
-      <li>7.3 CPT文件格式</li>
+      <li>6.3 CPT文件格式</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -197,25 +196,16 @@
   </ul>
 
   
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="../generate-cpt/" class="btn btn-neutral float-right" title="7.4 调整CPT" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../usage/" class="btn btn-neutral" title="7.2 使用CPT" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-  </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="cpt">
-<h1>7.3 CPT文件格式<a class="headerlink" href="#cpt" title="永久链接至标题">¶</a></h1>
+<h1>6.3 CPT文件格式<a class="headerlink" href="#cpt" title="永久链接至标题">¶</a></h1>
 <p>CPT文件有两种类型，一种适用于分类型数据，一种适用于常规数据。下面会逐一介绍。</p>
 <div class="section" id="id1">
-<h2>7.3.1 分类CPT文件<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>6.3.1 分类CPT文件<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>分类CPT文件适用于有分类型数据，对于这些数据而言，常规的数值操作是未定义的。比如，将陆地分成不同的类型，沙漠、森林、冰川等等，定义沙漠对应的值是1，森林对应的值是2，冰川定义的值是3。显然值取1.5是没有意义的。</p>
 <p>对于这种分类型数据，需要给每个分类指定一个 <code class="docutils literal notranslate"><span class="pre">&lt;key&gt;</span></code> 。CPT文件中则规定了每个
 <code class="docutils literal notranslate"><span class="pre">&lt;key&gt;</span></code> 所对应的颜色或填充图案，以及一个可选的标签（通常是类型名）。</p>
@@ -246,7 +236,7 @@
 </div>
 </div>
 <div class="section" id="id2">
-<h2>7.3.2 常规CPT文件<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>6.3.2 常规CPT文件<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>对于连续变化的数据而言，可以为几个特定值指定颜色，其他值的颜色则通过插值计算得到。此时可以使用常规CPT文件。常规CPT文件的格式为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;z0&gt;     &lt;color_min_1&gt;  &lt;z1&gt;   &lt;color_max_1&gt;    <span class="o">[</span>&lt;A&gt;<span class="o">]</span>    <span class="o">[</span><span class="p">;</span>&lt;label&gt;<span class="o">]</span>
 &lt;z1&gt;     &lt;color_min_2&gt;  &lt;z2&gt;   &lt;color_max_2&gt;    <span class="o">[</span>&lt;A&gt;<span class="o">]</span>    <span class="o">[</span><span class="p">;</span>&lt;label&gt;<span class="o">]</span>
@@ -287,7 +277,7 @@ NaN值的颜色（默认值为 <a class="reference internal" href="../../conf/co
 </ul>
 </div>
 <div class="section" id="id3">
-<h2>7.3.3 周期性CPT文件<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>6.3.3 周期性CPT文件<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>有一类特殊的CPT文件称之为周期性CPT文件。对于这类CPT文件而言，GMT在根据Z值查找对应的颜色时，会首先从Z值中减去CPT文件中Z值范围的整数倍，使得Z值永远落在CPT
 文件所指定的范围内。这意味着此类CPT文件没有前景色和背景色。</p>
 <p>比如，现在有一个周期性CPT文件，其定义了Z值范围在 <span class="math notranslate nohighlight">\(-\pi\)</span> 到 <span class="math notranslate nohighlight">\(\pi\)</span>
@@ -304,7 +294,7 @@ CPT文件。该选项本质上是在CPT文件中加上一个特殊的注释行:<
 </div>
 </div>
 <div class="section" id="id4">
-<h2>7.3.4 动态CPT<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>6.3.4 动态CPT<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>GMT 内置的 CPT 文件都是动态的。</p>
 <p>所有动态CPT文件都按照两种方式中的一种进行了归一化：</p>
 <ol class="arabic">
@@ -378,10 +368,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../generate-cpt/" class="btn btn-neutral float-right" title="7.4 调整CPT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../generate-cpt/" class="btn btn-neutral float-right" title="6.4 调整CPT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../usage/" class="btn btn-neutral" title="7.2 使用CPT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../usage/" class="btn btn-neutral" title="6.2 使用CPT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -391,7 +381,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月17日.
+      最后更新于 2019年01月18日.
 
     </p>
   </div>

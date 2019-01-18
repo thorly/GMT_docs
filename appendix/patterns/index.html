@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>15.2 GMT预定义填充图案 &mdash; GMT参考手册</title>
+  <title>14.2 GMT预定义填充图案 &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="15.3 GMT底层原理" href="../low-level/" />
-    <link rel="prev" title="15.1 GMT 颜色表" href="../colors/" /> 
+    <link rel="next" title="14.3 GMT底层原理" href="../low-level/" />
+    <link rel="prev" title="14.1 GMT 颜色表" href="../colors/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -87,33 +87,32 @@
             
               <p class="caption"><span class="caption-text">目 录</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../preface/">1 前言</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../intro/">2 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../install/">3 安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">4 GMT初探</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../basis/">5 绘图基础</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../io/">6 输入与输出</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../grid/">8 网格文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../option/">9 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">11 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">12 GMT数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../style/">13 风格指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">15 附录</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../colors/">15.1 GMT 颜色表</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">15.2 GMT预定义填充图案</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../low-level/">15.3 GMT底层原理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../directory-tree/">15.4 目录结构</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculate-distance/">15.5 三种距离计算方式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../variables/">15.6 环境变量</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../custom-fonts/">15.7 自定义字体</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../get-gmt-dev/">15.8 获取 GMT 开发版</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../animation/">15.9 用GMT制作动画</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-dirs/">15.10 目录参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contour-annot/">15.11 等值线标注和“线条标注”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gdal/">15.12 通过 GDAL 读写网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">6 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">7 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">9 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">10 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 GMT数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../style/">12 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">13 API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">14 附录</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../colors/">14.1 GMT 颜色表</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">14.2 GMT预定义填充图案</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../low-level/">14.3 GMT底层原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../directory-tree/">14.4 目录结构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculate-distance/">14.5 三种距离计算方式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../variables/">14.6 环境变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../custom-fonts/">14.7 自定义字体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get-gmt-dev/">14.8 获取 GMT 开发版</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../animation/">14.9 用GMT制作动画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-dirs/">14.10 目录参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour-annot/">14.11 等值线标注和“线条标注”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gdal/">14.12 通过 GDAL 读写网格文件</a></li>
 </ul>
 </li>
 </ul>
@@ -179,9 +178,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">15 附录</a> &raquo;</li>
+          <li><a href="../">14 附录</a> &raquo;</li>
         
-      <li>15.2 GMT预定义填充图案</li>
+      <li>14.2 GMT预定义填充图案</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -197,27 +196,18 @@
   </ul>
 
   
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="../low-level/" class="btn btn-neutral float-right" title="15.3 GMT底层原理" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../colors/" class="btn btn-neutral" title="15.1 GMT 颜色表" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-  </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="gmt">
-<h1>15.2 GMT预定义填充图案<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h1>
+<h1>14.2 GMT预定义填充图案<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h1>
 <p>下图列出了GMT中预定义的90种位图图案（右键查看大图并放大才能看到差异），所有图案都是使用默认的黑白色在 <code class="docutils literal notranslate"><span class="pre">&lt;dpi&gt;</span></code> 取300的环境下生成的。每张小图中左半部分使用
 <code class="docutils literal notranslate"><span class="pre">-Gp</span></code> 绘制，右半部分使用 <code class="docutils literal notranslate"><span class="pre">-GP</span></code> 绘制。</p>
 <div class="figure align-center" id="id1">
 <a class="reference internal image-reference" href="../../_images/GMT_patterns.png"><img alt="../../_images/GMT_patterns.png" src="../../_images/GMT_patterns.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">图 15.1 </span><span class="caption-text">GMT内置位图图案</span></p>
+<p class="caption"><span class="caption-number">图 14.1 </span><span class="caption-text">GMT内置位图图案</span></p>
 </div>
 <p><strong>下载：</strong>
 <a class="reference download internal" download="" href="../../_downloads/b4e91c25097673bf1eb2b6a6c5af5d9e/GMT_patterns.pdf"><code class="xref download docutils literal notranslate"><span class="pre">PDF格式</span></code></a> |
@@ -253,10 +243,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../low-level/" class="btn btn-neutral float-right" title="15.3 GMT底层原理" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../low-level/" class="btn btn-neutral float-right" title="14.3 GMT底层原理" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../colors/" class="btn btn-neutral" title="15.1 GMT 颜色表" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../colors/" class="btn btn-neutral" title="14.1 GMT 颜色表" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -266,7 +256,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月17日.
+      最后更新于 2019年01月18日.
 
     </p>
   </div>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6.4 兼容OGR的GMT矢量数据格式 &mdash; GMT参考手册</title>
+  <title>5.4 兼容OGR的GMT矢量数据格式 &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="6.5 PostScript" href="../postscript/" />
-    <link rel="prev" title="6.3 NaN 数据" href="../nan-data/" /> 
+    <link rel="next" title="5.5 PostScript" href="../postscript/" />
+    <link rel="prev" title="5.3 NaN 数据" href="../nan-data/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -87,19 +87,18 @@
             
               <p class="caption"><span class="caption-text">目 录</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../preface/">1 前言</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../intro/">2 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../install/">3 安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">4 GMT初探</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../basis/">5 绘图基础</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">6 输入与输出</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../format/">6.1 数据格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../table-data/">6.2 表数据</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../nan-data/">6.3 NaN 数据</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.4 兼容OGR的GMT矢量数据格式</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">6.4.1 简介</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ogr-gmt">6.4.2 OGR/GMT格式</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">6.4.3 OGR/GMT元数据</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">5 输入与输出</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../format/">5.1 数据格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../table-data/">5.2 表数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nan-data/">5.3 NaN 数据</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.4 兼容OGR的GMT矢量数据格式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">5.4.1 简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ogr-gmt">5.4.2 OGR/GMT格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">5.4.3 OGR/GMT元数据</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#v">格式版本号 <code class="docutils literal notranslate"><span class="pre">&#64;V</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#g">几何类型 <code class="docutils literal notranslate"><span class="pre">&#64;G</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#r">区域范围 <code class="docutils literal notranslate"><span class="pre">&#64;R</span></code></a></li>
@@ -107,26 +106,26 @@
 <li class="toctree-l4"><a class="reference internal" href="#n">声明非空间字段 <code class="docutils literal notranslate"><span class="pre">&#64;N</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">6.4.4 OGR/GMT数据</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">5.4.4 OGR/GMT数据</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id4">非空间数据</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id5">多边形拓扑</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">6.4.5 示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">5.4.5 示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../postscript/">6.5 PostScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../postscript/">5.5 PostScript</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../grid/">8 网格文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../option/">9 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">11 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">12 GMT数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../style/">13 风格指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">6 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">7 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">9 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">10 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 GMT数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../style/">12 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">13 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">14 附录</a></li>
 </ul>
 
             
@@ -190,9 +189,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">6 输入与输出</a> &raquo;</li>
+          <li><a href="../">5 输入与输出</a> &raquo;</li>
         
-      <li>6.4 兼容OGR的GMT矢量数据格式</li>
+      <li>5.4 兼容OGR的GMT矢量数据格式</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -208,24 +207,15 @@
   </ul>
 
   
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="../postscript/" class="btn btn-neutral float-right" title="6.5 PostScript" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../nan-data/" class="btn btn-neutral" title="6.3 NaN 数据" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-  </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="ogrgmt">
-<h1>6.4 兼容OGR的GMT矢量数据格式<a class="headerlink" href="#ogrgmt" title="永久链接至标题">¶</a></h1>
+<h1>5.4 兼容OGR的GMT矢量数据格式<a class="headerlink" href="#ogrgmt" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id1">
-<h2>6.4.1 简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>5.4.1 简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>地理空间数据有多种格式，按照类型划分，可以大致分为光栅型（raster）和矢量型（vector）。</p>
 <ul class="simple">
 <li>光栅型数据格式不完整列表：<a class="reference external" href="http://www.gdal.org/formats_list.html">http://www.gdal.org/formats_list.html</a></li>
@@ -237,7 +227,7 @@
 OGR/GMT格式的数据。OGR/GMT格式中包含了非空间数据，使得GMT的输出可以很容易地被其他GIS或绘图软件所使用。</p>
 </div>
 <div class="section" id="ogr-gmt">
-<h2>6.4.2 OGR/GMT格式<a class="headerlink" href="#ogr-gmt" title="永久链接至标题">¶</a></h2>
+<h2>5.4.2 OGR/GMT格式<a class="headerlink" href="#ogr-gmt" title="永久链接至标题">¶</a></h2>
 <p>OGR/GMT格式的一些重要性质列举如下：</p>
 <ul class="simple">
 <li>所有非空间数据都以注释行的形式写到文件中，这些注释行在GMT4中会被直接忽略</li>
@@ -251,7 +241,7 @@ OGR/GMT格式的数据。OGR/GMT格式中包含了非空间数据，使得GMT的
 </ul>
 </div>
 <div class="section" id="id2">
-<h2>6.4.3 OGR/GMT元数据<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>5.4.3 OGR/GMT元数据<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>在OGR/GMT格式的文件头部，需要包含一系列元数据信息。元数据用于描述整个文件的共同信息，比如版本号、几何类型、区域范围、投影方式、非空间数据的格式等信息。</p>
 <div class="section" id="v">
 <h3>格式版本号 <code class="docutils literal notranslate"><span class="pre">&#64;V</span></code><a class="headerlink" href="#v" title="永久链接至标题">¶</a></h3>
@@ -315,7 +305,7 @@ AUTHORITY<span class="o">[</span><span class="se">\&quot;</span>EPSG<span class=
 </div>
 </div>
 <div class="section" id="id3">
-<h2>6.4.4 OGR/GMT数据<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>5.4.4 OGR/GMT数据<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>元数据之后即是真正的数据，包括非空间数据和空间数据。</p>
 <div class="section" id="id4">
 <h3>非空间数据<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
@@ -343,7 +333,7 @@ AUTHORITY<span class="o">[</span><span class="se">\&quot;</span>EPSG<span class=
 </div>
 </div>
 <div class="section" id="id6">
-<h2>6.4.5 示例<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<h2>5.4.5 示例<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>点数据示例:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># @VGMT1.0 @GPOINT @Nname|depth|id</span>
 <span class="c1"># @Tstring|double|integer</span>
@@ -436,10 +426,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../postscript/" class="btn btn-neutral float-right" title="6.5 PostScript" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../postscript/" class="btn btn-neutral float-right" title="5.5 PostScript" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../nan-data/" class="btn btn-neutral" title="6.3 NaN 数据" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../nan-data/" class="btn btn-neutral" title="5.3 NaN 数据" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -449,7 +439,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月17日.
+      最后更新于 2019年01月18日.
 
     </p>
   </div>
