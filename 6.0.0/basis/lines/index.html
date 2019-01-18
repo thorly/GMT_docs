@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5.10 线条属性 &mdash; GMT参考手册</title>
+  <title>4.10 线条属性 &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="5.11 绘制矢量/箭头" href="../vectors/" />
-    <link rel="prev" title="5.9 转义序列" href="../character-escape/" /> 
+    <link rel="next" title="4.11 绘制矢量/箭头" href="../vectors/" />
+    <link rel="prev" title="4.9 转义序列" href="../character-escape/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -87,43 +87,42 @@
             
               <p class="caption"><span class="caption-text">目 录</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../preface/">1 前言</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../intro/">2 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../install/">3 安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">4 GMT初探</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">5 绘图基础</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../paper/">5.1 画布</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../unit/">5.2 单位</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../color/">5.3 颜色</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pen/">5.4 画笔</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../fill/">5.5 填充</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../text/">5.6 文字</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-fonts/">5.7 特殊字体</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-characters/">5.8 特殊字符</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../character-escape/">5.9 转义序列</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.10 线条属性</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">5.10.1 端点偏移量</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">5.10.2 线条平滑</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">5.10.3 端点箭头</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">5.10.4 其他属性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">3 GMT初探</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">4 绘图基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../paper/">4.1 画布</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit/">4.2 单位</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">4.3 颜色</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pen/">4.4 画笔</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fill/">4.5 填充</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">4.6 文字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-fonts/">4.7 特殊字体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-characters/">4.8 特殊字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../character-escape/">4.9 转义序列</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.10 线条属性</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">4.10.1 端点偏移量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">4.10.2 线条平滑</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">4.10.3 端点箭头</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">4.10.4 其他属性</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../vectors/">5.11 绘制矢量/箭头</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../anchors/">5.12 锚点</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../embellishments/">5.13 绘制修饰物</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../glossary/">5.14 词汇表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vectors/">4.11 绘制矢量/箭头</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anchors/">4.12 锚点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../embellishments/">4.13 绘制修饰物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary/">4.14 词汇表</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../io/">6 输入与输出</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../grid/">8 网格文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../option/">9 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">11 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">12 GMT数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../style/">13 风格指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">6 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">7 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">9 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">10 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 GMT数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../style/">12 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">13 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">14 附录</a></li>
 </ul>
 
             
@@ -187,9 +186,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">5 绘图基础</a> &raquo;</li>
+          <li><a href="../">4 绘图基础</a> &raquo;</li>
         
-      <li>5.10 线条属性</li>
+      <li>4.10 线条属性</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -205,26 +204,17 @@
   </ul>
 
   
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="../vectors/" class="btn btn-neutral float-right" title="5.11 绘制矢量/箭头" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../character-escape/" class="btn btn-neutral" title="5.9 转义序列" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-  </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>5.10 线条属性<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>4.10 线条属性<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p><a class="reference internal" href="../pen/"><span class="doc">画笔</span></a> 一节介绍了画笔的三个属性：线宽、颜色以及线型。对于线条而言，除了画笔的这三个属性之外，某些模块还可以为线条设置额外的线条属性，这些额外的属性可以通过在画笔属性后加上子选项来是实现。</p>
 <p>线条的额外属性包括：端点偏移量、线条平滑和端点箭头。</p>
 <div class="section" id="id2">
-<h2>5.10.1 端点偏移量<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>4.10.1 端点偏移量<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>在给定若干个数据点绘制线条时，一般都是从起点（第一个点）一直画到终点（最后一个点）。可以使用 <code class="docutils literal notranslate"><span class="pre">+o</span></code> 子选项为线段两端指定偏移量，使得绘制线段时的起点和终点与输入数据中指定的起点和终点间存在一定的偏移量。该子选项的语法是:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>+o&lt;offset&gt;<span class="o">[</span>&lt;u&gt;<span class="o">]</span>
 </pre></div>
@@ -241,7 +231,7 @@
 </div>
 </div>
 <div class="section" id="id3">
-<h2>5.10.2 线条平滑<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>4.10.2 线条平滑<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>通常情况下，在绘制线条时，两点之间是用直线连接的（地图上两点之间默认用大圆弧连接）。使用 <code class="docutils literal notranslate"><span class="pre">+s</span></code> 子选项会使用 Bezier splines 在两点之间做样条插值以得到更光滑的曲线。</p>
 <p>下图中，左图使用了 <code class="docutils literal notranslate"><span class="pre">-W2p</span></code> 选项，右边使用了 <code class="docutils literal notranslate"><span class="pre">-W2p+s</span></code>。</p>
 <p><a class="reference download internal" download="" href="../../_downloads/0d8af62e880f2c8cd8c0b9c9a0a51b38/lines-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
@@ -250,7 +240,7 @@
 </div>
 </div>
 <div class="section" id="id4">
-<h2>5.10.3 端点箭头<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>4.10.3 端点箭头<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>默认情况下，在绘制线段时，线段的两个端点并没有什么特别的。使用 <code class="docutils literal notranslate"><span class="pre">+v</span></code> 子选项，可以在线段的一端或两段绘制一个指向端点的箭头。该子选项的语法为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>+v<span class="o">[</span>b<span class="p">|</span>e<span class="o">]</span>&lt;vspecs&gt;
 </pre></div>
@@ -266,7 +256,7 @@
 </div>
 </div>
 <div class="section" id="id5">
-<h2>5.10.4 其他属性<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<h2>4.10.4 其他属性<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>除了上面提到的属性之外，GMT中还有一些参数可以影响线段的外观。这些参数包括：</p>
 <ul class="simple">
 <li><a class="reference internal" href="../../conf/ps/#ps-line-cap"><span class="std std-ref">PS_LINE_CAP</span></a>：控制线段顶端的绘制方式</li>
@@ -305,10 +295,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../vectors/" class="btn btn-neutral float-right" title="5.11 绘制矢量/箭头" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../vectors/" class="btn btn-neutral float-right" title="4.11 绘制矢量/箭头" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../character-escape/" class="btn btn-neutral" title="5.9 转义序列" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../character-escape/" class="btn btn-neutral" title="4.9 转义序列" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -318,7 +308,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月17日.
+      最后更新于 2019年01月18日.
 
     </p>
   </div>

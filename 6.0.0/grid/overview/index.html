@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>8.1 网格文件简介 &mdash; GMT参考手册</title>
+  <title>7.1 网格文件简介 &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="8.2 netCDF文件格式" href="../netcdf/" />
-    <link rel="prev" title="8 网格文件" href="../" /> 
+    <link rel="next" title="7.2 netCDF文件格式" href="../netcdf/" />
+    <link rel="prev" title="7 网格文件" href="../" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -87,16 +87,15 @@
             
               <p class="caption"><span class="caption-text">目 录</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../preface/">1 前言</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../intro/">2 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../install/">3 安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">4 GMT初探</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../basis/">5 绘图基础</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../io/">6 输入与输出</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">8 网格文件</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">8.1 网格文件简介</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#grid-format">8.1.1 网格文件格式</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">6 CPT文件</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">7 网格文件</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.1 网格文件简介</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#grid-format">7.1.1 网格文件格式</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#netcdf">NetCDF网格文件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#native">Native二进制网格文件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#sun">Sun光栅文件</a></li>
@@ -104,24 +103,24 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../netcdf/">8.2 netCDF文件格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../native-grid/">8.3 Native二进制网格格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sun-raster/">8.4 Sun光栅文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../read/">8.5 读netCDF文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../write/">8.6 写网格文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../boundary-condition/">8.7 边界条件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../registration/">8.8 网格配准</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../suffix/">8.9 网格文件后缀</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../viewer/">8.10 查看netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../netcdf/">7.2 netCDF文件格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../native-grid/">7.3 Native二进制网格格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sun-raster/">7.4 Sun光栅文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../read/">7.5 读netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../write/">7.6 写网格文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../boundary-condition/">7.7 边界条件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../registration/">7.8 网格配准</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../suffix/">7.9 网格文件后缀</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../viewer/">7.10 查看netCDF文件</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../option/">9 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">11 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">12 GMT数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../style/">13 风格指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">9 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">10 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 GMT数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../style/">12 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">13 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">14 附录</a></li>
 </ul>
 
             
@@ -185,9 +184,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">8 网格文件</a> &raquo;</li>
+          <li><a href="../">7 网格文件</a> &raquo;</li>
         
-      <li>8.1 网格文件简介</li>
+      <li>7.1 网格文件简介</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -203,22 +202,13 @@
   </ul>
 
   
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="../netcdf/" class="btn btn-neutral float-right" title="8.2 netCDF文件格式" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../" class="btn btn-neutral" title="8 网格文件" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-  </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>8.1 网格文件简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>7.1 网格文件简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>GMT可以绘制2D网格数据。通常，2D网格文件的X方向代表经度、Y方向代表纬度，Z值可以表示高程、重力值、温度、速度等。也可以将 XYZ 格式的 1D 表数据网格化得到 2D 网格数据。</p>
 <p>GMT可以使用的2D网格数据有三种格式：</p>
 <ol class="arabic simple">
@@ -228,7 +218,7 @@
 </ol>
 <p>最常见也最推荐的网格数据格式是 netCDF 格式。</p>
 <div class="section" id="grid-format">
-<span id="id2"></span><h2>8.1.1 网格文件格式<a class="headerlink" href="#grid-format" title="永久链接至标题">¶</a></h2>
+<span id="id2"></span><h2>7.1.1 网格文件格式<a class="headerlink" href="#grid-format" title="永久链接至标题">¶</a></h2>
 <p>GMT支持多种格式的网格文件，包括netCDF格式、二进制网格文件以及8位Sun光栅文件。其中最常用的是netCDF格式。除此之外，GMT还可以读取用户自定义的网格文件，只要用户写好自定义网格文件的读写子程序，并将其与GMT函数库链接起来即可。详情参考源码中的
 <code class="docutils literal notranslate"><span class="pre">gmt_customio.c</span></code> 文件。</p>
 <div class="section" id="netcdf">
@@ -279,10 +269,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../netcdf/" class="btn btn-neutral float-right" title="8.2 netCDF文件格式" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../netcdf/" class="btn btn-neutral float-right" title="7.2 netCDF文件格式" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../" class="btn btn-neutral" title="8 网格文件" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../" class="btn btn-neutral" title="7 网格文件" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -292,7 +282,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月17日.
+      最后更新于 2019年01月18日.
 
     </p>
   </div>

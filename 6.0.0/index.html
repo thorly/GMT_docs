@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="genindex/" />
     <link rel="search" title="搜索" href="search/" />
-    <link rel="next" title="1 前言" href="preface/" /> 
+    <link rel="next" title="1 简介" href="intro/" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -86,21 +86,20 @@
             
               <p class="caption"><span class="caption-text">目 录</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="preface/">1 前言</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro/">2 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install/">3 安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial/">4 GMT初探</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basis/">5 绘图基础</a></li>
-<li class="toctree-l1"><a class="reference internal" href="io/">6 输入与输出</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cpt/">7 CPT文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="grid/">8 网格文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="option/">9 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="conf/">10 配置GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="proj/">11 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dataset/">12 GMT数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="style/">13 风格指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/">14 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appendix/">15 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basis/">4 绘图基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="io/">5 输入与输出</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpt/">6 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grid/">7 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conf/">9 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proj/">10 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset/">11 GMT数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="style/">12 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/">13 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix/">14 附录</a></li>
 </ul>
 
             
@@ -180,13 +179,6 @@
   </ul>
 
   
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="preface/" class="btn btn-neutral float-right" title="1 前言" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-  </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -202,7 +194,27 @@
 <a class="reference external" href="https://docs.gmt-china.org/6.0.0/GMT_Docs.pdf">PDF下载</a> |
 <a class="reference external" href="https://github.com/gmt-china/GMT_Docs">文档源码</a> |
 <a class="reference external" href="https://gmt-china.org">GMT中文社区</a></p>
-<p>本项目是 <a class="reference external" href="https://gmt-china.org">GMT中文社区</a> 维护的GMT中文参考手册，既可以作为入门读物，也可以作为日常参考。希望通过阅读本手册，能够让用户尽快掌握GMT的用法。</p>
+<p>本文档是由GMT中文社区维护整理的GMT中文参考手册，其详尽地介绍了GMT的方方面面。其可以作为初学者的入门读物，也可以作为日常使用的参考书。</p>
+<p>GMT中文参考手册开始于2014年。在2014年，网络上能够找到的GMT中文文档大多基于
+GMT4甚至GMT3。这些文档存在一些共同的缺点：</p>
+<ol class="arabic simple">
+<li>排版质量差：大多是在Word里写好然后转换成PDF</li>
+<li>缺乏维护：文档写好发布后就没有再持续更新</li>
+<li>不完整：很多有用的内容没有包含在文档中</li>
+<li>不严谨：很多文档声称是基于GMT4，但实际上却在混用GMT3的语法</li>
+<li>命令过时：有些命令在新版本的GMT下无法执行，新用户的体验很糟糕</li>
+<li>重复劳动：多位作者独立翻译整理出了几份相似的文档，很多工作都是在重复劳动</li>
+</ol>
+<p>相比于之前的文档，本文档具有如下优点：</p>
+<ol class="arabic simple">
+<li>高质量排版：文档提供网页版和PDF版，PDF由LaTeX制作得到，排版质量高</li>
+<li>持续维护：适配GMT的新版本，且不断修正文档中存在的错误，不定期发布新版本</li>
+<li>完整性：尽可能覆盖GMT的方方面面，供用户查找</li>
+<li>严谨性：尽可能保证所有命令均通过GMT最新版本的测试</li>
+<li>开源：原始文档为纯文本，在GitHub上开源</li>
+<li>协同合作：依托强大的GitHub和Git，任何人均可参与到文档的编辑与维护中</li>
+</ol>
+<p>文档的持续维护更新非一人之力所能完成，希望能够有更多的志愿者加入到文档的维护工作中来。</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -236,7 +248,7 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="preface/" class="btn btn-neutral float-right" title="1 前言" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="intro/" class="btn btn-neutral float-right" title="1 简介" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>
@@ -247,7 +259,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月17日.
+      最后更新于 2019年01月18日.
 
     </p>
   </div>

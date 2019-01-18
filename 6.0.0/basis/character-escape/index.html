@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5.9 转义序列 &mdash; GMT参考手册</title>
+  <title>4.9 转义序列 &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="5.10 线条属性" href="../lines/" />
-    <link rel="prev" title="5.8 特殊字符" href="../special-characters/" /> 
+    <link rel="next" title="4.10 线条属性" href="../lines/" />
+    <link rel="prev" title="4.8 特殊字符" href="../special-characters/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -87,41 +87,40 @@
             
               <p class="caption"><span class="caption-text">目 录</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../preface/">1 前言</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../intro/">2 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../install/">3 安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">4 GMT初探</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">5 绘图基础</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../paper/">5.1 画布</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../unit/">5.2 单位</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../color/">5.3 颜色</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pen/">5.4 画笔</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../fill/">5.5 填充</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../text/">5.6 文字</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-fonts/">5.7 特殊字体</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-characters/">5.8 特殊字符</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.9 转义序列</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">5.9.1 转义字符示例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">5.9.2 注意事项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">3 GMT初探</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">4 绘图基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../paper/">4.1 画布</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit/">4.2 单位</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">4.3 颜色</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pen/">4.4 画笔</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fill/">4.5 填充</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">4.6 文字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-fonts/">4.7 特殊字体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-characters/">4.8 特殊字符</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.9 转义序列</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">4.9.1 转义字符示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">4.9.2 注意事项</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../lines/">5.10 线条属性</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vectors/">5.11 绘制矢量/箭头</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../anchors/">5.12 锚点</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../embellishments/">5.13 绘制修饰物</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../glossary/">5.14 词汇表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lines/">4.10 线条属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vectors/">4.11 绘制矢量/箭头</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anchors/">4.12 锚点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../embellishments/">4.13 绘制修饰物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary/">4.14 词汇表</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../io/">6 输入与输出</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../grid/">8 网格文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../option/">9 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">11 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">12 GMT数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../style/">13 风格指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">6 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">7 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">9 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">10 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 GMT数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../style/">12 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">13 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">14 附录</a></li>
 </ul>
 
             
@@ -185,9 +184,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">5 绘图基础</a> &raquo;</li>
+          <li><a href="../">4 绘图基础</a> &raquo;</li>
         
-      <li>5.9 转义序列</li>
+      <li>4.9 转义序列</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -203,26 +202,17 @@
   </ul>
 
   
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="../lines/" class="btn btn-neutral float-right" title="5.10 线条属性" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../special-characters/" class="btn btn-neutral" title="5.8 特殊字符" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-  </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>5.9 转义序列<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>4.9 转义序列<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>前面已经介绍了如何设置字体属性以及如何输出特殊字符，但是这还不够，无法实现上标、下标，无法在一个字符串内随意切换字体和颜色。由此，GMT引入了转义字符，给文本加入了更丰富的效果。</p>
 <p>GMT中的转义字符是 <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>。转义字符与一般字符合在一起构成了转义序列。GMT可以识别的转义字符在下表列出：</p>
 <table border="1" class="docutils" id="id4">
-<caption><span class="caption-number">表 5.3 </span><span class="caption-text">GMT转义字符</span><a class="headerlink" href="#id4" title="永久链接至表格">¶</a></caption>
+<caption><span class="caption-number">表 4.3 </span><span class="caption-text">GMT转义字符</span><a class="headerlink" href="#id4" title="永久链接至表格">¶</a></caption>
 <colgroup>
 <col width="28%" />
 <col width="72%" />
@@ -271,7 +261,7 @@
 <p>对于一些常用的欧洲特殊字符，可以通过设置 <a class="reference internal" href="../../conf/ps/#ps-char-encoding"><span class="std std-ref">PS_CHAR_ENCODING</span></a>
 并使用八进制码表示。GMT为其中的部分常见字符提供了转义序列，如下表：</p>
 <table border="1" class="docutils" id="id5">
-<caption><span class="caption-number">表 5.4 </span><span class="caption-text">欧洲特殊字符</span><a class="headerlink" href="#id5" title="永久链接至表格">¶</a></caption>
+<caption><span class="caption-number">表 4.4 </span><span class="caption-text">欧洲特殊字符</span><a class="headerlink" href="#id5" title="永久链接至表格">¶</a></caption>
 <colgroup>
 <col width="22%" />
 <col width="28%" />
@@ -324,14 +314,14 @@
 </tbody>
 </table>
 <div class="section" id="id2">
-<h2>5.9.1 转义字符示例<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>4.9.1 转义字符示例<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p><a class="reference download internal" download="" href="../../_downloads/e17b090676a811ca53c750a3ddd500ca/character-escape-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center">
 <img alt="../../_images/character-escape-gmtplot-0.png" src="../../_images/character-escape-gmtplot-0.png" />
 </div>
 </div>
 <div class="section" id="id3">
-<h2>5.9.2 注意事项<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>4.9.2 注意事项<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
 <li>上标/下标不支持嵌套，即只支持一层上标/下标</li>
 <li><code class="docutils literal notranslate"><span class="pre">pstext</span></code> 命令中有选项可以在文本周围加上矩形框，该选项对转义序列无效</li>
@@ -370,10 +360,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../lines/" class="btn btn-neutral float-right" title="5.10 线条属性" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../lines/" class="btn btn-neutral float-right" title="4.10 线条属性" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../special-characters/" class="btn btn-neutral" title="5.8 特殊字符" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../special-characters/" class="btn btn-neutral" title="4.8 特殊字符" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -383,7 +373,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月17日.
+      最后更新于 2019年01月18日.
 
     </p>
   </div>
