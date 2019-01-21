@@ -8,12 +8,12 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.3 命令行基础 &mdash; GMT参考手册</title>
+  <title>14.1.1 命令行基础 &mdash; GMT参考手册</title>
   
 
   
   
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
   
   
   
@@ -26,15 +26,15 @@
 
   
 
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="index" title="索引" href="../../genindex/" />
-    <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="3.4 bash简明教程" href="../bash/" />
-    <link rel="prev" title="3.2 GMT命令" href="../gmt-cmd/" /> 
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../../genindex/" />
+    <link rel="search" title="搜索" href="../../../search/" />
+    <link rel="next" title="14.1.2 bash简明教程" href="../bash/" />
+    <link rel="prev" title="14.1 命令行及脚本基础" href="../" /> 
 
   
-  <script src="../../_static/js/modernizr.min.js"></script>
+  <script src="../../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -50,7 +50,7 @@
           
 
           
-            <a href="../../" class="icon icon-home"> GMT参考手册
+            <a href="../../../" class="icon icon-home"> GMT参考手册
           
 
           
@@ -67,7 +67,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+  <form id="rtd-search-form" class="wy-form" action="../../../search/" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -87,40 +87,50 @@
             
               <p class="caption"><span class="caption-text">目 录</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">3 GMT初探</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../cmd/">3.1 命令行</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gmt-cmd/">3.2 GMT命令</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.3 命令行基础</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">3.3.1 文件后缀</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#stderr">3.3.2 标准输出流和标准错误流</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">3.3.3 重定向</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">3.3.4 管道</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">3.3.5 标准输入流</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">3.3.6 倒引号</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">3.3.7 通配符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basis/">4 绘图基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../io/">5 输入与输出</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cpt/">6 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grid/">7 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../conf/">9 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../proj/">10 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dataset/">11 GMT数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../style/">12 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/">13 API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../">14 附录</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../">14.1 命令行及脚本基础</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">14.1.1 命令行基础</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">文件后缀</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stderr">标准输出流和标准错误流</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">重定向</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">管道</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">标准输入流</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">倒引号</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">通配符</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../bash/">3.4 bash简明教程</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bat/">3.5 bat简明教程</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../unix-tools/">3.6 Unix常用工具</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutor1/">3.7 入门示例1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutor2/">3.8 入门示例2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutor3/">3.9 入门示例3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bash/">14.1.2 bash简明教程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bat/">14.1.3 bat简明教程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../unix-tools/">14.1.4 Unix常用工具</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../cpt/">6 CPT文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../grid/">7 网格文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">9 配置GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">10 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 GMT数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../style/">12 风格指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">13 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">14 附录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../colors/">14.2 GMT 颜色表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../patterns/">14.3 GMT预定义填充图案</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../low-level/">14.4 GMT底层原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../directory-tree/">14.5 目录结构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../calculate-distance/">14.6 三种距离计算方式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../variables/">14.7 环境变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../custom-fonts/">14.8 自定义字体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../get-gmt-dev/">14.9 获取 GMT 开发版</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../animation/">14.10 用GMT制作动画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../special-dirs/">14.11 目录参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contour-annot/">14.12 等值线标注和“线条标注”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gdal/">14.13 通过 GDAL 读写网格文件</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -153,7 +163,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../">GMT参考手册</a>
+          <a href="../../../">GMT参考手册</a>
         
       </nav>
 
@@ -182,18 +192,20 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../">Docs</a> &raquo;</li>
+      <li><a href="../../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">3 GMT初探</a> &raquo;</li>
+          <li><a href="../../">14 附录</a> &raquo;</li>
         
-      <li>3.3 命令行基础</li>
+          <li><a href="../">14.1 命令行及脚本基础</a> &raquo;</li>
+        
+      <li>14.1.1 命令行基础</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/tutorial/cmd-basis.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/appendix/cmd/cmd-basis.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -208,17 +220,17 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>3.3 命令行基础<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>14.1.1 命令行基础<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>本节会简单介绍一下在使用GMT的过程中需要掌握的一些与GMT无关的基础知识。如无特殊提示，则表明该基础知识既适用于Linux、macOS也适用于Windows。</p>
 <div class="section" id="id2">
-<h2>3.3.1 文件后缀<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>文件后缀<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>经常接触的 <code class="docutils literal notranslate"><span class="pre">.doc</span></code>、<code class="docutils literal notranslate"><span class="pre">.ppt</span></code>，以及前面提到的 <code class="docutils literal notranslate"><span class="pre">.sh</span></code>、<code class="docutils literal notranslate"><span class="pre">.bat</span></code> 等，都是文件后缀。文件后缀的主要作用是表明该文件是什么格式或什么类型的文件。</p>
 <p>Windows下，每一个文件后缀都与特定的应用程序相关联，比如后缀为 <code class="docutils literal notranslate"><span class="pre">.doc</span></code> 的文件默认都是用MS Word打开，当然也可以选择用其他应用程序打开。后缀为 <code class="docutils literal notranslate"><span class="pre">.bat</span></code> 的文件，在双击的时候会直接被执行，想要编辑的话就需要右键编辑。</p>
 <p>Linux/macOS下，文件后缀就没那么重要了。一个bash脚本可以用 <code class="docutils literal notranslate"><span class="pre">.sh</span></code> 结尾，也可以用 <code class="docutils literal notranslate"><span class="pre">.gmt</span></code>
 结尾，甚至没有后缀。不管后缀是什么，如果用 <code class="docutils literal notranslate"><span class="pre">sh</span></code> 来执行该脚本，这个脚本就会被当成bash脚本；如果用 <code class="docutils literal notranslate"><span class="pre">perl</span></code> 来执行该脚本，这个脚本就会被当成Perl脚本（bash脚本被当成Perl脚本来解释，会直接报错）。因而在Linux/macOS下，对文件的后缀并没有严格的要求，后缀的作用仅仅是让用户一眼就可以看出来文件是什么格式而已。</p>
 </div>
 <div class="section" id="stderr">
-<span id="id3"></span><h2>3.3.2 标准输出流和标准错误流<a class="headerlink" href="#stderr" title="永久链接至标题">¶</a></h2>
+<span id="id3"></span><h2>标准输出流和标准错误流<a class="headerlink" href="#stderr" title="永久链接至标题">¶</a></h2>
 <p>标准输出流（STDOUT）用于显示输出数据，标准错误流（STDERR）用于显示错误消息。一般来说，标准输出流和标准错误流都是屏幕。</p>
 <p>GMT中，模块的正常输出都发送到标准输出流，模块的语法、警告、错误以及进程报告都发送到标准错误流，由于这两者默认情况下都是屏幕，所以标准输出流和标准错误流会混在一起，因而需要对输出进行重定向。常见的做法可以是下面的一种或多种的组合：</p>
 <ol class="arabic simple">
@@ -228,7 +240,7 @@
 </ol>
 </div>
 <div class="section" id="id4">
-<h2>3.3.3 重定向<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>重定向<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>这里只介绍GMT中经常使用的最简单的重定向功能。</p>
 <p>对于标准输出流：</p>
 <ul class="simple">
@@ -238,7 +250,7 @@
 <p>对于标准错误流，重定向符号是 <code class="docutils literal notranslate"><span class="pre">2&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">2&gt;&gt;</span></code>。这里的 <code class="docutils literal notranslate"><span class="pre">2</span></code> 表示标准错误流，大于号的含义与标准输出流相同。</p>
 </div>
 <div class="section" id="id5">
-<h2>3.3.4 管道<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<h2>管道<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>除了上面提到的重定向符号之外，还有一种常用的类似重定向的操作，即管道，用符号 <code class="docutils literal notranslate"><span class="pre">|</span></code> 表示。</p>
 <p>管道的作用是，将上一个命令的标准输出作为下一个命令的标准输入。</p>
 <p>举例如下，假设文件 <code class="docutils literal notranslate"><span class="pre">input.dat</span></code> 中包含了一系列地震的经度、纬度和震级共三列数据，想要在图上画很多圆表示地震的位置，圆的大小表示震级的大小。可以用类似如下命令:</p>
@@ -258,7 +270,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">gawk</span></code> 会读取 <code class="docutils literal notranslate"><span class="pre">input.dat</span></code> 的内容，并对数据做简单处理并输出。</p>
 </div>
 <div class="section" id="id6">
-<h2>3.3.5 标准输入流<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<h2>标准输入流<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>GMT的某些模块需要数据才可以画图，这些数据可以来自于文件，或来自于标准输入流。</p>
 <p>比如要绘制地震的分布，可以把地震的经纬度信息放在文件 <code class="docutils literal notranslate"><span class="pre">event.loc</span></code> 中，其内容如下:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">100</span>.0 <span class="m">40</span>.0
@@ -314,7 +326,7 @@ $
 </ol>
 </div>
 <div class="section" id="id7">
-<h2>3.3.6 倒引号<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<h2>倒引号<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
 <p>倒引号，也称为反引号，英文为backtick或backquote。键盘上按键 <code class="docutils literal notranslate"><span class="pre">1</span></code> 左边的键，那个像顿号的就是。倒引号的作用是将一个命令的标准输出插在另一个命令的任意位置。</p>
 <p>例如，想要用 <code class="docutils literal notranslate"><span class="pre">plot</span></code> 绘制某数据时，需要提供数据的范围 <code class="docutils literal notranslate"><span class="pre">-R</span></code>，而 <code class="docutils literal notranslate"><span class="pre">gmtinfo</span></code>
 模块可以用于计算并输出数据的范围，即需要将 <code class="docutils literal notranslate"><span class="pre">gmtinfo</span></code> 的输出作为 <code class="docutils literal notranslate"><span class="pre">plot</span></code> 的一个选项。</p>
@@ -339,11 +351,11 @@ gmt psxy in.dat -JX10c <span class="nv">$R</span> &gt; map.ps
 <p>此处，bash首先会执行倒引号内的命令，然后用 <code class="docutils literal notranslate"><span class="pre">gmtinfo</span></code> 的输出替换整个倒引号部分，再执行替换后的命令。这样的写法更易于自动化。</p>
 </div>
 <div class="section" id="id8">
-<h2>3.3.7 通配符<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<h2>通配符<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
 <p>UNIX下提供了通配符功能，使得可以基于文件名的模式选择一组文件。</p>
 <p>UNIX下的通配符包括：</p>
 <table border="1" class="docutils" id="id9">
-<caption><span class="caption-number">表 3.1 </span><span class="caption-text">通配符</span><a class="headerlink" href="#id9" title="永久链接至表格">¶</a></caption>
+<caption><span class="caption-number">表 14.1 </span><span class="caption-text">通配符</span><a class="headerlink" href="#id9" title="永久链接至表格">¶</a></caption>
 <colgroup>
 <col width="22%" />
 <col width="78%" />
@@ -407,10 +419,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../bash/" class="btn btn-neutral float-right" title="3.4 bash简明教程" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../bash/" class="btn btn-neutral float-right" title="14.1.2 bash简明教程" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../gmt-cmd/" class="btn btn-neutral" title="3.2 GMT命令" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../" class="btn btn-neutral" title="14.1 命令行及脚本基础" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -420,7 +432,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月21日.
 
     </p>
   </div>
@@ -441,18 +453,18 @@ gitalk.render('gitalk-container');
 
     
     
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/translations.js"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
   
 
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.3 GMT模块 &mdash; GMT参考手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="3.4 入门示例1" href="../tutor1/" />
+    <link rel="prev" title="3.2 GMT命令格式" href="../gmt-cmd/" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../" class="icon icon-home"> GMT参考手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.4.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">3 GMT初探</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../cmd/">3.1 命令行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-cmd/">3.2 GMT命令格式</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.3 GMT模块</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#d">3.3.1 绘制1D数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">3.3.2 绘制2D数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">3.3.3 参数设置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">3.3.4 信息提取</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">3.3.5 格式转换</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">3.3.6 1D 数据处理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">3.3.7 2D 数据处理</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutor1/">3.4 入门示例1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutor2/">3.5 入门示例2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutor3/">3.6 入门示例3</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">6 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">7 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">9 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">10 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 GMT数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../style/">12 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">13 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">14 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://modules.gmt-china.org"><i class="fa fa-book fa-fw"></i> 模块手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT参考手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">Docs</a> &raquo;</li>
+        
+          <li><a href="../">3 GMT初探</a> &raquo;</li>
+        
+      <li>3.3 GMT模块</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/tutorial/modules.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gmt">
+<h1>3.3 GMT模块<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h1>
+<p>GMT提供了大约130多个模块，每个模块可以实现不同的功能，根据模块的名称可以大致猜出模块的功能。</p>
+<p>下面将GMT中最常用的模块按照功能分类，并用一句话简述其功能。</p>
+<div class="section" id="d">
+<h2>3.3.1 绘制1D数据<a class="headerlink" href="#d" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>psbasemap ：绘制底图</li>
+<li>psxy ：在图上绘制线段、多边形和符号</li>
+<li>pstext ：在图上写文本</li>
+<li>pscoast ：在地图上绘制海岸线、河流、国界线</li>
+<li>pslegend ：绘制图例</li>
+<li>pssolar ：计算或/和绘制晨昏线以及民用、航海用以及天文用曙暮光区域</li>
+<li>psmeca ：在地图上绘制震源机制解</li>
+<li>pscoupe ：绘制震源机制解的剖面图</li>
+<li>pshistogram ：统计并绘制直方图</li>
+<li>pssac ：在地图上绘制 SAC 格式的地震波形数据</li>
+<li>psclip ：打开或关闭多边形裁剪路径</li>
+<li>psrose ：绘制极坐标下的直方图（sector图、rose图或windrose图）</li>
+<li>pspolar ：在震源球上绘制台站极性</li>
+<li>psvelo ：在地图上绘制速度矢量、十字线、楔形图</li>
+<li>psternary ：绘制三角图解</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2>3.3.2 绘制2D数据<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>gmtlogo ：在图上绘制GMT图形logo</li>
+<li>psimage ：将EPS或光栅图片放在图上</li>
+<li>psscale ：在图上绘制灰色或彩色色标</li>
+<li>grdvector ：根据两个网格文件绘制矢量场</li>
+<li>grdimage ：在图上绘制网格数据</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>3.3.3 参数设置<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>gmtset ：修改单个或多个GMT参数的值</li>
+<li>gmtget ：列出单个或多个GMT参数的当前值</li>
+<li>gmtdefaults ：列出所有GMT参数的当前值</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>3.3.4 信息提取<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>grdinfo ：从网格文件中提取基本信息</li>
+<li>gmtinfo ：从表数据中提取信息</li>
+<li>gmtwhich ：返回指定文件的完整路径</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>3.3.5 格式转换<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>psconvert ：将GMT生成的PS文件转换为其他图片格式</li>
+<li>grdconvert ：在不同的网格格式之间互相转换</li>
+<li>xyz2grd ：将XYZ数据或Z数据转换成网格文件</li>
+<li>grd2xyz ：将网格文件转换成表数据</li>
+<li>kml2gmt ：将Google Earth的KML文件转换为GMT表数据</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2>3.3.6 1D 数据处理<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>gmtselect ：根据多个准则筛选数据</li>
+<li>fitcircle ：拟合球面上数据点的平均位置及圆弧</li>
+<li>gmtsimplify ：使用Douglas-Peucker算法对线段做简化</li>
+<li>filter1d ：对1D表数据做时间域滤波</li>
+<li>gmtconnect ：将端点接近的线段连接起来</li>
+<li>project ：将数据点投影到线或大圆路径上，生成测线，坐标转换</li>
+<li>sample1d ：对1D表数据进行重采样</li>
+<li>spectrum1d: 计算一个时间序列的自功率谱，或两个时间序列的互功率谱</li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h2>3.3.7 2D 数据处理<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>grdclip ：对网格文件的Z值做裁剪</li>
+<li>grdconvert ：在不同的网格格式之间互相转换</li>
+<li>grdcut ：从一个网格文件中裁剪出一个矩形子区域生成新的网格文件</li>
+<li>grdedit ：修改网格文件的头段或内容</li>
+<li>grdlandmask ：根据海岸线数据创建陆地-海洋的mask网格文件</li>
+<li>grdinfo ：从网格文件中提取基本信息</li>
+<li>grdpaste ：将两个网格沿着其共同边界拼接成一个文件</li>
+<li>grdraster ：从二进制数据中提取子区域并保存为GMT网格文件</li>
+<li>grdsample ：对网格文件做重采样</li>
+<li>grdvolume ：计算网格数据中某个等值线所包围的表面积和体积</li>
+<li>grd2xyz ：将网格文件转换成表数据</li>
+<li>grd2rgb ：将网格文件、原始RGB文件、SUN光栅文件转换成R/G/B三个网格文件</li>
+<li>grdblend ：将多个部分重叠的网格文件合并成一个网格文件</li>
+<li>grdtrend ：拟合网格的趋势面并计算残差</li>
+<li>grdproject ：对网格数据做地图变换和逆变换</li>
+<li>grdmask ：根据多边形数据或点数据创建mask网格文件</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989'],
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../tutor1/" class="btn btn-neutral float-right" title="3.4 入门示例1" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../gmt-cmd/" class="btn btn-neutral" title="3.2 GMT命令格式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2019, GMT中文社区
+      最后更新于 2019年01月21日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
