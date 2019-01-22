@@ -96,14 +96,12 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">7 网格文件</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="overview/">7.1 网格文件简介</a></li>
 <li class="toctree-l2"><a class="reference internal" href="netcdf/">7.2 netCDF文件格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="native-grid/">7.3 Native二进制网格格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sun-raster/">7.4 Sun光栅文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="read/">7.5 读netCDF文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="write/">7.6 写网格文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="boundary-condition/">7.7 边界条件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="registration/">7.8 网格配准</a></li>
-<li class="toctree-l2"><a class="reference internal" href="suffix/">7.9 网格文件后缀</a></li>
-<li class="toctree-l2"><a class="reference internal" href="viewer/">7.10 查看netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read/">7.3 读netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="write/">7.4 写网格文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boundary-condition/">7.5 边界条件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="registration/">7.6 网格配准</a></li>
+<li class="toctree-l2"><a class="reference internal" href="suffix/">7.7 网格文件后缀</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viewer/">7.8 查看netCDF文件</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../option/">8 标准选项</a></li>
@@ -202,38 +200,38 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="overview/">7.1 网格文件简介</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="overview/#grid-format">7.1.1 网格文件格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/#netcdf">7.1.1 netCDF网格文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/#native">7.1.2 Native二进制格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/#sun">7.1.3 Sun光栅文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/#id2">7.1.4 用户自定义网格格式</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="netcdf/">7.2 netCDF文件格式</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="netcdf/#id1">7.2.1 格式说明</a></li>
-<li class="toctree-l2"><a class="reference internal" href="netcdf/#id2">7.2.2 分块与压缩</a></li>
+<li class="toctree-l2"><a class="reference internal" href="netcdf/#id1">7.2.1 分块与压缩</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="native-grid/">7.3 Native二进制网格格式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sun-raster/">7.4 Sun光栅文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="read/">7.5 读netCDF文件</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="read/#id1">7.5.1 多个二维变量的处理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="read/#id2">7.5.2 三维变量的处理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="read/#id3">7.5.3 四维变量的处理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="read/#id4">7.5.4 一维变量的处理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="read/#id5">7.5.5 修改坐标单位</a></li>
+<li class="toctree-l1"><a class="reference internal" href="read/">7.3 读netCDF文件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="read/#id1">7.3.1 多个二维变量的处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read/#id2">7.3.2 三维变量的处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read/#id3">7.3.3 四维变量的处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read/#id4">7.3.4 一维变量的处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read/#id5">7.3.5 修改坐标单位</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="write/">7.6 写网格文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="boundary-condition/">7.7 边界条件</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="boundary-condition/#id2">7.7.1 默认边界条件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="boundary-condition/#id3">7.7.2 周期边界条件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="boundary-condition/#id4">7.7.3 地理边界条件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="write/">7.4 写网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boundary-condition/">7.5 边界条件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="boundary-condition/#id2">7.5.1 默认边界条件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boundary-condition/#id3">7.5.2 周期边界条件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boundary-condition/#id4">7.5.3 地理边界条件</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="registration/">7.8 网格配准</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="registration/#id2">7.8.1 网格线配准</a></li>
-<li class="toctree-l2"><a class="reference internal" href="registration/#id3">7.8.2 像素配准</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registration/">7.6 网格配准</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="registration/#id2">7.6.1 网格线配准</a></li>
+<li class="toctree-l2"><a class="reference internal" href="registration/#id3">7.6.2 像素配准</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="suffix/">7.9 网格文件后缀</a></li>
-<li class="toctree-l1"><a class="reference internal" href="viewer/">7.10 查看netCDF文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="suffix/">7.7 网格文件后缀</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viewer/">7.8 查看netCDF文件</a></li>
 </ul>
 </div>
 </div>
@@ -280,7 +278,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月21日.
+      最后更新于 2019年01月22日.
 
     </p>
   </div>

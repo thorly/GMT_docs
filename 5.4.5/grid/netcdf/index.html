@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="7.3 Native二进制网格格式" href="../native-grid/" />
+    <link rel="next" title="7.3 读netCDF文件" href="../read/" />
     <link rel="prev" title="7.1 网格文件简介" href="../overview/" /> 
 
   
@@ -96,18 +96,15 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../">7 网格文件</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../overview/">7.1 网格文件简介</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">7.2 netCDF文件格式</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">7.2.1 格式说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">7.2.2 分块与压缩</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">7.2.1 分块与压缩</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../native-grid/">7.3 Native二进制网格格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sun-raster/">7.4 Sun光栅文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../read/">7.5 读netCDF文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../write/">7.6 写网格文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../boundary-condition/">7.7 边界条件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../registration/">7.8 网格配准</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../suffix/">7.9 网格文件后缀</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../viewer/">7.10 查看netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../read/">7.3 读netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../write/">7.4 写网格文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../boundary-condition/">7.5 边界条件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../registration/">7.6 网格配准</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../suffix/">7.7 网格文件后缀</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../viewer/">7.8 查看netCDF文件</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
@@ -206,79 +203,7 @@
   <div class="section" id="netcdf">
 <h1>7.2 netCDF文件格式<a class="headerlink" href="#netcdf" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id1">
-<h2>7.2.1 格式说明<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<p>netCDF的非数据部分，包含了众多属性，这些属性完整地描述了netCDF文件的内容。下表列出了netCDF的众多属性：</p>
-<table border="1" class="docutils" id="id3">
-<caption><span class="caption-number">表 7.1 </span><span class="caption-text">netCDF格式说明</span><a class="headerlink" href="#id3" title="永久链接至表格">¶</a></caption>
-<colgroup>
-<col width="24%" />
-<col width="76%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head"><strong>Attribute</strong></th>
-<th class="head"><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>&#160;</td>
-<td><em>Global attributes</em></td>
-</tr>
-<tr class="row-odd"><td>Conventions</td>
-<td>COARDS, CF-1.5 (optional)</td>
-</tr>
-<tr class="row-even"><td>title</td>
-<td>Title (optional)</td>
-</tr>
-<tr class="row-odd"><td>source</td>
-<td>How file was created (optional)</td>
-</tr>
-<tr class="row-even"><td>node_offset</td>
-<td>0 for gridline node registration (default),
-1 for pixel registration</td>
-</tr>
-<tr class="row-odd"><td>&#160;</td>
-<td><em>x- and y-variable attributes</em></td>
-</tr>
-<tr class="row-even"><td>long_name</td>
-<td>Coordinate name (e.g., “Longitude” and “Latitude”)</td>
-</tr>
-<tr class="row-odd"><td>units</td>
-<td>Unit of the coordinate (e.g., “degrees_east” and “degrees_north”)</td>
-</tr>
-<tr class="row-even"><td>actual range
-(or valid range)</td>
-<td>Minimum and maximum <em>x</em> and <em>y</em> of region; if absent the
-first and last <em>x</em>- and <em>y</em>-values are queried</td>
-</tr>
-<tr class="row-odd"><td>&#160;</td>
-<td><em>z-variable attributes</em></td>
-</tr>
-<tr class="row-even"><td>long_name</td>
-<td>Name of the variable (default: “z”)</td>
-</tr>
-<tr class="row-odd"><td>units</td>
-<td>Unit of the variable</td>
-</tr>
-<tr class="row-even"><td>scale_factor</td>
-<td>Factor to multiply <em>z</em> with (default: 1)</td>
-</tr>
-<tr class="row-odd"><td>add_offset</td>
-<td>Offset to add to scaled <em>z</em> (default: 0)</td>
-</tr>
-<tr class="row-even"><td>actual_range</td>
-<td>Minimum and maximum <em>z</em> (in unpacked units, optional) and <em>z</em></td>
-</tr>
-<tr class="row-odd"><td>_FillValue
-(or missing_value)</td>
-<td>Value associated with missing or invalid data points; if absent an
-appropriate default value is assumed, depending on data type.</td>
-</tr>
-</tbody>
-</table>
-<p>默认情况下，GMT会将netCDF文件中的第一个2D变量作为Z变量，而坐标轴X和Y的范围则从属性中提取出来。</p>
-</div>
-<div class="section" id="id2">
-<h2>7.2.2 分块与压缩<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>7.2.1 分块与压缩<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>出于性能的考虑，GMT在输出超过16384个网格单元的网格文件时，会打开分块功能。所谓分块，即数据不是按照一行一行序列存储的，而是将整个网格分成若干个区块，然后依次存储每个区块的数据。</p>
 <p>下图描绘了一个分块的netCDF文件的布局。为了读取数据的一部分（比如左下角的四个蓝色区块），netCDF只需要读取相应的区块即可，不用先读取整个数据。</p>
 <p><a class="reference download internal" download="" href="../../_downloads/94111a13b5ba5dd90aab359b5b44754a/netcdf-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
@@ -320,7 +245,7 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../native-grid/" class="btn btn-neutral float-right" title="7.3 Native二进制网格格式" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../read/" class="btn btn-neutral float-right" title="7.3 读netCDF文件" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../overview/" class="btn btn-neutral" title="7.1 网格文件简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -333,7 +258,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月21日.
+      最后更新于 2019年01月22日.
 
     </p>
   </div>
