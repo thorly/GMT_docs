@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7.5 边界条件 &mdash; GMT参考手册</title>
+  <title>7.4 边界条件 &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="7.6 网格配准" href="../registration/" />
-    <link rel="prev" title="7.4 写网格文件" href="../write/" /> 
+    <link rel="next" title="7.5 网格配准" href="../registration/" />
+    <link rel="prev" title="7.3 写网格文件" href="../write/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -95,18 +95,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cpt/">6 CPT文件</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../">7 网格文件</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../overview/">7.1 网格文件简介</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../netcdf/">7.2 netCDF文件格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../read/">7.3 读netCDF文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../write/">7.4 写网格文件</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">7.5 边界条件</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">7.5.1 默认边界条件</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">7.5.2 周期边界条件</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">7.5.3 地理边界条件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../read/">7.2 读netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../write/">7.3 写网格文件</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.4 边界条件</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">7.4.1 默认边界条件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">7.4.2 周期边界条件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">7.4.3 地理边界条件</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../registration/">7.6 网格配准</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../suffix/">7.7 网格文件后缀</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../viewer/">7.8 查看netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../registration/">7.5 网格配准</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../suffix/">7.6 网格文件后缀</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../viewer/">7.7 查看netCDF文件</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
@@ -181,7 +180,7 @@
         
           <li><a href="../">7 网格文件</a> &raquo;</li>
         
-      <li>7.5 边界条件</li>
+      <li>7.4 边界条件</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -203,11 +202,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>7.5 边界条件<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>7.4 边界条件<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>GMT中的某些模块在对网格文件做某些操作（比如插值或计算偏导）时，在网格边界处需要指定网格的边界条件。边界条件的选取会影响到区域边界处的计算结果。GMT中可以通过 <code class="docutils literal notranslate"><span class="pre">-n</span></code> 选项指定网格的边界条件。</p>
 <p>GMT中网格文件的边界条件有三类：</p>
 <div class="section" id="id2">
-<h2>7.5.1 默认边界条件<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>7.4.1 默认边界条件<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>默认的边界条件是：</p>
 <div class="math notranslate nohighlight">
 \[\nabla^2 f = \frac{\partial}{\partial n} \nabla^2 f = 0\]</div>
@@ -217,7 +216,7 @@
 <p>是二维Laplace操作符。</p>
 </div>
 <div class="section" id="id3">
-<h2>7.5.2 周期边界条件<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>7.4.2 周期边界条件<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>X方向的周期边界条件表明数据是以周期 <span class="math notranslate nohighlight">\(x_{max} - x_{min}\)</span> 重复的，数据每
 <span class="math notranslate nohighlight">\(N = (x_{max} - x_{min})/x_{inc}\)</span> 个点重复一次。Y方向同理。</p>
 <ul class="simple">
@@ -226,7 +225,7 @@
 </ul>
 </div>
 <div class="section" id="id4">
-<h2>7.5.3 地理边界条件<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>7.4.3 地理边界条件<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>地理边界条件表明：</p>
 <ol class="arabic simple">
 <li>若 <span class="math notranslate nohighlight">\((x_{max} - x_{min}) \geq 360\)</span> 且180是 <span class="math notranslate nohighlight">\(x_{inc}\)</span> 的整数倍，则在X方向使用周期为360的周期边界条件，否则使用默认边界条件</li>
@@ -265,10 +264,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../registration/" class="btn btn-neutral float-right" title="7.6 网格配准" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../registration/" class="btn btn-neutral float-right" title="7.5 网格配准" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../write/" class="btn btn-neutral" title="7.4 写网格文件" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../write/" class="btn btn-neutral" title="7.3 写网格文件" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -278,7 +277,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月23日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

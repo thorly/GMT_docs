@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="7.2 netCDF文件格式" href="../netcdf/" />
+    <link rel="next" title="7.2 读netCDF文件" href="../read/" />
     <link rel="prev" title="7 网格文件" href="../" /> 
 
   
@@ -96,18 +96,17 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../">7 网格文件</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">7.1 网格文件简介</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#netcdf">7.1.1 netCDF网格文件</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#native">7.1.2 Native二进制格式</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sun">7.1.3 Sun光栅文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sun">7.1.2 Sun光栅文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#native">7.1.3 Native二进制格式</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id2">7.1.4 用户自定义网格格式</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../netcdf/">7.2 netCDF文件格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../read/">7.3 读netCDF文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../write/">7.4 写网格文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../boundary-condition/">7.5 边界条件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../registration/">7.6 网格配准</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../suffix/">7.7 网格文件后缀</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../viewer/">7.8 查看netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../read/">7.2 读netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../write/">7.3 写网格文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../boundary-condition/">7.4 边界条件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../registration/">7.5 网格配准</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../suffix/">7.6 网格文件后缀</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../viewer/">7.7 查看netCDF文件</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
@@ -205,7 +204,7 @@
             
   <div class="section" id="id1">
 <h1>7.1 网格文件简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<p>GMT可以绘制2D网格数据。通常，2D网格文件的X方向代表经度、Y方向代表纬度，Z值可以表示高程、重力值、温度、速度等。也可以将 XYZ 格式的 1D 表数据网格化得到 2D 网格数据。</p>
+<p>GMT可以绘制2D网格数据。通常，2D网格文件的X方向代表经度、Y方向代表纬度，Z值可以表示高程、重力值、温度、速度等。</p>
 <p>GMT可以使用的2D网格数据有四种格式：</p>
 <ol class="arabic simple">
 <li>netCDF格式</li>
@@ -218,84 +217,19 @@
 <h2>7.1.1 netCDF网格文件<a class="headerlink" href="#netcdf" title="永久链接至标题">¶</a></h2>
 <p>GMT默认将2D网格保存为兼容COARDS的netCDF文件，一般以 <code class="docutils literal notranslate"><span class="pre">.nc</span></code> 或 <code class="docutils literal notranslate"><span class="pre">.grd</span></code> 作为文件后缀。</p>
 <p>COARDS是许多机构在分发网格文件时遵循的标准格式。GMT兼容该格式，因而GMT可以直接读取其他机构或程序提供的网格文件，GMT生成的网格文件也可以被其他程序读取。</p>
-<p>netCDF格式目前有两个版本，netCDF3和netCDF4。GMT目前默认使用netCDF4版本的文件格式。</p>
-<p>netCDF的非数据部分，包含了众多属性，这些属性完整地描述了netCDF文件的内容。下表列出了netCDF的众多属性：</p>
-<table border="1" class="docutils" id="id3">
-<caption><span class="caption-number">表 7.1 </span><span class="caption-text">netCDF格式说明</span><a class="headerlink" href="#id3" title="永久链接至表格">¶</a></caption>
-<colgroup>
-<col width="24%" />
-<col width="76%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head"><strong>Attribute</strong></th>
-<th class="head"><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>&#160;</td>
-<td><em>Global attributes</em></td>
-</tr>
-<tr class="row-odd"><td>Conventions</td>
-<td>COARDS, CF-1.5 (optional)</td>
-</tr>
-<tr class="row-even"><td>title</td>
-<td>Title (optional)</td>
-</tr>
-<tr class="row-odd"><td>source</td>
-<td>How file was created (optional)</td>
-</tr>
-<tr class="row-even"><td>node_offset</td>
-<td>0 for gridline node registration (default),
-1 for pixel registration</td>
-</tr>
-<tr class="row-odd"><td>&#160;</td>
-<td><em>x- and y-variable attributes</em></td>
-</tr>
-<tr class="row-even"><td>long_name</td>
-<td>Coordinate name (e.g., “Longitude” and “Latitude”)</td>
-</tr>
-<tr class="row-odd"><td>units</td>
-<td>Unit of the coordinate (e.g., “degrees_east” and “degrees_north”)</td>
-</tr>
-<tr class="row-even"><td>actual range
-(or valid range)</td>
-<td>Minimum and maximum <em>x</em> and <em>y</em> of region; if absent the
-first and last <em>x</em>- and <em>y</em>-values are queried</td>
-</tr>
-<tr class="row-odd"><td>&#160;</td>
-<td><em>z-variable attributes</em></td>
-</tr>
-<tr class="row-even"><td>long_name</td>
-<td>Name of the variable (default: “z”)</td>
-</tr>
-<tr class="row-odd"><td>units</td>
-<td>Unit of the variable</td>
-</tr>
-<tr class="row-even"><td>scale_factor</td>
-<td>Factor to multiply <em>z</em> with (default: 1)</td>
-</tr>
-<tr class="row-odd"><td>add_offset</td>
-<td>Offset to add to scaled <em>z</em> (default: 0)</td>
-</tr>
-<tr class="row-even"><td>actual_range</td>
-<td>Minimum and maximum <em>z</em> (in unpacked units, optional) and <em>z</em></td>
-</tr>
-<tr class="row-odd"><td>_FillValue
-(or missing_value)</td>
-<td>Value associated with missing or invalid data points; if absent an
-appropriate default value is assumed, depending on data type.</td>
-</tr>
-</tbody>
-</table>
-<p>默认情况下，GMT会将netCDF文件中的第一个2D变量作为Z变量，而坐标轴X和Y的范围则从属性中提取出来。</p>
+<p>netCDF格式目前有两个版本，netCDF3和netCDF4。GMT目前默认使用netCDF4版本的文件格式。netCDF的具体格式比较复杂，此处不做介绍，一般用户也无需了解。</p>
+</div>
+<div class="section" id="sun">
+<span id="sun-raster"></span><h2>7.1.2 Sun光栅文件<a class="headerlink" href="#sun" title="永久链接至标题">¶</a></h2>
+<p>GMT 可以读取 Sun光栅文件格式的网格文件。Sun 光栅文件包含了一个头段区以及一系列无符号一字节整型以表示bit-pattern。所有的字节按照 scanline 方式排列，每行必须包含偶数个字节。</p>
 </div>
 <div class="section" id="native">
-<h2>7.1.2 Native二进制格式<a class="headerlink" href="#native" title="永久链接至标题">¶</a></h2>
+<h2>7.1.3 Native二进制格式<a class="headerlink" href="#native" title="永久链接至标题">¶</a></h2>
 <p>在很久以前的 GMT 中，其自定义了一套二进制网格文件格式。但由于其通用性太差，已经被更现代的 netCDF 格式所取代。新版本的
 GMT依然支持这种二进制网格格式，但不建议使用。该文件格式由两部分组成：892个字节的头段区和长度不定的数据区。</p>
 <p>native 二进制网格格式包含了一个892字节的头段区以及长度不定的数据区。头段区中包含了用于描述网格文件的变量，这些变量在文件中的存储顺序及其含义如下表：</p>
-<table border="1" class="docutils" id="id4">
-<caption><span class="caption-number">表 7.2 </span><span class="caption-text">GMT自定义二进制网格文件结构</span><a class="headerlink" href="#id4" title="永久链接至表格">¶</a></caption>
+<table border="1" class="docutils" id="id3">
+<caption><span class="caption-number">表 7.1 </span><span class="caption-text">GMT自定义二进制网格文件结构</span><a class="headerlink" href="#id3" title="永久链接至表格">¶</a></caption>
 <colgroup>
 <col width="25%" />
 <col width="23%" />
@@ -391,94 +325,6 @@ GMT依然支持这种二进制网格格式，但不建议使用。该文件格�
 </tbody>
 </table>
 </div>
-<div class="section" id="sun">
-<span id="sun-raster"></span><h2>7.1.3 Sun光栅文件<a class="headerlink" href="#sun" title="永久链接至标题">¶</a></h2>
-<p>GMT 可以读取 Sun光栅文件格式的网格文件。Sun 光栅文件包含了一个头段区以及一系列无符号一字节整型以表示bit-pattern。所有的字节按照 scanline 方式排列，每行必须包含偶数个字节。</p>
-<p>Sun光栅文件头段区的结构如下表：</p>
-<table border="1" class="docutils" id="id5">
-<caption><span class="caption-number">表 7.3 </span><span class="caption-text">Sun光栅文件头段区</span><a class="headerlink" href="#id5" title="永久链接至表格">¶</a></caption>
-<colgroup>
-<col width="33%" />
-<col width="16%" />
-<col width="52%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">变量</th>
-<th class="head">类型</th>
-<th class="head">说明</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">ras_magic</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">int</span></code></td>
-<td>魔法数，用于唯一标记数据格式</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">ras_width</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">int</span></code></td>
-<td>图片宽度（像素数）</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">ras_height</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">int</span></code></td>
-<td>图片高度（像素数）</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">ras_depth</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">int</span></code></td>
-<td>像素深度（1、8、24、32位）</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">ras_length</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">int</span></code></td>
-<td>图片长度（字节数）</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">ras_type</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">int</span></code></td>
-<td>文件类型</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">ras_maptype</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">int</span></code></td>
-<td>colormap类型</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">ras_maplength</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">int</span></code></td>
-<td>接下来的map的长度（字节数）</td>
-</tr>
-</tbody>
-</table>
-<p>在头段区后，若 <code class="docutils literal notranslate"><span class="pre">ras_maptype</span></code> 不等于 <code class="docutils literal notranslate"><span class="pre">RMT_NONE</span></code>，则紧接着是 <code class="docutils literal notranslate"><span class="pre">ras_maplength</span></code>
-个字节的color map区，然后是 <code class="docutils literal notranslate"><span class="pre">ras_length</span></code> 个字节的图片区。</p>
-<p>相关的一些宏定义如下表：</p>
-<table border="1" class="docutils" id="id6">
-<caption><span class="caption-number">表 7.4 </span><span class="caption-text">Sun头段区的宏定义</span><a class="headerlink" href="#id6" title="永久链接至表格">¶</a></caption>
-<colgroup>
-<col width="33%" />
-<col width="67%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head"><strong>宏</strong></th>
-<th class="head"><strong>说明</strong></th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">RAS_MAGIC</span></code></td>
-<td>0x59a66a95</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">RT_STANDARD</span></code></td>
-<td>1 (Raw pixrect image in 68000 byte order)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">RT_BYTE_ENCODED</span></code></td>
-<td>2 (Run-length compression of bytes)</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">RT_FORMAT_RGB</span></code></td>
-<td>3 ([X]RGB instead of [X]BGR)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">RMT_NONE</span></code></td>
-<td>0 (ras_maplength is expected to be 0)</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">RMT_EQUAL_RGB</span></code></td>
-<td>1 (red[ras_maplength/3],green[],blue[])</td>
-</tr>
-</tbody>
-</table>
-</div>
 <div class="section" id="id2">
 <h2>7.1.4 用户自定义网格格式<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>GMT还可以读取用户自定义的网格文件，只要用户写好自定义网格文件的读写子程序，并将其与GMT函数库链接起来即可。详情参考源码中的 <code class="docutils literal notranslate"><span class="pre">gmt_customio.c</span></code> 文件。</p>
@@ -514,7 +360,7 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../netcdf/" class="btn btn-neutral float-right" title="7.2 netCDF文件格式" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../read/" class="btn btn-neutral float-right" title="7.2 读netCDF文件" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../" class="btn btn-neutral" title="7 网格文件" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -527,7 +373,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月23日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>
