@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>13 API &mdash; GMT参考手册</title>
+  <title>14 API &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex/" />
     <link rel="search" title="搜索" href="../search/" />
-    <link rel="next" title="13.1 GMT C API" href="c/" />
-    <link rel="prev" title="12 风格指南" href="../style/" /> 
+    <link rel="next" title="14.1 GMT C API" href="c/" />
+    <link rel="prev" title="13.6 绘制图例" href="../gallery/legend/" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -99,13 +99,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../proj/">10 投影方式</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dataset/">11 GMT数据集</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../style/">12 风格指南</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">13 API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="c/">13.1 GMT C API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matlab/">13.2 GMT Matlab API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="julia/">13.3 GMT Julia API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gallery/">13 绘图示例</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">14 API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="c/">14.1 GMT C API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matlab/">14.2 GMT Matlab API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="julia/">14.3 GMT Julia API</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../appendix/">14 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/">15 附录</a></li>
 </ul>
 
             
@@ -169,7 +170,7 @@
     
       <li><a href="../">Docs</a> &raquo;</li>
         
-      <li>13 API</li>
+      <li>14 API</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -191,25 +192,25 @@
            <div itemprop="articleBody">
             
   <div class="section" id="api">
-<h1>13 API<a class="headerlink" href="#api" title="永久链接至标题">¶</a></h1>
+<h1>14 API<a class="headerlink" href="#api" title="永久链接至标题">¶</a></h1>
 <p>GMT 目前提供了 C/Fortran、Matlab、Julia、Python的程序接口。</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="c/">13.1 GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="matlab/">13.2 GMT Matlab API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="matlab/#id1">13.2.1 简介</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matlab/#id2">13.2.2 安装</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matlab/#id3">13.2.3 使用方法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matlab/#id8">13.2.4 常见问题</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matlab/#id9">13.2.5 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="c/">14.1 GMT C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matlab/">14.2 GMT Matlab API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="matlab/#id1">14.2.1 简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matlab/#id2">14.2.2 安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matlab/#id3">14.2.3 使用方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matlab/#id8">14.2.4 常见问题</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matlab/#id9">14.2.5 附录</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="julia/">13.3 GMT Julia API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="julia/#id1">13.3.1 简介</a></li>
-<li class="toctree-l2"><a class="reference internal" href="julia/#id2">13.3.2 安装</a></li>
-<li class="toctree-l2"><a class="reference internal" href="julia/#id4">13.3.3 使用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="julia/#id8">13.3.4 更多示例</a></li>
-<li class="toctree-l2"><a class="reference internal" href="julia/#id9">13.3.5 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="julia/">14.3 GMT Julia API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="julia/#id1">14.3.1 简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="julia/#id2">14.3.2 安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="julia/#id4">14.3.3 使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="julia/#id8">14.3.4 更多示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="julia/#id9">14.3.5 附录</a></li>
 </ul>
 </li>
 </ul>
@@ -245,10 +246,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="c/" class="btn btn-neutral float-right" title="13.1 GMT C API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="c/" class="btn btn-neutral float-right" title="14.1 GMT C API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../style/" class="btn btn-neutral" title="12 风格指南" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../gallery/legend/" class="btn btn-neutral" title="13.6 绘制图例" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
