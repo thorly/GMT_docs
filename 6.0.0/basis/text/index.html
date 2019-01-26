@@ -306,7 +306,7 @@ Helvetica-Bold 或者 1 ）。上图中给出了每种字体的字体编号以�
 <div class="section" id="id6">
 <h2>4.6.5 小练习<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>下面的命令在图上写了文字 <code class="docutils literal notranslate"><span class="pre">TEXT</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">2</span>.5 <span class="m">0</span>.5 TEXT <span class="p">|</span> gmt pstext -R0/5/0/1 -JX15c/2c -F+f&lt;font&gt; &gt; text.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">2</span>.5 <span class="m">0</span>.5 TEXT <span class="p">|</span> gmt text -R0/5/0/1 -JX15c/2c -F+f&lt;font&gt; -pdf text
 </pre></div>
 </div>
 <p>将其中的 <code class="docutils literal notranslate"><span class="pre">&lt;font&gt;</span></code> 修改为不同的值并查看绘图效果，以理解这一节的内容。</p>
@@ -360,7 +360,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

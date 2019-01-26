@@ -201,7 +201,7 @@
 <code class="docutils literal notranslate"><span class="pre">makecpt</span></code> 常用于已知极值范围的表数据，而 <code class="docutils literal notranslate"><span class="pre">grd2cpt</span></code> 常用于将cpt适用于一个或多个格网数据。此外，两者均可通过以下方式翻转颜色：</p>
 <ol class="arabic simple">
 <li>利用 <code class="docutils literal notranslate"><span class="pre">-Iz</span></code> 选项倒转CPT的z值指向（不包括前景色、背景色）。用于数据的正负颜色表示和惯例不符的情况（比如用正值表示海平面以下的深度，而不是惯常的负高程）。</li>
-<li>利用 <code class="docutils literal notranslate"><span class="pre">-Ic</span></code> 选项翻转颜色的顺序，包括前景色和背景色（与 <code class="docutils literal notranslate"><span class="pre">psscale</span></code> 的宽度设为负值效果一致）。</li>
+<li>利用 <code class="docutils literal notranslate"><span class="pre">-Ic</span></code> 选项翻转颜色的顺序，包括前景色和背景色（与 <code class="docutils literal notranslate"><span class="pre">colorbar</span></code> 的宽度设为负值效果一致）。</li>
 <li><code class="docutils literal notranslate"><span class="pre">-Icz</span></code> 表示以上两种效果的叠加，即颜色顺序不变，只调转了前景色和背景色</li>
 <li>利用 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项提取主CPT的一部分颜色</li>
 <li>最后，将初始的内置CPT或修改后的CPT拉伸为自定义数据范围</li>
@@ -274,7 +274,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

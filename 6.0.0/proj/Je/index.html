@@ -231,7 +231,7 @@
 <li><code class="docutils literal notranslate"><span class="pre">&lt;scale&gt;</span></code> 可以取 <code class="docutils literal notranslate"><span class="pre">1:xxxx</span></code> 格式，也可以是 <code class="docutils literal notranslate"><span class="pre">&lt;radius&gt;/&lt;latitude&gt;</span></code> （表示从投影中心到 纬线 <code class="docutils literal notranslate"><span class="pre">&lt;latitude&gt;</span></code> 在图上的距离为 <code class="docutils literal notranslate"><span class="pre">&lt;radius&gt;</span></code> ）</li>
 </ul>
 <p>下图中，投影中心为100ºW/40ºN，离投影中心180度的点在图中的最外边界处。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -Rg -JE-100/40/4.5i -Bg -Dc -A10000 -Glightgray -Wthinnest -P &gt; GMT_az_equidistant.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -Rg -JE-100/40/4.5i -Bg -Dc -A10000 -Glightgray -Wthinnest -png GMT_az_equidistant
 </pre></div>
 </div>
 <div class="figure align-center" id="id1">
@@ -282,7 +282,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

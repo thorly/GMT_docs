@@ -225,18 +225,20 @@
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;lon&gt;</span></code> 是中心经线，默认值为地图区域的中心。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -Rd -JI4.5i -Bxg30 -Byg15 -Dc -A10000 -Ggray -P &gt; GMT_sinusoidal.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -Rd -JI4.5i -Bxg30 -Byg15 -Dc -A10000 -Ggray -png GMT_sinusoidal.ps
 </pre></div>
 </div>
 <div class="figure align-center" id="id1">
 <img alt="../../_images/Ji-gmtplot-0.png" src="../../_images/Ji-gmtplot-0.png" />
 <p class="caption"><span class="caption-number">图 10.17 </span><span class="caption-text">使用正弦曲线投影绘制世界地图</span></p>
 </div>
-<p>为了减少形状的畸变，1927年引入了间断正弦曲线投影，即用三个对称的段来覆盖全球。传统上，间断出现在160ºW、20ºW和60ºE处。为了生成间断地图，必须调用 <code class="docutils literal notranslate"><span class="pre">pscoast</span></code> 命令三次以分别绘制每段地图并叠加起来。间断正弦曲线投影一般仅用于显示全球不连续数据分布。</p>
+<p>为了减少形状的畸变，1927年引入了间断正弦曲线投影，即用三个对称的段来覆盖全球。传统上，间断出现在160ºW、20ºW和60ºE处。为了生成间断地图，必须调用 <code class="docutils literal notranslate"><span class="pre">coast</span></code> 命令三次以分别绘制每段地图并叠加起来。间断正弦曲线投影一般仅用于显示全球不连续数据分布。</p>
 <p>为了生成一个宽度为5.04英寸的间断世界地图，需要设置比例尺为5.04/360 = 0.014，并将每段图沿水平方向偏移其对应的宽度 (140<span class="math notranslate nohighlight">\(\cdot\)</span>0.014 and 80<span class="math notranslate nohighlight">\(\cdot\)</span>0.014)。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -R200/340/-90/90 -Ji0.014i -Bxg30 -Byg15 -A10000 -Dc -Gblack -K -P &gt; GMT_sinus_int.ps
-gmt pscoast -R-20/60/-90/90 -Ji0.014i -Bxg30 -Byg15 -Dc -A10000 -Gblack -X1.96i -O -K &gt;&gt; GMT_sinus_int.ps
-gmt pscoast -R60/200/-90/90 -Ji0.014i -Bxg30 -Byg15 -Dc -A10000 -Gblack -X1.12i -O &gt;&gt; GMT_sinus_int.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_sinus_int pdf,png
+gmt coast -R200/340/-90/90 -Ji0.014i -Bxg30 -Byg15 -A10000 -Dc -Gblack
+gmt coast -R-20/60/-90/90 -Ji0.014i -Bxg30 -Byg15 -Dc -A10000 -Gblack -X1.96i
+gmt coast -R60/200/-90/90 -Ji0.014i -Bxg30 -Byg15 -Dc -A10000 -Gblack -X1.12i
+gmt end
 </pre></div>
 </div>
 <div class="figure align-center" id="id2">
@@ -287,7 +289,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

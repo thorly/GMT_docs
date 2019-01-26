@@ -221,19 +221,19 @@
 <li>在需要输入 <span class="math notranslate nohighlight">\(\beta\)</span> 的地方输入八进制码 <code class="docutils literal notranslate"><span class="pre">\142</span></code> 即可</li>
 </ol>
 <p>示例如下:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pstext -JX10c/10c -R0/10/0/10 -F+f15p,12 &gt; test1.ps <span class="s">&lt;&lt; EOF</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt text -JX10c/10c -R0/10/0/10 -F+f15p,12 -pdf test1 <span class="s">&lt;&lt; EOF</span>
 <span class="s">5 5 \141</span>
 <span class="s">EOF</span>
 
-<span class="nb">echo</span> <span class="m">5</span> <span class="m">5</span> <span class="s1">&#39;\141&#39;</span> <span class="p">|</span> gmt pstext -JX10c/10c -R0/10/0/10 -F+f15p,12 &gt; test2.ps
+<span class="nb">echo</span> <span class="m">5</span> <span class="m">5</span> <span class="s1">&#39;\141&#39;</span> <span class="p">|</span> gmt text -JX10c/10c -R0/10/0/10 -F+f15p,12 -pdf test2
 </pre></div>
 </div>
 <p>上面的示例中，<code class="docutils literal notranslate"><span class="pre">-F+f15p,12</span></code> 指定了使用12号字体。两个示例分别采用了两种不同的方式输入数据。需要格外注意，在第二种方式下，由于bash中的echo命令会自动将 <code class="docutils literal notranslate"><span class="pre">\141</span></code>
 转换成 <code class="docutils literal notranslate"><span class="pre">141</span></code>，因而实际 pstext 模块接收到的是 <code class="docutils literal notranslate"><span class="pre">141</span></code> 而不是 <code class="docutils literal notranslate"><span class="pre">\141</span></code>。为了解决这一问题，此处需要用 <code class="docutils literal notranslate"><span class="pre">'\141'</span></code> 或 <code class="docutils literal notranslate"><span class="pre">\\141</span></code>，而不能直接用 <code class="docutils literal notranslate"><span class="pre">\141</span></code>。在其他脚本语言中也存在类似的问题。</p>
 <p>有时需要在一堆正常的字符中出现一些特殊字符。这种情况下，则需要通过转义字符
 <code class="docutils literal notranslate"><span class="pre">&#64;~</span></code> 或 <code class="docutils literal notranslate"><span class="pre">&#64;%%</span></code> 临时将字体切换为特殊字符。转义字符的具体用法在后面会介绍，此处仅举一例:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R0/10/0/10 -JX10c/10c -BWSne <span class="se">\</span>
-    -Bx2+l<span class="s2">&quot;@~\161@~ or @%12%\161@%%&quot;</span> -By2+l<span class="s2">&quot;@%34%\164@%%&quot;</span> &gt; test.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -R0/10/0/10 -JX10c/10c -BWSne <span class="se">\</span>
+    -Bx2+l<span class="s2">&quot;@~\161@~ or @%12%\161@%%&quot;</span> -By2+l<span class="s2">&quot;@%34%\164@%%&quot;</span> -pdf <span class="nb">test</span>
 </pre></div>
 </div>
 </div>
@@ -280,7 +280,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

@@ -339,7 +339,7 @@ CN <span class="m">92</span> Aomen <span class="o">(</span>Macao<span class="o">
 <div class="section" id="id7">
 <h3>绘制洲界<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <p>绘制全部亚洲国家的边界：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -R15/180/-20/70 -JM12c -Baf -E<span class="o">=</span>AS+p0.25p,red &gt; dataset_dcw_01.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R15/180/-20/70 -JM12c -Baf -E<span class="o">=</span>AS+p0.25p,red -png dataset_dcw_01
 </pre></div>
 </div>
 <div class="figure align-center">
@@ -349,7 +349,7 @@ CN <span class="m">92</span> Aomen <span class="o">(</span>Macao<span class="o">
 <div class="section" id="id8">
 <h3>绘制国界<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
 <p>绘制中国大陆边界（不含台湾、香港、澳门），这里可以不使用 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -JM15c -Baf -ECN+p0.25p,red -R70/140/10/60 &gt; dataset_dcw_02.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -JM15c -Baf -ECN+p0.25p,red -R70/140/10/60 -png dataset_dcw_02
 </pre></div>
 </div>
 <div class="figure align-center">
@@ -359,7 +359,7 @@ CN <span class="m">92</span> Aomen <span class="o">(</span>Macao<span class="o">
 <div class="section" id="id9">
 <h3>绘制省界<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
 <p>绘制内蒙古，并修改边界和填充颜色:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -JM12c -Baf -ECN.15+p1p,blue+gred -R90/130/35/55 &gt; dataset_dcw_03.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -JM12c -Baf -ECN.15+p1p,blue+gred -R90/130/35/55 -png dataset_dcw_03
 </pre></div>
 </div>
 <div class="figure align-center">
@@ -423,7 +423,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

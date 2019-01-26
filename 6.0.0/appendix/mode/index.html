@@ -8,12 +8,12 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>GMT现代模式 &mdash; GMT参考手册</title>
+  <title>14.4 GMT现代模式 &mdash; GMT参考手册</title>
   
 
   
   
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
   
   
   
@@ -26,13 +26,15 @@
 
   
 
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="index" title="索引" href="../genindex/" />
-    <link rel="search" title="搜索" href="../search/" /> 
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="14.5 GMT底层原理" href="../low-level/" />
+    <link rel="prev" title="14.3 GMT预定义填充图案" href="../patterns/" /> 
 
   
-  <script src="../_static/js/modernizr.min.js"></script>
+  <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -48,7 +50,7 @@
           
 
           
-            <a href="../" class="icon icon-home"> GMT参考手册
+            <a href="../../" class="icon icon-home"> GMT参考手册
           
 
           
@@ -65,7 +67,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search/" method="get">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -84,21 +86,43 @@
             
             
               <p class="caption"><span class="caption-text">目 录</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../intro/">1 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install/">2 安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial/">3 GMT初探</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../basis/">4 绘图基础</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../io/">5 输入与输出</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cpt/">6 CPT文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../grid/">7 网格文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../option/">8 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../conf/">9 配置GMT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../proj/">10 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../dataset/">11 GMT数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../style/">12 风格指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/">13 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../appendix/">14 附录</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">6 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">7 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">9 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">10 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 GMT数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../style/">12 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">13 API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">14 附录</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../cmd/">14.1 命令行及脚本基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colors/">14.2 GMT 颜色表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../patterns/">14.3 GMT预定义填充图案</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">14.4 GMT现代模式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">14.4.1 经典模式存在的问题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">14.4.2 现代模式的优点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">14.4.3 从经典到现代</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">14.4.4 现代模式: 子图模式</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../low-level/">14.5 GMT底层原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../directory-tree/">14.6 目录结构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculate-distance/">14.7 三种距离计算方式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../variables/">14.8 环境变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../custom-fonts/">14.9 自定义字体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get-gmt-dev/">14.10 获取 GMT 开发版</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../animation/">14.11 用GMT制作动画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-dirs/">14.12 目录参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour-annot/">14.13 等值线标注和“线条标注”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gdal/">14.14 通过 GDAL 读写网格文件</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -131,7 +155,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../">GMT参考手册</a>
+          <a href="../../">GMT参考手册</a>
         
       </nav>
 
@@ -160,16 +184,18 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../">Docs</a> &raquo;</li>
+      <li><a href="../../">Docs</a> &raquo;</li>
         
-      <li>GMT现代模式</li>
+          <li><a href="../">14 附录</a> &raquo;</li>
+        
+      <li>14.4 GMT现代模式</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/modern/index.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/appendix/mode.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -184,14 +210,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gmt">
-<h1>GMT现代模式<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h1>
+<h1>14.4 GMT现代模式<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h1>
 <p>自GMT6起，GMT引入了一种全新的命令执行模式，称之为现代模式。GMT5以及之前的命令风格则称之为经典模式。</p>
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
 <p class="last">GMT6既支持经典模式也支持现代模式，因而GMT6可以完全兼容GMT5的代码。</p>
 </div>
 <div class="section" id="id1">
-<h2>经典模式存在的问题<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>14.4.1 经典模式存在的问题<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>一个GMT经典模式下的绘图脚本如下所示：</p>
 <p>从上面的示例脚本中以及实际使用经验中会发现GMT经典模式存在的一些明显的缺点或问题：</p>
 <ol class="arabic simple">
@@ -204,7 +230,7 @@
 </ol>
 </div>
 <div class="section" id="id2">
-<h2>现代模式的优点<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>14.4.2 现代模式的优点<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>上面的示例在现代模式下可以改写为：</p>
 <p>现代模式下的GMT命令风格具有如下优点：</p>
 <ol class="arabic simple">
@@ -217,7 +243,7 @@
 </ol>
 </div>
 <div class="section" id="id3">
-<h2>从经典到现代<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>14.4.3 从经典到现代<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>将一个经典模式的脚本改成现代模式下的脚本基本遵循如下几点：</p>
 <ol class="arabic simple">
 <li>绘图脚本以 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">begin</span> <span class="pre">figname</span> <span class="pre">pdf</span></code> 开头，以 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">end</span></code> 结束</li>
@@ -234,7 +260,7 @@
 </ul>
 </div>
 <div class="section" id="id4">
-<h2>现代模式: 子图模式<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>14.4.4 现代模式: 子图模式<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>可以解决绘制多个子图时的如下麻烦：</p>
 <ol class="arabic simple">
 <li>需要多次使用 <code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 调整原点位置</li>
@@ -274,13 +300,22 @@ gitalk.render('gitalk-container');
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../low-level/" class="btn btn-neutral float-right" title="14.5 GMT底层原理" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../patterns/" class="btn btn-neutral" title="14.3 GMT预定义填充图案" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>
@@ -301,18 +336,18 @@ gitalk.render('gitalk-container');
 
     
     
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
   
 
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {

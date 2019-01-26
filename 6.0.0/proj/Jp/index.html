@@ -241,8 +241,10 @@ gmt end
 <li>在后面加上 <code class="docutils literal notranslate"><span class="pre">z</span></code> to annotate depths rather than radius.</li>
 </ul>
 <p>下面的示例，用 <code class="docutils literal notranslate"><span class="pre">grdmath</span></code> 命令生成了 一个 <span class="math notranslate nohighlight">\(z(\theta, r) = r^2 \cdot \cos{4\theta}\)</span> 的网格文件，并用 <code class="docutils literal notranslate"><span class="pre">grdcontour</span></code> 绘图:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath -R0/360/2/4 -I6/0.1 X <span class="m">4</span> MUL PI MUL <span class="m">180</span> DIV COS Y <span class="m">2</span> POW <span class="nv">MUL</span> <span class="o">=</span> tt.nc
-gmt grdcontour tt.nc -JP3i -B30 -BNs+ghoneydew -P -C2 -S4 --FORMAT_GEO_MAP<span class="o">=</span>+ddd &gt; GMT_polar.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_polar pdf,png
+gmt grdmath -R0/360/2/4 -I6/0.1 X <span class="m">4</span> MUL PI MUL <span class="m">180</span> DIV COS Y <span class="m">2</span> POW <span class="nv">MUL</span> <span class="o">=</span> tt.nc
+gmt grdcontour tt.nc -JP3i -B30 -BNs+ghoneydew -C2 -S4 --FORMAT_GEO_MAP<span class="o">=</span>+ddd
+gmt end
 </pre></div>
 </div>
 </div>
@@ -289,7 +291,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

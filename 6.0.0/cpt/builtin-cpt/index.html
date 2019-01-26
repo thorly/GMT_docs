@@ -199,12 +199,12 @@
 <h1>6.5 GMT内置CPT<a class="headerlink" href="#gmtcpt" title="永久链接至标题">¶</a></h1>
 <p>GMT内置了43个常规CPT文件和一个分类CPT文件，位于 <code class="file docutils literal notranslate"><span class="pre">$</span><em><span class="pre">GMTHOME</span></em><span class="pre">/share/cpt</span></code> 目录中。</p>
 <p>下图给出了GMT内置的44个CPT文件，每张图上边的色标为原始CPT，用如下命令绘制:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psscale -D5c/2c+w10c/1c+h+jTC -B0 -C&lt;cpt&gt; &gt; test.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt colorbar -D5c/2c+w10c/1c+h+jTC -B0 -C&lt;cpt&gt; -pdf CPT
 </pre></div>
 </div>
 <p>下边的色标是经过 <code class="docutils literal notranslate"><span class="pre">makecpt</span></code> 离散成8部分后的色标，用如下命令绘制:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt makecpt -C&lt;cpt&gt; -T-1/1/0.25 &gt; new.cpt
-gmt psscale -D5c/2c+w10c/1c+h+jTC -Bf0.25 -Cnew.cpt &gt; test.ps
+gmt colorbar -D5c/2c+w10c/1c+h+jTC -Bf0.25 -Cnew.cpt -pdf CPT
 </pre></div>
 </div>
 <p><a class="reference download internal" download="" href="../../_downloads/a4ff6aa69983e954e9a9a916a0579812/builtin-cpt-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
@@ -259,7 +259,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

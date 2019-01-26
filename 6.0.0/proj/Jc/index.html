@@ -227,8 +227,8 @@
 </pre></div>
 </div>
 <p>其中，<code class="docutils literal notranslate"><span class="pre">&lt;lon&gt;/&lt;lat&gt;</span></code> 为中心的经纬度。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -R7:30/38:30/10:30/41:30r -JC8.75/40/2.5i -Bafg -LjBR+c40+w100+f+o0.15i/0.2i <span class="se">\</span>
-    -Gspringgreen  -Dh -Sazure -Wthinnest -Ia/thinner -P --FONT_LABEL<span class="o">=</span>12p &gt; GMT_cassini.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R7:30/38:30/10:30/41:30r -JC8.75/40/2.5i -Bafg -LjBR+c40+w100+f+o0.15i/0.2i <span class="se">\</span>
+    -Gspringgreen -Dh -Sazure -Wthinnest -Ia/thinner --FONT_LABEL<span class="o">=</span>12p -png GMT_cassini
 </pre></div>
 </div>
 <div class="figure align-center" id="id1">
@@ -279,7 +279,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

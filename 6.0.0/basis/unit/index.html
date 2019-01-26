@@ -244,7 +244,7 @@
 <li><p class="first">使用 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">get</span> <span class="pre">PROJ_LENGTH_UNIT</span></code> 查看 GMT 的默认长度单位。</p>
 </li>
 <li><p class="first">如下命令在一个长宽均为10厘米（由 <code class="docutils literal notranslate"><span class="pre">-JX10c/10c</span></code> 控制）的矩形底图中心，绘制了一个直径为3厘米（由 <code class="docutils literal notranslate"><span class="pre">-Sc3c</span></code> 控制）的圆:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">5</span> <span class="m">5</span> <span class="p">|</span> gmt psxy -JX10c/10c -R0/10/0/10 -Baf -Sc3c -W1p &gt; test.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">5</span> <span class="m">5</span> <span class="p">|</span> gmt plot -JX10c/10c -R0/10/0/10 -Baf -Sc3c -W1p -pdf <span class="nb">test</span>
 </pre></div>
 </div>
 <p>将 <code class="docutils literal notranslate"><span class="pre">-Sc3c</span></code> 改成 <code class="docutils literal notranslate"><span class="pre">-Sc3i</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-Sc3</span></code> 并绘图查看图件的区别。</p>
@@ -325,7 +325,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

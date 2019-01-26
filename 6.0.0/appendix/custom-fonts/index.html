@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>14.7 自定义字体 &mdash; GMT参考手册</title>
+  <title>14.9 自定义字体 &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="14.8 获取 GMT 开发版" href="../get-gmt-dev/" />
-    <link rel="prev" title="14.6 环境变量" href="../variables/" /> 
+    <link rel="next" title="14.10 获取 GMT 开发版" href="../get-gmt-dev/" />
+    <link rel="prev" title="14.8 环境变量" href="../variables/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -101,18 +101,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../../style/">12 风格指南</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/">13 API</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../">14 附录</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../colors/">14.1 GMT 颜色表</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../patterns/">14.2 GMT预定义填充图案</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../low-level/">14.3 GMT底层原理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../directory-tree/">14.4 目录结构</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculate-distance/">14.5 三种距离计算方式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../variables/">14.6 环境变量</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">14.7 自定义字体</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../get-gmt-dev/">14.8 获取 GMT 开发版</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../animation/">14.9 用GMT制作动画</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-dirs/">14.10 目录参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contour-annot/">14.11 等值线标注和“线条标注”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gdal/">14.12 通过 GDAL 读写网格文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cmd/">14.1 命令行及脚本基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colors/">14.2 GMT 颜色表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../patterns/">14.3 GMT预定义填充图案</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mode/">14.4 GMT现代模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../low-level/">14.5 GMT底层原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../directory-tree/">14.6 目录结构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculate-distance/">14.7 三种距离计算方式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../variables/">14.8 环境变量</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">14.9 自定义字体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get-gmt-dev/">14.10 获取 GMT 开发版</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../animation/">14.11 用GMT制作动画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-dirs/">14.12 目录参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour-annot/">14.13 等值线标注和“线条标注”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gdal/">14.14 通过 GDAL 读写网格文件</a></li>
 </ul>
 </li>
 </ul>
@@ -180,7 +182,7 @@
         
           <li><a href="../">14 附录</a> &raquo;</li>
         
-      <li>14.7 自定义字体</li>
+      <li>14.9 自定义字体</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -202,7 +204,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>14.7 自定义字体<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>14.9 自定义字体<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>GMT默认支持了35种字体，如果想要使用额外的字体，则需要自己配置。可以修改
 <code class="file docutils literal notranslate"><span class="pre">$</span><em><span class="pre">GMTHOME</span></em><span class="pre">/share/postscriptlight/PSL_custom_fonts.txt</span></code> 文件或在当前目录下新建配置文件 <code class="file docutils literal notranslate"><span class="pre">PSL_custom_fonts.txt</span></code> 。</p>
 <p>文件中每行包含三列数据，分别是：PS字体名、字体的高度（单位为 <code class="docutils literal notranslate"><span class="pre">p</span></code> ）以及布尔值0或1告诉GMT是否要对文字重新编码。例如:</p>
@@ -251,10 +253,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../get-gmt-dev/" class="btn btn-neutral float-right" title="14.8 获取 GMT 开发版" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../get-gmt-dev/" class="btn btn-neutral float-right" title="14.10 获取 GMT 开发版" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../variables/" class="btn btn-neutral" title="14.6 环境变量" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../variables/" class="btn btn-neutral" title="14.8 环境变量" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -264,7 +266,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

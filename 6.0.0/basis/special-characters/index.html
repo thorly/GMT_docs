@@ -228,9 +228,9 @@
 <code class="docutils literal notranslate"><span class="pre">\14x</span></code> 行与 <code class="docutils literal notranslate"><span class="pre">4</span></code> 列的交界处就是该八进制码代表的字符，即 <code class="docutils literal notranslate"><span class="pre">d</span></code>。</p>
 <p>下面的示例展示了修改GMT的文本编码，以及不同编码下同一八进制码的效果:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt <span class="nb">set</span> PS_CHAR_ENCODING Standard+
-$ <span class="nb">echo</span> <span class="m">1</span> <span class="m">1</span> <span class="s1">&#39;\260&#39;</span> <span class="p">|</span> gmt pstext -JX2c/2c -R0/2/0/2 -B1 &gt; standard.ps
+$ <span class="nb">echo</span> <span class="m">1</span> <span class="m">1</span> <span class="s1">&#39;\260&#39;</span> <span class="p">|</span> gmt text -JX2c/2c -R0/2/0/2 -B1 -pdf standard.ps
 $ gmt <span class="nb">set</span> PS_CHAR_ENCODING ISOLatin1+
-$ <span class="nb">echo</span> <span class="m">1</span> <span class="m">1</span> <span class="s1">&#39;\260&#39;</span> <span class="p">|</span> gmt pstext -JX2c/2c -R0/2/0/2 -B1 &gt; isolatin1.ps
+$ <span class="nb">echo</span> <span class="m">1</span> <span class="m">1</span> <span class="s1">&#39;\260&#39;</span> <span class="p">|</span> gmt text -JX2c/2c -R0/2/0/2 -B1 -pdf isolatin1
 </pre></div>
 </div>
 <p>其中，<code class="docutils literal notranslate"><span class="pre">standard.ps</span></code> 中显示的是类似A的字符，而 <code class="docutils literal notranslate"><span class="pre">isolation1.ps</span></code> 中显示的则是弧度 <code class="docutils literal notranslate"><span class="pre">°</span></code> 符号。</p>
@@ -280,7 +280,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

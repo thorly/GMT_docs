@@ -258,9 +258,11 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> FORMAT_GEO_MAP dddA
-gmt pscoast -R-180/180/-60/80 -JCyl_stere/0/45/4.5i -Bxa60f30g30 -Bya30g30 -Dc -A5000 <span class="se">\</span>
-            -Wblack -Gseashell4 -Santiquewhite1 -P &gt; GMT_gall_stereo.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_gall_stereo pdf,png
+gmt <span class="nb">set</span> FORMAT_GEO_MAP dddA
+gmt coast -R-180/180/-60/80 -JCyl_stere/0/45/4.5i -Bxa60f30g30 -Bya30g30 -Dc -A5000 <span class="se">\</span>
+            -Wblack -Gseashell4 -Santiquewhite1
+gmt end
 </pre></div>
 </div>
 <div class="figure align-center" id="id1">
@@ -311,7 +313,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

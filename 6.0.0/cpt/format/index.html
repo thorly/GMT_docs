@@ -254,9 +254,9 @@ N   &lt;fill_NaN&gt;
 <li>若 <code class="docutils literal notranslate"><span class="pre">&lt;color_min_1&gt;</span></code> 与 <code class="docutils literal notranslate"><span class="pre">&lt;color_max_1&gt;</span></code> 相等，则 <code class="docutils literal notranslate"><span class="pre">&lt;z0&gt;</span></code> 到 <code class="docutils literal notranslate"><span class="pre">&lt;z1&gt;</span></code>
 范围内的所有Z值均使用相同的颜色</li>
 <li>若 <code class="docutils literal notranslate"><span class="pre">&lt;color_min_1&gt;</span></code> 使用了图案，则 <code class="docutils literal notranslate"><span class="pre">&lt;color_max_1&gt;</span></code> 必须设置为 <code class="docutils literal notranslate"><span class="pre">-</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;A&gt;</span></code> 是可选的，用于表明在使用 <code class="docutils literal notranslate"><span class="pre">psscale</span></code> 命令绘制色标时要如何标注。
+<li><code class="docutils literal notranslate"><span class="pre">&lt;A&gt;</span></code> 是可选的，用于表明在使用 <code class="docutils literal notranslate"><span class="pre">colorbar</span></code> 命令绘制色标时要如何标注。
 <code class="docutils literal notranslate"><span class="pre">&lt;A&gt;</span></code> 可以取 <code class="docutils literal notranslate"><span class="pre">L</span></code> 、 <code class="docutils literal notranslate"><span class="pre">U</span></code> 、 <code class="docutils literal notranslate"><span class="pre">B</span></code>，表示选择每个Z切片的下限、上限或者上下限作为标注。</li>
-<li><code class="docutils literal notranslate"><span class="pre">;&lt;lable&gt;</span></code> 是切片的标签，当 <code class="docutils literal notranslate"><span class="pre">psscale</span></code> 使用 <code class="docutils literal notranslate"><span class="pre">-L</span></code> 选项时会在用 <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> 作为标注</li>
+<li><code class="docutils literal notranslate"><span class="pre">;&lt;lable&gt;</span></code> 是切片的标签，当 <code class="docutils literal notranslate"><span class="pre">colorbar</span></code> 使用 <code class="docutils literal notranslate"><span class="pre">-L</span></code> 选项时会在用 <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> 作为标注</li>
 <li><code class="docutils literal notranslate"><span class="pre">B|F|N</span></code> 语句分别用于设置背景色（默认值为 <a class="reference internal" href="../../conf/color/#color-background"><span class="std std-ref">COLOR_BACKGROUND</span></a> ）、前景色（默认值为 <a class="reference internal" href="../../conf/color/#color-foreground"><span class="std std-ref">COLOR_FOREGROUND</span></a> ）和
 NaN值的颜色（默认值为 <a class="reference internal" href="../../conf/color/#color-nan"><span class="std std-ref">COLOR_NAN</span></a> ）</li>
 <li><code class="docutils literal notranslate"><span class="pre">B|F|N</span></code> 语句要放在CPT文件的开头或结尾</li>
@@ -380,7 +380,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

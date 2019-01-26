@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7.5 读netCDF文件 &mdash; GMT参考手册</title>
+  <title>7.2 读netCDF文件 &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="7.6 写网格文件" href="../write/" />
-    <link rel="prev" title="7.4 Sun光栅文件" href="../sun-raster/" /> 
+    <link rel="next" title="7.3 写网格文件" href="../write/" />
+    <link rel="prev" title="7.1 网格文件简介" href="../overview/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -95,22 +95,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cpt/">6 CPT文件</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../">7 网格文件</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../overview/">7.1 网格文件简介</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../netcdf/">7.2 netCDF文件格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../native-grid/">7.3 Native二进制网格格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sun-raster/">7.4 Sun光栅文件</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">7.5 读netCDF文件</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">7.5.1 多个二维变量的处理</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">7.5.2 三维变量的处理</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">7.5.3 四维变量的处理</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">7.5.4 一维变量的处理</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">7.5.5 修改坐标单位</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.2 读netCDF文件</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">7.2.1 多个二维变量的处理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">7.2.2 三维变量的处理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">7.2.3 四维变量的处理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">7.2.4 一维变量的处理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">7.2.5 修改坐标单位</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../write/">7.6 写网格文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../boundary-condition/">7.7 边界条件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../registration/">7.8 网格配准</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../suffix/">7.9 网格文件后缀</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../viewer/">7.10 查看netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../write/">7.3 写网格文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../boundary-condition/">7.4 边界条件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../registration/">7.5 网格配准</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../suffix/">7.6 网格文件后缀</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../viewer/">7.7 查看netCDF文件</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
@@ -185,7 +182,7 @@
         
           <li><a href="../">7 网格文件</a> &raquo;</li>
         
-      <li>7.5 读netCDF文件</li>
+      <li>7.2 读netCDF文件</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -207,11 +204,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="netcdf">
-<h1>7.5 读netCDF文件<a class="headerlink" href="#netcdf" title="永久链接至标题">¶</a></h1>
+<h1>7.2 读netCDF文件<a class="headerlink" href="#netcdf" title="永久链接至标题">¶</a></h1>
 <p>netCDF格式的设计相当灵活，可以包含多个多维变量。而GMT中与网格相关的模块，只能直接处理包含一个二维变量的netCDF文件。因而，GMT在读取包含了多个多维变量的
 netCDF文件时，可以做一些特殊的处理。</p>
 <div class="section" id="id1">
-<h2>7.5.1 多个二维变量的处理<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>7.2.1 多个二维变量的处理<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>当netCDF网格文件中包含多个二维变量时，GMT默认会读取第一个二维变量作为Z值，并忽略其余的二维变量。如果用户想要自己指定读取某个特定的二维变量，可以在网格文件名后加上后缀 <code class="docutils literal notranslate"><span class="pre">?&lt;varname&gt;</span></code> 来实现，其中 <code class="docutils literal notranslate"><span class="pre">&lt;varname&gt;</span></code> 是netCDF文件中包含的变量名。</p>
 <p>比如想要从文件中获取名为 <code class="docutils literal notranslate"><span class="pre">slp</span></code> 的二维变量的信息，可以用:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdinfo <span class="s2">&quot;file.nc?slp&quot;</span>
@@ -224,7 +221,7 @@ netCDF文件时，可以做一些特殊的处理。</p>
 </ol>
 </div>
 <div class="section" id="id2">
-<h2>7.5.2 三维变量的处理<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>7.2.2 三维变量的处理<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>偶尔会遇到三维网格文件，比如地球参考模型，三个维度分别是经度、纬度和深度，模型中的速度和密度等则是一个三维变量。</p>
 <p>在遇到多维变量时，GMT默认会读取第一层（即深度值最小的那一层）数据。可以通过如下两种方法来读取特定层的数据。</p>
 <ol class="arabic">
@@ -259,7 +256,7 @@ data:
 </ol>
 </div>
 <div class="section" id="id3">
-<h2>7.5.3 四维变量的处理<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>7.2.3 四维变量的处理<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>对于四维变量，方法类似。假设有一个四维网格文件，四个维度分别是纬度、经度、深度、时间，变量为压强。利用 <code class="docutils literal notranslate"><span class="pre">ncdump</span></code> 可以查看四个纬度的取值范围:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>lat<span class="o">(</span>lat<span class="o">)</span>: <span class="m">0</span>, <span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span>, <span class="m">5</span>, <span class="m">6</span>, <span class="m">7</span>, <span class="m">8</span>, <span class="m">9</span>
 lon<span class="o">(</span>lon<span class="o">)</span>: <span class="m">0</span>, <span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span>, <span class="m">5</span>, <span class="m">6</span>, <span class="m">7</span>, <span class="m">8</span>, <span class="m">9</span>
@@ -279,9 +276,9 @@ pressure<span class="o">(</span>time,depth,lat,lon<span class="o">)</span>: <spa
 <p>需要注意，时间在前，深度在后。</p>
 </div>
 <div class="section" id="id4">
-<h2>7.5.4 一维变量的处理<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>7.2.4 一维变量的处理<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>包含一维变量的netCDF文件，也就是前面所说的netCDF表。可以通过在文件名后加上变量名来使用一个一维变量，比如:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psxy <span class="s2">&quot;file.nc?lon/lat&quot;</span> ...
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt plot <span class="s2">&quot;file.nc?lon/lat&quot;</span> ...
 gmt convert <span class="s2">&quot;file.nc?time/lat/lon&quot;</span>
 </pre></div>
 </div>
@@ -300,7 +297,7 @@ time steps recording temperature at 4 points, and the variable <code class="docu
 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">convert</span> <span class="pre">&quot;file.nc?time/temp[1]&quot;</span></code> (indices start counting at 0).</p>
 </div>
 <div class="section" id="id5">
-<h2>7.5.5 修改坐标单位<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<h2>7.2.5 修改坐标单位<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>某些GMT工具要求网格中的两个维度的单位必须是米，若输入数据中的维度的单位不是米，则需要对网格坐标做一些变换。</p>
 <ol class="arabic simple">
 <li>如果使用的是地理网格数据（即两个维度是经度和纬度），可以加上 <code class="docutils literal notranslate"><span class="pre">-fg</span></code> 选项，则网格坐标会根据Flat Earth近似，自动转换成以米为单位。</li>
@@ -340,10 +337,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../write/" class="btn btn-neutral float-right" title="7.6 写网格文件" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../write/" class="btn btn-neutral float-right" title="7.3 写网格文件" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../sun-raster/" class="btn btn-neutral" title="7.4 Sun光栅文件" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../overview/" class="btn btn-neutral" title="7.1 网格文件简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -353,7 +350,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

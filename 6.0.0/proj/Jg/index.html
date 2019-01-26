@@ -229,7 +229,7 @@
 <li><code class="docutils literal notranslate"><span class="pre">&lt;distance&gt;</span></code> 是边界离投影中心的度数，默认值为90</li>
 <li><code class="docutils literal notranslate"><span class="pre">&lt;scale&gt;</span></code> 地图比例尺 <code class="docutils literal notranslate"><span class="pre">1:xxxx</span></code> 或 <code class="docutils literal notranslate"><span class="pre">&lt;radius&gt;/&lt;latitude&gt;</span></code> （ <code class="docutils literal notranslate"><span class="pre">&lt;radius&gt;</span></code> 是纬线 <code class="docutils literal notranslate"><span class="pre">&lt;latitude&gt;</span></code> 与投影中心在图上的距离）</li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -Rg -JG-75/41/4.5i -Bg -Dc -A5000 -Gpink -Sthistle -P &gt; GMT_orthographic.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -Rg -JG-75/41/4.5i -Bg -Dc -A5000 -Gpink -Sthistle -png GMT_orthographic
 </pre></div>
 </div>
 <div class="figure align-center" id="id1">
@@ -249,8 +249,8 @@
 <li><code class="docutils literal notranslate"><span class="pre">&lt;width&gt;/&lt;height&gt;</span></code> 是视角的角度，单位为度，默认值为60。This number depends on whether you are looking with the naked eye (in which case you view is about 60º wide), or with binoculars, for example.</li>
 <li><code class="docutils literal notranslate"><span class="pre">&lt;scale&gt;</span></code> as 1:xxxxx or as radius/latitude where radius is distance on map in inches from projection center to a particular oblique latitude</li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -Rg -JG4/52/230/90/60/180/60/60/5i -Bx2g2 -By1g1 -Ia -Di -Glightbrown <span class="se">\</span>
-            -Wthinnest -P -Slightblue --MAP_ANNOT_MIN_SPACING<span class="o">=</span><span class="m">0</span>.25i &gt; GMT_perspective.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -Rg -JG4/52/230/90/60/180/60/60/5i -Bx2g2 -By1g1 -Ia -Di -Glightbrown <span class="se">\</span>
+            -Wthinnest -Slightblue --MAP_ANNOT_MIN_SPACING<span class="o">=</span><span class="m">0</span>.25i -png GMT_perspective
 </pre></div>
 </div>
 <div class="figure align-center" id="id2">
@@ -301,7 +301,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

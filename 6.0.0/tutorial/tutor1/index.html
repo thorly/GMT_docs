@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.7 入门示例1 &mdash; GMT参考手册</title>
+  <title>3.4 入门示例1 &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="3.8 入门示例2" href="../tutor2/" />
-    <link rel="prev" title="3.6 Unix常用工具" href="../unix-tools/" /> 
+    <link rel="next" title="3.5 入门示例2" href="../tutor2/" />
+    <link rel="prev" title="3.3 GMT模块" href="../modules/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -91,20 +91,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../">3 GMT初探</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../cmd/">3.1 命令行</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gmt-cmd/">3.2 GMT命令</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cmd-basis/">3.3 命令行基础</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bash/">3.4 bash简明教程</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bat/">3.5 bat简明教程</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../unix-tools/">3.6 Unix常用工具</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.7 入门示例1</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">3.7.1 线性投影</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">3.7.2 对数投影</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">3.7.3 区域地图</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">3.7.4 全球地图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-cmd/">3.2 GMT命令格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/">3.3 GMT模块</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.4 入门示例1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">3.4.1 线性投影</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">3.4.2 对数投影</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">3.4.3 区域地图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">3.4.4 全球地图</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutor2/">3.8 入门示例2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutor3/">3.9 入门示例3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutor2/">3.5 入门示例2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutor3/">3.6 入门示例3</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
@@ -183,7 +180,7 @@
         
           <li><a href="../">3 GMT初探</a> &raquo;</li>
         
-      <li>3.7 入门示例1</li>
+      <li>3.4 入门示例1</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -205,12 +202,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>3.7 入门示例1<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<p>这一节将使用GMT的 <code class="docutils literal notranslate"><span class="pre">psbasemap</span></code> 和 <code class="docutils literal notranslate"><span class="pre">pscoast</span></code> 模块绘制简单的坐标轴以及世界地图。</p>
+<h1>3.4 入门示例1<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>这一节将使用GMT的 <code class="docutils literal notranslate"><span class="pre">basemap</span></code> 和 <code class="docutils literal notranslate"><span class="pre">coast</span></code> 模块绘制简单的坐标轴以及世界地图。</p>
 <div class="section" id="id2">
-<h2>3.7.1 线性投影<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>3.4.1 线性投影<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>GMT可以绘制最简单的线性X-Y图。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R10/70/-3/8 -JX8c/5c -Bx10 -By3 -B+t<span class="s2">&quot;Linear X-Y Plot&quot;</span> &gt; GMT_tutor1_1.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -R10/70/-3/8 -JX8c/5c -Bx10 -By3 -B+t<span class="s2">&quot;Linear X-Y Plot&quot;</span> -png GMT_tutor1_1
 </pre></div>
 </div>
 <div class="figure align-center" id="id6">
@@ -223,21 +220,20 @@
 <li><code class="docutils literal notranslate"><span class="pre">-JX8c/5c</span></code> 指定了整张图为线性投影，图的宽度（X轴长度）为8厘米，图的高度（Y轴长度）为5厘米</li>
 <li><code class="docutils literal notranslate"><span class="pre">-Bx10</span> <span class="pre">-By3</span></code> 分别设置了X、Y轴标注以及刻度的间隔为10和3</li>
 <li><code class="docutils literal notranslate"><span class="pre">-B+t&quot;Linear</span> <span class="pre">X-Y</span> <span class="pre">Plot&quot;</span></code> 为整张图添加了标题</li>
-<li><code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">GMT_tutor1_1.ps</span></code> GMT绘图模块的输出是PS代码，因而需要使用重定向符号 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 将PS代码输出到PS文件中</li>
+<li><code class="docutils literal notranslate"><span class="pre">-png</span> <span class="pre">GMT_tutor1_1</span></code> 表示生成名为 GMT_tutor1_1 的PNG格式的图片</li>
 </ul>
 <p>你可以尝试如下操作以增进对各个选项的理解：</p>
 <ol class="arabic simple">
 <li>修改 <code class="docutils literal notranslate"><span class="pre">-JX</span></code> 中的值</li>
 <li>修改 <code class="docutils literal notranslate"><span class="pre">-Bx</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-By</span></code> 中的值</li>
 <li>修改 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 中的值</li>
-<li>增进 <code class="docutils literal notranslate"><span class="pre">-P</span></code> 选项并查看效果</li>
 </ol>
 </div>
 <div class="section" id="id3">
-<h2>3.7.2 对数投影<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>3.4.2 对数投影<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>下面展示如何用GMT绘制对数X-Y图。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R1/10000/1e20/1e25 -JX15cl/10cl -Bxa2+l<span class="s2">&quot;Wavelength (m)&quot;</span> <span class="se">\</span>
-    -Bya1pf3+l<span class="s2">&quot;Power (W)&quot;</span> -BWS &gt; GMT_tutor1_2.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -R1/10000/1e20/1e25 -JX15cl/10cl -Bxa2+l<span class="s2">&quot;Wavelength (m)&quot;</span> <span class="se">\</span>
+    -Bya1pf3+l<span class="s2">&quot;Power (W)&quot;</span> -BWS -png GMT_tutor1_2
 </pre></div>
 </div>
 <div class="figure align-center" id="id7">
@@ -254,27 +250,27 @@
 <p>试试看：</p>
 <ol class="arabic simple">
 <li>将 <code class="docutils literal notranslate"><span class="pre">-Bya1pf3</span></code> 改成 <code class="docutils literal notranslate"><span class="pre">-Bya1f3</span></code></li>
-<li>将 <code class="docutils literal notranslate"><span class="pre">-BWS</span></code> 改成 <code class="docutils literal notranslate"><span class="pre">-BWSen</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-BWSEN</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-BwsEN</span></code> 等</li>
+<li>将 <code class="docutils literal notranslate"><span class="pre">-BWS</span></code> 改成 <code class="docutils literal notranslate"><span class="pre">-BWSen</span></code>、<code class="docutils literal notranslate"><span class="pre">-BWSEN</span></code>、 <code class="docutils literal notranslate"><span class="pre">-BwsEN</span></code> 等</li>
 </ol>
 </div>
 <div class="section" id="id4">
-<h2>3.7.3 区域地图<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
-<p>GMT自带了海岸线数据，通过 <code class="docutils literal notranslate"><span class="pre">pscoast</span></code> 模块可以直接调用。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -R-90/-70/0/20 -JM6i -P -Ba -Gchocolate &gt; GMT_tutor1_3.ps
+<h2>3.4.3 区域地图<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>GMT自带了海岸线数据，通过 <code class="docutils literal notranslate"><span class="pre">coast</span></code> 模块可以直接调用。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R-90/-70/0/20 -JM6i -Ba -Gchocolate -png GMT_tutor1_3
 </pre></div>
 </div>
 <div class="figure align-center" id="id8">
 <img alt="../../_images/tutor1-gmtplot-2.png" src="../../_images/tutor1-gmtplot-2.png" />
 <p class="caption"><span class="caption-number">图 3.3 </span><span class="caption-text">区域地图</span></p>
 </div>
-<p>此示例中使用 <code class="docutils literal notranslate"><span class="pre">pscoast</span></code> 绘制了拉丁美洲区域的海岸线。</p>
+<p>此示例中使用 <code class="docutils literal notranslate"><span class="pre">coast</span></code> 绘制了拉丁美洲区域的海岸线。</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">-R-90/-70/0/20</span></code> 指定了地理区域的范围</li>
 <li><code class="docutils literal notranslate"><span class="pre">-JM6i</span></code> 表示使用墨卡托投影，地图的宽度为6英寸，高度由投影自动决定</li>
 <li><code class="docutils literal notranslate"><span class="pre">-Ba</span></code> 会根据地理范围以及图片大小自动计算出适合的标注和刻度间隔</li>
 <li><code class="docutils literal notranslate"><span class="pre">-Gchocolate</span></code> 将陆地区域填充颜色chocolate</li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">pscoast</span></code> 还有很多常用的选项：</p>
+<p><code class="docutils literal notranslate"><span class="pre">coast</span></code> 还有很多常用的选项：</p>
 <ol class="arabic simple">
 <li><code class="docutils literal notranslate"><span class="pre">-D</span></code> 选项海岸线数据的精度</li>
 <li><code class="docutils literal notranslate"><span class="pre">-G</span></code> 设置陆地区域的填充色</li>
@@ -293,9 +289,9 @@
 </ol>
 </div>
 <div class="section" id="id5">
-<h2>3.7.4 全球地图<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -Rg -JK180/9i -Bag -Dc -A5000 -Gchocolate -SDarkTurquoise <span class="se">\</span>
-    -Wthinnest &gt; GMT_tutor1_4.ps
+<h2>3.4.4 全球地图<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -Rg -JK180/9i -Bag -Dc -A5000 -Gchocolate -SDarkTurquoise <span class="se">\</span>
+    -Wthinnest -png GMT_tutor1_4
 </pre></div>
 </div>
 <div class="figure align-center" id="id9">
@@ -338,10 +334,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../tutor2/" class="btn btn-neutral float-right" title="3.8 入门示例2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../tutor2/" class="btn btn-neutral float-right" title="3.5 入门示例2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../unix-tools/" class="btn btn-neutral" title="3.6 Unix常用工具" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../modules/" class="btn btn-neutral" title="3.3 GMT模块" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -351,7 +347,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.2 GMT命令 &mdash; GMT参考手册</title>
+  <title>3.2 GMT命令格式 &mdash; GMT参考手册</title>
   
 
   
@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="3.3 命令行基础" href="../cmd-basis/" />
+    <link rel="next" title="3.3 GMT模块" href="../modules/" />
     <link rel="prev" title="3.1 命令行" href="../cmd/" /> 
 
   
@@ -91,18 +91,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../">3 GMT初探</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../cmd/">3.1 命令行</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.2 GMT命令</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">3.2.1 命令格式</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">3.2.2 模块分类</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../cmd-basis/">3.3 命令行基础</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bash/">3.4 bash简明教程</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bat/">3.5 bat简明教程</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../unix-tools/">3.6 Unix常用工具</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutor1/">3.7 入门示例1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutor2/">3.8 入门示例2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutor3/">3.9 入门示例3</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.2 GMT命令格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/">3.3 GMT模块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutor1/">3.4 入门示例1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutor2/">3.5 入门示例2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutor3/">3.6 入门示例3</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
@@ -181,7 +174,7 @@
         
           <li><a href="../">3 GMT初探</a> &raquo;</li>
         
-      <li>3.2 GMT命令</li>
+      <li>3.2 GMT命令格式</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -203,10 +196,8 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gmt">
-<h1>3.2 GMT命令<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h1>
-<div class="section" id="id1">
-<h2>3.2.1 命令格式<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<p>GMT的 <code class="docutils literal notranslate"><span class="pre">bin</span></code> 目录下几乎可以说是只有 <code class="docutils literal notranslate"><span class="pre">gmt</span></code> 这一个有用的二进制文件，所以一切的绘图操作都是通过 <code class="docutils literal notranslate"><span class="pre">gmt</span></code> 这个命令来完成的。</p>
+<h1>3.2 GMT命令格式<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h1>
+<p>GMT的所有功能都是通过调用 <code class="docutils literal notranslate"><span class="pre">gmt</span></code> 这个命令来完成的。</p>
 <p>一个GMT命令由“ <code class="docutils literal notranslate"><span class="pre">gmt</span></code> + <code class="docutils literal notranslate"><span class="pre">模块</span></code> + <code class="docutils literal notranslate"><span class="pre">选项</span></code> + <code class="docutils literal notranslate"><span class="pre">参数</span></code>”构成，写成如下形式:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt module -Axx+bxxxx -Bxx+axxxx
 </pre></div>
@@ -219,14 +210,14 @@
 <li><code class="docutils literal notranslate"><span class="pre">+b</span></code> 是选项 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 的子选项，<code class="docutils literal notranslate"><span class="pre">xxxx</span></code> 为该子选项的参数</li>
 </ul>
 <p>一个完整的示例:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -R0/20/0/20 -JM6i -Ggray -Wthin -B5 -B+t<span class="s2">&quot;Title with spaces&quot;</span> -V -P &gt; map.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R0/20/0/20 -JM6i -Ggray -Wthin -B5 -B+t<span class="s2">&quot;Title with spaces&quot;</span> -V -pdf map
 </pre></div>
 </div>
 <p>其中，</p>
 <ul class="simple">
 <li>命令以 <code class="docutils literal notranslate"><span class="pre">gmt</span></code> 开头</li>
-<li><code class="docutils literal notranslate"><span class="pre">pscoast</span></code> 是用于绘制海岸线的模块</li>
-<li><code class="docutils literal notranslate"><span class="pre">-R</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 等都是 <code class="docutils literal notranslate"><span class="pre">pscoast</span></code> 模块的选项</li>
+<li><code class="docutils literal notranslate"><span class="pre">coast</span></code> 是用于绘制海岸线的模块</li>
+<li><code class="docutils literal notranslate"><span class="pre">-R</span></code>、<code class="docutils literal notranslate"><span class="pre">-J</span></code>、<code class="docutils literal notranslate"><span class="pre">-G</span></code> 等都是 <code class="docutils literal notranslate"><span class="pre">coast</span></code> 模块的选项</li>
 <li><code class="docutils literal notranslate"><span class="pre">-B+t&quot;Title</span> <span class="pre">with</span> <span class="pre">spaces&quot;</span></code> 中 <code class="docutils literal notranslate"><span class="pre">+t</span></code> 是选项 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 的子选项，<code class="docutils literal notranslate"><span class="pre">&quot;Title</span> <span class="pre">with</span> <span class="pre">spaces&quot;</span></code> 是子选项 <code class="docutils literal notranslate"><span class="pre">+t</span></code> 的参数</li>
 </ul>
 <p>几点说明：</p>
@@ -243,17 +234,6 @@
 <li>选项内部的字符串，若存在空格，应用单引号或双引号括起来</li>
 <li>注意 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 、<code class="docutils literal notranslate"><span class="pre">—A</span></code>　以及 <code class="docutils literal notranslate"><span class="pre">－A</span></code> 的细微区别，这通常是由于标点符号的全角和半角导致的。GMT中只能使用第一种。GMT4官方文档以及某些介绍GMT的博客，都有此问题。GMT5、6的官方文档以及本文档不存在该问题。</li>
 </ul>
-</div>
-<div class="section" id="id2">
-<h2>3.2.2 模块分类<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p>GMT的所有绘图操作都是通过调用不同的模块来完成的，但GMT除了绘图之外，还有数据处理以及格式转换等功能。根据功能的不同，大致将GMT的众多模块分为如下几类：</p>
-<ul class="simple">
-<li>参数设定类：如 <code class="docutils literal notranslate"><span class="pre">gmtset</span></code></li>
-<li>绘图操作类：如 <code class="docutils literal notranslate"><span class="pre">psxy</span></code> 、 <code class="docutils literal notranslate"><span class="pre">grdimage</span></code></li>
-<li>数据处理类：如 <code class="docutils literal notranslate"><span class="pre">gmtmath</span></code> 、 <code class="docutils literal notranslate"><span class="pre">grdmath</span></code></li>
-<li>格式转换类：如 <code class="docutils literal notranslate"><span class="pre">xyz2grd</span></code> 、 <code class="docutils literal notranslate"><span class="pre">psconvert</span></code></li>
-</ul>
-</div>
 </div>
 
 
@@ -285,7 +265,7 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../cmd-basis/" class="btn btn-neutral float-right" title="3.3 命令行基础" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../modules/" class="btn btn-neutral float-right" title="3.3 GMT模块" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../cmd/" class="btn btn-neutral" title="3.1 命令行" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -298,7 +278,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

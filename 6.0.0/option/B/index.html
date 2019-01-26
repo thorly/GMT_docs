@@ -265,27 +265,27 @@
 <li>出现小写字母lrtb =&gt; 绘制某条边，该边无刻度、无标注</li>
 </ol>
 <p>下面的命令分别使用了不同的 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项，可以自己执行，查看绘图效果并试着理解 <code class="docutils literal notranslate"><span class="pre">&lt;axes&gt;</span></code> 的用法:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R0/10/0/10 -JX5c -B2 -BWSEN &gt; test1.ps
-gmt psbasemap -R0/10/0/10 -JX5c -B2 -BWSn &gt; test2.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -R0/10/0/10 -JX5c -B2 -BWSEN -pdf test1
+gmt basemap -R0/10/0/10 -JX5c -B2 -BWSn -pdf test2
 </pre></div>
 </div>
 <p>对于3D绘图来说，<code class="docutils literal notranslate"><span class="pre">&lt;axes&gt;</span></code> 还可以加上一个 <code class="docutils literal notranslate"><span class="pre">Z</span></code> 用于控制Z轴。同理，大写的 <code class="docutils literal notranslate"><span class="pre">Z</span></code>
 表示有刻度和标注，小写的 <code class="docutils literal notranslate"><span class="pre">z</span></code> 表示有刻度无标注，<code class="docutils literal notranslate"><span class="pre">u</span></code> 表示无刻度无标注。表示默认情况下，只会绘制一条Z轴，可以使用
 <code class="docutils literal notranslate"><span class="pre">1234</span></code> 的任意组合来表示要绘制哪些Z轴。其中 <code class="docutils literal notranslate"><span class="pre">1</span></code> 表示左下角的Z轴，其他Z轴按逆时针顺序编号。加上 <code class="docutils literal notranslate"><span class="pre">+b</span></code> 子选项，会绘制一个由 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项范围决定的长方体的12条边，即相当于一个box。如果Z轴有指定网格间距，则会在xz和yz平面内显示网格线。</p>
 <p>下面的命令展示了3D绘图中 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项的不同用法，读者可以自己一一测试，根据绘图效果理解 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项中各字母的含义。命令中的某些选项还没有介绍过，暂时可以不必理会其含义:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bz2 -BWSENZ -p45/45 &gt; test1.ps
-gmt psbasemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bz2 -BWSENZ1234 -p45/45 &gt; test2.ps
-gmt psbasemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bz2 -BWSEN+b -p45/45 &gt; test3.ps
-gmt psbasemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bz2 -B+b -p45/45 &gt; test4.ps
-gmt psbasemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bz2 -BWESNZ+b -p45/45 &gt; test5.ps
-gmt psbasemap -R0/10/0/10/0/10 -JX5c -JZ5c -B2 -Bz2 -BwSEnZ+b -p45/45 &gt; test6.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bz2 -BWSENZ -p45/45 -pdf test1
+gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bz2 -BWSENZ1234 -p45/45 -pdf test2
+gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bz2 -BWSEN+b -p45/45 -pdf test3
+gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bz2 -B+b -p45/45 -pdf test4
+gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bz2 -BWESNZ+b -p45/45 -pdf test5
+gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -B2 -Bz2 -BwSEnZ+b -p45/45 -pdf test6
 </pre></div>
 </div>
 </div>
 <div class="section" id="id2">
 <h3>示例<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R0/10/0/10 -JX5c -Ba2g2 -BWSen+glightblue+ttitle &gt; test.ps
-gmt psbasemap -R0/10/0/10 -JX5c -Ba2g2 -BWS+glightblue+t<span class="s2">&quot;This is title&quot;</span> &gt; test2.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -R0/10/0/10 -JX5c -Ba2g2 -BWSen+glightblue+ttitle -pdf test1
+gmt basemap -R0/10/0/10 -JX5c -Ba2g2 -BWS+glightblue+t<span class="s2">&quot;This is title&quot;</span> -pdf test2
 </pre></div>
 </div>
 </div>
@@ -341,7 +341,7 @@ gmt psbasemap -R0/10/0/10 -JX5c -Ba2g2 -BWS+glightblue+t<span class="s2">&quot;T
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项还有一个可以自动计算间隔的功能，<code class="docutils literal notranslate"><span class="pre">-Bafg</span></code> 会根据当前的区域大小等信息自动计算合适的间隔，<code class="docutils literal notranslate"><span class="pre">-Bxafg</span> <span class="pre">-Byafg</span></code> 则会对X轴和Y轴分别计算合适的间隔。</p>
 <p>读者可以将命令:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -JX10c/10c -R0/10/0/10 -Ba2f1g1 &gt; test.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -JX10c/10c -R0/10/0/10 -Ba2f1g1 -pdf <span class="nb">test</span>
 </pre></div>
 </div>
 <p>中的 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项替换成如下不同的值并查看绘图效果以理解各个参数的含义：</p>
@@ -510,8 +510,10 @@ gmt psbasemap -R0/10/0/10 -JX5c -Ba2g2 -BWS+glightblue+t<span class="s2">&quot;T
 </tbody>
 </table>
 <p>第一个例子展示了2000年春天的两个月，想要将这两个月的每周的第一天的日期标注出来。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> <span class="nv">FORMAT_DATE_MAP</span><span class="o">=</span>-o FONT_ANNOT_PRIMARY +9p
-gmt psbasemap -R2000-4-1T/2000-5-25T/0/1 -JX5i/0.2i -Bpa7Rf1d -Bsa1O -BS -P &gt; GMT_-B_time1.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time1 pdf,png
+gmt <span class="nb">set</span> <span class="nv">FORMAT_DATE_MAP</span><span class="o">=</span>-o FONT_ANNOT_PRIMARY +9p
+gmt basemap -R2000-4-1T/2000-5-25T/0/1 -JX5i/0.2i -Bpa7Rf1d -Bsa1O -BS
+gmt end
 </pre></div>
 </div>
 <div class="figure align-center" id="id15">
@@ -520,9 +522,11 @@ gmt psbasemap -R2000-4-1T/2000-5-25T/0/1 -JX5i/0.2i -Bpa7Rf1d -Bsa1O -BS -P &gt;
 </div>
 <p>需要注意，<code class="docutils literal notranslate"><span class="pre">-Bsa1O</span></code> 指定了次级标注的间隔为一个月，由于此处使用的是大写的 <code class="docutils literal notranslate"><span class="pre">O</span></code>，因而具体的显式方式由 <a class="reference internal" href="../../conf/format/#format-date-map"><span class="std std-ref">FORMAT_DATE_MAP</span></a> 决定。根据 <a class="reference internal" href="../../conf/format/#format-date-map"><span class="std std-ref">FORMAT_DATE_MAP</span></a> 的说明可知，其值为 <code class="docutils literal notranslate"><span class="pre">-o</span></code> 表明以月份名格式显式。破折号表示要去掉日期前面的前置零（即02变成2）。</p>
 <p>下面的例子用两种不同的方式标注了1969年的两天。图中下面的例子使用周来标注，上面的例子使用日期来标注。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> FORMAT_DATE_MAP <span class="s2">&quot;o dd&quot;</span> FORMAT_CLOCK_MAP hh:mm FONT_ANNOT_PRIMARY +9p
-gmt psbasemap -R1969-7-21T/1969-7-23T/0/1 -JX5i/0.2i -Bpa6Hf1h -Bsa1K -BS -P -K &gt; GMT_-B_time2.ps
-gmt psbasemap -R -J -Bpa6Hf1h -Bsa1D -BS -O -Y0.65i &gt;&gt; GMT_-B_time2.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time2 pdf,png
+gmt <span class="nb">set</span> FORMAT_DATE_MAP <span class="s2">&quot;o dd&quot;</span> FORMAT_CLOCK_MAP hh:mm FONT_ANNOT_PRIMARY +9p
+gmt basemap -R1969-7-21T/1969-7-23T/0/1 -JX5i/0.2i -Bpa6Hf1h -Bsa1K -BS
+gmt basemap -Bpa6Hf1h -Bsa1D -BS -Y0.65i
+gmt end
 </pre></div>
 </div>
 <div class="figure align-center" id="id16">
@@ -530,8 +534,10 @@ gmt psbasemap -R -J -Bpa6Hf1h -Bsa1D -BS -O -Y0.65i &gt;&gt; GMT_-B_time2.ps
 <p class="caption"><span class="caption-number">图 8.8 </span><span class="caption-text">时间轴示例2</span></p>
 </div>
 <p>第三个例子展示了两年的时间，并标注了每年以及每三个月。年标注位于一年间隔的中间，月标注位于对应月的中间而不是三个月间隔的中间。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> FORMAT_DATE_MAP o FORMAT_TIME_PRIMARY_MAP Character FONT_ANNOT_PRIMARY +9p
-gmt psbasemap -R1997T/1999T/0/1 -JX5i/0.2i -Bpa3Of1o -Bsa1Y -BS -P &gt; GMT_-B_time3.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time3 pdf,png
+gmt <span class="nb">set</span> FORMAT_DATE_MAP o FORMAT_TIME_PRIMARY_MAP Character FONT_ANNOT_PRIMARY +9p
+gmt basemap -R1997T/1999T/0/1 -JX5i/0.2i -Bpa3Of1o -Bsa1Y -BS
+gmt end
 </pre></div>
 </div>
 <div class="figure align-center" id="id17">
@@ -539,8 +545,10 @@ gmt psbasemap -R1997T/1999T/0/1 -JX5i/0.2i -Bpa3Of1o -Bsa1Y -BS -P &gt; GMT_-B_t
 <p class="caption"><span class="caption-number">图 8.9 </span><span class="caption-text">时间示例3</span></p>
 </div>
 <p>第四个例子展示了一天中的几个小时，通过在R选项中指定 <code class="docutils literal notranslate"><span class="pre">t</span></code> 来使用相对时间坐标。这里使用了 <code class="docutils literal notranslate"><span class="pre">p</span></code> 属性和 <code class="docutils literal notranslate"><span class="pre">s</span></code> 属性，12小时制，时间从右向左增加：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> <span class="nv">FORMAT_CLOCK_MAP</span><span class="o">=</span>-hham FONT_ANNOT_PRIMARY +9p TIME_UNIT d
-gmt psbasemap -R0.2t/0.35t/0/1 -JX-5i/0.2i -Bpa15mf5m -Bsa1H -BS -P &gt; GMT_-B_time4.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time4 pdf,png
+gmt <span class="nb">set</span> <span class="nv">FORMAT_CLOCK_MAP</span><span class="o">=</span>-hham FONT_ANNOT_PRIMARY +9p TIME_UNIT d
+gmt basemap -R0.2t/0.35t/0/1 -JX-5i/0.2i -Bpa15mf5m -Bsa1H -BS
+gmt end
 </pre></div>
 </div>
 <div class="figure align-center" id="id18">
@@ -548,11 +556,13 @@ gmt psbasemap -R0.2t/0.35t/0/1 -JX-5i/0.2i -Bpa15mf5m -Bsa1H -BS -P &gt; GMT_-B_
 <p class="caption"><span class="caption-number">图 8.10 </span><span class="caption-text">时间轴示例4</span></p>
 </div>
 <p>第五个例子用两种方式展示了几周的时间：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> FORMAT_DATE_MAP u FORMAT_TIME_PRIMARY_MAP Character <span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time5 png,pdf
+gmt <span class="nb">set</span> FORMAT_DATE_MAP u FORMAT_TIME_PRIMARY_MAP Character <span class="se">\</span>
        FORMAT_TIME_SECONDARY_MAP full FONT_ANNOT_PRIMARY +9p
-gmt psbasemap -R1969-7-21T/1969-8-9T/0/1 -JX5i/0.2i -Bpa1K -Bsa1U -BS -P -K &gt; GMT_-B_time5.ps
+gmt basemap -R1969-7-21T/1969-8-9T/0/1 -JX5i/0.2i -Bpa1K -Bsa1U -BS
 gmt <span class="nb">set</span> FORMAT_DATE_MAP o TIME_WEEK_START Sunday FORMAT_TIME_SECONDARY_MAP Chararacter
-gmt psbasemap -R -J -Bpa3Kf1k -Bsa1r -BS -O -Y0.65i &gt;&gt; GMT_-B_time5.ps
+gmt basemap -Bpa3Kf1k -Bsa1r -BS -Y0.65i
+gmt end
 </pre></div>
 </div>
 <div class="figure align-center" id="id19">
@@ -560,8 +570,10 @@ gmt psbasemap -R -J -Bpa3Kf1k -Bsa1r -BS -O -Y0.65i &gt;&gt; GMT_-B_time5.ps
 <p class="caption"><span class="caption-number">图 8.11 </span><span class="caption-text">时间轴示例5</span></p>
 </div>
 <p>第六个例子展示了1996年的前5个月，每个月用月份的简写以及两位年份标注：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> FORMAT_DATE_MAP <span class="s2">&quot;o yy&quot;</span> FORMAT_TIME_PRIMARY_MAP Abbreviated
-gmt psbasemap -R1996T/1996-6T/0/1 -JX5i/0.2i -Ba1Of1d -BS -P &gt; GMT_-B_time6.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time6 pdf,png
+gmt <span class="nb">set</span> FORMAT_DATE_MAP <span class="s2">&quot;o yy&quot;</span> FORMAT_TIME_PRIMARY_MAP Abbreviated
+gmt basemap -R1996T/1996-6T/0/1 -JX5i/0.2i -Ba1Of1d -BS
+gmt end
 </pre></div>
 </div>
 <div class="figure align-center" id="id20">
@@ -569,8 +581,10 @@ gmt psbasemap -R1996T/1996-6T/0/1 -JX5i/0.2i -Ba1Of1d -BS -P &gt; GMT_-B_time6.p
 <p class="caption"><span class="caption-number">图 8.12 </span><span class="caption-text">时间轴示例6</span></p>
 </div>
 <p>第七个例子：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> FORMAT_DATE_MAP jjj TIME_INTERVAL_FRACTION <span class="m">0</span>.05 FONT_ANNOT_PRIMARY +9p
-gmt psbasemap -R2000-12-15T/2001-1-15T/0/1 -JX5i/0.2i -Bpa5Df1d -Bsa1Y -BS -P &gt; GMT_-B_time7.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time7 pdf,png
+gmt <span class="nb">set</span> FORMAT_DATE_MAP jjj TIME_INTERVAL_FRACTION <span class="m">0</span>.05 FONT_ANNOT_PRIMARY +9p
+gmt basemap -R2000-12-15T/2001-1-15T/0/1 -JX5i/0.2i -Bpa5Df1d -Bsa1Y -BS
+gmt end
 </pre></div>
 </div>
 <div class="figure align-center" id="id21">
@@ -626,10 +640,12 @@ cat <span class="s">&lt;&lt; EOF &gt; yannots.txt</span>
 <span class="s">6 f</span>
 <span class="s">6.2831852 ag 2@~p@~</span>
 <span class="s">EOF</span>
-gmt psbasemap -R416/542/0/6.2831852 -JX-5i/2.5i -Bpx25f5g25+u<span class="s2">&quot; Ma&quot;</span> -Bpycyannots.txt <span class="se">\</span>
-              -BWS+glightblue -P -K &gt; GMT_-B_custom.ps
-gmt psbasemap -R416/542/0/6.2831852 -JX-5i/2.5i -Bsxcxannots.txt -BWS -O <span class="se">\</span>
-              --MAP_ANNOT_OFFSET_SECONDARY<span class="o">=</span>10p --MAP_GRID_PEN_SECONDARY<span class="o">=</span>2p &gt;&gt; GMT_-B_custom.ps
+
+gmt begin GMT_-B_custom pdf,png
+gmt basemap -R416/542/0/6.2831852 -JX-5i/2.5i -Bpx25f5g25+u<span class="s2">&quot; Ma&quot;</span> -Bpycyannots.txt -BWS+glightblue
+gmt basemap -R416/542/0/6.2831852 -JX-5i/2.5i -Bsxcxannots.txt -BWS <span class="se">\</span>
+              --MAP_ANNOT_OFFSET_SECONDARY<span class="o">=</span>10p --MAP_GRID_PEN_SECONDARY<span class="o">=</span>2p
+gmt end
 rm -f <span class="o">[</span>xy<span class="o">]</span>annots.txt
 </pre></div>
 </div>
@@ -682,7 +698,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

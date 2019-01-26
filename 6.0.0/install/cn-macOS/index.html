@@ -262,20 +262,18 @@ Font <span class="c1">#  Font Name</span>
 <h3>GMT 中文测试<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p>测试脚本：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+gmt begin GMT_chinese pdf,png
 gmt <span class="nb">set</span> FONT_TITLE 30p,39,black
 gmt <span class="nb">set</span> FONT_LABEL 15p,39,black
 
-gmt pstext -R0/10/0/4 -JX15c/5c -Bxafg+l<span class="s2">&quot;X轴&quot;</span> -Byafg+l<span class="s2">&quot;Y轴&quot;</span> <span class="se">\</span>
-    -BWSen+t<span class="s2">&quot;中文标题&quot;</span> -F+f -P &gt; cn.ps <span class="s">&lt;&lt; EOF</span>
+gmt text -R0/10/0/4 -JX15c/5c -Bxafg+l<span class="s2">&quot;X轴&quot;</span> -Byafg+l<span class="s2">&quot;Y轴&quot;</span> -BWSen+t<span class="s2">&quot;中文标题&quot;</span> -F+f <span class="s">&lt;&lt; EOF</span>
 <span class="s">3 2.5 35p,39,black GMT宋体</span>
 <span class="s">3 1.0 35p,40,blue GMT仿宋</span>
 <span class="s">7 2.5 35p,41,yellow GMT黑体</span>
 <span class="s">7 1.0 35p,42,green GMT楷体</span>
 <span class="s">EOF</span>
-gmt psconvert -A -P -Tf cn.ps
-gmt psconvert -A -P -Tg cn.ps
-
-gmt clear <span class="nb">history</span> conf
+gmt end
 </pre></div>
 </div>
 <div class="admonition note">
@@ -332,7 +330,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

@@ -252,7 +252,10 @@ STKaiti-Regular--GB-EUC-H   <span class="m">0</span>.700   <span class="m">1</sp
 <p class="first admonition-title">注解</p>
 <p class="last">请自行确认你的中文字体编号。如果编号不是39到42，请自行修改以下测试脚本。</p>
 </div>
-<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>gmt set FONT_TITLE 30p,39,black
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>gmt begin
+gmt figure map pdf,png C-sFONTPATH=C:\windows\fon
+
+gmt set FONT_TITLE 30p,39,black
 gmt set FONT_LABEL 15p,39,black
 
 <span class="k">echo</span> 3 2.5 35p,39,black GMT宋体 <span class="p">&gt;</span> tmp
@@ -260,9 +263,9 @@ gmt set FONT_LABEL 15p,39,black
 <span class="k">echo</span> 7 2.5 35p,41,yellow GMT黑体 <span class="p">&gt;&gt;</span> tmp
 <span class="k">echo</span> 7 1.0 35p,42,green GMT楷体 <span class="p">&gt;&gt;</span> tmp
 
-gmt pstext tmp -R0/10/0/4 -JX15c/5c -Bxafg+l<span class="s2">&quot;X轴&quot;</span> -Byafg+l<span class="s2">&quot;Y轴&quot;</span> -BWSen+t<span class="s2">&quot;中文标题&quot;</span> -F+f <span class="p">&gt;</span> GMT_chinese.ps
-gmt psconvert GMT_chinese.ps -C-sFONTPATH=C:\windows\fonts -Tg -A -P -E300
-<span class="k">del</span> gmt.* tmp
+gmt text tmp -R0/10/0/4 -JX15c/5c -Bxafg+l<span class="s2">&quot;X轴&quot;</span> -Byafg+l<span class="s2">&quot;Y轴&quot;</span> -BWSen+t<span class="s2">&quot;中文标题&quot;</span> -F+f
+<span class="k">del</span> tmp
+gmt end
 </pre></div>
 </div>
 <p>成图效果如下：</p>
@@ -316,7 +319,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

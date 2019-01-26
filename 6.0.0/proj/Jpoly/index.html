@@ -220,8 +220,8 @@
 <h1>10.19 -Jpoly：多圆锥投影<a class="headerlink" href="#jpoly" title="永久链接至标题">¶</a></h1>
 <p>维基链接：<a class="reference external" href="https://en.wikipedia.org/wiki/Polyconic_projection">https://en.wikipedia.org/wiki/Polyconic_projection</a></p>
 <p>此投影既不是等面积也不是保角投影，沿着中心经线处畸变为0。所有纬线的比例尺都是真实的，但其余经线则存在畸变。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -R-180/-20/0/90 -JPoly/4i -Bx30g10 -By10g10 -Dc -A1000 -Glightgray <span class="se">\</span>
-            -Wthinnest -P &gt; GMT_polyconic.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R-180/-20/0/90 -JPoly/4i -Bx30g10 -By10g10 -Dc -A1000 -Glightgray <span class="se">\</span>
+            -Wthinnest -png GMT_polyconic.ps
 </pre></div>
 </div>
 <div class="figure align-center" id="id1">
@@ -272,7 +272,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

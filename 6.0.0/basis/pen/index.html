@@ -334,7 +334,7 @@
 <p>画笔包含三个属性：宽度、颜色、线型。通过不同的组合方式，可以定义无穷多种画笔。</p>
 <p>下图中展示了不同风格的画笔，读者可以将下面命令里 <code class="docutils literal notranslate"><span class="pre">-W</span></code> 选项中的 <code class="docutils literal notranslate"><span class="pre">&lt;pen&gt;</span></code>
 修改成不同的值来理解这一节的内容:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psxy -R0/10/0/5 -JX10c/5c -W&lt;pen&gt; &gt; pens.ps <span class="s">&lt;&lt; EOF</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt plot -R0/10/0/5 -JX10c/5c -W&lt;pen&gt; -pdf pens <span class="s">&lt;&lt; EOF</span>
 <span class="s">0 2</span>
 <span class="s">10 2</span>
 <span class="s">EOF</span>
@@ -389,7 +389,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="7.2 netCDF文件格式" href="../netcdf/" />
+    <link rel="next" title="7.2 读netCDF文件" href="../read/" />
     <link rel="prev" title="7 网格文件" href="../" /> 
 
   
@@ -95,23 +95,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cpt/">6 CPT文件</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../">7 网格文件</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">7.1 网格文件简介</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#grid-format">7.1.1 网格文件格式</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#netcdf">NetCDF网格文件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#native">Native二进制网格文件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#sun">Sun光栅文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#netcdf">7.1.1 netCDF网格文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sun">7.1.2 Sun光栅文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#native">7.1.3 Native二进制格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">7.1.4 用户自定义网格格式</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../netcdf/">7.2 netCDF文件格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../native-grid/">7.3 Native二进制网格格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sun-raster/">7.4 Sun光栅文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../read/">7.5 读netCDF文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../write/">7.6 写网格文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../boundary-condition/">7.7 边界条件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../registration/">7.8 网格配准</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../suffix/">7.9 网格文件后缀</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../viewer/">7.10 查看netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../read/">7.2 读netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../write/">7.3 写网格文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../boundary-condition/">7.4 边界条件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../registration/">7.5 网格配准</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../suffix/">7.6 网格文件后缀</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../viewer/">7.7 查看netCDF文件</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
@@ -209,34 +204,130 @@
             
   <div class="section" id="id1">
 <h1>7.1 网格文件简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<p>GMT可以绘制2D网格数据。通常，2D网格文件的X方向代表经度、Y方向代表纬度，Z值可以表示高程、重力值、温度、速度等。也可以将 XYZ 格式的 1D 表数据网格化得到 2D 网格数据。</p>
-<p>GMT可以使用的2D网格数据有三种格式：</p>
+<p>GMT可以绘制2D网格数据。通常，2D网格文件的X方向代表经度、Y方向代表纬度，Z值可以表示高程、重力值、温度、速度等。</p>
+<p>GMT可以使用的2D网格数据有四种格式：</p>
 <ol class="arabic simple">
 <li>netCDF格式</li>
 <li>Sun光栅文件</li>
-<li>自定义的二进制数据格式</li>
+<li>Native二进制格式</li>
+<li>用户自定义网格格式</li>
 </ol>
 <p>最常见也最推荐的网格数据格式是 netCDF 格式。</p>
-<div class="section" id="grid-format">
-<span id="id2"></span><h2>7.1.1 网格文件格式<a class="headerlink" href="#grid-format" title="永久链接至标题">¶</a></h2>
-<p>GMT支持多种格式的网格文件，包括netCDF格式、二进制网格文件以及8位Sun光栅文件。其中最常用的是netCDF格式。除此之外，GMT还可以读取用户自定义的网格文件，只要用户写好自定义网格文件的读写子程序，并将其与GMT函数库链接起来即可。详情参考源码中的
-<code class="docutils literal notranslate"><span class="pre">gmt_customio.c</span></code> 文件。</p>
 <div class="section" id="netcdf">
-<h3>NetCDF网格文件<a class="headerlink" href="#netcdf" title="永久链接至标题">¶</a></h3>
+<h2>7.1.1 netCDF网格文件<a class="headerlink" href="#netcdf" title="永久链接至标题">¶</a></h2>
 <p>GMT默认将2D网格保存为兼容COARDS的netCDF文件，一般以 <code class="docutils literal notranslate"><span class="pre">.nc</span></code> 或 <code class="docutils literal notranslate"><span class="pre">.grd</span></code> 作为文件后缀。</p>
 <p>COARDS是许多机构在分发网格文件时遵循的标准格式。GMT兼容该格式，因而GMT可以直接读取其他机构或程序提供的网格文件，GMT生成的网格文件也可以被其他程序读取。</p>
-<p>netCDF格式目前有两个版本，netCDF3和netCDF4。GMT目前默认使用netCDF4版本的文件格式。</p>
-<p>关于netCDF网格文件的详细信息，见本章的其他节。</p>
-</div>
-<div class="section" id="native">
-<h3>Native二进制网格文件<a class="headerlink" href="#native" title="永久链接至标题">¶</a></h3>
-<p>旧版本的GMT不支持netCDF格式的文件，使用的是GMT自定义的二进制网格格式。新版本的
-GMT依然支持这种二进制网格格式，但不建议使用。该文件格式由两部分组成：892个字节的头段区和长度不定的数据区。详细信息见 <a class="reference internal" href="../native-grid/"><span class="doc">Native二进制网格格式</span></a>。</p>
+<p>netCDF格式目前有两个版本，netCDF3和netCDF4。GMT目前默认使用netCDF4版本的文件格式。netCDF的具体格式比较复杂，此处不做介绍，一般用户也无需了解。</p>
 </div>
 <div class="section" id="sun">
-<h3>Sun光栅文件<a class="headerlink" href="#sun" title="永久链接至标题">¶</a></h3>
-<p>Sun光栅文件格式包含了一个头段区以及一系列无符号一字节整型以表示bit-pattern。详细信息见 <a class="reference internal" href="../sun-raster/"><span class="doc">Sun光栅文件</span></a>。</p>
+<span id="sun-raster"></span><h2>7.1.2 Sun光栅文件<a class="headerlink" href="#sun" title="永久链接至标题">¶</a></h2>
+<p>GMT 可以读取 Sun光栅文件格式的网格文件。Sun 光栅文件包含了一个头段区以及一系列无符号一字节整型以表示bit-pattern。所有的字节按照 scanline 方式排列，每行必须包含偶数个字节。</p>
 </div>
+<div class="section" id="native">
+<h2>7.1.3 Native二进制格式<a class="headerlink" href="#native" title="永久链接至标题">¶</a></h2>
+<p>在很久以前的 GMT 中，其自定义了一套二进制网格文件格式。但由于其通用性太差，已经被更现代的 netCDF 格式所取代。新版本的
+GMT依然支持这种二进制网格格式，但不建议使用。该文件格式由两部分组成：892个字节的头段区和长度不定的数据区。</p>
+<p>native 二进制网格格式包含了一个892字节的头段区以及长度不定的数据区。头段区中包含了用于描述网格文件的变量，这些变量在文件中的存储顺序及其含义如下表：</p>
+<table border="1" class="docutils" id="id3">
+<caption><span class="caption-number">表 7.1 </span><span class="caption-text">GMT自定义二进制网格文件结构</span><a class="headerlink" href="#id3" title="永久链接至表格">¶</a></caption>
+<colgroup>
+<col width="25%" />
+<col width="23%" />
+<col width="53%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">参数</th>
+<th class="head">类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">nx</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">int</span></code></td>
+<td>X方向节点数目</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">ny</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">int</span></code></td>
+<td>Y方向节点数目</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">registration</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">int</span></code></td>
+<td>配准方式：0代表网格线配准，1代表像素配准</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">x_min</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">double</span></code></td>
+<td>区域的X最小值</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">x_max</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">double</span></code></td>
+<td>区域的X最大值</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">y_min</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">double</span></code></td>
+<td>区域的Y最小值</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">y_max</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">double</span></code></td>
+<td>区域的Y最大值</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">z_min</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">double</span></code></td>
+<td>数据的Z最小值</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">z_max</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">double</span></code></td>
+<td>数据的Z最大值</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">x_inc</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">double</span></code></td>
+<td>X方向的节点间隔</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">y_inc</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">double</span></code></td>
+<td>Y方向的节点间隔</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">z_scale_factor</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">double</span></code></td>
+<td>读取Z值后要乘以的因子</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">z_add_offset</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">double</span></code></td>
+<td>Z值乘以因子后要加上的偏移量</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">x_units</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">char[80]</span></code></td>
+<td>X方向的单位</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">y_units</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">char[80]</span></code></td>
+<td>Y方向的单位</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">z_units</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">char[80]</span></code></td>
+<td>Z方向的单位</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">title</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">char[80]</span></code></td>
+<td>对数据集的描述</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">command</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">char[320]</span></code></td>
+<td>生成该数据的命令</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">remark</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">char[160]</span></code></td>
+<td>额外的注释</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">z</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">TYPE</span> <span class="pre">[nx*ny]</span></code></td>
+<td>Z值数组</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id2">
+<h2>7.1.4 用户自定义网格格式<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>GMT还可以读取用户自定义的网格文件，只要用户写好自定义网格文件的读写子程序，并将其与GMT函数库链接起来即可。详情参考源码中的 <code class="docutils literal notranslate"><span class="pre">gmt_customio.c</span></code> 文件。</p>
 </div>
 </div>
 
@@ -269,7 +360,7 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../netcdf/" class="btn btn-neutral float-right" title="7.2 netCDF文件格式" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../read/" class="btn btn-neutral float-right" title="7.2 读netCDF文件" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../" class="btn btn-neutral" title="7 网格文件" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -282,7 +373,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>

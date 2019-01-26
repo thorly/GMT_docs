@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="3.2 GMT命令" href="../gmt-cmd/" />
+    <link rel="next" title="3.2 GMT命令格式" href="../gmt-cmd/" />
     <link rel="prev" title="3 GMT初探" href="../" /> 
 
   
@@ -96,14 +96,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#id4">3.1.3 脚本语言</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../gmt-cmd/">3.2 GMT命令</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cmd-basis/">3.3 命令行基础</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bash/">3.4 bash简明教程</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../bat/">3.5 bat简明教程</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../unix-tools/">3.6 Unix常用工具</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutor1/">3.7 入门示例1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutor2/">3.8 入门示例2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutor3/">3.9 入门示例3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-cmd/">3.2 GMT命令格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/">3.3 GMT模块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutor1/">3.4 入门示例1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutor2/">3.5 入门示例2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutor3/">3.6 入门示例3</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
@@ -217,10 +214,6 @@
 <li>不够直观</li>
 <li>某些无法用坐标精确定义的曲线难以绘制</li>
 </ul>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">待处理</p>
-<p class="last">增加更多优缺点</p>
-</div>
 <div class="section" id="id2">
 <h2>3.1.1 终端<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>终端，即terminal，是用户键入命令与电脑进行交互的接口。</p>
@@ -232,7 +225,7 @@
 </ul>
 <p>启动终端后，默认情况下当前路径是自己的家目录。对于Linux用户，通常是 <code class="docutils literal notranslate"><span class="pre">/home/username</span></code>；对于Windows用户，通常是 <code class="docutils literal notranslate"><span class="pre">C:\Users\username</span></code>；对于macOS用户，通常是 <code class="docutils literal notranslate"><span class="pre">/Users/username</span></code>。</p>
 <p>在终端中键入如下命令:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt pscoast -JM10c -R70/140/2/60 -Bafg -Ggray -Wthin &gt; map.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt coast -JM10c -R70/140/2/60 -Bafg -Ggray -Wthin -pdf map
 </pre></div>
 </div>
 <p>则会在当前目录（即家目录）下生成名为 <code class="docutils literal notranslate"><span class="pre">map.pdf</span></code> 的一张图，其中绘制了中国及其周边的海岸线。</p>
@@ -240,9 +233,10 @@
 <div class="section" id="id3">
 <h2>3.1.2 脚本<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>一张稍复杂的图通常都需要多个GMT命令来完成。你可以在终端键入如下几行命令来绘制海岸线并在某个点处加一个五角星:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -JM10c -R70/140/2/60 -Bafg -W1/thin -Ggray -P -K &gt; map.ps
-<span class="nb">echo</span> <span class="m">115</span> <span class="m">40</span> <span class="p">|</span> gmt psxy -J -R -Sa0.5c -Gred -O &gt;&gt; map.ps
-rm gmt.*
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map pdf
+gmt coast -JM10c -R70/140/2/60 -Bafg -W1/thin -Ggray
+<span class="nb">echo</span> <span class="m">115</span> <span class="m">40</span> <span class="p">|</span> gmt plot -Sa0.5c -Gred
+gmt end
 </pre></div>
 </div>
 <p>直接在终端敲大一堆命令是不是很麻烦？一旦敲错了就得把光标移过去重新编辑，或者哪里不满意想修改，还得查找命令历史把命令找出来重新执行一遍，又或者一个不小心命令历史丢了，原来的画图命令再也找不到了。这一切都可以通过脚本来解决。</p>
@@ -294,7 +288,7 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../gmt-cmd/" class="btn btn-neutral float-right" title="3.2 GMT命令" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../gmt-cmd/" class="btn btn-neutral float-right" title="3.2 GMT命令格式" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../" class="btn btn-neutral" title="3 GMT初探" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -307,7 +301,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月18日.
+      最后更新于 2019年01月26日.
 
     </p>
   </div>
