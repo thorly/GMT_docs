@@ -1,0 +1,446 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>subplot &mdash; GMT参考手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../" class="icon icon-home"> GMT参考手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">6 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">7 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">9 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">10 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 GMT数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../">12 GMT 模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../style/">13 风格指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://modules.gmt-china.org"><i class="fa fa-book fa-fw"></i> 模块手册</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT参考手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">Docs</a> &raquo;</li>
+        
+      <li>subplot</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/module/subplot.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="subplot">
+<span id="index-0"></span><h1>subplot<a class="headerlink" href="#subplot" title="永久链接至标题">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><span class="xref std std-ref">subplot</span></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">管理现代模式下子图的配置和选择</td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal notranslate"><span class="pre">subplot</span></code> 模块可以将当前图片分割成若干个子图的矩阵，每个子图都可以包含一张单独的图片。
+<code class="docutils literal notranslate"><span class="pre">subplot</span></code> 模块有三种模式：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">subplot</span> <span class="pre">begin</span></code> 用于子图的布局</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">subplot</span> <span class="pre">set</span></code> 用于指定当前绘图在哪一个子图中进行</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">subplot</span> <span class="pre">end</span></code> 用于结束子图模式</li>
+</ul>
+<div class="section" id="gmt-begin">
+<h2><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">begin</span></code><a class="headerlink" href="#gmt-begin" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id1">
+<h3>语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt subplot begin &lt;nrows&gt;x&lt;ncols&gt;
+                  -F<span class="o">[</span>f<span class="p">|</span>s<span class="o">]</span>&lt;width&gt;/&lt;height&gt;<span class="o">[</span>:&lt;wfracs&gt;/&lt;hfracs&gt;<span class="o">]</span>
+                  <span class="o">[</span>-A&lt;autolabel&gt;<span class="o">]</span>
+                  <span class="o">[</span>-B&lt;params&gt;<span class="o">]</span>
+                  <span class="o">[</span>-J&lt;params&gt;<span class="o">]</span>
+                  <span class="o">[</span>-M&lt;margins&gt;<span class="o">]</span>
+                  <span class="o">[</span>-R&lt;params&gt;<span class="o">]</span>
+                  <span class="o">[</span>-S&lt;layout&gt;<span class="o">]</span>
+                  <span class="o">[</span>-T&lt;title&gt;<span class="o">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>必须选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;nrows&gt;x&lt;ncols&gt;</span></code></dt>
+<dd>指定子图的行数和列数。每一行拥有相同数目的子图。若需要实现每行有不同的子图数目，你需要多次叠加使用 subplot 模块。注意：你无需再每个子图内都绘图。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-F[f|s]&lt;widths&gt;/&lt;height&gt;[:&lt;wfracs&gt;/&lt;hfracs&gt;]</span></code></dt>
+<dd><p class="first">指定图片的长宽。</p>
+<p>有两种方式：</p>
+<ul class="last">
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">-Ff</span></code> 指定整张图片的尺寸。每张子图的尺寸会根据整张图片的尺寸以及子图的数目自动计算。在计算子图尺寸时会考虑每个子图的刻度线、标记、标签所占据的空间，以及不同子图之间的空白。最外圈的刻度线、标记和标签不算在整张图片尺寸之内。为了给每行或每列指定不同的子图尺寸，可以在冒号后面加上一系列以逗号分隔的宽度比例，然后再加上一个斜杠，并加上一系列以逗号分隔的高度比例。单个数则表示所有行或列有相同的宽度或高度。</p>
+<p>例如，<a href="#id3"><span class="problematic" id="id4">``</span></a>-Ff4i/4i:3,1/1,2``会使得第一列的宽度是第二列的三倍，而第二行的高度则是第一行的两倍。默认是所有行以及列的尺度是相同的。</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">-Fs</span></code> 直接指定每个子图的尺寸。此时，整张图的尺寸由子图的尺寸以及刻度线、标记、标签和子图之间的空白共同决定，其中，最外圈的刻度线、标记、标签不算在整张图的尺寸之内。为了给每行或每列指定不同的子图尺寸，可以加上一系列以逗号分隔的宽度，然后再加上一个斜杠，并加上一系列以逗号分隔的高度。单个数则表示所有行或列有相同的宽度或高度。</p>
+<p>例如，<code class="docutils literal notranslate"><span class="pre">-Fs2i,3i/3i</span></code> 使得第一列为2英寸宽，第二列为3英寸宽，所有列的高度均为3英寸。值的数目必须是一个或者与行数/列数相匹配。对于地理地图而言，每张子图的高度由地图区域以及投影方式决定。有两个选择：(1) 同时指定 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-J</span></code> ，并利用其计算每张子图的高度，所有的子图必须共享相同的研究区域和投影方式，且你必须指定一个0高度；（2）不同尝试并修改子图的高度以得到最佳的绘图布局。</p>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id5">
+<h3>可选选项<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-A&lt;autolabel&gt;</span></code></dt>
+<dd><p class="first">为每个子图指定自动的标签。 <code class="docutils literal notranslate"><span class="pre">&lt;autolabel&gt;</span></code> 可以是一个数字或字母，默认为 <code class="docutils literal notranslate"><span class="pre">a</span></code>。</p>
+<p>该选项设置了左上角第一张子图的标签，并按照顺序自动设置其他子图的标签。也可以在数字或字母的一侧或两侧加上括号（需要注意，UNIX下可能需要对括号进行转义）。</p>
+<p class="last">Use <strong>+j</strong>|<strong>J</strong><em>refpoint</em> to specify where the tag should be placed in the subplot [TL].
+Note: <strong>+j</strong> sets the justification of the tag to <em>refpoint</em> (suitable for interior tags)
+while <strong>+J</strong> instead selects the mirror opposite (suitable for exterior tags).
+Append <strong>+c</strong><em>dx</em>[/<em>dy</em>] to set the clearance between the tag and a surrounding text box
+requested via <strong>+g</strong> or <strong>p</strong> [3pt/3pt, i.e., 15% of the <a class="reference internal" href="../../conf/font/#font-tag"><span class="std std-ref">FONT_TAG size</span></a> size].
+Append <strong>+g</strong><em>fill</em> to paint the tag’s text box with <em>fill</em> [no painting].
+Append <strong>+o</strong><em>dx</em>[/<em>dy</em>] to offset the tag’s reference point in the direction implied
+by the justification [4pt/4pt, i.e., 20% of the <a class="reference internal" href="../../conf/font/#font-tag"><span class="std std-ref">FONT_TAG size</span></a>].
+Append <strong>+p</strong><em>pen</em> to draw the outline of the tag’s text box using selected <em>pen</em> [no outline].
+Append <strong>+r</strong> to typeset your tag numbers using lowercase Roman numerals;
+use <strong>+R</strong> for uppercase Roman numerals [Arabic numerals].
+Append <strong>+v</strong> to increase tag numbers vertically down columns [horizontally across rows].</p>
+</dd>
+</dl>
+<dl class="docutils" id="subplot-set-c1">
+<dt><strong>-C</strong><em>side</em>/<em>clearance</em>[<strong>u</strong>]</dt>
+<dd>Reserve a space of dimension <em>clearance</em> between the margin and the subplot on the specified
+side, using <em>side</em> values from <strong>w</strong>, <strong>e</strong>, <strong>s</strong>, or <strong>n</strong>.  The option is repeatable to set aside space
+on more than one side.  Such space will be left untouched by the main map plotting but can
+be accessed by modules that plot scales, bars, text, etc.  Settings specified under <strong>begin</strong> mode apply to all panels.</dd>
+</dl>
+<dl class="docutils" id="subplot-begin-m">
+<dt><strong>-M</strong><em>margins</em></dt>
+<dd>This is clearance that is added around each subplot beyond the automatic space allocated for tick marks,
+annotations, and labels.  The margins can be a single value, a pair of values separated by slashes
+(for setting separate horizontal and vertical margins), or the full set of four margins (for setting
+separate left, right, bottom, and top margins) [0.5c].</dd>
+</dl>
+<dl class="docutils" id="subplot-begin-s">
+<dt><strong>-S</strong><em>layout</em></dt>
+<dd>Set subplot layout for shared axes. May be set separately for rows (<strong>-SR</strong>) and columns (<strong>-SC</strong>).
+<strong>-SC</strong>: Use when all subplots in a <strong>C</strong>olumn share a common <em>x</em>-range. The first (i.e., <strong>t</strong>op) and the last
+(i.e., <strong>b</strong>ottom) rows will have <em>x</em> annotations; append <strong>t</strong> or <strong>b</strong> to select only one of those two rows [both].
+Append <strong>+l</strong> if annotated <em>x</em>-axes should have a label [none]; optionally append the label if it is the same
+for the entire subplot.
+<strong>-SR</strong>: Use when all subplots in a <strong>R</strong>ow share a common <em>y</em>-range. The first (i.e., <strong>l</strong>eft) and the last
+(i.e., <strong>r</strong>ight) columns will have <em>y</em>-annotations; append <strong>l</strong> or <strong>r</strong> to select only one of those two columns [both].
+Append <strong>+l</strong> if annotated <em>y</em>-axes will have a label [none]; optionally, append the label if it is the same
+for the entire subplot.
+Append <strong>+p</strong> to make all annotations axis-parallel [horizontal]; if used you may have to set <strong>-C</strong> to secure
+extra space for long horizontal annotations.
+Append <strong>+t</strong> to make space for subplot titles for each row; use <strong>+tc</strong> for top row titles only [no subplot titles].
+Labels and titles that depends on which row or column are specified as usual via a panel’s <strong>-B</strong> setting.</dd>
+</dl>
+<dl class="docutils" id="subplot-begin-t">
+<dt><strong>-T</strong><em>heading</em></dt>
+<dd>While individual subplots can have titles (see <strong>-S</strong> or <strong>-B</strong>), the entire figure may also have a
+overarching <em>heading</em> [no heading]. Font is determined by setting <a class="reference internal" href="../../conf/font/#font-heading"><span class="std std-ref">FONT_HEADING</span></a>.</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="synopsis-set-mode">
+<h2>Synopsis (set mode)<a class="headerlink" href="#synopsis-set-mode" title="永久链接至标题">¶</a></h2>
+<p><strong>gmt subplot set</strong> <em>row,col</em> [ <strong>-A</strong><em>fixedlabel</em>] [ <strong>-C</strong><em>side</em>/<em>clearance</em>[<strong>u</strong>] ] [ <a href="#id7"><span class="problematic" id="id8">|SYN_OPT-V|</span></a> ]</p>
+<p>Before you start plotting you must first select the active subplot panel.
+Note: Any <strong>-J</strong> option passed when plotting subplots must not give the width or scale
+since the dimensions of the map are completely determined by the subplot size and your region.
+Specifying map width will result in an error.  For Cartesian plots: If you want the scale
+to apply <em>equally</em> to both dimensions then you must specify <strong>-Jx</strong> [The default <strong>-JX</strong> will
+fill the subplot using unequal scales].</p>
+</div>
+<div class="section" id="required-arguments">
+<h2>Required Arguments<a class="headerlink" href="#required-arguments" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><em>row,col</em></dt>
+<dd>Sets the current subplot until further notice.  As an alternative, you may bypass the <strong>set</strong> mode and
+instead supply the common option <strong>-c</strong><em>row,col</em> to the first plot command you issue in that subplot.
+GMT maintains information about the current figure and subplot.</dd>
+</dl>
+</div>
+<div class="section" id="optional-arguments">
+<h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="永久链接至标题">¶</a></h2>
+<dl class="docutils" id="subplot-set-a">
+<dt><strong>-A</strong><em>fixedlabel</em></dt>
+<dd>Overrides the automatic labeling with the given string.  No modifiers are allowed.
+Placement, justification, etc. are all inherited from how <strong>-A</strong> was specified by the
+initial <strong>subplot begin</strong> command.</dd>
+</dl>
+<dl class="docutils" id="subplot-set-c2">
+<dt><strong>-C</strong><em>side</em>/<em>clearance</em>[<strong>u</strong>]</dt>
+<dd>Reserve a space of dimension <em>clearance</em> between the margin and the subplot on the specified
+side, using <em>side</em> values from <strong>w</strong>, <strong>e</strong>, <strong>s</strong>, or <strong>n</strong>.  The option is repeatable to set aside space
+on more than one side.  Such space will be left untouched by the main map plotting but can
+be accessed by modules that plot scales, bars, text, etc.  This setting overrides the common
+clearances set by <strong>-C</strong> during <strong>subplot begin</strong>.</dd>
+</dl>
+<p>Any number of plotting command can now take place and all output will be directed to the
+selected subplot panel.  There are a few other rules that need to be followed:
+(1) The subplot machinery expects the first plotting command in a new subplot window
+to take care of plotting the base frame.  The particulars of this frame may have been
+specified by the <strong>-S</strong> option in <strong>subplot begin</strong>.  In either case, should you need to set or override
+frame and axis parameters then you must specify these <strong>-B</strong> options with this first plot
+command.  (2) The subplot machinery automatically uses the <strong>-X</strong> and <strong>-Y</strong> options under
+the hood so these options are not available while a subplot is active.</p>
+</div>
+<div class="section" id="synopsis-end-mode">
+<h2>Synopsis (end mode)<a class="headerlink" href="#synopsis-end-mode" title="永久链接至标题">¶</a></h2>
+<p><strong>gmt subplot end</strong> [ <a href="#id9"><span class="problematic" id="id10">|SYN_OPT-V|</span></a> ]</p>
+<p>This command finalizes the current subplot, including any placement of tags, and updates the
+dimensions of the last plot to that of the entire subplot. This allows <strong>-X</strong> and <strong>-Y</strong> to
+use <em>w</em> and <em>h</em> in setting the current point relative to the entire subplot.  We also reset
+the current plot location to where it was prior to the subplot.</p>
+</div>
+<div class="section" id="id6">
+<h2>Optional Arguments<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="永久链接至标题">¶</a></h2>
+<p>To make a minimalistic 2x2 basemap layout called panels.pdf, try</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin panels pdf
+  gmt subplot begin 2x2 -Fs3i -M5p -A -SCb -SRl -Bwstr
+    gmt psbasemap -R0/80/0/10 -c1,1
+    gmt psbasemap -c1,2
+    gmt psbasemap -c2,1
+    gmt psbasemap -c2,2
+  gmt subplot end
+gmt end
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989'],
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2019, GMT中文社区
+      最后更新于 2019年01月27日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
