@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>12 风格指南 &mdash; GMT参考手册</title>
+  <title>13 风格指南 &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex/" />
     <link rel="search" title="搜索" href="../search/" />
-    <link rel="next" title="13 API" href="../api/" />
-    <link rel="prev" title="11.4 GMT 数据库的建立" href="../dataset/database/" /> 
+    <link rel="next" title="14 绘图示例" href="../gallery/" />
+    <link rel="prev" title="12 GMT模块" href="../module/" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -98,23 +98,25 @@
 <li class="toctree-l1"><a class="reference internal" href="../conf/">9 配置GMT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../proj/">10 投影方式</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dataset/">11 GMT数据集</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">12 风格指南</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#gmt">12.1 使用脚本来执行GMT命令</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">12.2 不要跨平台写脚本</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#si">12.3 使用SI单位制</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">12.4 不要依赖于GMT的系统设置</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id4">12.4.1 不要省略单位</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#conf">12.4.2 conf文件的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module/">12 GMT模块</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">13 风格指南</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#gmt">13.1 使用脚本来执行GMT命令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">13.2 不要跨平台写脚本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#si">13.3 使用SI单位制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">13.4 不要依赖于GMT的系统设置</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">13.4.1 不要省略单位</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conf">13.4.2 conf文件的使用</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#b">12.5 不要滥用-B选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#verbose">12.6 verbose模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#x-y">12.7 慎用-X和-Y</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">12.8 网格文件后缀</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#b">13.5 不要滥用-B选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verbose">13.6 verbose模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#x-y">13.7 慎用-X和-Y</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">13.8 网格文件后缀</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../api/">13 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../appendix/">14 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/">15 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/">16 附录</a></li>
 </ul>
 
             
@@ -178,7 +180,7 @@
     
       <li><a href="../">Docs</a> &raquo;</li>
         
-      <li>12 风格指南</li>
+      <li>13 风格指南</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -200,10 +202,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>12 风格指南<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>13 风格指南<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>在用GMT绘图的时候，遵循一定的风格指南，可以让画图的过程更轻松，让脚本更易读、易改、更健壮、可移植性更高。</p>
 <div class="section" id="gmt">
-<h2>12.1 使用脚本来执行GMT命令<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
+<h2>13.1 使用脚本来执行GMT命令<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
 <p>GMT遵循了UNIX的设计思想，将不同的功能分别放在不同的命令中，因而在绘图时需要执行一系列命令。</p>
 <p>若使用命令行来执行一系列命令，很容易弄混前一个命令是什么。将所有的绘图命令放在脚本中可以很方便地重复执行一系列命令，以对绘图的细节进行微调。</p>
 <p>除非是一两个命令就可以解决的图，否则应一律使用脚本而非命令行。</p>
@@ -218,7 +220,7 @@ gmt end
 </div>
 </div>
 <div class="section" id="id2">
-<h2>12.2 不要跨平台写脚本<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>13.2 不要跨平台写脚本<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>不要在Windows下写Bash脚本然后复制到Linux下运行；也不要在Linux下写Bat脚本放在
 Windows下运行。这其中会遇到很多坑，包括但不限于：</p>
 <ul class="simple">
@@ -228,19 +230,19 @@ Windows下运行。这其中会遇到很多坑，包括但不限于：</p>
 <p>如果你真的跨平台写了脚本并遇到各种奇怪的问题时，尝试着新建一个文件，然后把脚本重新手敲一遍。</p>
 </div>
 <div class="section" id="si">
-<h2>12.3 使用SI单位制<a class="headerlink" href="#si" title="永久链接至标题">¶</a></h2>
+<h2>13.3 使用SI单位制<a class="headerlink" href="#si" title="永久链接至标题">¶</a></h2>
 <p>GMT支持SI单位制和US单位制，默认是SI单位制。由于GMT的开发者是美国人，官方的文档使用的是US单位制，因而国内的GMT用户在学习的过程中也就习惯性地使用了US单位制。</p>
 <p>实际上，国内用户对于US单位制没有太多的概念， <code class="docutils literal notranslate"><span class="pre">-X1i</span></code> 远远没有 <code class="docutils literal notranslate"><span class="pre">-X2.5c</span></code> 直观。SI单位制是国际标准单位，也是中国人熟悉的单位，使用SI单位制会使得微调更简单。</p>
 </div>
 <div class="section" id="id3">
-<h2>12.4 不要依赖于GMT的系统设置<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>13.4 不要依赖于GMT的系统设置<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>你所写的每一个脚本，将来都可能传给后来人使用，可能在任一台机器上使用。要保证脚本每次运行的结果完全一致，并不是一个简单的事情。</p>
 <div class="section" id="id4">
-<h3>12.4.1 不要省略单位<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<h3>13.4.1 不要省略单位<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <p>当使用 <code class="docutils literal notranslate"><span class="pre">-JM10</span></code> 时，GMT会默认使用当前的系统默认单位（一般来说是 <code class="docutils literal notranslate"><span class="pre">c</span></code>，也就是厘米），当脚本在另一台系统默认单位为 <code class="docutils literal notranslate"><span class="pre">i</span></code> 的机器上运行时，绘图的结果会完全不同。</p>
 </div>
 <div class="section" id="conf">
-<h3>12.4.2 conf文件的使用<a class="headerlink" href="#conf" title="永久链接至标题">¶</a></h3>
+<h3>13.4.2 conf文件的使用<a class="headerlink" href="#conf" title="永久链接至标题">¶</a></h3>
 <p>不要手动修改 <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code> 文件！</p>
 <p>GMT中提供了 <code class="docutils literal notranslate"><span class="pre">gmtset</span></code> 模块可以用于修改缺省参数，比如标题的字体、大小等等。</p>
 <p>合理的使用方式如下：</p>
@@ -262,13 +264,13 @@ gmt end
 </div>
 </div>
 <div class="section" id="b">
-<h2>12.5 不要滥用-B选项<a class="headerlink" href="#b" title="永久链接至标题">¶</a></h2>
+<h2>13.5 不要滥用-B选项<a class="headerlink" href="#b" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项用于绘制边框并控制边框的绘制效果，即每个使用 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项的命令都会绘制一次边框，在没有使用 <code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 的情况下，多个命令重复使用 <code class="docutils literal notranslate"><span class="pre">-B</span></code>
 选项会绘制多次边框，但由于边框是重合的，所以会看不出来区别。</p>
 <p>对于 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项，合理的用法是仅在第一个命令中使用。</p>
 </div>
 <div class="section" id="verbose">
-<h2>12.6 verbose模式<a class="headerlink" href="#verbose" title="永久链接至标题">¶</a></h2>
+<h2>13.6 verbose模式<a class="headerlink" href="#verbose" title="永久链接至标题">¶</a></h2>
 <p>GMT命令的输出信息常用于在写脚本时判断命令执行是否正确，而在真正执行时过多的输出信息反而会扰乱用户的屏幕输出。合理的使用verbose模式的方式有三种：</p>
 <ol class="arabic">
 <li><p class="first">写脚本时每个命令都加上 <code class="docutils literal notranslate"><span class="pre">-V</span></code> 选项，待确认脚本正确无误之后删除所有 <code class="docutils literal notranslate"><span class="pre">-V</span></code></p>
@@ -300,7 +302,7 @@ gmt end
 <p>从使用上的简洁来看，最简单的是第三种方法。</p>
 </div>
 <div class="section" id="x-y">
-<h2>12.7 慎用-X和-Y<a class="headerlink" href="#x-y" title="永久链接至标题">¶</a></h2>
+<h2>13.7 慎用-X和-Y<a class="headerlink" href="#x-y" title="永久链接至标题">¶</a></h2>
 <p>使用这两个选项会导致坐标原点的移动。因而使用的时候需要相当慎重。</p>
 <ol class="arabic simple">
 <li>除极个别的情况外，<code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 选项应该仅在绘制组合图（即一张图多个子图）时使用</li>
@@ -309,7 +311,7 @@ gmt end
 </ol>
 </div>
 <div class="section" id="id5">
-<h2>12.8 网格文件后缀<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<h2>13.8 网格文件后缀<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>GMT主要使用netCDF格式作为网格数据的格式，其标准后缀名为 <code class="docutils literal notranslate"><span class="pre">.nc</span></code>。</p>
 <p>需要注意以下两个事实：</p>
 <ol class="arabic simple">
@@ -348,10 +350,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../api/" class="btn btn-neutral float-right" title="13 API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../gallery/" class="btn btn-neutral float-right" title="14 绘图示例" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../dataset/database/" class="btn btn-neutral" title="11.4 GMT 数据库的建立" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../module/" class="btn btn-neutral" title="12 GMT模块" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -361,7 +363,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月26日.
+      最后更新于 2019年01月27日.
 
     </p>
   </div>
