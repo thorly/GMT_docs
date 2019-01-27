@@ -260,8 +260,6 @@
             
                 <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
             
-                <li class="toctree-l1"><a href="https://modules.gmt-china.org"><i class="fa fa-book fa-fw"></i> 模块手册</a></li>
-            
                 <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
             
                 <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
@@ -351,9 +349,9 @@
 <dt><code class="docutils literal notranslate"><span class="pre">-D[g|j|J|n|x]&lt;refpoint&gt;[+w&lt;length&gt;[/&lt;width&gt;]][+e[b|f][&lt;length&gt;]][+h|v][+j&lt;justify&gt;][+m[a|c|l|u]][+n[&lt;txt&gt;]][+o&lt;dx&gt;[/&lt;dy&gt;]]</span></code></dt>
 <dd><p class="first">指定色标的尺寸和位置。</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">[g|j|J|n|x]&lt;refpoint&gt;</span></code> 指定底图上的参考点，见 <span class="xref std std-ref">doc:embellishments</span> 一节</li>
-<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 指定色标上的锚点，默认锚点是 <code class="docutils literal notranslate"><span class="pre">BL</span></code> ，见 <span class="xref std std-ref">doc:embellishments</span> 一节</li>
-<li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;[/&lt;dy&gt;]</span></code> 指定参考点的额外偏移量，见 <span class="xref std std-ref">doc:embellishments</span></li>
+<li><code class="docutils literal notranslate"><span class="pre">[g|j|J|n|x]&lt;refpoint&gt;</span></code> 指定底图上的参考点，见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a> 一节</li>
+<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 指定色标上的锚点，默认锚点是 <code class="docutils literal notranslate"><span class="pre">BL</span></code> ，见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a> 一节</li>
+<li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;[/&lt;dy&gt;]</span></code> 指定参考点的额外偏移量，见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a></li>
 <li><code class="docutils literal notranslate"><span class="pre">+w&lt;length&gt;[/&lt;width&gt;]</span></code> 指定色标的长度和宽度。若未指定宽度，则默认为长度的4%；若长度为负值则会反转色标</li>
 <li><code class="docutils literal notranslate"><span class="pre">+h</span></code> 绘制水平色标</li>
 <li><code class="docutils literal notranslate"><span class="pre">+v</span></code> 绘制垂直色标，默认值</li>
@@ -382,14 +380,14 @@
 <dl class="docutils">
 <dt><code class="docutils literal notranslate"><span class="pre">-B[p|s]&lt;parameters&gt;</span></code></dt>
 <dd><p class="first">设置colorbar的标注、刻度和网格线间隔。</p>
-<p>在不使用 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项，或者不指定标注间隔时，默认会根据CPT文件中每一行的内容对colorbar进行标注，具体见 <span class="xref std std-ref">doc:cpt</span> 。</p>
+<p>在不使用 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项，或者不指定标注间隔时，默认会根据CPT文件中每一行的内容对colorbar进行标注，具体见 <a class="reference internal" href="../../cpt/"><span class="doc">CPT文件</span></a>。</p>
 <p class="last">默认情况下，对于水平colorbar而言，X轴的标签会放在colorbar的下边，Y轴标签放在
 colorbar的右边；对于垂直colorbar而言，X轴的标签放在colorbar的右边，Y轴标签放在colorbar的上边。除非在 <code class="docutils literal notranslate"><span class="pre">-D</span></code> 选项中使用了 <code class="docutils literal notranslate"><span class="pre">+m</span></code> 子选项。</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-C</span></code></dt>
 <dd>要绘制的CPT文件。</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-F</span></code></dt>
-<dd>为colorbar加上背景边框，见 <span class="xref std std-ref">doc:embellishments</span> 一节</dd>
+<dd>为colorbar加上背景边框，见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a> 一节</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-G&lt;zlow&gt;/&lt;zhigh&gt;</span></code></dt>
 <dd>绘图前先对CPT文件做截断，使得其只绘制 <code class="docutils literal notranslate"><span class="pre">&lt;zlow&gt;</span></code> 到 <code class="docutils literal notranslate"><span class="pre">&lt;zhigh&gt;</span></code> 之间的部分。若其中某个值等于NaN，则不对CPT的那一端做处理。</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-I[&lt;max_intens&gt;|&lt;low_i&gt;/&lt;high_i&gt;]</span></code></dt>
