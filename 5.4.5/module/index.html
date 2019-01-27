@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>12 GMT模块 &mdash; GMT参考手册</title>
+  <title>12 GMT 模块 &mdash; GMT参考手册</title>
   
 
   
@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex/" />
     <link rel="search" title="搜索" href="../search/" />
-    <link rel="next" title="13 风格指南" href="../style/" />
+    <link rel="next" title="12.1 backtracker" href="backtracker/" />
     <link rel="prev" title="11.4 GMT 数据库的建立" href="../dataset/database/" /> 
 
   
@@ -98,7 +98,144 @@
 <li class="toctree-l1"><a class="reference internal" href="../conf/">9 配置GMT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../proj/">10 投影方式</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dataset/">11 GMT数据集</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">12 GMT模块</a><ul class="simple">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">12 GMT 模块</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="backtracker/">12.1 backtracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blockmean/">12.2 blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blockmedian/">12.3 blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blockmode/">12.4 blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dimfilter/">12.5 dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filter1d/">12.6 filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fitcircle/">12.7 fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmt/">12.8 gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmt-config/">12.9 gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmt2kml/">12.10 gmt2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmt5syntax/">12.11 gmt5syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtconnect/">12.12 gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtconvert/">12.13 gmtconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtdefaults/">12.14 gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtflexure/">12.15 gmtflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtget/">12.16 gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtgravmag3d/">12.17 gmtgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtinfo/">12.18 gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtlogo/">12.19 gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtmath/">12.20 gmtmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtpmodeler/">12.21 gmtpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtregress/">12.22 gmtregress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtselect/">12.23 gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtset/">12.24 gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtsimplify/">12.25 gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtspatial/">12.26 gmtspatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtswitch/">12.27 gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtvector/">12.28 gmtvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gmtwhich/">12.29 gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpsgridder/">12.30 gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gravfft/">12.31 gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grd2cpt/">12.32 grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grd2rgb/">12.33 grd2rgb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grd2xyz/">12.34 grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdblend/">12.35 grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdclip/">12.36 grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdcontour/">12.37 grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdcut/">12.38 grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdedit/">12.39 grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdfft/">12.40 grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdfilter/">12.41 grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdflexure/">12.42 grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdgradient/">12.43 grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdgravmag3d/">12.44 grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdhisteq/">12.45 grdhisteq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdimage/">12.46 grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdinfo/">12.47 grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdlandmask/">12.48 grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdmask/">12.49 grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdmath/">12.50 grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdpaste/">12.51 grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdpmodeler/">12.52 grdpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdproject/">12.53 grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdraster/">12.54 grdraster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdredpol/">12.55 grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdconvert/">12.56 grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdrotater/">12.57 grdrotater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdsample/">12.58 grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdseamount/">12.59 grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdspotter/">12.60 grdspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdtrack/">12.61 grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdtrend/">12.62 grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdvector/">12.63 grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdview/">12.64 grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdvolume/">12.65 grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="greenspline/">12.66 greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gshhg/">12.67 gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hotspotter/">12.68 hotspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="img2google/">12.69 img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="img2grd/">12.70 img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="isogmt/">12.71 isogmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kml2gmt/">12.72 kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="makecpt/">12.73 makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mapproject/">12.74 mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgd77convert/">12.75 mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgd77header/">12.76 mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgd77info/">12.77 mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgd77list/">12.78 mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgd77magref/">12.79 mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgd77manage/">12.80 mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgd77path/">12.81 mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgd77sniffer/">12.82 mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgd77track/">12.83 mgd77track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nearneighbor/">12.84 nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="originator/">12.85 originator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/">12.86 project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psbasemap/">12.87 psbasemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psclip/">12.88 psclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pscoast/">12.89 pscoast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pscontour/">12.90 pscontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psconvert/">12.91 psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pscoupe/">12.92 pscoupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pshistogram/">12.93 pshistogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psimage/">12.94 psimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pslegend/">12.95 pslegend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psmask/">12.96 psmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psmeca/">12.97 psmeca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pspolar/">12.98 pspolar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psrose/">12.99 psrose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssac/">12.100 pssac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psscale/">12.101 psscale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssegy/">12.102 pssegy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssegyz/">12.103 pssegyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pssolar/">12.104 pssolar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psternary/">12.105 psternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pstext/">12.106 pstext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psvelo/">12.107 psvelo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pswiggle/">12.108 pswiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psxy/">12.109 psxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psxyz/">12.110 psxyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rotconverter/">12.111 rotconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rotsmoother/">12.112 rotsmoother</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample1d/">12.113 sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="segy2grd/">12.114 segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spectrum1d/">12.115 spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sph2grd/">12.116 sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphdistance/">12.117 sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinterpolate/">12.118 sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphtriangulate/">12.119 sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splitxyz/">12.120 splitxyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surface/">12.121 surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="talwani2d/">12.122 talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="talwani3d/">12.123 talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trend1d/">12.124 trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trend2d/">12.125 trend2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="triangulate/">12.126 triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x2sys_binlist/">12.127 x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x2sys_cross/">12.128 x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x2sys_datalist/">12.129 x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x2sys_get/">12.130 x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x2sys_init/">12.131 x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x2sys_list/">12.132 x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x2sys_merge/">12.133 x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x2sys_put/">12.134 x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x2sys_report/">12.135 x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x2sys_solve/">12.136 x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xyz2grd/">12.137 xyz2grd</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../style/">13 风格指南</a></li>
@@ -168,7 +305,7 @@
     
       <li><a href="../">Docs</a> &raquo;</li>
         
-      <li>12 GMT模块</li>
+      <li>12 GMT 模块</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -190,85 +327,169 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gmt">
-<h1>12 GMT模块<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h1>
-<p>GMT提供了大约130多个模块，每个模块可以实现不同的功能，根据模块的名称可以大致猜出模块的功能。</p>
-<p>下面将GMT中最常用的模块按照功能分类，并用一句话简述其功能。</p>
-<p><strong>绘制1D数据</strong></p>
+<h1>12 GMT 模块<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h1>
+<p><strong>主程序/脚本</strong></p>
 <ul class="simple">
-<li>psbasemap ：绘制底图</li>
-<li>psxy ：在图上绘制线段、多边形和符号</li>
-<li>pstext ：在图上写文本</li>
-<li>pscoast ：在地图上绘制海岸线、河流、国界线</li>
-<li>pslegend ：绘制图例</li>
-<li>pssolar ：计算或/和绘制晨昏线以及民用、航海用以及天文用曙暮光区域</li>
-<li>psmeca ：在地图上绘制震源机制解</li>
-<li>pscoupe ：绘制震源机制解的剖面图</li>
-<li>pshistogram ：统计并绘制直方图</li>
-<li>pssac ：在地图上绘制 SAC 格式的地震波形数据</li>
-<li>psclip ：打开或关闭多边形裁剪路径</li>
-<li>psrose ：绘制极坐标下的直方图（sector图、rose图或windrose图）</li>
-<li>pspolar ：在震源球上绘制台站极性</li>
-<li>psvelo ：在地图上绘制速度矢量、十字线、楔形图</li>
-<li>psternary ：绘制三角图解</li>
-</ul>
-<p><strong>绘制2D数据</strong></p>
-<ul class="simple">
-<li>gmtlogo ：在图上绘制GMT图形logo</li>
-<li>psimage ：将EPS或光栅图片放在图上</li>
-<li>psscale ：在图上绘制灰色或彩色色标</li>
-<li>grdvector ：根据两个网格文件绘制矢量场</li>
-<li>grdimage ：在图上绘制网格数据</li>
+<li><a class="reference internal" href="gmt/"><span class="doc">gmt</span></a> ：GMT主程序</li>
+<li><a class="reference internal" href="isogmt/"><span class="doc">isogmt</span></a> ：在“隔离模式”下运行GMT命令或脚本</li>
+<li><a class="reference internal" href="gmt5syntax/"><span class="doc">gmt5syntax</span></a> ：将旧的GMT脚本修改成新的 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">&lt;module&gt;</span></code> 语法</li>
+<li><a class="reference internal" href="gmt-config/"><span class="doc">gmt-config</span></a> ：返回 GMT 动态函数库的基本信息</li>
 </ul>
 <p><strong>参数设置</strong></p>
 <ul class="simple">
-<li>gmtset ：修改单个或多个GMT参数的值</li>
-<li>gmtget ：列出单个或多个GMT参数的当前值</li>
-<li>gmtdefaults ：列出所有GMT参数的当前值</li>
+<li><a class="reference internal" href="gmtset/"><span class="doc">gmtset</span></a> ：修改单个或多个GMT参数的值</li>
+<li><a class="reference internal" href="gmtget/"><span class="doc">gmtget</span></a> ：列出单个或多个GMT参数的当前值</li>
+<li><a class="reference internal" href="gmtdefaults/"><span class="doc">gmtdefaults</span></a> ：列出所有GMT参数的当前值</li>
 </ul>
 <p><strong>信息提取</strong></p>
 <ul class="simple">
-<li>grdinfo ：从网格文件中提取基本信息</li>
-<li>gmtinfo ：从表数据中提取信息</li>
-<li>gmtwhich ：返回指定文件的完整路径</li>
+<li><a class="reference internal" href="grdinfo/"><span class="doc">grdinfo</span></a> ：从网格文件中提取基本信息</li>
+<li><a class="reference internal" href="gmtinfo/"><span class="doc">gmtinfo</span></a> ：从表数据中提取信息</li>
+<li><a class="reference internal" href="gmtwhich/"><span class="doc">gmtwhich</span></a> ：返回指定文件的完整路径</li>
 </ul>
 <p><strong>格式转换</strong></p>
 <ul class="simple">
-<li>psconvert ：将GMT生成的PS文件转换为其他图片格式</li>
-<li>grdconvert ：在不同的网格格式之间互相转换</li>
-<li>xyz2grd ：将XYZ数据或Z数据转换成网格文件</li>
-<li>grd2xyz ：将网格文件转换成表数据</li>
-<li>kml2gmt ：将Google Earth的KML文件转换为GMT表数据</li>
+<li><a class="reference internal" href="psconvert/"><span class="doc">psconvert</span></a> ：将GMT生成的PS文件转换为其他图片格式</li>
+<li><a class="reference internal" href="grdconvert/"><span class="doc">grdconvert</span></a> ：在不同的网格格式之间互相转换</li>
+<li><a class="reference internal" href="xyz2grd/"><span class="doc">xyz2grd</span></a> ：将XYZ数据或Z数据转换成网格文件</li>
+<li><a class="reference internal" href="grd2xyz/"><span class="doc">grd2xyz</span></a> ：将网格文件转换成表数据</li>
+<li><a class="reference internal" href="kml2gmt/"><span class="doc">kml2gmt</span></a> ：将Google Earth的KML文件转换为GMT表数据</li>
+</ul>
+<p><strong>绘制 1D 数据</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="pssolar/"><span class="doc">pssolar</span></a> ：计算或/和绘制晨昏线以及民用、航海用以及天文用曙暮光区域</li>
+<li><a class="reference internal" href="psbasemap/"><span class="doc">psbasemap</span></a> ：绘制底图</li>
+<li><a class="reference internal" href="psclip/"><span class="doc">psclip</span></a> ：打开或关闭多边形裁剪路径</li>
+<li><a class="reference internal" href="pshistogram/"><span class="doc">pshistogram</span></a> ：统计并绘制直方图</li>
+<li><a class="reference internal" href="pstext/"><span class="doc">pstext</span></a> ：在图上写文本</li>
+<li><a class="reference internal" href="pscoast/"><span class="doc">pscoast</span></a> ：在地图上绘制海岸线、河流、国界线</li>
+<li><a class="reference internal" href="pslegend/"><span class="doc">pslegend</span></a> ：绘制图例</li>
+<li><a class="reference internal" href="psrose/"><span class="doc">psrose</span></a> ：绘制极坐标下的直方图（sector图、rose图或windrose图）</li>
+<li><a class="reference internal" href="psxy/"><span class="doc">psxy</span></a> ：在图上绘制线段、多边形和符号</li>
+<li><a class="reference internal" href="pssac/"><span class="doc">pssac</span></a> ：在地图上绘制 SAC 格式的地震波形数据</li>
+<li><a class="reference internal" href="psmeca/"><span class="doc">psmeca</span></a> ：在地图上绘制震源机制解</li>
+<li><a class="reference internal" href="pspolar/"><span class="doc">pspolar</span></a> ：在震源球上绘制台站极性</li>
+<li><a class="reference internal" href="psvelo/"><span class="doc">psvelo</span></a> ：在地图上绘制速度矢量、十字线、楔形图</li>
+<li><a class="reference internal" href="pscoupe/"><span class="doc">pscoupe</span></a> ：绘制震源机制解的剖面图</li>
+<li><a class="reference internal" href="psternary/"><span class="doc">psternary</span></a> ：绘制三角图解</li>
+</ul>
+<p><strong>绘制 2D 数据</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="gmtlogo/"><span class="doc">gmtlogo</span></a> ：在图上绘制GMT图形logo</li>
+<li><a class="reference internal" href="psimage/"><span class="doc">psimage</span></a> ：将EPS或光栅图片放在图上</li>
+<li><a class="reference internal" href="psscale/"><span class="doc">psscale</span></a> ：在图上绘制灰色或彩色色标</li>
+<li><a class="reference internal" href="grdvector/"><span class="doc">grdvector</span></a> ：根据两个网格文件绘制矢量场</li>
+<li><a class="reference internal" href="grdimage/"><span class="doc">grdimage</span></a> ：在图上绘制网格数据</li>
 </ul>
 <p><strong>1D 数据处理</strong></p>
 <ul class="simple">
-<li>gmtselect ：根据多个准则筛选数据</li>
-<li>fitcircle ：拟合球面上数据点的平均位置及圆弧</li>
-<li>gmtsimplify ：使用Douglas-Peucker算法对线段做简化</li>
-<li>filter1d ：对1D表数据做时间域滤波</li>
-<li>gmtconnect ：将端点接近的线段连接起来</li>
-<li>project ：将数据点投影到线或大圆路径上，生成测线，坐标转换</li>
-<li>sample1d ：对1D表数据进行重采样</li>
-<li>spectrum1d: 计算一个时间序列的自功率谱，或两个时间序列的互功率谱</li>
+<li><a class="reference internal" href="gmtselect/"><span class="doc">gmtselect</span></a> ：根据多个准则筛选数据</li>
+<li><a class="reference internal" href="fitcircle/"><span class="doc">fitcircle</span></a> ：拟合球面上数据点的平均位置及圆弧</li>
+<li><a class="reference internal" href="gmtsimplify/"><span class="doc">gmtsimplify</span></a> ：使用Douglas-Peucker算法对线段做简化</li>
+<li><a class="reference internal" href="filter1d/"><span class="doc">filter1d</span></a> ：对1D表数据做时间域滤波</li>
+<li><a class="reference internal" href="gmtconnect/"><span class="doc">gmtconnect</span></a> ：将端点接近的线段连接起来</li>
+<li><a class="reference internal" href="project/"><span class="doc">project</span></a> ：将数据点投影到线或大圆路径上，生成测线，坐标转换</li>
+<li><a class="reference internal" href="sample1d/"><span class="doc">sample1d</span></a> ：对1D表数据进行重采样</li>
+<li><a class="reference internal" href="spectrum1d/"><span class="doc">spectrum1d</span></a>: 计算一个时间序列的自功率谱，或两个时间序列的互功率谱</li>
 </ul>
 <p><strong>2D 数据处理</strong></p>
 <ul class="simple">
-<li>grdclip ：对网格文件的Z值做裁剪</li>
-<li>grdconvert ：在不同的网格格式之间互相转换</li>
-<li>grdcut ：从一个网格文件中裁剪出一个矩形子区域生成新的网格文件</li>
-<li>grdedit ：修改网格文件的头段或内容</li>
-<li>grdlandmask ：根据海岸线数据创建陆地-海洋的mask网格文件</li>
-<li>grdinfo ：从网格文件中提取基本信息</li>
-<li>grdpaste ：将两个网格沿着其共同边界拼接成一个文件</li>
-<li>grdraster ：从二进制数据中提取子区域并保存为GMT网格文件</li>
-<li>grdsample ：对网格文件做重采样</li>
-<li>grdvolume ：计算网格数据中某个等值线所包围的表面积和体积</li>
-<li>grd2xyz ：将网格文件转换成表数据</li>
-<li>grd2rgb ：将网格文件、原始RGB文件、SUN光栅文件转换成R/G/B三个网格文件</li>
-<li>grdblend ：将多个部分重叠的网格文件合并成一个网格文件</li>
-<li>grdtrend ：拟合网格的趋势面并计算残差</li>
-<li>grdproject ：对网格数据做地图变换和逆变换</li>
-<li>grdmask ：根据多边形数据或点数据创建mask网格文件</li>
+<li><a class="reference internal" href="grdclip/"><span class="doc">grdclip</span></a> ：对网格文件的Z值做裁剪</li>
+<li><a class="reference internal" href="grdconvert/"><span class="doc">grdconvert</span></a> ：在不同的网格格式之间互相转换</li>
+<li><a class="reference internal" href="grdcut/"><span class="doc">grdcut</span></a> ：从一个网格文件中裁剪出一个矩形子区域生成新的网格文件</li>
+<li><a class="reference internal" href="grdedit/"><span class="doc">grdedit</span></a> ：修改网格文件的头段或内容</li>
+<li><a class="reference internal" href="grdlandmask/"><span class="doc">grdlandmask</span></a> ：根据海岸线数据创建陆地-海洋的mask网格文件</li>
+<li><a class="reference internal" href="grdinfo/"><span class="doc">grdinfo</span></a> ：从网格文件中提取基本信息</li>
+<li><a class="reference internal" href="grdpaste/"><span class="doc">grdpaste</span></a> ：将两个网格沿着其共同边界拼接成一个文件</li>
+<li><a class="reference internal" href="grdraster/"><span class="doc">grdraster</span></a> ：从二进制数据中提取子区域并保存为GMT网格文件</li>
+<li><a class="reference internal" href="grdsample/"><span class="doc">grdsample</span></a> ：对网格文件做重采样</li>
+<li><a class="reference internal" href="grdvolume/"><span class="doc">grdvolume</span></a> ：计算网格数据中某个等值线所包围的表面积和体积</li>
+<li><a class="reference internal" href="grd2xyz/"><span class="doc">grd2xyz</span></a> ：将网格文件转换成表数据</li>
+<li><a class="reference internal" href="grd2rgb/"><span class="doc">grd2rgb</span></a> ：将网格文件、原始RGB文件、SUN光栅文件转换成R/G/B三个网格文件</li>
+<li><a class="reference internal" href="grdblend/"><span class="doc">grdblend</span></a> ：将多个部分重叠的网格文件合并成一个网格文件</li>
+<li><a class="reference internal" href="grdtrend/"><span class="doc">grdtrend</span></a> ：拟合网格的趋势面并计算残差</li>
+<li><a class="reference internal" href="grdproject/"><span class="doc">grdproject</span></a> ：对网格数据做地图变换和逆变换</li>
+<li><a class="reference internal" href="grdmask/"><span class="doc">grdmask</span></a> ：根据多边形数据或点数据创建mask网格文件</li>
 </ul>
+<p><strong>其他</strong></p>
+<ol class="arabic simple">
+<li><a class="reference internal" href="grdtrack/"><span class="doc">grdtrack</span></a></li>
+<li><a class="reference internal" href="makecpt/"><span class="doc">makecpt</span></a></li>
+<li><a class="reference internal" href="grd2cpt/"><span class="doc">grd2cpt</span></a></li>
+<li><a class="reference internal" href="gmtconvert/"><span class="doc">gmtconvert</span></a></li>
+<li><a class="reference internal" href="trend1d/"><span class="doc">trend1d</span></a></li>
+<li><a class="reference internal" href="grdcontour/"><span class="doc">grdcontour</span></a></li>
+<li><a class="reference internal" href="psmask/"><span class="doc">psmask</span></a></li>
+<li><a class="reference internal" href="grdview/"><span class="doc">grdview</span></a></li>
+<li><a class="reference internal" href="grdgradient/"><span class="doc">grdgradient</span></a></li>
+<li><a class="reference internal" href="grdmath/"><span class="doc">grdmath</span></a></li>
+<li><a class="reference internal" href="gmt2kml/"><span class="doc">gmt2kml</span></a></li>
+<li><a class="reference internal" href="trend2d/"><span class="doc">trend2d</span></a></li>
+<li><a class="reference internal" href="mapproject/"><span class="doc">mapproject</span></a></li>
+<li><a class="reference internal" href="surface/"><span class="doc">surface</span></a></li>
+<li><a class="reference internal" href="grdfilter/"><span class="doc">grdfilter</span></a></li>
+<li><a class="reference internal" href="grdfft/"><span class="doc">grdfft</span></a></li>
+<li><a class="reference internal" href="splitxyz/"><span class="doc">splitxyz</span></a></li>
+<li><a class="reference internal" href="gmtmath/"><span class="doc">gmtmath</span></a></li>
+<li><a class="reference internal" href="blockmean/"><span class="doc">blockmean</span></a></li>
+<li><a class="reference internal" href="blockmedian/"><span class="doc">blockmedian</span></a></li>
+<li><a class="reference internal" href="blockmode/"><span class="doc">blockmode</span></a></li>
+<li><a class="reference internal" href="psxyz/"><span class="doc">psxyz</span></a></li>
+<li><a class="reference internal" href="pscontour/"><span class="doc">pscontour</span></a></li>
+<li><a class="reference internal" href="pssegy/"><span class="doc">pssegy</span></a></li>
+<li><a class="reference internal" href="pssegyz/"><span class="doc">pssegyz</span></a></li>
+<li><a class="reference internal" href="pswiggle/"><span class="doc">pswiggle</span></a></li>
+<li><a class="reference internal" href="grdgravmag3d/"><span class="doc">grdgravmag3d</span></a></li>
+<li><a class="reference internal" href="grdhisteq/"><span class="doc">grdhisteq</span></a></li>
+<li><a class="reference internal" href="gmtpmodeler/"><span class="doc">gmtpmodeler</span></a></li>
+<li><a class="reference internal" href="grdpmodeler/"><span class="doc">grdpmodeler</span></a></li>
+<li><a class="reference internal" href="grdredpol/"><span class="doc">grdredpol</span></a></li>
+<li><a class="reference internal" href="grdrotater/"><span class="doc">grdrotater</span></a></li>
+<li><a class="reference internal" href="dimfilter/"><span class="doc">dimfilter</span></a></li>
+<li><a class="reference internal" href="triangulate/"><span class="doc">triangulate</span></a></li>
+<li><a class="reference internal" href="nearneighbor/"><span class="doc">nearneighbor</span></a></li>
+<li><a class="reference internal" href="mgd77convert/"><span class="doc">mgd77convert</span></a></li>
+<li><a class="reference internal" href="mgd77header/"><span class="doc">mgd77header</span></a></li>
+<li><a class="reference internal" href="mgd77info/"><span class="doc">mgd77info</span></a></li>
+<li><a class="reference internal" href="mgd77list/"><span class="doc">mgd77list</span></a></li>
+<li><a class="reference internal" href="mgd77magref/"><span class="doc">mgd77magref</span></a></li>
+<li><a class="reference internal" href="mgd77manage/"><span class="doc">mgd77manage</span></a></li>
+<li><a class="reference internal" href="mgd77path/"><span class="doc">mgd77path</span></a></li>
+<li><a class="reference internal" href="mgd77sniffer/"><span class="doc">mgd77sniffer</span></a></li>
+<li><a class="reference internal" href="mgd77track/"><span class="doc">mgd77track</span></a></li>
+<li><a class="reference internal" href="x2sys_binlist/"><span class="doc">x2sys_binlist</span></a></li>
+<li><a class="reference internal" href="x2sys_cross/"><span class="doc">x2sys_cross</span></a></li>
+<li><a class="reference internal" href="x2sys_datalist/"><span class="doc">x2sys_datalist</span></a></li>
+<li><a class="reference internal" href="x2sys_get/"><span class="doc">x2sys_get</span></a></li>
+<li><a class="reference internal" href="x2sys_init/"><span class="doc">x2sys_init</span></a></li>
+<li><a class="reference internal" href="x2sys_list/"><span class="doc">x2sys_list</span></a></li>
+<li><a class="reference internal" href="x2sys_merge/"><span class="doc">x2sys_merge</span></a></li>
+<li><a class="reference internal" href="x2sys_put/"><span class="doc">x2sys_put</span></a></li>
+<li><a class="reference internal" href="x2sys_report/"><span class="doc">x2sys_report</span></a></li>
+<li><a class="reference internal" href="x2sys_solve/"><span class="doc">x2sys_solve</span></a></li>
+<li><a class="reference internal" href="gmtswitch/"><span class="doc">gmtswitch</span></a></li>
+<li><a class="reference internal" href="backtracker/"><span class="doc">backtracker</span></a></li>
+<li><a class="reference internal" href="gmtgravmag3d/"><span class="doc">gmtgravmag3d</span></a></li>
+<li><a class="reference internal" href="gmtspatial/"><span class="doc">gmtspatial</span></a></li>
+<li><a class="reference internal" href="gmtvector/"><span class="doc">gmtvector</span></a></li>
+<li><a class="reference internal" href="gravfft/"><span class="doc">gravfft</span></a></li>
+<li><a class="reference internal" href="grdseamount/"><span class="doc">grdseamount</span></a></li>
+<li><a class="reference internal" href="gpsgridder/"><span class="doc">gpsgridder</span></a></li>
+<li><a class="reference internal" href="grdspotter/"><span class="doc">grdspotter</span></a></li>
+<li><a class="reference internal" href="greenspline/"><span class="doc">greenspline</span></a></li>
+<li><a class="reference internal" href="gshhg/"><span class="doc">gshhg</span></a></li>
+<li><a class="reference internal" href="hotspotter/"><span class="doc">hotspotter</span></a></li>
+<li><a class="reference internal" href="img2google/"><span class="doc">img2google</span></a></li>
+<li><a class="reference internal" href="img2grd/"><span class="doc">img2grd</span></a></li>
+<li><a class="reference internal" href="originator/"><span class="doc">originator</span></a></li>
+<li><a class="reference internal" href="rotconverter/"><span class="doc">rotconverter</span></a></li>
+<li><a class="reference internal" href="rotsmoother/"><span class="doc">rotsmoother</span></a></li>
+<li><a class="reference internal" href="segy2grd/"><span class="doc">segy2grd</span></a></li>
+<li><a class="reference internal" href="sph2grd/"><span class="doc">sph2grd</span></a></li>
+<li><a class="reference internal" href="sphdistance/"><span class="doc">sphdistance</span></a></li>
+<li><a class="reference internal" href="sphinterpolate/"><span class="doc">sphinterpolate</span></a></li>
+<li><a class="reference internal" href="sphtriangulate/"><span class="doc">sphtriangulate</span></a></li>
+</ol>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -302,7 +523,7 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../style/" class="btn btn-neutral float-right" title="13 风格指南" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="backtracker/" class="btn btn-neutral float-right" title="12.1 backtracker" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../dataset/database/" class="btn btn-neutral" title="11.4 GMT 数据库的建立" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
