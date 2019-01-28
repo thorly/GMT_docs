@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.2 GMT命令格式 &mdash; GMT参考手册</title>
+  <title>3.1 命令行 &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="3.3 入门示例" href="../tutor/" />
-    <link rel="prev" title="3.1 命令行" href="../cmd/" /> 
+    <link rel="next" title="3.2 GMT命令格式" href="../command/" />
+    <link rel="prev" title="3 GMT初探" href="../" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -90,9 +90,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../">3 GMT初探</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../cmd/">3.1 命令行</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.2 GMT命令格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutor/">3.3 入门示例</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.1 命令行</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">3.1.1 终端</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">3.1.2 脚本</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">3.1.3 脚本语言</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../command/">3.2 GMT命令格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../first-plot/">3.3 绘制第一张图</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
@@ -170,14 +175,14 @@
         
           <li><a href="../">3 GMT初探</a> &raquo;</li>
         
-      <li>3.2 GMT命令格式</li>
+      <li>3.1 命令行</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/get-started/gmt-cmd.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/get-started/cli.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -191,45 +196,63 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="gmt">
-<h1>3.2 GMT命令格式<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h1>
-<p>GMT的所有功能都是通过调用 <code class="docutils literal notranslate"><span class="pre">gmt</span></code> 这个命令来完成的。</p>
-<p>一个GMT命令由“ <code class="docutils literal notranslate"><span class="pre">gmt</span></code> + <code class="docutils literal notranslate"><span class="pre">模块</span></code> + <code class="docutils literal notranslate"><span class="pre">选项</span></code> + <code class="docutils literal notranslate"><span class="pre">参数</span></code>”构成，写成如下形式:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt module -Axx+bxxxx -Bxx+axxxx
+  <div class="section" id="id1">
+<h1>3.1 命令行<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>与平常接触的Adobe PhotoShop、Adobe Illustator之类的绘图工具不同，GMT是没有图形界面的，即无法通过鼠标点击或拖动来执行绘图操作。GMT是纯命令行的，所有绘图操作都是通过一系列命令来实现的。</p>
+<p>命令行相对于图形界面的优势在于：</p>
+<ul class="simple">
+<li>内存占用更低</li>
+<li>精确控制图形的显示，比如线条宽度、圆的大小</li>
+<li>方便写成脚本，可批量绘图、可重复、可自动化</li>
+</ul>
+<p>其劣势在于：</p>
+<ul class="simple">
+<li>不够直观</li>
+<li>某些无法用坐标精确定义的曲线难以绘制</li>
+</ul>
+<div class="section" id="id2">
+<h2>3.1.1 终端<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>终端，即terminal，是用户键入命令与电脑进行交互的接口。</p>
+<p><strong>如何启动终端？</strong></p>
+<ul class="simple">
+<li>Linux: 终端是Linux系统的标配。如果你是Linux用户，相信你已经知道如何启动终端了。</li>
+<li>Windows: 默认终端是“命令提示符”，也就是 cmd。直接点击“开始”-&gt;“附件”-&gt;“命令提示符”即可启动cmd。也可以直接在开始按钮中的搜索框中搜索“cmd”并启动。</li>
+<li>macOS: 可以使用“Command+空格”键启动Splitlight，在弹出的搜索框中输入“terminal”再按回车即可。</li>
+</ul>
+<p>启动终端后，默认情况下当前路径是自己的家目录。对于Linux用户，通常是 <code class="docutils literal notranslate"><span class="pre">/home/username</span></code>；对于Windows用户，通常是 <code class="docutils literal notranslate"><span class="pre">C:\Users\username</span></code>；对于macOS用户，通常是 <code class="docutils literal notranslate"><span class="pre">/Users/username</span></code>。</p>
+<p>在终端中键入如下命令:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt pscoast -JM10c -R70/140/2/60 -Bafg -Ggray -Wthin &gt; map.ps
 </pre></div>
 </div>
-<p>其中，</p>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">gmt</span></code> 是GMT中“唯一”的一个二进制文件，所有GMT命令必须以 <code class="docutils literal notranslate"><span class="pre">gmt</span></code> 开头</li>
-<li><code class="docutils literal notranslate"><span class="pre">module</span></code> 是用于完成某个特定操作的模块的名字</li>
-<li><code class="docutils literal notranslate"><span class="pre">-A</span></code> 是模块 <code class="docutils literal notranslate"><span class="pre">module</span></code> 提供的选项，<code class="docutils literal notranslate"><span class="pre">xx</span></code> 为选项 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 的参数</li>
-<li><code class="docutils literal notranslate"><span class="pre">+b</span></code> 是选项 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 的子选项，<code class="docutils literal notranslate"><span class="pre">xxxx</span></code> 为该子选项的参数</li>
-</ul>
-<p>一个完整的示例:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -R0/20/0/20 -JM6i -Ggray -Wthin -B5 -B+t<span class="s2">&quot;Title with spaces&quot;</span> -V -P &gt; map.ps
+<p>则会在当前目录（即家目录）下生成名为 <code class="docutils literal notranslate"><span class="pre">map.ps</span></code> 的一张图，其中绘制了中国及其周边的海岸线。</p>
+<p>Windows下可以直接双击以查看该PS文件；Linux下可以用 <code class="docutils literal notranslate"><span class="pre">gs</span> <span class="pre">map.ps</span></code> 查看；macOS下可以直接用 <code class="docutils literal notranslate"><span class="pre">open</span> <span class="pre">map.ps</span></code> 查看。</p>
+</div>
+<div class="section" id="id3">
+<h2>3.1.2 脚本<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>一张稍复杂的图通常都需要多个GMT命令来完成。你可以在终端键入如下几行命令来绘制海岸线并在某个点处加一个五角星:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -JM10c -R70/140/2/60 -Bafg -W1/thin -Ggray -P -K &gt; map.ps
+<span class="nb">echo</span> <span class="m">115</span> <span class="m">40</span> <span class="p">|</span> gmt psxy -J -R -Sa0.5c -Gred -O &gt;&gt; map.ps
+gmt clear <span class="nb">history</span>
 </pre></div>
 </div>
-<p>其中，</p>
-<ul class="simple">
-<li>命令以 <code class="docutils literal notranslate"><span class="pre">gmt</span></code> 开头</li>
-<li><code class="docutils literal notranslate"><span class="pre">pscoast</span></code> 是用于绘制海岸线的模块</li>
-<li><code class="docutils literal notranslate"><span class="pre">-R</span></code>、<code class="docutils literal notranslate"><span class="pre">-J</span></code>、<code class="docutils literal notranslate"><span class="pre">-G</span></code> 等都是 <code class="docutils literal notranslate"><span class="pre">pscoast</span></code> 模块的选项</li>
-<li><code class="docutils literal notranslate"><span class="pre">-B+t&quot;Title</span> <span class="pre">with</span> <span class="pre">spaces&quot;</span></code> 中 <code class="docutils literal notranslate"><span class="pre">+t</span></code> 是选项 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 的子选项，<code class="docutils literal notranslate"><span class="pre">&quot;Title</span> <span class="pre">with</span> <span class="pre">spaces&quot;</span></code> 是子选项 <code class="docutils literal notranslate"><span class="pre">+t</span></code> 的参数</li>
-</ul>
-<p>几点说明：</p>
-<ul class="simple">
-<li>若模块名以 <code class="docutils literal notranslate"><span class="pre">gmt</span></code> 开头，则模块名中的 <code class="docutils literal notranslate"><span class="pre">gmt</span></code> 可省略。比如 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">gmtconvert</span> <span class="pre">xxx</span> <span class="pre">xxx</span></code>
-可以简写为 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">convert</span> <span class="pre">xxx</span> <span class="pre">xxx</span></code></li>
-<li>模块名、选项等均区分大小写</li>
-<li>每个模块可以使用哪些选项由模块自己定义，具体参考每个模块的语法说明</li>
-<li>选项以 <code class="docutils literal notranslate"><span class="pre">-</span></code> 开头，后接<strong>单个字符</strong>表示某个选项，字符后接选项的参数以及子选项</li>
-<li>不以 <code class="docutils literal notranslate"><span class="pre">-</span></code> 开头的参数，都会被当做文件，GMT会尝试去读取</li>
-<li>子选项以 <code class="docutils literal notranslate"><span class="pre">+</span></code> 开头，后接<strong>单个字符</strong>以及子选项的参数</li>
-<li>官方文档中子选项称为modifier，可以译为“修饰符”，本文档中统一使用“子选项”</li>
-<li>各选项间以空格分隔，选项内部不能有空格</li>
-<li>选项内部的字符串，若存在空格，应用单引号或双引号括起来</li>
-<li>注意 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 、<code class="docutils literal notranslate"><span class="pre">—A</span></code>　以及 <code class="docutils literal notranslate"><span class="pre">－A</span></code> 的细微区别，这通常是由于标点符号的全角和半角导致的。GMT中只能使用第一种。GMT4官方文档以及某些介绍GMT的博客，都有此问题。GMT5、6的官方文档以及本文档不存在该问题。</li>
-</ul>
+<p>直接在终端敲大一堆命令是不是很麻烦？一旦敲错了就得把光标移过去重新编辑，或者哪里不满意想修改，还得查找命令历史把命令找出来重新执行一遍，又或者一个不小心命令历史丢了，原来的画图命令再也找不到了。这一切都可以通过脚本来解决。</p>
+<p>Linux或macOS下，可以新建一个名为 <code class="docutils literal notranslate"><span class="pre">test.sh</span></code> 的文件，将上面的命令复制到文件中并保存就完成了一个脚本。然后在终端中键入如下命令即可执行该脚本:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sh ./test.sh
+</pre></div>
+</div>
+<p>Windows下，可以将上面的命令复制到名为 <code class="docutils literal notranslate"><span class="pre">test.bat</span></code> 的文件内并保存，然后双击该bat文件即可执行脚本。此时会看到一个黑框一闪而过。</p>
+</div>
+<div class="section" id="id4">
+<h2>3.1.3 脚本语言<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>脚本最简单的用法就是像上面的示例那样，把一堆要执行的命令复制进去即可，但脚本的功能可不仅仅如此，要学会善于利用脚本语言的强大功能，比如：</p>
+<ol class="arabic simple">
+<li>定义变量，代替命令中重复的部分</li>
+<li>用脚本语言完成计算与数据处理</li>
+<li>利用脚本实现循环</li>
+<li>利用脚本的命令行参数实现脚本的可复用性</li>
+</ol>
+<p>Linux和macOS下最常见的脚本语言是bash，Windows下则是bat。当然还有跨平台的Perl和Python，本文档的所有示例都使用bash语法。</p>
+</div>
 </div>
 
 
@@ -261,10 +284,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../tutor/" class="btn btn-neutral float-right" title="3.3 入门示例" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../command/" class="btn btn-neutral float-right" title="3.2 GMT命令格式" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../cmd/" class="btn btn-neutral" title="3.1 命令行" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../" class="btn btn-neutral" title="3 GMT初探" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
