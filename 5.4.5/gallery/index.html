@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>14 绘图示例 &mdash; GMT参考手册</title>
+  <title>13 绘图示例 &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex/" />
     <link rel="search" title="搜索" href="../search/" />
-    <link rel="next" title="14.1 绘制底图" href="basemap/" />
-    <link rel="prev" title="13 风格指南" href="../style/" /> 
+    <link rel="next" title="13.1 绘制底图" href="basemap/" />
+    <link rel="prev" title="12.137 xyz2grd" href="../module/xyz2grd/" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -89,7 +89,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro/">1 简介</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/">2 安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get-started/">3 GMT初探</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../basis/">4 绘图基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../io/">5 输入与输出</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cpt/">6 CPT文件</a></li>
@@ -99,18 +99,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../proj/">10 投影方式</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dataset/">11 GMT数据集</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module/">12 GMT 模块</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../style/">13 风格指南</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">14 绘图示例</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="basemap/">14.1 绘制底图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="points/">14.2 绘制线条</a></li>
-<li class="toctree-l2"><a class="reference internal" href="symbols/">14.3 绘制符号</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coast/">14.4 绘制海岸线</a></li>
-<li class="toctree-l2"><a class="reference internal" href="beachball/">14.5 绘制震源球</a></li>
-<li class="toctree-l2"><a class="reference internal" href="legend/">14.6 绘制图例</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">13 绘图示例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basemap/">13.1 绘制底图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="points/">13.2 绘制线条</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symbols/">13.3 绘制符号</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coast/">13.4 绘制海岸线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="beachball/">13.5 绘制震源球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="legend/">13.6 绘制图例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="earth-relief/">13.7 绘制地形起伏图</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../api/">15 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../appendix/">16 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/">14 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/">15 附录</a></li>
 </ul>
 
             
@@ -172,7 +172,7 @@
     
       <li><a href="../">Docs</a> &raquo;</li>
         
-      <li>14 绘图示例</li>
+      <li>13 绘图示例</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -194,15 +194,22 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>14 绘图示例<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>13 绘图示例<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="basemap/">14.1 绘制底图</a></li>
-<li class="toctree-l1"><a class="reference internal" href="points/">14.2 绘制线条</a></li>
-<li class="toctree-l1"><a class="reference internal" href="symbols/">14.3 绘制符号</a></li>
-<li class="toctree-l1"><a class="reference internal" href="coast/">14.4 绘制海岸线</a></li>
-<li class="toctree-l1"><a class="reference internal" href="beachball/">14.5 绘制震源球</a></li>
-<li class="toctree-l1"><a class="reference internal" href="legend/">14.6 绘制图例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basemap/">13.1 绘制底图</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basemap/#id2">13.1.1 线性投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basemap/#id3">13.1.2 对数投影</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basemap/#id4">13.1.3 区域地图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basemap/#id5">13.1.4 全球地图</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="points/">13.2 绘制线条</a></li>
+<li class="toctree-l1"><a class="reference internal" href="symbols/">13.3 绘制符号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coast/">13.4 绘制海岸线</a></li>
+<li class="toctree-l1"><a class="reference internal" href="beachball/">13.5 绘制震源球</a></li>
+<li class="toctree-l1"><a class="reference internal" href="legend/">13.6 绘制图例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="earth-relief/">13.7 绘制地形起伏图</a></li>
 </ul>
 </div>
 </div>
@@ -236,10 +243,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="basemap/" class="btn btn-neutral float-right" title="14.1 绘制底图" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="basemap/" class="btn btn-neutral float-right" title="13.1 绘制底图" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../style/" class="btn btn-neutral" title="13 风格指南" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../module/xyz2grd/" class="btn btn-neutral" title="12.137 xyz2grd" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -249,7 +256,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月27日.
+      最后更新于 2019年01月28日.
 
     </p>
   </div>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>15.3 GMT Julia API &mdash; GMT参考手册</title>
+  <title>14.3 GMT Julia API &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="16 附录" href="../../appendix/" />
-    <link rel="prev" title="15.2 GMT Matlab API" href="../matlab/" /> 
+    <link rel="next" title="15 附录" href="../../appendix/" />
+    <link rel="prev" title="14.2 GMT Matlab API" href="../matlab/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -89,7 +89,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cpt/">6 CPT文件</a></li>
@@ -99,28 +99,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../../proj/">10 投影方式</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 GMT数据集</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../module/">12 GMT 模块</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../style/">13 风格指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">15 API</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../c/">15.1 GMT C API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../matlab/">15.2 GMT Matlab API</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">15.3 GMT Julia API</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">15.3.1 简介</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">15.3.2 安装</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">15.3.3 使用</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">13 绘图示例</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">14 API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../c/">14.1 GMT C API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../matlab/">14.2 GMT Matlab API</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">14.3 GMT Julia API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">14.3.1 简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">14.3.2 安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">14.3.3 使用</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id5">最简单的例子</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#gmt">向 GMT 传递数据</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id6">向 GMT 传递多个数据</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id7">其他示例</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">15.3.4 更多示例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">15.3.5 附录</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">14.3.4 更多示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">14.3.5 附录</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
 </ul>
 
             
@@ -182,9 +181,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">15 API</a> &raquo;</li>
+          <li><a href="../">14 API</a> &raquo;</li>
         
-      <li>15.3 GMT Julia API</li>
+      <li>14.3 GMT Julia API</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -206,9 +205,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gmt-julia-api">
-<h1>15.3 GMT Julia API<a class="headerlink" href="#gmt-julia-api" title="永久链接至标题">¶</a></h1>
+<h1>14.3 GMT Julia API<a class="headerlink" href="#gmt-julia-api" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id1">
-<h2>15.3.1 简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>14.3.1 简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p><a class="reference external" href="https://julialang.org">Julia</a> 是一门为科学计算设计的编程语言，简单易学。其与 Matlab、Python 等编程语言都有相似之处。GMT 提供了 Julia 接口，使得 Julia
 用户可以直接在 Julia 脚本中调用 GMT 的相关模块。</p>
 <p>GMT 的 Julia 接口的官方地址为： <a class="reference external" href="https://github.com/GenericMappingTools/GMT.jl">https://github.com/GenericMappingTools/GMT.jl</a></p>
@@ -219,7 +218,7 @@
 </div>
 </div>
 <div class="section" id="id2">
-<h2>15.3.2 安装<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>14.3.2 安装<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>关于 Julia 的安装请参考 <a class="reference external" href="https://julialang.org/downloads/">Julia 官方网站</a> 的相关说明。</p>
 <p>启动 Julia 并按照如下方式即可安装 GMT 的 Julia 接口（即 Julia 下的 GMT 模块）:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ julia
@@ -247,7 +246,7 @@ INFO: Precompiling module Compat.
 </div>
 </div>
 <div class="section" id="id4">
-<h2>15.3.3 使用<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>14.3.3 使用<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>在 Julia 中调用 GMT 的方式，与直接在命令行中调用 GMT 非常类似。通常来说，一个调用 GMT 的 Julia 脚本具有如下形式：</p>
 <div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">GMT</span>
 
@@ -347,7 +346,7 @@ grdimage -Goutput.grd -JX8c -Ba -P -Cblue,red &gt; crap_img.ps
 </div>
 </div>
 <div class="section" id="id8">
-<h2>15.3.4 更多示例<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<h2>14.3.4 更多示例<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
 <p>GMT 官方将 GMT 自带的示例用 Julia 重写了一遍，Julia 用户可以阅读并运行这些 Julia 代码。</p>
 <p>Julia 示例位于： <code class="docutils literal notranslate"><span class="pre">~/.julia/v0.5/GMT/test/gallery.jl</span></code> 中，你可以直接阅读 Julia 源码。</p>
 <p>如果想要执行该 Julia 脚本，你需要将 <code class="docutils literal notranslate"><span class="pre">~/.julia/v0.5/GMT/test/gallery.jl</span></code> 的第7行修改为:</p>
@@ -363,7 +362,7 @@ global <span class="nv">out_path</span> <span class="o">=</span> <span class="s2
 </div>
 </div>
 <div class="section" id="id9">
-<h2>15.3.5 附录<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<h2>14.3.5 附录<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">gmt()</span></code> 函数会返回多种类型的变量，比如上面例子中涉及到的CPT类型和网格类型的变量。因而需要在 Julia 中专门定义相关类型的变量。</p>
 <p>Julia 中网格变量 <code class="docutils literal notranslate"><span class="pre">GMTJL_GRID</span></code> 的定义为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span> GMTJL_GRID                 <span class="c1"># The type holding a local header and data of a GMT grid</span>
@@ -478,10 +477,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../appendix/" class="btn btn-neutral float-right" title="16 附录" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../appendix/" class="btn btn-neutral float-right" title="15 附录" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../matlab/" class="btn btn-neutral" title="15.2 GMT Matlab API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../matlab/" class="btn btn-neutral" title="14.2 GMT Matlab API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -491,7 +490,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月27日.
+      最后更新于 2019年01月28日.
 
     </p>
   </div>
