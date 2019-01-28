@@ -228,7 +228,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#gmt-begin">12.126.1 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">begin</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id1">语法</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id2">必须选项</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id5">可选选项</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">可选选项</a></li>
 </ul>
 </li>
 </ul>
@@ -384,7 +384,7 @@
 <p>有两种方式：</p>
 <ul class="last">
 <li><p class="first"><code class="docutils literal notranslate"><span class="pre">-Ff</span></code> 指定整张图片的尺寸。每张子图的尺寸会根据整张图片的尺寸以及子图的数目自动计算。在计算子图尺寸时会考虑每个子图的刻度线、标记、标签所占据的空间，以及不同子图之间的空白。最外圈的刻度线、标记和标签不算在整张图片尺寸之内。为了给每行或每列指定不同的子图尺寸，可以在冒号后面加上一系列以逗号分隔的宽度比例，然后再加上一个斜杠，并加上一系列以逗号分隔的高度比例。单个数则表示所有行或列有相同的宽度或高度。</p>
-<p>例如，<a href="#id3"><span class="problematic" id="id4">``</span></a>-Ff4i/4i:3,1/1,2``会使得第一列的宽度是第二列的三倍，而第二行的高度则是第一行的两倍。默认是所有行以及列的尺度是相同的。</p>
+<p>例如，<code class="docutils literal notranslate"><span class="pre">-Ff4i/4i:3,1/1,2</span></code> 会使得第一列的宽度是第二列的三倍，而第二行的高度则是第一行的两倍。默认是所有行以及列的尺度是相同的。</p>
 </li>
 <li><p class="first"><code class="docutils literal notranslate"><span class="pre">-Fs</span></code> 直接指定每个子图的尺寸。此时，整张图的尺寸由子图的尺寸以及刻度线、标记、标签和子图之间的空白共同决定，其中，最外圈的刻度线、标记、标签不算在整张图的尺寸之内。为了给每行或每列指定不同的子图尺寸，可以加上一系列以逗号分隔的宽度，然后再加上一个斜杠，并加上一系列以逗号分隔的高度。单个数则表示所有行或列有相同的宽度或高度。</p>
 <p>例如，<code class="docutils literal notranslate"><span class="pre">-Fs2i,3i/3i</span></code> 使得第一列为2英寸宽，第二列为3英寸宽，所有列的高度均为3英寸。值的数目必须是一个或者与行数/列数相匹配。对于地理地图而言，每张子图的高度由地图区域以及投影方式决定。有两个选择：(1) 同时指定 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-J</span></code> ，并利用其计算每张子图的高度，所有的子图必须共享相同的研究区域和投影方式，且你必须指定一个0高度；（2）不同尝试并修改子图的高度以得到最佳的绘图布局。</p>
@@ -393,8 +393,8 @@
 </dd>
 </dl>
 </div>
-<div class="section" id="id5">
-<h3>可选选项<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id3">
+<h3>可选选项<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <dl class="docutils">
 <dt><code class="docutils literal notranslate"><span class="pre">-A&lt;autolabel&gt;</span></code></dt>
 <dd><p class="first">为每个子图指定自动的标签。 <code class="docutils literal notranslate"><span class="pre">&lt;autolabel&gt;</span></code> 可以是一个数字或字母，默认为 <code class="docutils literal notranslate"><span class="pre">a</span></code>。</p>

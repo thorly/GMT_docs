@@ -1,0 +1,360 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.3 绘图模式 &mdash; GMT参考手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="3.4 绘制第一张图" href="../first-plot/" />
+    <link rel="prev" title="3.2 GMT命令格式" href="../command/" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../" class="icon icon-home"> GMT参考手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">3 GMT初探</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../cli/">3.1 命令行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../command/">3.2 GMT命令格式</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.3 绘图模式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">3.3.1 基本用法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">3.3.2 单行模式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">3.3.3 多图模式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">3.3.4 子图模式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">3.3.5 插图模式</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../first-plot/">3.4 绘制第一张图</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">6 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">7 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">9 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">10 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 GMT数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">12 GMT 模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">13 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT参考手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">Docs</a> &raquo;</li>
+        
+          <li><a href="../">3 GMT初探</a> &raquo;</li>
+        
+      <li>3.3 绘图模式</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/get-started/mode.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>3.3 绘图模式<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>GMT自6.0.0版本开始，引入了一种全新的绘图命令执行模式，称之为现代模式。而GMT5以及之前的命令风格则称之为经典模式。GMT6既支持经典模式也支持现代模式，因而GMT6可以完全兼容GMT5的代码。</p>
+<p>现代模式与经典模式可以完成相同的绘图功能，但现代模式大大简化了绘图代码，因而推荐使用现代模式而非经典模式。</p>
+<p>本手册将只使用现代模式，而不介绍经典模式。对于GMT新用户而言，只需要了解现代模式即可；而对于GMT老用户，建议阅读 <a class="reference internal" href="../../appendix/modes-difference/"><span class="doc">现代模式与经典模式的差异</span></a>
+并开始使用现代模式进行绘图。</p>
+<div class="section" id="id2">
+<h2>3.3.1 基本用法<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>现代模式下，GMT用 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">begin</span></code> 开始一个绘图，并用 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">end</span></code> 结束一个绘图，所有的绘图命令均放在二者之间。其基本用法如下:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin &lt;figname&gt; &lt;formats&gt;
+gmt commands ...
+gmt end
+</pre></div>
+</div>
+<p>其中 <code class="docutils literal notranslate"><span class="pre">&lt;figname&gt;</span></code> 指定了要生成的图片名，<code class="docutils literal notranslate"><span class="pre">&lt;formats&gt;</span></code> 则指定了图片的格式。这二者都是可选的，默认的文件名为 <code class="docutils literal notranslate"><span class="pre">gmtsession</span></code>，默认的图片格式为PDF格式。</p>
+<p>例如:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map pdf,png
+gmt basemap -JX10c/10c -R0/10/0/10 -Baf
+gmt end
+</pre></div>
+</div>
+<p>会绘制一张底图，并保存为PDF和PNG格式的图片 <code class="docutils literal notranslate"><span class="pre">map.pdf</span></code> 和 <code class="docutils literal notranslate"><span class="pre">map.png</span></code>。</p>
+</div>
+<div class="section" id="id3">
+<h2>3.3.2 单行模式<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>以上面的示例为例，真正的绘图命令只有一个，而写的时候却需要写三行命令，未免有些麻烦。针对这种情况，GMT提供了单行模式的命令，即当绘图脚本只有一个命令即可绘制完成时，可以省略 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">begin</span></code> 和 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">end</span></code>，只需要在绘图命令后加上
+<code class="docutils literal notranslate"><span class="pre">-&lt;format&gt;</span> <span class="pre">&lt;figname&gt;</span></code> 即可。</p>
+<p>例如，上面的命令可以简化为单行模式:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -JX10c/10c -R0/10/0/10 -Baf -pdf map
+</pre></div>
+</div>
+<p>当然，单行模式的应用场景有限，且只能生成一种格式的图片。</p>
+</div>
+<div class="section" id="id4">
+<h2>3.3.3 多图模式<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>多图模式，允许用户可以同时画多张图，并在绘图过程中，随意切换到任意一张图。多图模式可以通过 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">figure</span></code> 模块实现，其语法为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt figure &lt;figname&gt; &lt;formats&gt; &lt;options&gt;
+</pre></div>
+</div>
+<p>该模块的语法与 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">begin</span></code> 语法类似，具体见模块的说明文档 <a class="reference internal" href="../../module/figure/"><span class="doc">figure</span></a>。其用于指定图件的名称及格式，以及图片格式转换过程中的细节选项，并且可以用于在多个子图之间切换。</p>
+<p>下面的示例，使用多图模式在一个脚本中同时绘制了两张图，并在两张图中不断切换:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 开始绘图</span>
+gmt begin
+
+<span class="c1"># 在 Fig1 中绘制底图</span>
+gmt figure Fig1 png
+gmt basemap -R0/10/0/10 -JX10c -Baf
+
+<span class="c1"># 在 Fig2 中绘制底图</span>
+gmt figure Fig2 png
+gmt basemap -R0/5/0/5 -JX10c -Baf
+
+<span class="c1"># 切换回 Fig1，并绘制圆圈</span>
+gmt figure Fig1
+<span class="nb">echo</span> <span class="m">5</span> <span class="m">5</span> <span class="p">|</span> gmt plot -Sc1c -W2p
+
+<span class="c1"># 切换回 Fig2，并绘制三角形</span>
+gmt figure Fig2
+<span class="nb">echo</span> <span class="m">1</span> <span class="m">2</span> <span class="p">|</span> gmt plot -St1c -W1p
+
+<span class="c1"># 结束绘图</span>
+gmt end
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>3.3.4 子图模式<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>有些时候需要把多张图放在一张图中，此时可以使用GMT提供的子图模式。子图模式的基本思想是将整体绘图区域分割成M行N列的网格，每个网格区域内均可以绘制一张子图。子图模式通过模块 <a class="reference internal" href="../../module/subplot/"><span class="doc">subplot</span></a> 实现。</p>
+</div>
+<div class="section" id="id6">
+<h2>3.3.5 插图模式<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>在绘制研究区域的地图时，有时研究区域的范围比较小。在这种情况下，为了更好地显示研究区域的具体地理位置，通过会绘制一个更大区域的地图，并在大区域地图中框出研究区域的位置，这种图件称之为 inset map，中文没有统一的翻译，通常称之为图中图或者插图。插图模式可以通过模块 <a class="reference internal" href="../../module/inset/"><span class="doc">inset</span></a> 实现。</p>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989'],
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../first-plot/" class="btn btn-neutral float-right" title="3.4 绘制第一张图" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../command/" class="btn btn-neutral" title="3.2 GMT命令格式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2019, GMT中文社区
+      最后更新于 2019年01月28日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
