@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>subplot &mdash; GMT参考手册</title>
+  <title>12.126 subplot &mdash; GMT参考手册</title>
   
 
   
@@ -29,7 +29,9 @@
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
-    <link rel="search" title="搜索" href="../../search/" /> 
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="12.127 surface" href="../surface/" />
+    <link rel="prev" title="12.125 splitxyz" href="../splitxyz/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -84,10 +86,10 @@
             
             
               <p class="caption"><span class="caption-text">目 录</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cpt/">6 CPT文件</a></li>
@@ -96,11 +98,163 @@
 <li class="toctree-l1"><a class="reference internal" href="../../conf/">9 配置GMT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../proj/">10 投影方式</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 GMT数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../">12 GMT 模块</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../style/">13 风格指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">12 GMT 模块</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../backtracker/">12.1 backtracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">12.2 begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">12.3 blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">12.4 blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">12.5 blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">12.6 clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">12.7 dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">12.8 docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">12.9 end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">12.10 figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">12.11 filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">12.12 fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">12.13 gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">12.14 gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt2kml/">12.15 gmt2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt5syntax/">12.16 gmt5syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">12.17 gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconvert/">12.18 gmtconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">12.19 gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtflexure/">12.20 gmtflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">12.21 gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtgravmag3d/">12.22 gmtgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">12.23 gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">12.24 gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtmath/">12.25 gmtmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtpmodeler/">12.26 gmtpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtregress/">12.27 gmtregress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">12.28 gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">12.29 gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">12.30 gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtspatial/">12.31 gmtspatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">12.32 gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtvector/">12.33 gmtvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">12.34 gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">12.35 gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">12.36 gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">12.37 grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2rgb/">12.38 grd2rgb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">12.39 grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">12.40 grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">12.41 grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">12.42 grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">12.43 grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">12.44 grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">12.45 grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">12.46 grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">12.47 grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">12.48 grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">12.49 grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdhisteq/">12.50 grdhisteq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">12.51 grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">12.52 grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">12.53 grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">12.54 grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">12.55 grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">12.56 grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpmodeler/">12.57 grdpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">12.58 grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdraster/">12.59 grdraster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">12.60 grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">12.61 grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdrotater/">12.62 grdrotater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">12.63 grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">12.64 grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdspotter/">12.65 grdspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">12.66 grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">12.67 grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">12.68 grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">12.69 grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">12.70 grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">12.71 greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">12.72 gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hotspotter/">12.73 hotspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">12.74 img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">12.75 img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isogmt/">12.76 isogmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">12.77 kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">12.78 makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">12.79 mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">12.80 mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">12.81 mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">12.82 mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">12.83 mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">12.84 mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">12.85 mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">12.86 mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">12.87 mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">12.88 mgd77track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">12.89 nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../originator/">12.90 originator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">12.91 project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psbasemap/">12.92 psbasemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psclip/">12.93 psclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pscoast/">12.94 pscoast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pscontour/">12.95 pscontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">12.96 psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pscoupe/">12.97 pscoupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pshistogram/">12.98 pshistogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psimage/">12.99 psimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pslegend/">12.100 pslegend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psmask/">12.101 psmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psmeca/">12.102 psmeca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pspolar/">12.103 pspolar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psrose/">12.104 psrose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pssac/">12.105 pssac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psscale/">12.106 psscale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pssegy/">12.107 pssegy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pssegyz/">12.108 pssegyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pssolar/">12.109 pssolar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psternary/">12.110 psternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pstext/">12.111 pstext</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psvelo/">12.112 psvelo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pswiggle/">12.113 pswiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psxy/">12.114 psxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psxyz/">12.115 psxyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotconverter/">12.116 rotconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotsmoother/">12.117 rotsmoother</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">12.118 sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">12.119 segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">12.120 spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">12.121 sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">12.122 sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">12.123 sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">12.124 sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../splitxyz/">12.125 splitxyz</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">12.126 subplot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gmt-begin">12.126.1 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">begin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">必须选项</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">可选选项</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">12.127 surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">12.128 talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">12.129 talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">12.130 trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">12.131 trend2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">12.132 triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">12.133 x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">12.134 x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">12.135 x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">12.136 x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">12.137 x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">12.138 x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">12.139 x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">12.140 x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">12.141 x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">12.142 x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">12.143 xyz2grd</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">13 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
 </ul>
 
             
@@ -162,7 +316,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-      <li>subplot</li>
+          <li><a href="../">12 GMT 模块</a> &raquo;</li>
+        
+      <li>12.126 subplot</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -184,12 +340,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="subplot">
-<span id="index-0"></span><h1>subplot<a class="headerlink" href="#subplot" title="永久链接至标题">¶</a></h1>
+<span id="index-0"></span><h1>12.126 subplot<a class="headerlink" href="#subplot" title="永久链接至标题">¶</a></h1>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><span class="xref std std-ref">subplot</span></td>
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><span class="xref std std-doc">subplot</span></td>
 </tr>
 <tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">管理现代模式下子图的配置和选择</td>
 </tr>
@@ -203,7 +359,7 @@
 <li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">subplot</span> <span class="pre">end</span></code> 用于结束子图模式</li>
 </ul>
 <div class="section" id="gmt-begin">
-<h2><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">begin</span></code><a class="headerlink" href="#gmt-begin" title="永久链接至标题">¶</a></h2>
+<h2>12.126.1 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">begin</span></code><a class="headerlink" href="#gmt-begin" title="永久链接至标题">¶</a></h2>
 <div class="section" id="id1">
 <h3>语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt subplot begin &lt;nrows&gt;x&lt;ncols&gt;
@@ -242,128 +398,10 @@
 <dl class="docutils">
 <dt><code class="docutils literal notranslate"><span class="pre">-A&lt;autolabel&gt;</span></code></dt>
 <dd><p class="first">为每个子图指定自动的标签。 <code class="docutils literal notranslate"><span class="pre">&lt;autolabel&gt;</span></code> 可以是一个数字或字母，默认为 <code class="docutils literal notranslate"><span class="pre">a</span></code>。</p>
-<p>该选项设置了左上角第一张子图的标签，并按照顺序自动设置其他子图的标签。也可以在数字或字母的一侧或两侧加上括号（需要注意，UNIX下可能需要对括号进行转义）。</p>
-<p class="last">Use <strong>+j</strong>|<strong>J</strong><em>refpoint</em> to specify where the tag should be placed in the subplot [TL].
-Note: <strong>+j</strong> sets the justification of the tag to <em>refpoint</em> (suitable for interior tags)
-while <strong>+J</strong> instead selects the mirror opposite (suitable for exterior tags).
-Append <strong>+c</strong><em>dx</em>[/<em>dy</em>] to set the clearance between the tag and a surrounding text box
-requested via <strong>+g</strong> or <strong>p</strong> [3pt/3pt, i.e., 15% of the <a class="reference internal" href="../../conf/font/#font-tag"><span class="std std-ref">FONT_TAG size</span></a> size].
-Append <strong>+g</strong><em>fill</em> to paint the tag’s text box with <em>fill</em> [no painting].
-Append <strong>+o</strong><em>dx</em>[/<em>dy</em>] to offset the tag’s reference point in the direction implied
-by the justification [4pt/4pt, i.e., 20% of the <a class="reference internal" href="../../conf/font/#font-tag"><span class="std std-ref">FONT_TAG size</span></a>].
-Append <strong>+p</strong><em>pen</em> to draw the outline of the tag’s text box using selected <em>pen</em> [no outline].
-Append <strong>+r</strong> to typeset your tag numbers using lowercase Roman numerals;
-use <strong>+R</strong> for uppercase Roman numerals [Arabic numerals].
-Append <strong>+v</strong> to increase tag numbers vertically down columns [horizontally across rows].</p>
+<p class="last">该选项设置了左上角第一张子图的标签，并按照顺序自动设置其他子图的标签。也可以在数字或字母的一侧或两侧加上括号（需要注意，UNIX下可能需要对括号进行转义）。</p>
 </dd>
 </dl>
-<dl class="docutils" id="subplot-set-c1">
-<dt><strong>-C</strong><em>side</em>/<em>clearance</em>[<strong>u</strong>]</dt>
-<dd>Reserve a space of dimension <em>clearance</em> between the margin and the subplot on the specified
-side, using <em>side</em> values from <strong>w</strong>, <strong>e</strong>, <strong>s</strong>, or <strong>n</strong>.  The option is repeatable to set aside space
-on more than one side.  Such space will be left untouched by the main map plotting but can
-be accessed by modules that plot scales, bars, text, etc.  Settings specified under <strong>begin</strong> mode apply to all panels.</dd>
-</dl>
-<dl class="docutils" id="subplot-begin-m">
-<dt><strong>-M</strong><em>margins</em></dt>
-<dd>This is clearance that is added around each subplot beyond the automatic space allocated for tick marks,
-annotations, and labels.  The margins can be a single value, a pair of values separated by slashes
-(for setting separate horizontal and vertical margins), or the full set of four margins (for setting
-separate left, right, bottom, and top margins) [0.5c].</dd>
-</dl>
-<dl class="docutils" id="subplot-begin-s">
-<dt><strong>-S</strong><em>layout</em></dt>
-<dd>Set subplot layout for shared axes. May be set separately for rows (<strong>-SR</strong>) and columns (<strong>-SC</strong>).
-<strong>-SC</strong>: Use when all subplots in a <strong>C</strong>olumn share a common <em>x</em>-range. The first (i.e., <strong>t</strong>op) and the last
-(i.e., <strong>b</strong>ottom) rows will have <em>x</em> annotations; append <strong>t</strong> or <strong>b</strong> to select only one of those two rows [both].
-Append <strong>+l</strong> if annotated <em>x</em>-axes should have a label [none]; optionally append the label if it is the same
-for the entire subplot.
-<strong>-SR</strong>: Use when all subplots in a <strong>R</strong>ow share a common <em>y</em>-range. The first (i.e., <strong>l</strong>eft) and the last
-(i.e., <strong>r</strong>ight) columns will have <em>y</em>-annotations; append <strong>l</strong> or <strong>r</strong> to select only one of those two columns [both].
-Append <strong>+l</strong> if annotated <em>y</em>-axes will have a label [none]; optionally, append the label if it is the same
-for the entire subplot.
-Append <strong>+p</strong> to make all annotations axis-parallel [horizontal]; if used you may have to set <strong>-C</strong> to secure
-extra space for long horizontal annotations.
-Append <strong>+t</strong> to make space for subplot titles for each row; use <strong>+tc</strong> for top row titles only [no subplot titles].
-Labels and titles that depends on which row or column are specified as usual via a panel’s <strong>-B</strong> setting.</dd>
-</dl>
-<dl class="docutils" id="subplot-begin-t">
-<dt><strong>-T</strong><em>heading</em></dt>
-<dd>While individual subplots can have titles (see <strong>-S</strong> or <strong>-B</strong>), the entire figure may also have a
-overarching <em>heading</em> [no heading]. Font is determined by setting <a class="reference internal" href="../../conf/font/#font-heading"><span class="std std-ref">FONT_HEADING</span></a>.</dd>
-</dl>
 </div>
-</div>
-<div class="section" id="synopsis-set-mode">
-<h2>Synopsis (set mode)<a class="headerlink" href="#synopsis-set-mode" title="永久链接至标题">¶</a></h2>
-<p><strong>gmt subplot set</strong> <em>row,col</em> [ <strong>-A</strong><em>fixedlabel</em>] [ <strong>-C</strong><em>side</em>/<em>clearance</em>[<strong>u</strong>] ] [ <a href="#id7"><span class="problematic" id="id8">|SYN_OPT-V|</span></a> ]</p>
-<p>Before you start plotting you must first select the active subplot panel.
-Note: Any <strong>-J</strong> option passed when plotting subplots must not give the width or scale
-since the dimensions of the map are completely determined by the subplot size and your region.
-Specifying map width will result in an error.  For Cartesian plots: If you want the scale
-to apply <em>equally</em> to both dimensions then you must specify <strong>-Jx</strong> [The default <strong>-JX</strong> will
-fill the subplot using unequal scales].</p>
-</div>
-<div class="section" id="required-arguments">
-<h2>Required Arguments<a class="headerlink" href="#required-arguments" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><em>row,col</em></dt>
-<dd>Sets the current subplot until further notice.  As an alternative, you may bypass the <strong>set</strong> mode and
-instead supply the common option <strong>-c</strong><em>row,col</em> to the first plot command you issue in that subplot.
-GMT maintains information about the current figure and subplot.</dd>
-</dl>
-</div>
-<div class="section" id="optional-arguments">
-<h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="永久链接至标题">¶</a></h2>
-<dl class="docutils" id="subplot-set-a">
-<dt><strong>-A</strong><em>fixedlabel</em></dt>
-<dd>Overrides the automatic labeling with the given string.  No modifiers are allowed.
-Placement, justification, etc. are all inherited from how <strong>-A</strong> was specified by the
-initial <strong>subplot begin</strong> command.</dd>
-</dl>
-<dl class="docutils" id="subplot-set-c2">
-<dt><strong>-C</strong><em>side</em>/<em>clearance</em>[<strong>u</strong>]</dt>
-<dd>Reserve a space of dimension <em>clearance</em> between the margin and the subplot on the specified
-side, using <em>side</em> values from <strong>w</strong>, <strong>e</strong>, <strong>s</strong>, or <strong>n</strong>.  The option is repeatable to set aside space
-on more than one side.  Such space will be left untouched by the main map plotting but can
-be accessed by modules that plot scales, bars, text, etc.  This setting overrides the common
-clearances set by <strong>-C</strong> during <strong>subplot begin</strong>.</dd>
-</dl>
-<p>Any number of plotting command can now take place and all output will be directed to the
-selected subplot panel.  There are a few other rules that need to be followed:
-(1) The subplot machinery expects the first plotting command in a new subplot window
-to take care of plotting the base frame.  The particulars of this frame may have been
-specified by the <strong>-S</strong> option in <strong>subplot begin</strong>.  In either case, should you need to set or override
-frame and axis parameters then you must specify these <strong>-B</strong> options with this first plot
-command.  (2) The subplot machinery automatically uses the <strong>-X</strong> and <strong>-Y</strong> options under
-the hood so these options are not available while a subplot is active.</p>
-</div>
-<div class="section" id="synopsis-end-mode">
-<h2>Synopsis (end mode)<a class="headerlink" href="#synopsis-end-mode" title="永久链接至标题">¶</a></h2>
-<p><strong>gmt subplot end</strong> [ <a href="#id9"><span class="problematic" id="id10">|SYN_OPT-V|</span></a> ]</p>
-<p>This command finalizes the current subplot, including any placement of tags, and updates the
-dimensions of the last plot to that of the entire subplot. This allows <strong>-X</strong> and <strong>-Y</strong> to
-use <em>w</em> and <em>h</em> in setting the current point relative to the entire subplot.  We also reset
-the current plot location to where it was prior to the subplot.</p>
-</div>
-<div class="section" id="id6">
-<h2>Optional Arguments<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
-</div>
-<div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="永久链接至标题">¶</a></h2>
-<p>To make a minimalistic 2x2 basemap layout called panels.pdf, try</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin panels pdf
-  gmt subplot begin 2x2 -Fs3i -M5p -A -SCb -SRl -Bwstr
-    gmt psbasemap -R0/80/0/10 -c1,1
-    gmt psbasemap -c1,2
-    gmt psbasemap -c2,1
-    gmt psbasemap -c2,2
-  gmt subplot end
-gmt end
-</pre></div>
-</div>
-</div></blockquote>
 </div>
 </div>
 
@@ -394,13 +432,22 @@ gitalk.render('gitalk-container');
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../surface/" class="btn btn-neutral float-right" title="12.127 surface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../splitxyz/" class="btn btn-neutral" title="12.125 splitxyz" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月27日.
+      最后更新于 2019年01月28日.
 
     </p>
   </div>
