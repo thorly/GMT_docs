@@ -1,0 +1,696 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>12.91 basemap &mdash; GMT参考手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="12.92 clip" href="../clip/" />
+    <link rel="prev" title="12.90 project" href="../project/" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../" class="icon icon-home"> GMT参考手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">6 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">7 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">9 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">10 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 GMT数据集</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">12 GMT 模块</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../backtracker/">12.1 backtracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">12.2 begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">12.3 blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">12.4 blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">12.5 blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">12.6 clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">12.7 dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">12.8 docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">12.9 end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">12.10 figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">12.11 filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">12.12 fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">12.13 gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">12.14 gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt2kml/">12.15 gmt2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt5syntax/">12.16 gmt5syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">12.17 gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconvert/">12.18 gmtconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">12.19 gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtflexure/">12.20 gmtflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">12.21 gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtgravmag3d/">12.22 gmtgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">12.23 gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">12.24 gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtmath/">12.25 gmtmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtpmodeler/">12.26 gmtpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtregress/">12.27 gmtregress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">12.28 gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">12.29 gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">12.30 gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtspatial/">12.31 gmtspatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">12.32 gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtvector/">12.33 gmtvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">12.34 gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">12.35 gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">12.36 gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">12.37 grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">12.38 grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">12.39 grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">12.40 grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">12.41 grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">12.42 grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">12.43 grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">12.44 grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">12.45 grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">12.46 grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">12.47 grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">12.48 grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdhisteq/">12.49 grdhisteq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">12.50 grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">12.51 grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">12.52 grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">12.53 grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">12.54 grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">12.55 grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpmodeler/">12.56 grdpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">12.57 grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">12.58 grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">12.59 grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdrotater/">12.60 grdrotater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">12.61 grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">12.62 grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdspotter/">12.63 grdspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">12.64 grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">12.65 grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">12.66 grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">12.67 grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">12.68 grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">12.69 greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">12.70 gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hotspotter/">12.71 hotspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">12.72 img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">12.73 img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">12.74 inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isogmt/">12.75 isogmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">12.76 kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">12.77 makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">12.78 mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">12.79 mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">12.80 mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">12.81 mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">12.82 mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">12.83 mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">12.84 mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">12.85 mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">12.86 mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">12.87 mgd77track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">12.88 nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../originater/">12.89 originater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">12.90 project</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">12.91 basemap</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">12.91.1 必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">12.91.2 可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">12.91.3 示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bugs">12.91.4 BUGS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">12.92 clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">12.93 coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">12.94 contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">12.95 psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">12.96 coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">12.97 histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">12.98 image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">12.99 legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">12.100 mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">12.101 meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">12.102 polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">12.103 rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">12.104 sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">12.105 colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">12.106 segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segyz/">12.107 segyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">12.108 solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">12.109 ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">12.110 text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">12.111 velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">12.112 wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">12.113 plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">12.114 plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotconverter/">12.115 rotconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotsmoother/">12.116 rotsmoother</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">12.117 sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">12.118 segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">12.119 spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">12.120 sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">12.121 sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">12.122 sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">12.123 sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../splitxyz/">12.124 splitxyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">12.125 subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">12.126 surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">12.127 talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">12.128 talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">12.129 trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">12.130 trend2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">12.131 triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">12.132 x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">12.133 x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">12.134 x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">12.135 x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">12.136 x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">12.137 x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">12.138 x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">12.139 x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">12.140 x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">12.141 x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">12.142 xyz2grd</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">13 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT参考手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">Docs</a> &raquo;</li>
+        
+          <li><a href="../">12 GMT 模块</a> &raquo;</li>
+        
+      <li>12.91 basemap</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/module/basemap.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="basemap">
+<span id="index-0"></span><h1>12.91 basemap<a class="headerlink" href="#basemap" title="永久链接至标题">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://genericmappingtools.github.io/gmt/dev/basemap.html" title="(在 GMT v6.0.0)"><span>basemap</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">绘制底图</td>
+</tr>
+</tbody>
+</table>
+<p>该命令用于绘制：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项绘制底图边框（标注、刻度、标签等）和标题</li>
+<li><code class="docutils literal notranslate"><span class="pre">-L</span></code> 选项绘制比例尺</li>
+<li><code class="docutils literal notranslate"><span class="pre">-T</span></code> 选项绘制方向玫瑰、磁场玫瑰图</li>
+</ul>
+<div class="section" id="id1">
+<h2>12.91.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">-B</span></code> <code class="docutils literal notranslate"><span class="pre">-L</span></code> <code class="docutils literal notranslate"><span class="pre">-T</span></code> 三个选项必须至少存在一个。</p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-B</span></code></dt>
+<dd><p class="first">绘制底图边框。 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项是GMT的通用选项，见GMT参考手册中相关内容。</p>
+<p>示例:</p>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R-180/180/-70/70 -JM10c -Bx60 -By30 &gt; test.ps
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-L[g|j|J|n|x]&lt;refpoint&gt;+c[&lt;slon&gt;/]&lt;slat&gt;+w&lt;length&gt;[e|f|k|M|n|u][+a&lt;align&gt;][+f][+j&lt;justify&gt;][+l[&lt;label&gt;]][+o&lt;dx&gt;/[&lt;dy&gt;]][+u]</span></code></dt>
+<dd><p class="first">在地图上指定位置绘制比例尺。</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">[g|j|J|n|x]&lt;refpoint&gt;</span></code> 指定地图上的参考点，详情见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a> 一节</li>
+<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 指定比例尺上的锚点（默认锚点为比例尺的中心），详情见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a> 一节</li>
+<li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;/&lt;dy&gt;</span></code> 为比例尺设置额外的偏移量，详情见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a> 一节</li>
+<li><code class="docutils literal notranslate"><span class="pre">+c&lt;slon&gt;/&lt;slat&gt;</span></code> 要绘制哪一个点的比例尺，对于倾斜投影， <code class="docutils literal notranslate"><span class="pre">slon</span></code> 默认取中央经线</li>
+<li><code class="docutils literal notranslate"><span class="pre">+w&lt;length&gt;[e|f|M|n|k|u]</span></code> 比例尺的长度，默认单位为km，也可使用其他长度单位 <a class="reference internal" href="../../basis/unit/"><span class="doc">单位</span></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">+a&lt;align&gt;</span></code> 修改比例尺标签的位置，默认位于比例尺上方中部，可以取 <code class="docutils literal notranslate"><span class="pre">l</span></code> 、 <code class="docutils literal notranslate"><span class="pre">r</span></code> 、 <code class="docutils literal notranslate"><span class="pre">t</span></code> 、
+<code class="docutils literal notranslate"><span class="pre">b</span></code> 分别代表左右上下</li>
+<li><code class="docutils literal notranslate"><span class="pre">+l&lt;label&gt;</span></code> 为比例尺加标签；若不指定 <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> ，默认的标签是比例尺所使用的长度单位</li>
+<li><code class="docutils literal notranslate"><span class="pre">+u</span></code> 比例尺的标注默认只有值没有单位，该选项会给所有标注加上单位</li>
+<li><code class="docutils literal notranslate"><span class="pre">+f</span></code> 默认是简单的比例尺，使用该选项则绘制fancy比例尺，即黑白相间的火车轨道比例尺</li>
+</ol>
+<p>除此之外还有一些GMT参数可以控制比例尺的外观：</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">FONT_LABEL</span></code> 控制比例尺的标签字体</li>
+<li><code class="docutils literal notranslate"><span class="pre">FONT_ANNOT_PRIMARY</span></code> 控制比例尺的标注字体</li>
+<li><code class="docutils literal notranslate"><span class="pre">MAP_SCALE_HEIGHT</span></code> 控制比例尺的高度</li>
+<li><code class="docutils literal notranslate"><span class="pre">MAP_TICK_PEN_PRIMARY</span></code> 控制比例尺的线及刻度属性</li>
+</ol>
+</dd>
+</dl>
+<blockquote>
+<div><p>示例:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R90/110/30/40 -JM10c -Bx5 -By5 -Lg95/35+c35+w800k+lscale+u+f &gt; test.ps
+
+gmt psbasemap -R90/180/-50/50 -Jm0.025i -Bafg -B+tMercator -Lx1i/1i+c0+w5000k &gt; mercator.ps
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-Td[g|j|J|n|x]&lt;refpoint&gt;+w&lt;width&gt;[+f[&lt;level&gt;]][+j&lt;justify&gt;][+l&lt;w,e,s,n&gt;][+o&lt;dx&gt;[/&lt;dy&gt;]]</span></code></dt>
+<dd><p class="first">在指定位置绘制方向玫瑰图</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">[g|j|J|n|x]&lt;refpoint&gt;</span></code> 指定地图上的参考点，见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 指定玫瑰图上的锚点（默认为 <code class="docutils literal notranslate"><span class="pre">MC</span></code> ），见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;/&lt;dy&gt;</span></code> 指定参考点的偏移量，见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">+w&lt;width&gt;</span></code> 玫瑰图的宽度</li>
+<li><code class="docutils literal notranslate"><span class="pre">+f&lt;level&gt;</span></code> 绘制fancy玫瑰图， <code class="docutils literal notranslate"><span class="pre">&lt;level&gt;</span></code> 指定了fancy玫瑰图的不同类型。
+<code class="docutils literal notranslate"><span class="pre">&lt;level&gt;</span></code> 可以取：<ul>
+<li><code class="docutils literal notranslate"><span class="pre">1</span></code> 绘制E-W和N-S四个方向</li>
+<li><code class="docutils literal notranslate"><span class="pre">2</span></code> 绘制8个方向</li>
+<li><code class="docutils literal notranslate"><span class="pre">3</span></code> 绘制16个方向</li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">+l&lt;w&gt;,&lt;e&gt;,&lt;s&gt;,&lt;n&gt;</span></code> 为四个方向分别指定标签，默认标签是四个方向的单字母代码（英文语言下是W、E、S、N，具体值由参数 <code class="docutils literal notranslate"><span class="pre">GMT_LANGUAGE</span></code> ），四个方向的标签之间用逗号分隔，比如 <code class="docutils literal notranslate"><span class="pre">+lw,e,s,n</span></code> 或 <code class="docutils literal notranslate"><span class="pre">+l&quot;,,Down,Up&quot;</span></code></li>
+</ol>
+</dd>
+</dl>
+<blockquote>
+<div><p>下图展示了方向玫瑰图的效果图：</p>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/psbasemap_ex3.png"><img alt="../../_images/psbasemap_ex3.png" src="../../_images/psbasemap_ex3.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">图 12.2 </span><span class="caption-text">方向玫瑰图</span></p>
+<div class="legend">
+（左） <code class="docutils literal notranslate"><span class="pre">-Tdg0/0+w1i+jCM</span></code>
+（中） <code class="docutils literal notranslate"><span class="pre">-Tdg0/0+w1i+f1+jCM</span></code>
+（右） <code class="docutils literal notranslate"><span class="pre">-Tdg0/0+w1i+f3+l+jCM</span></code></div>
+</div>
+</div></blockquote>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-Tm[g|j|J|n|x]&lt;refpoint&gt;+w&lt;width&gt;[+d&lt;dec&gt;[/&lt;dlabel&gt;]]][+i&lt;pen&gt;][+j&lt;justify&gt;][+l&lt;w&gt;,&lt;e&gt;,&lt;s&gt;,&lt;n&gt;][+p&lt;pen&gt;][+t&lt;ints&gt;][+o&lt;dx&gt;[/&lt;dy&gt;]]</span></code></dt>
+<dd><p class="first">绘制磁场玫瑰图，用于展示磁场方向。</p>
+<p>磁场玫瑰包括两个同心圆环，其中外环用于展示方向信息，内环用于显示磁场方向。</p>
+<p>说明：</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">[g|j|J|n|x]&lt;refpoint&gt;</span></code> 指定地图上的参考点，见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 指定玫瑰图上的锚点（默认为 <code class="docutils literal notranslate"><span class="pre">MC</span></code> ），见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;/&lt;dy&gt;</span></code> 指定参考点的偏移量，见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">+w&lt;width&gt;</span></code> 玫瑰图的宽度</li>
+<li><code class="docutils literal notranslate"><span class="pre">+p&lt;pen&gt;</span></code> 绘制外环并设置其画笔属性</li>
+<li><code class="docutils literal notranslate"><span class="pre">+i&lt;pen&gt;</span></code> 绘制内环并设置其画笔属性</li>
+<li><code class="docutils literal notranslate"><span class="pre">+d&lt;dec&gt;/&lt;dlabel&gt;</span></code> 设置磁倾角以及罗盘指针上的磁倾角标签。若 <code class="docutils literal notranslate"><span class="pre">&lt;dlabel&gt;</span></code>
+为空，则使用默认标签 <code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">&lt;dec&gt;</span></code> ；若 <code class="docutils literal notranslate"><span class="pre">&lt;dlabel&gt;</span></code> 为 <code class="docutils literal notranslate"><span class="pre">-</span></code> ，则不绘制标签。当使用 <code class="docutils literal notranslate"><span class="pre">+d</span></code> 子选项时，会同时绘制地理方向和磁场方向</li>
+<li><code class="docutils literal notranslate"><span class="pre">+l&lt;w&gt;,&lt;e&gt;,&lt;s&gt;,&lt;n&gt;</span></code> 为四个方向的标签，默认标签是四个方向的单字母代码（英文语言下是W、E、S、N，具体值由参数 <code class="docutils literal notranslate"><span class="pre">GMT_LANGUAGE</span></code> ；若 <code class="docutils literal notranslate"><span class="pre">&lt;n&gt;</span></code>
+取值为 <code class="docutils literal notranslate"><span class="pre">*</span></code> ，则会在北方向标签处绘制星代表北极星，也可以使用 <code class="docutils literal notranslate"><span class="pre">+l,,,N</span></code>
+只指定N方向的标签</li>
+<li>内外环都可以设置标注、刻度和网格的间隔。内外环的间隔默认值都是 <code class="docutils literal notranslate"><span class="pre">30/5/1</span></code> 。可以使用 <code class="docutils literal notranslate"><span class="pre">+t&lt;ints&gt;</span></code> 选项，后面接6个斜杠分隔的值，以分别指定两个圆环的
+3种刻度值，其中前三个值控制内环属性，后三个值控制外环属性</li>
+</ol>
+</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h2>12.91.2 可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-A[&lt;file&gt;]</span></code></dt>
+<dd><p class="first">不绘制图形，仅输出矩形底图的边框坐标。</p>
+<p>该选项会将矩形底图的边框坐标输出到标准输出或文件中。使用该选项时，必须通过
+<code class="docutils literal notranslate"><span class="pre">-J</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 指定绘图区域，且不能同时使用其他选项。若不指定 <code class="docutils literal notranslate"><span class="pre">&lt;file&gt;</span></code>
+则默认输出到标准输出，否则输出到文件 <code class="docutils literal notranslate"><span class="pre">&lt;file&gt;</span></code> 中。</p>
+<p>说明：</p>
+<ol class="arabic simple">
+<li>该选项似乎仅适用于矩形底图边框，非矩形边框会输出一堆NaN</li>
+<li>尚不清楚该选项存在的意义</li>
+<li>边框的采样间隔由参数 <code class="docutils literal notranslate"><span class="pre">MAP_LINE_STEP</span></code> 决定</li>
+</ol>
+<p>示例:</p>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R0/10/0/10 -JX10c/5c -Aoutline.txt
+</pre></div>
+</div>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">-D[&lt;unit&gt;]&lt;xmin&gt;/&lt;xmax&gt;/&lt;ymin&gt;/&lt;ymax&gt;[r][+s&lt;file&gt;][+t]</span></code></p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-D[g|j|J|n|x]&lt;refpoint&gt;+w&lt;width&gt;[/&lt;height&gt;][+j&lt;justify&gt;][+o&lt;dx&gt;[/&lt;dy&gt;]][+s&lt;file&gt;][+t]</span></code></dt>
+<dd><p class="first">在底图中绘制图中图（inset map box），需要 <code class="docutils literal notranslate"><span class="pre">-F</span></code> 选项，该选项有两种语法。</p>
+<p>先解释图中图（inset box）的概念。在绘制一个小区域时，为了表明该小区域在地球上的位置，通常需要在一张更大范围（比如整个中国或整个地球）的底图上标出小区域所在的位置，这种绘图形式通常称为inset map。而inset box就是inset map的边框。</p>
+<p>指定inset map box的范围有三种方法：</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">-D&lt;xmin&gt;/&lt;xmax&gt;/&lt;ymin&gt;/&lt;ymax&gt;[r]</span></code> ：类似 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 的语法，直接指定
+inset box在地图上的范围</li>
+<li><code class="docutils literal notranslate"><span class="pre">-D&lt;unit&gt;&lt;xmin&gt;/&lt;xmax&gt;/&lt;ymin&gt;/&lt;ymax&gt;</span></code> ：类似 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 的语法，指定投影后的坐标范围， <code class="docutils literal notranslate"><span class="pre">&lt;unit&gt;</span></code> 为投影后的坐标单位</li>
+<li>指定参考点和锚点，见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a> 一节<ol class="arabic">
+<li><code class="docutils literal notranslate"><span class="pre">[g|j|J|n|x]&lt;refpoint&gt;</span></code> 指定大区域底图上的参考点</li>
+<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 指定inset box上的锚点</li>
+<li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;/&lt;dy&gt;</span></code> 指定参考点的额外偏移量</li>
+<li><code class="docutils literal notranslate"><span class="pre">+w&lt;width&gt;[/&lt;height&gt;]</span></code> 指定inset box的宽度或/和高度</li>
+</ol>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">+s&lt;file&gt;</span></code> ：将inset box的左下角位置以及其长宽写到文件中，坐标值以及长度值均使用当前地图单位</li>
+<li><code class="docutils literal notranslate"><span class="pre">+t</span></code> 将绘图原点移动到inset box的左下角</li>
+</ol>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-F[d|l|t][+c&lt;clearances&gt;][+g&lt;fill&gt;][+i[[&lt;gap&gt;/]&lt;pen&gt;]][+p[&lt;pen&gt;]][+r[&lt;radius&gt;]][+s[[&lt;dx&gt;/&lt;dy&gt;/][&lt;shade&gt;]]]</span></code></dt>
+<dd><p class="first">控制inset box、比例尺和方向玫瑰的背景边框的属性</p>
+<p>说明：</p>
+<ol class="last arabic simple">
+<li>该选项用于给inset box、比例尺和方向玫瑰绘制背景边框，默认同时控制三者的属性</li>
+<li><code class="docutils literal notranslate"><span class="pre">d|l|t</span></code> 表示该选项定义的属性仅适用于 <code class="docutils literal notranslate"><span class="pre">-D</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-L</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-T</span></code> 选项</li>
+<li>直接使用 <code class="docutils literal notranslate"><span class="pre">-F</span></code> 选项，则绘制背景边框，边框属性由参数 <code class="docutils literal notranslate"><span class="pre">MAP_FRAME_PEN</span></code> 控制</li>
+<li>其他子选项的含义见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a> 一节的详细介绍</li>
+</ol>
+</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h2>12.91.3 示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>下面的脚本展示了一种inset box的用法：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">R</span><span class="o">=</span><span class="m">115</span>/123/35/40             <span class="c1"># 小区域地图的范围-R</span>
+<span class="nv">J</span><span class="o">=</span>M20c                      <span class="c1"># 小区域的投影方式-J</span>
+<span class="nv">PS</span><span class="o">=</span>psbasemap_ex1.ps
+
+<span class="c1"># 打开GMT</span>
+gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -T -K &gt; <span class="nv">$PS</span>
+
+<span class="c1"># 绘制小区域的地图</span>
+gmt pscoast -R<span class="nv">$R</span> -J<span class="nv">$J</span> -B1 -Df -W2p -I2p -N1/2p -A1000 -K -O &gt;&gt; <span class="nv">$PS</span>
+<span class="c1"># ...</span>
+<span class="c1"># 此处可以任意添加其他绘图命令</span>
+<span class="c1"># ...</span>
+
+<span class="c1"># 开始绘制inset map</span>
+<span class="nv">Rg</span><span class="o">=</span><span class="m">72</span>/135/16/55     <span class="c1"># 大区域地图的范围-R</span>
+<span class="nv">Jg</span><span class="o">=</span>M7c              <span class="c1"># 大区域地图的投影方式-J</span>
+<span class="c1"># 绘制大区域地图的海岸线及边框</span>
+gmt pscoast -R<span class="nv">$Rg</span> -J<span class="nv">$Jg</span> -B0 -B+gwhite -Df -N1 -W -A5000 -K -O --MAP_FRAME_TYPE<span class="o">=</span>plain &gt;&gt; <span class="nv">$PS</span>
+<span class="c1"># 在大区域地图内绘制小区域所在的方框</span>
+gmt psbasemap -R<span class="nv">$Rg</span> -J<span class="nv">$Jg</span> -D<span class="nv">$R</span> -F+p2p,blue -K -O &gt;&gt; <span class="nv">$PS</span>
+
+<span class="c1"># 结束GMT绘图</span>
+gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -T -O &gt;&gt; <span class="nv">$PS</span>
+rm gmt.*
+</pre></div>
+</div>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/psbasemap_ex1.png"><img alt="../../_images/psbasemap_ex1.png" src="../../_images/psbasemap_ex1.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">图 12.3 </span><span class="caption-text">用psbasemap命令-D选项绘制图中图</span></p>
+</div>
+<p>下面的脚本绘制了另一种不同的inset box：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">ps</span><span class="o">=</span>psbasemap_ex2.ps
+
+<span class="c1"># 绘制澳大利亚的海岸线</span>
+gmt pscoast -R110E/170E/44S/9S -JM6i -P -Baf -BWSne -Wfaint -N2/1p -EAU+gbisque <span class="se">\</span>
+        -Gbrown -Sazure1 -Da -K -Xc --FORMAT_GEO_MAP<span class="o">=</span>dddF &gt; <span class="nv">$ps</span>
+		
+<span class="c1"># 特别注意：其他绘图命令在inset box之前写，因为绘图起点将被改变</span>
+
+<span class="c1"># 最后在右上角绘制inset box,并利用-D的+t子选项把绘图起点移到inset box的左下角</span>
+gmt psbasemap -R -J -O -K -DjTR+w1.5i+o0.15i+t -F+gwhite+p1p+c0.1c+s &gt;&gt; <span class="nv">$ps</span>
+<span class="c1"># 在inset box内绘制全球地图，并突出显示澳大利亚。其中-J选项的1.5i表示inset box的宽度，由上句-D选项的+w决定</span>
+gmt pscoast -Rg -JG120/30S/1.5i -Da -Gbrown -A5000 -Bg -Wfaint -EAU+gbisque -O -K &gt;&gt; <span class="nv">$ps</span>
+
+gmt psxy -R -J -O -T &gt;&gt; <span class="nv">$ps</span>
+
+rm gmt.*
+</pre></div>
+</div>
+<div class="figure align-center" id="id6">
+<a class="reference internal image-reference" href="../../_images/psbasemap_ex2.png"><img alt="../../_images/psbasemap_ex2.png" src="../../_images/psbasemap_ex2.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">图 12.4 </span><span class="caption-text">用psbasemap命令-D选项绘制另一种图中图</span></p>
+</div>
+<p>下面的脚本绘制了磁场玫瑰图：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#	$Id$</span>
+<span class="nv">ps</span><span class="o">=</span>psbasemap_ex4.ps
+<span class="c1"># Magnetic rose with a specified declination</span>
+gmt psbasemap -R-10/-2/12.8812380332/0.661018975345r -JOc0/0/50/60/7i -Baf -BWSne -P -K -X1.25i <span class="se">\</span>
+        --MAP_ANNOT_OBLIQUE<span class="o">=</span><span class="m">34</span> --FONT_ANNOT_PRIMARY<span class="o">=</span>12p &gt; <span class="nv">$ps</span>
+gmt psbasemap -R -J -Tmg-2/0.5+w2.5i+d-14.5+t45/10/5+i0.25p,blue+p0.25p,red+l+jCM -O -K <span class="se">\</span>
+	--FONT_ANNOT_PRIMARY<span class="o">=</span>9p,Helvetica,blue --FONT_ANNOT_SECONDARY<span class="o">=</span>12p,Helvetica,red <span class="se">\</span>
+    --FONT_LABEL<span class="o">=</span>14p,Times-Italic,darkgreen --FONT_TITLE<span class="o">=</span>24p --MAP_TITLE_OFFSET<span class="o">=</span>7p <span class="se">\</span>
+    --MAP_FRAME_WIDTH<span class="o">=</span>10p --COLOR_BACKGROUND<span class="o">=</span>green --MAP_DEFAULT_PEN<span class="o">=</span>2p,darkgreen <span class="se">\</span>
+    --COLOR_BACKGROUND<span class="o">=</span>darkgreen --MAP_VECTOR_SHAPE<span class="o">=</span><span class="m">0</span>.5 --MAP_TICK_PEN_SECONDARY<span class="o">=</span>thinner,red <span class="se">\</span>
+    --MAP_TICK_PEN_PRIMARY<span class="o">=</span>thinner,blue &gt;&gt; <span class="nv">$ps</span>
+gmt psbasemap -R -J -O -K -DjTR+w2.9i/3.9i+o0.05i -F+p+ggray95 &gt;&gt; <span class="nv">$ps</span>
+<span class="nb">echo</span> <span class="s2">&quot;5.5 3.8 GMT DEFAULTS&quot;</span> <span class="p">|</span> gmt pstext -R0/7/0/5 -Jx1i -O -K -F+f14p,Helvetica-Bold+jCM &gt;&gt; <span class="nv">$ps</span>
+gmt pstext -R -J -O -K -F+f12p+jLM <span class="s">&lt;&lt; EOF &gt;&gt; $ps</span>
+<span class="s">4.1 3.50 FONT_TITLE</span>
+<span class="s">4.1 3.25 MAP_TITLE_OFFSET</span>
+<span class="s">4.1 3.00 MAP_DEGREE_SYMBOL</span>
+<span class="s">4.1 2.75 @;blue;FONT_ANNOT_PRIMARY@;;</span>
+<span class="s">4.1 2.50 @;blue;MAP_TICK_PEN_PRIMARY@;;</span>
+<span class="s">4.1 2.25 @;blue;MAP_ANNOT_OFFSET_PRIMARY@;;</span>
+<span class="s">4.1 2.00 @;blue;MAP_TICK_LENGTH_PRIMARY@;;</span>
+<span class="s">4.1 1.75 @;red;FONT_ANNOT_SECONDARY@;;</span>
+<span class="s">4.1 1.50 @;red;MAP_TICK_PEN_SECONDARY@;;</span>
+<span class="s">4.1 1.25 @;red;MAP_ANNOT_OFFSET_SECONDARY@;;</span>
+<span class="s">4.1 1.00 @;red;MAP_TICK_LENGTH_SECONDARY@;;</span>
+<span class="s">4.1 0.75 @;darkgreen;FONT_LABEL@;;</span>
+<span class="s">4.1 0.50 @;darkgreen;MAP_DEFAULT_PEN@;;</span>
+<span class="s">4.1 0.25 @;darkgreen;COLOR_BACKGROUND@;;</span>
+<span class="s">EOF</span>
+gmt psxy -R -J -O -T &gt;&gt; <span class="nv">$ps</span>
+rm gmt.*
+</pre></div>
+</div>
+<div class="figure align-center" id="id7">
+<a class="reference internal image-reference" href="../../_images/psbasemap_ex4.png"><img alt="../../_images/psbasemap_ex4.png" src="../../_images/psbasemap_ex4.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">图 12.5 </span><span class="caption-text">磁场玫瑰图</span></p>
+</div>
+</div>
+<div class="section" id="bugs">
+<h2>12.91.4 BUGS<a class="headerlink" href="#bugs" title="永久链接至标题">¶</a></h2>
+<ol class="arabic simple">
+<li>使用 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 选项可以正常输出结果，但会出现 <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">free</span></code> 的错误（v5.2.1）</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989'],
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../clip/" class="btn btn-neutral float-right" title="12.92 clip" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../project/" class="btn btn-neutral" title="12.90 project" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2019, GMT中文社区
+      最后更新于 2019年01月29日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

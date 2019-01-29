@@ -1,0 +1,643 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>12.96 coupe &mdash; GMT参考手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="12.97 histogram" href="../histogram/" />
+    <link rel="prev" title="12.95 psconvert" href="../psconvert/" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../" class="icon icon-home"> GMT参考手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">6 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">7 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">9 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">10 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 GMT数据集</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">12 GMT 模块</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../backtracker/">12.1 backtracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">12.2 begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">12.3 blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">12.4 blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">12.5 blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">12.6 clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">12.7 dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">12.8 docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">12.9 end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">12.10 figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">12.11 filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">12.12 fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">12.13 gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">12.14 gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt2kml/">12.15 gmt2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt5syntax/">12.16 gmt5syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">12.17 gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconvert/">12.18 gmtconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">12.19 gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtflexure/">12.20 gmtflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">12.21 gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtgravmag3d/">12.22 gmtgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">12.23 gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">12.24 gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtmath/">12.25 gmtmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtpmodeler/">12.26 gmtpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtregress/">12.27 gmtregress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">12.28 gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">12.29 gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">12.30 gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtspatial/">12.31 gmtspatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">12.32 gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtvector/">12.33 gmtvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">12.34 gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">12.35 gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">12.36 gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">12.37 grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">12.38 grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">12.39 grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">12.40 grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">12.41 grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">12.42 grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">12.43 grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">12.44 grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">12.45 grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">12.46 grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">12.47 grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">12.48 grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdhisteq/">12.49 grdhisteq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">12.50 grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">12.51 grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">12.52 grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">12.53 grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">12.54 grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">12.55 grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpmodeler/">12.56 grdpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">12.57 grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">12.58 grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">12.59 grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdrotater/">12.60 grdrotater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">12.61 grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">12.62 grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdspotter/">12.63 grdspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">12.64 grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">12.65 grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">12.66 grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">12.67 grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">12.68 grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">12.69 greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">12.70 gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hotspotter/">12.71 hotspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">12.72 img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">12.73 img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">12.74 inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isogmt/">12.75 isogmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">12.76 kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">12.77 makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">12.78 mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">12.79 mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">12.80 mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">12.81 mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">12.82 mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">12.83 mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">12.84 mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">12.85 mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">12.86 mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">12.87 mgd77track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">12.88 nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../originater/">12.89 originater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">12.90 project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">12.91 basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">12.92 clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">12.93 coast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">12.94 contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">12.95 psconvert</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">12.96 coupe</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">12.96.1 剖面类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">12.96.2 选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">12.96.3 示例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">12.97 histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">12.98 image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">12.99 legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">12.100 mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">12.101 meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">12.102 polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">12.103 rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">12.104 sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">12.105 colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">12.106 segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segyz/">12.107 segyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">12.108 solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">12.109 ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">12.110 text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">12.111 velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">12.112 wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">12.113 plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">12.114 plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotconverter/">12.115 rotconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotsmoother/">12.116 rotsmoother</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">12.117 sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">12.118 segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">12.119 spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">12.120 sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">12.121 sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">12.122 sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">12.123 sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../splitxyz/">12.124 splitxyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">12.125 subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">12.126 surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">12.127 talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">12.128 talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">12.129 trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">12.130 trend2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">12.131 triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">12.132 x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">12.133 x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">12.134 x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">12.135 x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">12.136 x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">12.137 x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">12.138 x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">12.139 x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">12.140 x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">12.141 x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">12.142 xyz2grd</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">13 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT参考手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">Docs</a> &raquo;</li>
+        
+          <li><a href="../">12 GMT 模块</a> &raquo;</li>
+        
+      <li>12.96 coupe</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/module/coupe.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="coupe">
+<span id="index-0"></span><h1>12.96 coupe<a class="headerlink" href="#coupe" title="永久链接至标题">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://genericmappingtools.github.io/gmt/dev/supplements/meca/coupe.html" title="(在 GMT v6.0.0)"><span>coupe</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">绘制震源机制解的剖面图</td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="../meca/"><span class="doc">meca</span></a> 在绘制震源球时，本质上是取了一个水平剖面，并将三维震源球的下半球投影到该水平剖面上。而 <a class="reference internal" href="#"><span class="doc">coupe</span></a> 则更灵活一些，可以将三维震源球投影到任意一个剖面上。</p>
+<ul class="simple">
+<li>对于一个水平剖面，会将下半球投影到平面上（即 <a class="reference internal" href="../meca/"><span class="doc">meca</span></a> 的做法）</li>
+<li>对于一个垂直剖面，会将垂直平面后的半球投影到平面上</li>
+<li>对于任意一个非水平的平面而言：<ul>
+<li>北方向为平面的最速下降方向</li>
+<li>东方向为平面的走向方向</li>
+<li>下方向则根据右手定则确定</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="id1">
+<h2>12.96.1 剖面类型<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">-A</span></code> 选项用于确定剖面。</p>
+<p><code class="docutils literal notranslate"><span class="pre">-Aa&lt;lon1&gt;/&lt;lat1&gt;/&lt;lon2&gt;/&lt;lat2&gt;/&lt;dip&gt;/&lt;p_width&gt;/&lt;dmin&gt;/&lt;dmax&gt;[f]</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">&lt;lon1&gt;/&lt;lat1&gt;</span></code> 剖面起点的经纬度</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;lon2&gt;/&lt;lat2&gt;</span></code> 剖面终点的经纬度</li>
+<li>起点和终点确定了剖面的长度</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;dip&gt;</span></code> 剖面所在平面的倾角（0表示水平剖面，90表示垂直剖面）</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;p_width&gt;</span></code> 剖面的宽度（即剖面不是一个平面，而是一个有厚度的长方体）</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;dmin&gt;/&lt;dmax&gt;</span></code> 是沿着最速下降方向（“北”方向）的最小、最大距离</li>
+<li><code class="docutils literal notranslate"><span class="pre">f</span></code> 表示根据剖面的参数自动计算边框的范围</li>
+<li>TODO: <code class="docutils literal notranslate"><span class="pre">&lt;p_width&gt;/&lt;dmin&gt;/&lt;dmax&gt;</span></code> 的具体含义尚不明确</li>
+</ul>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">-Ab&lt;lon1&gt;/&lt;lat1&gt;/&lt;strike&gt;/&lt;p_length&gt;/&lt;dip&gt;/&lt;p_width&gt;/&lt;dmin&gt;/&lt;dmax&gt;[f]</span></code></p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">&lt;lon1&gt;/&lt;lat1&gt;</span></code> 剖面起点的经纬度</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;strike&gt;</span></code> 是剖面的走向</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;p_length&gt;</span></code> 是剖面的长度</li>
+<li>其他参数与 <code class="docutils literal notranslate"><span class="pre">-Aa</span></code> 相同</li>
+</ul>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">-Ac&lt;x1&gt;/&lt;y1&gt;/&lt;x2&gt;/&lt;y2&gt;/&lt;dip&gt;/&lt;p_width&gt;/&lt;dmin&gt;/&lt;dmax&gt;[f]</span></code></p>
+<blockquote>
+<div>与 <code class="docutils literal notranslate"><span class="pre">-Aa</span></code> 选项相同，只是 <code class="docutils literal notranslate"><span class="pre">&lt;x&gt;/&lt;y&gt;</span></code> 为笛卡尔坐标而不是地理坐标</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">-Ad&lt;x1&gt;/&lt;y1&gt;/&lt;strike&gt;/&lt;p_length&gt;/&lt;dip&gt;/&lt;p_width&gt;/&lt;dmin&gt;/&lt;dmax&gt;[f]</span></code></p>
+<blockquote>
+<div>与 <code class="docutils literal notranslate"><span class="pre">-Ab</span></code> 选项相同，只是 <code class="docutils literal notranslate"><span class="pre">&lt;x&gt;/&lt;y&gt;</span></code> 为笛卡尔坐标而不是地理坐标</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>12.96.2 选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-E&lt;color&gt;</span></code></dt>
+<dd>扩张部分的填充色，默认为白色</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-F&lt;mode&gt;[&lt;args&gt;]</span></code></dt>
+<dd><p class="first">设置多个属性，可重复使用多次</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">-Fs&lt;symbol&gt;[&lt;size[/&lt;fontsize&gt;[/&lt;offset&gt;[&lt;u&gt;]]]]</span></code> 见官方文档</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Fa[&lt;size&gt;][/&lt;P_axis_symbol&gt;[&lt;T_axis_symbol&gt;]]</span></code> 计算并绘制P和T轴的符号。 <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 是符号大小，符号与 <a class="reference internal" href="../plot/"><span class="doc">plot</span></a> 类似，可以取 <code class="docutils literal notranslate"><span class="pre">c|d|h|i|p|s|t|x</span></code> ，默认值为 <code class="docutils literal notranslate"><span class="pre">6p/cc</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">-Fe&lt;fill&gt;</span></code> 设置T轴符号的填充色</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Fg&lt;fill&gt;</span></code> 设置P轴符号的填充色</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Fp&lt;pen&gt;</span></code> P轴轮廓的画笔属性</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Ft&lt;pen&gt;</span></code> T轴轮廓的画笔属性</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Fr&lt;fill&gt;</span></code> 在标签后加一个方框</li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;color&gt;</span></code></dt>
+<dd>指定压缩部分的填充色，默认值为黑色</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-L[&lt;pen&gt;]</span></code></dt>
+<dd>设置震源球外部轮廓的线条属性</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-M</span></code></dt>
+<dd>所有震级使用相同的大小，具体大小由 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项的 <code class="docutils literal notranslate"><span class="pre">&lt;scale&gt;</span></code> 参数决定。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-N</span></code></dt>
+<dd>地图区域外的震源球也要绘制，默认不绘制。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Q</span></code></dt>
+<dd>默认会生成一些临时文件，其中包含了剖面和剖面上的震源机制的信息，使用该选项，则不会生成这些临时文件。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-T&lt;num_of_planes][/&lt;pen&gt;]</span></code></dt>
+<dd><p class="first">绘制断层平面。 <code class="docutils literal notranslate"><span class="pre">&lt;num_of_planes&gt;</span></code> 可以取：</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">0</span></code> 绘制两个断层面</li>
+<li><code class="docutils literal notranslate"><span class="pre">1</span></code> 绘制第一个断层面</li>
+<li><code class="docutils literal notranslate"><span class="pre">2</span></code> 绘制第二个断层面</li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-S</span></code></dt>
+<dd><p class="first">选择震源机制解的格式。与 <a class="reference internal" href="../meca/"><span class="doc">meca</span></a> 中 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项用法相同</p>
+<p class="last">唯一的不同在于，输入文件中 <code class="docutils literal notranslate"><span class="pre">newX</span></code> 和 <code class="docutils literal notranslate"><span class="pre">newY</span></code> 对该命令无效，这里加上 <code class="docutils literal notranslate"><span class="pre">newX</span></code> 和 <code class="docutils literal notranslate"><span class="pre">newY</span></code> 只是为了是的该命令可以使用与 <a class="reference internal" href="../meca/"><span class="doc">meca</span></a> 相同的输入文件。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-W&lt;pen&gt;</span></code></dt>
+<dd>设置断层边界的画笔属性</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Z&lt;cpt&gt;</span></code></dt>
+<dd>指定CPT文件，根据数据文件中第三列的值（即地震深度）确定震源球的压缩部分的颜色。</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h2>12.96.3 示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>下面的示例展示了 <code class="docutils literal notranslate"><span class="pre">-Aa</span></code> 选项的用法，指定P1和P2为剖面的起点和终点，并展示了不同倾角时的震源球的效果。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">ps</span><span class="o">=</span>pscoupe_ex1.ps
+
+gmt gmtset PROJ_LENGTH_UNIT inch MAP_TICK_LENGTH_PRIMARY <span class="m">0</span>.075i <span class="se">\</span>
+    MAP_FRAME_WIDTH <span class="m">0</span>.1i MAP_ORIGIN_X <span class="m">2</span>.5c MAP_ORIGIN_Y <span class="m">1</span>.3i
+
+<span class="c1"># Plotting 2 mechanisms on map</span>
+gmt psmeca -R128/130/10/11.1 -JX2i -Fa0.1i/cc -Sc0.4i -B1 -Y8.5i -P -K <span class="s">&lt;&lt; EOF &gt; $ps</span>
+<span class="s"># lon   lat  dep str dip rake str dip rake m ex nx ny</span>
+<span class="s">129.5  10.5 10  0   90   0  90   90 180  1 24  0  0 10km</span>
+<span class="s">128.5  10.5 40  0   45  90 180   45  90  1 24  0  0 40km</span>
+<span class="s">EOF</span>
+<span class="o">(</span><span class="nb">echo</span> <span class="m">128</span> <span class="m">11</span><span class="p">;</span> <span class="nb">echo</span> <span class="m">130</span> <span class="m">11</span><span class="o">)</span> <span class="p">|</span> gmt psxy -R -J -K -O -W0.25p,red &gt;&gt; <span class="nv">$ps</span>
+gmt pstext -R -J -N -F+f14p,Helvetica-Bold+j -K -O <span class="s">&lt;&lt; EOF &gt;&gt; $ps</span>
+<span class="s">128 11 ML P1</span>
+<span class="s">130 11 MR P2</span>
+<span class="s">EOF</span>
+
+<span class="c1"># Represent cross-sections between points P1(128E11N) and P2(130E/11N)</span>
+<span class="c1"># on a plane the dip of which varies</span>
+<span class="c1"># from quasi horizontal to vertical.</span>
+<span class="c1"># y dimension is counted along steepest descent on the plane</span>
+<span class="c1"># so the values of depth are only in the vertical cross-section.</span>
+
+<span class="c1"># Variation of dip for cross-section plane</span>
+<span class="c1"># (WE azimuth, between points (128E,11N) and (130E,11N)))</span>
+
+plots <span class="o">()</span> <span class="o">{</span>
+<span class="nv">y_offset</span><span class="o">=</span>-2.5i
+<span class="k">for</span> d in <span class="nv">$1</span> <span class="nv">$2</span> <span class="nv">$3</span> <span class="p">;</span> <span class="k">do</span>
+    gmt pscoupe -R0/200/0/100 -JX1.5i/-1.5i -Bxa100f10 -Bya50f10 -BWesN <span class="se">\</span>
+        -Q -L -Sc0.4 -Aa128/11/130/11/<span class="nv">$d</span>/60/0/100f -Ggrey -Fa0.1i/cc <span class="nv">$4</span> <span class="nv">$5</span> <span class="se">\</span>
+        -Y<span class="nv">$y_offset</span> -X<span class="nv">$x_offset</span> -O -K <span class="s">&lt;&lt; EOF</span>
+<span class="s"># lon   lat  dep str dip rake str dip rake m ex nx ny</span>
+<span class="s">129.5 10.5  10  0   90   0  90   90 180  1 24  0  0 10km</span>
+<span class="s">128.5 10.5  40  0   45  90 180   45  90  1 24  0  0 40km</span>
+<span class="s">EOF</span>
+    gmt pstext -R -J -F+f18p,Helvetica-Bold+jBL -O -K <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;10 15 </span><span class="nv">$d</span><span class="s2">&quot;</span>
+    <span class="nv">y_offset</span><span class="o">=</span>0i
+    <span class="nv">x_offset</span><span class="o">=</span><span class="m">2</span>.5i
+<span class="k">done</span>
+<span class="nv">x_offset</span><span class="o">=</span>-5i
+<span class="o">}</span>
+
+<span class="nv">x_offset</span><span class="o">=</span>0i
+
+plots <span class="m">10</span> <span class="m">20</span> <span class="m">30</span> &gt;&gt; <span class="nv">$ps</span>
+plots <span class="m">40</span> <span class="m">50</span> <span class="m">60</span> &gt;&gt; <span class="nv">$ps</span>
+plots <span class="m">70</span> <span class="m">80</span> <span class="m">90</span> -N &gt;&gt; <span class="nv">$ps</span>
+
+gmt pstext -X-5i -R0/10/0/15 -Jx1i -F+jBL+fHelvetica-Bold+f -O <span class="s">&lt;&lt; EOF &gt;&gt; $ps</span>
+<span class="s">3 8.5 24 Variation of dip</span>
+<span class="s">3 8.0 20 W-E cross-section</span>
+<span class="s">EOF</span>
+rm gmt.*
+</pre></div>
+</div>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/pscoupe_ex1.png"><img alt="pscoupe example 1" src="../../_images/pscoupe_ex1.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">图 12.6 </span><span class="caption-text">pscoupe示例图1</span></p>
+</div>
+<p>下面的示例将震源球投影到不同方位角的剖面上的效果：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1"># test/meca/meca_4.sh</span>
+
+<span class="nv">ps</span><span class="o">=</span>pscoupe_ex2.ps
+
+gmt gmtset PROJ_LENGTH_UNIT inch MAP_TICK_LENGTH_PRIMARY <span class="m">0</span>.075i MAP_FRAME_WIDTH <span class="m">0</span>.1i <span class="se">\</span>
+    MAP_ORIGIN_X <span class="m">2</span>.5c MAP_ORIGIN_Y <span class="m">1</span>.3i
+
+<span class="c1"># Plotting 2 mechanisms on map</span>
+gmt psmeca -R128/130/10/11.1 -JX2i -Fa0.1i/cc -Sc0.4i -B1 -Y8.5i -P -K <span class="s">&lt;&lt; EOF &gt; $ps</span>
+<span class="s"># lon   lat  dep str dip rake str dip rake m ex nx ny</span>
+<span class="s">129.5  10.5 10  0   90   0  90   90 180  1 24  0  0 10km</span>
+<span class="s">128.5  10.5 40  0   45  90 180   45  90  1 24  0  0 40km</span>
+<span class="s">EOF</span>
+<span class="o">(</span><span class="nb">echo</span> <span class="m">128</span> <span class="m">11</span><span class="p">;</span> <span class="nb">echo</span> <span class="m">130</span> <span class="m">11</span><span class="o">)</span> <span class="p">|</span> gmt psxy -R -J -K -O -W0.25p,red &gt;&gt; <span class="nv">$ps</span>
+gmt pstext -R -J -N -F+f14p,Helvetica-Bold+j -K -O <span class="s">&lt;&lt; EOF &gt;&gt; $ps</span>
+<span class="s">128 11 ML P1</span>
+<span class="s">130 11 MR P2</span>
+<span class="s">EOF</span>
+
+plots <span class="o">()</span> <span class="o">{</span>
+<span class="nv">y_offset</span><span class="o">=</span>-2.5i
+<span class="k">for</span> a in <span class="nv">$1</span> <span class="nv">$2</span> <span class="nv">$3</span> <span class="p">;</span> <span class="k">do</span>
+    gmt pscoupe -R0/250/0/100 -JX1.5i/-1.5i -Bxa100f10 -Bya50f10 -BWesN <span class="se">\</span>
+        -Q -L -Sc0.4 -Ab<span class="nv">$4</span>/<span class="nv">$5</span>/<span class="nv">$a</span>/250/90/<span class="nv">$6</span>/0/100f -Ggrey -Fa0.1i/cc <span class="nv">$7</span> <span class="nv">$8</span> <span class="se">\</span>
+        -Y<span class="nv">$y_offset</span> -X<span class="nv">$x_offset</span> -O -K <span class="s">&lt;&lt; EOF</span>
+<span class="s"># lon   lat  dep str dip rake str dip rake m ex nx ny</span>
+<span class="s">129.5 10.5  10  0   90   0  90   90 180  1 24  0  0 10km</span>
+<span class="s">128.5 10.5  40  0   45  90 180   45  90  1 24  0  0 40km</span>
+<span class="s">EOF</span>
+    gmt pstext -R -J -F+f18p,Helvetica-Bold+jBR -O -K <span class="o">&lt;&lt;&lt;</span> <span class="s2">&quot;240 90 </span><span class="nv">$a</span><span class="s2">&quot;</span>
+    <span class="nv">y_offset</span><span class="o">=</span>0i
+    <span class="nv">x_offset</span><span class="o">=</span><span class="m">2</span>.5i
+<span class="k">done</span>
+<span class="nv">x_offset</span><span class="o">=</span>-5i
+<span class="o">}</span>
+
+<span class="nv">x_offset</span><span class="o">=</span>0i
+
+plots   <span class="m">0</span>  <span class="m">40</span>  <span class="m">80</span> <span class="m">128</span> <span class="m">10</span>.0 <span class="m">200</span>    &gt;&gt; <span class="nv">$ps</span>
+plots <span class="m">120</span> <span class="m">160</span> <span class="m">200</span> <span class="m">128</span> <span class="m">11</span>.0 <span class="m">400</span> -N &gt;&gt; <span class="nv">$ps</span>
+plots <span class="m">240</span> <span class="m">280</span> <span class="m">320</span> <span class="m">130</span> <span class="m">10</span>.5 <span class="m">200</span> -N &gt;&gt; <span class="nv">$ps</span>
+
+gmt pstext -X-5i -R0/10/0/15 -Jx1i -F+jBL+fHelvetica-Bold+f -O <span class="s">&lt;&lt; EOF &gt;&gt; $ps</span>
+<span class="s">3 8.5 24 Variation of azimuth</span>
+<span class="s">3 8.0 20 vertical cross-section</span>
+<span class="s">EOF</span>
+rm gmt.*
+</pre></div>
+</div>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/pscoupe_ex2.png"><img alt="pscoupe example 2" src="../../_images/pscoupe_ex2.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">图 12.7 </span><span class="caption-text">pscoupe示例图2</span></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989'],
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../histogram/" class="btn btn-neutral float-right" title="12.97 histogram" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../psconvert/" class="btn btn-neutral" title="12.95 psconvert" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2019, GMT中文社区
+      最后更新于 2019年01月29日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

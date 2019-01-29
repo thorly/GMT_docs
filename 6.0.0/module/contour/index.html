@@ -1,0 +1,428 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>12.94 contour &mdash; GMT参考手册</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="12.95 psconvert" href="../psconvert/" />
+    <link rel="prev" title="12.93 coast" href="../coast/" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../" class="icon icon-home"> GMT参考手册
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">目 录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">6 CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">7 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">9 配置GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">10 投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 GMT数据集</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">12 GMT 模块</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../backtracker/">12.1 backtracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../begin/">12.2 begin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmean/">12.3 blockmean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmedian/">12.4 blockmedian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blockmode/">12.5 blockmode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clear/">12.6 clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dimfilter/">12.7 dimfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docs/">12.8 docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../end/">12.9 end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figure/">12.10 figure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter1d/">12.11 filter1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fitcircle/">12.12 fitcircle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt/">12.13 gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt-config/">12.14 gmt-config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt2kml/">12.15 gmt2kml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmt5syntax/">12.16 gmt5syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">12.17 gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconvert/">12.18 gmtconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">12.19 gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtflexure/">12.20 gmtflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">12.21 gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtgravmag3d/">12.22 gmtgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">12.23 gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">12.24 gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtmath/">12.25 gmtmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtpmodeler/">12.26 gmtpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtregress/">12.27 gmtregress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">12.28 gmtselect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtset/">12.29 gmtset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">12.30 gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtspatial/">12.31 gmtspatial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtswitch/">12.32 gmtswitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtvector/">12.33 gmtvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">12.34 gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpsgridder/">12.35 gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gravfft/">12.36 gravfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2cpt/">12.37 grd2cpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">12.38 grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">12.39 grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">12.40 grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcontour/">12.41 grdcontour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">12.42 grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">12.43 grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfft/">12.44 grdfft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfilter/">12.45 grdfilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdflexure/">12.46 grdflexure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgradient/">12.47 grdgradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdgravmag3d/">12.48 grdgravmag3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdhisteq/">12.49 grdhisteq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">12.50 grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">12.51 grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">12.52 grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">12.53 grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmath/">12.54 grdmath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">12.55 grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpmodeler/">12.56 grdpmodeler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">12.57 grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdredpol/">12.58 grdredpol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">12.59 grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdrotater/">12.60 grdrotater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">12.61 grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdseamount/">12.62 grdseamount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdspotter/">12.63 grdspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">12.64 grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">12.65 grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">12.66 grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdview/">12.67 grdview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">12.68 grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../greenspline/">12.69 greenspline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">12.70 gshhg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hotspotter/">12.71 hotspotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2google/">12.72 img2google</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../img2grd/">12.73 img2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">12.74 inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../isogmt/">12.75 isogmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">12.76 kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">12.77 makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">12.78 mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77convert/">12.79 mgd77convert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77header/">12.80 mgd77header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77info/">12.81 mgd77info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77list/">12.82 mgd77list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77magref/">12.83 mgd77magref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77manage/">12.84 mgd77manage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77path/">12.85 mgd77path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77sniffer/">12.86 mgd77sniffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mgd77track/">12.87 mgd77track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nearneighbor/">12.88 nearneighbor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../originater/">12.89 originater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">12.90 project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">12.91 basemap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/">12.92 clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">12.93 coast</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">12.94 contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">12.95 psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coupe/">12.96 coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">12.97 histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">12.98 image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">12.99 legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mask/">12.100 mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">12.101 meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">12.102 polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">12.103 rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">12.104 sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">12.105 colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy/">12.106 segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segyz/">12.107 segyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">12.108 solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">12.109 ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">12.110 text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">12.111 velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">12.112 wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">12.113 plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">12.114 plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotconverter/">12.115 rotconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotsmoother/">12.116 rotsmoother</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">12.117 sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">12.118 segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">12.119 spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">12.120 sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">12.121 sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">12.122 sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">12.123 sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../splitxyz/">12.124 splitxyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">12.125 subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">12.126 surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">12.127 talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">12.128 talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">12.129 trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">12.130 trend2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">12.131 triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">12.132 x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">12.133 x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">12.134 x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">12.135 x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">12.136 x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">12.137 x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">12.138 x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">12.139 x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">12.140 x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">12.141 x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">12.142 xyz2grd</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">13 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT 中文社区</a></li>
+            
+                <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
+            
+        </ul>
+    
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">GMT参考手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../">Docs</a> &raquo;</li>
+        
+          <li><a href="../">12 GMT 模块</a> &raquo;</li>
+        
+      <li>12.94 contour</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/module/contour.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="contour">
+<span id="index-0"></span><h1>12.94 contour<a class="headerlink" href="#contour" title="永久链接至标题">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://genericmappingtools.github.io/gmt/dev/contour.html" title="(在 GMT v6.0.0)"><span>contour</span></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+           
+           <div class="articleComments">
+            
+
+<!-- gitalk 脚本-->
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '0e924d7b349247809740',
+    clientSecret: '3034f594a0e920fc7b0294ef6ec3ec884e4e819e',
+    owner: 'gmt-china',
+    repo: 'gitalk',
+    admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989'],
+    body: location.href,
+  });
+gitalk.render('gitalk-container');
+</script>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../psconvert/" class="btn btn-neutral float-right" title="12.95 psconvert" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../coast/" class="btn btn-neutral" title="12.93 coast" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2019, GMT中文社区
+      最后更新于 2019年01月29日.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
