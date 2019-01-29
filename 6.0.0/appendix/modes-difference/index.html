@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>15.5 GMT现代模式 &mdash; GMT参考手册</title>
+  <title>15.5 现代模式 vs 经典模式 &mdash; GMT参考手册</title>
   
 
   
@@ -97,8 +97,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../conf/">9 配置GMT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../proj/">10 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 GMT数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module/">12 GMT 模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">12 模块列表</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../gallery/">13 绘图示例</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../">15 附录</a><ul class="current">
@@ -106,11 +106,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../cmd/">15.2 命令行及脚本基础</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../colors/">15.3 GMT 颜色表</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../patterns/">15.4 GMT预定义填充图案</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">15.5 GMT现代模式</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">15.5.1 经典模式存在的问题</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">15.5 现代模式 vs 经典模式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">15.5.1 经典模式的问题</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id2">15.5.2 现代模式的优点</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">15.5.3 从经典到现代</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">15.5.4 现代模式: 子图模式</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../low-level/">15.6 GMT底层原理</a></li>
@@ -188,7 +187,7 @@
         
           <li><a href="../">15 附录</a> &raquo;</li>
         
-      <li>15.5 GMT现代模式</li>
+      <li>15.5 现代模式 vs 经典模式</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -209,16 +208,32 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="gmt">
-<h1>15.5 GMT现代模式<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h1>
-<p>自GMT6起，GMT引入了一种全新的命令执行模式，称之为现代模式。GMT5以及之前的命令风格则称之为经典模式。</p>
-<div class="admonition note">
-<p class="first admonition-title">注解</p>
-<p class="last">GMT6既支持经典模式也支持现代模式，因而GMT6可以完全兼容GMT5的代码。</p>
-</div>
+  <div class="section" id="vs">
+<h1>15.5 现代模式 vs 经典模式<a class="headerlink" href="#vs" title="永久链接至标题">¶</a></h1>
+<p>GMT自6.0.0版本开始，引入了一种全新的绘图命令执行模式，称之为现代模式。而GMT5以及之前的命令风格则称之为经典模式。GMT6既支持经典模式也支持现代模式，因而GMT6可以完全兼容GMT5的代码。本手册只介绍现代模式，而不介绍经典模式。对于GMT新用户而言，只需要了解现代模式；而对于GMT老用户，应了解现代模式与经典模式的区别，并尽快开始使用现代模式进行绘图。</p>
+<p>这一节将主要介绍经典模式存在的问题，现代模式的优点，以及如何将经典模式的代码转换为现代模式。</p>
 <div class="section" id="id1">
-<h2>15.5.1 经典模式存在的问题<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<p>一个GMT经典模式下的绘图脚本如下所示：</p>
+<h2>15.5.1 经典模式的问题<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>一个GMT经典模式下的绘图脚本如下所示:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">R</span><span class="o">=</span><span class="m">65</span>/18/117/45+r
+<span class="nv">J</span><span class="o">=</span>B90/0/40/30/6.5i
+<span class="nv">PS</span><span class="o">=</span>GMT_tutor3.ps
+<span class="nv">D</span><span class="o">=</span>earth_relief_03m.grd
+
+gmt gmtset FONT_ANNOT_PRIMARY 10p
+gmt grdcut <span class="nv">$D</span> -R55/120/10/50 -GTibet.grd
+gmt grdgradient Tibet.grd -A0 -Nt -Gint.grad
+
+gmt psbasemap -R<span class="nv">$R</span> -J<span class="nv">$J</span> -B10g10 -BwSEN -K -P &gt; <span class="nv">$PS</span>
+gmt grdimage -R<span class="nv">$R</span> -J<span class="nv">$J</span> -Bg10 Tibet.grd -Iint.grad -CTibet.cpt -K -O &gt;&gt; <span class="nv">$PS</span>
+gmt pscoast -R<span class="nv">$R</span> -J<span class="nv">$J</span> -N1/0.5p,white -Ia/0.15p,177/178/183 -I1/0.5p,61/99/172 -C81/174/254 -Lg86/18+c30+w1000+u+f -K -O &gt;&gt; <span class="nv">$PS</span>
+gmt psscale -Dx-0.3i/1.4i+w2.5i/0.15i+ma -CTibet.cpt -G1600/9000 -By+lm -Bxa1000f200 -K -O &gt;&gt; <span class="nv">$PS</span>
+gmt psscale -Dx-0.3i/0+w1.3i/0.15i+ma -CTibet.cpt -G-3500/0 -L -O &gt;&gt; <span class="nv">$PS</span>
+gmt psconvert -A -P -Tf <span class="nv">$PS</span>
+rm gmt.* Tibet.grd int.grad
+</pre></div>
+</div>
 <p>从上面的示例脚本中以及实际使用经验中会发现GMT经典模式存在的一些明显的缺点或问题：</p>
 <ol class="arabic simple">
 <li>大部分命令需要使用 <code class="docutils literal notranslate"><span class="pre">-K</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-O</span></code> 选项，而且极其容易出错</li>
@@ -231,45 +246,50 @@
 </div>
 <div class="section" id="id2">
 <h2>15.5.2 现代模式的优点<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p>上面的示例在现代模式下可以改写为：</p>
-<p>现代模式下的GMT命令风格具有如下优点：</p>
+<p>上面的示例在现代模式下可以改写为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">D</span><span class="o">=</span>@earth_relief_03m.grd
+
+gmt grdcut <span class="nv">$D</span> -R55/120/10/50 -GTibet.grd
+gmt grdgradient Tibet.grd -A0 -Nt -Gint.grad
+
+gmt begin tutor3 pdf,png
+gmt <span class="nb">set</span> FONT_ANNOT_PRIMARY 10p
+gmt basemap -JB90/0/40/30/6.5i -R65/18/117/45+r -B10g10 -BwSEN
+gmt grdimage -Bg10 Tibet.grd -Iint.grad -CTibet.cpt
+gmt coast -N1/0.5p,white -Ia/0.15p,177/178/183 -I1/0.5p,61/99/172 -C81/174/254 -Lg86/18+c30+w1000+u+f
+gmt colorbar -Dx-0.3i/1.4i+w2.5i/0.15i+ma -CTibet.cpt -G1600/9000 -By+lm -Bxa1000f200
+gmt colorbar -Dx-0.3i/0+w1.3i/0.15i+ma -CTibet.cpt -G-3500/0 -L
+rm Tibet.grd int.grad
+gmt end
+</pre></div>
+</div>
+<p>现代模式下的GMT绘图命令更加简洁，具有如下优点：</p>
 <ol class="arabic simple">
 <li>不再需要考虑 <code class="docutils literal notranslate"><span class="pre">-K</span></code>、<code class="docutils literal notranslate"><span class="pre">-O</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-P</span></code> 选项</li>
-<li>不再需要进行重定向，也无需为每个命令都指定PS文件名</li>
+<li>不再需要使用 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 或 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> 重定向，也无需为每个命令都指定PS文件名</li>
+<li>用户完全不需要意识到 PS 文件的存在</li>
 <li>不再需要为每个命令都是用 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 选项</li>
 <li>最终可生成PDF、PNG等多种格式的图片文件，无需再转换</li>
 <li>自动确定纸张大小并进行裁剪</li>
 <li>整个脚本在独立的临时文件夹下执行，因而可以同时执行多个脚本而不互相干扰</li>
+<li>不再需要手动清理 <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code> 和 <code class="docutils literal notranslate"><span class="pre">gmt.history</span></code> 等临时文件</li>
 </ol>
+<p>除此之外，现代模式还提供了更方便的子图模式和插图模式：</p>
+<ul class="simple">
+<li><a class="reference internal" href="../../module/subplot/"><span class="doc">subplot</span></a>: 子图模式</li>
+<li><a class="reference internal" href="../../module/inset/"><span class="doc">inset</span></a>: 插图模式</li>
+</ul>
 </div>
 <div class="section" id="id3">
 <h2>15.5.3 从经典到现代<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>将一个经典模式的脚本改成现代模式下的脚本基本遵循如下几点：</p>
+<p>将一个经典模式的脚本改成现代模式下的脚本也很简单，基本遵循如下几点：</p>
 <ol class="arabic simple">
 <li>绘图脚本以 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">begin</span> <span class="pre">figname</span> <span class="pre">pdf</span></code> 开头，以 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">end</span></code> 结束</li>
 <li>去掉 <code class="docutils literal notranslate"><span class="pre">-K</span></code>、<code class="docutils literal notranslate"><span class="pre">-O</span></code>、<code class="docutils literal notranslate"><span class="pre">-P</span></code>、重定向符号以及PS文件名</li>
 <li>去掉多余的 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 选项</li>
-<li>以 <code class="docutils literal notranslate"><span class="pre">ps</span></code> 开头的模块改名了，比如 <code class="docutils literal notranslate"><span class="pre">pscoast</span> <span class="pre">=&gt;</span> <span class="pre">coast</span></code>、<code class="docutils literal notranslate"><span class="pre">psbasemap</span> <span class="pre">=&gt;</span> <span class="pre">basemap</span></code>。几个例外包括 <code class="docutils literal notranslate"><span class="pre">psxy</span> <span class="pre">=&gt;</span> <span class="pre">plot</span></code>，<code class="docutils literal notranslate"><span class="pre">psxyz</span> <span class="pre">=&gt;</span> <span class="pre">plot3d</span></code>，<code class="docutils literal notranslate"><span class="pre">psscale</span> <span class="pre">=&gt;</span> <span class="pre">colorbar</span></code>。</li>
+<li>某些模块重新命名了。经典模式下以 <code class="docutils literal notranslate"><span class="pre">ps</span></code> 开头的模块省略了 <code class="docutils literal notranslate"><span class="pre">ps</span></code>，比如 <code class="docutils literal notranslate"><span class="pre">pscoast</span> <span class="pre">=&gt;</span> <span class="pre">coast</span></code>、<code class="docutils literal notranslate"><span class="pre">psbasemap</span> <span class="pre">=&gt;</span> <span class="pre">basemap</span></code>。几个例外包括 <code class="docutils literal notranslate"><span class="pre">psxy</span> <span class="pre">=&gt;</span> <span class="pre">plot</span></code>，<code class="docutils literal notranslate"><span class="pre">psxyz</span> <span class="pre">=&gt;</span> <span class="pre">plot3d</span></code>，<code class="docutils literal notranslate"><span class="pre">psscale</span> <span class="pre">=&gt;</span> <span class="pre">colorbar</span></code>。</li>
 </ol>
-<p>现代模式下提供了几个新的功能（详细用法见模块手册）：</p>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">begin</span></code> 开始现代绘图模式</li>
-<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">end</span></code> 结束现代绘图模式</li>
-<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">figure</span></code> 设置当前图片的基本信息</li>
-<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">subplot</span></code> 子图模式及相关设置</li>
-</ul>
-</div>
-<div class="section" id="id4">
-<h2>15.5.4 现代模式: 子图模式<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
-<p>可以解决绘制多个子图时的如下麻烦：</p>
-<ol class="arabic simple">
-<li>需要多次使用 <code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 调整原点位置</li>
-<li>需要使用 <code class="docutils literal notranslate"><span class="pre">pstext</span></code> 手动为子图添加标签 (a) (b) 等</li>
-<li>需要调用 <code class="docutils literal notranslate"><span class="pre">pstext</span></code> 为整张图添加标题</li>
-</ol>
-<p>经典模式下的一个多子图绘制脚本如下：</p>
-<p>使用 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">subplot</span></code> 后的现代模式绘图脚本如下：</p>
-<p>详细用法见 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">subplot</span></code> 的模块说明文档。</p>
 </div>
 </div>
 

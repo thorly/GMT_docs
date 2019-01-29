@@ -97,8 +97,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../conf/">9 配置GMT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../proj/">10 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 GMT数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module/">12 GMT 模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">12 模块列表</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../">13 绘图示例</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../basemap/">13.1 绘制底图</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../points/">13.2 绘制线条</a></li>
@@ -220,7 +220,7 @@ gmt grdcut <span class="nv">$D</span> -R55/120/10/50 -GTibet.grd
 gmt grdgradient Tibet.grd -A0 -Nt -Gint.grad
 
 <span class="c1"># 利用basemap确定格网标注等参数</span>
-gmt basemap -JB90/0/40/30/6.5i -R65/18/117/45r -B10g10 -BwSEN
+gmt basemap -JB90/0/40/30/6.5i -R65/18/117/45+r -B10g10 -BwSEN
 
 <span class="c1"># 绘制地形</span>
 gmt grdimage -Bg10 Tibet.grd -Iint.grad -CTibet.cpt

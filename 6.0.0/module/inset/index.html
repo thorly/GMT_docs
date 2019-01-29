@@ -97,8 +97,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../conf/">9 配置GMT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../proj/">10 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 GMT数据集</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">12 GMT 模块</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">12 模块列表</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../backtracker/">12.1 backtracker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../begin/">12.2 begin</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../blockmean/">12.3 blockmean</a></li>
@@ -172,7 +172,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../hotspotter/">12.71 hotspotter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../img2google/">12.72 img2google</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../img2grd/">12.73 img2grd</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">12.74 inset</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">12.74 inset</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#inset-begin">12.74.1 <code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">begin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">必须选项</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#inset-end">12.74.2 <code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">end</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">12.74.3 示例</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../isogmt/">12.75 isogmt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">12.76 kml2gmt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../makecpt/">12.77 makecpt</a></li>
@@ -307,7 +316,7 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">12 GMT 模块</a> &raquo;</li>
+          <li><a href="../">12 模块列表</a> &raquo;</li>
         
       <li>12.74 inset</li>
     
@@ -338,8 +347,71 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://genericmappingtools.github.io/gmt/dev/inset.html" title="(在 GMT v6.0.0)"><span>inset</span></a></td>
 </tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">管理和设置插图模式</td>
+</tr>
 </tbody>
 </table>
+<p><code class="docutils literal notranslate"><span class="pre">inset</span></code> 模块用于创建插图模式，即在纸张上规划出一小片区域，并限制接下来的绘制操作均只在该小区域内操作。</p>
+<p><code class="docutils literal notranslate"><span class="pre">inset</span></code> 模块包含两个命令：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">begin</span></code> 用于设置插图模式，其定义了插图区域的位置和大小</li>
+<li><code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">end</span></code> 用于结束插图模式，此时所有的操作都会回到原始的完全图中</li>
+</ul>
+<div class="section" id="inset-begin">
+<h2>12.74.1 <code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">begin</span></code><a class="headerlink" href="#inset-begin" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id1">
+<h3>语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt inset begin
+    -D&lt;inset-box&gt;
+    <span class="o">[</span>-F&lt;box&gt;<span class="o">]</span>
+    <span class="o">[</span>-M&lt;margins&gt;<span class="o">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>必须选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-D[unit]xmin/xmax/ymin/ymax[r]</span></code></dt>
+<dd>类似 <a class="reference internal" href="../../option/R/"><span class="doc">-R 选项</span></a> 选项，使用该选项会在大区域地图中框出该选项所指定的小区域。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-D[g|j|J|n|x]&lt;refpoint&gt;+w&lt;width&gt;[/&lt;height&gt;][+j&lt;justify&gt;][+o&lt;dx&gt;[/&lt;dy&gt;]]</span></code></dt>
+<dd><p class="first">确定一个插图区域，接下来的所有绘图操作仅在该小区域内操作。</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">g|j|J|n|x&lt;refpoint&gt;</span></code> 用于指定插图区域的参考点，通常用 <code class="docutils literal notranslate"><span class="pre">j</span></code> 比较方便，例如 <code class="docutils literal notranslate"><span class="pre">jTL</span></code> 表示插图区域位于左上角，<code class="docutils literal notranslate"><span class="pre">jBR</span></code> 表示插图区域位于右下角。详情见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a> 一节</li>
+<li><code class="docutils literal notranslate"><span class="pre">+w&lt;width&gt;/&lt;height&gt;</span></code> 指定了插图区域的宽度和高度</li>
+<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify</span></code> 控制插图区域的锚点，见 <a class="reference internal" href="../../basis/anchors/"><span class="doc">锚点</span></a> 一节</li>
+<li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;/&lt;dy&gt;</span></code> 见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a> 一节</li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-F[+c&lt;clearances&gt;][+g&lt;fill&gt;][+i[[&lt;gap&gt;/]&lt;pen&gt;]][+p[&lt;pen&gt;]][+r[&lt;radius&gt;]][+s[[&lt;dx&gt;/&lt;dy&gt;/][&lt;shade&gt;]]]</span></code></dt>
+<dd>设置插图区域的背景色、轮廓等熟悉，见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a> 一节</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-M&lt;margins&gt;</span></code></dt>
+<dd><p class="first">插图内部的额外空白区域。其可以取三种形式：</p>
+<ol class="last arabic simple">
+<li>一个值，表示四个边的空白相同</li>
+<li>两个用斜杠分隔的值，分别设置水平和垂直方向的空白</li>
+<li>四个用斜杠分隔的值，分别设置左右下上四条边的空白</li>
+</ol>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="inset-end">
+<h2>12.74.2 <code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">end</span></code><a class="headerlink" href="#inset-end" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">end</span></code> 用于结束插图模式。</p>
+</div>
+<div class="section" id="id3">
+<h2>12.74.3 示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin inset png
+        gmt psbasemap -R0/40/20/60 -JM6.5i -Bafg -B+glightgreen
+    gmt inset begin -DjTR+w2.5i+o0.2i -F+gpink+p0.5p -M0.1i
+            gmt psbasemap -Rg -JA20/20/2.3i -Bafg
+            <span class="nb">echo</span> INSET <span class="p">|</span> gmt pstext -F+f12p+cTR
+    gmt inset end
+        <span class="nb">echo</span> MAP <span class="p">|</span> gmt pstext -F+f18p+cBL -Dj0.2i
+gmt end
+</pre></div>
+</div>
+</div>
 </div>
 
 

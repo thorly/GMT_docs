@@ -110,8 +110,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../conf/">9 配置GMT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../proj/">10 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 GMT数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module/">12 GMT 模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">12 模块列表</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../gallery/">13 绘图示例</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
@@ -306,6 +306,24 @@ gmt end
 <div class="section" id="id6">
 <h2>3.3.5 插图模式<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>在绘制研究区域的地图时，有时研究区域的范围比较小。在这种情况下，为了更好地显示研究区域的具体地理位置，通过会绘制一个更大区域的地图，并在大区域地图中框出研究区域的位置，这种图件称之为 inset map，中文没有统一的翻译，通常称之为图中图或者插图。插图模式可以通过模块 <a class="reference internal" href="../../module/inset/"><span class="doc">inset</span></a> 实现。</p>
+<p><code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">begin</span></code> 用于进入插图模式，其作用是在图纸上标记出一个矩形区域，并将绘图原点移动到该矩形区域的左下角，接下来的所有绘图命令均只在该插图区域内操作，而 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">end</span></code> 则用于退出插图模式，并将坐标原点移动回原大图中。</p>
+<p>下面仅展示一个简单的示例：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin inset png
+        gmt basemap -R0/40/40/60 -JM6.5i -Bafg -B+glightgreen
+
+    <span class="c1"># 插图模式</span>
+    gmt inset begin -DjTR+w2.5i+o0.2i -F+gpink+p0.5p -M0.1i
+            gmt basemap -Rg -JA20/20/2.3i -Bafg
+            <span class="nb">echo</span> INSET <span class="p">|</span> gmt text -F+f12p+cTR
+        gmt inset end
+
+    <span class="nb">echo</span> MAP <span class="p">|</span> gmt text -F+f18p+cBL -Dj0.2i
+gmt end
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="../../_images/mode-gmtplot-1.png" src="../../_images/mode-gmtplot-1.png" />
+</div>
 </div>
 </div>
 
