@@ -402,12 +402,12 @@
 <div class="section" id="id3">
 <h2>12.74.3 示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin inset png
-        gmt psbasemap -R0/40/20/60 -JM6.5i -Bafg -B+glightgreen
+        gmt basemap -R0/40/20/60 -JM6.5i -Bafg -B+glightgreen
     gmt inset begin -DjTR+w2.5i+o0.2i -F+gpink+p0.5p -M0.1i
-            gmt psbasemap -Rg -JA20/20/2.3i -Bafg
-            <span class="nb">echo</span> INSET <span class="p">|</span> gmt pstext -F+f12p+cTR
+            gmt basemap -Rg -JA20/20/2.3i -Bafg
+            <span class="nb">echo</span> INSET <span class="p">|</span> gmt text -F+f12p+cTR
     gmt inset end
-        <span class="nb">echo</span> MAP <span class="p">|</span> gmt pstext -F+f18p+cBL -Dj0.2i
+        <span class="nb">echo</span> MAP <span class="p">|</span> gmt text -F+f18p+cBL -Dj0.2i
 gmt end
 </pre></div>
 </div>
