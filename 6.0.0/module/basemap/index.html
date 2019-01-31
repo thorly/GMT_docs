@@ -370,9 +370,9 @@
 <dt><code class="docutils literal notranslate"><span class="pre">-L[g|j|J|n|x]&lt;refpoint&gt;+c[&lt;slon&gt;/]&lt;slat&gt;+w&lt;length&gt;[e|f|k|M|n|u][+a&lt;align&gt;][+f][+j&lt;justify&gt;][+l[&lt;label&gt;]][+o&lt;dx&gt;/[&lt;dy&gt;]][+u]</span></code></dt>
 <dd><p class="first">在地图上指定位置绘制比例尺。</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">[g|j|J|n|x]&lt;refpoint&gt;</span></code> 指定地图上的参考点，详情见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a> 一节</li>
-<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 指定比例尺上的锚点（默认锚点为比例尺的中心），详情见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a> 一节</li>
-<li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;/&lt;dy&gt;</span></code> 为比例尺设置额外的偏移量，详情见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a> 一节</li>
+<li><code class="docutils literal notranslate"><span class="pre">[g|j|J|n|x]&lt;refpoint&gt;</span></code> 指定地图上的参考点，详情见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</li>
+<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 指定比例尺上的锚点（默认锚点为比例尺的中心），详情见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</li>
+<li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;/&lt;dy&gt;</span></code> 为比例尺设置额外的偏移量，详情见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</li>
 <li><code class="docutils literal notranslate"><span class="pre">+c&lt;slon&gt;/&lt;slat&gt;</span></code> 要绘制哪一个点的比例尺，对于倾斜投影， <code class="docutils literal notranslate"><span class="pre">slon</span></code> 默认取中央经线</li>
 <li><code class="docutils literal notranslate"><span class="pre">+w&lt;length&gt;[e|f|M|n|k|u]</span></code> 比例尺的长度，默认单位为km，也可使用其他长度单位 <a class="reference internal" href="../../basis/unit/"><span class="doc">单位</span></a></li>
 <li><code class="docutils literal notranslate"><span class="pre">+a&lt;align&gt;</span></code> 修改比例尺标签的位置，默认位于比例尺上方中部，可以取 <code class="docutils literal notranslate"><span class="pre">l</span></code> 、 <code class="docutils literal notranslate"><span class="pre">r</span></code> 、 <code class="docutils literal notranslate"><span class="pre">t</span></code> 、
@@ -402,9 +402,9 @@ gmt psbasemap -R90/180/-50/50 -Jm0.025i -Bafg -B+tMercator -Lx1i/1i+c0+w5000k &g
 <dt><code class="docutils literal notranslate"><span class="pre">-Td[g|j|J|n|x]&lt;refpoint&gt;+w&lt;width&gt;[+f[&lt;level&gt;]][+j&lt;justify&gt;][+l&lt;w,e,s,n&gt;][+o&lt;dx&gt;[/&lt;dy&gt;]]</span></code></dt>
 <dd><p class="first">在指定位置绘制方向玫瑰图</p>
 <ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">[g|j|J|n|x]&lt;refpoint&gt;</span></code> 指定地图上的参考点，见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a></li>
-<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 指定玫瑰图上的锚点（默认为 <code class="docutils literal notranslate"><span class="pre">MC</span></code> ），见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a></li>
-<li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;/&lt;dy&gt;</span></code> 指定参考点的偏移量，见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">[g|j|J|n|x]&lt;refpoint&gt;</span></code> 指定地图上的参考点，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 指定玫瑰图上的锚点（默认为 <code class="docutils literal notranslate"><span class="pre">MC</span></code> ），见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;/&lt;dy&gt;</span></code> 指定参考点的偏移量，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a></li>
 <li><code class="docutils literal notranslate"><span class="pre">+w&lt;width&gt;</span></code> 玫瑰图的宽度</li>
 <li><code class="docutils literal notranslate"><span class="pre">+f&lt;level&gt;</span></code> 绘制fancy玫瑰图， <code class="docutils literal notranslate"><span class="pre">&lt;level&gt;</span></code> 指定了fancy玫瑰图的不同类型。
 <code class="docutils literal notranslate"><span class="pre">&lt;level&gt;</span></code> 可以取：<ul>
@@ -434,9 +434,9 @@ gmt psbasemap -R90/180/-50/50 -Jm0.025i -Bafg -B+tMercator -Lx1i/1i+c0+w5000k &g
 <p>磁场玫瑰包括两个同心圆环，其中外环用于展示方向信息，内环用于显示磁场方向。</p>
 <p>说明：</p>
 <ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">[g|j|J|n|x]&lt;refpoint&gt;</span></code> 指定地图上的参考点，见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a></li>
-<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 指定玫瑰图上的锚点（默认为 <code class="docutils literal notranslate"><span class="pre">MC</span></code> ），见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a></li>
-<li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;/&lt;dy&gt;</span></code> 指定参考点的偏移量，见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">[g|j|J|n|x]&lt;refpoint&gt;</span></code> 指定地图上的参考点，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 指定玫瑰图上的锚点（默认为 <code class="docutils literal notranslate"><span class="pre">MC</span></code> ），见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;/&lt;dy&gt;</span></code> 指定参考点的偏移量，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a></li>
 <li><code class="docutils literal notranslate"><span class="pre">+w&lt;width&gt;</span></code> 玫瑰图的宽度</li>
 <li><code class="docutils literal notranslate"><span class="pre">+p&lt;pen&gt;</span></code> 绘制外环并设置其画笔属性</li>
 <li><code class="docutils literal notranslate"><span class="pre">+i&lt;pen&gt;</span></code> 绘制内环并设置其画笔属性</li>
@@ -481,7 +481,7 @@ gmt psbasemap -R90/180/-50/50 -Jm0.025i -Bafg -B+tMercator -Lx1i/1i+c0+w5000k &g
 <li><code class="docutils literal notranslate"><span class="pre">-D&lt;xmin&gt;/&lt;xmax&gt;/&lt;ymin&gt;/&lt;ymax&gt;[r]</span></code> ：类似 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 的语法，直接指定
 inset box在地图上的范围</li>
 <li><code class="docutils literal notranslate"><span class="pre">-D&lt;unit&gt;&lt;xmin&gt;/&lt;xmax&gt;/&lt;ymin&gt;/&lt;ymax&gt;</span></code> ：类似 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 的语法，指定投影后的坐标范围， <code class="docutils literal notranslate"><span class="pre">&lt;unit&gt;</span></code> 为投影后的坐标单位</li>
-<li>指定参考点和锚点，见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a> 一节<ol class="arabic">
+<li>指定参考点和锚点，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节<ol class="arabic">
 <li><code class="docutils literal notranslate"><span class="pre">[g|j|J|n|x]&lt;refpoint&gt;</span></code> 指定大区域底图上的参考点</li>
 <li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 指定inset box上的锚点</li>
 <li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;/&lt;dy&gt;</span></code> 指定参考点的额外偏移量</li>
@@ -499,7 +499,7 @@ inset box在地图上的范围</li>
 <li>该选项用于给inset box、比例尺和方向玫瑰绘制背景边框，默认同时控制三者的属性</li>
 <li><code class="docutils literal notranslate"><span class="pre">d|l|t</span></code> 表示该选项定义的属性仅适用于 <code class="docutils literal notranslate"><span class="pre">-D</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-L</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-T</span></code> 选项</li>
 <li>直接使用 <code class="docutils literal notranslate"><span class="pre">-F</span></code> 选项，则绘制背景边框，边框属性由参数 <code class="docutils literal notranslate"><span class="pre">MAP_FRAME_PEN</span></code> 控制</li>
-<li>其他子选项的含义见 <a class="reference internal" href="../../basis/embellishments/"><span class="doc">绘制修饰物</span></a> 一节的详细介绍</li>
+<li>其他子选项的含义见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节的详细介绍</li>
 </ol>
 </dd>
 </dl>
@@ -652,7 +652,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月29日.
+      最后更新于 2019年01月31日.
 
     </p>
   </div>

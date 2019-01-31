@@ -98,19 +98,17 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">4.5 填充</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id2">4.5.1 填充颜色</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">4.5.2 填充图案</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">4.5.3 填充小结</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">4.5.4 小练习</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">4.5.3 小练习</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../text/">4.6 文字</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-fonts/">4.7 特殊字体</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-characters/">4.8 特殊字符</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../character-escape/">4.9 转义序列</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lines/">4.10 线条属性</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vectors/">4.11 绘制矢量/箭头</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../anchors/">4.12 锚点</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../embellishments/">4.13 绘制修饰物</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../glossary/">4.14 词汇表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../escape-character/">4.7 转义序列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-character/">4.8 特殊字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">4.9 绘制矢量/箭头</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../line/">4.10 线条属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anchor/">4.11 锚点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../embellishment/">4.12 绘制修饰物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary/">4.13 词汇表</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
@@ -210,23 +208,23 @@
             
   <div class="section" id="index-0">
 <span id="id1"></span><h1>4.5 填充<a class="headerlink" href="#index-0" title="永久链接至标题">¶</a></h1>
-<p>用画笔绘制了圆形或多边形之后，还需要为其填充颜色。在GMT模块的语法介绍中，一般用
+<p>用画笔绘制了圆形或多边形之后，还可以为其填充颜色。在GMT模块的语法介绍中，一般用
 <code class="docutils literal notranslate"><span class="pre">&lt;fill&gt;</span></code> 表示需要指定填充属性，读者在见到 <code class="docutils literal notranslate"><span class="pre">&lt;fill&gt;</span></code> 时应自动联想到本节介绍的内容。</p>
 <p>填充 <code class="docutils literal notranslate"><span class="pre">&lt;fill&gt;</span></code> 有两种方式/形式：填充颜色和填充图案。GMT 的模块中通常使用
 <code class="docutils literal notranslate"><span class="pre">-G&lt;fill&gt;</span></code> 选项来填充颜色，本节以该选项为例。</p>
 <div class="section" id="id2">
 <h2>4.5.1 填充颜色<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p>给区域填充颜色很简单，直接用 <code class="docutils literal notranslate"><span class="pre">-G&lt;color&gt;</span></code> 即可。颜色在 <a class="reference internal" href="../color/"><span class="doc">颜色</span></a> 一节已经介绍过了。比如 <code class="docutils literal notranslate"><span class="pre">-Gred</span></code>、 <code class="docutils literal notranslate"><span class="pre">-G230/200/0</span></code>。</p>
+<p>给区域填充颜色很简单，直接用 <code class="docutils literal notranslate"><span class="pre">-G&lt;color&gt;</span></code> 即可。颜色在 <a class="reference internal" href="../color/"><span class="doc">颜色</span></a> 一节已经介绍过了。比如 <code class="docutils literal notranslate"><span class="pre">-Gred</span></code>、<code class="docutils literal notranslate"><span class="pre">-G230/200/0</span></code>。</p>
 </div>
 <div class="section" id="id3">
 <h2>4.5.2 填充图案<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>还可以给区域填充图案（pattern），比如地质填图里经常会给不同区域填充不同的图案以区分不同的地质时期。其语法为:</p>
+<p>还可以给区域填充图案（pattern），比如地质填图里经常会给不同区域填充不同的图案以区分不同的地质结构。其语法为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-G<span class="o">[</span>p<span class="p">|</span>P<span class="o">]</span>&lt;pattern&gt;<span class="o">[</span>+b&lt;color&gt;<span class="o">][</span>+f&lt;color&gt;<span class="o">][</span>+r&lt;dpi&gt;<span class="o">]</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;pattern&gt;</span></code> 有两种取法：</p>
 <ul class="simple">
-<li>取1到90内的整数，表示使用GMT提供的<a class="reference internal" href="../../appendix/patterns/"><span class="doc">90种预定义的64x64位图图案</span></a></li>
+<li>取1到90内的整数，表示使用GMT提供的<a class="reference internal" href="../../appendix/patterns/"><span class="doc">90种内置位图图案</span></a></li>
 <li>取文件名，表示使用自定义的1、8、24位Sun光栅文件作为位图图案</li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">+r&lt;dpi&gt;</span></code> 设置了位图图案在当前页面上的分辨率。<code class="docutils literal notranslate"><span class="pre">&lt;dpi&gt;</span></code> 越大，则区域内位图重复的次数越多。<code class="docutils literal notranslate"><span class="pre">&lt;dpi&gt;</span></code> 的默认值为1200。</p>
@@ -236,27 +234,19 @@
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
 <ol class="last arabic simple">
-<li>由于PostScript实现的限制，<code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项里使用的光栅图片必须小于146x146像素；若要使用更大的图像，需要使用 <code class="docutils literal notranslate"><span class="pre">psimage</span></code> 模块</li>
-<li>Sun 光栅文件的格式说明见 <a class="reference internal" href="../../grid/overview/#sun-raster"><span class="std std-ref">光栅文件</span></a>。若GMT在编译时链接了GDAL，则也可以使用其他格式的图片。</li>
-<li>在PostScript Level 1下，图案填充是通过使用多边形做路径裁剪实现的。复杂的裁剪路径会需要更多的内存，因而可能导致某些PS解释器由于内存不足而退出。在这种情况下，建议使用灰度填充区域。</li>
+<li>使用的光栅图片必须小于146x146像素；若要使用更大的图像，需要使用 <a class="reference internal" href="../../module/image/"><span class="doc">image</span></a> 模块</li>
+<li>若GMT在编译时链接了GDAL，则也可以使用其他格式的图片。</li>
+<li>图案填充是通过使用多边形做路径裁剪实现的。复杂的裁剪路径会需要更多的内存，因而可能导致某些PS解释器由于内存不足而退出。在这种情况下，建议使用灰度填充区域。</li>
 </ol>
 </div>
 </div>
 <div class="section" id="id4">
-<h2>4.5.3 填充小结<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
-<p>GMT中通常使用 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项填充多边形或符号。有两种填充方式，分别是：</p>
-<ul class="simple">
-<li>填充颜色： <code class="docutils literal notranslate"><span class="pre">-G&lt;color&gt;</span></code></li>
-<li>填充图案： <code class="docutils literal notranslate"><span class="pre">-G[p|P]&lt;pattern&gt;[+b&lt;color&gt;][+f&lt;color&gt;][+r&lt;dpi&gt;]</span></code></li>
-</ul>
-</div>
-<div class="section" id="id5">
-<h2>4.5.4 小练习<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
-<p>下面的命令在底图中心绘制了一个直径为4厘米的圆，并填充颜色:</p>
+<h2>4.5.3 小练习<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>下面使用 <a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a> 模块在底图中心绘制了一个直径为4厘米的圆，并填充颜色:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">5</span> <span class="m">5</span> <span class="p">|</span> gmt plot -JX10c/10c -R0/10/0/10 -Baf -Sc4c -G&lt;fill&gt; -pdf <span class="nb">test</span>
 </pre></div>
 </div>
-<p>请尝试将其中的 <code class="docutils literal notranslate"><span class="pre">&lt;fill&gt;</span></code> 修改为以下不同的值并查看效果以理解这一节的内容：</p>
+<p>请尝试将命令中的 <code class="docutils literal notranslate"><span class="pre">&lt;fill&gt;</span></code> 修改为以下不同的值并查看效果以理解这一节的内容：</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">-G128</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">-G127/255/0</span></code></li>
@@ -315,7 +305,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月29日.
+      最后更新于 2019年01月31日.
 
     </p>
   </div>

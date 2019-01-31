@@ -348,8 +348,8 @@
 </tbody>
 </table>
 <p>该命令用于在图上添加文本，可以自由控制文本的大小、颜色、字体、角度。</p>
-<p>除了可以添加键盘上可直接输入的字符外，还可以通过使用转义字符、特殊字体以及八进制码实现希腊字母、上下标等功能，详见 <a class="reference internal" href="../../basis/text/"><span class="doc">文字</span></a> 、 <a class="reference internal" href="../../basis/character-escape/"><span class="doc">转义序列</span></a> 、
-<a class="reference internal" href="../../basis/special-fonts/"><span class="doc">特殊字体</span></a> 和 <a class="reference internal" href="../../basis/special-characters/"><span class="doc">特殊字符</span></a> 。</p>
+<p>除了可以添加键盘上可直接输入的字符外，还可以通过使用转义字符、特殊字体以及八进制码实现希腊字母、上下标等功能，详见 <a class="reference internal" href="../../basis/text/"><span class="doc">文字</span></a>、<a class="reference internal" href="../../basis/escape-character/"><span class="doc">转义序列</span></a>、
+<a class="reference internal" href="../../basis/special-character/"><span class="doc">特殊字符</span></a>。</p>
 <div class="section" id="id1">
 <h2>12.110.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <dl class="docutils">
@@ -402,7 +402,7 @@
 <li><code class="docutils literal notranslate"><span class="pre">+f&lt;font&gt;</span></code> 设置文本的字体， 见 <a class="reference internal" href="../../basis/text/"><span class="doc">文字</span></a></li>
 <li><code class="docutils literal notranslate"><span class="pre">+a&lt;angle&gt;</span></code> 文本相对于水平方向逆时针旋转的角度</li>
 <li><code class="docutils literal notranslate"><span class="pre">+A&lt;angle&gt;</span></code> force text-baselines to convert into the -90/+90 range</li>
-<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 文本对齐方式，见 <a class="reference internal" href="../../basis/anchors/"><span class="doc">锚点</span></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 文本对齐方式，见 <a class="reference internal" href="../../basis/anchor/"><span class="doc">锚点</span></a></li>
 </ol>
 <p>下面的命令中，统一设置了所有文本的字号为30p，4号字体，红色，文本旋转45度，且以左上角对齐:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pstext -R0/10/0/10 -JX10c/10c -B1g1 -F+f30p,4,red+a45+jTL &gt; text.ps <span class="s">&lt;&lt; EOF</span>
@@ -591,7 +591,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月29日.
+      最后更新于 2019年01月31日.
 
     </p>
   </div>

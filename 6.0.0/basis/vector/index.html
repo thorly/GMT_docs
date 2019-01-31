@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.11 绘制矢量/箭头 &mdash; GMT参考手册</title>
+  <title>4.9 绘制矢量/箭头 &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="4.12 锚点" href="../anchors/" />
-    <link rel="prev" title="4.10 线条属性" href="../lines/" /> 
+    <link rel="next" title="4.10 线条属性" href="../line/" />
+    <link rel="prev" title="4.8 特殊字符" href="../special-character/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -97,19 +97,18 @@
 <li class="toctree-l2"><a class="reference internal" href="../pen/">4.4 画笔</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../fill/">4.5 填充</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../text/">4.6 文字</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-fonts/">4.7 特殊字体</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-characters/">4.8 特殊字符</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../character-escape/">4.9 转义序列</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lines/">4.10 线条属性</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.11 绘制矢量/箭头</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">4.11.1 矢量分类</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">4.11.2 矢量箭头属性</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">4.11.3 矢量示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../escape-character/">4.7 转义序列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-character/">4.8 特殊字符</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.9 绘制矢量/箭头</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">4.9.1 矢量分类</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">4.9.2 矢量箭头属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">4.9.3 矢量示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../anchors/">4.12 锚点</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../embellishments/">4.13 绘制修饰物</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../glossary/">4.14 词汇表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../line/">4.10 线条属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anchor/">4.11 锚点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../embellishment/">4.12 绘制修饰物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary/">4.13 词汇表</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
@@ -186,14 +185,14 @@
         
           <li><a href="../">4 绘图基础</a> &raquo;</li>
         
-      <li>4.11 绘制矢量/箭头</li>
+      <li>4.9 绘制矢量/箭头</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/basis/vectors.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/basis/vector.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -208,7 +207,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>4.11 绘制矢量/箭头<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>4.9 绘制矢量/箭头<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>矢量是一个有大小和方向的量。</p>
 <p>GMT 中能够绘制矢量的模块包括 <code class="docutils literal notranslate"><span class="pre">psxy</span></code>、 <code class="docutils literal notranslate"><span class="pre">psxyz</span></code>、 <code class="docutils literal notranslate"><span class="pre">grdvector</span></code> 和 <code class="docutils literal notranslate"><span class="pre">psvelo</span></code> 等。除此之外，大多数简单的线段也可以加上矢量箭头。</p>
 <p>GMT 中绘制的矢量都可以分为两个独立的部分：</p>
@@ -216,9 +215,8 @@
 <li>矢量线</li>
 <li>矢量箭头</li>
 </ol>
-<p>矢量线就是简单的线段，其属性在 <a class="reference internal" href="../pen/"><span class="doc">画笔</span></a> 和 <a class="reference internal" href="../lines/"><span class="doc">线条属性</span></a> 已经详细介绍。这一节将详细介绍 GMT 中的矢量箭头的属性。</p>
 <div class="section" id="id2">
-<h2>4.11.1 矢量分类<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>4.9.1 矢量分类<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>GMT 中的矢量可以分为三类：</p>
 <ul class="simple">
 <li>笛卡尔矢量：矢量线是直线。可以通过如下几种方式指定<ol class="arabic">
@@ -251,13 +249,13 @@ gmt end
 </pre></div>
 </div>
 <div class="figure align-center" id="id5">
-<img alt="../../_images/vectors-gmtplot-0.png" src="../../_images/vectors-gmtplot-0.png" />
+<img alt="../../_images/vector-gmtplot-0.png" src="../../_images/vector-gmtplot-0.png" />
 <p class="caption"><span class="caption-number">图 4.3 </span><span class="caption-text">GMT中的三种矢量箭头</span></p>
 </div>
 <p>（左）笛卡尔矢量；（中）弧形矢量；（右）地理矢量</p>
 </div>
 <div class="section" id="id3">
-<h2>4.11.2 矢量箭头属性<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>4.9.2 矢量箭头属性<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
 <p class="last">读者可以修改上面示例中的 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项后的参数并查看效果来理解接下来的内容。</p>
@@ -322,11 +320,11 @@ the <em>scale</em> to convert to polar coordinates with length in given unit.</l
 <p>除此之外，GMT配置参数中 <a class="reference internal" href="../../conf/map/#map-vector-shape"><span class="std std-ref">MAP_VECTOR_SHAPE</span></a> 也可以用于修改箭头的外观。</p>
 </div>
 <div class="section" id="id4">
-<h2>4.11.3 矢量示例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>4.9.3 矢量示例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>下图展示了部分 GMT 可以绘制的矢量，每个矢量右边给出了其对应的选项。需要注意的是，某些矢量设置了 <code class="docutils literal notranslate"><span class="pre">MAP_VECTOR_SHAPE</span></code> 的值为 0.5。</p>
-<p><a class="reference download internal" download="" href="../../_downloads/e0bb0f24285b0e4aa45bc40698ab14cf/vectors-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/469a7e5b61cd7171e70622da05d223c1/vector-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center">
-<img alt="../../_images/vectors-gmtplot-1.png" src="../../_images/vectors-gmtplot-1.png" />
+<img alt="../../_images/vector-gmtplot-1.png" src="../../_images/vector-gmtplot-1.png" />
 </div>
 </div>
 </div>
@@ -360,10 +358,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../anchors/" class="btn btn-neutral float-right" title="4.12 锚点" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../line/" class="btn btn-neutral float-right" title="4.10 线条属性" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../lines/" class="btn btn-neutral" title="4.10 线条属性" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../special-character/" class="btn btn-neutral" title="4.8 特殊字符" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -373,7 +371,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月29日.
+      最后更新于 2019年01月31日.
 
     </p>
   </div>

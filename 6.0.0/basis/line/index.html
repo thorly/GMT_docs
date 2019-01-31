@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="4.11 绘制矢量/箭头" href="../vectors/" />
-    <link rel="prev" title="4.9 转义序列" href="../character-escape/" /> 
+    <link rel="next" title="4.11 锚点" href="../anchor/" />
+    <link rel="prev" title="4.9 绘制矢量/箭头" href="../vector/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -97,9 +97,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../pen/">4.4 画笔</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../fill/">4.5 填充</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../text/">4.6 文字</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-fonts/">4.7 特殊字体</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-characters/">4.8 特殊字符</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../character-escape/">4.9 转义序列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../escape-character/">4.7 转义序列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-character/">4.8 特殊字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">4.9 绘制矢量/箭头</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">4.10 线条属性</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id2">4.10.1 端点偏移量</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">4.10.2 线条平滑</a></li>
@@ -107,10 +107,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#id5">4.10.4 其他属性</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../vectors/">4.11 绘制矢量/箭头</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../anchors/">4.12 锚点</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../embellishments/">4.13 绘制修饰物</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../glossary/">4.14 词汇表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anchor/">4.11 锚点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../embellishment/">4.12 绘制修饰物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary/">4.13 词汇表</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
@@ -194,7 +193,7 @@
         
             
             
-              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/basis/lines.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/basis/line.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -224,18 +223,18 @@
 <li>对于每个偏移量，都可以使用长度单位或距离单位</li>
 </ul>
 <p>图中，细线和粗线使用了完全相同的输入数据，其中细线没有使用 <code class="docutils literal notranslate"><span class="pre">+o</span></code> 选项的结果，此时线段的起点和终点与数据指定的点重合，粗线在绘制线条时使用了 <code class="docutils literal notranslate"><span class="pre">-W2p+o1c/500k</span></code> 选项，即在起点处偏移1厘米，在终点处偏移500千米。</p>
-<p><a class="reference download internal" download="" href="../../_downloads/4ac66eccef9a3da3cf9f545786c75bfd/lines-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/f3f26ac1c806972b4a1693b6c6a864d2/line-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center">
-<img alt="../../_images/lines-gmtplot-0.png" src="../../_images/lines-gmtplot-0.png" />
+<img alt="../../_images/line-gmtplot-0.png" src="../../_images/line-gmtplot-0.png" />
 </div>
 </div>
 <div class="section" id="id3">
 <h2>4.10.2 线条平滑<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>通常情况下，在绘制线条时，两点之间是用直线连接的（地图上两点之间默认用大圆弧连接）。使用 <code class="docutils literal notranslate"><span class="pre">+s</span></code> 子选项会使用 Bezier splines 在两点之间做样条插值以得到更光滑的曲线。</p>
 <p>下图中，左图使用了 <code class="docutils literal notranslate"><span class="pre">-W2p</span></code> 选项，右边使用了 <code class="docutils literal notranslate"><span class="pre">-W2p+s</span></code>。</p>
-<p><a class="reference download internal" download="" href="../../_downloads/0d8af62e880f2c8cd8c0b9c9a0a51b38/lines-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/da4cf9bc3eb09490cddc3ee7365b767c/line-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center">
-<img alt="../../_images/lines-gmtplot-1.png" src="../../_images/lines-gmtplot-1.png" />
+<img alt="../../_images/line-gmtplot-1.png" src="../../_images/line-gmtplot-1.png" />
 </div>
 </div>
 <div class="section" id="id4">
@@ -246,12 +245,12 @@
 </div>
 <ul class="simple">
 <li>默认会在线段两端都加上箭头，<code class="docutils literal notranslate"><span class="pre">b|e</span></code> 表示只绘制开头或结尾的箭头</li>
-<li>箭头属性 <code class="docutils literal notranslate"><span class="pre">&lt;vspecs&gt;</span></code> 的细节参考 <a class="reference internal" href="../vectors/"><span class="doc">绘制矢量/箭头</span></a> 一节的内容</li>
+<li>箭头属性 <code class="docutils literal notranslate"><span class="pre">&lt;vspecs&gt;</span></code> 的细节参考 <a class="reference internal" href="../vector/"><span class="doc">绘制矢量/箭头</span></a> 一节的内容</li>
 </ul>
 <p>下图中细线是通常绘制的线段，粗线使用的选项是 <code class="docutils literal notranslate"><span class="pre">-W2p+o1c/500k+vb0.2i+gred+pfaint+bc+ve0.3i+gblue</span></code>。</p>
-<p><a class="reference download internal" download="" href="../../_downloads/c389e4957a40a80e37b763ef8f5ab556/lines-gmtplot-2.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/a3eea3566b0f798ffb5dd7b5f07e6487/line-gmtplot-2.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center">
-<img alt="../../_images/lines-gmtplot-2.png" src="../../_images/lines-gmtplot-2.png" />
+<img alt="../../_images/line-gmtplot-2.png" src="../../_images/line-gmtplot-2.png" />
 </div>
 </div>
 <div class="section" id="id5">
@@ -294,10 +293,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../vectors/" class="btn btn-neutral float-right" title="4.11 绘制矢量/箭头" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../anchor/" class="btn btn-neutral float-right" title="4.11 锚点" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../character-escape/" class="btn btn-neutral" title="4.9 转义序列" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../vector/" class="btn btn-neutral" title="4.9 绘制矢量/箭头" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -307,7 +306,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月29日.
+      最后更新于 2019年01月31日.
 
     </p>
   </div>

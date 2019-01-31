@@ -309,13 +309,13 @@ gmt end
 <p><code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">begin</span></code> 用于进入插图模式，其作用是在图纸上标记出一个矩形区域，并将绘图原点移动到该矩形区域的左下角，接下来的所有绘图命令均只在该插图区域内操作，而 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">end</span></code> 则用于退出插图模式，并将坐标原点移动回原大图中。</p>
 <p>下面仅展示一个简单的示例：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin inset png
-        gmt basemap -R0/40/40/60 -JM6.5i -Bafg -B+glightgreen
+    gmt basemap -R0/40/40/60 -JM6.5i -Bafg -B+glightgreen
 
     <span class="c1"># 插图模式</span>
     gmt inset begin -DjTR+w2.5i+o0.2i -F+gpink+p0.5p -M0.1i
-            gmt basemap -Rg -JA20/20/2.3i -Bafg
-            <span class="nb">echo</span> INSET <span class="p">|</span> gmt text -F+f12p+cTR
-        gmt inset end
+        gmt basemap -Rg -JA20/20/2.3i -Bafg
+        <span class="nb">echo</span> INSET <span class="p">|</span> gmt text -F+f12p+cTR
+    gmt inset end
 
     <span class="nb">echo</span> MAP <span class="p">|</span> gmt text -F+f18p+cBL -Dj0.2i
 gmt end
@@ -369,7 +369,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月29日.
+      最后更新于 2019年01月31日.
 
     </p>
   </div>
