@@ -103,14 +103,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../pen/">4.4 画笔</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../fill/">4.5 填充</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../text/">4.6 文字</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-fonts/">4.7 特殊字体</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-characters/">4.8 特殊字符</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../character-escape/">4.9 转义序列</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lines/">4.10 线条属性</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vectors/">4.11 绘制矢量/箭头</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../anchors/">4.12 锚点</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../embellishments/">4.13 绘制修饰物</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../glossary/">4.14 词汇表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../escape-character/">4.7 转义序列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-character/">4.8 特殊字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">4.9 绘制矢量/箭头</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../line/">4.10 线条属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anchor/">4.11 锚点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../embellishment/">4.12 绘制修饰物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary/">4.13 词汇表</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
@@ -238,19 +237,10 @@
 </div>
 <p>图中左边把纸张竖着放的称为Portrait（肖像）模式，右边把纸张横着放的方式称为
 Landscape（风景）模式。记起来也很简单，人是瘦长的，所以人的肖像照需要竖着拍，风景是矮胖的，就需要横着拍。</p>
-<div class="admonition note">
-<p class="first admonition-title">注解</p>
-<p>对于Portrait模式和Landscape模式，还有另外一种理解方式，即认为画布总是竖着放的。</p>
-<ul class="simple">
-<li>Portrait模式：此模式下坐标原点位于纸张左下角，X轴从左到右递增，与画布的短边平行，Y轴从下往上递增，与画布的长边平行</li>
-<li>Landscape模式：此模式下坐标原点位于纸张右下角，X轴从下往上递增，与画布的长边平行，Y轴从右往左递增，与画布的短边平行</li>
-</ul>
-<p class="last">这种理解方式下，Landscape模式可以认为是在Portrait模式的基础上先将坐标原点沿X轴移动到右下角，在将坐标系旋转90度得到。</p>
-</div>
 <p>由于历史原因，GMT中画布的默认放置方式是Landscape模式。有两种方式可以修改画布方向：</p>
 <ol class="arabic simple">
 <li>在第一个<strong>绘图</strong>命令中使用 <a class="reference internal" href="../../option/P/"><span class="doc">-P 选项</span></a></li>
-<li>修改GMT参数中的 <a class="reference internal" href="../../conf/ps/#ps-page-orientation"><span class="std std-ref">PS_PAGE_ORIENTATION</span></a></li>
+<li>设置GMT参数 <a class="reference internal" href="../../conf/ps/#ps-page-orientation"><span class="std std-ref">PS_PAGE_ORIENTATION</span></a> 为 <code class="docutils literal notranslate"><span class="pre">portrait</span></code></li>
 </ol>
 <div class="admonition tip">
 <p class="first admonition-title">小技巧</p>
@@ -320,7 +310,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月29日.
+      最后更新于 2019年01月31日.
 
     </p>
   </div>

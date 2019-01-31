@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="4.7 特殊字体" href="../special-fonts/" />
+    <link rel="next" title="4.7 转义序列" href="../escape-character/" />
     <link rel="prev" title="4.5 填充" href="../fill/" /> 
 
   
@@ -104,14 +104,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#id6">4.6.5 小练习</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../special-fonts/">4.7 特殊字体</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-characters/">4.8 特殊字符</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../character-escape/">4.9 转义序列</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lines/">4.10 线条属性</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vectors/">4.11 绘制矢量/箭头</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../anchors/">4.12 锚点</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../embellishments/">4.13 绘制修饰物</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../glossary/">4.14 词汇表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../escape-character/">4.7 转义序列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-character/">4.8 特殊字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">4.9 绘制矢量/箭头</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../line/">4.10 线条属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anchor/">4.11 锚点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../embellishment/">4.12 绘制修饰物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary/">4.13 词汇表</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
@@ -211,8 +210,11 @@
             
   <div class="section" id="index-0">
 <span id="id1"></span><h1>4.6 文字<a class="headerlink" href="#index-0" title="永久链接至标题">¶</a></h1>
-<p>前面几节说了GMT中如何画线条以及如何填充颜色，这节说说文字的那些事。</p>
-<p>文字，或者称文本或字符串，主要由三个属性控制：文字大小、字体、颜色。三个属性之间用逗号分隔，即 <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;,&lt;fonttype&gt;,&lt;fill&gt;</span></code>。三者均是可选的，但先后顺序不可乱。若其中任意一个属性被省略，则使用该属性的默认值或上一次的设置值。</p>
+<p>文字，或者称文本或字符串，主要由三个属性控制：文字大小、字体、颜色。三个属性之间用逗号分隔，即:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;size&gt;,&lt;fonttype&gt;,&lt;fill&gt;
+</pre></div>
+</div>
+<p>三者均是可选的，但先后顺序不可乱。若其中任意一个属性被省略，则使用该属性的默认值或上一次的设置值。</p>
 <div class="section" id="id2">
 <h2>4.6.1 文字大小<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>文字大小，可以理解成字号，用数字加单位表示。在不指定单位的情况下默认单位为
@@ -279,19 +281,18 @@
 </div>
 <div class="section" id="id3">
 <h2>4.6.2 字体<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>大多数PostScript解释器都内置35种标准字体，GMT默认支持且只支持这35种标准字体。若你使用的PS解释器不支持其中某些字体，则会自动用默认字体（一般是Courier）替换需要的字体。</p>
-<p>下图给出了GMT支持的35种字体的列表：</p>
+<p>GMT默认支持35种标准字体。下图给出了GMT支持的35种字体的名字及对应的编号:</p>
 <p><a class="reference download internal" download="" href="../../_downloads/8d4da6c7d3fb53eb848be489b1794b70/text-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center">
 <img alt="../../_images/text-gmtplot-0.png" src="../../_images/text-gmtplot-0.png" />
 </div>
 <p>GMT中可以用字体名（<strong>区分大小写</strong>）或对应的字体编号来指定字体 （比如
-Helvetica-Bold 或者 1 ）。上图中给出了每种字体的字体编号以及字体名称。每个字体名称使用的是自己相对应的字体，所以可以从图中直观地看出不同字体的区别。</p>
+<code class="docutils literal notranslate"><span class="pre">Helvetica-Bold</span></code> 或者 <code class="docutils literal notranslate"><span class="pre">1</span></code>）。上图中给出了每种字体的字体编号以及字体名称。每个字体名称使用的是自己相对应的字体，所以可以从图中直观地看出不同字体的区别。</p>
 <div class="admonition tip">
 <p class="first admonition-title">小技巧</p>
 <p class="last">使用 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">pstext</span> <span class="pre">-L</span></code> 可以列出GMT所支持的字体及其编号。</p>
 </div>
-<p>图中大多数字体都很直观，比较特别的字体有两个，Symbol（12号）和ZapfDingbats（34号），前者常用于输出希腊字母，后者则用于输出特殊图案，详情见 <a class="reference internal" href="../special-fonts/"><span class="doc">特殊字体</span></a> 。</p>
+<p>图中大多数字体都很直观，比较特别的字体有两个，Symbol（12号）和ZapfDingbats（34号），前者常用于输出希腊字母，后者则用于输出特殊图案，详情见 <a class="reference internal" href="../special-character/"><span class="doc">特殊字符</span></a>。</p>
 </div>
 <div class="section" id="id4">
 <h2>4.6.3 填充色<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
@@ -304,7 +305,7 @@ Helvetica-Bold 或者 1 ）。上图中给出了每种字体的字体编号以�
 </div>
 <div class="section" id="id6">
 <h2>4.6.5 小练习<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
-<p>下面的命令在图上写了文字 <code class="docutils literal notranslate"><span class="pre">TEXT</span></code></p>
+<p><a class="reference internal" href="../../module/pstext/"><span class="doc">pstext</span></a> 模块可以用于绘制文字。下面的命令在图上写了文字 <code class="docutils literal notranslate"><span class="pre">TEXT</span></code></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">2</span>.5 <span class="m">0</span>.5 TEXT <span class="p">|</span> gmt pstext -R0/5/0/1 -JX15c/2c -F+f&lt;font&gt; &gt; text.ps
 </pre></div>
 </div>
@@ -346,7 +347,7 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../special-fonts/" class="btn btn-neutral float-right" title="4.7 特殊字体" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../escape-character/" class="btn btn-neutral float-right" title="4.7 转义序列" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../fill/" class="btn btn-neutral" title="4.5 填充" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -359,7 +360,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月29日.
+      最后更新于 2019年01月31日.
 
     </p>
   </div>

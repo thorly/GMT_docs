@@ -99,21 +99,20 @@
 <li class="toctree-l3"><a class="reference internal" href="#hsv">4.3.3 HSV</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cmyk">4.3.4 CMYK</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">4.3.5 灰色</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">4.3.6 颜色小结</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">4.3.7 透明色</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">4.3.6 透明色</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">4.3.7 颜色小结</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../pen/">4.4 画笔</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../fill/">4.5 填充</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../text/">4.6 文字</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-fonts/">4.7 特殊字体</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-characters/">4.8 特殊字符</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../character-escape/">4.9 转义序列</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lines/">4.10 线条属性</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vectors/">4.11 绘制矢量/箭头</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../anchors/">4.12 锚点</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../embellishments/">4.13 绘制修饰物</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../glossary/">4.14 词汇表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../escape-character/">4.7 转义序列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-character/">4.8 特殊字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">4.9 绘制矢量/箭头</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../line/">4.10 线条属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anchor/">4.11 锚点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../embellishment/">4.12 绘制修饰物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary/">4.13 词汇表</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
@@ -235,7 +234,7 @@
 <div class="section" id="rgb">
 <h2>4.3.2 RGB<a class="headerlink" href="#rgb" title="永久链接至标题">¶</a></h2>
 <p>即三原色光模型，或又称RGB颜色模型，是一种加色模型，将红（<strong>R</strong>ed）、绿（<strong>G</strong>reen）、蓝（<strong>B</strong>lue）三原色的色光以不同的比例相加，以产生多种多样的色光。</p>
-<p>GMT中可以通过指定 <code class="docutils literal notranslate"><span class="pre">r/g/b</span></code> 的格式来指定RGB颜色，其中 <code class="docutils literal notranslate"><span class="pre">r</span></code>、<code class="docutils literal notranslate"><span class="pre">g</span></code>、<code class="docutils literal notranslate"><span class="pre">b</span></code>
+<p>GMT中可以通过 <code class="docutils literal notranslate"><span class="pre">r/g/b</span></code> 的格式来指定RGB颜色，其中 <code class="docutils literal notranslate"><span class="pre">r</span></code>、<code class="docutils literal notranslate"><span class="pre">g</span></code>、<code class="docutils literal notranslate"><span class="pre">b</span></code>
 的取值范围都是0到255，三者用反斜线 <code class="docutils literal notranslate"><span class="pre">/</span></code> 分开。</p>
 <p>RGB颜色示例：</p>
 <ul class="simple">
@@ -249,13 +248,13 @@
 </div>
 <div class="section" id="hsv">
 <h2>4.3.3 HSV<a class="headerlink" href="#hsv" title="永久链接至标题">¶</a></h2>
-<p>通过 <code class="docutils literal notranslate"><span class="pre">h-s-v</span></code> 格式指定颜色，其中HSV分别代表色相（Hue）、饱和度（Saturation）和明度（Value）。</p>
+<p>通过 <code class="docutils literal notranslate"><span class="pre">h-s-v</span></code> 格式指定颜色，其中HSV分别代表色相（Hue）、饱和度（Saturation）和明度（Value），三者之间用破折号 <code class="docutils literal notranslate"><span class="pre">-</span></code> 分开。</p>
 <ul class="simple">
 <li>色相（H）是色彩的基本属性，就是平常所说的颜色名称（如红色、黄色等），取值范围为0到360。</li>
 <li>饱和度（S）是指色彩的纯度，越高色彩越纯，低则逐渐变灰，取值范围为0到1。</li>
 <li>明度（V）是色彩的亮度，取值范围为0（dark）到1（light）。</li>
 </ul>
-<p>三者之间用破折号 <code class="docutils literal notranslate"><span class="pre">-</span></code> 分开，例如 <code class="docutils literal notranslate"><span class="pre">200-0.1-0.1</span></code>。</p>
+<p>例如 <code class="docutils literal notranslate"><span class="pre">200-0.1-0.1</span></code>。</p>
 </div>
 <div class="section" id="cmyk">
 <h2>4.3.4 CMYK<a class="headerlink" href="#cmyk" title="永久链接至标题">¶</a></h2>
@@ -282,22 +281,25 @@
 </ol>
 </div>
 <div class="section" id="id4">
-<h2>4.3.6 颜色小结<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
-<p>GMT中可以用五种方法指定颜色，分别是：</p>
-<ul class="simple">
-<li>颜色名： <code class="docutils literal notranslate"><span class="pre">red</span></code></li>
-<li>RGB值： <code class="docutils literal notranslate"><span class="pre">30/25/128</span></code> 或 <code class="docutils literal notranslate"><span class="pre">#00FA84</span></code></li>
-<li>HSV值： <code class="docutils literal notranslate"><span class="pre">200-0.1-0.1</span></code></li>
-<li>CMYK值： <code class="docutils literal notranslate"><span class="pre">0.2/0.3/0.4/0.5</span></code></li>
-<li>灰度： <code class="docutils literal notranslate"><span class="pre">30</span></code></li>
-</ul>
-</div>
-<div class="section" id="id5">
-<h2>4.3.7 透明色<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
-<p>每一种颜色都可以额外指定颜色的透明度。</p>
+<h2>4.3.6 透明色<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>在上面提到的几种指定颜色的方法的基础上，还可以额外指定颜色的透明度。</p>
 <p>GMT中可以通过在颜色后加上 <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> 再加上透明度来得到不同程度的透明色。透明度的取值范围是0到100，0表示不透明，100表示全透明。</p>
 <p>例如：<code class="docutils literal notranslate"><span class="pre">red&#64;25</span></code>、<code class="docutils literal notranslate"><span class="pre">30/25/128&#64;60</span></code>。</p>
-<p>除了可以指定某个颜色的透明度之外，还可以指定整个图层的透明度，见 <a class="reference internal" href="../../option/t/"><span class="doc">-t 选项</span></a>。</p>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">PS格式不支持透明色。</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>4.3.7 颜色小结<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>GMT中可以用五种方法指定颜色，分别是：</p>
+<ul class="simple">
+<li>颜色名：<code class="docutils literal notranslate"><span class="pre">red</span></code></li>
+<li>RGB值：<code class="docutils literal notranslate"><span class="pre">30/25/128</span></code> 或 <code class="docutils literal notranslate"><span class="pre">#00FA84</span></code></li>
+<li>HSV值：<code class="docutils literal notranslate"><span class="pre">200-0.1-0.1</span></code></li>
+<li>CMYK值：<code class="docutils literal notranslate"><span class="pre">0.2/0.3/0.4/0.5</span></code></li>
+<li>灰度：<code class="docutils literal notranslate"><span class="pre">30</span></code></li>
+</ul>
 </div>
 </div>
 
@@ -343,7 +345,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月29日.
+      最后更新于 2019年01月31日.
 
     </p>
   </div>

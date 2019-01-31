@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.9 转义序列 &mdash; GMT参考手册</title>
+  <title>4.7 转义序列 &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="4.10 线条属性" href="../lines/" />
-    <link rel="prev" title="4.8 特殊字符" href="../special-characters/" /> 
+    <link rel="next" title="4.8 特殊字符" href="../special-character/" />
+    <link rel="prev" title="4.6 文字" href="../text/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -97,18 +97,18 @@
 <li class="toctree-l2"><a class="reference internal" href="../pen/">4.4 画笔</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../fill/">4.5 填充</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../text/">4.6 文字</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-fonts/">4.7 特殊字体</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-characters/">4.8 特殊字符</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.9 转义序列</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">4.9.1 转义字符示例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">4.9.2 注意事项</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.7 转义序列</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">4.7.1 转义字符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">4.7.2 小练习</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">4.7.3 注意事项</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../lines/">4.10 线条属性</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vectors/">4.11 绘制矢量/箭头</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../anchors/">4.12 锚点</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../embellishments/">4.13 绘制修饰物</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../glossary/">4.14 词汇表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-character/">4.8 特殊字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">4.9 绘制矢量/箭头</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../line/">4.10 线条属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anchor/">4.11 锚点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../embellishment/">4.12 绘制修饰物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary/">4.13 词汇表</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
@@ -185,14 +185,14 @@
         
           <li><a href="../">4 绘图基础</a> &raquo;</li>
         
-      <li>4.9 转义序列</li>
+      <li>4.7 转义序列</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/basis/character-escape.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/basis/escape-character.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -207,11 +207,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>4.9 转义序列<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<p>前面已经介绍了如何设置字体属性以及如何输出特殊字符，但是这还不够，无法实现上标、下标，无法在一个字符串内随意切换字体和颜色。由此，GMT引入了转义字符，给文本加入了更丰富的效果。</p>
-<p>GMT中的转义字符是 <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>。转义字符与一般字符合在一起构成了转义序列。GMT可以识别的转义字符在下表列出：</p>
-<table border="1" class="docutils" id="id4">
-<caption><span class="caption-number">表 4.3 </span><span class="caption-text">GMT转义字符</span><a class="headerlink" href="#id4" title="永久链接至表格">¶</a></caption>
+<h1>4.7 转义序列<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>前面一节已经介绍了如何设置文字的文字大小、字体和颜色。在此基础上，GMT提供了转义字符，以实现上标、下标等功能，并可以在一个字符串内随意切换字体、字号和颜色，给文本加入了更丰富的效果。</p>
+<div class="section" id="id2">
+<h2>4.7.1 转义字符<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>GMT用 <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> 符号实现转义的功能。将 <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> 符号与某些字符结合起来，即构成了一系列可以实现特殊效果的转义字符。</p>
+<p>GMT可以识别的转义字符在下表列出：</p>
+<table border="1" class="docutils align-center" id="id5">
+<caption><span class="caption-number">表 4.3 </span><span class="caption-text">GMT转义字符</span><a class="headerlink" href="#id5" title="永久链接至表格">¶</a></caption>
 <colgroup>
 <col width="28%" />
 <col width="72%" />
@@ -222,29 +225,29 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">&#64;~</span></code></td>
-<td>打开/关闭Symbol（12号）字体</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">&#64;+</span></code></td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">&#64;+</span></code></td>
 <td>打开/关闭上标</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">&#64;-</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">&#64;-</span></code></td>
 <td>打开/关闭下标</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">&#64;#</span></code></td>
-<td>打开/关闭大型小写字母</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">&#64;_</span></code></td>
 <td>打开/关闭下划线</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">&#64;%&lt;fontno&gt;%</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">&#64;#</span></code></td>
+<td>打开/关闭小型大写字母（small caps）</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">&#64;%&lt;fontno&gt;%</span></code></td>
 <td>切换至另一字体；<code class="docutils literal notranslate"><span class="pre">&#64;%%</span></code> 重置回前一字体</td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">&#64;:&lt;size&gt;:</span></code></td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">&#64;:&lt;size&gt;:</span></code></td>
 <td>切换至另一文本尺寸；<code class="docutils literal notranslate"><span class="pre">&#64;::</span></code> 重置回前一尺寸</td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">&#64;;&lt;color&gt;;</span></code></td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">&#64;;&lt;color&gt;;</span></code></td>
 <td>切换至另一文本颜色；<code class="docutils literal notranslate"><span class="pre">&#64;;;</span></code> 重置回前一颜色</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">&#64;~</span></code></td>
+<td>打开/关闭Symbol（12号）字体</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">&#64;!</span></code></td>
 <td>用接下来的两个字符创建组合字符</td>
@@ -254,10 +257,9 @@
 </tr>
 </tbody>
 </table>
-<p>对于一些常用的欧洲特殊字符，可以通过设置 <a class="reference internal" href="../../conf/ps/#ps-char-encoding"><span class="std std-ref">PS_CHAR_ENCODING</span></a>
-并使用八进制码表示。GMT为其中的部分常见字符提供了转义序列，如下表：</p>
-<table border="1" class="docutils" id="id5">
-<caption><span class="caption-number">表 4.4 </span><span class="caption-text">欧洲特殊字符</span><a class="headerlink" href="#id5" title="永久链接至表格">¶</a></caption>
+<p>除此之外，GMT还为一些常用的欧洲字母专门定义了转义字符。如下表：</p>
+<table border="1" class="docutils align-center" id="id6">
+<caption><span class="caption-number">表 4.4 </span><span class="caption-text">欧洲特殊字母</span><a class="headerlink" href="#id6" title="永久链接至表格">¶</a></caption>
 <colgroup>
 <col width="22%" />
 <col width="28%" />
@@ -265,10 +267,10 @@
 <col width="28%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head"><em>Code</em></th>
-<th class="head"><em>Effect</em></th>
-<th class="head"><em>Code</em></th>
-<th class="head"><em>Effect</em></th>
+<tr class="row-odd"><th class="head">代码</th>
+<th class="head">效果</th>
+<th class="head">代码</th>
+<th class="head">效果</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -309,20 +311,26 @@
 </tr>
 </tbody>
 </table>
-<div class="section" id="id2">
-<h2>4.9.1 转义字符示例<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p><a class="reference download internal" download="" href="../../_downloads/e17b090676a811ca53c750a3ddd500ca/character-escape-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
-<div class="figure align-center">
-<img alt="../../_images/character-escape-gmtplot-0.png" src="../../_images/character-escape-gmtplot-0.png" />
-</div>
 </div>
 <div class="section" id="id3">
-<h2>4.9.2 注意事项<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>4.7.2 小练习<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>下面给出了一些使用转义字符的示例，左边Input是命令中的输入，右边Output是图上显示的效果：</p>
+<p><a class="reference download internal" download="" href="../../_downloads/cec32f88e7210a21a4c5fc0ca5a38cf0/escape-character-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<img alt="../../_images/escape-character-gmtplot-0.png" src="../../_images/escape-character-gmtplot-0.png" />
+</div>
+<p>读者可以将下面命令中的 <code class="docutils literal notranslate"><span class="pre">TEXT</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Label</span></code> 修改为不同的值，以体验转义字符的效果:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">5</span> <span class="m">2</span> TEXT <span class="p">|</span> gmt pstext -R0/10/0/3 -Jx1c -Bxaf+l<span class="s2">&quot;Label&quot;</span> -BWSen -F+f20p &gt; test.ps
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>4.7.3 注意事项<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
 <li>上标/下标不支持嵌套，即只支持一层上标/下标</li>
-<li><code class="docutils literal notranslate"><span class="pre">pstext</span></code> 命令中有选项可以在文本周围加上矩形框，该选项对转义序列无效</li>
-<li>转义序列需要成对存在，与括号类似，开启转义之后必须关闭转义；</li>
-<li>在Windows下，由于bat脚本中 <code class="docutils literal notranslate"><span class="pre">%</span></code> 表示变量，因此当你需要在GMT中使用百分号时，应使用 <code class="docutils literal notranslate"><span class="pre">%%</span></code> 来表示一个百分号，即bat脚本中的 <code class="docutils literal notranslate"><span class="pre">%%</span></code> 相当于字符 <code class="docutils literal notranslate"><span class="pre">%</span></code>；切换字体时 <code class="docutils literal notranslate"><span class="pre">&#64;%%15%%</span></code> 相当于正常情况下的 <code class="docutils literal notranslate"><span class="pre">&#64;%15%</span></code>；</li>
+<li><a class="reference internal" href="../../module/pstext/"><span class="doc">pstext</span></a> 命令中有选项可以在文本周围加上文本框，该选项对转义序列无效</li>
+<li>转义序列需要成对存在，与括号类似，开启转义之后必须关闭转义</li>
+<li>在Windows下，由于bat脚本中 <code class="docutils literal notranslate"><span class="pre">%</span></code> 表示变量，因此当你需要在GMT中使用百分号时，应使用 <code class="docutils literal notranslate"><span class="pre">%%</span></code> 来表示一个百分号，即bat脚本中的 <code class="docutils literal notranslate"><span class="pre">%%</span></code> 相当于字符 <code class="docutils literal notranslate"><span class="pre">%</span></code>；切换字体时 <code class="docutils literal notranslate"><span class="pre">&#64;%%15%%</span></code> 相当于正常情况下的 <code class="docutils literal notranslate"><span class="pre">&#64;%15%</span></code>。</li>
 </ol>
 </div>
 </div>
@@ -356,10 +364,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../lines/" class="btn btn-neutral float-right" title="4.10 线条属性" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../special-character/" class="btn btn-neutral float-right" title="4.8 特殊字符" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../special-characters/" class="btn btn-neutral" title="4.8 特殊字符" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../text/" class="btn btn-neutral" title="4.6 文字" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -369,7 +377,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年01月29日.
+      最后更新于 2019年01月31日.
 
     </p>
   </div>

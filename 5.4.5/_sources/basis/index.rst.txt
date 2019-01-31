@@ -11,11 +11,10 @@
    pen
    fill
    text
-   special-fonts
-   special-characters
-   character-escape
-   lines
-   vectors
-   anchors
-   embellishments
+   escape-character
+   special-character
+   vector
+   line
+   anchor
+   embellishment
    glossary
