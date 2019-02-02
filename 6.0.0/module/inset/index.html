@@ -347,15 +347,15 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://genericmappingtools.github.io/gmt/dev/inset.html" title="(在 GMT v6.0.0)"><span>inset</span></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">管理和设置插图模式</td>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">管理和设置图中图模式</td>
 </tr>
 </tbody>
 </table>
-<p><code class="docutils literal notranslate"><span class="pre">inset</span></code> 模块用于创建插图模式，即在纸张上规划出一小片区域，并限制接下来的绘制操作均只在该小区域内操作。</p>
+<p><code class="docutils literal notranslate"><span class="pre">inset</span></code> 模块用于创建图中图模式，即在纸张上规划出一小片区域，并限制接下来的绘制操作均只在该小区域内操作。</p>
 <p><code class="docutils literal notranslate"><span class="pre">inset</span></code> 模块包含两个命令：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">begin</span></code> 用于设置插图模式，其定义了插图区域的位置和大小</li>
-<li><code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">end</span></code> 用于结束插图模式，此时所有的操作都会回到原始的完全图中</li>
+<li><code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">begin</span></code> 用于设置图中图模式，其定义了图中图区域的位置和大小</li>
+<li><code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">end</span></code> 用于结束图中图模式，此时所有的操作都会回到原始的完全图中</li>
 </ul>
 <div class="section" id="inset-begin">
 <h2>12.74.1 <code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">begin</span></code><a class="headerlink" href="#inset-begin" title="永久链接至标题">¶</a></h2>
@@ -374,18 +374,18 @@
 <dt><code class="docutils literal notranslate"><span class="pre">-D[unit]xmin/xmax/ymin/ymax[r]</span></code></dt>
 <dd>类似 <a class="reference internal" href="../../option/R/"><span class="doc">-R 选项</span></a> 选项，使用该选项会在大区域地图中框出该选项所指定的小区域。</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-D[g|j|J|n|x]&lt;refpoint&gt;+w&lt;width&gt;[/&lt;height&gt;][+j&lt;justify&gt;][+o&lt;dx&gt;[/&lt;dy&gt;]]</span></code></dt>
-<dd><p class="first">确定一个插图区域，接下来的所有绘图操作仅在该小区域内操作。</p>
+<dd><p class="first">确定一个图中图区域，接下来的所有绘图操作仅在该小区域内操作。</p>
 <ul class="last simple">
-<li><code class="docutils literal notranslate"><span class="pre">g|j|J|n|x&lt;refpoint&gt;</span></code> 用于指定插图区域的参考点，通常用 <code class="docutils literal notranslate"><span class="pre">j</span></code> 比较方便，例如 <code class="docutils literal notranslate"><span class="pre">jTL</span></code> 表示插图区域位于左上角，<code class="docutils literal notranslate"><span class="pre">jBR</span></code> 表示插图区域位于右下角。详情见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</li>
-<li><code class="docutils literal notranslate"><span class="pre">+w&lt;width&gt;/&lt;height&gt;</span></code> 指定了插图区域的宽度和高度</li>
-<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify</span></code> 控制插图区域的锚点，见 <a class="reference internal" href="../../basis/anchor/"><span class="doc">锚点</span></a> 一节</li>
+<li><code class="docutils literal notranslate"><span class="pre">g|j|J|n|x&lt;refpoint&gt;</span></code> 用于指定图中图区域的参考点，通常用 <code class="docutils literal notranslate"><span class="pre">j</span></code> 比较方便，例如 <code class="docutils literal notranslate"><span class="pre">jTL</span></code> 表示图中图区域位于左上角，<code class="docutils literal notranslate"><span class="pre">jBR</span></code> 表示图中图区域位于右下角。详情见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</li>
+<li><code class="docutils literal notranslate"><span class="pre">+w&lt;width&gt;/&lt;height&gt;</span></code> 指定了图中图区域的宽度和高度</li>
+<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify</span></code> 控制图中图区域的锚点，见 <a class="reference internal" href="../../basis/anchor/"><span class="doc">锚点</span></a> 一节</li>
 <li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;/&lt;dy&gt;</span></code> 见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-F[+c&lt;clearances&gt;][+g&lt;fill&gt;][+i[[&lt;gap&gt;/]&lt;pen&gt;]][+p[&lt;pen&gt;]][+r[&lt;radius&gt;]][+s[[&lt;dx&gt;/&lt;dy&gt;/][&lt;shade&gt;]]]</span></code></dt>
-<dd>设置插图区域的背景色、轮廓等熟悉，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</dd>
+<dd>设置图中图区域的背景色、轮廓等熟悉，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-M&lt;margins&gt;</span></code></dt>
-<dd><p class="first">插图内部的额外空白区域。其可以取三种形式：</p>
+<dd><p class="first">图中图内部的额外空白区域。其可以取三种形式：</p>
 <ol class="last arabic simple">
 <li>一个值，表示四个边的空白相同</li>
 <li>两个用斜杠分隔的值，分别设置水平和垂直方向的空白</li>
@@ -397,7 +397,7 @@
 </div>
 <div class="section" id="inset-end">
 <h2>12.74.2 <code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">end</span></code><a class="headerlink" href="#inset-end" title="永久链接至标题">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">end</span></code> 用于结束插图模式。</p>
+<p><code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">end</span></code> 用于结束图中图模式。</p>
 </div>
 <div class="section" id="id3">
 <h2>12.74.3 示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
@@ -456,7 +456,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年02月01日.
+      最后更新于 2019年02月02日.
 
     </p>
   </div>

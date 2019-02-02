@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>11.1 GSHHG: 全球高精度海岸线数据 &mdash; GMT参考手册</title>
+  <title>11.2 GSHHG: 全球高精度海岸线数据 &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="11.2 DCW: 世界数字图表" href="../dcw/" />
-    <link rel="prev" title="11 地学数据集" href="../" /> 
+    <link rel="next" title="11.3 DCW: 世界数字图表" href="../dcw/" />
+    <link rel="prev" title="11.1 地学数据集" href="../overview/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -98,10 +98,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../">11 地学数据集</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">11.1 GSHHG: 全球高精度海岸线数据</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dcw/">11.2 DCW: 世界数字图表</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../earth_relief/">11.3 earth_relief: 全球地形起伏数据</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/">11.4 GMT 数据库的建立</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/">11.1 地学数据集</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">11.2 GSHHG: 全球高精度海岸线数据</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">11.2.1 数据精度</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">11.2.2 数据内容</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">海岸线</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">河流</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">国界线</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">11.2.3 使用示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">11.2.4 备注</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dcw/">11.3 DCW: 世界数字图表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earth_relief/">11.4 earth_relief: 全球地形起伏数据</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../module/">12 模块列表</a></li>
@@ -171,7 +182,7 @@
         
           <li><a href="../">11 地学数据集</a> &raquo;</li>
         
-      <li>11.1 GSHHG: 全球高精度海岸线数据</li>
+      <li>11.2 GSHHG: 全球高精度海岸线数据</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -193,7 +204,123 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gshhg">
-<h1>11.1 GSHHG: 全球高精度海岸线数据<a class="headerlink" href="#gshhg" title="永久链接至标题">¶</a></h1>
+<h1>11.2 GSHHG: 全球高精度海岸线数据<a class="headerlink" href="#gshhg" title="永久链接至标题">¶</a></h1>
+<p><strong>GSHHG数据主页</strong>： <a class="reference external" href="http://www.soest.hawaii.edu/wessel/gshhg/">http://www.soest.hawaii.edu/wessel/gshhg/</a></p>
+<p>GSHHG，全称为 A Global Self-consistent, Hierarchical, High-resolution Geography Database。GMT提供的GSHHG数据中包含了海岸线、河流和国界等数据。</p>
+<p>GMT的 <a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 模块可以直接绘制GSHHG中的数据，也可以使用
+<a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 的 <code class="docutils literal notranslate"><span class="pre">-M</span></code> 选项将数据导出为纯文本文件供其他程序使用。</p>
+<div class="section" id="id1">
+<h2>11.2.1 数据精度<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>GSHHG提供了五种不同精度的数据，以满足不同的需求。五种精度从高到低分别为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>full &gt; high &gt; intermediate &gt; low &gt; crude
+</pre></div>
+</div>
+<p><a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 的 <code class="docutils literal notranslate"><span class="pre">-D</span></code> 选项加上每种精度的单词首字母即可指定使用何种精度的数据。在绘制全球地图时，可以用 <code class="docutils literal notranslate"><span class="pre">-Dc</span></code> 指定使用最低精度的数据，以避免绘制了大量细节而导致文件太大；在绘制几度范围的小区域地图时，则可以使用 <code class="docutils literal notranslate"><span class="pre">-Df</span></code> 指定使用最高精度的数据。当然，也可以使用 <code class="docutils literal notranslate"><span class="pre">-Da</span></code> 选项，此时GMT会根据当前绘图区域的大小自动选择合适的数据精度。</p>
+<p>下面的示例绘制了一个小区域的海岸线边界，可以看到 <code class="docutils literal notranslate"><span class="pre">-D</span></code> 取不同精度时边界精细程度的差异:</p>
+<p><a class="reference download internal" download="" href="../../_downloads/6b5b6fcf173527d4aff395bb75ce29e4/gshhg-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<img alt="../../_images/gshhg-gmtplot-0.png" src="../../_images/gshhg-gmtplot-0.png" />
+</div>
+</div>
+<div class="section" id="id2">
+<h2>11.2.2 数据内容<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>GSHHG数据中包含了海岸线数据、河流数据和国界数据。</p>
+<div class="section" id="id3">
+<h3>海岸线<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>海岸线数据可以进一步细分为4个不同的等级：</p>
+<ul class="simple">
+<li>1: 陆地和海洋的分界线，即真正意义上的海岸线</li>
+<li>2: 陆地与湖泊的分界线</li>
+<li>3: 湖泊中的岛屿与湖泊的分界线</li>
+<li>4: 湖泊中的岛屿里的池塘与岛屿的分界线</li>
+</ul>
+<p><a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 模块中有如下几个与海岸线相关的选项：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">-W[&lt;level&gt;/]&lt;pen&gt;</span></code> 绘制不同等级的海岸线</li>
+<li><code class="docutils literal notranslate"><span class="pre">-G&lt;fill&gt;</span></code> 设置陆地、岛屿等陆区的填充色</li>
+<li><code class="docutils literal notranslate"><span class="pre">-S&lt;fill&gt;</span></code> 设置海洋、湖泊等水区的填充色</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Cl&lt;fill&gt;</span></code> 设置湖泊的填充色</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Cr&lt;fill&gt;</span></code> 设置河流湖的填充色</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>河流<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>河流进一步可以细分为10个等级：</p>
+<ul class="simple">
+<li>0: Double-lined rivers (river-lakes).</li>
+<li>1: Permanent major rivers.</li>
+<li>2: Additional major rivers.</li>
+<li>3: Additional rivers.</li>
+<li>4: Minor rivers.</li>
+<li>5: Intermittent rivers - major.</li>
+<li>6: Intermittent rivers - additional.</li>
+<li>7: Intermittent rivers - minor.</li>
+<li>8: Major canals.</li>
+<li>9: Minor canals.</li>
+<li>10: Irrigation canals.</li>
+</ul>
+<p><a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 模块的 <code class="docutils literal notranslate"><span class="pre">-I</span></code> 选项可以用于绘制不同等级的河流，其基本语法为 <code class="docutils literal notranslate"><span class="pre">-I&lt;level&gt;/&lt;pen&gt;</span></code>。其中 <code class="docutils literal notranslate"><span class="pre">&lt;level&gt;</span></code> 除了可以取1至10之外，还可以取：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">a</span></code>: 所有河流和运河，即包含0-10等级的所有河流</li>
+<li><code class="docutils literal notranslate"><span class="pre">A</span></code>: 除了河流湖之外的所有河流和运河，即包含1-10等级的河流</li>
+<li><code class="docutils literal notranslate"><span class="pre">r</span></code>: 所有永久河流，即0-4等级</li>
+<li><code class="docutils literal notranslate"><span class="pre">R</span></code>: 除了河流湖之外的永久河流，即1-4等级</li>
+<li><code class="docutils literal notranslate"><span class="pre">i</span></code>: 所有间歇性河流，即5-7等级</li>
+<li><code class="docutils literal notranslate"><span class="pre">c</span></code>: 所有运河，即8-10等级</li>
+</ul>
+<p>该选项可以重复多次使用，为不同等级的河流设置不同的画笔属性。</p>
+</div>
+<div class="section" id="id5">
+<h3>国界线<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>国界线进一步细分为三个等级</p>
+<ul class="simple">
+<li>1: 国界</li>
+<li>2: 美国州界</li>
+<li>3: 海洋边界</li>
+</ul>
+<p><a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 模块的 <code class="docutils literal notranslate"><span class="pre">-N</span></code> 选项可以用于绘制不同等级的国界线，其基本语法为 <code class="docutils literal notranslate"><span class="pre">-N&lt;level&gt;/&lt;pen&gt;</span></code>。其中 <code class="docutils literal notranslate"><span class="pre">&lt;level&gt;</span></code> 可以取1至3，也可以取 <code class="docutils literal notranslate"><span class="pre">a</span></code> （表示所有边界）。该选项可以重复多次使用，为不同等级的国界设置不同的画笔属性。</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>11.2.3 使用示例<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>绘制1级海岸线：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 -W1/0.5p -png map
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="../../_images/gshhg-gmtplot-1.png" src="../../_images/gshhg-gmtplot-1.png" />
+</div>
+<p>同时绘制1-3级海岸线，黑色的为1级海岸线，红色的为2级湖泊线（图中的大面积红色区域为五大湖），蓝色的为3级岛屿线（即五大湖内部的岛屿）：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 <span class="se">\</span>
+    -W1/0.5p -W2/0.3p,red -W3/0.2p,blue -png map
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="../../_images/gshhg-gmtplot-2.png" src="../../_images/gshhg-gmtplot-2.png" />
+</div>
+<p>绘制1-3级海岸线，并为陆地、还有、湖泊填充不同的颜色：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 <span class="se">\</span>
+    -W1/0.5p -W2/0.3p,red -W3/0.2p,blue <span class="se">\</span>
+    -Gtan -Slightblue -Cl/royalblue -png map
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="../../_images/gshhg-gmtplot-3.png" src="../../_images/gshhg-gmtplot-3.png" />
+</div>
+<p>绘制海岸线、国界和美国州界：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 <span class="se">\</span>
+    -W1/0.5p -N1/thick,red -N2/thinner <span class="se">\</span>
+    -Gtan -Slightblue -Cl/royalblue -png map
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="../../_images/gshhg-gmtplot-4.png" src="../../_images/gshhg-gmtplot-4.png" />
+</div>
+</div>
+<div class="section" id="id7">
+<h2>11.2.4 备注<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>GSHHG提供的中国国界数据不符合中国的领土主张，在正式刊物中发表使用此类国界数据的图件时都可能存在问题。</p>
+</div>
 </div>
 
 
@@ -225,10 +352,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../dcw/" class="btn btn-neutral float-right" title="11.2 DCW: 世界数字图表" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../dcw/" class="btn btn-neutral float-right" title="11.3 DCW: 世界数字图表" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../" class="btn btn-neutral" title="11 地学数据集" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../overview/" class="btn btn-neutral" title="11.1 地学数据集" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -238,7 +365,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年02月01日.
+      最后更新于 2019年02月02日.
 
     </p>
   </div>
