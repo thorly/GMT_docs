@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>11.2 DCW: 世界数字图表 &mdash; GMT参考手册</title>
+  <title>11.3 DCW: 世界数字图表 &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="11.3 earth_relief: 全球地形起伏数据" href="../earth_relief/" />
-    <link rel="prev" title="11.1 GSHHG: 全球高精度海岸线数据" href="../gshhg/" /> 
+    <link rel="next" title="11.4 earth_relief: 全球地形起伏数据" href="../earth_relief/" />
+    <link rel="prev" title="11.2 GSHHG: 全球高精度海岸线数据" href="../gshhg/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -98,30 +98,31 @@
 <li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../">11 地学数据集</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../gshhg/">11.1 GSHHG: 全球高精度海岸线数据</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">11.2 DCW: 世界数字图表</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">11.2.1 区域代码</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/">11.1 地学数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">11.2 GSHHG: 全球高精度海岸线数据</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">11.3 DCW: 世界数字图表</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">11.3.1 区域代码</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id2">洲代码</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id3">国家代码</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id4">省/州代码</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">11.2.2 使用说明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">11.2.3 使用示例</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">11.3.2 使用说明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">11.3.3 使用示例</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id7">绘制洲界</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id8">绘制国界</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id9">绘制省界</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id10">导出省界数据</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">11.2.4 备注</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">11.3.4 备注</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../earth_relief/">11.3 earth_relief: 全球地形起伏数据</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database/">11.4 GMT 数据库的建立</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earth_relief/">11.4 earth_relief: 全球地形起伏数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gadm/">11.5 GADM: 全球行政区划数据库</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../module/">12 模块列表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">12 模块手册</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../gallery/">13 绘图示例</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
@@ -188,7 +189,7 @@
         
           <li><a href="../">11 地学数据集</a> &raquo;</li>
         
-      <li>11.2 DCW: 世界数字图表</li>
+      <li>11.3 DCW: 世界数字图表</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -210,40 +211,40 @@
            <div itemprop="articleBody">
             
   <div class="section" id="dcw">
-<h1>11.2 DCW: 世界数字图表<a class="headerlink" href="#dcw" title="永久链接至标题">¶</a></h1>
-<p>DCW，全称为 Digital Chart of the World。GMT提供的DCW数据包含了不同层级的行政边界，可以直接在GMT中使用某个指定国家的边界，也可以将所需的边界数据以纯文本格式导出。</p>
-<p><strong>GMT-DCW数据主页</strong>： <a class="reference external" href="http://www.soest.hawaii.edu/wessel/dcw/">http://www.soest.hawaii.edu/wessel/dcw/</a></p>
-<p>GMT提供的DCW数据是在原始DCW数据的基础上修改得到的，其数据格式为netCDF-4格式，GMT提供的DCW数据中主要包含了三个文件：</p>
-<ul class="simple">
-<li><cite>dcw-gmt.nc</cite>: netCDF格式的DCW数据</li>
-<li><cite>dcw-countries.txt</cite>: 辅助文件，内含国家代码</li>
-<li><cite>dcw-states.txt</cite>: 辅助文件，内含省界代码</li>
-</ul>
-<div class="section" id="id1">
-<h2>11.2.1 区域代码<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<p>GMT提供的DCW数据中包含了如下行政边界：</p>
+<h1>11.3 DCW: 世界数字图表<a class="headerlink" href="#dcw" title="永久链接至标题">¶</a></h1>
+<p><strong>DCW数据主页</strong>： <a class="reference external" href="http://www.soest.hawaii.edu/wessel/dcw/">http://www.soest.hawaii.edu/wessel/dcw/</a></p>
+<p>DCW，全称为 Digital Chart of the World，即世界数字图表。GMT提供的DCW数据是在原始DCW数据的基础上修改得到的，其中包含了如下行政边界数据：</p>
 <ol class="arabic simple">
 <li>七大洲的洲界</li>
 <li>全球250个国家或地区的边界</li>
 <li>8个大国的省界/州界</li>
 </ol>
-<p>为了绘制某个特定行政区域的边界，则需要知道这些行政区域的代码。</p>
+<p>GMT的 <a class="reference internal" href="../../module/pscoast/"><span class="doc">pscoast</span></a> 模块可以直接绘制DCW数据中提供的行政边界数据，也可以使用 <a class="reference internal" href="../../module/pscoast/"><span class="doc">pscoast</span></a> 的 <code class="docutils literal notranslate"><span class="pre">-M</span></code> 选项将边界数据导出为纯文本文件供其他程序使用。</p>
+<p>GMT提供的DCW数据默认位于GMT安装目录下的 <code class="docutils literal notranslate"><span class="pre">share/dcw</span></code> 下，其中主要包含了三个文件：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">dcw-gmt.nc</span></code>: netCDF格式的DCW数据</li>
+<li><a class="reference download internal" download="" href="../../_downloads/56975aaa09d9133a362b3309639431fc/dcw-countries.txt"><code class="xref download docutils literal notranslate"><span class="pre">dcw-countries.txt</span></code></a>: 辅助文件，内含国家代码</li>
+<li><a class="reference download internal" download="" href="../../_downloads/34c64a0692356c9424146dfcb7d199d3/dcw-states.txt"><code class="xref download docutils literal notranslate"><span class="pre">dcw-states.txt</span></code></a>: 辅助文件，内含省界代码</li>
+</ul>
+<div class="section" id="id1">
+<h2>11.3.1 区域代码<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>为了绘制某个特定行政区域的边界，首先需要知道这些行政区域的代码。</p>
 <div class="section" id="id2">
 <h3>洲代码<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <p>七大洲都有各自的代码，其代码分别为:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">AF</span></code>: 非洲</li>
-<li><code class="docutils literal notranslate"><span class="pre">AN</span></code>: 南极洲</li>
-<li><code class="docutils literal notranslate"><span class="pre">AS</span></code>: 亚洲</li>
-<li><code class="docutils literal notranslate"><span class="pre">EU</span></code>: 欧洲</li>
-<li><code class="docutils literal notranslate"><span class="pre">OC</span></code>: 大洋洲</li>
-<li><code class="docutils literal notranslate"><span class="pre">NA</span></code>: 北美洲</li>
-<li><code class="docutils literal notranslate"><span class="pre">SA</span></code>: 南美洲</li>
+<li><code class="docutils literal notranslate"><span class="pre">AF</span></code>: 非洲（Africa）</li>
+<li><code class="docutils literal notranslate"><span class="pre">AN</span></code>: 南极洲（Antarctica）</li>
+<li><code class="docutils literal notranslate"><span class="pre">AS</span></code>: 亚洲（Asia）</li>
+<li><code class="docutils literal notranslate"><span class="pre">EU</span></code>: 欧洲（Europe）</li>
+<li><code class="docutils literal notranslate"><span class="pre">OC</span></code>: 大洋洲（Oceania）</li>
+<li><code class="docutils literal notranslate"><span class="pre">NA</span></code>: 北美洲（North America）</li>
+<li><code class="docutils literal notranslate"><span class="pre">SA</span></code>: 南美洲（South America）</li>
 </ul>
 </div>
 <div class="section" id="id3">
 <h3>国家代码<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
-<p>每个国家也有各自的编码。国家代码可以从DCW的辅助文件 <code class="docutils literal notranslate"><span class="pre">dcw-countries.txt</span></code> 中查找，其文件格式为:</p>
+<p>每个国家也有各自的编码。国家代码可以从DCW的辅助文件 <a class="reference download internal" download="" href="../../_downloads/56975aaa09d9133a362b3309639431fc/dcw-countries.txt"><code class="xref download docutils literal notranslate"><span class="pre">dcw-countries.txt</span></code></a> 中查找，其文件格式为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>洲代码 国家代码 国家名
 </pre></div>
 </div>
@@ -276,7 +277,7 @@ AS IN India
 <li><code class="docutils literal notranslate"><span class="pre">IN</span></code>: 印度</li>
 <li><code class="docutils literal notranslate"><span class="pre">RU</span></code>: 俄罗斯</li>
 </ul>
-<p>省代码可以从 DCW 辅助文件 <code class="docutils literal notranslate"><span class="pre">dcw-states</span></code> 中查找到，其文件格式为:</p>
+<p>省代码可以从 DCW 辅助文件 <a class="reference download internal" download="" href="../../_downloads/34c64a0692356c9424146dfcb7d199d3/dcw-states.txt"><code class="xref download docutils literal notranslate"><span class="pre">dcw-states.txt</span></code></a> 中查找到，其文件格式为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>国家代码 省代码 省名
 </pre></div>
 </div>
@@ -320,12 +321,7 @@ CN <span class="m">92</span> Aomen <span class="o">(</span>Macao<span class="o">
 </div>
 </div>
 <div class="section" id="id5">
-<h2>11.2.2 使用说明<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
-<p>GMT中至少有两处会使用DCW数据：</p>
-<ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">-R&lt;code1&gt;,&lt;code2&gt;,...</span></code>: 通过指定区域代码 <code class="docutils literal notranslate"><span class="pre">&lt;code&gt;</span></code> 间接指定绘图范围</li>
-<li><code class="docutils literal notranslate"><span class="pre">coast</span></code> 模块 <code class="docutils literal notranslate"><span class="pre">-E&lt;code1&gt;,&lt;code2&gt;,...</span></code> 选项调用 DCW 数据绘制或导出国界/省界</li>
-</ol>
+<h2>11.3.2 使用说明<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>洲代码、国家代码和省代码都是字母，GMT通过如下方式区分：</p>
 <ul class="simple">
 <li>在洲代码前加上 <code class="docutils literal notranslate"><span class="pre">=</span></code> 号表示某个大洲，比如 <code class="docutils literal notranslate"><span class="pre">=AS</span></code> 表示亚洲</li>
@@ -334,7 +330,7 @@ CN <span class="m">92</span> Aomen <span class="o">(</span>Macao<span class="o">
 </ul>
 </div>
 <div class="section" id="id6">
-<h2>11.2.3 使用示例<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<h2>11.3.3 使用示例<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <div class="section" id="id7">
 <h3>绘制洲界<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <p>绘制全部亚洲国家的边界：</p>
@@ -347,7 +343,7 @@ CN <span class="m">92</span> Aomen <span class="o">(</span>Macao<span class="o">
 </div>
 <div class="section" id="id8">
 <h3>绘制国界<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
-<p>绘制中国大陆边界（不含台湾、香港、澳门），这里可以不使用 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项:</p>
+<p>绘制中国大陆边界（不含台湾、香港、澳门）：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -JM15c -Baf -ECN+p0.25p,red -R70/140/10/60 &gt; dataset_dcw_02.ps
 </pre></div>
 </div>
@@ -357,7 +353,7 @@ CN <span class="m">92</span> Aomen <span class="o">(</span>Macao<span class="o">
 </div>
 <div class="section" id="id9">
 <h3>绘制省界<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
-<p>绘制内蒙古，并修改边界和填充颜色:</p>
+<p>绘制内蒙古，并设置边界颜色和填充颜色:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -JM12c -Baf -ECN.15+p1p,blue+gred -R90/130/35/55 &gt; dataset_dcw_03.ps
 </pre></div>
 </div>
@@ -375,8 +371,8 @@ CN <span class="m">92</span> Aomen <span class="o">(</span>Macao<span class="o">
 </div>
 </div>
 <div class="section" id="id11">
-<h2>11.2.4 备注<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
-<p>DCW以及其它类似的国界数据均不符合中国的领土主张，在正式刊物中发表使用此类国界数据的图件时都可能存在问题。此处展示的国界仅用于展示如何使用数据，</p>
+<h2>11.3.4 备注<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<p>DCW数据提供的中国国界数据不符合中国的领土主张，在正式刊物中发表使用此类国界数据的图件时都可能存在问题。此处展示的国界仅用于展示如何使用数据。</p>
 </div>
 </div>
 
@@ -409,10 +405,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../earth_relief/" class="btn btn-neutral float-right" title="11.3 earth_relief: 全球地形起伏数据" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../earth_relief/" class="btn btn-neutral float-right" title="11.4 earth_relief: 全球地形起伏数据" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../gshhg/" class="btn btn-neutral" title="11.1 GSHHG: 全球高精度海岸线数据" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../gshhg/" class="btn btn-neutral" title="11.2 GSHHG: 全球高精度海岸线数据" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -422,7 +418,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年02月01日.
+      最后更新于 2019年02月02日.
 
     </p>
   </div>
