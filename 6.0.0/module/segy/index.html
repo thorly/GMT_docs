@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>12.106 segy &mdash; GMT参考手册</title>
+  <title>12.107 segy &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="12.107 segyz" href="../segyz/" />
-    <link rel="prev" title="12.105 colorbar" href="../colorbar/" /> 
+    <link rel="next" title="12.108 segyz" href="../segyz/" />
+    <link rel="prev" title="12.106 colorbar" href="../colorbar/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -92,8 +92,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../cpt/">6 CPT文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../grid/">7 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
@@ -200,47 +200,48 @@
 <li class="toctree-l2"><a class="reference internal" href="../legend/">12.99 legend</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../mask/">12.100 mask</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../meca/">12.101 meca</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../polar/">12.102 polar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../rose/">12.103 rose</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sac/">12.104 sac</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../colorbar/">12.105 colorbar</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">12.106 segy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../segyz/">12.107 segyz</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../solar/">12.108 solar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ternary/">12.109 ternary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../text/">12.110 text</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../velo/">12.111 velo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../wiggle/">12.112 wiggle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../plot/">12.113 plot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../plot3d/">12.114 plot3d</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../rotconverter/">12.115 rotconverter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../rotsmoother/">12.116 rotsmoother</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sample1d/">12.117 sample1d</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">12.118 segy2grd</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">12.119 spectrum1d</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">12.120 sph2grd</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">12.121 sphdistance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">12.122 sphinterpolate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">12.123 sphtriangulate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../splitxyz/">12.124 splitxyz</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../subplot/">12.125 subplot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../surface/">12.126 surface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">12.127 talwani2d</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">12.128 talwani3d</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../trend1d/">12.129 trend1d</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../trend2d/">12.130 trend2d</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../triangulate/">12.131 triangulate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">12.132 x2sys_binlist</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">12.133 x2sys_cross</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">12.134 x2sys_datalist</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">12.135 x2sys_get</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">12.136 x2sys_init</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">12.137 x2sys_list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">12.138 x2sys_merge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">12.139 x2sys_put</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">12.140 x2sys_report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">12.141 x2sys_solve</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">12.142 xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movie/">12.102 movie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">12.103 polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">12.104 rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">12.105 sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colorbar/">12.106 colorbar</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">12.107 segy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segyz/">12.108 segyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">12.109 solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">12.110 ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">12.111 text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">12.112 velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wiggle/">12.113 wiggle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">12.114 plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot3d/">12.115 plot3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotconverter/">12.116 rotconverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotsmoother/">12.117 rotsmoother</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">12.118 sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../segy2grd/">12.119 segy2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">12.120 spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sph2grd/">12.121 sph2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphdistance/">12.122 sphdistance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphinterpolate/">12.123 sphinterpolate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sphtriangulate/">12.124 sphtriangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../splitxyz/">12.125 splitxyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">12.126 subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surface/">12.127 surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani2d/">12.128 talwani2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../talwani3d/">12.129 talwani3d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend1d/">12.130 trend1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trend2d/">12.131 trend2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../triangulate/">12.132 triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_binlist/">12.133 x2sys_binlist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_cross/">12.134 x2sys_cross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_datalist/">12.135 x2sys_datalist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_get/">12.136 x2sys_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_init/">12.137 x2sys_init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_list/">12.138 x2sys_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_merge/">12.139 x2sys_merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_put/">12.140 x2sys_put</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_report/">12.141 x2sys_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2sys_solve/">12.142 x2sys_solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">12.143 xyz2grd</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../gallery/">13 绘图示例</a></li>
@@ -309,7 +310,7 @@
         
           <li><a href="../">12 模块手册</a> &raquo;</li>
         
-      <li>12.106 segy</li>
+      <li>12.107 segy</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -331,7 +332,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="segy">
-<span id="index-0"></span><h1>12.106 segy<a class="headerlink" href="#segy" title="永久链接至标题">¶</a></h1>
+<span id="index-0"></span><h1>12.107 segy<a class="headerlink" href="#segy" title="永久链接至标题">¶</a></h1>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -371,10 +372,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../segyz/" class="btn btn-neutral float-right" title="12.107 segyz" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../segyz/" class="btn btn-neutral float-right" title="12.108 segyz" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../colorbar/" class="btn btn-neutral" title="12.105 colorbar" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../colorbar/" class="btn btn-neutral" title="12.106 colorbar" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6.1 CPT简介 &mdash; GMT参考手册</title>
+  <title>7.1 CPT简介 &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="6.2 使用CPT" href="../usage/" />
-    <link rel="prev" title="6 CPT文件" href="../" /> 
+    <link rel="next" title="7.2 使用CPT" href="../usage/" />
+    <link rel="prev" title="7 CPT文件" href="../" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -92,16 +92,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">6 CPT文件</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.1 CPT简介</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../usage/">6.2 使用CPT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../format/">6.3 CPT文件格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../generate-cpt/">6.4 调整CPT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../builtin-cpt/">6.5 GMT内置CPT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../resources/">6.6 其他CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">7 CPT文件</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.1 CPT简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/">7.2 使用CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../format/">7.3 CPT文件格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generate-cpt/">7.4 调整CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../builtin-cpt/">7.5 GMT内置CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/">7.6 其他CPT</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../grid/">7 网格文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
@@ -171,9 +171,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">6 CPT文件</a> &raquo;</li>
+          <li><a href="../">7 CPT文件</a> &raquo;</li>
         
-      <li>6.1 CPT简介</li>
+      <li>7.1 CPT简介</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -195,9 +195,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="cpt">
-<h1>6.1 CPT简介<a class="headerlink" href="#cpt" title="永久链接至标题">¶</a></h1>
+<h1>7.1 CPT简介<a class="headerlink" href="#cpt" title="永久链接至标题">¶</a></h1>
 <p>有些程序需要将用户数据用颜色、绘图或图案来表示。比如，在使用2D网格数据绘制彩图或灰度图时，需要为每个Z值或Z值范围指定要使用的颜色；再比如，有些程序需要根据Z值决定线条颜色、符号的填充色等。CPT文件的作用就是为每个Z值或Z值范围定义其对应的颜色。CPT全称是color palette table，也称为调色板或色标文件。</p>
-<p>CPT文件可以在 <code class="docutils literal notranslate"><span class="pre">grdimage</span></code> 、 <code class="docutils literal notranslate"><span class="pre">psxy</span></code> 、 <code class="docutils literal notranslate"><span class="pre">psxyz</span></code> 等命令中使用。通常，你可以使用 <code class="docutils literal notranslate"><span class="pre">makecpt</span></code> 或 <code class="docutils literal notranslate"><span class="pre">grd2cpt</span></code> 对已有的CPT（比如GMT内置的CPT）文件进行重采样，并适应你目前所使用的数据范围。当然，也可以自己手写CPT文件，或使用 <code class="docutils literal notranslate"><span class="pre">awk</span></code> 、
+<p>CPT文件可以在 <a class="reference internal" href="../../module/grdimage/"><span class="doc">grdimage</span></a>、<a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a>、<a class="reference internal" href="../../module/plot3d/"><span class="doc">plot3d</span></a>
+等命令中使用。通常，你可以使用 <a class="reference internal" href="../../module/makecpt/"><span class="doc">makecpt</span></a> 或 <a class="reference internal" href="../../module/grd2cpt/"><span class="doc">grd2cpt</span></a>
+对已有的CPT（比如GMT内置的CPT）文件进行重采样，并适应你目前所使用的数据范围。当然，也可以自己手写CPT文件，或使用 <code class="docutils literal notranslate"><span class="pre">awk</span></code> 、
 <code class="docutils literal notranslate"><span class="pre">perl</span></code> 之类的文本处理工具自动生成CPT文件。</p>
 <p>由于GMT中可以用多种方式来指定颜色，因而GMT自带的或用户自己的CPT文件中通常含有如下注释语句:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># COLOR_MODEL = model</span>
@@ -235,10 +237,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../usage/" class="btn btn-neutral float-right" title="6.2 使用CPT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../usage/" class="btn btn-neutral float-right" title="7.2 使用CPT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../" class="btn btn-neutral" title="6 CPT文件" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../" class="btn btn-neutral" title="7 CPT文件" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

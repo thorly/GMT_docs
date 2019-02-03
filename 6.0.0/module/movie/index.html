@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>12.17 gmtconnect &mdash; GMT参考手册</title>
+  <title>12.102 movie &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="12.18 gmtconvert" href="../gmtconvert/" />
-    <link rel="prev" title="12.16 gmt5syntax" href="../gmt5syntax/" /> 
+    <link rel="next" title="12.103 polar" href="../polar/" />
+    <link rel="prev" title="12.101 meca" href="../meca/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -115,11 +115,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../gmt-config/">12.14 gmt-config</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gmt2kml/">12.15 gmt2kml</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gmt5syntax/">12.16 gmt5syntax</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">12.17 gmtconnect</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">12.17.1 选项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">12.17.2 示例</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">12.17 gmtconnect</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gmtconvert/">12.18 gmtconvert</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">12.19 gmtdefaults</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gmtflexure/">12.20 gmtflexure</a></li>
@@ -204,7 +200,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../legend/">12.99 legend</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../mask/">12.100 mask</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../meca/">12.101 meca</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../movie/">12.102 movie</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">12.102 movie</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../polar/">12.103 polar</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rose/">12.104 rose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sac/">12.105 sac</a></li>
@@ -314,14 +310,14 @@
         
           <li><a href="../">12 模块手册</a> &raquo;</li>
         
-      <li>12.17 gmtconnect</li>
+      <li>12.102 movie</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/module/gmtconnect.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/module/movie.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -335,64 +331,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="gmtconnect">
-<span id="index-0"></span><h1>12.17 gmtconnect<a class="headerlink" href="#gmtconnect" title="永久链接至标题">¶</a></h1>
+  <div class="section" id="movie">
+<span id="index-0"></span><h1>12.102 movie<a class="headerlink" href="#movie" title="永久链接至标题">¶</a></h1>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://genericmappingtools.github.io/gmt/dev/gmtconnect.html" title="(在 GMT v6.0.0)"><span>connect</span></a></td>
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://genericmappingtools.github.io/gmt/dev/movie.html" title="(在 GMT v6.0.0)"><span>movie</span></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">将端点接近的线段连接起来</td>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">制作动画</td>
 </tr>
 </tbody>
 </table>
-<p>该命令会读入一个或多个多段数据，并检查所有线段的两个端点。若某对端点完全相同或者二者的距离在可容忍的范围内，则将两段线段连接成一条线段。该进程会一直重复，直到剩余的端点均不在可容忍的范围内。最终连接得到的线段会被写到终端或特定的输出文件中。</p>
-<p>若不清楚该如何确定可容忍范围值，可以使用 <code class="docutils literal notranslate"><span class="pre">-L</span></code> 选项，获得所有端点之间的距离的列表，通过分析该列表来得到合适的值。</p>
-<div class="section" id="id1">
-<h2>12.17.1 选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-C[&lt;closed&gt;]</span></code></dt>
-<dd><p class="first">将所有闭合多边形写到文件 <code class="docutils literal notranslate"><span class="pre">&lt;closed&gt;</span></code> （默认文件名为 <code class="docutils literal notranslate"><span class="pre">gmtconnect_closed.txt</span></code> ）i
-中并将其他数据段写到标准输出。</p>
-<p class="last">使用该选项不会对线段做连接。</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-D[&lt;template&gt;]</span></code></dt>
-<dd><p class="first">对于多段数据文件，将每段数据分别输出到不同的数据文件中。</p>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;template&gt;</span></code> 是文件名的模板，该模板中必须包含一个整型参数的格式，比如
-<code class="docutils literal notranslate"><span class="pre">%d</span></code> 或 <code class="docutils literal notranslate"><span class="pre">%08d</span></code> ，也可以在整型参数格式前加上字符参数格式 <code class="docutils literal notranslate"><span class="pre">%c</span></code> ，实际输出时会被C或O代替，分别表示closed和open。</p>
-<p class="last">默认的模板为 <code class="docutils literal notranslate"><span class="pre">gmtconnect_segment_%d.txt</span></code> 。</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-L[&lt;linkfile&gt;]</span></code></dt>
-<dd><p class="first">将连接信息写到指定的文件中，默认文件名为 <code class="docutils literal notranslate"><span class="pre">gmtconnect_link.txt</span></code> 。</p>
-<p class="last">对于每段数据而言，会写入原始的数据段ID；对于线段的起始点和终点而言，会报告离得最近的线段的ID，以及两个线段端点之间的距离。</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Q[&lt;template&gt;]</span></code></dt>
-<dd>Used with <strong>-D</strong> to a list file with the names of the individual
-output files. Optionally, append a filename template for the
-individual file names; this template <strong>may</strong> contain a C format
-specifier that can format an character (C or O for closed or open,
-respectively). [Default is gmtconnect_list.txt].</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-T[&lt;cutoff&gt;[&lt;unit&gt;]][/&lt;nn_dist&gt;]</span></code></dt>
-<dd>Specifies the separation tolerance in the data coordinate units [0];
-append distance unit (see UNITS). If two lines has end-points that
-are closer than this cutoff they will be joined. Optionally, append
-/<em>nn_dist</em> which adds the requirement that a link will only be made
-if the second closest connection exceeds the <em>nn_dist</em>. The latter
-distance must be given in the same units as <em>cutoff</em>.  However, if
-no arguments are given then we close every polygon regardless of
-the gap between first and last point.</dd>
-</dl>
-</div>
-<div class="section" id="id2">
-<h2>12.17.2 示例<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt connect segment_*.txt -Tf0.1 &gt; new_segments.txt
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt connect my_lines.txt -T150e -DMap_segment_%04d.dat
-</pre></div>
-</div>
-</div>
 </div>
 
 
@@ -424,10 +374,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../gmtconvert/" class="btn btn-neutral float-right" title="12.18 gmtconvert" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../polar/" class="btn btn-neutral float-right" title="12.103 polar" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../gmt5syntax/" class="btn btn-neutral" title="12.16 gmt5syntax" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../meca/" class="btn btn-neutral" title="12.101 meca" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

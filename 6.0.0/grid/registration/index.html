@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7.5 网格配准 &mdash; GMT参考手册</title>
+  <title>6.2 网格配准 &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="7.6 网格文件后缀" href="../suffix/" />
-    <link rel="prev" title="7.4 边界条件" href="../boundary-condition/" /> 
+    <link rel="next" title="6.3 边界条件" href="../boundary-condition/" />
+    <link rel="prev" title="6.1 网格文件简介" href="../overview/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -92,21 +92,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../cpt/">6 CPT文件</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">7 网格文件</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../overview/">7.1 网格文件简介</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../read/">7.2 读netCDF文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../write/">7.3 写网格文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../boundary-condition/">7.4 边界条件</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">7.5 网格配准</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">7.5.1 网格线配准</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">7.5.2 像素配准</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">6 网格文件</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview/">6.1 网格文件简介</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.2 网格配准</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">6.2.1 网格线配准</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">6.2.2 像素配准</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../suffix/">7.6 网格文件后缀</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../viewer/">7.7 查看netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../boundary-condition/">6.3 边界条件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../read/">6.4 读netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../write/">6.5 写网格文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../suffix/">6.6 网格文件后缀</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../viewer/">6.7 查看netCDF文件</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
@@ -176,9 +176,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">7 网格文件</a> &raquo;</li>
+          <li><a href="../">6 网格文件</a> &raquo;</li>
         
-      <li>7.5 网格配准</li>
+      <li>6.2 网格配准</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -200,14 +200,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="grid-registration">
-<span id="id1"></span><h1>7.5 网格配准<a class="headerlink" href="#grid-registration" title="永久链接至标题">¶</a></h1>
+<span id="id1"></span><h1>6.2 网格配准<a class="headerlink" href="#grid-registration" title="永久链接至标题">¶</a></h1>
 <p>GMT中的2D网格文件，在确定了网格范围和网格间隔后，网格线会出现在
 <span class="math notranslate nohighlight">\(x = x_{min}, x_{min} + x_{inc}, x_{min} + 2 \cdot x_{inc}, \ldots, x_{max}\)</span>
 和 <span class="math notranslate nohighlight">\(y = y_{min}, y_{min} + y_{inc}, y_{min} + 2 \cdot y_{inc}, \ldots, y_{max}\)</span> 处。而节点的位置有两种选择，即网格线配准（gridline registration）和像素配准（pixel registration）。GMT默认使用的是网格线配准方式。</p>
 <p><a class="reference download internal" download="" href="../../_downloads/aedade15607a5a0648268e8118b107ff/registration-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center" id="id4">
 <img alt="../../_images/registration-gmtplot-0.png" src="../../_images/registration-gmtplot-0.png" />
-<p class="caption"><span class="caption-number">图 7.1 </span><span class="caption-text">GMT网格配准方式</span></p>
+<p class="caption"><span class="caption-number">图 6.1 </span><span class="caption-text">GMT网格配准方式</span></p>
 </div>
 <p>（左）网格线配准；（右）像素配准。</p>
 <div class="admonition note">
@@ -215,7 +215,7 @@
 <p class="last">大多数原始观测数据都采样网格线配准方式，而有时经过处理的数据会以像素配准方式发布。尽管两种配准方式可以互相转换，但转换过程中会降低Nyquist采样率，阻尼一些高频信息。因而如果你可以控制，应尽量避免配准转换。</p>
 </div>
 <div class="section" id="id2">
-<h2>7.5.1 网格线配准<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>6.2.1 网格线配准<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>在网格线配准方式下，节点（图中黑色圆圈）中心位于网格线的交叉点处，节点的值代表了长宽为 <span class="math notranslate nohighlight">\(x_{inc} \cdot y_{inc}\)</span> 的单元（图中红色区域）内的平均值。这种情况下，节点数目与网格范围和间隔的关系为：</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{ccl}
@@ -225,7 +225,7 @@ ny &amp; =  &amp;       (y_{max} - y_{min}) / y_{inc} + 1
 <p>左图中nx=ny=4。</p>
 </div>
 <div class="section" id="id3">
-<h2>7.5.2 像素配准<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>6.2.2 像素配准<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>在像素配准方式下，节点（图中黑色圆圈）位于网格单元的中心，即网格点之间的区域，节点的值代表了每个单元（图中红色区域）内的平均值。在这种情况下，节点数目与网格范围和间隔的关系为：</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{ccl}
@@ -265,10 +265,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../suffix/" class="btn btn-neutral float-right" title="7.6 网格文件后缀" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../boundary-condition/" class="btn btn-neutral float-right" title="6.3 边界条件" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../boundary-condition/" class="btn btn-neutral" title="7.4 边界条件" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../overview/" class="btn btn-neutral" title="6.1 网格文件简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
