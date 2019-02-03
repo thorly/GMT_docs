@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6.4 调整CPT &mdash; GMT参考手册</title>
+  <title>7.4 调整CPT &mdash; GMT参考手册</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="6.5 GMT内置CPT" href="../builtin-cpt/" />
-    <link rel="prev" title="6.3 CPT文件格式" href="../format/" /> 
+    <link rel="next" title="7.5 GMT内置CPT" href="../builtin-cpt/" />
+    <link rel="prev" title="7.3 CPT文件格式" href="../format/" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -92,16 +92,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">6 CPT文件</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../overview/">6.1 CPT简介</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../usage/">6.2 使用CPT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../format/">6.3 CPT文件格式</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.4 调整CPT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../builtin-cpt/">6.5 GMT内置CPT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../resources/">6.6 其他CPT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">7 CPT文件</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview/">7.1 CPT简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/">7.2 使用CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../format/">7.3 CPT文件格式</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.4 调整CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../builtin-cpt/">7.5 GMT内置CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/">7.6 其他CPT</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../grid/">7 网格文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
@@ -171,9 +171,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">6 CPT文件</a> &raquo;</li>
+          <li><a href="../">7 CPT文件</a> &raquo;</li>
         
-      <li>6.4 调整CPT</li>
+      <li>7.4 调整CPT</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -195,9 +195,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="cpt">
-<h1>6.4 调整CPT<a class="headerlink" href="#cpt" title="永久链接至标题">¶</a></h1>
-<p>GMT模块 <code class="docutils literal notranslate"><span class="pre">makecpt</span></code> 和 <code class="docutils literal notranslate"><span class="pre">grd2cpt</span></code> 可以内置CPT文件为基础，针对用户自己的数据制作专门的CPT文件；也可以将用户自定义CPT重新调整为一个新的范围、颜色倒转甚至屏蔽部分颜色的新色标文件。比如某个内置CPT文件定义了从0到1颜色从蓝色变成红色，用 <code class="docutils literal notranslate"><span class="pre">makecpt</span></code> 可以制作一个从1000到3000颜色从蓝色变成红色的CPT文件。不同的是，
-<code class="docutils literal notranslate"><span class="pre">makecpt</span></code> 常用于已知极值范围的表数据，而 <code class="docutils literal notranslate"><span class="pre">grd2cpt</span></code> 常用于将cpt适用于一个或多个格网数据。此外，两者均可通过以下方式翻转颜色：</p>
+<h1>7.4 调整CPT<a class="headerlink" href="#cpt" title="永久链接至标题">¶</a></h1>
+<p>GMT模块 <a class="reference internal" href="../../module/makecpt/"><span class="doc">makecpt</span></a> 和 <a class="reference internal" href="../../module/grd2cpt/"><span class="doc">grd2cpt</span></a> 可以内置CPT文件为基础，针对用户自己的数据制作专门的CPT文件；也可以将用户自定义CPT重新调整为一个新的范围、颜色倒转甚至屏蔽部分颜色的新色标文件。比如某个内置CPT文件定义了从0到1颜色从蓝色变成红色，用 <a class="reference internal" href="../../module/makecpt/"><span class="doc">makecpt</span></a> 可以制作一个从1000到3000颜色从蓝色变成红色的CPT文件。不同的是，
+<a class="reference internal" href="../../module/makecpt/"><span class="doc">makecpt</span></a> 常用于已知极值范围的表数据，而 <a class="reference internal" href="../../module/grd2cpt/"><span class="doc">grd2cpt</span></a> 常用于将cpt适用于一个或多个格网数据。此外，两者均可通过以下方式翻转颜色：</p>
 <ol class="arabic simple">
 <li>利用 <code class="docutils literal notranslate"><span class="pre">-Iz</span></code> 选项倒转CPT的z值指向（不包括前景色、背景色）。用于数据的正负颜色表示和惯例不符的情况（比如用正值表示海平面以下的深度，而不是惯常的负高程）。</li>
 <li>利用 <code class="docutils literal notranslate"><span class="pre">-Ic</span></code> 选项翻转颜色的顺序，包括前景色和背景色（与 <code class="docutils literal notranslate"><span class="pre">psscale</span></code> 的宽度设为负值效果一致）。</li>
@@ -264,10 +264,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../builtin-cpt/" class="btn btn-neutral float-right" title="6.5 GMT内置CPT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../builtin-cpt/" class="btn btn-neutral float-right" title="7.5 GMT内置CPT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../format/" class="btn btn-neutral" title="6.3 CPT文件格式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../format/" class="btn btn-neutral" title="7.3 CPT文件格式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -277,7 +277,7 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年02月02日.
+      最后更新于 2019年02月03日.
 
     </p>
   </div>
