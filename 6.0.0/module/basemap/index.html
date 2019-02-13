@@ -19,34 +19,38 @@
   
 
   
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
     <link rel="next" title="12.4 begin" href="../begin/" />
     <link rel="prev" title="12.2 backtracker" href="../backtracker/" /> 
-
-  
-  <script src="../../_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -539,30 +543,6 @@ rm gmt.*
 <a class="reference internal image-reference" href="../../_images/psbasemap_ex1.png"><img alt="../../_images/psbasemap_ex1.png" src="../../_images/psbasemap_ex1.png" style="width: 100%;" /></a>
 <p class="caption"><span class="caption-number">图 12.2 </span><span class="caption-text">用psbasemap命令-D选项绘制图中图</span></p>
 </div>
-<p>下面的脚本绘制了另一种不同的inset box：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="nv">ps</span><span class="o">=</span>psbasemap_ex2.ps
-
-<span class="c1"># 绘制澳大利亚的海岸线</span>
-gmt pscoast -R110E/170E/44S/9S -JM6i -P -Baf -BWSne -Wfaint -N2/1p -EAU+gbisque <span class="se">\</span>
-        -Gbrown -Sazure1 -Da -K -Xc --FORMAT_GEO_MAP<span class="o">=</span>dddF &gt; <span class="nv">$ps</span>
-		
-<span class="c1"># 特别注意：其他绘图命令在inset box之前写，因为绘图起点将被改变</span>
-
-<span class="c1"># 最后在右上角绘制inset box,并利用-D的+t子选项把绘图起点移到inset box的左下角</span>
-gmt psbasemap -R -J -O -K -DjTR+w1.5i+o0.15i+t -F+gwhite+p1p+c0.1c+s &gt;&gt; <span class="nv">$ps</span>
-<span class="c1"># 在inset box内绘制全球地图，并突出显示澳大利亚。其中-J选项的1.5i表示inset box的宽度，由上句-D选项的+w决定</span>
-gmt pscoast -Rg -JG120/30S/1.5i -Da -Gbrown -A5000 -Bg -Wfaint -EAU+gbisque -O -K &gt;&gt; <span class="nv">$ps</span>
-
-gmt psxy -R -J -O -T &gt;&gt; <span class="nv">$ps</span>
-
-rm gmt.*
-</pre></div>
-</div>
-<div class="figure align-center" id="id6">
-<a class="reference internal image-reference" href="../../_images/psbasemap_ex2.png"><img alt="../../_images/psbasemap_ex2.png" src="../../_images/psbasemap_ex2.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">图 12.3 </span><span class="caption-text">用psbasemap命令-D选项绘制另一种图中图</span></p>
-</div>
 <p>下面的脚本绘制了磁场玫瑰图：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#	$Id$</span>
@@ -598,9 +578,9 @@ gmt psxy -R -J -O -T &gt;&gt; <span class="nv">$ps</span>
 rm gmt.*
 </pre></div>
 </div>
-<div class="figure align-center" id="id7">
+<div class="figure align-center" id="id6">
 <a class="reference internal image-reference" href="../../_images/psbasemap_ex4.png"><img alt="../../_images/psbasemap_ex4.png" src="../../_images/psbasemap_ex4.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">图 12.4 </span><span class="caption-text">磁场玫瑰图</span></p>
+<p class="caption"><span class="caption-number">图 12.3 </span><span class="caption-text">磁场玫瑰图</span></p>
 </div>
 </div>
 <div class="section" id="bugs">
@@ -643,7 +623,7 @@ gitalk.render('gitalk-container');
         <a href="../begin/" class="btn btn-neutral float-right" title="12.4 begin" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../backtracker/" class="btn btn-neutral" title="12.2 backtracker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../backtracker/" class="btn btn-neutral float-left" title="12.2 backtracker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -653,7 +633,9 @@ gitalk.render('gitalk-container');
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
-      最后更新于 2019年02月08日.
+      <span class="lastupdated">
+        最后更新于 2019年02月13日.
+      </span>
 
     </p>
   </div>
@@ -670,28 +652,16 @@ gitalk.render('gitalk-container');
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
