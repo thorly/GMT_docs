@@ -216,8 +216,7 @@
             
   <div class="section" id="x">
 <h1>8.21 -x 选项<a class="headerlink" href="#x" title="永久链接至标题">¶</a></h1>
-<p>GMT中的某些模块支持OpenMP多线程并行，前提是在编译时打开了 OpenMP 选项。</p>
-<p>默认情况下，GMT会尝试使用所有可用的核。使用 <code class="docutils literal notranslate"><span class="pre">-x</span></code> 选项可以限制GMT所使用的核数，其语法为:</p>
+<p>在编译GMT时若打开了 OpenMP 选项，则GMT中某些模块在运行时可以通过 OpenMP 加快计算速度。默认情况下，这些模块会尝试使用所有可用的核。<code class="docutils literal notranslate"><span class="pre">-x</span></code> 选项用于限制所使用的核数，其语法为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-x<span class="o">[[</span>-<span class="o">]</span>&lt;n&gt;<span class="o">]</span>
 </pre></div>
 </div>
@@ -227,16 +226,18 @@
 <li><code class="docutils literal notranslate"><span class="pre">-x-4</span></code> 表示使用 all-4 个核，也就是说给其他程序留下四个核。若 all-4&lt;1，则使用1个核</li>
 </ul>
 <p>支持该选项的模块包括：
-<code class="docutils literal notranslate"><span class="pre">greenspline</span></code> 、
-<code class="docutils literal notranslate"><span class="pre">grdmask</span></code> 、
-<code class="docutils literal notranslate"><span class="pre">grdmath</span></code> 、
-<code class="docutils literal notranslate"><span class="pre">grdfilter</span></code> 、
-<code class="docutils literal notranslate"><span class="pre">grdsample</span></code> 、
-<code class="docutils literal notranslate"><span class="pre">sph2grd</span></code> 、
-<code class="docutils literal notranslate"><span class="pre">grdgravmag3d</span></code> 、
-<code class="docutils literal notranslate"><span class="pre">talwani2d</span></code> 、
-<code class="docutils literal notranslate"><span class="pre">talwani3d</span></code> 、
-<code class="docutils literal notranslate"><span class="pre">x2sys_solve</span></code> 。</p>
+<a class="reference internal" href="../../module/grdfilter/"><span class="doc">grdfilter</span></a>、
+<a class="reference internal" href="../../module/grdlandmask/"><span class="doc">grdlandmask</span></a>、
+<a class="reference internal" href="../../module/grdmask/"><span class="doc">grdmask</span></a>、
+<a class="reference internal" href="../../module/grdmath/"><span class="doc">grdmath</span></a>、
+<a class="reference internal" href="../../module/grdsample/"><span class="doc">grdsample</span></a>、
+<a class="reference internal" href="../../module/greenspline/"><span class="doc">greenspline</span></a>、
+<a class="reference internal" href="../../module/sph2grd/"><span class="doc">sph2grd</span></a>、
+<a class="reference internal" href="../../module/gpsgridder/"><span class="doc">gpsgridder</span></a>、
+<a class="reference internal" href="../../module/talwani2d/"><span class="doc">talwani2d</span></a>、
+<a class="reference internal" href="../../module/talwani3d/"><span class="doc">talwani3d</span></a>、
+<a class="reference internal" href="../../module/surface/"><span class="doc">surface</span></a>、
+<a class="reference internal" href="../../module/x2sys_solve/"><span class="doc">x2sys_solve</span></a>。</p>
 </div>
 
 
@@ -282,7 +283,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年02月15日.
+        最后更新于 2019年02月16日.
       </span>
 
     </p>
