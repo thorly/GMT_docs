@@ -218,10 +218,17 @@
   <div class="section" id="p">
 <h1>8.4 -P 选项<a class="headerlink" href="#p" title="永久链接至标题">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">-P</span></code> 选项用于设置纸张方向为 Portrait 模式。</p>
-<p>由于历史原因，GMT 默认使用 Landscape 模式，详情见 <a class="reference internal" href="../../basis/paper/"><span class="doc">画布</span></a>。可以通过 <code class="docutils literal notranslate"><span class="pre">-P</span></code> 选项设定使用Portrait模式，也可以通过设置GMT参数
-<a class="reference internal" href="../../conf/ps/#ps-page-orientation"><span class="std std-ref">PS_PAGE_ORIENTATION</span></a> 来修改纸张方向。</p>
-<div class="admonition important">
-<p class="first admonition-title">重要</p>
+<p>取一张 A4 纸放在桌面上，有两种放置的方式：竖着放和横着放。如图所示：</p>
+<p><a class="reference download internal" download="" href="../../_downloads/92f65e66d49b5ae4b1076102b10cab28/P-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<img alt="../../_images/P-gmtplot-0.png" src="../../_images/P-gmtplot-0.png" />
+</div>
+<p>图中左边把纸张竖着放的称为Portrait（肖像）模式，右边把纸张横着放的方式称为
+Landscape（风景）模式。记起来也很简单，人是瘦长的，所以人的肖像照需要竖着拍，风景是矮胖的，就需要横着拍。</p>
+<p>由于历史原因，GMT中画布的默认放置方式是Landscape模式。使用 <code class="docutils literal notranslate"><span class="pre">-P</span></code> 选项可以设置使用Portrait模式，也可以设置GMT参数 <a class="reference internal" href="../../conf/ps/#ps-page-orientation"><span class="std std-ref">PS_PAGE_ORIENTATION</span></a>
+为 <code class="docutils literal notranslate"><span class="pre">portrait</span></code> 来修改纸张方向。</p>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
 <p class="last"><code class="docutils literal notranslate"><span class="pre">-P</span></code> 选项设置的是<strong>画布的属性</strong>，对于由多个命令绘制而成的图片来说，只有第一个命令的 <code class="docutils literal notranslate"><span class="pre">-P</span></code> 选项是有效的。因而其他绘图命令中使用或不使用 <code class="docutils literal notranslate"><span class="pre">-P</span></code>
 选项并不会影响绘图效果。</p>
 </div>
@@ -270,7 +277,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年02月15日.
+        最后更新于 2019年02月16日.
       </span>
 
     </p>
