@@ -39,7 +39,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="13.4 绘制线条" href="../lines/" />
+    <link rel="next" title="13.2 绘制线条" href="../lines/" />
     <link rel="prev" title="13 绘图示例" href="../" /> 
 </head>
 
@@ -111,20 +111,18 @@
 <li class="toctree-l3"><a class="reference internal" href="#id5">13.1.4 全球地图</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#y">13.2 绘制双Y图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">13.3 绘制间断Y轴</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lines/">13.4 绘制线条</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../symbols/">13.5 绘制符号</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../coast/">13.6 绘制海岸线</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../beachball/">13.7 绘制震源球</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../legend/">13.8 绘制图例</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../earth-relief/">13.9 绘制地形起伏图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../histogram/">13.10 绘制直方图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../inset-map/">13.11 绘制图中图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sac-waveforms/">13.12 绘制SAC格式地震波形图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ternary-diagram/">13.13 绘制三角图解</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contour/">13.14 绘制等值线图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../subplot/">13.15 多子图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lines/">13.2 绘制线条</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../symbols/">13.3 绘制符号</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">13.4 绘制海岸线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../beachball/">13.5 绘制震源球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">13.6 绘制图例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earth-relief/">13.7 绘制地形起伏图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">13.8 绘制直方图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset-map/">13.9 绘制图中图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac-waveforms/">13.10 绘制SAC格式地震波形图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary-diagram/">13.11 绘制三角图解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">13.12 绘制等值线图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">13.13 多子图</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
@@ -221,7 +219,7 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R10/70/-3/8 -JX8c/5c -Bx10 -By3 -B+t<span class="s2">&quot;Linear X-Y Plot&quot;</span> &gt; GMT_tutor1_1.ps
 </pre></div>
 </div>
-<div class="figure align-center" id="id7">
+<div class="figure align-center" id="id6">
 <img alt="../../_images/basemap-gmtplot-0.png" src="../../_images/basemap-gmtplot-0.png" />
 <p class="caption"><span class="caption-number">图 13.1 </span><span class="caption-text">线性X-Y图</span></p>
 </div>
@@ -241,7 +239,7 @@
     -Bya1pf3+l<span class="s2">&quot;Power (W)&quot;</span> -BWS &gt; GMT_tutor1_2.ps
 </pre></div>
 </div>
-<div class="figure align-center" id="id8">
+<div class="figure align-center" id="id7">
 <img alt="../../_images/basemap-gmtplot-1.png" src="../../_images/basemap-gmtplot-1.png" />
 <p class="caption"><span class="caption-number">图 13.2 </span><span class="caption-text">对数X-Y图</span></p>
 </div>
@@ -259,7 +257,7 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -R-90/-70/0/20 -JM6i -P -Ba -Gchocolate &gt; GMT_tutor1_3.ps
 </pre></div>
 </div>
-<div class="figure align-center" id="id9">
+<div class="figure align-center" id="id8">
 <img alt="../../_images/basemap-gmtplot-2.png" src="../../_images/basemap-gmtplot-2.png" />
 <p class="caption"><span class="caption-number">图 13.3 </span><span class="caption-text">区域地图</span></p>
 </div>
@@ -287,7 +285,7 @@
     -Wthinnest &gt; GMT_tutor1_4.ps
 </pre></div>
 </div>
-<div class="figure align-center" id="id10">
+<div class="figure align-center" id="id9">
 <img alt="../../_images/basemap-gmtplot-3.png" src="../../_images/basemap-gmtplot-3.png" />
 <p class="caption"><span class="caption-number">图 13.4 </span><span class="caption-text">全球地图</span></p>
 </div>
@@ -296,16 +294,6 @@
 <li><code class="docutils literal notranslate"><span class="pre">-JK180/9i</span></code> 表明使用Eckert投影，地图中心位于经度180度，地图宽度为9英寸</li>
 </ol>
 </div>
-</div>
-<div class="section" id="y">
-<h1>13.2 绘制双Y图<a class="headerlink" href="#y" title="永久链接至标题">¶</a></h1>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">待处理</p>
-<p class="last">纵轴为速度，下横轴为深度，上横轴为压强</p>
-</div>
-</div>
-<div class="section" id="id6">
-<h1>13.3 绘制间断Y轴<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h1>
 </div>
 
 
@@ -337,7 +325,7 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../lines/" class="btn btn-neutral float-right" title="13.4 绘制线条" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../lines/" class="btn btn-neutral float-right" title="13.2 绘制线条" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../" class="btn btn-neutral float-left" title="13 绘图示例" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -351,7 +339,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年02月18日.
+        最后更新于 2019年02月20日.
       </span>
 
     </p>
