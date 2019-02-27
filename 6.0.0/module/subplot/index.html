@@ -357,7 +357,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://www.generic-mapping-tools.org/gmt/dev/subplot.html" title="(在 GMT v6.0.0)"><span>subplot</span></a></td>
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://www.generic-mapping-tools.org/gmt/latest/subplot.html" title="(在 GMT v6.0.0)"><span>subplot</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">设置子图模式</td>
 </tr>
@@ -420,9 +420,9 @@
 <li><code class="docutils literal notranslate"><span class="pre">+j|J&lt;refpoint&gt;</span></code> 指定子图编号在底图上的位置，默认值为 <code class="docutils literal notranslate"><span class="pre">TL</span></code>，即编号位于底图的左上角。<code class="docutils literal notranslate"><span class="pre">+j</span></code> 和 <code class="docutils literal notranslate"><span class="pre">+J</span></code> 分别适用于子图编号位于底图内部和底图外部的情况。</li>
 <li><code class="docutils literal notranslate"><span class="pre">+p&lt;pen&gt;</span></code> 绘制编号的文本框的轮廓</li>
 <li><code class="docutils literal notranslate"><span class="pre">+g&lt;fill&gt;</span></code> 为编号的文本框填充颜色</li>
-<li><code class="docutils literal notranslate"><span class="pre">+c&lt;dx&gt;[/&lt;dy&gt;]</span></code> 设置编号与其文本框轮廓间的距离，默认值为 <a class="reference external" href="http://www.generic-mapping-tools.org/gmt/dev/gmt.conf.html#font-tag" title="(在 GMT v6.0.0)"><span class="xref std std-ref">FONT_TAG</span></a> 的15%</li>
+<li><code class="docutils literal notranslate"><span class="pre">+c&lt;dx&gt;[/&lt;dy&gt;]</span></code> 设置编号与其文本框轮廓间的距离，默认值为 <a class="reference external" href="http://www.generic-mapping-tools.org/gmt/latest/gmt.conf.html#font-tag" title="(在 GMT v6.0.0)"><span class="xref std std-ref">FONT_TAG</span></a> 的15%</li>
 <li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;[/&lt;dy&gt;]</span></code> 设置编号与 <code class="docutils literal notranslate"><span class="pre">+j|J</span></code> 指定的参考位置之间的偏移量，默认值为
-<a class="reference external" href="http://www.generic-mapping-tools.org/gmt/dev/gmt.conf.html#font-tag" title="(在 GMT v6.0.0)"><span class="xref std std-ref">FONT_TAG</span></a> 的20%</li>
+<a class="reference external" href="http://www.generic-mapping-tools.org/gmt/latest/gmt.conf.html#font-tag" title="(在 GMT v6.0.0)"><span class="xref std std-ref">FONT_TAG</span></a> 的20%</li>
 <li><code class="docutils literal notranslate"><span class="pre">+r</span></code> 表示用小写罗马数字编号</li>
 <li><code class="docutils literal notranslate"><span class="pre">+R</span></code> 表示用大小罗马数字编号</li>
 <li><code class="docutils literal notranslate"><span class="pre">+v</span></code> 表示沿着垂直列方向依次增加编号，默认沿着水平行方向依次增加</li>
@@ -469,7 +469,7 @@
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-T&lt;heading&gt;</span></code></dt>
-<dd><p class="first">设置整张图的总标题，标题文字的属性由 <a class="reference external" href="http://www.generic-mapping-tools.org/gmt/dev/gmt.conf.html#font-heading" title="(在 GMT v6.0.0)"><span class="xref std std-ref">FONT_HEADING</span></a> 控制。</p>
+<dd><p class="first">设置整张图的总标题，标题文字的属性由 <a class="reference external" href="http://www.generic-mapping-tools.org/gmt/latest/gmt.conf.html#font-heading" title="(在 GMT v6.0.0)"><span class="xref std std-ref">FONT_HEADING</span></a> 控制。</p>
 <p class="last">每张子图各自的标题可以用 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项控制。</p>
 </dd>
 </dl>
@@ -477,9 +477,9 @@
 </div>
 <div class="section" id="subplot-set">
 <h2>12.120.2 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code><a class="headerlink" href="#subplot-set" title="永久链接至标题">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 用于选中某个特定的子图，接下来的所有绘图命令将只在该子图内进行绘制。也可以不使用 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 而是直接在绘图命令上加上额外的选项
-<a class="reference internal" href="../../option/c/"><span class="doc">-c 选项</span></a> 来指定当前命令在哪个子图内控制。</p>
-<p>需要注意，子图中所有的投影方式均不能指定绘图宽度，因为底图的尺寸完全有子图的大小和 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项指定的研究区域决定。</p>
+<p><code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 用于选中某个特定的子图，接下来的所有绘图命令将只在该子图内进行绘制。也可以通过在绘图命令上加上选项 <a class="reference internal" href="../../option/c/"><span class="doc">-c 选项</span></a> 来指定在哪个子图内绘制。与 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 类似，<a class="reference internal" href="../../option/c/"><span class="doc">-c 选项</span></a> 对当前命令以及之后的命令均有效，直到再次在绘图命令中使用 <a class="reference internal" href="../../option/c/"><span class="doc">-c 选项</span></a> 选项设定新的子图为止。</p>
+<p>需要注意，子图中所有的投影方式均不能指定绘图宽度，因为底图的尺寸完全有子图的大小和 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项指定的研究区域决定。在需要指定绘图宽度的地方，需要用问号
+<code class="docutils literal notranslate"><span class="pre">?</span></code> 代替绘图宽度。</p>
 <div class="section" id="id4">
 <h3>语法<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt subplot <span class="nb">set</span> &lt;row&gt;,&lt;col&gt; <span class="o">[</span>-A&lt;fixedlabel&gt;<span class="o">]</span> <span class="o">[</span>-C&lt;side&gt;/&lt;clearance&gt;<span class="o">[</span>u<span class="o">]]</span>
@@ -570,7 +570,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年02月25日.
+        最后更新于 2019年02月27日.
       </span>
 
     </p>

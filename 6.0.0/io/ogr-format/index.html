@@ -235,7 +235,7 @@ OGR/GMT格式的数据。OGR/GMT格式中包含了非空间数据，使得GMT的
 <li>所有非空间数据都以注释行的形式写到文件中，这些注释行在GMT4中会被直接忽略</li>
 <li>非空间数据的各个字段之间用空格分隔，每个字段均以字符 <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> 作为前缀，紧接着一个用于表征该字段内容的字符。每个字段内部的多个字符串之间用字符 <code class="docutils literal notranslate"><span class="pre">|</span></code> 分隔</li>
 <li>字符 <code class="docutils literal notranslate"><span class="pre">\</span></code> 作为转义字符，比如字符串内 <code class="docutils literal notranslate"><span class="pre">\n</span></code> 表示换行</li>
-<li>文件中，非空间数据均保存在空间数据之前。因而GMT在处理地理空间数据之前，以及解析了非地理空间信息，这些非地理空间信息可能会影响到地理空间数据的处理</li>
+<li>文件中，非空间数据均保存在空间数据之前。因而GMT在处理地理空间数据之前，已经解析了非地理空间信息，这些非地理空间信息可能会影响到地理空间数据的处理</li>
 <li>数据文件的第一个注释行必须指定OGR/GMT格式的版本号，即 <code class="docutils literal notranslate"><span class="pre">&#64;VGMT1.0</span></code></li>
 <li>为了兼容其他GIS格式（比如shapefiles），OGR/GMT格式中显式包含了一个字段，用于指定接下来的地理空间数据是点、线还是多边形</li>
 <li>每个文件有一个头段注释，其中指定了当前文件所包含的地理特征，以及每个特征所对应的非地理属性（比如区域范围，投影方式等）</li>
@@ -262,7 +262,7 @@ OGR/GMT格式的数据。OGR/GMT格式中包含了非空间数据，使得GMT的
 <li><code class="docutils literal notranslate"><span class="pre">LINESTRING</span></code>: 包含多个独立的线段（即GMT中的多段数据，每条线段可以有自己的头段记录）</li>
 <li><code class="docutils literal notranslate"><span class="pre">MULTILINESTRING</span></code>: 多线数据（文件中的所有线段是一个特性，共用同一个头段记录）</li>
 <li><code class="docutils literal notranslate"><span class="pre">POLYGON</span></code>: 包含多个闭合多边形（每个多边形可以有自己的头段记录）</li>
-<li><code class="docutils literal notranslate"><span class="pre">MULTIPOLYGON</span></code>: 多多边形数据（所有多边形共用同一个头段记录）</li>
+<li><code class="docutils literal notranslate"><span class="pre">MULTIPOLYGON</span></code>: 多个多边形数据（所有多边形共用同一个头段记录）</li>
 </ul>
 <p>例如:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># @VGMT1.0 @GPOLYGON</span>
@@ -442,7 +442,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年02月25日.
+        最后更新于 2019年02月27日.
       </span>
 
     </p>
