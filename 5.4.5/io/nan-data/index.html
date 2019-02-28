@@ -201,7 +201,7 @@
 <h1>5.3 NaN 数据<a class="headerlink" href="#nan" title="永久链接至标题">¶</a></h1>
 <p>NaN，全称 Not-a-Number。</p>
 <p>在数据处理或绘图时，经常会遇到某个数据点丢失或未赋值的情况。遇到这种情况，以前的做法是给这一点赋一个特殊值（比如 <code class="docutils literal notranslate"><span class="pre">-9999.99</span></code> ）来表明这个数据点有问题，但这样的解决办法并不完美，因为有时 <code class="docutils literal notranslate"><span class="pre">-9999.99</span></code> 或其他选定的数依然可能是一个合理值，进而导致数据处理时出现问题。</p>
-<p>更现代的解决办法时使用 IEEE 规定的 NaN 来表示某个数据点丢失或未赋值。从数学上来说，当你进行一些未定义的数学操作（比如 0/0）的结果就是 NaN，在 ASCII 文件中，用字符 <code class="docutils literal notranslate"><span class="pre">NaN</span></code> 表示 NaN。</p>
+<p>更现代的解决办法是使用 IEEE 规定的 NaN 来表示某个数据点丢失或未赋值。从数学上来说，当你进行一些未定义的数学操作（比如 0/0）的结果就是 NaN，在 ASCII 文件中，用字符 <code class="docutils literal notranslate"><span class="pre">NaN</span></code> 表示 NaN。</p>
 <p>NaN 值在程序内部会以一种特殊的bit pattern 进行保存，因而程序可以很容易识别一个数据是否是 NaN。在 C 中，标准库函数 <code class="docutils literal notranslate"><span class="pre">isnan</span></code> 即用于测试某一个浮点数是否是 NaN。</p>
 <p>GMT 会在数据处理以及绘图时对 NaN 数据进行检测：</p>
 <ul class="simple">
@@ -254,7 +254,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年02月25日.
+        最后更新于 2019年02月28日.
       </span>
 
     </p>
