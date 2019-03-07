@@ -219,7 +219,7 @@
 <p>通常，GMT模块在读入ASCII表数据时会处理读入的所有的数据记录。<code class="docutils literal notranslate"><span class="pre">-e</span></code> 选项提供了一个内置的模式匹配器，使得模块可以只处理匹配指定模式或正则表达式的数据记录。</p>
 <p><code class="docutils literal notranslate"><span class="pre">-e</span></code> 选项的完整语法是:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-e<span class="o">[</span>~<span class="o">]</span><span class="s2">&quot;&lt;pattern&gt;&quot;</span>
--e<span class="o">[</span>~<span class="o">]</span>&lt;regexp&gt;<span class="o">[</span>i<span class="o">]</span>
+-e<span class="o">[</span>~<span class="o">]</span>/&lt;regexp&gt;/<span class="o">[</span>i<span class="o">]</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">-e~</span></code> 表示取反，即只处理不匹配指定模式或正则表达式的数据记录。如果数据记录中包含了字符 <code class="docutils literal notranslate"><span class="pre">~</span></code>，则需要使用 <code class="docutils literal notranslate"><span class="pre">\~</span></code> 进行转义。
