@@ -216,14 +216,78 @@
             
   <div class="section" id="e">
 <h1>8.11 -e 选项<a class="headerlink" href="#e" title="永久链接至标题">¶</a></h1>
-<p>通常，GMT模块在读入ASCII表数据时会处理读入的所有的数据记录。<code class="docutils literal notranslate"><span class="pre">-e</span></code> 选项提供了一个内置的模式匹配器，使得模块可以只处理匹配指定模式或正则表达式的数据记录。</p>
-<p><code class="docutils literal notranslate"><span class="pre">-e</span></code> 选项的完整语法是:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-e<span class="o">[</span>~<span class="o">]</span><span class="s2">&quot;&lt;pattern&gt;&quot;</span>
--e<span class="o">[</span>~<span class="o">]</span>/&lt;regexp&gt;/<span class="o">[</span>i<span class="o">]</span>
+<p>GMT命令在读入数据时默认会处理读入的所有数据记录。<code class="docutils literal notranslate"><span class="pre">-e</span></code> 选项的作用是筛选或排除匹配某个字符串或者正则表达式的数据记录。</p>
+<p><code class="docutils literal notranslate"><span class="pre">-e</span></code> 选项的用法有两种：</p>
+<ol class="arabic simple">
+<li>匹配某个字符串：<code class="docutils literal notranslate"><span class="pre">-e[~]&quot;&lt;pattern&gt;&quot;</span></code></li>
+<li>匹配某个正则表达式：<code class="docutils literal notranslate"><span class="pre">-e[~]/&lt;regexp&gt;/[i]</span></code></li>
+</ol>
+<p>在匹配字符串或正则表达式前加上 <code class="docutils literal notranslate"><span class="pre">~</span></code> 表示取反，即排除匹配字符串或正则表达式的数据记录。如果数据记录中本身就包括字符 <code class="docutils literal notranslate"><span class="pre">~</span></code>，则需要使用 <code class="docutils literal notranslate"><span class="pre">\~</span></code> 对其进行转义。对于匹配正则表达式而言，还可以加上 <code class="docutils literal notranslate"><span class="pre">i</span></code> 表示忽略大小写。</p>
+<p>以一个常见的应用场景举例。假如文件 <code class="docutils literal notranslate"><span class="pre">input.dat</span></code> 中有一堆数据点，每个数据都对应某个分类，文件内容如下:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="m">1</span> type1
+<span class="m">2</span> <span class="m">2</span> type1
+<span class="m">3</span> <span class="m">3</span> type1
+<span class="m">4</span> <span class="m">4</span> type2
+<span class="m">5</span> <span class="m">5</span> type2
+<span class="m">6</span> <span class="m">6</span> type2
+<span class="m">7</span> <span class="m">7</span> type3
+<span class="m">8</span> <span class="m">8</span> type10
+<span class="m">9</span> <span class="m">9</span> type10
+<span class="m">10</span> <span class="m">10</span> null
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">-e~</span></code> 表示取反，即只处理不匹配指定模式或正则表达式的数据记录。如果数据记录中包含了字符 <code class="docutils literal notranslate"><span class="pre">~</span></code>，则需要使用 <code class="docutils literal notranslate"><span class="pre">\~</span></code> 进行转义。
-<code class="docutils literal notranslate"><span class="pre">i</span></code> 表示对大小写不敏感。</p>
+<p>可以使用 <code class="docutils literal notranslate"><span class="pre">-e</span></code> 选项筛选出自己需要的数据记录。</p>
+<p>筛选出所有匹配 <code class="docutils literal notranslate"><span class="pre">type</span></code> 的记录:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt <span class="k">select</span> input.dat -e<span class="s1">&#39;type&#39;</span>
+<span class="m">1</span>   <span class="m">1</span>       type1
+<span class="m">2</span>   <span class="m">2</span>       type1
+<span class="m">3</span>   <span class="m">3</span>       type1
+<span class="m">4</span>   <span class="m">4</span>       type2
+<span class="m">5</span>   <span class="m">5</span>       type2
+<span class="m">6</span>   <span class="m">6</span>       type2
+<span class="m">7</span>   <span class="m">7</span>       type3
+<span class="m">8</span>   <span class="m">8</span>       type10
+<span class="m">9</span>   <span class="m">9</span>       type10
+</pre></div>
+</div>
+<p>排除所有匹配 <code class="docutils literal notranslate"><span class="pre">null</span></code> 的记录:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt <span class="k">select</span> input.dat -e~<span class="s1">&#39;null&#39;</span>
+<span class="m">1</span>   <span class="m">1</span>       type1
+<span class="m">2</span>   <span class="m">2</span>       type1
+<span class="m">3</span>   <span class="m">3</span>       type1
+<span class="m">4</span>   <span class="m">4</span>       type2
+<span class="m">5</span>   <span class="m">5</span>       type2
+<span class="m">6</span>   <span class="m">6</span>       type2
+<span class="m">7</span>   <span class="m">7</span>       type3
+<span class="m">8</span>   <span class="m">8</span>       type10
+<span class="m">9</span>   <span class="m">9</span>       type10
+</pre></div>
+</div>
+<p>筛选所有匹配 <code class="docutils literal notranslate"><span class="pre">type2</span></code> 的记录:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt <span class="k">select</span> input.dat -e<span class="s1">&#39;type2&#39;</span>
+<span class="m">4</span>   <span class="m">4</span>       type2
+<span class="m">5</span>   <span class="m">5</span>       type2
+<span class="m">6</span>   <span class="m">6</span>       type2
+</pre></div>
+</div>
+<p>筛选所有匹配 <code class="docutils literal notranslate"><span class="pre">type1</span></code> 的记录:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 错误写法，因为 type1 也包含在字符串 type10 中</span>
+$ gmt <span class="k">select</span> input.dat -e<span class="s1">&#39;type1&#39;</span>
+<span class="m">1</span>   <span class="m">1</span>       type1
+<span class="m">2</span>   <span class="m">2</span>       type1
+<span class="m">3</span>   <span class="m">3</span>       type1
+<span class="m">8</span>   <span class="m">8</span>       type10
+<span class="m">9</span>   <span class="m">9</span>       type10
+
+<span class="c1"># 正确写法</span>
+<span class="c1"># 此处使用了正则表达式，\ ``$`` 表示行末匹配</span>
+$ gmt <span class="k">select</span> input.dat -e/type1$/
+<span class="m">1</span>   <span class="m">1</span>       type1
+<span class="m">2</span>   <span class="m">2</span>       type1
+<span class="m">3</span>   <span class="m">3</span>       type1
+</pre></div>
+</div>
+<p>正则表达式的具体用法不在本手册的范围之内，用户请自行搜索“正则表示式”。</p>
 </div>
 
 
