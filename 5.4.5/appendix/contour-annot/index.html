@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>15.13 等值线标注和“线条标注” &mdash; GMT中文手册</title>
+  <title>15.12 等值线标注和“线条标注” &mdash; GMT中文手册</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="15.14 通过 GDAL 读写网格文件" href="../gdal/" />
-    <link rel="prev" title="15.12 目录参数" href="../special-dirs/" /> 
+    <link rel="next" title="15.13 通过 GDAL 读写网格文件" href="../gdal/" />
+    <link rel="prev" title="15.11 目录参数" href="../special-dirs/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -111,17 +111,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../colors/">15.3 GMT 颜色表</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../patterns/">15.4 GMT预定义填充图案</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../low-level/">15.5 GMT底层原理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../directory-tree/">15.6 目录结构</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculate-distance/">15.7 三种距离计算方式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../variables/">15.8 环境变量</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../custom-fonts/">15.9 自定义字体</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../get-gmt-dev/">15.10 获取 GMT 开发版</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../animation/">15.11 用GMT制作动画</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-dirs/">15.12 目录参数</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">15.13 等值线标注和“线条标注”</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">15.13.1 标注的位置</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">15.13.2 标注的属性</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">15.13.3 等值线标注位置实例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../calculate-distance/">15.6 三种距离计算方式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../variables/">15.7 环境变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../custom-fonts/">15.8 自定义字体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get-gmt-dev/">15.9 获取 GMT 开发版</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../animation/">15.10 用GMT制作动画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-dirs/">15.11 目录参数</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">15.12 等值线标注和“线条标注”</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">15.12.1 标注的位置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">15.12.2 标注的属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">15.12.3 等值线标注位置实例</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id5">等距离放置标注</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id6">给定标注个数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id7">给定标注位置</a></li>
@@ -129,16 +128,16 @@
 <li class="toctree-l4"><a class="reference internal" href="#id9">广义的线段与等值线相交算法</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">15.13.4 标注属性实例</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10">15.12.4 标注属性实例</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id11">按照沿大圆弧距离放置标注, 1</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id12">按照沿大圆弧距离放置标注, 2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id13">使用不同数据集定义标注的内容和位置</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id14">15.13.5 综合实例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">15.12.5 综合实例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../gdal/">15.14 通过 GDAL 读写网格文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gdal/">15.13 通过 GDAL 读写网格文件</a></li>
 </ul>
 </li>
 </ul>
@@ -204,7 +203,7 @@
         
           <li><a href="../">15 附录</a> &raquo;</li>
         
-      <li>15.13 等值线标注和“线条标注”</li>
+      <li>15.12 等值线标注和“线条标注”</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -226,12 +225,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>15.13 等值线标注和“线条标注”<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>15.12 等值线标注和“线条标注”<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>GMT 中可以使用采用 <code class="docutils literal notranslate"><span class="pre">grdcontour</span></code> 和 <code class="docutils literal notranslate"><span class="pre">pscontour</span></code> 模块来绘制等值线，每条等值线都可以附加一个标注。GMT 中 <code class="docutils literal notranslate"><span class="pre">psxy</span></code> 和 <code class="docutils literal notranslate"><span class="pre">psxyz</span></code> 模块也可以使用
 <code class="docutils literal notranslate"><span class="pre">-Sq</span></code> 选项绘制带有标注的线段。</p>
 <p>在需要为等值线/线段附加标注的时候，如何优化标注的位置是一个很困难的主题。GMT提供了不同的算法确定标注的位置，并且可以自由地指定标注的属性。本章总结了标注的属性和位置确定方法，并给出了一些应用实例。</p>
 <div class="section" id="id2">
-<h2>15.13.1 标注的位置<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>15.12.1 标注的位置<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>GMT 中提供了5种算法来自动确定标注的位置。对于 <code class="docutils literal notranslate"><span class="pre">grdcontour</span></code> 和 <code class="docutils literal notranslate"><span class="pre">pscontour</span></code> 模块，可以通过 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项指定使用哪种标注定位算法，对于 <code class="docutils literal notranslate"><span class="pre">psxy</span></code> 和 <code class="docutils literal notranslate"><span class="pre">psxyz</span></code> 模块，则可以通过 <code class="docutils literal notranslate"><span class="pre">-Sq</span></code> 选项指定使用哪种标注定位算法。</p>
 <p>不管是 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 还是 <code class="docutils literal notranslate"><span class="pre">-Sq</span></code>，其所需要的信息是完全相同的，采用 <code class="docutils literal notranslate"><span class="pre">&lt;code&gt;&lt;info&gt;</span></code>
 的格式来指定算法和相应参数，其中 <code class="docutils literal notranslate"><span class="pre">&lt;code&gt;</span></code> 取不同的值代表不同的算法，<code class="docutils literal notranslate"><span class="pre">&lt;info&gt;</span></code>
@@ -281,7 +280,7 @@
 <p>每调用一次等值线绘制模块，只能指定一种确定标注位置的算法。</p>
 </div>
 <div class="section" id="id3">
-<h2>15.13.2 标注的属性<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>15.12.2 标注的属性<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>确定标注的位置之后，还需要指定标注的属性。对于等值线绘制模块，在 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 选项后以 <code class="docutils literal notranslate"><span class="pre">+&lt;code&gt;[&lt;参数&gt;]</span></code> 的格式定义不同的属性；对于线条绘制模块中，则是在 <code class="docutils literal notranslate"><span class="pre">-Sq</span></code> 选项后用冒号 <code class="docutils literal notranslate"><span class="pre">:</span></code> 来分隔标注的属性和标注的位置。</p>
 <p>部分属性只能用于线条绘制模块，因此，首先列出了两个模块通用的属性。这些属性包括：</p>
 <dl class="docutils">
@@ -348,7 +347,7 @@
 </dl>
 </div>
 <div class="section" id="id4">
-<h2>15.13.3 等值线标注位置实例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>15.12.3 等值线标注位置实例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>本节通过一些简单的实例说明等值线标注位置选项的作用。首先，在实例1中，采用部分全球大地水准面数据(geoid)，绘制了等值线。所选择的区域包含了大地水准面的两级，Indian Low和New Guinea High。</p>
 <div class="section" id="id5">
 <h3>等距离放置标注<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
@@ -430,7 +429,7 @@ rm gmt.*
 </div>
 </div>
 <div class="section" id="id10">
-<h2>15.13.4 标注属性实例<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<h2>15.12.4 标注属性实例<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
 <p>本节通过实例说明标注属性的作用，采用 <code class="docutils literal notranslate"><span class="pre">psxy</span></code> 绘制了大地水准面极值点之间的大圆弧，并且沿着该大圆弧从ETOPO5数据集中提取了高程数据。高程数据文件(transect.txt)中包括了 <em>经度、纬度、距离、大地水准面、高程</em> 数据。</p>
 <div class="section" id="id11">
 <h3>按照沿大圆弧距离放置标注, 1<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
@@ -481,7 +480,7 @@ rm gmt.*
 </div>
 </div>
 <div class="section" id="id14">
-<h2>15.13.5 综合实例<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h2>
+<h2>15.12.5 综合实例<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h2>
 <p>最后，采用之前章节中论述的多个标注位置确定方法和属性设置，绘制了一幅比较复杂的综合性图件。假设在Canary Islands发生了灾难性滑坡，图件显示了所引发的的海啸的走时(以小时为单位)。根据海啸走时和海底地形绘制了彩图，对等值线和线条进行了标注。完整的脚本如下：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="nv">R</span><span class="o">=</span>-R-85/5/10/55
@@ -548,10 +547,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../gdal/" class="btn btn-neutral float-right" title="15.14 通过 GDAL 读写网格文件" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../gdal/" class="btn btn-neutral float-right" title="15.13 通过 GDAL 读写网格文件" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../special-dirs/" class="btn btn-neutral float-left" title="15.12 目录参数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../special-dirs/" class="btn btn-neutral float-left" title="15.11 目录参数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
