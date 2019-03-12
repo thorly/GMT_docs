@@ -360,16 +360,13 @@
 <p><code class="docutils literal notranslate"><span class="pre">inset</span></code> 模块包含两个命令：</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">begin</span></code> 用于设置图中图模式，其定义了图中图区域的位置和大小</li>
-<li><code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">end</span></code> 用于结束图中图模式，此时所有的操作都会回到原始的完全图中</li>
+<li><code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">end</span></code> 用于结束图中图模式，此时所有的操作都会回到大区域图中</li>
 </ul>
 <div class="section" id="inset-begin">
 <h2>12.72.1 <code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">begin</span></code><a class="headerlink" href="#inset-begin" title="永久链接至标题">¶</a></h2>
 <div class="section" id="id1">
 <h3>语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt inset begin
-    -D&lt;inset-box&gt;
-    <span class="o">[</span>-F&lt;box&gt;<span class="o">]</span>
-    <span class="o">[</span>-M&lt;margins&gt;<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt inset begin -D&lt;inset-box&gt; <span class="o">[</span>-F&lt;box&gt;<span class="o">]</span> <span class="o">[</span>-M&lt;margins&gt;<span class="o">]</span>
 </pre></div>
 </div>
 </div>
@@ -388,7 +385,7 @@
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-F[+c&lt;clearances&gt;][+g&lt;fill&gt;][+i[[&lt;gap&gt;/]&lt;pen&gt;]][+p[&lt;pen&gt;]][+r[&lt;radius&gt;]][+s[[&lt;dx&gt;/&lt;dy&gt;/][&lt;shade&gt;]]]</span></code></dt>
-<dd>设置图中图区域的背景色、轮廓等熟悉，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</dd>
+<dd>设置图中图区域的背景色、轮廓等属性，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-M&lt;margins&gt;</span></code></dt>
 <dd><p class="first">图中图内部的额外空白区域。其可以取三种形式：</p>
 <ol class="last arabic simple">
