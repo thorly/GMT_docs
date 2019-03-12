@@ -107,8 +107,9 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">13.1 绘制底图</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id2">13.1.1 线性坐标系</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">13.1.2 对数坐标系</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">13.1.3 区域地图</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">13.1.4 全球地图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#y">13.1.3 双Y轴坐标系</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">13.1.4 区域地图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">13.1.5 全球地图</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../lines/">13.2 绘制线条</a></li>
@@ -251,15 +252,36 @@
 <li><code class="docutils literal notranslate"><span class="pre">-BWS</span></code> 表示只绘制图边框左（W）和下（S）边框</li>
 </ul>
 </div>
-<div class="section" id="id4">
-<h2>13.1.3 区域地图<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
-<p>GMT自带了海岸线数据，通过 <code class="docutils literal notranslate"><span class="pre">pscoast</span></code> 模块可以直接调用。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -R-90/-70/0/20 -JM6i -P -Ba -Gchocolate &gt; GMT_tutor1_3.ps
+<div class="section" id="y">
+<h2>13.1.3 双Y轴坐标系<a class="headerlink" href="#y" title="永久链接至标题">¶</a></h2>
+<p>下面展示如何用GMT绘制双Y轴坐标系。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R1/10000/1e20/1e25 -JX15cl/10cl -Bxa2+l<span class="s2">&quot;Wavelength (m)&quot;</span> <span class="se">\</span>
+    -Bya1pf3+l<span class="s2">&quot;Power (W)&quot;</span> -BWS -K &gt; GMT_tutor1_3.ps
+<span class="c1"># Y为指数坐标底图上的绘图操作</span>
+gmt psbasemap -R1/10000/1/20 -JX15cl/10c <span class="se">\</span>
+    -Bya5f2+l<span class="s2">&quot;linear (W)&quot;</span> -BE -O &gt;&gt; GMT_tutor1_3.ps
+<span class="c1"># Y为线性坐标底图上的绘图操作</span>
 </pre></div>
 </div>
 <div class="figure align-center" id="id8">
 <img alt="../../_images/basemap-gmtplot-2.png" src="../../_images/basemap-gmtplot-2.png" />
-<p class="caption"><span class="caption-number">图 13.3 </span><span class="caption-text">区域地图</span></p>
+<p class="caption"><span class="caption-number">图 13.3 </span><span class="caption-text">双Y轴图</span></p>
+</div>
+<p>此示例中：</p>
+<ul class="simple">
+<li>首句 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">psbasemap</span></code> 绘制了指数Y轴坐标系底图</li>
+<li>其次 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">psbasemap</span></code> 绘制了线性Y轴坐标系底图</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>13.1.4 区域地图<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>GMT自带了海岸线数据，通过 <code class="docutils literal notranslate"><span class="pre">pscoast</span></code> 模块可以直接调用。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -R-90/-70/0/20 -JM6i -P -Ba -Gchocolate &gt; GMT_tutor1_4.ps
+</pre></div>
+</div>
+<div class="figure align-center" id="id9">
+<img alt="../../_images/basemap-gmtplot-3.png" src="../../_images/basemap-gmtplot-3.png" />
+<p class="caption"><span class="caption-number">图 13.4 </span><span class="caption-text">区域地图</span></p>
 </div>
 <p>此示例中使用 <code class="docutils literal notranslate"><span class="pre">pscoast</span></code> 绘制了拉丁美洲区域的海岸线。</p>
 <ul class="simple">
@@ -280,14 +302,14 @@
 </ol>
 </div>
 <div class="section" id="id5">
-<h2>13.1.4 全球地图<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<h2>13.1.5 全球地图<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -Rg -JK180/9i -Bag -Dc -A5000 -Gchocolate -SDarkTurquoise <span class="se">\</span>
-    -Wthinnest &gt; GMT_tutor1_4.ps
+    -Wthinnest &gt; GMT_tutor1_5.ps
 </pre></div>
 </div>
-<div class="figure align-center" id="id9">
-<img alt="../../_images/basemap-gmtplot-3.png" src="../../_images/basemap-gmtplot-3.png" />
-<p class="caption"><span class="caption-number">图 13.4 </span><span class="caption-text">全球地图</span></p>
+<div class="figure align-center" id="id10">
+<img alt="../../_images/basemap-gmtplot-4.png" src="../../_images/basemap-gmtplot-4.png" />
+<p class="caption"><span class="caption-number">图 13.5 </span><span class="caption-text">全球地图</span></p>
 </div>
 <p>此示例中：</p>
 <ol class="arabic simple">
@@ -339,7 +361,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月11日.
+        最后更新于 2019年03月12日.
       </span>
 
     </p>
