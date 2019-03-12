@@ -271,7 +271,7 @@ gmt end
 <div class="section" id="subplot-mode">
 <span id="id5"></span><h2>3.3.4 子图模式<a class="headerlink" href="#subplot-mode" title="永久链接至标题">¶</a></h2>
 <p>有些时候需要把多张图放在一张图中，最直接的做法是分别绘制不同的图，然后通过移动各个图的绘图原点，将多张图拼接成一张图。</p>
-<p>针对这种需求，GMT的 <a class="reference internal" href="../../module/subplot/"><span class="doc">subplot</span></a> 模块提供了子图模式。子图模式的基本思想是将整体绘图区域分割成M行N列的网格，每个网格区域内均可以绘制一张子图。子图模式主要适用于子图具有相似的底图的情况，若子图的底图差异太大，配置和微调子图还是有些麻烦。</p>
+<p>针对这种需求，GMT的 <a class="reference internal" href="../../module/subplot/"><span class="doc">subplot</span></a> 模块提供了子图模式。子图模式的基本思想是将整体绘图区域分割成M行N列的网格，每个网格区域内均可以绘制一张子图。子图模式主要适用于子图具有相似的底图的情况。若子图的底图差异太大，或者多个子图的布局不规则，则不建议使用子图模式，而是直接使用 <a class="reference internal" href="../../option/XY/"><span class="doc">-X 和 -Y 选项</span></a>人工设定每个子图的绘图原点。</p>
 <p>子图模式的特色在于：</p>
 <ul class="simple">
 <li>自动控制每个子图的位置而无需用户自己移动坐标原点；</li>
@@ -309,10 +309,10 @@ gmt end
 </div>
 <div class="section" id="id6">
 <h2>3.3.5 图中图模式<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
-<p>在绘制研究区域的地图时，有时研究区域的范围比较小。在这种情况下，为了更好地显示研究区域的具体地理位置，通过会绘制一个更大区域的地图，并在大区域地图中框出研究区域的位置，这种图件称之为 inset map，中文没有统一的翻译，通常称之为图中图或者图中图。图中图模式可以通过模块 <a class="reference internal" href="../../module/inset/"><span class="doc">inset</span></a> 实现。</p>
-<p><code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">begin</span></code> 用于进入图中图模式，其作用是在图纸上标记出一个矩形区域，并将绘图原点移动到该矩形区域的左下角，接下来的所有绘图命令均只在该图中图区域内操作，而 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">end</span></code> 则用于退出图中图模式，并将坐标原点移动回原大图中。</p>
+<p>在绘制研究区域的地图时，有时研究区域的范围比较小。在这种情况下，为了更好地显示研究区域的具体地理位置，通常会绘制一个更大区域的地图，并在大区域地图中框出研究区域的位置，这种图件称之为 inset map，中文没有统一的翻译，通常称之为图中图或者小图。图中图模式可以通过模块 <a class="reference internal" href="../../module/inset/"><span class="doc">inset</span></a> 实现。</p>
+<p><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">inset</span> <span class="pre">begin</span></code> 用于进入图中图模式，其作用是在图纸上标记出一个矩形区域，并将绘图原点移动到该矩形区域的左下角，接下来的所有绘图命令均只在该图中图区域内操作，而 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">inset</span> <span class="pre">end</span></code> 则用于退出图中图模式，并将坐标原点移动回原大图中。</p>
 <p>下面仅展示一个简单的示例：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin inset png
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin inset-map png
     gmt basemap -R0/40/40/60 -JM6.5i -Bafg -B+glightgreen
 
     <span class="c1"># 图中图模式</span>
@@ -374,7 +374,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月11日.
+        最后更新于 2019年03月12日.
       </span>
 
     </p>

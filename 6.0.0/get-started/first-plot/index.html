@@ -231,7 +231,7 @@ Windows下使用bat脚本，并且对bash和bat脚本的区别不太了解，强
 </div>
 <div class="section" id="id3">
 <h2>3.4.2 绘制底图<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>GMT中的 <code class="docutils literal notranslate"><span class="pre">coast</span></code> 模块，可以绘制带海岸线的底图，并可以给陆地和海洋分别填充不同的颜色。</p>
+<p>GMT中的 <a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 模块，可以绘制带海岸线的底图，并可以给陆地和海洋分别填充不同的颜色，绘图命令及效果如下：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin first-plot pdf,png
 gmt coast -JH110/24c -Rg -Bg30 -Glightgreen -Slightblue -A1000 -Dc
 gmt end
@@ -253,7 +253,7 @@ PDF和PNG格式。</p>
 </div>
 <div class="section" id="id4">
 <h2>3.4.3 绘制震中和台站位置<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">plot</span></code> 模块可以用于绘制多种不同类型的符号，比如五角星和三角形。绘图脚本如下：</p>
+<p><a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a> 模块可以用于绘制多种不同类型的符号，比如五角星和三角形。绘图脚本如下：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 gmt begin first-plot pdf,png
 gmt coast -JH110/24c -Rg -Bg30 -Glightgreen -Slightblue -A1000 -Dc
@@ -351,7 +351,7 @@ gmt end
 </div>
 <div class="section" id="id6">
 <h2>3.4.5 添加台站名<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
-<p>最后还需要往图画里添加台站所在地区的名字。添加文字使用 <code class="docutils literal notranslate"><span class="pre">text</span></code> 模块：</p>
+<p>最后还需要往图画里添加台站所在地区的名字。添加文字使用 <a class="reference internal" href="../../module/text/"><span class="doc">text</span></a> 模块：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 gmt begin fist-plot pdf,png
 gmt coast -JH110/24c -Rg -Bg30 -Glightgreen -Slightblue -A1000 -Dc
@@ -434,7 +434,7 @@ gmt end
 <h2>3.4.6 图层的先后顺序<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
 <p>上面的绘图脚本已经基本绘制出我们最初想要的图件了。细细看会发现，还有一些不完美的地方：比如黄色五角星和三角形被线段盖住了。</p>
 <p>这是因为，GMT的每一个绘图命令都会产生一个图层，后绘制的图层会覆盖在先绘制的图层的上面，即后来者居上。解决办法也很简单，先绘制线段，再绘制三角形和五角星即可。</p>
-<p>对脚本做微调，如下所示：</p>
+<p>对脚本中命令的先后顺序进行微调，如下所示：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 gmt begin fist-plot pdf,png
 gmt coast -JH110/24c -Rg -Bg30 -Glightgreen -Slightblue -A1000 -Dc
@@ -550,7 +550,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月11日.
+        最后更新于 2019年03月12日.
       </span>
 
     </p>

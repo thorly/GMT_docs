@@ -209,10 +209,12 @@
 <p class="first admonition-title">注解</p>
 <p>由于GMT6.0.0尚未正式发布，因而只能通过编译源码的方式在 macOS 上安装。</p>
 <p>建议用 homebrew 安装软件。</p>
-<p>首先下载GMT6的formula：<a class="reference external" href="https://gitlab.com/snippets/1749251/raw?inline=false">https://gitlab.com/snippets/1749251/raw?inline=false</a></p>
-<p>下载完成后执行如下命令：</p>
-<p class="last">brew unlink gmt # 删除 gmt5
-brew install –HEAD gmt6.rb # 安装 gmt6</p>
+<p>首先下载GMT6的formula： <a class="reference external" href="/install/gmt6.rb">gmt6.rb</a></p>
+<p>下载完成后执行如下命令:</p>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>brew unlink gmt <span class="c1"># 删除 gmt5</span>
+brew install --HEAD gmt6.rb <span class="c1"># 安装 gmt6</span>
+</pre></div>
+</div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
@@ -220,7 +222,7 @@ brew install –HEAD gmt6.rb # 安装 gmt6</p>
 </div>
 <div class="section" id="homebrew">
 <h2>2.5.1 使用 homebrew 安装<a class="headerlink" href="#homebrew" title="永久链接至标题">¶</a></h2>
-<p><a class="reference external" href="http://brew.sh/">Homebrew</a> 是 macOS 下的第三方软件包管理工具。</p>
+<p><a class="reference external" href="https://brew.sh/">Homebrew</a> 是 macOS 下的第三方软件包管理工具。</p>
 <ol class="arabic">
 <li><p class="first">安装 Homebrew:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ /usr/bin/ruby -e <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span class="k">)</span><span class="s2">&quot;</span>
@@ -263,9 +265,9 @@ $ find . -size -4c -delete       <span class="c1"># 删除所有文件大小小�
 </div>
 <div class="section" id="gmt">
 <h2>2.5.2 使用 GMT 安装包<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
-<p>GMT 为 macOS 用户提供了 dmg 安装包。</p>
+<p>GMT 为 macOS 用户提供了 dmg 安装包，可以直接双击安装使用。</p>
 <ol class="arabic">
-<li><p class="first">到 <a class="reference external" href="http://gmt.soest.hawaii.edu/projects/gmt/wiki/Download">下载页面</a> 下载最新版本的 dmg 安装包。</p>
+<li><p class="first">下载：<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0-darwin-x86_64.dmg">gmt-6.0.0-darwin-x86_64.dmg</a></p>
 </li>
 <li><p class="first">双击 dmg 包以解压，将解压得到的 <code class="docutils literal notranslate"><span class="pre">GMT-6.0.0.app</span></code> 拖动到 Applications 目录即可。</p>
 </li>
@@ -328,7 +330,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月11日.
+        最后更新于 2019年03月12日.
       </span>
 
     </p>

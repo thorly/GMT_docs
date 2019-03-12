@@ -259,7 +259,8 @@
 </div>
 <div class="section" id="windows">
 <h3>添加 Windows 中文字体<a class="headerlink" href="#windows" title="永久链接至标题">¶</a></h3>
-<p>Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体，这里只考虑 Windows 下的宋体、仿宋、黑体和楷体四个基本字体。将这四个字体文件复制到 <code class="docutils literal notranslate"><span class="pre">/usr/share/fonts/winfonts/</span></code> 目录下，然后对 ghostscript 的中文配置文件做如下修改:</p>
+<p>Linux 的中文字体较少，所以这里使用 Windows 下中的中文字体，这里只考虑 Windows 下的宋体、仿宋、黑体和楷体四个基本字体。对于 Windows 下的其他中文字体、Linux 的其他中文字体甚至日韩字体来说，方法类似。</p>
+<p>将这四个字体文件复制到 <code class="docutils literal notranslate"><span class="pre">/usr/share/fonts/winfonts/</span></code> 目录下，然后对 ghostscript 的中文配置文件做如下修改:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>% 原内容保持不变
 /BousungEG-Light-GB &lt;&lt;/FileType /TrueType /Path <span class="o">(</span>/usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc<span class="o">)</span> /SubfontId <span class="m">0</span> /CSI <span class="o">[(</span>GB1<span class="o">)</span> <span class="m">4</span><span class="o">]</span> &gt;&gt; <span class="p">;</span>
 /GBZenKai-Medium    &lt;&lt;/FileType /TrueType /Path <span class="o">(</span>/usr/share/fonts/wqy-zenhei/wqy-zenhei.ttc<span class="o">)</span> /SubfontId <span class="m">0</span> /CSI <span class="o">[(</span>GB1<span class="o">)</span> <span class="m">4</span><span class="o">]</span> &gt;&gt; <span class="p">;</span>
@@ -273,7 +274,6 @@
 /STKaiti-Regular &lt;&lt;/FileType /TrueType /Path <span class="o">(</span>/usr/share/fonts/winfonts/simkai.ttf<span class="o">)</span> /SubfontId <span class="m">0</span> /CSI <span class="o">[(</span>GB1<span class="o">)</span> <span class="m">4</span><span class="o">]</span> &gt;&gt; <span class="p">;</span>
 </pre></div>
 </div>
-<p>这里仅以 Windows 下的常用四大字体为例。对于 Windows 下的其他中文字体、Linux 的其他中文字体甚至日韩字体来说，方法类似。</p>
 </div>
 <div class="section" id="ghostscript-windows">
 <h3>测试 ghostscript 对 Windows 中文字体的支持<a class="headerlink" href="#ghostscript-windows" title="永久链接至标题">¶</a></h3>
@@ -319,7 +319,7 @@ Font <span class="c1">#  Font Name</span>
 <span class="m">42</span> STKaiti-Regular--UniGB-UTF8-H
 </pre></div>
 </div>
-<p>其中 0-38 为 GMT/gs 默认支持的西文字体，39-42 为新添加的中文字体。以后要用中文字体时，需要用这些编号来指定字体，也许你的机器上的编号和这里不同。</p>
+<p>其中 0-38 为 GMT/gs 默认支持的字体，39-42 为新添加的中文字体。以后要用中文字体时，需要用这些编号来指定字体，也许你的机器上的编号和这里不同。</p>
 </div>
 <div class="section" id="id5">
 <h3>GMT 中文测试<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
@@ -485,7 +485,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月11日.
+        最后更新于 2019年03月12日.
       </span>
 
     </p>
