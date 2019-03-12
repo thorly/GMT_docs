@@ -208,7 +208,7 @@
 <p>推荐使用 homebrew 方式安装。</p>
 <div class="section" id="homebrew">
 <h2>2.5.1 使用 homebrew 安装<a class="headerlink" href="#homebrew" title="永久链接至标题">¶</a></h2>
-<p><a class="reference external" href="http://brew.sh/">Homebrew</a> 是 macOS 下的第三方软件包管理工具。</p>
+<p><a class="reference external" href="https://brew.sh/">Homebrew</a> 是 macOS 下的第三方软件包管理工具。</p>
 <ol class="arabic">
 <li><p class="first">安装 Homebrew:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ /usr/bin/ruby -e <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span class="k">)</span><span class="s2">&quot;</span>
@@ -251,13 +251,13 @@ $ find . -size -4c -delete       <span class="c1"># 删除所有文件大小小�
 </div>
 <div class="section" id="gmt">
 <h2>2.5.2 使用 GMT 安装包<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
-<p>GMT 为 macOS 用户提供了 dmg 安装包。</p>
+<p>GMT 为 macOS 用户提供了 dmg 安装包，可以直接双击安装使用。</p>
 <ol class="arabic">
-<li><p class="first">到 <a class="reference external" href="http://gmt.soest.hawaii.edu/projects/gmt/wiki/Download">下载页面</a> 下载最新版本的 dmg 安装包。</p>
+<li><p class="first">下载：<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/bin/gmt-5.4.5-darwin-x86_64.dmg">gmt-5.4.5-darwin-x86_64.dmg</a></p>
 </li>
 <li><p class="first">双击 dmg 包以解压，将解压得到的 <code class="docutils literal notranslate"><span class="pre">GMT-5.4.5.app</span></code> 拖动到 Applications 目录即可。</p>
 </li>
-<li><p class="first">GMT 默认会安装到 <code class="docutils literal notranslate"><span class="pre">/Applications/GMT-5.4.5.app/</span></code> 目录下，将如下语句:</p>
+<li><p class="first">GMT 默认会安装到 <code class="docutils literal notranslate"><span class="pre">/Applications/GMT-5.4.5.app/</span></code> 目录下。将如下语句:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>:/Applications/GMT-5.4.5.app/Contents/Resources/bin
 </pre></div>
 </div>

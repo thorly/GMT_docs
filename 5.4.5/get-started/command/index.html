@@ -222,17 +222,16 @@
 </ul>
 <p>几点说明：</p>
 <ul class="simple">
-<li>若模块名以 <code class="docutils literal notranslate"><span class="pre">gmt</span></code> 开头，则模块名中的 <code class="docutils literal notranslate"><span class="pre">gmt</span></code> 可省略。比如 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">gmtconvert</span> <span class="pre">xxx</span> <span class="pre">xxx</span></code>
-可以简写为 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">convert</span> <span class="pre">xxx</span> <span class="pre">xxx</span></code></li>
+<li>若模块名以 <code class="docutils literal notranslate"><span class="pre">gmt</span></code> 开头，则模块名中的 <code class="docutils literal notranslate"><span class="pre">gmt</span></code> 可省略。比如 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">gmtset</span> <span class="pre">xxx</span> <span class="pre">xxx</span></code>
+可以简写为 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">set</span> <span class="pre">xxx</span> <span class="pre">xxx</span></code></li>
 <li>模块名、选项等均区分大小写</li>
 <li>每个模块可以使用哪些选项由模块自己定义，具体参考每个模块的语法说明</li>
 <li>选项以 <code class="docutils literal notranslate"><span class="pre">-</span></code> 开头，后接<strong>单个字符</strong>表示某个选项，字符后接选项的参数以及子选项</li>
 <li>不以 <code class="docutils literal notranslate"><span class="pre">-</span></code> 开头的参数，都会被当做文件，GMT会尝试去读取</li>
 <li>子选项以 <code class="docutils literal notranslate"><span class="pre">+</span></code> 开头，后接<strong>单个字符</strong>以及子选项的参数</li>
 <li>官方文档中子选项称为modifier，可以译为“修饰符”，本文档中统一使用“子选项”</li>
-<li>各选项间以空格分隔，选项内部不能有空格</li>
-<li>选项内部的字符串，若存在空格，应用单引号或双引号括起来</li>
-<li>注意 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 、<code class="docutils literal notranslate"><span class="pre">—A</span></code>　以及 <code class="docutils literal notranslate"><span class="pre">－A</span></code> 的细微区别，这通常是由于标点符号的全角和半角导致的。GMT中只能使用第一种。GMT4官方文档以及某些介绍GMT的博客，都有此问题。GMT5、6的官方文档以及本文档不存在该问题。</li>
+<li>各选项间以空格分隔，选项内部不能有空格。选项内部的字符串中若存在空格，应用单引号或双引号括起来</li>
+<li>注意 <code class="docutils literal notranslate"><span class="pre">-A</span></code>、<code class="docutils literal notranslate"><span class="pre">—A</span></code> 以及 <code class="docutils literal notranslate"><span class="pre">－A</span></code> 的细微区别。GMT中只能使用第一种。GMT4官方文档以及某些介绍GMT的博客中都可能存在 <code class="docutils literal notranslate"><span class="pre">-</span></code> 被误写为其他相似的符号的情况。GMT5、6的官方文档以及本文档不存在该问题。</li>
 </ul>
 </div>
 

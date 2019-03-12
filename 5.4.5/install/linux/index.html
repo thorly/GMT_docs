@@ -207,9 +207,14 @@
             
   <div class="section" id="linux-gmt">
 <h1>2.1 Linux 下安装GMT<a class="headerlink" href="#linux-gmt" title="永久链接至标题">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">大多数Linux发行版都提供了预编译的GMT二进制包，可以通过发行版的软件包安装工具，如 <code class="docutils literal notranslate"><span class="pre">apt-get</span></code> 或 <code class="docutils literal notranslate"><span class="pre">yum</span></code> 等进行直接安装GMT。但大多数发行版提供的
+GMT版本都较老，故本文仅介绍如何从源码编译GMT。</p>
+</div>
 <div class="section" id="id1">
 <h2>2.1.1 解决依赖关系<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<p>GMT 在运行时依赖 fftw（&gt;=3.3）、glib2（&gt;=2.32）、netCDF（&gt;4.0且支持netCDF-4/HDF5）、ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（&gt;=2.8.5）。因而，需要先安装GMT所依赖的软件包。</p>
+<p>GMT 在运行时依赖 fftw（&gt;=3.3）、netCDF（&gt;4.0且支持netCDF-4/HDF5）、ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（&gt;=2.8.5）。因而，需要先安装GMT所依赖的软件包。</p>
 <div class="admonition warning">
 <p class="first admonition-title">警告</p>
 <p class="last">由于 Linux 发行版众多，不同发行版下软件包的名称不同。因而，以下仅所列仅供参考，其他用户应自行根据关键词到
@@ -222,9 +227,12 @@ $ sudo apt-get update
 <span class="c1"># 安装编译所需软件包</span>
 $ sudo apt-get install gcc g++ cmake make libc6
 
-<span class="c1"># 安装运行所需软件包</span>
+<span class="c1"># 安装必须软件包</span>
 $ sudo apt-get install ghostscript
 $ sudo apt-get install libnetcdf-dev
+$ sudo apt-get install libcurl4-gnutls-dev
+
+<span class="c1"># 安装可选软件包</span>
 $ sudo apt-get install libgdal-dev python-gdal
 $ sudo apt-get install liblapack3
 $ sudo apt-get install libglib2.0-dev
@@ -239,9 +247,12 @@ $ sudo yum install epel-release
 <span class="c1"># 安装编译所需软件包</span>
 $ sudo yum install gcc gcc-c++ cmake make glibc
 
-<span class="c1"># 安装运行所需软件包</span>
+<span class="c1"># 安装必须软件包</span>
 $ sudo yum install ghostscript
 $ sudo yum install netcdf-devel
+$ sudo yum install libcurl-devel
+
+<span class="c1"># 安装可选软件包</span>
 $ sudo yum install gdal-devel gdal-python
 $ sudo yum install lapack64-devel lapack-devel
 $ sudo yum install glib2-devel
@@ -260,9 +271,9 @@ yes
 <h2>2.1.2 下载<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>Linux下安装GMT需要下载如下三个文件（这里提供中科大提供的国内下载镜像）：</p>
 <ol class="arabic simple">
-<li>GMT源码： <a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/gmt-5.4.5-src.tar.gz">http://mirrors.ustc.edu.cn/gmt/gmt-5.4.5-src.tar.gz</a></li>
-<li>全球海岸线数据GSHHG： <a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz">http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz</a></li>
-<li>全球数字图表DCW： <a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/dcw-gmt-1.1.4.tar.gz">http://mirrors.ustc.edu.cn/gmt/dcw-gmt-1.1.4.tar.gz</a></li>
+<li>GMT源码：<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/gmt-5.4.5-src.tar.gz">gmt-5.4.5-src.tar.gz</a></li>
+<li>全球海岸线数据GSHHG：<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz">gshhg-gmt-2.3.7.tar.gz</a></li>
+<li>全球数字图表DCW：<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/dcw-gmt-1.1.4.tar.gz">dcw-gmt-1.1.4.tar.gz</a></li>
 </ol>
 </div>
 <div class="section" id="gmt">
@@ -278,7 +289,7 @@ $ mv gshhg-gmt-2.3.7 gmt-5.4.5/share/gshhg
 $ mv dcw-gmt-1.1.4 gmt-5.4.5/share/dcw-gmt
 
 <span class="c1"># 切换到gmt源码目录下</span>
-$ <span class="nb">cd</span> gmt-5.4.5
+$ <span class="nb">cd</span> gmt-5.4.5/
 
 <span class="c1"># 新建用户配置文件</span>
 $ gedit cmake/ConfigUser.cmake
@@ -289,7 +300,6 @@ $ gedit cmake/ConfigUser.cmake
 <span class="nb">set</span> <span class="o">(</span>COPY_GSHHG TRUE<span class="o">)</span>
 <span class="nb">set</span> <span class="o">(</span>COPY_DCW TRUE<span class="o">)</span>
 <span class="nb">set</span> <span class="o">(</span>GMT_INSTALL_MODULE_LINKS FALSE<span class="o">)</span>
-<span class="nb">set</span> <span class="o">(</span>GMT_DATA_URL <span class="s2">&quot;http://mirrors.ustc.edu.cn/gmt/data/&quot;</span><span class="o">)</span>
 <span class="nb">set</span> <span class="o">(</span>GMT_USE_THREADS TRUE<span class="o">)</span>
 </pre></div>
 </div>
@@ -299,7 +309,6 @@ $ gedit cmake/ConfigUser.cmake
 <code class="docutils literal notranslate"><span class="pre">/opt/GMT-5.4.5</span></code> 目录下，用户可以自行修改为其他路径。没有 root 权限的一般用户，可以将安装路径设置为 <code class="docutils literal notranslate"><span class="pre">/home/xxx/software/GMT-5.4.5</span></code> 等有可读写权限的路径；</li>
 <li><code class="docutils literal notranslate"><span class="pre">COPY_GSHHG</span></code> 和 <code class="docutils literal notranslate"><span class="pre">COPY_DCW</span></code> 设置为 TRUE 会将相关数据复制到 GMT 的 share 目录下</li>
 <li><code class="docutils literal notranslate"><span class="pre">GMT_INSTALL_MODULE_LINKS</span></code> 为 <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>，表明不在GMT的bin目录下建立命令的软链接，不建议设置为 <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> （可选）</li>
-<li><code class="docutils literal notranslate"><span class="pre">GMT_DATA_URL</span></code> 设置从中科大镜像下载GMT数据，以加快数据下载速度（可选）</li>
 <li><code class="docutils literal notranslate"><span class="pre">GMT_USE_THREADS</span></code> 表示是否开启某些模块的并行功能（可选）</li>
 </ul>
 <div class="admonition warning">
@@ -368,7 +377,7 @@ $ sudo make -j install
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">-j</span></code> 选项可以实现并行编译以减少编译时间。但并行编译可能在个别发行版上无法使用。</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">-j</span></code> 选项可以实现并行编译以减少编译时间。但据用户报告，某些Ubuntu发行版下使用 <code class="docutils literal notranslate"><span class="pre">-j</span></code> 选项会导致编译过程卡死。若出现此种情况，建议去除 <code class="docutils literal notranslate"><span class="pre">-j</span></code> 选项。</p>
 </div>
 </div>
 <div class="section" id="id3">
