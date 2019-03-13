@@ -216,7 +216,7 @@
             
   <div class="section" id="n">
 <h1>8.16 -n 选项<a class="headerlink" href="#n" title="永久链接至标题">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">-n</span></code> 选项用于控制二维网格数据重采样过程中的插值算法。其语法为:</p>
+<p><code class="docutils literal notranslate"><span class="pre">-n</span></code> 选项用于控制网格数据重采样过程中的插值算法。其语法为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-n<span class="o">[</span>b<span class="p">|</span>c<span class="p">|</span>l<span class="p">|</span>n<span class="o">][</span>+a<span class="o">][</span>+b&lt;BC&gt;<span class="o">][</span>+c<span class="o">][</span>+t&lt;threshold&gt;<span class="o">]</span>
 </pre></div>
 </div>
@@ -225,11 +225,12 @@
 <li><code class="docutils literal notranslate"><span class="pre">c</span></code> 表示使用bicubic插值算法（默认值）</li>
 <li><code class="docutils literal notranslate"><span class="pre">l</span></code> 表示bilinear插值算法</li>
 <li><code class="docutils literal notranslate"><span class="pre">n</span></code>  表示nearest-neighbor值。</li>
-<li><code class="docutils literal notranslate"><span class="pre">+a</span></code>：关闭抗混淆（仅在算法支持的前提下有效）</li>
-<li><code class="docutils literal notranslate"><span class="pre">+b&lt;BC&gt;</span></code>：设置网格的边界条件。<code class="docutils literal notranslate"><span class="pre">&lt;BC&gt;</span></code> 可以取 <code class="docutils literal notranslate"><span class="pre">g</span></code>、<code class="docutils literal notranslate"><span class="pre">p</span></code>、<code class="docutils literal notranslate"><span class="pre">n</span></code>，分别代表地理边界条件、周期边界条件和自然边界条件。对于后两种边界条件，可以在后面加上 <code class="docutils literal notranslate"><span class="pre">x</span></code> 或 <code class="docutils literal notranslate"><span class="pre">y</span></code> 表示边界条件仅对一个方向有效。比如 <code class="docutils literal notranslate"><span class="pre">-nb+bnxpy</span></code>
+<li><code class="docutils literal notranslate"><span class="pre">+a</span></code>：关闭抗混淆（仅在算法支持的前提下有效），默认打开抗混淆选项</li>
+<li><code class="docutils literal notranslate"><span class="pre">+b&lt;BC&gt;</span></code>：设置网格的 <a class="reference internal" href="../../grid/boundary-condition/"><span class="doc">边界条件</span></a>。
+<code class="docutils literal notranslate"><span class="pre">&lt;BC&gt;</span></code> 可以取 <code class="docutils literal notranslate"><span class="pre">g</span></code>、<code class="docutils literal notranslate"><span class="pre">p</span></code>、<code class="docutils literal notranslate"><span class="pre">n</span></code>，分别代表地理边界条件、周期边界条件和自然边界条件。对于后两种边界条件，可以进一步加上 <code class="docutils literal notranslate"><span class="pre">x</span></code> 或 <code class="docutils literal notranslate"><span class="pre">y</span></code> 表示边界条件仅对一个方向有效。比如 <code class="docutils literal notranslate"><span class="pre">-nb+bnxpy</span></code>
 表明X方向使用自然边界条件，Y方向使用周期边界条件</li>
-<li><code class="docutils literal notranslate"><span class="pre">+c</span></code>：假设原网格的Z值范围为zmin到zmax，插值后的网格范围可能为超过这一范围，使用 <code class="docutils literal notranslate"><span class="pre">+c</span></code> 则将超过zmin和zmax的部分裁剪掉</li>
-<li><code class="docutils literal notranslate"><span class="pre">+t&lt;threshold&gt;</span></code> 见官方文档</li>
+<li><code class="docutils literal notranslate"><span class="pre">+c</span></code>：假设原网格的Z值范围为zmin到zmax，插值后的网格范围可能为超过这一范围，使用 <code class="docutils literal notranslate"><span class="pre">+c</span></code> 则将超过zmin和zmax的部分裁剪掉，以保证插值后的网格数据的范围不超过输入网格数据的范围</li>
+<li><code class="docutils literal notranslate"><span class="pre">+t&lt;threshold&gt;</span></code> 用于控制NaN网格点的插值行为，默认值为0.5。具体解释见官方文档。</li>
 </ul>
 </div>
 
@@ -276,7 +277,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月12日.
+        最后更新于 2019年03月13日.
       </span>
 
     </p>

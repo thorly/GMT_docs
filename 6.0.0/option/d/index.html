@@ -216,16 +216,18 @@
             
   <div class="section" id="d">
 <h1>8.10 -d 选项<a class="headerlink" href="#d" title="永久链接至标题">¶</a></h1>
-<p>GMT中缺失的值会用NaN表示。某些情况下，用户可能会用类似-99999这样的数据表示数据缺失，对于GMT而言，-99999并不是一个特殊的值，因而就需要在将数据传递给
-GMT时告诉GMT某个特殊值表示数据缺失。</p>
+<p><code class="docutils literal notranslate"><span class="pre">-d</span></code> 选项用于将某些特定值当作NaN。</p>
+<p>GMT中用NaN表示数据缺失。某些情况下，用户可能会用类似-99999这样的数据表示数据缺失。对于GMT而言，-99999并不是一个特殊的值，因而需要在将数据传递给
+GMT时告诉GMT某个特定值表示数据缺失。</p>
 <p><code class="docutils literal notranslate"><span class="pre">-d</span></code> 选项的语法是:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-d<span class="o">[</span>i<span class="p">|</span>o<span class="o">]</span>&lt;nodata&gt;
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">-di</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-do</span></code> 表示仅对输入或输出有效，其作用是：</p>
 <ul class="simple">
-<li>对于输入数据，将数据中的 <code class="docutils literal notranslate"><span class="pre">&lt;nodata&gt;</span></code> 替换成NaN；</li>
-<li>对于输出数据，将NaN替换成 <code class="docutils literal notranslate"><span class="pre">&lt;nodata&gt;</span></code>。</li>
+<li><code class="docutils literal notranslate"><span class="pre">-d&lt;nodata&gt;</span></code> 将输入数据中的 <code class="docutils literal notranslate"><span class="pre">&lt;nodata&gt;</span></code> 替换成NaN；同时，将输出数据中的NaN
+替换成 <code class="docutils literal notranslate"><span class="pre">&lt;nodata&gt;</span></code>；</li>
+<li><code class="docutils literal notranslate"><span class="pre">-di&lt;nodata&gt;</span></code> 对于输入数据，将数据中的 <code class="docutils literal notranslate"><span class="pre">&lt;nodata&gt;</span></code> 替换成NaN；</li>
+<li><code class="docutils literal notranslate"><span class="pre">-do&lt;nodata&gt;</span></code> 对于输出数据，将数据中的NaN在输出时替换成 <code class="docutils literal notranslate"><span class="pre">&lt;nodata&gt;</span></code>。</li>
 </ul>
 </div>
 
@@ -272,7 +274,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月12日.
+        最后更新于 2019年03月13日.
       </span>
 
     </p>
