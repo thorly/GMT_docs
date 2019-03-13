@@ -118,6 +118,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#id8">14.3.4 更多示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">14.3.5 附录</a></li>
 </ul>
 </li>
 </ul>
@@ -361,6 +362,91 @@ global <span class="nv">out_path</span> <span class="o">=</span> <span class="s2
 <div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">GMT</span>
 <span class="n">include</span><span class="p">(</span><span class="s">&quot;/home/seisman/.julia/v0.5/GMT/test/gallery.jl&quot;</span><span class="p">)</span>
 <span class="n">gallery</span><span class="p">(</span><span class="s">&quot;ex01&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>14.3.5 附录<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">gmt()</span></code> 函数会返回多种类型的变量，比如上面例子中涉及到的CPT类型和网格类型的变量。因而需要在 Julia 中专门定义相关类型的变量。</p>
+<p>Julia 中网格变量 <code class="docutils literal notranslate"><span class="pre">GMTJL_GRID</span></code> 的定义为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span> GMTJL_GRID                 <span class="c1"># The type holding a local header and data of a GMT grid</span>
+   proj4::String              <span class="c1"># Projection string in PROJ4 syntax (Optional)</span>
+   wkt::String                <span class="c1"># Projection string in WKT syntax (Optional)</span>
+   range::Array<span class="o">{</span>Float64,1<span class="o">}</span>    <span class="c1"># 1x6 vector with [x_min x_max y_min y_max z_min z_max]</span>
+   inc::Array<span class="o">{</span>Float64,1<span class="o">}</span>      <span class="c1"># 1x2 vector with [x_inc y_inc]</span>
+   registration::Int          <span class="c1"># Registration type: 0 -&gt; Grid registration; 1 -&gt; Pixel registration</span>
+   nodata::Float64            <span class="c1"># The value of nodata</span>
+   title::String              <span class="c1"># Title (Optional)</span>
+   comment::String            <span class="c1"># Remark (Optional)</span>
+   command::String            <span class="c1"># Command used to create the grid (Optional)</span>
+   datatype::String           <span class="c1"># &#39;float&#39; or &#39;double&#39;</span>
+   x::Array<span class="o">{</span>Float64,1<span class="o">}</span>        <span class="c1"># [1 x n_columns] vector with XX coordinates</span>
+   y::Array<span class="o">{</span>Float64,1<span class="o">}</span>        <span class="c1"># [1 x n_rows]    vector with YY coordinates</span>
+   z::Array<span class="o">{</span>Float32,2<span class="o">}</span>        <span class="c1"># [n_rows x n_columns] grid array</span>
+   x_units::String            <span class="c1"># Units of XX axis (Optional)</span>
+   y_units::String            <span class="c1"># Units of YY axis (Optional)</span>
+   z_units::String            <span class="c1"># Units of ZZ axis (Optional)</span>
+   layout::String             <span class="c1"># A three character string describing the grid memory layout</span>
+end
+</pre></div>
+</div>
+<p>图片变量 <code class="docutils literal notranslate"><span class="pre">GMTimage</span></code> 的定义为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span> GMTimage                 <span class="c1"># The type holding a local header and data of a GMT image</span>
+   proj4::String              <span class="c1"># Projection string in PROJ4 syntax (Optional)</span>
+   wkt::String                <span class="c1"># Projection string in WKT syntax (Optional)</span>
+   range::Array<span class="o">{</span>Float64,1<span class="o">}</span>    <span class="c1"># 1x6 vector with [x_min x_max y_min y_max z_min z_max]</span>
+   inc::Array<span class="o">{</span>Float64,1<span class="o">}</span>      <span class="c1"># 1x2 vector with [x_inc y_inc]</span>
+   registration::Int          <span class="c1"># Registration type: 0 -&gt; Grid registration; 1 -&gt; Pixel registration</span>
+   nodata::Float64            <span class="c1"># The value of nodata</span>
+   title::String              <span class="c1"># Title (Optional)</span>
+   comment::String            <span class="c1"># Remark (Optional)</span>
+   command::String            <span class="c1"># Command used to create the image (Optional)</span>
+   datatype::String           <span class="c1"># &#39;uint8&#39; or &#39;int8&#39; (needs checking)</span>
+   x::Array<span class="o">{</span>Float64,1<span class="o">}</span>        <span class="c1"># [1 x n_columns] vector with XX coordinates</span>
+   y::Array<span class="o">{</span>Float64,1<span class="o">}</span>        <span class="c1"># [1 x n_rows]    vector with YY coordinates</span>
+   image::Array<span class="o">{</span>UInt8,3<span class="o">}</span>      <span class="c1"># [n_rows x n_columns x n_bands] image array</span>
+   x_units::String            <span class="c1"># Units of XX axis (Optional)</span>
+   y_units::String            <span class="c1"># Units of YY axis (Optional)</span>
+   z_units::String            <span class="c1"># Units of ZZ axis (Optional) ==&gt; MAKES NO SENSE</span>
+   colormap::Array<span class="o">{</span>Clong,1<span class="o">}</span>   <span class="c1">#</span>
+   alpha::Array<span class="o">{</span>UInt8,2<span class="o">}</span>      <span class="c1"># A [n_rows x n_columns] alpha array</span>
+   layout::String             <span class="c1"># A four character string describing the image memory layout</span>
+end
+</pre></div>
+</div>
+<p>DATASET变量 <code class="docutils literal notranslate"><span class="pre">GMTdataset</span></code> 的定义为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span> GMTdataset
+    header::String
+    data::Array<span class="o">{</span>Float64,2<span class="o">}</span>
+    text::Array<span class="o">{</span>Any,1<span class="o">}</span>
+    comment::Array<span class="o">{</span>Any,1<span class="o">}</span>
+    proj4::String
+    wkt::String
+end
+</pre></div>
+</div>
+<p>CPT变量 <code class="docutils literal notranslate"><span class="pre">GMTcpt</span></code> 的定义为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span> GMTcpt
+    colormap::Array<span class="o">{</span>Float64,2<span class="o">}</span>
+    alpha::Array<span class="o">{</span>Float64,1<span class="o">}</span>
+    range::Array<span class="o">{</span>Float64,2<span class="o">}</span>
+    minmax::Array<span class="o">{</span>Float64,1<span class="o">}</span>
+    bfn::Array<span class="o">{</span>Float64,2<span class="o">}</span>
+    depth::Cint
+    hinge::Cdouble
+    cpt::Array<span class="o">{</span>Float64,2<span class="o">}</span>
+    model::String
+    comment::Array<span class="o">{</span>Any,1<span class="o">}</span>   <span class="c1"># Cell array with any comments</span>
+end
+</pre></div>
+</div>
+<p>PS变量 <code class="docutils literal notranslate"><span class="pre">GMTps</span></code> 的定义为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span> GMTps
+    postscript::String      <span class="c1"># Actual PS plot (text string)</span>
+    length::Int             <span class="c1"># Byte length of postscript</span>
+    mode::Int               <span class="c1"># 1 = Has header, 2 = Has trailer, 3 = Has both</span>
+    comment::Array<span class="o">{</span>Any,1<span class="o">}</span>   <span class="c1"># Cell array with any comments</span>
+end
 </pre></div>
 </div>
 </div>
