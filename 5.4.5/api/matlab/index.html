@@ -122,13 +122,6 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#id8">14.2.4 常见问题</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">14.2.5 附录</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id10">网格数据结构体</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id11">图像结构体</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cpt">CPT 结构体</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#postscript">PostScript 结构体</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../julia/">14.3 GMT Julia API</a></li>
@@ -240,7 +233,7 @@ The GMT/MATLAB Toolbox,
 <li>GMT的执行路径已经加入了系统环境变量path中，保证系统可调用GMT命令；</li>
 <li>GMT的执行路径已经加入Matlab的搜索路径下，保证Matlab可调用GMT命令，如下图所示。</li>
 </ul>
-<div class="figure align-center" id="id12">
+<div class="figure align-center" id="id9">
 <a class="reference internal image-reference" href="../../_images/Matlab_path.png"><img alt="../../_images/Matlab_path.png" src="../../_images/Matlab_path.png" style="width: 100%;" /></a>
 <p class="caption"><span class="caption-number">图 14.1 </span><span class="caption-text">Matlab PATH 设置</span></p>
 </div>
@@ -352,79 +345,6 @@ gmt<span class="o">(</span><span class="s1">&#39;destroy&#39;</span><span class=
 <li>绘制地理投影时，经纬度标注可能会出现 <code class="docutils literal notranslate"><span class="pre">%s</span></code> 乱码（即使设置为不显示任何度分秒符号），目前已知Matlab2016存在该问题，其他版本还未有此类反馈。</li>
 </ul>
 </div>
-<div class="section" id="id9">
-<h2>14.2.5 附录<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
-<div class="section" id="id10">
-<h3>网格数据结构体<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>proj4          % Proj4 语法的投影方式 <span class="o">(</span>可选<span class="o">)</span>
-wkt            % WKT 语法的投影方式 <span class="o">(</span>可选<span class="o">)</span>
-range          % 1x6 向量, 表示数值范围： <span class="o">[</span>x_min x_max y_min y_max z_min z_max<span class="o">]</span>
-inc            % 1x2 向量, 表示采样间隔： <span class="o">[</span>x_inc y_inc<span class="o">]</span>
-registration   % 格网表达方式: <span class="m">0</span> -&gt; Grid registration<span class="p">;</span> <span class="m">1</span> -&gt; Pixel registration
-nodata         % 空值对应的数值
-title          % 标题 <span class="o">(</span>可选<span class="o">)</span>
-comment        % Remark <span class="o">(</span>可选<span class="o">)</span>
-<span class="nb">command</span>        % 生成网格所使用的命令 <span class="o">(</span>可选<span class="o">)</span>
-datatype       % 数据格式 <span class="s1">&#39;float&#39;</span> 或 <span class="s1">&#39;double&#39;</span>
-x              % <span class="o">[</span><span class="m">1</span> x n_columns<span class="o">]</span> 向量, 表示X坐标值
-y              % <span class="o">[</span><span class="m">1</span> x n_rows<span class="o">]</span> 向量, 表示Y坐标值
-z              % <span class="o">[</span>n_rows x n_columns<span class="o">]</span> 网格数组
-x_units        % X轴单位 <span class="o">(</span>可选<span class="o">)</span>
-y_units        % Y轴单位 <span class="o">(</span>可选<span class="o">)</span>
-z_units        % Z单位 <span class="o">(</span>可选<span class="o">)</span>
-layout         % 一个三字符的字符串，用于描述 image memory layout
-</pre></div>
-</div>
-</div>
-<div class="section" id="id11">
-<h3>图像结构体<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>proj4          % Proj4 语法的投影方式 <span class="o">(</span>可选<span class="o">)</span>
-wkt            % WKT 语法的投影方式 <span class="o">(</span>可选<span class="o">)</span>
-range          % 1x6 向量, 表示数值范围： <span class="o">[</span>x_min x_max y_min y_max z_min z_max<span class="o">]</span>
-inc            % 1x2 向量, 表示采样间隔： <span class="o">[</span>x_inc y_inc<span class="o">]</span>
-registration   % 格网表达方式: <span class="m">0</span> -&gt; Grid registration<span class="p">;</span> <span class="m">1</span> -&gt; Pixel registration <span class="o">(</span>默认值<span class="o">)</span>
-nodata         % 空值对应的数值
-title          % 标题 <span class="o">(</span>可选<span class="o">)</span>
-comment        % Remark <span class="o">(</span>可选<span class="o">)</span>
-<span class="nb">command</span>        % 生成网格所使用的命令 <span class="o">(</span>可选<span class="o">)</span>
-datatype       % 数据格式 <span class="s1">&#39;uint8&#39;</span> 或 <span class="s1">&#39;int8&#39;</span>
-x              % <span class="o">[</span><span class="m">1</span> x n_columns<span class="o">]</span> 向量, 表示X坐标值
-y              % <span class="o">[</span><span class="m">1</span> x n_rows<span class="o">]</span> 向量, 表示Y坐标值
-image          % <span class="o">[</span>n_rows x n_columns<span class="o">]</span> 图像数组
-x_units        % X轴单位 <span class="o">(</span>可选<span class="o">)</span>
-y_units        % Y轴单位 <span class="o">(</span>可选<span class="o">)</span>
-z_units        % Z单位 <span class="o">(</span>可选<span class="o">)</span>
-colormap       % CPT 结构体
-alpha          % <span class="o">[</span>n_rows x n_columns<span class="o">]</span> alpha 数组
-layout         % 一个四字符的字符串，用于描述 image memory layout
-</pre></div>
-</div>
-</div>
-<div class="section" id="cpt">
-<h3>CPT 结构体<a class="headerlink" href="#cpt" title="永久链接至标题">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>colormap       % <span class="o">[</span>ncolors x <span class="m">3</span><span class="o">]</span> 矩阵，保存了 <span class="o">[</span><span class="m">0</span>-1<span class="o">]</span> 范围内的颜色值
-alpha          % <span class="o">[</span>ncolors x <span class="m">1</span><span class="o">]</span> 矢量，包含了 <span class="o">[</span><span class="m">0</span>-1<span class="o">]</span> 范围内的透明度值 <span class="o">(</span>可选<span class="o">)</span>
-range          % <span class="o">[</span>ncolors x <span class="m">2</span><span class="o">]</span> 矩阵，对于每个颜色而言包含了 z_low 和 z_high 两个值
-minmax         % <span class="o">[</span>z_min z_max<span class="o">]</span>
-bnf            % <span class="o">[</span><span class="m">3</span> x <span class="m">3</span><span class="o">]</span> 矩阵，包含了 <span class="o">[</span><span class="m">0</span>-1<span class="o">]</span> 范围内的前景色、背景色和NaN色
-depth          % CPT 颜色深度，取值 <span class="o">(</span><span class="m">1</span>, <span class="m">8</span>, <span class="m">24</span><span class="o">)</span>
-hinge          % hinge 值
-cpt
-model          % RGB 或 CMYK
-comment        % remark <span class="o">(</span>可选<span class="o">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="postscript">
-<h3>PostScript 结构体<a class="headerlink" href="#postscript" title="永久链接至标题">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>postscript     % 包含了全部 PostScript 代码的字符串
-length         % 字符串的长度（即字节数）
-mode           % <span class="m">1</span> 表示仅包含文件头，2表示只包含文件尾，3表示完整为文件
-comment
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 
 
@@ -470,7 +390,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月12日.
+        最后更新于 2019年03月13日.
       </span>
 
     </p>

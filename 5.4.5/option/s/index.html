@@ -217,15 +217,52 @@
             
   <div class="section" id="s">
 <h1>8.20 -s 选项<a class="headerlink" href="#s" title="永久链接至标题">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">-s</span></code> 选项用于压制Z值等于 <code class="docutils literal notranslate"><span class="pre">NaN</span></code> 的记录的输出。其语法为:</p>
+<p><code class="docutils literal notranslate"><span class="pre">-s</span></code> 选项用于控制是否输出含有 <code class="docutils literal notranslate"><span class="pre">NaN</span></code> 的记录。</p>
+<p>默认情况下，命令会输出所有记录，包括那些某列值为 <code class="docutils literal notranslate"><span class="pre">NaN</span></code> 的记录。使用该选项可以控制含 <code class="docutils literal notranslate"><span class="pre">NaN</span></code> 的记录的输出。其语法为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-s<span class="o">[</span>&lt;cols&gt;<span class="o">][</span>a<span class="p">|</span>r<span class="o">]</span>
 </pre></div>
 </div>
-<p>默认情况下，命令会输出所有记录，包括那些Z值等于 <code class="docutils literal notranslate"><span class="pre">NaN</span></code> 的记录。使用该选项可以抑制Z值为 <code class="docutils literal notranslate"><span class="pre">NaNN</span></code> 的记录的输出。</p>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;cols&gt;</span></code> 是一系列用逗号分隔的列号或者列号范围，其中列号范围的格式为
-<code class="docutils literal notranslate"><span class="pre">&lt;start&gt;[:&lt;inc&gt;]:&lt;stop&gt;</span></code>，若省略 <code class="docutils literal notranslate"><span class="pre">&lt;inc&gt;</span></code> 则默认其值为1。</p>
-<p>比如 <code class="docutils literal notranslate"><span class="pre">2,5,7</span></code> 和 <code class="docutils literal notranslate"><span class="pre">2:4</span></code>，表示检测这些列数据是否是 <code class="docutils literal notranslate"><span class="pre">NaN</span></code>。</p>
-<p><code class="docutils literal notranslate"><span class="pre">r</span></code> 表示reverse，即只输出满足 <code class="docutils literal notranslate"><span class="pre">NaN</span></code> 的记录行。<code class="docutils literal notranslate"><span class="pre">-sa</span></code> 表示所有列中只要有一列为 <code class="docutils literal notranslate"><span class="pre">NaN</span></code> 即抑制其输出。</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">-s</span></code> 若Z值（即第三列）为NaN则不输出</li>
+<li><code class="docutils literal notranslate"><span class="pre">-sa</span></code> 表示任意一列有NaN则不输出</li>
+<li><code class="docutils literal notranslate"><span class="pre">-sr</span></code> 表示反操作，即只输出某列有 NaN 的记录</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;cols&gt;</span></code> 表示指定要检查的列，即只有指定的列有NaN时，才输出或不输出该记录
+<code class="docutils literal notranslate"><span class="pre">&lt;cols&gt;</span></code> 是一系列用逗号分隔的列号或者列号范围。列号范围的格式为 <code class="docutils literal notranslate"><span class="pre">&lt;start&gt;[:&lt;inc&gt;]:&lt;stop&gt;</span></code>，若省略 <code class="docutils literal notranslate"><span class="pre">&lt;inc&gt;</span></code> 则默认其值为1。比如 <code class="docutils literal notranslate"><span class="pre">2,5,7</span></code> 和 <code class="docutils literal notranslate"><span class="pre">2:4</span></code>，表示检测这些列数据是否是 <code class="docutils literal notranslate"><span class="pre">NaN</span></code>。</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">-s</span></code> 选项存在已知的BUG，见 <a class="reference external" href="https://github.com/GenericMappingTools/gmt/issues/501">https://github.com/GenericMappingTools/gmt/issues/501</a>。</p>
+</div>
+<p>举几个例子。输入数据 <code class="docutils literal notranslate"><span class="pre">input.dat</span></code> 的内容为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="m">1</span> <span class="m">1</span>   <span class="m">0</span>
+<span class="m">2</span> <span class="m">2</span> NaN <span class="m">0</span>
+<span class="m">3</span> <span class="m">3</span> <span class="m">3</span>   NaN
+</pre></div>
+</div>
+<p>不使用 <code class="docutils literal notranslate"><span class="pre">-s</span></code> 选项则会输出所有记录:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt <span class="k">select</span> input.dat
+<span class="m">1</span>   <span class="m">1</span>       <span class="m">1</span>       <span class="m">0</span>
+<span class="m">2</span>   <span class="m">2</span>       NaN     <span class="m">0</span>
+<span class="m">3</span>   <span class="m">3</span>       <span class="m">3</span>       NaN
+</pre></div>
+</div>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">-s</span></code> 选项则会抑制第三列为NaN的记录的输出:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt <span class="k">select</span> input.dat -s
+<span class="m">1</span>   <span class="m">1</span>       <span class="m">1</span>       <span class="m">0</span>
+<span class="m">3</span>   <span class="m">3</span>       <span class="m">3</span>       NaN
+</pre></div>
+</div>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">-sa</span></code> 选项则只有任意一列有NaN则不输出该记录:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt <span class="k">select</span> input.dat -sa
+<span class="m">1</span>   <span class="m">1</span>       <span class="m">1</span>       <span class="m">0</span>
+</pre></div>
+</div>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">-s2</span></code> 选项则检查第三列（列号从0开始）是否为NaN:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt <span class="k">select</span> input.dat -s2
+<span class="m">1</span>   <span class="m">1</span>       <span class="m">1</span>       <span class="m">0</span>
+<span class="m">3</span>   <span class="m">3</span>       <span class="m">3</span>       NaN
+</pre></div>
+</div>
 </div>
 
 
@@ -271,7 +308,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月12日.
+        最后更新于 2019年03月13日.
       </span>
 
     </p>
