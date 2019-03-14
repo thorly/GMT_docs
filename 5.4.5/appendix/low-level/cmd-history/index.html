@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>15.5.1 命令行历史 &mdash; GMT中文手册</title>
+  <title>15.5.2 命令行历史 &mdash; GMT中文手册</title>
   
 
   
@@ -40,7 +40,7 @@
     <link rel="index" title="索引" href="../../../genindex/" />
     <link rel="search" title="搜索" href="../../../search/" />
     <link rel="next" title="15.6 三种距离计算方式" href="../../calculate-distance/" />
-    <link rel="prev" title="15.5 GMT底层原理" href="../" /> 
+    <link rel="prev" title="15.5.1 PostScript" href="../postscript/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,8 +94,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../intro/">1 简介</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install/">2 安装</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../get-started/">3 GMT初探</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../basis/">4 绘图基础</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../io/">5 输入与输出</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../basis/">4 GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../table/">5 表数据</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../grid/">6 网格文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../cpt/">7 CPT文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../option/">8 标准选项</a></li>
@@ -111,7 +111,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../colors/">15.3 GMT 颜色表</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../patterns/">15.4 GMT预定义填充图案</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../">15.5 GMT底层原理</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">15.5.1 命令行历史</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../postscript/">15.5.1 PostScript</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">15.5.2 命令行历史</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../calculate-distance/">15.6 三种距离计算方式</a></li>
@@ -188,7 +189,7 @@
         
           <li><a href="../">15.5 GMT底层原理</a> &raquo;</li>
         
-      <li>15.5.1 命令行历史</li>
+      <li>15.5.2 命令行历史</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -210,7 +211,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>15.5.1 命令行历史<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>15.5.2 命令行历史<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>在使用多个命令绘制一张图时，这些命令可能使用了完全相同的标准选项参数，如果对于每个命令都需要把标准选项的参数写一遍，则太麻烦了，在这种情况下，GMT允许你省略标准选项的参数。例如:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -JX10c/10c -R0/10/0/10 -B1 -K &gt; text.ps
 gmt plot station.dat -J -R -O &gt;&gt; text.ps
@@ -271,7 +272,7 @@ gitalk.render('gitalk-container');
         <a href="../../calculate-distance/" class="btn btn-neutral float-right" title="15.6 三种距离计算方式" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../" class="btn btn-neutral float-left" title="15.5 GMT底层原理" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../postscript/" class="btn btn-neutral float-left" title="15.5.1 PostScript" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

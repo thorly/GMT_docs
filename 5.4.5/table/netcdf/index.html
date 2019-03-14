@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5.3 NaN 数据 &mdash; GMT中文手册</title>
+  <title>5.3 NetCDF表 &mdash; GMT中文手册</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="5.4 兼容OGR的GMT矢量数据格式" href="../ogr-format/" />
-    <link rel="prev" title="5.2 表数据" href="../table-data/" /> 
+    <link rel="next" title="5.4 兼容OGR的GMT矢量数据格式" href="../ogr/" />
+    <link rel="prev" title="5.2 二进制表" href="../binary/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,13 +94,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">5 输入与输出</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../format/">5.1 数据格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../table-data/">5.2 表数据</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.3 NaN 数据</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ogr-format/">5.4 兼容OGR的GMT矢量数据格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../postscript/">5.5 PostScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">5 表数据</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ascii/">5.1 ASCII表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binary/">5.2 二进制表</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.3 NetCDF表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ogr/">5.4 兼容OGR的GMT矢量数据格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nan/">5.5 NaN 数据</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
@@ -174,16 +174,16 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">5 输入与输出</a> &raquo;</li>
+          <li><a href="../">5 表数据</a> &raquo;</li>
         
-      <li>5.3 NaN 数据</li>
+      <li>5.3 NetCDF表</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/io/nan-data.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/table/netcdf.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -197,18 +197,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="nan">
-<h1>5.3 NaN 数据<a class="headerlink" href="#nan" title="永久链接至标题">¶</a></h1>
-<p>NaN，全称 Not-a-Number。</p>
-<p>在数据处理或绘图时，经常会遇到某个数据点丢失或未赋值的情况。遇到这种情况，以前的做法是给这一点赋一个特殊值（比如 <code class="docutils literal notranslate"><span class="pre">-9999.99</span></code> ）来表明这个数据点有问题，但这样的解决办法并不完美，因为有时 <code class="docutils literal notranslate"><span class="pre">-9999.99</span></code> 或其他选定的数依然可能是一个合理值，进而导致数据处理时出现问题。</p>
-<p>更现代的解决办法是使用 IEEE 规定的 NaN 来表示某个数据点丢失或未赋值。从数学上来说，当你进行一些未定义的数学操作（比如 0/0）的结果就是 NaN，在 ASCII 文件中，用字符 <code class="docutils literal notranslate"><span class="pre">NaN</span></code> 表示 NaN。</p>
-<p>NaN 值在程序内部会以一种特殊的bit pattern 进行保存，因而程序可以很容易识别一个数据是否是 NaN。在 C 中，标准库函数 <code class="docutils literal notranslate"><span class="pre">isnan</span></code> 即用于测试某一个浮点数是否是 NaN。</p>
-<p>GMT 会在数据处理以及绘图时对 NaN 数据进行检测：</p>
-<ul class="simple">
-<li>若值为 NaN 的数据出现在计算中，则结果也是 NaN</li>
-<li>值为 NaN 的数据，则在绘图时通常不绘制该数据点，或者为NaN数据指定专门的颜色</li>
-</ul>
-<p>若输入数据的 X 或 Y 列中包含 NaN 值，通常该记录会在读入过程中被跳过。而实际上，这些 NaN 记录可以根据 <a class="reference internal" href="../../conf/io/#io-nan-records"><span class="std std-ref">IO_NAN_RECORDS</span></a> 的取值不同而有两种解释。</p>
+  <div class="section" id="netcdf">
+<h1>5.3 NetCDF表<a class="headerlink" href="#netcdf" title="永久链接至标题">¶</a></h1>
+<p>表数据也可以用NetCDF格式保存，该格式的好处在于通用。比如GMT自带的海岸线数据就是
+NetCDF的表数据。NetCDF表数据中包含了一个或多个一维数组，每个一维数组都有对应的变量名（比如 <code class="docutils literal notranslate"><span class="pre">lon</span></code> 、 <code class="docutils literal notranslate"><span class="pre">lat</span></code> 、 <code class="docutils literal notranslate"><span class="pre">vel</span></code> 等等），由于NetCDF格式的数据中包含了很多元数据（meta data），所以读取就变得很容易。</p>
+<p>默认情况下，GMT在读入NetCDF表时会从第一个一维数组开始读，并将其作为输入的第一列，然后再读入第二个一维数组，将其作为输入的第二列，依次循环下去，直到读完自己所需要的字段数。</p>
+<p>若需要手动指定要从NetCDF表中读入哪些变量，可以在netCDF表文件名后加上后缀
+<code class="docutils literal notranslate"><span class="pre">?&lt;var1&gt;/&lt;var2&gt;/...</span></code>，也可以直接使用 <code class="docutils literal notranslate"><span class="pre">-bic&lt;var1&gt;/&lt;var2&gt;/...</span></code> 选项。其中 <code class="docutils literal notranslate"><span class="pre">&lt;var1&gt;</span></code> 等是要从NetCDF表中读入的变量名。比如 <code class="docutils literal notranslate"><span class="pre">file.nc?lon/lat</span></code>
+表示要从文件中读入 <code class="docutils literal notranslate"><span class="pre">lon</span></code> 和 <code class="docutils literal notranslate"><span class="pre">lat</span></code> 两个一维数组作为输入数据。</p>
+<p>目前，GMT只支持读取netCDF表数据，不支持写netCDF表数据。</p>
 </div>
 
 
@@ -240,10 +237,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../ogr-format/" class="btn btn-neutral float-right" title="5.4 兼容OGR的GMT矢量数据格式" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../ogr/" class="btn btn-neutral float-right" title="5.4 兼容OGR的GMT矢量数据格式" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../table-data/" class="btn btn-neutral float-left" title="5.2 表数据" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../binary/" class="btn btn-neutral float-left" title="5.2 二进制表" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
