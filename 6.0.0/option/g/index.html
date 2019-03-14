@@ -94,8 +94,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../io/">5 输入与输出</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../">8 标准选项</a><ul class="current">
@@ -218,7 +218,7 @@
 <h1>8.13 -g 选项<a class="headerlink" href="#g" title="永久链接至标题">¶</a></h1>
 <p>在处理多段数据时，GMT提供了三种机制来决定文件中数据的分段情况：</p>
 <ol class="arabic simple">
-<li>在 <a class="reference internal" href="../../io/table-data/"><span class="doc">表数据</span></a> 中已经介绍了，使用数据段头记录来标记一段数据的开头</li>
+<li>在 <a class="reference internal" href="../../table/ascii/"><span class="doc">ASCII表</span></a> 中已经介绍了，使用数据段头记录来标记一段数据的开头</li>
 <li>若输入数据中，某个记录的某个关键列的值为NaN，则也可以用于将该记录作为数据段的开始标识<ul>
 <li>当 <a class="reference internal" href="../../conf/io/#io-nan-records"><span class="std std-ref">IO_NAN_RECORDS</span></a> 为 <code class="docutils literal notranslate"><span class="pre">skip</span></code> 时，这些包含NaN值的记录会被自动跳过</li>
 <li>当 <a class="reference internal" href="../../conf/io/#io-nan-records"><span class="std std-ref">IO_NAN_RECORDS</span></a> 为 <code class="docutils literal notranslate"><span class="pre">pass</span></code> 时，这些包含NaN值的记录会被当做数据段的开始标识</li>

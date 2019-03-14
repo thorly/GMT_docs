@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5.1 数据格式 &mdash; GMT中文手册</title>
+  <title>4.13 数据格式 &mdash; GMT中文手册</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="5.2 表数据" href="../table-data/" />
-    <link rel="prev" title="5 输入与输出" href="../" /> 
+    <link rel="next" title="4.14 词汇表" href="../glossary/" />
+    <link rel="prev" title="4.12 绘制修饰物" href="../embellishment/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,20 +94,30 @@
 <li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 绘图基础</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">5 输入与输出</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.1 数据格式</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">5.1.1 地理坐标</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">5.1.2 绝对时间坐标</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">5.1.3 相对时间坐标</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">5.1.4 一般坐标值</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">4 GMT基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../paper/">4.1 画布</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit/">4.2 单位</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">4.3 颜色</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pen/">4.4 画笔</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fill/">4.5 填充</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">4.6 文字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../escape-character/">4.7 转义序列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-character/">4.8 特殊字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector/">4.9 绘制矢量/箭头</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../line/">4.10 线条属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anchor/">4.11 锚点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../embellishment/">4.12 绘制修饰物</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.13 数据格式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">4.13.1 地理坐标</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">4.13.2 绝对时间坐标</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">4.13.3 相对时间坐标</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">4.13.4 一般坐标值</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../table-data/">5.2 表数据</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../nan-data/">5.3 NaN 数据</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ogr-format/">5.4 兼容OGR的GMT矢量数据格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary/">4.14 词汇表</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
@@ -179,16 +189,16 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">5 输入与输出</a> &raquo;</li>
+          <li><a href="../">4 GMT基础</a> &raquo;</li>
         
-      <li>5.1 数据格式</li>
+      <li>4.13 数据格式</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/io/format.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/basis/io-format.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -203,11 +213,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>5.1 数据格式<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>4.13 数据格式<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>GMT 作为一个画图工具，肯定要输入一些数据，同时作为一个数据处理工具，也会输出一些数据。这就牵涉到数据格式的问题了。</p>
 <p>GMT可以绘制一般的笛卡尔坐标轴、地图的经纬度轴以及绝对时间轴、相对时间轴。对于不同的坐标轴，需要的数据格式也不同。</p>
 <div class="section" id="id2">
-<h2>5.1.1 地理坐标<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>4.13.1 地理坐标<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>地理坐标（即经纬度）有两种表示方式：</p>
 <ol class="arabic">
 <li><p class="first">以浮点型的度数表示。比如 <code class="docutils literal notranslate"><span class="pre">-123.45</span></code> 代表-123.45度</p>
@@ -222,7 +232,7 @@
 </ol>
 </div>
 <div class="section" id="id3">
-<h2>5.1.2 绝对时间坐标<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>4.13.2 绝对时间坐标<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>绝对时间由两部分构成，即日期和时间，表示为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;date&gt;T&lt;clock&gt;
 </pre></div>
@@ -257,7 +267,7 @@
 </ul>
 </div>
 <div class="section" id="id4">
-<h2>5.1.3 相对时间坐标<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>4.13.3 相对时间坐标<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>相对时间坐标即某个时间相对于参考时刻的秒数、小时数、天数或年数。因而在使用相对时间时，首先要给定两个参数：参考时刻以及相对时间所使用的单位。</p>
 <p>GMT参数 <a class="reference internal" href="../../conf/time/#time-epoch"><span class="std std-ref">TIME_EPOCH</span></a> 用于指定参考时刻，
 <a class="reference internal" href="../../conf/time/#time-unit"><span class="std std-ref">TIME_UNIT</span></a> 用于指定相对时间的单位。也可以用参数 <a class="reference internal" href="../../conf/time/#time-system"><span class="std std-ref">TIME_SYSTEM</span></a> 同时指定这两个参数。默认的参考时刻为1970年1月1日午夜，默认的相对时间单位为秒。</p>
@@ -269,7 +279,7 @@
 </ol>
 </div>
 <div class="section" id="id5">
-<h2>5.1.4 一般坐标值<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<h2>4.13.4 一般坐标值<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>在绘制常规的笛卡尔坐标轴时，即输入数据不是地理坐标、绝对时间或相对时间时，输入数据可以直接用浮点数表示，而不去在意其物理含义及单位。比如，5牛顿的力，5千克的质量，在 GMT 看来都只是浮点数 <code class="docutils literal notranslate"><span class="pre">5</span></code> 。</p>
 <p>这些浮点数坐标可以用两种方式表示：</p>
 <ol class="arabic simple">
@@ -308,10 +318,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../table-data/" class="btn btn-neutral float-right" title="5.2 表数据" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../glossary/" class="btn btn-neutral float-right" title="4.14 词汇表" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../" class="btn btn-neutral float-left" title="5 输入与输出" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../embellishment/" class="btn btn-neutral float-left" title="4.12 绘制修饰物" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
