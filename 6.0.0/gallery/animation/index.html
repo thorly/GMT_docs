@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>15.11 用GMT制作动画 &mdash; GMT中文手册</title>
+  <title>13.14 制作动画 &mdash; GMT中文手册</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="15.12 目录参数" href="../special-dirs/" />
-    <link rel="prev" title="15.10 获取 GMT 开发版" href="../get-gmt-dev/" /> 
+    <link rel="next" title="14 API" href="../../api/" />
+    <link rel="prev" title="13.13 多子图" href="../subplot/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -103,25 +103,28 @@
 <li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置GMT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../module/">12 模块手册</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../gallery/">13 绘图示例</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">15 附录</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../style/">15.1 风格指南</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cmd/">15.2 命令行及脚本基础</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../colors/">15.3 GMT 颜色表</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../patterns/">15.4 GMT预定义填充图案</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../modes-difference/">15.5 现代模式 vs 经典模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../low-level/">15.6 GMT底层原理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../calculate-distance/">15.7 三种距离计算方式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../variables/">15.8 环境变量</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../custom-fonts/">15.9 自定义字体</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../get-gmt-dev/">15.10 获取 GMT 开发版</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">15.11 用GMT制作动画</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-dirs/">15.12 目录参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contour-annot/">15.13 等值线标注和“线条标注”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gdal/">15.14 通过 GDAL 读写网格文件</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">13 绘图示例</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">13.1 绘制底图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lines/">13.2 绘制线条</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../symbols/">13.3 绘制符号</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coast/">13.4 绘制海岸线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../beachball/">13.5 绘制震源球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">13.6 绘制图例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earth-relief/">13.7 绘制地形起伏图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">13.8 绘制直方图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset-map/">13.9 绘制图中图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac-waveforms/">13.10 绘制SAC格式地震波形图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary-diagram/">13.11 绘制三角图解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">13.12 绘制等值线图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">13.13 多子图</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">13.14 制作动画</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">13.14.1 绘制正弦函数动画</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
 </ul>
 
             
@@ -183,16 +186,16 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">15 附录</a> &raquo;</li>
+          <li><a href="../">13 绘图示例</a> &raquo;</li>
         
-      <li>15.11 用GMT制作动画</li>
+      <li>13.14 制作动画</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/appendix/animation.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/gallery/animation/index.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -206,50 +209,64 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="gmt">
-<h1>15.11 用GMT制作动画<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h1>
-<p>GMT只能生成PS格式的图片，所以GMT自身并不具有制作动画的功能。但动画本质上就是将一系列独立的图片按照顺序快速播放，所以可以利用GMT绘制多张独立的图片，并将这些图片作为动画的每一帧。</p>
-<p>在制作一个动画时，通常需要按照顺序考虑如下问题：</p>
+  <div class="section" id="id1">
+<h1>13.14 制作动画<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>GMT提供了 <a class="reference internal" href="../../module/movie/"><span class="doc">movie</span></a> 模块用于简化制作动图的流程。</p>
+<p>动画本质上将一系列静态的图片（每张静态图片称为动画的一帧）按照顺序快速切换。
+<a class="reference internal" href="../../module/movie/"><span class="doc">movie</span></a> 模块的作用就是生成一系列静态图片，并利用外部工具将所有图片合并转换成单个动图。</p>
+<p>一张动图中有很多不变的元素，比如底图、海岸线、图例等。通常来说，一张动图可以分为三个图层：</p>
 <ol class="arabic simple">
-<li>一个动画需要多少帧？太少的帧数会导致动画存在不连续感，太多的帧数则可能需要绘制/播放很长时间。建议定义相关变量，使得可以根据实际情况进行微调</li>
-<li>通常一张动图中有很多元素是不变的。比如海岸线底图、一些图例信息等等。这些不变的元素，没有必要为每一帧都重复绘制。可以直接将这些不变的元素绘制完，然后将未关闭的文件复制到新文件中，并在新文件中绘制余下的部分</li>
-<li>帧计数器应初始化为0，并随着循环不断递增</li>
-<li>根据帧计数器中的值构建文件名，文件名必须有规律且唯一。例如 <code class="docutils literal notranslate"><span class="pre">plot_0001.ps</span></code>
-就是不错的命名方式（0001中的前置0不可省略，因为在将一系列图片转换成动画时需要涉及到各帧之间的先后顺序问题）</li>
-<li>将PS文件转换成图片，建议使用GMT自带的 <code class="docutils literal notranslate"><span class="pre">psconvert</span></code> 模块</li>
-<li>使用ImageMagick的 <code class="docutils literal notranslate"><span class="pre">convert</span></code> 命令将图片转换成gif或者avi等格式</li>
-<li>删除临时文件</li>
+<li>静态的背景图层（可选）</li>
+<li>动态元素图层（必须）</li>
+<li>静态的前景图层（可选）</li>
 </ol>
-<p>以下是制作动画的整个流程的示意代码：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="nv">PS</span><span class="o">=</span>plot.ps
+<p>用户需要准备一至三个GMT脚本，分别用于绘制三个图层。其中，绘制动态元素图层所需的脚本中可以使用一系列GMT预定义的变量。</p>
+<p>GMT生成动画的基本流程是：</p>
+<ol class="arabic simple">
+<li>调用第一个脚本生成静态背景图层</li>
+<li>调用第三个脚本生成静态前景图层</li>
+<li>调用第二个脚本生成中间的动态元素所在的图层</li>
+<li>将静态背景图层、中间动态图层和静态前景图层按照顺序叠在一起，得到一帧静态图片</li>
+<li>循环执行第3和第4步，得到动图所需的所有帧静态图片</li>
+<li>调用外部工具将所有静态图片合并转换为动图图片</li>
+</ol>
+<div class="section" id="id2">
+<h2>13.14.1 绘制正弦函数动画<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 
-<span class="c1"># 绘制图中的静态元素</span>
-gmt cmd1 ... -K &gt; <span class="nv">$PS</span>
-gmt cmd2 ... -K -O &gt;&gt; <span class="nv">$PS</span>
+<span class="c1"># 绘制静态背景图层的脚本</span>
+cat <span class="s">&lt;&lt; EOF &gt; pre.sh</span>
+<span class="s">gmt math -T0/360/20 T SIND = sin_point.txt</span>
+<span class="s">gmt math -T0/360/2 T SIND = sin_curve.txt</span>
+<span class="s">gmt begin</span>
+<span class="s">    gmt basemap -R0/360/-1.2/1.6 -JX3.5i/1.65i -X0.35i -Y0.25i \</span>
+<span class="s">    -BWSne+glightgreen -Bxa90g90f30+u&#39;\232&#39; -Bya0.5f0.1g1 --FONT_ANNOT_PRIMARY=9p</span>
+<span class="s">gmt end</span>
+<span class="s">EOF</span>
 
-<span class="c1"># 开始循环，i为帧计数器，MAX为最大帧数</span>
-<span class="k">for</span> <span class="o">((</span><span class="nv">i</span><span class="o">=</span><span class="m">0</span><span class="p">;</span> i&lt;MAX<span class="p">;</span> i++<span class="o">))</span>
-<span class="k">do</span>
-     <span class="c1"># 构建新文件名plot_xxxx.ps</span>
-     <span class="nv">file</span> <span class="o">=</span> <span class="sb">`</span><span class="nb">echo</span> <span class="nv">$i</span> <span class="p">|</span> awk <span class="s1">&#39;{printf &quot;plot_%04d.ps&quot;, $1}&#39;</span><span class="sb">`</span>
-     <span class="c1"># 将已经绘制好静态元素的文件复制到新文件</span>
-     <span class="c1"># 此时file中已经包含了静态元素</span>
-     cp <span class="nv">$PS</span> <span class="nv">$file</span>
-     <span class="c1"># 向file中添加动态元素</span>
-     gmt cmd3 ... -K -O &gt;&gt; <span class="nv">$file</span>
-     gmt cmd4 ... -K -O &gt;&gt; <span class="nv">$file</span>
-     gmt cmd5 ... -O &gt;&gt; <span class="nv">$file</span>
-     <span class="c1"># 将PS文件转换为某种图片格式</span>
-     gmt psconvert -A -P <span class="nv">$file</span>
-<span class="k">done</span>
+<span class="c1"># 绘制动态元素图层的脚本</span>
+cat <span class="s">&lt;&lt; EOF &gt; main.sh</span>
+<span class="s">gmt begin</span>
+<span class="s">#   Plot smooth blue curve and dark red dots at all angle steps so far</span>
+<span class="s">    last=\`gmt math -Q \${MOVIE_FRAME} 10 MUL =\`</span>
+<span class="s">    gmt convert sin_curve.txt -Z0:\${last} | gmt plot -W1p,blue -R0/360/-1.2/1.6 -JX3.5i/1.65i -X0.35i -Y0.25i</span>
+<span class="s">    gmt convert sin_point.txt -Z0:\${MOVIE_FRAME} | gmt plot -Sc0.1i -Gdarkred</span>
+<span class="s">#   Plot bright red dot at current angle and annotate</span>
+<span class="s">    gmt plot -Sc0.1i -Gred &lt;&lt;&lt; &quot;\${MOVIE_COL1} \${MOVIE_COL2}&quot;</span>
+<span class="s">    printf &quot;0 1.6 a = %3.3d&quot; \${MOVIE_COL1} | gmt text -F+f14p,Helvetica-Bold+jTL -N -Dj0.1i/0.05i</span>
+<span class="s">gmt end</span>
+<span class="s">EOF</span>
 
-<span class="c1"># 利用convert命令将图片转换为GIF动图</span>
-convert *.jpg plot.gif
-
-<span class="c1"># 清理临时文件</span>
-rm *.ps *.jpg
+<span class="c1"># movie 模块调用了 pre.sh 和 main.sh 脚本以生成动画</span>
+<span class="c1"># 生成动画</span>
+gmt movie main.sh -Sbpre.sh -C4ix2ix125 -Tsin_point.txt -Z -Nanim01 -D5 -A+l
+<span class="c1"># 将动画中的一帧保存为静态图片</span>
+gmt movie main.sh -Sbpre.sh -C4ix2ix125 -Tsin_point.txt -Z -Nanim01 -D5 -M10,png -Fnone
 </pre></div>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/anim01.gif"><img alt="../../_images/anim01.gif" src="../../_images/anim01.gif" style="width: 60%;" /></a>
+</div>
 </div>
 </div>
 
@@ -282,10 +299,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../special-dirs/" class="btn btn-neutral float-right" title="15.12 目录参数" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../api/" class="btn btn-neutral float-right" title="14 API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../get-gmt-dev/" class="btn btn-neutral float-left" title="15.10 获取 GMT 开发版" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../subplot/" class="btn btn-neutral float-left" title="13.13 多子图" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -296,7 +313,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月13日.
+        最后更新于 2019年03月14日.
       </span>
 
     </p>
