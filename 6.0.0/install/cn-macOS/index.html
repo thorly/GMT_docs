@@ -214,9 +214,9 @@
 <h2>2.6.1 使 gs 支持中文<a class="headerlink" href="#gs" title="永久链接至标题">¶</a></h2>
 <p>首先需要使 gs 支持中文，这可以通过
 <a class="reference external" href="https://github.com/texjporg/cjk-gs-support">cjk-gs-support</a> 项目提供的脚本
-<a class="reference external" href="https://github.com/texjporg/cjk-gs-support/blob/master/cjk-gs-integrate.pl">cjk-gs-integrate.pl</a> 实现。</p>
+<a class="reference external" href="https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjk-gs-integrate.pl">cjk-gs-integrate.pl</a> 实现。</p>
 <ol class="arabic">
-<li><p class="first">下载脚本 <a class="reference external" href="https://github.com/texjporg/cjk-gs-support/blob/master/cjk-gs-integrate.pl">cjk-gs-integrate.pl</a></p>
+<li><p class="first">下载脚本 <a class="reference external" href="https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjk-gs-integrate.pl">cjk-gs-integrate.pl</a></p>
 </li>
 <li><p class="first">执行脚本:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo perl cjk-gs-integrate.pl
@@ -240,9 +240,13 @@ $ open ~/.gmt/PSL_custom_fonts.txt
 STFangsong-Light--UniGB-UTF8-H  <span class="m">0</span>.700    <span class="m">1</span>
 STHeiti-Regular--UniGB-UTF8-H   <span class="m">0</span>.700   <span class="m">1</span>
 STKaiti-Regular--UniGB-UTF8-H   <span class="m">0</span>.700   <span class="m">1</span>
+STSong-Light--UniGB-UTF8-V  <span class="m">0</span>.700    <span class="m">1</span>
+STFangsong-Light--UniGB-UTF8-V  <span class="m">0</span>.700    <span class="m">1</span>
+STHeiti-Regular--UniGB-UTF8-V   <span class="m">0</span>.700   <span class="m">1</span>
+STKaiti-Regular--UniGB-UTF8-V   <span class="m">0</span>.700   <span class="m">1</span>
 </pre></div>
 </div>
-<p>这几句话分别添加了宋体、仿宋、黑体和楷体四种字体。</p>
+<p>这几句话分别添加了宋体、仿宋、黑体和楷体四种字体的横排和竖排两种方式。</p>
 </div>
 <div class="section" id="id2">
 <h3>查看 GMT 当前支持的字体<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
@@ -257,24 +261,31 @@ Font <span class="c1">#  Font Name</span>
 <span class="m">40</span> STFangsong-Light--UniGB-UTF8-H
 <span class="m">41</span> STHeiti-Regular--UniGB-UTF8-H
 <span class="m">42</span> STKaiti-Regular--UniGB-UTF8-H
+<span class="m">43</span> STSong-Light-UniGB-UTF8-V
+<span class="m">44</span> STFangsong-Light-UniGB-UTF8-V
+<span class="m">45</span> STHeiti-Regular-UniGB-UTF8-V
+<span class="m">46</span> STKaiti-Regular-UniGB-UTF8-V
 </pre></div>
 </div>
-<p>其中 39-42 号字体为新添加的中文字体。以后要用中文字体时，需要用这些编号来指定字体，也许你的机器上的编号和这里不同。</p>
+<p>其中 39-46 号字体为新添加的中文字体。以后要用中文字体时，需要用这些编号来指定字体，也许你的机器上的编号和这里不同。</p>
 </div>
 <div class="section" id="id3">
 <h3>GMT 中文测试<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p>测试脚本：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-
-gmt begin GMT_chinese pdf,png
-gmt <span class="nb">set</span> FONT_TITLE 30p,39,black
+gmt begin GMT_Chinese_macOS pdf,png
+gmt <span class="nb">set</span> FONT_TITLE 25p,41,black
 gmt <span class="nb">set</span> FONT_LABEL 15p,39,black
 
-gmt text -R0/10/0/4 -JX15c/5c -Bxafg+l<span class="s2">&quot;X轴&quot;</span> -Byafg+l<span class="s2">&quot;Y轴&quot;</span> -BWSen+t<span class="s2">&quot;中文标题&quot;</span> -F+f <span class="s">&lt;&lt; EOF</span>
-<span class="s">3 2.5 35p,39,black GMT宋体</span>
-<span class="s">3 1.0 35p,40,blue GMT仿宋</span>
-<span class="s">7 2.5 35p,41,yellow GMT黑体</span>
-<span class="s">7 1.0 35p,42,green GMT楷体</span>
+gmt text -R0/8/0/4 -JX12c/4c -Bxaf+l<span class="s2">&quot;X轴&quot;</span> -Byaf+l<span class="s2">&quot;Y轴&quot;</span> -BWSen+t<span class="s2">&quot;中文标题&quot;</span> -F+f <span class="s">&lt;&lt; EOF</span>
+<span class="s">2 3.5 25p,39,black 宋体横排</span>
+<span class="s">2 2.5 25p,40,blue  仿宋横排</span>
+<span class="s">2 1.5 25p,41,red   黑体横排</span>
+<span class="s">2 0.5 25p,42,green 楷体横排</span>
+<span class="s">4 3.5 25p,43,black 宋体竖排</span>
+<span class="s">5 3.5 25p,44,blue  仿宋竖排</span>
+<span class="s">6 3.5 25p,45,red   黑体竖排</span>
+<span class="s">7 3.5 25p,46,green 楷体竖排</span>
 <span class="s">EOF</span>
 gmt end
 </pre></div>
@@ -285,7 +296,7 @@ gmt end
 </div>
 <p>成图效果如下：</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/GMT_chinese.png"><img alt="../../_images/GMT_chinese.png" src="../../_images/GMT_chinese.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../../_images/GMT_Chinese_macOS.png"><img alt="../../_images/GMT_Chinese_macOS.png" src="../../_images/GMT_Chinese_macOS.png" style="width: 100%;" /></a>
 </div>
 </div>
 </div>
@@ -334,7 +345,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月18日.
+        最后更新于 2019年03月19日.
       </span>
 
     </p>
