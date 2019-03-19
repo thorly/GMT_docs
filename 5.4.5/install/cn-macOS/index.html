@@ -277,7 +277,7 @@ gmt <span class="nb">set</span> FONT_TITLE 25p,41,black
 gmt <span class="nb">set</span> FONT_LABEL 15p,39,black
 
 gmt pstext -R0/8/0/4 -JX12c/4c -Bxaf+l<span class="s2">&quot;X轴&quot;</span> -Byaf+l<span class="s2">&quot;Y轴&quot;</span> <span class="se">\</span>
-    -BWSen+t<span class="s2">&quot;中文标题&quot;</span> -F+f -P &gt; GMT_Chinese_macOS.ps <span class="s">&lt;&lt; EOF</span>
+    -BWSen+t<span class="s2">&quot;中文标题&quot;</span> -F+f -P &gt; GMT_Chinese.ps <span class="s">&lt;&lt; EOF</span>
 <span class="s">2 3.5 25p,39,black 宋体横排</span>
 <span class="s">2 2.5 25p,40,blue  仿宋横排</span>
 <span class="s">2 1.5 25p,41,red   黑体横排</span>
@@ -287,8 +287,8 @@ gmt pstext -R0/8/0/4 -JX12c/4c -Bxaf+l<span class="s2">&quot;X轴&quot;</span> -
 <span class="s">6 3.5 25p,45,red   黑体竖排</span>
 <span class="s">7 3.5 25p,46,green 楷体竖排</span>
 <span class="s">EOF</span>
-gmt psconvert -A -P -Tf GMT_Chinese_macOS.ps
-gmt psconvert -A -P -Tg GMT_Chinese_macOS.ps
+gmt psconvert -A -P -Tf GMT_Chinese.ps
+gmt psconvert -A -P -Tg GMT_Chinese.ps
 
 rm gmt.*
 </pre></div>
@@ -299,7 +299,7 @@ rm gmt.*
 </div>
 <p>成图效果如下：</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/GMT_Chinese_macOS.png"><img alt="../../_images/GMT_Chinese_macOS.png" src="../../_images/GMT_Chinese_macOS.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../../_images/GMT_Chinese.png"><img alt="../../_images/GMT_Chinese.png" src="../../_images/GMT_Chinese.png" style="width: 100%;" /></a>
 </div>
 </div>
 </div>
