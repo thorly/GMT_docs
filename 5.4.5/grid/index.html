@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex/" />
     <link rel="search" title="搜索" href="../search/" />
-    <link rel="next" title="6.1 网格文件简介" href="overview/" />
-    <link rel="prev" title="5.5 NaN 数据" href="../table/nan/" /> 
+    <link rel="next" title="6.1 网格文件格式" href="format/" />
+    <link rel="prev" title="5.4 兼容OGR的GMT矢量数据格式" href="../table/ogr/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -97,13 +97,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../basis/">4 GMT基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../table/">5 表数据</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">6 网格文件</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="overview/">6.1 网格文件简介</a></li>
-<li class="toctree-l2"><a class="reference internal" href="registration/">6.2 网格配准</a></li>
-<li class="toctree-l2"><a class="reference internal" href="boundary-condition/">6.3 边界条件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="read/">6.4 读netCDF文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="write/">6.5 写网格文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="suffix/">6.6 网格文件后缀</a></li>
-<li class="toctree-l2"><a class="reference internal" href="viewer/">6.7 查看netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="format/">6.1 网格文件格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read/">6.2 读netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="write/">6.3 写netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="registration/">6.4 网格配准</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boundary-condition/">6.5 边界条件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="viewer/">6.6 查看netCDF文件</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../cpt/">7 CPT文件</a></li>
@@ -201,39 +200,33 @@
 <h1>6 网格文件<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="overview/">6.1 网格文件简介</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="overview/#netcdf">6.1.1 netCDF网格文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="overview/#sun">6.1.2 Sun光栅文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="overview/#native">6.1.3 Native二进制格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="overview/#id2">6.1.4 用户自定义网格格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="format/">6.1 网格文件格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="read/">6.2 读netCDF文件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="read/#id1">6.2.1 读二维单变量netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read/#id2">6.2.2 读取二维多变量netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read/#id3">6.2.3 读取三维单/多变量netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read/#id4">6.2.4 读取四维单/多变量netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read/#id5">6.2.5 读取一维单/多变量netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read/#id6">6.2.6 修改坐标单位</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="registration/">6.2 网格配准</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="registration/#id2">6.2.1 网格线配准</a></li>
-<li class="toctree-l2"><a class="reference internal" href="registration/#id3">6.2.2 像素配准</a></li>
+<li class="toctree-l1"><a class="reference internal" href="write/">6.3 写netCDF文件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="write/#id1">6.3.1 文件名格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="write/#id2">6.3.2 分块与压缩</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="boundary-condition/">6.3 边界条件</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="boundary-condition/#id2">6.3.1 默认边界条件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="boundary-condition/#id3">6.3.2 周期边界条件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="boundary-condition/#id4">6.3.3 地理边界条件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registration/">6.4 网格配准</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="registration/#id2">6.4.1 网格线配准</a></li>
+<li class="toctree-l2"><a class="reference internal" href="registration/#id3">6.4.2 像素配准</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="read/">6.4 读netCDF文件</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="read/#id1">6.4.1 多个二维变量的处理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="read/#id2">6.4.2 三维变量的处理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="read/#id3">6.4.3 四维变量的处理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="read/#id4">6.4.4 一维变量的处理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="read/#id5">6.4.5 修改坐标单位</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boundary-condition/">6.5 边界条件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="boundary-condition/#id2">6.5.1 默认边界条件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boundary-condition/#id3">6.5.2 周期边界条件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boundary-condition/#id4">6.5.3 地理边界条件</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="write/">6.5 写网格文件</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="write/#id2">6.5.1 网格文件格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="write/#id3">6.5.2 分块与压缩</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="suffix/">6.6 网格文件后缀</a></li>
-<li class="toctree-l1"><a class="reference internal" href="viewer/">6.7 查看netCDF文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viewer/">6.6 查看netCDF文件</a></li>
 </ul>
 </div>
 </div>
@@ -267,10 +260,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="overview/" class="btn btn-neutral float-right" title="6.1 网格文件简介" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="format/" class="btn btn-neutral float-right" title="6.1 网格文件格式" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../table/nan/" class="btn btn-neutral float-left" title="5.5 NaN 数据" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../table/ogr/" class="btn btn-neutral float-left" title="5.4 兼容OGR的GMT矢量数据格式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -281,7 +274,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月20日.
+        最后更新于 2019年03月21日.
       </span>
 
     </p>

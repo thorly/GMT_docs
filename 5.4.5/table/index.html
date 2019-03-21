@@ -98,9 +98,8 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">5 表数据</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="ascii/">5.1 ASCII表</a></li>
 <li class="toctree-l2"><a class="reference internal" href="binary/">5.2 二进制表</a></li>
-<li class="toctree-l2"><a class="reference internal" href="netcdf/">5.3 NetCDF表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="netcdf/">5.3 netCDF表</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ogr/">5.4 兼容OGR的GMT矢量数据格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nan/">5.5 NaN 数据</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../grid/">6 网格文件</a></li>
@@ -197,38 +196,27 @@
             
   <div class="section" id="id1">
 <h1>5 表数据<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<p>英文称为table data，也称为列数据或多列数据，常用于表示点和线。表数据中有N个记录，每个记录都有M个字段。</p>
-<p>表数据可以有三种形式：ASCII表、二进制表和netCDF表。最常用的表数据形式是ASCII表，可以用编辑器直接编辑。ASCII表中有N行M列，每行是一个记录，每列是一个字段。一个记录内的字段之间用空格、制表符、逗号或分号分隔。</p>
+<p>表数据，也称为列数据或多列数据，英文为table data，常用于表示点和线。</p>
+<p>表数据可以有三种形式：ASCII表、二进制表和netCDF表。最常用的表数据形式是ASCII表，其具有直观、可直接编辑的特点；二进制表和netCDF表相对不直观，但通常文件大小更小。</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="ascii/">5.1 ASCII表</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="ascii/#id1">5.1.1 ASCII表简介</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ascii/#id2">5.1.2 文件头记录</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ascii/#id3">5.1.3 数据段头记录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ascii/#id3">5.1.3 多段数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ascii/#id4">5.1.4 数据段头记录中的额外属性</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="binary/">5.2 二进制表</a></li>
-<li class="toctree-l1"><a class="reference internal" href="netcdf/">5.3 NetCDF表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="netcdf/">5.3 netCDF表</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ogr/">5.4 兼容OGR的GMT矢量数据格式</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="ogr/#id1">5.4.1 简介</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ogr/#ogr-gmt">5.4.2 OGR/GMT格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ogr/#id2">5.4.3 OGR/GMT元数据</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ogr/#v">格式版本号 <code class="docutils literal notranslate"><span class="pre">&#64;V</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="ogr/#g">几何类型 <code class="docutils literal notranslate"><span class="pre">&#64;G</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="ogr/#r">区域范围 <code class="docutils literal notranslate"><span class="pre">&#64;R</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="ogr/#j">投影信息 <code class="docutils literal notranslate"><span class="pre">&#64;J</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="ogr/#n">声明非空间字段 <code class="docutils literal notranslate"><span class="pre">&#64;N</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="ogr/#id3">5.4.4 OGR/GMT数据</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ogr/#id4">非空间数据</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ogr/#id5">多边形拓扑</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="ogr/#id2">5.4.3 OGR/GMT元数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ogr/#id3">5.4.4 OGR/GMT数据</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ogr/#id6">5.4.5 示例</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="nan/">5.5 NaN 数据</a></li>
 </ul>
 </div>
 </div>
@@ -276,7 +264,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月20日.
+        最后更新于 2019年03月21日.
       </span>
 
     </p>
