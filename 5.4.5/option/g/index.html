@@ -219,7 +219,7 @@
 <h1>8.14 -g 选项<a class="headerlink" href="#g" title="永久链接至标题">¶</a></h1>
 <p>在处理多段数据时，GMT提供了三种机制来决定文件中数据的分段情况：</p>
 <ol class="arabic simple">
-<li>在 <a class="reference internal" href="../../table/ascii/"><span class="doc">ASCII表</span></a> 中已经介绍了，使用数据段头记录来标记一段数据的开头</li>
+<li>使用数据段头记录来标记一段数据的开始，详见 <a class="reference internal" href="../../table/ascii/"><span class="doc">ASCII表</span></a></li>
 <li>若输入数据中，某个记录的某个关键列的值为NaN，则也可以用于将该记录作为数据段的开始标识<ul>
 <li>当 <a class="reference internal" href="../../conf/io/#io-nan-records"><span class="std std-ref">IO_NAN_RECORDS</span></a> 为 <code class="docutils literal notranslate"><span class="pre">skip</span></code> 时，这些包含NaN值的记录会被自动跳过</li>
 <li>当 <a class="reference internal" href="../../conf/io/#io-nan-records"><span class="std std-ref">IO_NAN_RECORDS</span></a> 为 <code class="docutils literal notranslate"><span class="pre">pass</span></code> 时，这些包含NaN值的记录会被当做数据段的开始标识</li>
@@ -235,7 +235,7 @@
 <li><code class="docutils literal notranslate"><span class="pre">x</span></code> 两点的X坐标跳变超过 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">y</span></code> 两点的Y坐标跳变超过 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">d</span></code> 两点的距离超过 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;u&gt;</span></code> 是单位</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;u&gt;</span></code> 是 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 的单位</li>
 <li><code class="docutils literal notranslate"><span class="pre">X|Y|D</span></code> 用于表示数据投影到纸上后X坐标、Y坐标和纸上距离的跳变</li>
 <li>若想要检查特定列是否满足分段准则，可以用 <code class="docutils literal notranslate"><span class="pre">[&lt;col&gt;]z</span></code>，<code class="docutils literal notranslate"><span class="pre">&lt;col&gt;</span></code> 的默认值为
 <code class="docutils literal notranslate"><span class="pre">2</span></code>，即第三列</li>
