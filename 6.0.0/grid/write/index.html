@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6.5 写网格文件 &mdash; GMT中文手册</title>
+  <title>6.3 写netCDF文件 &mdash; GMT中文手册</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="6.6 网格文件后缀" href="../suffix/" />
-    <link rel="prev" title="6.4 读netCDF文件" href="../read/" /> 
+    <link rel="next" title="6.4 网格配准" href="../registration/" />
+    <link rel="prev" title="6.2 读netCDF文件" href="../read/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -97,17 +97,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../">6 网格文件</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../overview/">6.1 网格文件简介</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../registration/">6.2 网格配准</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../boundary-condition/">6.3 边界条件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../read/">6.4 读netCDF文件</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.5 写网格文件</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">6.5.1 网格文件格式</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">6.5.2 分块与压缩</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../format/">6.1 网格文件格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../read/">6.2 读netCDF文件</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.3 写netCDF文件</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">6.3.1 文件名格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">6.3.2 分块与压缩</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../suffix/">6.6 网格文件后缀</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../viewer/">6.7 查看netCDF文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../registration/">6.4 网格配准</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../boundary-condition/">6.5 边界条件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../viewer/">6.6 查看netCDF文件</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
@@ -182,7 +181,7 @@
         
           <li><a href="../">6 网格文件</a> &raquo;</li>
         
-      <li>6.5 写网格文件</li>
+      <li>6.3 写netCDF文件</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -203,142 +202,28 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="id1">
-<h1>6.5 写网格文件<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<div class="section" id="id2">
-<h2>6.5.1 网格文件格式<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p>上面已经说过，GMT可以读写三类格式的网格数据：netCDF格式、二进制格式和Sun光栅文件。进一步细分，GMT可以读取几十种不同格式的网格数据。</p>
-<p>GMT所支持的网格文件格式在下表列出，每种网格文件格式都有一个对应的两字符ID。</p>
-<table border="1" class="docutils align-center" id="id4">
-<caption><span class="caption-number">表 6.2 </span><span class="caption-text">网格文件格式ID</span><a class="headerlink" href="#id4" title="永久链接至表格">¶</a></caption>
-<colgroup>
-<col width="12%" />
-<col width="88%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">ID</th>
-<th class="head">说明</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>&#160;</td>
-<td><em>GMT 4 netCDF standard formats</em></td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">nb</span></code></td>
-<td>GMT netCDF format (8-bit integer, COARDS, CF-1.5)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">ns</span></code></td>
-<td>GMT netCDF format (16-bit integer, COARDS, CF-1.5)</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">ni</span></code></td>
-<td>GMT netCDF format (32-bit integer, COARDS, CF-1.5)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">nf</span></code></td>
-<td>GMT netCDF format (32-bit float, COARDS, CF-1.5)</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">nd</span></code></td>
-<td>GMT netCDF format (64-bit float, COARDS, CF-1.5)</td>
-</tr>
-<tr class="row-even"><td>&#160;</td>
-<td><em>GMT 3 netCDF legacy formats</em></td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">cb</span></code></td>
-<td>GMT netCDF format (8-bit integer, depreciated)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">cs</span></code></td>
-<td>GMT netCDF format (16-bit integer, depreciated)</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">ci</span></code></td>
-<td>GMT netCDF format (32-bit integer, depreciated)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">cf</span></code></td>
-<td>GMT netCDF format (32-bit float, depreciated)</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">cd</span></code></td>
-<td>GMT netCDF format (64-bit float, depreciated)</td>
-</tr>
-<tr class="row-even"><td>&#160;</td>
-<td><em>GMT native binary formats</em></td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">bm</span></code></td>
-<td>GMT native, C-binary format (bit-mask)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">bb</span></code></td>
-<td>GMT native, C-binary format (8-bit integer)</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">bs</span></code></td>
-<td>GMT native, C-binary format (16-bit integer)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">bi</span></code></td>
-<td>GMT native, C-binary format (32-bit integer)</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">bf</span></code></td>
-<td>GMT native, C-binary format (32-bit float)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">bd</span></code></td>
-<td>GMT native, C-binary format (64-bit float)</td>
-</tr>
-<tr class="row-odd"><td>&#160;</td>
-<td><em>Miscellaneous grid formats</em></td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">rb</span></code></td>
-<td>SUN raster file format (8-bit standard)</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">rf</span></code></td>
-<td>GEODAS grid format GRD98 (NGDC)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">sf</span></code></td>
-<td>Golden Software Surfer format 6 (32-bit float)</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">sd</span></code></td>
-<td>Golden Software Surfer format 7 (64-bit float)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">af</span></code></td>
-<td>Atlantic Geoscience Center AGC (32-bit float)</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">ei</span></code></td>
-<td>ESRI Arc/Info ASCII Grid Interchange format (ASCII integer)</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">ef</span></code></td>
-<td>ESRI Arc/Info ASCII Grid Interchange format (ASCII float)</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">gd</span></code></td>
-<td>Import/export via GDAL</td>
-</tr>
-</tbody>
-</table>
-<p>除了上面列出的网格文件格式之外，有C编程经验的高级用户还可以自己自定义网格文件格式，并将读写该格式的子程序链接到GMT函数库中，使得GMT可以支持自定义网格文件格式的读取。详情见源码中的 <code class="docutils literal notranslate"><span class="pre">gmt_customio.c</span></code> 。</p>
-<p>GMT在读网格数据时，可以自动检测网格文件的格式，所以不用担心。而在写网格数据时，GMT会默认使用 <code class="docutils literal notranslate"><span class="pre">nf</span></code> 格式（可以修改 <a class="reference internal" href="../../conf/io/#io-gridfile-format"><span class="std std-ref">IO_GRIDFILE_FORMAT</span></a>
-以设置其他网格文件格式为默认值）。如果想要以其他格式写网格数据，则可以在网格文件名后加上 <code class="docutils literal notranslate"><span class="pre">=&lt;ID&gt;</span></code> 参数以指定要使用的网格文件格式。</p>
-<p>无论是读还是写网格文件，都可以按照如下格式指定网格文件的文件名:</p>
+  <div class="section" id="netcdf">
+<h1>6.3 写netCDF文件<a class="headerlink" href="#netcdf" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>6.3.1 文件名格式<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>GMT生成网格数据时默认使用 <code class="docutils literal notranslate"><span class="pre">nf</span></code> 格式（默认网格文件格式由GMT参数
+<a class="reference internal" href="../../conf/io/#io-gridfile-format"><span class="std std-ref">IO_GRIDFILE_FORMAT</span></a> 控制）。可以通过在网格文件名后加上额外的信息以指定网格文件的格式。网格文件的文件名格式为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;name&gt;<span class="o">[=</span>&lt;ID&gt;<span class="o">][</span>+s&lt;scale&gt;<span class="o">][</span>+o&lt;offset&gt;<span class="o">][</span>+n&lt;nan&gt;<span class="o">]</span>
 </pre></div>
 </div>
-<p>其中</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code> 是网格文件名</li>
 <li><code class="docutils literal notranslate"><span class="pre">&lt;ID&gt;</span></code> 是写网格文件时要使用的网格文件格式</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;scale&gt;</span></code> 将所有数据乘以比例因子 <code class="docutils literal notranslate"><span class="pre">&lt;scale&gt;</span></code>，默认值为1</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;offset&gt;</span></code> 将所有数据加上一个常数 <code class="docutils literal notranslate"><span class="pre">&lt;offset&gt;</span></code>，默认值为0</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;offset&gt;</span></code> 将数据加上一个常数 <code class="docutils literal notranslate"><span class="pre">&lt;offset&gt;</span></code>，默认值为0</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;scale&gt;</span></code> 将数据乘以比例因子 <code class="docutils literal notranslate"><span class="pre">&lt;scale&gt;</span></code>，默认值为1</li>
 <li><code class="docutils literal notranslate"><span class="pre">&lt;nan&gt;</span></code> 表明将文件中值为 <code class="docutils literal notranslate"><span class="pre">&lt;nan&gt;</span></code> 认为是NaN</li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;scale&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;offset&gt;</span></code> 都可以取为 <code class="docutils literal notranslate"><span class="pre">a</span></code>，表明由程序自动决定比例因子和偏移量的值。在读网格文件时，会先乘以比例因子再加上偏移量；在写网格文件时，会先加上偏移量，再乘以比例因子。</p>
-<p>举几个例子：</p>
-<ol class="arabic simple">
-<li>读入Golden软件公司的surfer软件生成的网格文件，GMT可以自动识别，故而直接用 <code class="docutils literal notranslate"><span class="pre">file.grd</span></code></li>
-<li>读一个二进制短整型网格文件，先将所有值为32767的值设置为NaN，再将数据乘以10
-并加上32000，可以用 <code class="docutils literal notranslate"><span class="pre">myfile.i2=bs+s10+o32000+n32767</span></code></li>
-<li>将一个二进制短整数网格文件减去32000再除以10，然后写到标准输出，可以用 <code class="docutils literal notranslate"><span class="pre">=bs+s0.1+o-3200</span></code></li>
-<li>读一个8字节标准Sun光栅文件（其原始范围为0到255），并将其归一化到正负1范围内，可以用 <code class="docutils literal notranslate"><span class="pre">rasterfile+s7.84313725e-3+o-1</span></code>，即先乘以因子使得数据范围从0到255
-变成0到2，再减去1，则数据范围变成-1到1</li>
-<li>写一个8字节整型netCDF网格文件，偏移距由GMT自动决定，可以用 <code class="docutils literal notranslate"><span class="pre">=nb+oa</span></code></li>
-</ol>
-<p>GMT还支持通过网格文件后缀自动识别网格文件格式，详情见 <a class="reference internal" href="../suffix/"><span class="doc">网格文件后缀</span></a> 一节。</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;scale&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;offset&gt;</span></code> 都可以取为 <code class="docutils literal notranslate"><span class="pre">a</span></code>，表明由程序自动决定比例因子和偏移量的值。在写网格文件时，会先加上偏移量，再乘以比例因子。</p>
 </div>
-<div class="section" id="id3">
-<h2>6.5.2 分块与压缩<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>出于性能的考虑，GMT在输出超过16384个网格单元的网格文件时，会打开分块功能。所谓分块，即数据不是按照一行一行序列存储的，而是将整个网格分成若干个区块，然后依次存储每个区块的数据。</p>
-<p>在读取数据时，若只需要读取数据的一部分，netCDF只需要读取相应的区块即可，不用先读取整个数据。</p>
+<div class="section" id="id2">
+<h2>6.3.2 分块与压缩<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>出于性能的考虑，GMT在输出超过16384个网格单元的网格文件时，会启用分块功能。所谓分块，即数据不是按照一行一行序列存储的，而是将整个网格分成若干个区块，然后依次存储每个区块的数据。</p>
+<p>在读取数据时，若只需要读取数据的一部分，netCDF只需要读取相应的区块即可，无需读取整个数据。</p>
 <p>由于数据的压缩和解压比磁盘IO要快，因而可以对netCDF数据进行压缩，使得磁盘占用更少，IO负载更少。netCDF的压缩可以分为若干等级，压缩级别越高，文件越小，读写数据越快，但压缩/解压越耗时。通常，压缩级别取1到3效果比较好。</p>
 <p>GMT参数 <a class="reference internal" href="../../conf/io/#io-nc4-chunk-size"><span class="std std-ref">IO_NC4_CHUNK_SIZE</span></a> 可以控制分块的大小，
 <a class="reference internal" href="../../conf/io/#io-nc4-deflation-level"><span class="std std-ref">IO_NC4_DEFLATION_LEVEL</span></a> 可以控制压缩等级。</p>
@@ -374,10 +259,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../suffix/" class="btn btn-neutral float-right" title="6.6 网格文件后缀" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../registration/" class="btn btn-neutral float-right" title="6.4 网格配准" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../read/" class="btn btn-neutral float-left" title="6.4 读netCDF文件" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../read/" class="btn btn-neutral float-left" title="6.2 读netCDF文件" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -388,7 +273,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月20日.
+        最后更新于 2019年03月21日.
       </span>
 
     </p>

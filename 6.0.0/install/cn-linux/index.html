@@ -284,7 +284,7 @@
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
 <p>PS文件本质上是一个纯文本文件，可以用<strong>编辑器</strong>打开该PS文件以查看其内容。</p>
-<p class="last">PS 文件中要使用某个中文字体，需要用 <code class="docutils literal notranslate"><span class="pre">FontName--CMap</span></code> 的格式来调用。其中 <code class="docutils literal notranslate"><span class="pre">FontName</span></code> 即 gs 中文配置文件中给定的字体名。CMap 可以取 <code class="docutils literal notranslate"><span class="pre">UniGB-UTF8-H</span></code>
+<p class="last">PS 文件中要使用某个中文字体，需要用 <code class="docutils literal notranslate"><span class="pre">FontName-CMap</span></code> 的格式来调用。其中 <code class="docutils literal notranslate"><span class="pre">FontName</span></code> 即 gs 中文配置文件中给定的字体名。CMap 可以取 <code class="docutils literal notranslate"><span class="pre">UniGB-UTF8-H</span></code>
 和 <code class="docutils literal notranslate"><span class="pre">GB-EUC-H</span></code>， Linux 下一般用前者，Windows 下一般用后者，用于指定汉字或中文字体的编码。</p>
 </div>
 </div>
@@ -296,10 +296,10 @@
 <p>新建GMT自定义字体配置文件 <code class="docutils literal notranslate"><span class="pre">~/.gmt/PSL_custom_fonts.txt</span></code> （若不存在 <code class="docutils literal notranslate"><span class="pre">~/.gmt</span></code>
 目录则需新建该目录）。</p>
 <p>向 GMT自定义字体配置文件 <code class="docutils literal notranslate"><span class="pre">~/.gmt/PSL_custom_fonts.txt</span></code> 中加入如下语句:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>STSong-Light--UniGB-UTF8-H  <span class="m">0</span>.700    <span class="m">1</span>
-STFangsong-Light--UniGB-UTF8-H  <span class="m">0</span>.700    <span class="m">1</span>
-STHeiti-Regular--UniGB-UTF8-H   <span class="m">0</span>.700   <span class="m">1</span>
-STKaiti-Regular--UniGB-UTF8-H   <span class="m">0</span>.700   <span class="m">1</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>STSong-Light-UniGB-UTF8-H  <span class="m">0</span>.700    <span class="m">1</span>
+STFangsong-Light-UniGB-UTF8-H  <span class="m">0</span>.700    <span class="m">1</span>
+STHeiti-Regular-UniGB-UTF8-H   <span class="m">0</span>.700   <span class="m">1</span>
+STKaiti-Regular-UniGB-UTF8-H   <span class="m">0</span>.700   <span class="m">1</span>
 </pre></div>
 </div>
 <p>第一列为字体名，第二列为字母 A 的高度，第三列与编码有关。</p>
@@ -313,10 +313,10 @@ Font <span class="c1">#  Font Name</span>
 <span class="m">0</span>   Helvetica
 <span class="m">1</span>   Helvetica-Bold
 ...    ......
-<span class="m">39</span> STSong-Light--UniGB-UTF8-H
-<span class="m">40</span> STFangsong-Light--UniGB-UTF8-H
-<span class="m">41</span> STHeiti-Regular--UniGB-UTF8-H
-<span class="m">42</span> STKaiti-Regular--UniGB-UTF8-H
+<span class="m">39</span> STSong-Light-UniGB-UTF8-H
+<span class="m">40</span> STFangsong-Light-UniGB-UTF8-H
+<span class="m">41</span> STHeiti-Regular-UniGB-UTF8-H
+<span class="m">42</span> STKaiti-Regular-UniGB-UTF8-H
 </pre></div>
 </div>
 <p>其中 0-38 为 GMT/gs 默认支持的字体，39-42 为新添加的中文字体。以后要用中文字体时，需要用这些编号来指定字体，也许你的机器上的编号和这里不同。</p>
@@ -485,7 +485,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月20日.
+        最后更新于 2019年03月21日.
       </span>
 
     </p>

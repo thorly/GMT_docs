@@ -281,7 +281,29 @@
 <dl class="docutils" id="io-gridfile-shorthand">
 <dt><strong>IO_GRIDFILE_SHORTHAND</strong></dt>
 <dd><p class="first">是否支持自动识别网格文件后缀的功能 [false]</p>
-<p class="last">见 <a class="reference internal" href="../../grid/suffix/"><span class="doc">网格文件后缀</span></a> 一节。若设置为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则会检测每个网格文件的后缀是否在用户自定义文件后缀中；若为 <code class="docutils literal notranslate"><span class="pre">false</span></code>，则不检测用户自定义文件后缀。</p>
+<p>GMT中也可以将网格文件的后缀与网格文件格式关联起来，就像Windows下 <code class="docutils literal notranslate"><span class="pre">docx</span></code>
+后缀的文件与MS Word关联一样，这样GMT就可以直接根据文件后缀确定网格文件的格式了，这样更加直观也更加易用。</p>
+<p>这一特性通过一个叫 <code class="docutils literal notranslate"><span class="pre">gmt.io</span></code> 的文件来实现。GMT会依次在当前目录、家目录或
+<code class="docutils literal notranslate"><span class="pre">~/.gmt</span></code> 目录下，寻找 <code class="docutils literal notranslate"><span class="pre">gmt.io</span></code> 。</p>
+<p><code class="docutils literal notranslate"><span class="pre">gmt.io</span></code> 的示例格式如下:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># GMT i/o shorthand file</span>
+
+<span class="c1"># It can have any number of comment lines like this one anywhere</span>
+<span class="c1"># suffix format_id scale offset NaN Comments</span>
+grd        nf        -     -      -    Default format
+b          bf        -     -      -    Native binary floats
+i2         bs        -     -    <span class="m">32767</span>  <span class="m">2</span>-byte integers with NaN value
+ras        rb        -     -      -    Sun raster files
+byte       bb        -     -     <span class="m">255</span>   Native binary <span class="m">1</span>-byte grids
+bit        bm        -     -      -    Native binary <span class="m">0</span> or <span class="m">1</span> grids
+mask       bm        -     -      <span class="m">0</span>    Native binary <span class="m">1</span> or NaN masks
+faa        bs       <span class="m">0</span>.1    -    <span class="m">32767</span>  Native binary gravity in <span class="m">0</span>.1 mGal
+ns         ns        a     a      -    <span class="m">16</span>-bit integer netCDF grid with auto-scale and auto-offset
+</pre></div>
+</div>
+<p class="last">要使用这一特性，需要将参数 <a class="reference internal" href="#io-gridfile-shorthand"><span class="std std-ref">IO_GRIDFILE_SHORTHAND</span></a>
+设置为 <code class="docutils literal notranslate"><span class="pre">true</span></code>。此时，文件名 <code class="docutils literal notranslate"><span class="pre">file.i2</span></code> 等效于 <code class="docutils literal notranslate"><span class="pre">file.i2=bs///32767</span></code>，
+<code class="docutils literal notranslate"><span class="pre">wet.mask</span></code> 等效于 <code class="docutils literal notranslate"><span class="pre">wet.mask=bm+n0</span></code>。</p>
 </dd>
 </dl>
 <dl class="docutils" id="io-gridfile-format">
@@ -335,7 +357,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月20日.
+        最后更新于 2019年03月21日.
       </span>
 
     </p>
