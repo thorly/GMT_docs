@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.13 数据格式 &mdash; GMT中文手册</title>
+  <title>4.13 数据类型 &mdash; GMT中文手册</title>
   
 
   
@@ -107,11 +107,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../line/">4.10 线条属性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../anchor/">4.11 锚点</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../embellishment/">4.12 绘制修饰物</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.13 数据格式</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">4.13.1 地理坐标</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">4.13.2 绝对时间坐标</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">4.13.3 相对时间坐标</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">4.13.4 一般坐标值</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.13 数据类型</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#geographic-coordinates">4.13.1 地理坐标</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#absolute-time-coordinates">4.13.2 绝对时间坐标</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#relative-time-coordinates">4.13.3 相对时间坐标</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#float-coordinates">4.13.4 一般坐标值</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../glossary/">4.14 词汇表</a></li>
@@ -191,7 +191,7 @@
         
           <li><a href="../">4 GMT基础</a> &raquo;</li>
         
-      <li>4.13 数据格式</li>
+      <li>4.13 数据类型</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -213,11 +213,16 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>4.13 数据格式<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<p>GMT 作为一个画图工具，肯定要输入一些数据，同时作为一个数据处理工具，也会输出一些数据。这就牵涉到数据格式的问题了。</p>
-<p>GMT可以绘制一般的笛卡尔坐标轴、地图的经纬度轴以及绝对时间轴、相对时间轴。对于不同的坐标轴，需要的数据格式也不同。</p>
-<div class="section" id="id2">
-<h2>4.13.1 地理坐标<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h1>4.13 数据类型<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>GMT可以绘制笛卡尔坐标轴、地图的经纬度轴以及绝对时间轴、相对时间轴。对于不同的坐标轴，需要的数据类型也不同。GMT所支持的数据类型主要分为四大类：</p>
+<ul class="simple">
+<li>地理坐标</li>
+<li>绝对时间坐标</li>
+<li>相对时间坐标</li>
+<li>一般浮点数</li>
+</ul>
+<div class="section" id="geographic-coordinates">
+<span id="id2"></span><h2>4.13.1 地理坐标<a class="headerlink" href="#geographic-coordinates" title="永久链接至标题">¶</a></h2>
 <p>地理坐标（即经纬度）有两种表示方式：</p>
 <ol class="arabic">
 <li><p class="first">以浮点型的度数表示。比如 <code class="docutils literal notranslate"><span class="pre">-123.45</span></code> 代表-123.45度</p>
@@ -231,8 +236,8 @@
 </li>
 </ol>
 </div>
-<div class="section" id="id3">
-<h2>4.13.2 绝对时间坐标<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="absolute-time-coordinates">
+<span id="id3"></span><h2>4.13.2 绝对时间坐标<a class="headerlink" href="#absolute-time-coordinates" title="永久链接至标题">¶</a></h2>
 <p>绝对时间由两部分构成，即日期和时间，表示为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;date&gt;T&lt;clock&gt;
 </pre></div>
@@ -266,8 +271,8 @@
 <li><code class="docutils literal notranslate"><span class="pre">2014-040T23:23:54.330</span></code></li>
 </ul>
 </div>
-<div class="section" id="id4">
-<h2>4.13.3 相对时间坐标<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="section" id="relative-time-coordinates">
+<span id="id4"></span><h2>4.13.3 相对时间坐标<a class="headerlink" href="#relative-time-coordinates" title="永久链接至标题">¶</a></h2>
 <p>相对时间坐标即某个时间相对于参考时刻的秒数、小时数、天数或年数。因而在使用相对时间时，首先要给定两个参数：参考时刻以及相对时间所使用的单位。</p>
 <p>GMT参数 <a class="reference internal" href="../../conf/time/#time-epoch"><span class="std std-ref">TIME_EPOCH</span></a> 用于指定参考时刻，
 <a class="reference internal" href="../../conf/time/#time-unit"><span class="std std-ref">TIME_UNIT</span></a> 用于指定相对时间的单位。也可以用参数 <a class="reference internal" href="../../conf/time/#time-system"><span class="std std-ref">TIME_SYSTEM</span></a> 同时指定这两个参数。默认的参考时刻为1970年1月1日午夜，默认的相对时间单位为秒。</p>
@@ -278,8 +283,8 @@
 <li>在命令行中使用 <code class="docutils literal notranslate"><span class="pre">-ft</span></code> 选项表明当前数据是相对时间，此时不需要在数字后加 <code class="docutils literal notranslate"><span class="pre">t</span></code></li>
 </ol>
 </div>
-<div class="section" id="id5">
-<h2>4.13.4 一般坐标值<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<div class="section" id="float-coordinates">
+<span id="id5"></span><h2>4.13.4 一般坐标值<a class="headerlink" href="#float-coordinates" title="永久链接至标题">¶</a></h2>
 <p>在绘制常规的笛卡尔坐标轴时，即输入数据不是地理坐标、绝对时间或相对时间时，输入数据可以直接用浮点数表示，而不去在意其物理含义及单位。比如，5牛顿的力，5千克的质量，在 GMT 看来都只是浮点数 <code class="docutils literal notranslate"><span class="pre">5</span></code> 。</p>
 <p>这些浮点数坐标可以用两种方式表示：</p>
 <ol class="arabic simple">

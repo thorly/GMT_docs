@@ -228,7 +228,7 @@
 <p>例如 <code class="docutils literal notranslate"><span class="pre">-a2=depth</span></code> 会从数据文件中读取X和Y列信息，并从非空间数据的 <code class="docutils literal notranslate"><span class="pre">depth</span></code>
 字段中读取值作为输入的第三列。</p>
 <p>也可以通过将 <code class="docutils literal notranslate"><span class="pre">&lt;col&gt;</span></code> 设置成 <code class="docutils literal notranslate"><span class="pre">D|G|L|T|W|Z</span></code> 来将非空间数据与其他属性联系起来，比如标签、填充色、画笔属性、用于查找颜色的Z值等。该机制与在多段数据的段头记录中加上参数是等效的。</p>
-<p>GMT也可以用于输出OGR/GMT格式的数据文件，此时可以使用 <code class="docutils literal notranslate"><span class="pre">&lt;col&gt;=&lt;name&gt;[:&lt;type&gt;]</span></code>
+<p>GMT也可以输出OGR/GMT格式的数据文件，此时可以使用 <code class="docutils literal notranslate"><span class="pre">&lt;col&gt;=&lt;name&gt;[:&lt;type&gt;]</span></code>
 来指定将输出数据的第 <code class="docutils literal notranslate"><span class="pre">&lt;col&gt;</span></code> 列以 <code class="docutils literal notranslate"><span class="pre">&lt;type&gt;</span></code> 数据类型保存到非空间字段 <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>
 中。与输入类似，<code class="docutils literal notranslate"><span class="pre">&lt;col&gt;</span></code> 也可以取 <code class="docutils literal notranslate"><span class="pre">D|G|L|T|W|Z</span></code> 中的一个。对于输出而言，还需要加上 <code class="docutils literal notranslate"><span class="pre">+g&lt;geometry&gt;</span></code> 来指定数据的几何类型，<code class="docutils literal notranslate"><span class="pre">&lt;geometry&gt;</span></code> 可以取为
 <code class="docutils literal notranslate"><span class="pre">[M]POINT|LINE|POLY</span></code>。若加上 <code class="docutils literal notranslate"><span class="pre">+G</span></code>，则程序会自动将跨越国际日期变更线的线段或多边形分成多段。</p>
