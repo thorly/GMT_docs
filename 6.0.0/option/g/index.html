@@ -114,13 +114,14 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">8.13 -g 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../h/">8.14 -h 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../io/">8.15 -i 和 -o 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../n/">8.16 -n 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gridreg/">8.17 -r 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../perspective/">8.18 -p 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../s/">8.19 -s 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../t/">8.20 -t 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../x/">8.21 -x 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../colon/">8.22 -: 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../distcal/">8.16 -j 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../n/">8.17 -n 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gridreg/">8.18 -r 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../perspective/">8.19 -p 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../s/">8.20 -s 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../t/">8.21 -t 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x/">8.22 -x 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colon/">8.23 -: 选项</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
@@ -227,7 +228,7 @@
 <li>也可以使用 <code class="docutils literal notranslate"><span class="pre">-g</span></code> 选项，通过判断两个相邻的数据点是否符合某个准则来决定数据分段</li>
 </ol>
 <p><code class="docutils literal notranslate"><span class="pre">-g</span></code> 选项的完整语法为:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-g<span class="o">[</span>a<span class="o">]</span>x<span class="p">|</span>y<span class="p">|</span>d<span class="p">|</span>X<span class="p">|</span>Y<span class="p">|</span>D<span class="p">|</span><span class="o">[</span>&lt;col&gt;<span class="o">]</span>z<span class="o">[</span>±<span class="o">]</span>&lt;gap&gt;<span class="o">[</span>u<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-g<span class="o">[</span>a<span class="o">]</span>x<span class="p">|</span>y<span class="p">|</span>d<span class="p">|</span>X<span class="p">|</span>Y<span class="p">|</span>D<span class="p">|</span><span class="o">[</span>&lt;col&gt;<span class="o">]</span>z&lt;gap&gt;<span class="o">[</span>u<span class="o">][</span>+n<span class="p">|</span>+p<span class="o">]</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -238,9 +239,9 @@
 <li><code class="docutils literal notranslate"><span class="pre">X|Y|D</span></code> 用于表示数据投影到纸上后X坐标、Y坐标和纸上距离的跳变</li>
 <li>若想要检查特定列是否满足分段准则，可以用 <code class="docutils literal notranslate"><span class="pre">[&lt;col&gt;]z</span></code>，<code class="docutils literal notranslate"><span class="pre">&lt;col&gt;</span></code> 的默认值为
 <code class="docutils literal notranslate"><span class="pre">2</span></code>，即第三列</li>
-<li><code class="docutils literal notranslate"><span class="pre">+&lt;gap&gt;</span></code> 表示前一数据减去当前数据超过 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 则分段</li>
-<li><code class="docutils literal notranslate"><span class="pre">-&lt;gap&gt;</span></code> 表示当前数据减去前一数据超过 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 则分段</li>
 <li><code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 表示两个数据的绝对值超过 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 则分段</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;+n</span></code> 表示前一数据减去当前数据超过 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 则分段</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;+p</span></code> 表示当前数据减去前一数据超过 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 则分段</li>
 </ul>
 <p>该选项可重复多次，以指定多个分段准则，默认情况下，若符合任意一个准则则分段，可以使用 <code class="docutils literal notranslate"><span class="pre">-ga</span></code> 选项，表明仅当所有准则都满足时才分段。</p>
 </div>
@@ -288,7 +289,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月21日.
+        最后更新于 2019年03月24日.
       </span>
 
     </p>

@@ -231,34 +231,29 @@ UTF8编码才能正常显示中文的月份和星期。Windows用户则不需要
 </div>
 <div class="section" id="id2">
 <h2>13.15.1 中文文字<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p>本例中展示了如何在绘图时使用中文标签和中文标题，以及如何打印横排和竖排的中文。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin chinese-texts-1 png
+<p>本例中展示了如何在绘图时使用中文标签和中文标题，以及如何打印横排和竖排的中文。左图中Y轴标签与纵轴平行，右图中Y轴标签与X轴平行。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin chinese-texts png
+<span class="c1"># 左图</span>
 gmt <span class="nb">set</span> FONT_TITLE 24p,41,black FONT_LABEL 16p,39,black
-gmt basemap -R0/10/0/5 -JX10c/5c -Bxaf+l<span class="s1">&#39;横轴&#39;</span> -Byaf+l<span class="s1">&#39;纵轴&#39;</span> -BWSen+t<span class="s1">&#39;中文标题&#39;</span>
+gmt basemap -R0/10/0/5 -JX6c/4c -Bxaf+l<span class="s1">&#39;横轴&#39;</span> -Byaf+l<span class="s1">&#39;纵轴&#39;</span> -BWSen+t<span class="s1">&#39;中文标题&#39;</span>
 gmt text -F+f <span class="s">&lt;&lt; EOF</span>
-<span class="s">3 2.5 25p,39,black 横排文字</span>
-<span class="s">8 4.0 25p,43,red   竖排文字</span>
+<span class="s">3 2.5 20p,39,black 横排文字</span>
+<span class="s">8 4.0 20p,43,red   竖排文字</span>
 <span class="s">EOF</span>
+
+<span class="c1"># 右图</span>
+gmt <span class="nb">set</span> FONT_TITLE 24p,41,black FONT_LABEL 16p,39,black
+gmt basemap -R0/10/0/5 -JX6c/4c -Bxaf+l<span class="s1">&#39;横轴&#39;</span> -Byaf+L<span class="s1">&#39;纵轴&#39;</span> -BWSen+t<span class="s1">&#39;中文标题&#39;</span> -X10c
+gmt text -F+f <span class="s">&lt;&lt; EOF</span>
+<span class="s">3 2.5 20p,39,black 横排文字</span>
+<span class="s">8 4.0 20p,43,red   竖排文字</span>
+<span class="s">EOF</span>
+
 gmt end
 </pre></div>
 </div>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/chinese-texts-1.png"><img alt="../../_images/chinese-texts-1.png" src="../../_images/chinese-texts-1.png" style="width: 80%;" /></a>
-</div>
-<p>对于纵轴的标注，GMT的默认设定使得文字方向使用与纵轴方向平行，这一点无法修改。此时可以使用 <a class="reference internal" href="../../module/text/"><span class="doc">text</span></a> 手动为纵轴添加竖排的中文标签。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin chinese-texts-2 png
-gmt <span class="nb">set</span> FONT_TITLE 24p,41,black FONT_LABEL 16p,39,black
-gmt basemap -R0/10/0/5 -JX10c/5c -Bxaf+l<span class="s1">&#39;横轴&#39;</span> -Byaf -BWSen+t<span class="s1">&#39;中文标题&#39;</span>
-<span class="nb">echo</span> 纵轴 <span class="p">|</span> gmt text -F+f16p,43+cML -D-1.25c/0.5c -N
-gmt text -F+f <span class="s">&lt;&lt; EOF</span>
-<span class="s">3 2.5 25p,39,black 横排文字</span>
-<span class="s">8 4.0 25p,43,red   竖排文字</span>
-<span class="s">EOF</span>
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/chinese-texts-2.png"><img alt="../../_images/chinese-texts-2.png" src="../../_images/chinese-texts-2.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../../_images/chinese-texts.png"><img alt="../../_images/chinese-texts.png" src="../../_images/chinese-texts.png" style="width: 80%;" /></a>
 </div>
 </div>
 <div class="section" id="id3">
@@ -352,7 +347,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月21日.
+        最后更新于 2019年03月24日.
       </span>
 
     </p>

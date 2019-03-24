@@ -261,16 +261,6 @@
 <li><code class="docutils literal notranslate"><span class="pre">u</span></code>：US Survey foot</li>
 </ul>
 <p>对于一个距离量而言，若不指定单位，则默认其单位为 <code class="docutils literal notranslate"><span class="pre">e</span></code> （即“米”）。当然还是建议为每个距离量显式指定其单位，使得命令更加清晰。比如在地球上以某点为中心画一个特定半径的圆，半径取 <code class="docutils literal notranslate"><span class="pre">30</span></code> 等效于 <code class="docutils literal notranslate"><span class="pre">30e</span></code> 表示30米，半径取 <code class="docutils literal notranslate"><span class="pre">30k</span></code> 则表示30千米。</p>
-<p>对于距离量而言，还涉及到如何计算地球或任意星球上两点之间距离的问题。GMT 中提供了三种不同精度的距离计算方式，分别是 Flat Earth 距离、大圆路径距离和测地距离。三种距离计算方式的详细介绍见附录中“<a class="reference internal" href="../../appendix/calculate-distance/"><span class="doc">三种距离计算方式</span></a>”一节。本节只介绍如何告诉GMT你想要用哪种距离计算方式。</p>
-<ol class="arabic simple">
-<li><strong>大圆路径距离</strong>:
-将地球当做球体，是GMT中默认使用的距离计算方式。比如距离量 <code class="docutils literal notranslate"><span class="pre">50k</span></code> 就默认用大圆弧距离来计算</li>
-<li><strong>Flat Earth距离</strong>:
-是大圆弧距离的一阶近似，通过在距离量前加上减号来使用这种计算方式。比如距离量 <code class="docutils literal notranslate"><span class="pre">-50k</span></code> 则使用Flat Earth方式计算距离</li>
-<li><strong>测地距离</strong>:
-计算距离时考虑了地球椭率，可以通过在距离量前加上加号来使用这种计算方式。比如距离 <code class="docutils literal notranslate"><span class="pre">+50k</span></code> 则使用大地测量方式来计算距离</li>
-</ol>
-<p>三种距离计算的方式，从计算精度上看：测地距离&gt;大圆路径距离&gt;Flat Earth距离；从计算速度上看，Flat Earth距离&gt;大圆路径距离&gt;测地距离。</p>
 </div>
 <div class="section" id="id4">
 <h2>4.2.3 小练习<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
@@ -330,7 +320,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月21日.
+        最后更新于 2019年03月24日.
       </span>
 
     </p>
