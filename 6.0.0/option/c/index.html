@@ -220,10 +220,11 @@
 <p>该选项用于控制绘图命令在哪一个子图中进行绘制，该选项仅可在
 <a class="reference internal" href="../../get-started/mode/#subplot-mode"><span class="std std-ref">子图模式</span></a> 下才能使用。所有绘图模块均可以使用该选项。该选项使得当前及之后的一系列绘图命令均在指定的子图中绘制，直到某个绘图命令再次使用该选项为止。</p>
 <p>其语法为:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-c&lt;row&gt;,&lt;col&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-c<span class="o">[</span>&lt;row&gt;,&lt;col&gt;<span class="o">]</span>
 </pre></div>
 </div>
 <p>表示当前及接下来的绘图命令在第 <code class="docutils literal notranslate"><span class="pre">&lt;row&gt;</span></code> 行、第 <code class="docutils literal notranslate"><span class="pre">&lt;col&gt;</span></code> 列子图中绘制。</p>
+<p>若只使用 <code class="docutils literal notranslate"><span class="pre">-c</span></code> 而不指定子图的行和列，则GMT会自动激活“下一个”子图面板。</p>
 <p>以下示例展示了该选项的基本用法，其等效于在绘图命令前使用 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 命令。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="nv">R</span><span class="o">=</span><span class="m">0</span>/5/0/3
@@ -232,15 +233,15 @@ gmt begin subplot pdf,png
 gmt <span class="nb">set</span> FONT_TAG 15p,1
 
 gmt subplot begin 2x2 -Fs5c/3c -A<span class="s1">&#39;(a)&#39;</span>+JTL+o0.2c/0.4c -M0.5c/0.2c
-gmt basemap -R<span class="nv">$R</span> -Ba -BWSen -c1,1
+gmt basemap -R<span class="nv">$R</span> -Ba -BWSen -c
 
-gmt basemap -R<span class="nv">$R</span> -Ba -BWSen -c1,2
+gmt basemap -R<span class="nv">$R</span> -Ba -BWSen -c
 
-gmt basemap -R<span class="nv">$R</span> -Ba -BWSen -c2,1
+gmt basemap -R<span class="nv">$R</span> -Ba -BWSen -c
 <span class="c1"># 下面的命令未使用 -c 选项，但依然在2行1列子图中绘制</span>
 <span class="nb">echo</span> <span class="m">2</span> <span class="m">2</span> <span class="p">|</span> gmt plot -Sc0.5c -Gred -W1p
 
-gmt basemap -R<span class="nv">$R</span> -Ba -BWSen -c2,2
+gmt basemap -R<span class="nv">$R</span> -Ba -BWSen -c
 
 gmt subplot end
 gmt end

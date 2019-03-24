@@ -231,12 +231,11 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#subplot-set">12.120.2 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id4">语法</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id5">必须选项</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id6">可选选项</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">可选选项</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#subplot-end">12.120.3 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">end</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">12.120.4 示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">12.120.4 示例</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../surface/">12.121 surface</a></li>
@@ -477,25 +476,23 @@
 </div>
 <div class="section" id="subplot-set">
 <h2>12.120.2 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code><a class="headerlink" href="#subplot-set" title="永久链接至标题">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 用于选中某个特定的子图，接下来的所有绘图命令将只在该子图内进行绘制。也可以通过在绘图命令上加上选项 <a class="reference internal" href="../../option/c/"><span class="doc">-c 选项</span></a> 来指定在哪个子图内绘制。与 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 类似，<a class="reference internal" href="../../option/c/"><span class="doc">-c 选项</span></a> 对当前命令以及之后的命令均有效，直到再次在绘图命令中使用 <a class="reference internal" href="../../option/c/"><span class="doc">-c 选项</span></a> 选项设定新的子图为止。</p>
+<p><code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 通过指定子图的行号和列号以激活某个特定的子图，接下来的所有绘图命令将只在该子图内进行绘制。子图的行号和列号均从1开始算起。
+<code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 的功能与 <a class="reference internal" href="../../option/c/"><span class="doc">-c 选项</span></a> 类似但其更加灵活。</p>
+<p>若使用 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 但未指定子图的行和列，则GMT会自动激活“下一个”子图面板。例如，对于一个2行2列的图而言，每次使用 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 而不指定子图行和列，则按照行优先顺序依次激活子图 <code class="docutils literal notranslate"><span class="pre">1,1</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">1,2</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">2,1</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">2,2</span></code>。若 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">begin</span></code> 中使用了 <code class="docutils literal notranslate"><span class="pre">-A+v</span></code> 选项，则按照列优先顺序依次激活子图
+<code class="docutils literal notranslate"><span class="pre">1,1</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">2,1</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">1,2</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">2,2</span></code>。</p>
 <p>需要注意，子图中所有的投影方式均不能指定绘图宽度，因为底图的尺寸完全由子图的大小和 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项指定的研究区域决定。在需要指定绘图宽度的地方，需要用问号
 <code class="docutils literal notranslate"><span class="pre">?</span></code> 代替绘图宽度。</p>
 <div class="section" id="id4">
 <h3>语法<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt subplot <span class="nb">set</span> &lt;row&gt;,&lt;col&gt; <span class="o">[</span>-A&lt;fixedlabel&gt;<span class="o">]</span> <span class="o">[</span>-C&lt;side&gt;/&lt;clearance&gt;<span class="o">[</span>u<span class="o">]]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt subplot <span class="nb">set</span> <span class="o">[</span>&lt;row&gt;,&lt;col&gt;<span class="o">]</span> <span class="o">[</span>-A&lt;fixedlabel&gt;<span class="o">]</span> <span class="o">[</span>-C&lt;side&gt;/&lt;clearance&gt;<span class="o">[</span>u<span class="o">]]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id5">
-<h3>必须选项<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<h3>可选选项<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <dl class="docutils">
 <dt><code class="docutils literal notranslate"><span class="pre">&lt;row&gt;,&lt;col&gt;</span></code></dt>
 <dd>要激活的子图所在的行和列。行列均从1开始数起。</dd>
-</dl>
-</div>
-<div class="section" id="id6">
-<h3>可选选项<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
-<dl class="docutils">
 <dt><code class="docutils literal notranslate"><span class="pre">-A&lt;fixedlabel&gt;</span></code></dt>
 <dd>设置当前子图的编号，而忽略 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">begin</span></code> 中 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 选项的设置的自动编号。但该选项只能修改编号的字符串，其余属性（如位置、文本框）等均只能继承自
 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">begin</span></code> 的 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 选项。</dd>
@@ -511,15 +508,19 @@
 <p>该命令用于结束当前的子图模式。</p>
 <p>在结束子图模式时，会自动对所有子图进行编号，保存整个图片的长和宽到临时文件中，这使得 <code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 选项可以使用 <code class="docutils literal notranslate"><span class="pre">w</span></code> 和 <code class="docutils literal notranslate"><span class="pre">h</span></code> 针对整个图片的原点进行偏移。与此同时，会将绘图的原点重置回之前的原点位置。</p>
 </div>
-<div class="section" id="id7">
-<h2>12.120.4 示例<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id6">
+<h2>12.120.4 示例<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>生成一个2X2的子图图片:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin panels pdf
   gmt subplot begin 2x2 -Fs3i -M5p -A -SCb -SRl -Bwstr
-    gmt basemap -R0/80/0/10 -c1,1
-    gmt basemap -c1,2
-    gmt basemap -c2,1
-    gmt basemap -c2,2
+    gmt subplot <span class="nb">set</span>
+    gmt basemap -R0/80/0/10
+    gmt subplot <span class="nb">set</span>
+    gmt basemap
+    gmt subplot <span class="nb">set</span>
+    gmt basemap
+    gmt subplot <span class="nb">set</span>
+    gmt basemap
   gmt subplot end
 gmt end
 </pre></div>

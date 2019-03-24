@@ -282,23 +282,12 @@ gmt end
 <p>子图模式的选项比较多，此处仅举一个示例，详细用法见 <a class="reference internal" href="../../module/subplot/"><span class="doc">subplot</span></a> 的说明文档。本示例中整张图片包含了2行3列共计6个子图，且每列的两张子图共享X轴，每列的子图共享Y轴。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin subplot-example png,pdf
 gmt subplot begin 2x3 -Fs4c/4c -A<span class="s1">&#39;(a)&#39;</span> -M5p/10p -BWsrt -SCb -SRl -T<span class="s2">&quot;Subplot Example&quot;</span>
-    gmt subplot <span class="nb">set</span> <span class="m">1</span>,1
-    gmt basemap -R0/80/0/10
-
-    gmt subplot <span class="nb">set</span> <span class="m">1</span>,2
-    gmt basemap -R0/50/0/10
-
-    gmt subplot <span class="nb">set</span> <span class="m">1</span>,3
-    gmt basemap -R0/20/0/10
-
-    gmt subplot <span class="nb">set</span> <span class="m">2</span>,1
-    gmt basemap -R0/80/0/20
-
-    gmt subplot <span class="nb">set</span> <span class="m">2</span>,2
-    gmt basemap -R0/50/0/20
-
-    gmt subplot <span class="nb">set</span> <span class="m">2</span>,3
-    gmt basemap -R0/20/0/20
+    gmt basemap -R0/80/0/10 -c
+    gmt basemap -R0/50/0/10 -c
+    gmt basemap -R0/20/0/10 -c
+    gmt basemap -R0/80/0/20 -c
+    gmt basemap -R0/50/0/20 -c
+    gmt basemap -R0/20/0/20 -c
 gmt subplot end
 gmt end
 </pre></div>

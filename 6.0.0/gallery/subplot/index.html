@@ -267,8 +267,11 @@ gmt end
 <div class="section" id="id3">
 <h2>13.13.2 现代方式<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>现代方式使用 <a class="reference internal" href="../../module/subplot/"><span class="doc">subplot</span></a> 绘制多子图。</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">begin</span></code> 将整个绘图区域分为2x2的网格并设置子图的大小及其它属性</li>
+<li><code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 通过指定行和列以激活指定的子图</li>
+</ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="nv">J</span><span class="o">=</span>X5c/3c
 <span class="nv">R</span><span class="o">=</span><span class="m">0</span>/5/0/3
 
 gmt begin subplot pdf,png
@@ -276,16 +279,16 @@ gmt <span class="nb">set</span> FONT_TAG 15p,1
 
 gmt subplot begin 2x2 -Fs5c/3c -A<span class="s1">&#39;(a)&#39;</span>+JTL+o0.2c/0.4c -M0.5c/0.2c
 gmt subplot <span class="nb">set</span> <span class="m">1</span>,1
-gmt basemap -J<span class="nv">$J</span> -R<span class="nv">$R</span> -Ba -BWSen
+gmt basemap -R<span class="nv">$R</span> -Ba -BWSen
 
 gmt subplot <span class="nb">set</span> <span class="m">1</span>,2
-gmt basemap -J<span class="nv">$J</span> -R<span class="nv">$R</span> -Ba -BWSen
+gmt basemap -R<span class="nv">$R</span> -Ba -BWSen
 
 gmt subplot <span class="nb">set</span> <span class="m">2</span>,1
-gmt basemap -J<span class="nv">$J</span> -R<span class="nv">$R</span> -Ba -BWSen
+gmt basemap -R<span class="nv">$R</span> -Ba -BWSen
 
 gmt subplot <span class="nb">set</span> <span class="m">2</span>,2
-gmt basemap -J<span class="nv">$J</span> -R<span class="nv">$R</span> -Ba -BWSen
+gmt basemap -R<span class="nv">$R</span> -Ba -BWSen
 
 gmt subplot end
 gmt end
@@ -293,6 +296,46 @@ gmt end
 </div>
 <div class="figure align-center">
 <img alt="../../_images/subplot-gmtplot-1.png" src="../../_images/subplot-gmtplot-1.png" />
+</div>
+<p>若 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 不指定子图行和列，则GMT自动依次激活下一个子图。因而下面的示例也可以实现相同的效果，但更加简洁：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">R</span><span class="o">=</span><span class="m">0</span>/5/0/3
+
+gmt begin subplot pdf,png
+gmt <span class="nb">set</span> FONT_TAG 15p,1
+
+gmt subplot begin 2x2 -Fs5c/3c -A<span class="s1">&#39;(a)&#39;</span>+JTL+o0.2c/0.4c -M0.5c/0.2c
+gmt subplot <span class="nb">set</span>
+gmt basemap -R<span class="nv">$R</span> -Ba -BWSen
+
+gmt subplot <span class="nb">set</span>
+gmt basemap -R<span class="nv">$R</span> -Ba -BWSen
+
+gmt subplot <span class="nb">set</span>
+gmt basemap -R<span class="nv">$R</span> -Ba -BWSen
+
+gmt subplot <span class="nb">set</span>
+gmt basemap -R<span class="nv">$R</span> -Ba -BWSen
+
+gmt subplot end
+gmt end
+</pre></div>
+</div>
+<p><a class="reference internal" href="../../option/c/"><span class="doc">-c 选项</span></a> 也可以用于激活指定的子图，但其功能没有 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 丰富。但通常已经足够使用。下面的代码使用 <code class="docutils literal notranslate"><span class="pre">-c</span></code> 进一步简化了上面的示例:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">R</span><span class="o">=</span><span class="m">0</span>/5/0/3
+
+gmt begin subplot pdf,png
+gmt <span class="nb">set</span> FONT_TAG 15p,1
+
+gmt subplot begin 2x2 -Fs5c/3c -A<span class="s1">&#39;(a)&#39;</span>+JTL+o0.2c/0.4c -M0.5c/0.2c
+gmt basemap -R<span class="nv">$R</span> -Ba -BWSen -c
+gmt basemap -R<span class="nv">$R</span> -Ba -BWSen -c
+gmt basemap -R<span class="nv">$R</span> -Ba -BWSen -c
+gmt basemap -R<span class="nv">$R</span> -Ba -BWSen -c
+gmt subplot end
+gmt end
+</pre></div>
 </div>
 </div>
 </div>
