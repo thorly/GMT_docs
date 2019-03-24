@@ -257,9 +257,9 @@ $ find . -size -4c -delete       <span class="c1"># 删除所有文件大小小�
 </pre></div>
 </div>
 <p>然后向 <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> 中写入如下语句以修改环境变量:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">GMT4HOME</span><span class="o">=</span>/usr/local/opt/gmt@4<span class="s1">&#39;</span>
-<span class="s1">export PATH=${GMT4HOME}/bin:$PATH</span>
-<span class="s1">export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT4HOME}/lib64&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">GMT4HOME</span><span class="o">=</span><span class="s1">&#39;/usr/local/opt/gmt@4&#39;</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">GMT4HOME</span><span class="si">}</span>/bin:<span class="nv">$PATH</span>
+<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="s1">&#39;${LD_LIBRARY_PATH}:${GMT4HOME}/lib64&#39;</span>
 </pre></div>
 </div>
 </div>

@@ -99,13 +99,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../cn-windows/">2.4 Windows 下的 GMT 中文支持</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../macOS/">2.5 macOS 下安装 GMT</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.6 macOS 下的 GMT 中文支持</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#gs">2.6.1 使 gs 支持中文</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gmt">2.6.2 使 GMT 支持中文</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id1">修改 GMT 字体配置文件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id2">查看 GMT 当前支持的字体</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id3">GMT 中文测试</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="#ghostscript">2.6.1 ghostscript的中文支持</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gmt">2.6.2 GMT的中文支持</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">2.6.3 GMT 中文测试</a></li>
 </ul>
 </li>
 </ul>
@@ -210,9 +206,9 @@
   <div class="section" id="macos-gmt">
 <h1>2.6 macOS 下的 GMT 中文支持<a class="headerlink" href="#macos-gmt" title="永久链接至标题">¶</a></h1>
 <p>本文介绍如何让 GMT 在 macOS 下支持中文。</p>
-<div class="section" id="gs">
-<h2>2.6.1 使 gs 支持中文<a class="headerlink" href="#gs" title="永久链接至标题">¶</a></h2>
-<p>首先需要使 gs 支持中文，这可以通过
+<div class="section" id="ghostscript">
+<h2>2.6.1 ghostscript的中文支持<a class="headerlink" href="#ghostscript" title="永久链接至标题">¶</a></h2>
+<p>首先需要使 ghostscript 支持中文，这可以通过
 <a class="reference external" href="https://github.com/texjporg/cjk-gs-support">cjk-gs-support</a> 项目提供的脚本
 <a class="reference external" href="https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjk-gs-integrate.pl">cjk-gs-integrate.pl</a> 实现。</p>
 <ol class="arabic">
@@ -227,9 +223,7 @@
 </ol>
 </div>
 <div class="section" id="gmt">
-<h2>2.6.2 使 GMT 支持中文<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
-<div class="section" id="id1">
-<h3>修改 GMT 字体配置文件<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h3>
+<h2>2.6.2 GMT的中文支持<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
 <p>在 <code class="docutils literal notranslate"><span class="pre">~/.gmt</span></code>（若无该文件夹，请自行新建）下创建字体配置文件:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ touch ~/.gmt/PSL_custom_fonts.txt
 $ open ~/.gmt/PSL_custom_fonts.txt
@@ -247,9 +241,6 @@ STKaiti-Regular-UniGB-UTF8-V   <span class="m">0</span>.700   <span class="m">1<
 </pre></div>
 </div>
 <p>这几句话分别添加了宋体、仿宋、黑体和楷体四种字体的横排和竖排两种方式。</p>
-</div>
-<div class="section" id="id2">
-<h3>查看 GMT 当前支持的字体<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <p>用 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">text</span> <span class="pre">-L</span></code> 命令查看 GMT 当前的字体配置:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt text -L
 Font <span class="c1">#  Font Name</span>
@@ -269,9 +260,12 @@ Font <span class="c1">#  Font Name</span>
 </div>
 <p>其中 39-46 号字体为新添加的中文字体。以后要用中文字体时，需要用这些编号来指定字体，也许你的机器上的编号和这里不同。</p>
 </div>
-<div class="section" id="id3">
-<h3>GMT 中文测试<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
-<p>测试脚本：</p>
+<div class="section" id="id1">
+<h2>2.6.3 GMT 中文测试<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">请自行确认你的中文字体编号。如果编号不是39到46，请自行修改以下测试脚本。</p>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 gmt begin GMT_Chinese pdf,png
 gmt <span class="nb">set</span> FONT_TITLE 25p,41,black
@@ -290,14 +284,13 @@ gmt text -R0/8/0/4 -JX12c/4c -Bxaf+l<span class="s2">&quot;X轴&quot;</span> -By
 gmt end
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">注解</p>
-<p class="last">生成的 PNG、JPG格式的图片中可直接显示中文，而生成的 PDF 文件用 macOS 自带的 PDF 预览工具打开无法显示中文，使用 Adobe Reader 打开则可以正常显示中文。</p>
-</div>
 <p>成图效果如下：</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../_images/GMT_Chinese.png"><img alt="../../_images/GMT_Chinese.png" src="../../_images/GMT_Chinese.png" style="width: 100%;" /></a>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">生成的 PNG、JPG格式的图片中可直接显示中文，而生成的 PDF 文件用 macOS 自带的 PDF 预览工具打开无法显示中文，使用 Adobe Reader 打开则可以正常显示中文。</p>
 </div>
 </div>
 </div>
