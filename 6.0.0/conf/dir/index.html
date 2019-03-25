@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>10.3 DIR参数 &mdash; GMT中文手册</title>
+  <title>10.6 DIR参数 &mdash; GMT中文手册</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="10.4 FONT参数" href="../font/" />
-    <link rel="prev" title="10.2 COLOR参数" href="../color/" /> 
+    <link rel="next" title="10.7 FORMAT参数" href="../format/" />
+    <link rel="prev" title="10.5 COLOR参数" href="../color/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -100,18 +100,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">10 配置GMT</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../overview/">10.1 GMT配置简介</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../color/">10.2 COLOR参数</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">10.3 DIR参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../font/">10.4 FONT参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../format/">10.5 FORMAT参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../io/">10.6 IO参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../map/">10.7 MAP参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../proj/">10.8 PROJ参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ps/">10.9 PS参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../time/">10.10 TIME参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/">10.11 其他参数</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">10 配置参数</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview/">10.1 配置参数简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../showcase/">10.2 配置参数示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../font/">10.3 FONT参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../map/">10.4 MAP参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">10.5 COLOR参数</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">10.6 DIR参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../format/">10.7 FORMAT参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">10.8 IO参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../proj/">10.9 PROJ参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ps/">10.10 PS参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../time/">10.11 TIME参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/">10.12 其他参数</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
@@ -180,9 +181,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">10 配置GMT</a> &raquo;</li>
+          <li><a href="../">10 配置参数</a> &raquo;</li>
         
-      <li>10.3 DIR参数</li>
+      <li>10.6 DIR参数</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -204,25 +205,25 @@
            <div itemprop="articleBody">
             
   <div class="section" id="dir">
-<h1>10.3 DIR参数<a class="headerlink" href="#dir" title="永久链接至标题">¶</a></h1>
+<h1>10.6 DIR参数<a class="headerlink" href="#dir" title="永久链接至标题">¶</a></h1>
 <p>下面列出所有与目录相关的参数，参数的默认值在中括号内列出。</p>
+<dl class="docutils" id="dir-data">
+<dt>DIR_DATA</dt>
+<dd><p class="first">存放数据文件的目录，默认值为空。</p>
+<p class="last">GMT在命令中遇到文件名时，首先在当前目录下寻找该文件，若找不到，则会到参数 DIR_DATA 指定的目录中寻找，若找不到，则到环境变量 <code class="docutils literal notranslate"><span class="pre">${GMT_DATADIR}</span></code> 所指定的目录中寻找。</p>
+</dd>
+</dl>
 <dl class="docutils" id="dir-dcw">
-<dt><strong>DIR_DCW</strong></dt>
+<dt>DIR_DCW</dt>
 <dd>DCW数据文件的路径，默认值为空，GMT会自动猜测合理的路径值。</dd>
 </dl>
 <dl class="docutils" id="dir-gshhg">
-<dt><strong>DIR_GSHHG</strong></dt>
-<dd>海岸线数据所在路径 [<code class="file docutils literal notranslate"><span class="pre">$GMT_SHAREDIR/coast</span></code>]</dd>
-</dl>
-<dl class="docutils" id="dir-data">
-<dt><strong>DIR_DATA</strong></dt>
-<dd><p class="first">存放数据文件的目录，默认值为空。</p>
-<p class="last">GMT在命令中遇到文件名时，会首先在当前目录下寻找，若找不到，则会到参数 <code class="docutils literal notranslate"><span class="pre">DIR_DATA</span></code> 指定的目录中寻找，若找不到，则到环境变量 <code class="docutils literal notranslate"><span class="pre">${GMT_DATADIR}</span></code> 所指定的目录中寻找。</p>
-</dd>
+<dt>DIR_GSHHG</dt>
+<dd>海岸线数据所在路径</dd>
 </dl>
 <dl class="docutils" id="dir-cache">
-<dt><strong>DIR_CACHE</strong></dt>
-<dd>GMT用户存储从外部URL链接中下载得到的数据文件的目录。</dd>
+<dt>DIR_CACHE</dt>
+<dd>GMT用于存储从GMT服务器下载得到的临时文件的目录</dd>
 </dl>
 </div>
 
@@ -255,10 +256,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../font/" class="btn btn-neutral float-right" title="10.4 FONT参数" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../format/" class="btn btn-neutral float-right" title="10.7 FORMAT参数" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../color/" class="btn btn-neutral float-left" title="10.2 COLOR参数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../color/" class="btn btn-neutral float-left" title="10.5 COLOR参数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

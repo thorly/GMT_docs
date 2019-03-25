@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>10.2 COLOR参数 &mdash; GMT中文手册</title>
+  <title>10.5 COLOR参数 &mdash; GMT中文手册</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="10.3 DIR参数" href="../dir/" />
-    <link rel="prev" title="10.1 GMT配置简介" href="../overview/" /> 
+    <link rel="next" title="10.6 DIR参数" href="../dir/" />
+    <link rel="prev" title="10.4 MAP参数" href="../map/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -100,18 +100,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">10 配置GMT</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../overview/">10.1 GMT配置简介</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">10.2 COLOR参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dir/">10.3 DIR参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../font/">10.4 FONT参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../format/">10.5 FORMAT参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../io/">10.6 IO参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../map/">10.7 MAP参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../proj/">10.8 PROJ参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ps/">10.9 PS参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../time/">10.10 TIME参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/">10.11 其他参数</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">10 配置参数</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview/">10.1 配置参数简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../showcase/">10.2 配置参数示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../font/">10.3 FONT参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../map/">10.4 MAP参数</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">10.5 COLOR参数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cpt">10.5.1 CPT相关参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">10.5.2 光照相关参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dir/">10.6 DIR参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../format/">10.7 FORMAT参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">10.8 IO参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../proj/">10.9 PROJ参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ps/">10.10 PS参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../time/">10.11 TIME参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/">10.12 其他参数</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
@@ -180,9 +185,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">10 配置GMT</a> &raquo;</li>
+          <li><a href="../">10 配置参数</a> &raquo;</li>
         
-      <li>10.2 COLOR参数</li>
+      <li>10.5 COLOR参数</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -204,50 +209,55 @@
            <div itemprop="articleBody">
             
   <div class="section" id="color">
-<h1>10.2 COLOR参数<a class="headerlink" href="#color" title="永久链接至标题">¶</a></h1>
-<p>下面列出所有与颜色相关的参数，参数的默认值在中括号内列出。</p>
+<h1>10.5 COLOR参数<a class="headerlink" href="#color" title="永久链接至标题">¶</a></h1>
+<p>这一节列出所有与颜色相关的配置参数，参数的默认值在中括号内列出。</p>
+<div class="section" id="cpt">
+<h2>10.5.1 CPT相关参数<a class="headerlink" href="#cpt" title="永久链接至标题">¶</a></h2>
 <dl class="docutils" id="color-background">
-<dt><strong>COLOR_BACKGROUND</strong></dt>
-<dd>图片背景色，数据Z值小于CPT文件中最小值所对应的背景色 [black]</dd>
+<dt>COLOR_BACKGROUND</dt>
+<dd>数据Z值小于CPT文件中最小值时使用的背景色 [<code class="docutils literal notranslate"><span class="pre">black</span></code>]</dd>
 </dl>
 <dl class="docutils" id="color-foreground">
-<dt><strong>COLOR_FOREGROUND</strong></dt>
-<dd>图片前景色，数据Z值大于CPT文件中最大值所对应的前景色 [white]</dd>
+<dt>COLOR_FOREGROUND</dt>
+<dd>数据Z值大于CPT文件中最大值时使用的前景色 [<code class="docutils literal notranslate"><span class="pre">white</span></code>]</dd>
 </dl>
 <dl class="docutils" id="color-nan">
-<dt><strong>COLOR_NAN</strong></dt>
-<dd>Z值等于 <code class="docutils literal notranslate"><span class="pre">NaN</span></code> 时所使用的颜色 [127.5]</dd>
-</dl>
-<p>某些绘图命令（比如 <code class="docutils literal notranslate"><span class="pre">grdimage</span></code> 、 <code class="docutils literal notranslate"><span class="pre">colorbar</span></code> ）可以使用强度文件（intensity file）来模拟光照效果。光照效果的实现，本质上是先将任意颜色转换成HSV模型，然后根据强度的正负，增大/减小HSV模型中的S（饱和度）和V（明度），以达到模拟光照的效果。下面的四个参数控制了模拟光照过程中S和V变化的极限值，估计是为了避免过亮或过暗的情况。</p>
-<dl class="docutils" id="color-hsv-max-s">
-<dt><strong>COLOR_HSV_MAX_S</strong></dt>
-<dd>最大正强度对应的S值，取值范围0到1 [0.1]</dd>
-</dl>
-<dl class="docutils" id="color-hsv-min-s">
-<dt><strong>COLOR_HSV_MIN_S</strong></dt>
-<dd>最小负强度对应的S值，取值范围0到1 [1.0]</dd>
-</dl>
-<dl class="docutils" id="color-hsv-max-v">
-<dt><strong>COLOR_HSV_MAX_V</strong></dt>
-<dd>最大正强度对应的V值，取值范围0到1 [1.0]</dd>
-</dl>
-<dl class="docutils" id="color-hsv-min-v">
-<dt><strong>COLOR_HSV_MIN_V</strong></dt>
-<dd>最小负强度对应的V值，取值范围0到1 [0.3]</dd>
+<dt>COLOR_NAN</dt>
+<dd>数值Z值为 NaN 时使用的颜色 [<code class="docutils literal notranslate"><span class="pre">127.5</span></code>]</dd>
 </dl>
 <dl class="docutils" id="color-model">
-<dt><strong>COLOR_MODEL</strong></dt>
-<dd><p class="first">对CPT文件做插值时所使用的颜色空间 [none]</p>
+<dt>COLOR_MODEL</dt>
+<dd><p class="first">对CPT文件做插值生成新CPT时所使用的色彩模型 [<code class="docutils literal notranslate"><span class="pre">none</span></code>]</p>
 <p>可以取如下值：</p>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">none</span></code>：使用CPT文件的注释行中指定的 <code class="docutils literal notranslate"><span class="pre">COLOR_MODEL</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">rgb</span></code>：在RGB颜色空间中插值</li>
-<li><code class="docutils literal notranslate"><span class="pre">hsv</span></code>：在HSV颜色空间中插值</li>
-<li><code class="docutils literal notranslate"><span class="pre">cmyk</span></code>：假定文件是CMYK颜色，但在RGB空间插值</li>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">none</span></code>：使用CPT文件中指定的 <code class="docutils literal notranslate"><span class="pre">COLOR_MODEL</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">rgb</span></code>：在RGB色彩空间中插值</li>
+<li><code class="docutils literal notranslate"><span class="pre">hsv</span></code>：在HSV色彩空间中插值</li>
+<li><code class="docutils literal notranslate"><span class="pre">cmyk</span></code>：假定颜色是CMYK色彩空间，但在RGB空间内插值</li>
 </ul>
-<p class="last">在RGB颜色空间内插值可能会产生异常的色调，而直接在HSV颜色空间插值则可以更好地保留色调值。</p>
 </dd>
 </dl>
+</div>
+<div class="section" id="id1">
+<h2>10.5.2 光照相关参数<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>某些绘图模块（如 <a class="reference internal" href="../../module/grdimage/"><span class="doc">grdimage</span></a>、<a class="reference internal" href="../../module/colorbar/"><span class="doc">colorbar</span></a>）可以利用强度文件模拟光照效果。光照效果的实现，本质上是先将任意颜色转换成HSV模型，然后根据强度的正负，增大/减小HSV模型中的S（饱和度）和V（明度），以达到模拟光照的效果。下面的四个参数控制了模拟光照过程中S和V变化的极限值，以避免模拟的光照过亮或过暗。</p>
+<dl class="docutils" id="color-hsv-min-s">
+<dt>COLOR_HSV_MIN_S</dt>
+<dd>负强度最小值对应的S值，取值范围0到1 [1.0]</dd>
+</dl>
+<dl class="docutils" id="color-hsv-max-s">
+<dt>COLOR_HSV_MAX_S</dt>
+<dd>正强度最大值对应的S值，取值范围0到1 [0.1]</dd>
+</dl>
+<dl class="docutils" id="color-hsv-min-v">
+<dt>COLOR_HSV_MIN_V</dt>
+<dd>负强度最小值对应的V值，取值范围0到1 [0.3]</dd>
+</dl>
+<dl class="docutils" id="color-hsv-max-v">
+<dt>COLOR_HSV_MAX_V</dt>
+<dd>正强度最大值对应的V值，取值范围0到1 [1.0]</dd>
+</dl>
+</div>
 </div>
 
 
@@ -279,10 +289,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../dir/" class="btn btn-neutral float-right" title="10.3 DIR参数" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../dir/" class="btn btn-neutral float-right" title="10.6 DIR参数" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../overview/" class="btn btn-neutral float-left" title="10.1 GMT配置简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../map/" class="btn btn-neutral float-left" title="10.4 MAP参数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

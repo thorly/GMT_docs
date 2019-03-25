@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>10.4 FONT参数 &mdash; GMT中文手册</title>
+  <title>10.3 FONT参数 &mdash; GMT中文手册</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="10.5 FORMAT参数" href="../format/" />
-    <link rel="prev" title="10.3 DIR参数" href="../dir/" /> 
+    <link rel="next" title="10.4 MAP参数" href="../map/" />
+    <link rel="prev" title="10.2 配置参数示例" href="../showcase/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -100,18 +100,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">10 配置GMT</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../overview/">10.1 GMT配置简介</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../color/">10.2 COLOR参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dir/">10.3 DIR参数</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">10.4 FONT参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../format/">10.5 FORMAT参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../io/">10.6 IO参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../map/">10.7 MAP参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../proj/">10.8 PROJ参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ps/">10.9 PS参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../time/">10.10 TIME参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/">10.11 其他参数</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">10 配置参数</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview/">10.1 配置参数简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../showcase/">10.2 配置参数示例</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">10.3 FONT参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../map/">10.4 MAP参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">10.5 COLOR参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dir/">10.6 DIR参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../format/">10.7 FORMAT参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">10.8 IO参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../proj/">10.9 PROJ参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ps/">10.10 PS参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../time/">10.11 TIME参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/">10.12 其他参数</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
@@ -180,9 +181,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">10 配置GMT</a> &raquo;</li>
+          <li><a href="../">10 配置参数</a> &raquo;</li>
         
-      <li>10.4 FONT参数</li>
+      <li>10.3 FONT参数</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -204,47 +205,47 @@
            <div itemprop="articleBody">
             
   <div class="section" id="font">
-<h1>10.4 FONT参数<a class="headerlink" href="#font" title="永久链接至标题">¶</a></h1>
-<p>本页面列出所有字体相关参数，参数的默认值在中括号内列出。</p>
+<h1>10.3 FONT参数<a class="headerlink" href="#font" title="永久链接至标题">¶</a></h1>
+<p>这一节列出所有字体相关的参数，参数的默认值在中括号内列出。</p>
 <dl class="docutils" id="id1">
-<dt><strong>FONT</strong></dt>
-<dd>一次性设置所有FONT类参数（ <code class="docutils literal notranslate"><span class="pre">FONT_LOGO</span></code> 除外）的默认字体，该参数不在 <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code> 中。</dd>
+<dt>FONT</dt>
+<dd>同时设置所有FONT类参数（<code class="docutils literal notranslate"><span class="pre">FONT_LOGO</span></code> 除外）的字体</dd>
 </dl>
 <dl class="docutils" id="font-annot">
-<dt><strong>FONT_ANNOT</strong></dt>
+<dt>FONT_ANNOT</dt>
 <dd>同时设置 <code class="docutils literal notranslate"><span class="pre">FONT_ANNOT_PRIMARY</span></code> 和 <code class="docutils literal notranslate"><span class="pre">FONT_ANNOT_SECONDARY</span></code> 的值。</dd>
 </dl>
 <dl class="docutils" id="font-annot-primary">
-<dt><strong>FONT_ANNOT_PRIMARY</strong></dt>
+<dt>FONT_ANNOT_PRIMARY</dt>
 <dd><p class="first">一级（Primary）标注的字体 [<code class="docutils literal notranslate"><span class="pre">12p,Helvetica,black</span></code>]</p>
-<p class="last">若在该参数的值前加上 <code class="docutils literal notranslate"><span class="pre">+</span></code>，则其他字体、偏移量、刻度长度等参数值会相对于 <code class="docutils literal notranslate"><span class="pre">FONT_ANNOT_PRIMARY</span></code> 成比例缩放。</p>
+<p class="last">若在该参数的值前加上 <code class="docutils literal notranslate"><span class="pre">+</span></code>，则其它字体、偏移量、刻度长度等参数值会相对于 <code class="docutils literal notranslate"><span class="pre">FONT_ANNOT_PRIMARY</span></code> 成比例缩放。</p>
 </dd>
 </dl>
 <dl class="docutils" id="font-annot-secondary">
-<dt><strong>FONT_ANNOT_SECONDARY</strong></dt>
-<dd>二级（Secondary）标注所使用的字体 [<code class="docutils literal notranslate"><span class="pre">14p,Helvetica,black</span></code>]</dd>
-</dl>
-<dl class="docutils" id="font-heading">
-<dt><strong>FONT_HEADING</strong></dt>
-<dd>多子图的总标题的字体 [<code class="docutils literal notranslate"><span class="pre">32p,Helvetica,black</span></code>]</dd>
+<dt>FONT_ANNOT_SECONDARY</dt>
+<dd>二级（Secondary）标注的字体 [<code class="docutils literal notranslate"><span class="pre">14p,Helvetica,black</span></code>]</dd>
 </dl>
 <dl class="docutils" id="font-label">
-<dt><strong>FONT_LABEL</strong></dt>
-<dd>轴标签所使用的字体 [<code class="docutils literal notranslate"><span class="pre">16p,Helvetica,black</span></code>]</dd>
+<dt>FONT_LABEL</dt>
+<dd>轴标签的字体 [<code class="docutils literal notranslate"><span class="pre">16p,Helvetica,black</span></code>]</dd>
 </dl>
 <dl class="docutils" id="font-title">
-<dt><strong>FONT_TITLE</strong></dt>
-<dd>图上方标题所使用的字体 [<code class="docutils literal notranslate"><span class="pre">24p,Helvetica,black</span></code>]</dd>
+<dt>FONT_TITLE</dt>
+<dd>图上方标题的字体 [<code class="docutils literal notranslate"><span class="pre">24p,Helvetica,black</span></code>]</dd>
 </dl>
-<dl class="docutils" id="font-logo">
-<dt><strong>FONT_LOGO</strong></dt>
-<dd><p class="first">GMT时间戳中字符串所使用的字体 [<code class="docutils literal notranslate"><span class="pre">8p,Helvetica,black</span></code>]</p>
-<p class="last">该参数中仅字体ID有效，字号及颜色均无效。</p>
-</dd>
+<dl class="docutils" id="font-heading">
+<dt>FONT_HEADING</dt>
+<dd>子图模式下总标题的字体 [<code class="docutils literal notranslate"><span class="pre">32p,Helvetica,black</span></code>]</dd>
 </dl>
 <dl class="docutils" id="font-tag">
-<dt><strong>FONT_TAG</strong></dt>
-<dd>子图中每个面板的标签（如 <code class="docutils literal notranslate"><span class="pre">a)</span></code> 、 <code class="docutils literal notranslate"><span class="pre">ii)</span></code> 等）的字体 [<code class="docutils literal notranslate"><span class="pre">20p,Helvetica,black</span></code>]</dd>
+<dt>FONT_TAG</dt>
+<dd>子图模式下每个子图编号（如 <code class="docutils literal notranslate"><span class="pre">a)</span></code>、<code class="docutils literal notranslate"><span class="pre">ii)</span></code> 等）的字体 [<code class="docutils literal notranslate"><span class="pre">20p,Helvetica,black</span></code>]</dd>
+</dl>
+<dl class="docutils" id="font-logo">
+<dt>FONT_LOGO</dt>
+<dd><p class="first">GMT时间戳中字符串的字体 [<code class="docutils literal notranslate"><span class="pre">8p,Helvetica,black</span></code>]</p>
+<p class="last">该参数中仅字体ID有效，字号及颜色均无效。</p>
+</dd>
 </dl>
 </div>
 
@@ -277,10 +278,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../format/" class="btn btn-neutral float-right" title="10.5 FORMAT参数" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../map/" class="btn btn-neutral float-right" title="10.4 MAP参数" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../dir/" class="btn btn-neutral float-left" title="10.3 DIR参数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../showcase/" class="btn btn-neutral float-left" title="10.2 配置参数示例" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
