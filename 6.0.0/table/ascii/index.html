@@ -270,7 +270,7 @@
 </pre></div>
 </div>
 <p>可以使用如下命令绘制上面的多段文件:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psxy input.dat -JX10c -R0/50/0/50 -Baf -W1p -Gred -P &gt; lines.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt plot input.dat -JX10c -R0/50/0/50 -Baf -W1p -Gred -pdf lines
 </pre></div>
 </div>
 <p>用户可以通过设置 <a class="reference internal" href="../../conf/io/#io-segment-marker"><span class="std std-ref">IO_SEGMENT_MARKER</span></a> 将段头记录的标识符修改为任意字符，例如 <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>、<code class="docutils literal notranslate"><span class="pre">%</span></code>等。</p>
@@ -305,7 +305,7 @@
 </pre></div>
 </div>
 <p>可以使用如下命令绘制上面的多段数据:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psxy input.dat -JX10c -R0/50/0/50 -Baf -W1p -Gred -P &gt; map.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt plot input.dat -JX10c -R0/50/0/50 -Baf -W1p -Gred -pdf lines
 </pre></div>
 </div>
 <p>查看绘图结果可以发现，数据段头记录中的选项参数会覆盖命令行中相应选项的值。</p>
