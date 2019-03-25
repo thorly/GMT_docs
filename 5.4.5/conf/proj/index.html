@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>10.8 PROJ参数 &mdash; GMT中文手册</title>
+  <title>10.9 PROJ参数 &mdash; GMT中文手册</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="10.9 PS参数" href="../ps/" />
-    <link rel="prev" title="10.7 MAP参数" href="../map/" /> 
+    <link rel="next" title="10.10 PS参数" href="../ps/" />
+    <link rel="prev" title="10.8 IO参数" href="../io/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -100,18 +100,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">10 配置GMT</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../overview/">10.1 GMT配置简介</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../color/">10.2 COLOR参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dir/">10.3 DIR参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../font/">10.4 FONT参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../format/">10.5 FORMAT参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../io/">10.6 IO参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../map/">10.7 MAP参数</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">10.8 PROJ参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ps/">10.9 PS参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../time/">10.10 TIME参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/">10.11 其他参数</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">10 配置参数</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview/">10.1 配置参数简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../showcase/">10.2 配置参数示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../font/">10.3 FONT参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../map/">10.4 MAP参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">10.5 COLOR参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dir/">10.6 DIR参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../format/">10.7 FORMAT参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">10.8 IO参数</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">10.9 PROJ参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ps/">10.10 PS参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../time/">10.11 TIME参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/">10.12 其他参数</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
@@ -180,9 +181,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">10 配置GMT</a> &raquo;</li>
+          <li><a href="../">10 配置参数</a> &raquo;</li>
         
-      <li>10.8 PROJ参数</li>
+      <li>10.9 PROJ参数</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -204,29 +205,29 @@
            <div itemprop="articleBody">
             
   <div class="section" id="proj">
-<h1>10.8 PROJ参数<a class="headerlink" href="#proj" title="永久链接至标题">¶</a></h1>
+<h1>10.9 PROJ参数<a class="headerlink" href="#proj" title="永久链接至标题">¶</a></h1>
 <p>本节列出投影相关参数，参数的默认值在中括号内列出。</p>
 <dl class="docutils" id="proj-length-unit">
-<dt><strong>PROJ_LENGTH_UNIT</strong></dt>
-<dd><p class="first">长度量的默认单位 [c]</p>
-<p class="last">见 <a class="reference internal" href="../../basis/unit/"><span class="doc">单位</span></a> 一节。</p>
+<dt>PROJ_LENGTH_UNIT</dt>
+<dd><p class="first">长度量的默认单位 [<code class="docutils literal notranslate"><span class="pre">c</span></code>]</p>
+<p class="last">见 <a class="reference internal" href="../../basis/unit/"><span class="doc">单位</span></a> 一节的介绍。</p>
 </dd>
 </dl>
 <dl class="docutils" id="proj-ellipsoid">
-<dt><strong>PROJ_ELLIPSOID</strong></dt>
-<dd><p class="first">地图投影中使用的地球椭球标准 [WGS-84]</p>
-<p>GMT支持几十种地球椭球标准，具体可取值见官方文档。除此之外，GMT还支持自定义椭球，用户只需按照固定的格式对椭球命名，GMT会从椭球名字中提取半长轴以及扁率。可用的格式如下：</p>
+<dt>PROJ_ELLIPSOID</dt>
+<dd><p class="first">地图投影中使用的地球椭球标准 [<code class="docutils literal notranslate"><span class="pre">WGS-84</span></code>]</p>
+<p>GMT支持几十种地球椭球标准（此处不一一列举，详见官方文档）。除此之外，GMT还支持自定义椭球，用户只需按照固定的格式对椭球命名，GMT会从椭球名字中提取半长轴以及扁率。可用的格式如下：</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">a</span></code>：球半径为a，单位为 <code class="docutils literal notranslate"><span class="pre">m</span></code>，扁率为零。比如 <code class="docutils literal notranslate"><span class="pre">6378137</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">a,inv_f</span></code>： <code class="docutils literal notranslate"><span class="pre">inv_f</span></code> 为扁率的倒数，比如 <code class="docutils literal notranslate"><span class="pre">6378137,298.257223563</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">a,b=semi_minor</span></code>： <code class="docutils literal notranslate"><span class="pre">semi_minor</span></code> 为半短轴长度，单位为 <code class="docutils literal notranslate"><span class="pre">m</span></code> 。比如 <code class="docutils literal notranslate"><span class="pre">6378137,b=6356752.3142</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">a,f=flattening</span></code>： <code class="docutils literal notranslate"><span class="pre">flattening</span></code> 为扁率，比如 <code class="docutils literal notranslate"><span class="pre">6378137,f=0.0033528</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">a,inv_f</span></code>：<code class="docutils literal notranslate"><span class="pre">inv_f</span></code> 为扁率的倒数，比如 <code class="docutils literal notranslate"><span class="pre">6378137,298.257223563</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">a,b=semi_minor</span></code>：<code class="docutils literal notranslate"><span class="pre">semi_minor</span></code> 为半短轴长度，单位为 <code class="docutils literal notranslate"><span class="pre">m</span></code>。比如 <code class="docutils literal notranslate"><span class="pre">6378137,b=6356752.3142</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">a,f=flattening</span></code>：<code class="docutils literal notranslate"><span class="pre">flattening</span></code> 为扁率，比如 <code class="docutils literal notranslate"><span class="pre">6378137,f=0.0033528</span></code></li>
 </ul>
 <p class="last">需要注意，对于某些全球投影，GMT会对选中的地球椭球做球状近似，将扁率设为零，并使用其平均半径。当GMT做此类近似时，会给出警告信息。</p>
 </dd>
 </dl>
 <dl class="docutils" id="proj-aux-latitude">
-<dt><strong>PROJ_AUX_LATITUDE</strong></dt>
+<dt>PROJ_AUX_LATITUDE</dt>
 <dd><p class="first">球体近似时的辅助纬线 [authalic]</p>
 <p>在使用大圆弧距离计算方式时，需要将真实地球近似为一个半径为
 <a class="reference internal" href="#proj-mean-radius"><span class="std std-ref">PROJ_MEAN_RADIUS</span></a> 的球体，在做球体近似时需要选择合适的辅助纬线。可选值包括</p>
@@ -242,7 +243,7 @@
 </dd>
 </dl>
 <dl class="docutils" id="proj-mean-radius">
-<dt><strong>PROJ_MEAN_RADIUS</strong></dt>
+<dt>PROJ_MEAN_RADIUS</dt>
 <dd><p class="first">地球/行星的平均半径 [authalic]</p>
 <p>在计算两点间的大圆弧距离或区域的表面积时才会被使用。可选值包括</p>
 <ul class="last simple">
@@ -255,7 +256,7 @@
 </dd>
 </dl>
 <dl class="docutils" id="proj-scale-factor">
-<dt><strong>PROJ_SCALE_FACTOR</strong></dt>
+<dt>PROJ_SCALE_FACTOR</dt>
 <dd><p class="first">修改某些投影的地图缩放因子以减小面积失真</p>
 <ul class="last simple">
 <li>Polar Stereographic：默认值为0.9996</li>
@@ -265,7 +266,7 @@
 </dd>
 </dl>
 <dl class="docutils" id="proj-geodesic">
-<dt><strong>PROJ_GEODESIC</strong></dt>
+<dt>PROJ_GEODESIC</dt>
 <dd><p class="first">指定大地测量距离中所使用的算法 [Vincenty]</p>
 <p>可以取：</p>
 <ol class="last arabic simple">
@@ -306,10 +307,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../ps/" class="btn btn-neutral float-right" title="10.9 PS参数" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../ps/" class="btn btn-neutral float-right" title="10.10 PS参数" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../map/" class="btn btn-neutral float-left" title="10.7 MAP参数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../io/" class="btn btn-neutral float-left" title="10.8 IO参数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -320,7 +321,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月24日.
+        最后更新于 2019年03月25日.
       </span>
 
     </p>

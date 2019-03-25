@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>10.5 FORMAT参数 &mdash; GMT中文手册</title>
+  <title>10.7 FORMAT参数 &mdash; GMT中文手册</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="10.6 IO参数" href="../io/" />
-    <link rel="prev" title="10.4 FONT参数" href="../font/" /> 
+    <link rel="next" title="10.8 IO参数" href="../io/" />
+    <link rel="prev" title="10.6 DIR参数" href="../dir/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -100,18 +100,26 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">10 配置GMT</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../overview/">10.1 GMT配置简介</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../color/">10.2 COLOR参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dir/">10.3 DIR参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../font/">10.4 FONT参数</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">10.5 FORMAT参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../io/">10.6 IO参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../map/">10.7 MAP参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../proj/">10.8 PROJ参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ps/">10.9 PS参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../time/">10.10 TIME参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../misc/">10.11 其他参数</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">10 配置参数</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview/">10.1 配置参数简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../showcase/">10.2 配置参数示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../font/">10.3 FONT参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../map/">10.4 MAP参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">10.5 COLOR参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dir/">10.6 DIR参数</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">10.7 FORMAT参数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">10.7.1 日期的输入/输出/绘图格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">10.7.2 时间的输入/输出/绘图格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">10.7.3 地理坐标的输出/绘图格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">10.7.4 浮点数的输出/绘图格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">10.7.5 其他数据的绘图格式</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">10.8 IO参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../proj/">10.9 PROJ参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ps/">10.10 PS参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../time/">10.11 TIME参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../misc/">10.12 其他参数</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
@@ -180,9 +188,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">10 配置GMT</a> &raquo;</li>
+          <li><a href="../">10 配置参数</a> &raquo;</li>
         
-      <li>10.5 FORMAT参数</li>
+      <li>10.7 FORMAT参数</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -204,12 +212,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="format">
-<h1>10.5 FORMAT参数<a class="headerlink" href="#format" title="永久链接至标题">¶</a></h1>
+<h1>10.7 FORMAT参数<a class="headerlink" href="#format" title="永久链接至标题">¶</a></h1>
 <p>下面列出所有与格式相关的参数，通常包括输入格式、输出格式和绘图格式三类，参数的默认值在中括号内列出。</p>
-<p>日期数据的输入/输出/绘图格式：</p>
+<div class="section" id="id1">
+<h2>10.7.1 日期的输入/输出/绘图格式<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <dl class="docutils" id="format-date-in">
-<dt><strong>FORMAT_DATE_IN</strong></dt>
-<dd><p class="first">输入数据中日期字符串的格式模板 [ <code class="docutils literal notranslate"><span class="pre">yyyy-mm-dd</span></code> ]</p>
+<dt>FORMAT_DATE_IN</dt>
+<dd><p class="first">输入数据中日期字符串的格式模板 [<code class="docutils literal notranslate"><span class="pre">yyyy-mm-dd</span></code>]</p>
 <p>日期字符串可以用公历表示，也可以用ISO周历表示。</p>
 <p>对于公历而言，可以将如下模板做合理组合：</p>
 <ul class="simple">
@@ -220,13 +229,14 @@
 <li><code class="docutils literal notranslate"><span class="pre">dd</span></code>：两位日期</li>
 <li><code class="docutils literal notranslate"><span class="pre">jjj</span></code>：一年中的第几天</li>
 </ul>
-<p>比如 <code class="docutils literal notranslate"><span class="pre">ddmmyyy</span></code> 、 <code class="docutils literal notranslate"><span class="pre">yy-mm-dd</span></code> 、 <code class="docutils literal notranslate"><span class="pre">dd-o-yyyy</span></code> 、 <code class="docutils literal notranslate"><span class="pre">yyyy/dd/mm</span></code> 、 <code class="docutils literal notranslate"><span class="pre">yyyy-jjj</span></code> 等。</p>
+<p>比如 <code class="docutils literal notranslate"><span class="pre">ddmmyyy</span></code>、<code class="docutils literal notranslate"><span class="pre">yy-mm-dd</span></code>、<code class="docutils literal notranslate"><span class="pre">dd-o-yyyy</span></code>、<code class="docutils literal notranslate"><span class="pre">yyyy/dd/mm</span></code>、
+<code class="docutils literal notranslate"><span class="pre">yyyy-jjj</span></code> 等。</p>
 <p class="last">对于ISO周历而言，其格式为 <code class="docutils literal notranslate"><span class="pre">yyyy[-]W[-]ww[-]d</span></code> 模板，表示某年的第ww周的第d天。比如 <code class="docutils literal notranslate"><span class="pre">yyyyWwwd</span></code> 或 <code class="docutils literal notranslate"><span class="pre">yyyy-Www</span></code> 等。</p>
 </dd>
 </dl>
 <dl class="docutils" id="format-date-out">
-<dt><strong>FORMAT_DATE_OUT</strong></dt>
-<dd><p class="first">输出日期字符串时所使用的格式 [ <code class="docutils literal notranslate"><span class="pre">yyyy-mm-dd</span></code> ]</p>
+<dt>FORMAT_DATE_OUT</dt>
+<dd><p class="first">输出日期字符串时所使用的格式 [<code class="docutils literal notranslate"><span class="pre">yyyy-mm-dd</span></code>]</p>
 <p>参考 <a class="reference internal" href="#format-date-in"><span class="std std-ref">FORMAT_DATE_IN</span></a> 的相关说明。除此之外：</p>
 <ul class="last simple">
 <li>若模板开头有一个 <code class="docutils literal notranslate"><span class="pre">-</span></code>，则所有的整数年月日在输出时会省略前置零。比如若使用模板 <code class="docutils literal notranslate"><span class="pre">-yyyy-mm-dd</span></code> 则输出类似于 <code class="docutils literal notranslate"><span class="pre">2012-1-3</span></code> 而不是 <code class="docutils literal notranslate"><span class="pre">2012-01-03</span></code></li>
@@ -235,8 +245,8 @@
 </dd>
 </dl>
 <dl class="docutils" id="format-date-map">
-<dt><strong>FORMAT_DATE_MAP</strong></dt>
-<dd><p class="first">绘制日期字符串时所使用的格式 [ <code class="docutils literal notranslate"><span class="pre">yyyy-mm-dd</span></code> ]</p>
+<dt>FORMAT_DATE_MAP</dt>
+<dd><p class="first">绘制日期字符串时所使用的格式 [<code class="docutils literal notranslate"><span class="pre">yyyy-mm-dd</span></code>]</p>
 <p>参考 <a class="reference internal" href="#format-date-in"><span class="std std-ref">FORMAT_DATE_IN</span></a> 和 <a class="reference internal" href="#format-date-out"><span class="std std-ref">FORMAT_DATE_OUT</span></a>
 中的相关说明。除此之外，</p>
 <ul class="simple">
@@ -248,12 +258,14 @@
 <a class="reference internal" href="#format-time-secondary-map"><span class="std std-ref">FORMAT_TIME_SECONDARY_MAP</span></a> 控制。</p>
 </dd>
 </dl>
-<p>时间数据的输入/输出/绘图格式：</p>
+</div>
+<div class="section" id="id2">
+<h2>10.7.2 时间的输入/输出/绘图格式<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <dl class="docutils" id="format-clock-out">
-<dt><strong>FORMAT_CLOCK_OUT</strong></dt>
-<dd><p class="first">输出时间字符串时所使用的格式 [ <code class="docutils literal notranslate"><span class="pre">hh:mm:ss</span></code> ]</p>
+<dt>FORMAT_CLOCK_OUT</dt>
+<dd><p class="first">输出时间字符串时所使用的格式 [<code class="docutils literal notranslate"><span class="pre">hh:mm:ss</span></code>]</p>
 <p>默认使用24小时制。若要使用12小时制，可以在字符串的最后加上
-<code class="docutils literal notranslate"><span class="pre">am</span></code> 、 <code class="docutils literal notranslate"><span class="pre">AM</span></code> 、 <code class="docutils literal notranslate"><span class="pre">a.m.</span></code> 、 <code class="docutils literal notranslate"><span class="pre">A.M.</span></code> 。比如 <code class="docutils literal notranslate"><span class="pre">hh:mm:ss.xxx</span></code> 、 <code class="docutils literal notranslate"><span class="pre">hh:mm</span></code> 、 <code class="docutils literal notranslate"><span class="pre">hh:mm.xxx</span></code> 、 <code class="docutils literal notranslate"><span class="pre">hha.m.</span></code> 等等。</p>
+<code class="docutils literal notranslate"><span class="pre">am</span></code>、<code class="docutils literal notranslate"><span class="pre">AM</span></code>、<code class="docutils literal notranslate"><span class="pre">a.m.</span></code>、<code class="docutils literal notranslate"><span class="pre">A.M.</span></code>。比如 <code class="docutils literal notranslate"><span class="pre">hh:mm:ss.xxx</span></code>、<code class="docutils literal notranslate"><span class="pre">hh:mm</span></code>、<code class="docutils literal notranslate"><span class="pre">hh:mm.xxx</span></code>、<code class="docutils literal notranslate"><span class="pre">hha.m.</span></code> 等等。</p>
 <ul class="last simple">
 <li>若时间格式模板以 <code class="docutils literal notranslate"><span class="pre">-</span></code> 开头，则输出时间字符串时不会输出前置0</li>
 <li>若时间格式模板为 <code class="docutils literal notranslate"><span class="pre">-</span></code>，则在输出日期时间时不输出时间字符串</li>
@@ -261,23 +273,26 @@
 </dd>
 </dl>
 <dl class="docutils" id="format-clock-in">
-<dt><strong>FORMAT_CLOCK_IN</strong></dt>
-<dd><p class="first">输入数据中时间数据的格式 [ <code class="docutils literal notranslate"><span class="pre">hh:mm:ss</span></code> ]</p>
+<dt>FORMAT_CLOCK_IN</dt>
+<dd><p class="first">输入数据中时间数据的格式 [<code class="docutils literal notranslate"><span class="pre">hh:mm:ss</span></code>]</p>
 <p class="last">默认使用24小时制，即 <code class="docutils literal notranslate"><span class="pre">hh:mm:ss</span></code>，若要使用12小时制，则在参数后加上
-<code class="docutils literal notranslate"><span class="pre">am|pm|AM|PM</span></code> 。比如 <code class="docutils literal notranslate"><span class="pre">hh:mm</span></code> 或 <code class="docutils literal notranslate"><span class="pre">hh:mm:ssAM</span></code></p>
+<code class="docutils literal notranslate"><span class="pre">am|pm|AM|PM</span></code>。比如 <code class="docutils literal notranslate"><span class="pre">hh:mm</span></code> 或 <code class="docutils literal notranslate"><span class="pre">hh:mm:ssAM</span></code></p>
 </dd>
 </dl>
 <dl class="docutils" id="format-clock-map">
-<dt><strong>FORMAT_CLOCK_MAP</strong></dt>
-<dd>图上绘制时间字符串时所使用的格式 [ <code class="docutils literal notranslate"><span class="pre">hh:mm:ss</span></code> ]</dd>
+<dt>FORMAT_CLOCK_MAP</dt>
+<dd>图上绘制时间字符串时所使用的格式 [<code class="docutils literal notranslate"><span class="pre">hh:mm:ss</span></code>]</dd>
 </dl>
-<p>地理坐标的输出/绘图格式：</p>
+</div>
+<div class="section" id="id3">
+<h2>10.7.3 地理坐标的输出/绘图格式<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <dl class="docutils" id="format-geo-out">
-<dt><strong>FORMAT_GEO_OUT</strong></dt>
-<dd><p class="first">控制地理坐标数据的输出格式 [ <code class="docutils literal notranslate"><span class="pre">D</span></code> ]</p>
+<dt>FORMAT_GEO_OUT</dt>
+<dd><p class="first">控制地理坐标数据的输出格式 [<code class="docutils literal notranslate"><span class="pre">D</span></code>]</p>
 <p>格式的通用形式有两类：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">[±]D</span></code>：表示将地理数据以浮点数的形式输出，浮点数的格式由 <a class="reference internal" href="#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a> 决定<ul>
+<li><code class="docutils literal notranslate"><span class="pre">[±]D</span></code>：表示将地理数据以浮点数的形式输出，浮点数的格式由
+<a class="reference internal" href="#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a> 决定<ul>
 <li><code class="docutils literal notranslate"><span class="pre">D</span></code>：经度输出范围为 -180到180</li>
 <li><code class="docutils literal notranslate"><span class="pre">+D</span></code>：经度输出范围为 0到360</li>
 <li><code class="docutils literal notranslate"><span class="pre">-D</span></code>：经度输出范围为 -360到0</li>
@@ -305,16 +320,19 @@
 </dd>
 </dl>
 <dl class="docutils" id="format-geo-map">
-<dt><strong>FORMAT_GEO_MAP</strong></dt>
-<dd><p class="first">绘图时地理坐标的显示格式 [ <code class="docutils literal notranslate"><span class="pre">ddd.mm.ss</span></code> ]</p>
-<p class="last">格式的具体定义参考 <a class="reference internal" href="#format-geo-out"><span class="std std-ref">FORMAT_GEO_OUT</span></a> ，但具体格式会进一步由 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项中的值控制。除此之外，还可以在格式后面加上 <code class="docutils literal notranslate"><span class="pre">A</span></code> 以表示绘制坐标的绝对值。</p>
+<dt>FORMAT_GEO_MAP</dt>
+<dd><p class="first">绘图时地理坐标的显示格式 [<code class="docutils literal notranslate"><span class="pre">ddd.mm.ss</span></code>]</p>
+<p class="last">格式的具体定义参考 <a class="reference internal" href="#format-geo-out"><span class="std std-ref">FORMAT_GEO_OUT</span></a>，但具体格式会进一步由 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项中的值控制。除此之外，还可以在格式后面加上
+<code class="docutils literal notranslate"><span class="pre">A</span></code> 以表示绘制坐标的绝对值。</p>
 </dd>
 </dl>
-<p>浮点数的输出/绘图：</p>
+</div>
+<div class="section" id="id4">
+<h2>10.7.4 浮点数的输出/绘图格式<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <dl class="docutils" id="format-float-out">
-<dt><strong>FORMAT_FLOAT_OUT</strong></dt>
+<dt>FORMAT_FLOAT_OUT</dt>
 <dd><p class="first">双精度浮点数在输出时所使用的格式 [<code class="docutils literal notranslate"><span class="pre">%.12lg</span></code>]</p>
-<p>具体的格式遵循C语言 <code class="docutils literal notranslate"><span class="pre">printf</span></code> 函数的格式定义，比如 <code class="docutils literal notranslate"><span class="pre">%.3lf</span></code> 。</p>
+<p>具体的格式遵循C语言 <code class="docutils literal notranslate"><span class="pre">printf</span></code> 函数的格式定义，比如 <code class="docutils literal notranslate"><span class="pre">%.3lf</span></code>。</p>
 <p>若需要为不同列指定不同的输出格式，可以使用多个逗号分隔的 <code class="docutils literal notranslate"><span class="pre">cols:format</span></code> 形式。其中，<code class="docutils literal notranslate"><span class="pre">cols</span></code> 可以是列号（比如5代表数据的第六列），也可以是列范围（比如3-7表示第4到8列），不指定 <code class="docutils literal notranslate"><span class="pre">cols</span></code> 的格式将用于其他余下的列。比如 <code class="docutils literal notranslate"><span class="pre">0:%.3lf,1-3:%.12lg,%lf</span></code></p>
 <p>也可以列出N个用空格分隔的格式，这些格式分别应用到数据的前N列中，比如 <code class="docutils literal notranslate"><span class="pre">%.3lf</span> <span class="pre">%.2lf</span> <span class="pre">%lf</span></code> 。</p>
 <div class="last admonition note">
@@ -327,41 +345,45 @@
 </dd>
 </dl>
 <dl class="docutils" id="format-float-map">
-<dt><strong>FORMAT_FLOAT_MAP</strong></dt>
+<dt>FORMAT_FLOAT_MAP</dt>
 <dd><p class="first">以双精度浮点数形式绘制地图边框标注或等值线标注时所使用的格式 [<code class="docutils literal notranslate"><span class="pre">%.12lg</span></code>]</p>
 <p class="last">见 <a class="reference internal" href="#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a> 中的相关说明。</p>
 </dd>
 </dl>
+</div>
+<div class="section" id="id5">
+<h2>10.7.5 其他数据的绘图格式<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <dl class="docutils" id="format-time-map">
-<dt><strong>FORMAT_TIME_MAP</strong></dt>
+<dt>FORMAT_TIME_MAP</dt>
 <dd>同时设置 <code class="docutils literal notranslate"><span class="pre">FORMAT_TIME_PRIMARY_MAP</span></code> 和 <code class="docutils literal notranslate"><span class="pre">FORMAT_TIME_SECONDARY_MAP</span></code> 的值</dd>
 </dl>
 <dl class="docutils" id="format-time-primary-map">
-<dt><strong>FORMAT_TIME_PRIMARY_MAP</strong></dt>
-<dd><p class="first">一级标注中月份、周名的格式 [full]</p>
+<dt>FORMAT_TIME_PRIMARY_MAP</dt>
+<dd><p class="first">一级标注中月份、周名的格式 [<code class="docutils literal notranslate"><span class="pre">full</span></code>]</p>
 <p>可以取如下值：</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">full</span></code>：显示全称，比如 <code class="docutils literal notranslate"><span class="pre">January</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">abbreviate</span></code>：显示简称，比如 <code class="docutils literal notranslate"><span class="pre">Jan</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">character</span></code>：显示单个字符，比如 <code class="docutils literal notranslate"><span class="pre">J</span></code></li>
 </ul>
-<p>还可以使用 <code class="docutils literal notranslate"><span class="pre">Full</span></code> 、 <code class="docutils literal notranslate"><span class="pre">Abbreviate</span></code> 、 <code class="docutils literal notranslate"><span class="pre">Character</span></code> 表示所有名字均大写。</p>
-<p class="last">全称、简称以及单字符的定义，见 <code class="file docutils literal notranslate"><span class="pre">$</span><em><span class="pre">GMTHOME</span></em><span class="pre">/share/localization/gmt_us.locale</span></code></p>
+<p>还可以使用 <code class="docutils literal notranslate"><span class="pre">Full</span></code>、<code class="docutils literal notranslate"><span class="pre">Abbreviate</span></code>、<code class="docutils literal notranslate"><span class="pre">Character</span></code> 表示所有名字均大写。</p>
+<p class="last">全称、简称以及单字符的定义见GMT安装目录下 <code class="docutils literal notranslate"><span class="pre">share/localization</span></code> 目录中的语言定义文件。</p>
 </dd>
 </dl>
 <dl class="docutils" id="format-time-secondary-map">
-<dt><strong>FORMAT_TIME_SECONDARY_MAP</strong></dt>
+<dt>FORMAT_TIME_SECONDARY_MAP</dt>
 <dd><p class="first">二级标注中月份、周名的格式 [full]</p>
 <p class="last">见 <a class="reference internal" href="#format-time-primary-map"><span class="std std-ref">FORMAT_TIME_PRIMARY_MAP</span></a> 中的相关说明。</p>
 </dd>
 </dl>
 <dl class="docutils" id="format-time-stamp">
-<dt><strong>FORMAT_TIME_STAMP</strong></dt>
-<dd><p class="first">GMT时间戳中时间信息的显示格式 [ <code class="docutils literal notranslate"><span class="pre">%Y</span> <span class="pre">%b</span> <span class="pre">%d</span> <span class="pre">%H:%M:%S</span></code> ]</p>
+<dt>FORMAT_TIME_STAMP</dt>
+<dd><p class="first">GMT时间戳中时间信息的显示格式 [<code class="docutils literal notranslate"><span class="pre">%Y</span> <span class="pre">%b</span> <span class="pre">%d</span> <span class="pre">%H:%M:%S</span></code>]</p>
 <p class="last">该选项的值用C函数 <a class="reference external" href="http://www.cplusplus.com/reference/ctime/strftime/">strftime</a>
 解析，故而理论上可以包含任意文本。</p>
 </dd>
 </dl>
+</div>
 </div>
 
 
@@ -393,10 +415,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../io/" class="btn btn-neutral float-right" title="10.6 IO参数" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../io/" class="btn btn-neutral float-right" title="10.8 IO参数" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../font/" class="btn btn-neutral float-left" title="10.4 FONT参数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../dir/" class="btn btn-neutral float-left" title="10.6 DIR参数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -407,7 +429,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月24日.
+        最后更新于 2019年03月25日.
       </span>
 
     </p>
