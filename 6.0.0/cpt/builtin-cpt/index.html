@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7.5 GMT内置CPT &mdash; GMT中文手册</title>
+  <title>7.2 内置CPT &mdash; GMT中文手册</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="7.6 其他CPT" href="../resources/" />
-    <link rel="prev" title="7.4 调整CPT" href="../generate-cpt/" /> 
+    <link rel="next" title="7.3 制作CPT" href="../makecpt/" />
+    <link rel="prev" title="7.1 CPT类型" href="../format/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,12 +98,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../">7 CPT文件</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../overview/">7.1 CPT简介</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../usage/">7.2 使用CPT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../format/">7.3 CPT文件格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../generate-cpt/">7.4 调整CPT</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">7.5 GMT内置CPT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../resources/">7.6 其他CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../format/">7.1 CPT类型</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.2 内置CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">7.3 制作CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usage/">7.4 使用CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources/">7.5 CPT资源</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
@@ -177,7 +176,7 @@
         
           <li><a href="../">7 CPT文件</a> &raquo;</li>
         
-      <li>7.5 GMT内置CPT</li>
+      <li>7.2 内置CPT</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -198,26 +197,384 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="gmtcpt">
-<h1>7.5 GMT内置CPT<a class="headerlink" href="#gmtcpt" title="永久链接至标题">¶</a></h1>
-<p>GMT内置了43个常规CPT文件和一个分类CPT文件，位于 <code class="file docutils literal notranslate"><span class="pre">$</span><em><span class="pre">GMTHOME</span></em><span class="pre">/share/cpt</span></code> 目录中。</p>
-<p>下图给出了GMT内置的44个CPT文件，每张图上边的色标为原始CPT，用如下命令绘制:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt colorbar -D5c/2c+w10c/1c+h+jTC -B0 -C&lt;cpt&gt; -pdf CPT
+  <div class="section" id="cpt">
+<h1>7.2 内置CPT<a class="headerlink" href="#cpt" title="永久链接至标题">¶</a></h1>
+<p>GMT内置了一个分类型CPT和几十个常规型CPT文件。这一节仅展示GMT内置CPT的配色，具体如何使用这些内置CPT文件会在后面做进一步介绍。</p>
+<p>下面列出了GMT内置的若干个CPT文件的具体配色以及CPT文件名（位于图下方）。每张图中有两个色标，上面的色标是原始的CPT文件，可以使用如下命令绘制得到:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt colorbar -D0c/0c+w10c/1c+h -B0 -C&lt;cpt&gt; -pdf CPT
 </pre></div>
 </div>
-<p>下边的色标是经过 <a class="reference internal" href="../../module/makecpt/"><span class="doc">makecpt</span></a> 离散成8部分后的色标，用如下命令绘制:</p>
+<p>下面的色标是利用 <a class="reference internal" href="../../module/makecpt/"><span class="doc">makecpt</span></a> 对原始CPT文件做离散处理得到的单色型
+CPT文件，可以用如下命令绘制得到:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt makecpt -C&lt;cpt&gt; -T-1/1/0.25 &gt; new.cpt
-gmt colorbar -D5c/2c+w10c/1c+h+jTC -Bf0.25 -Cnew.cpt -pdf CPT
+gmt colorbar -D0c/0c+w10c/1c+h -B0 -Cnew.cpt -pdf CPT
 </pre></div>
 </div>
-<p><a class="reference download internal" download="" href="../../_downloads/a4ff6aa69983e954e9a9a916a0579812/builtin-cpt-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
-<div class="figure align-center">
-<img alt="../../_images/builtin-cpt-gmtplot-0.png" src="../../_images/builtin-cpt-gmtplot-0.png" />
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><div class="first last figure align-center" id="id1">
+<img alt="../../_images/abyss.png" src="../../_images/abyss.png" />
+<p class="caption"><span class="caption-text">abyss</span></p>
 </div>
-<p><a class="reference download internal" download="" href="../../_downloads/d75133b3839440136d0ba7e8c5646df7/builtin-cpt-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
-<div class="figure align-center">
-<img alt="../../_images/builtin-cpt-gmtplot-1.png" src="../../_images/builtin-cpt-gmtplot-1.png" />
+</td>
+<td><div class="first last figure align-center" id="id2">
+<img alt="../../_images/bathy.png" src="../../_images/bathy.png" />
+<p class="caption"><span class="caption-text">bathy</span></p>
 </div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id3">
+<img alt="../../_images/batlow.png" src="../../_images/batlow.png" />
+<p class="caption"><span class="caption-text">batlow</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id4">
+<img alt="../../_images/berlin.png" src="../../_images/berlin.png" />
+<p class="caption"><span class="caption-text">berlin</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id5">
+<img alt="../../_images/bilbao.png" src="../../_images/bilbao.png" />
+<p class="caption"><span class="caption-text">bilbao</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id6">
+<img alt="../../_images/broc.png" src="../../_images/broc.png" />
+<p class="caption"><span class="caption-text">broc</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id7">
+<img alt="../../_images/categorical.png" src="../../_images/categorical.png" />
+<p class="caption"><span class="caption-text">categorical</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id8">
+<img alt="../../_images/cool.png" src="../../_images/cool.png" />
+<p class="caption"><span class="caption-text">cool</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id9">
+<img alt="../../_images/copper.png" src="../../_images/copper.png" />
+<p class="caption"><span class="caption-text">copper</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id10">
+<img alt="../../_images/cork.png" src="../../_images/cork.png" />
+<p class="caption"><span class="caption-text">cork</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id11">
+<img alt="../../_images/cubhelix.png" src="../../_images/cubhelix.png" />
+<p class="caption"><span class="caption-text">cubhelix</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id12">
+<img alt="../../_images/cyclic.png" src="../../_images/cyclic.png" />
+<p class="caption"><span class="caption-text">cyclic</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id13">
+<img alt="../../_images/davos.png" src="../../_images/davos.png" />
+<p class="caption"><span class="caption-text">davos</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id14">
+<img alt="../../_images/dem1.png" src="../../_images/dem1.png" />
+<p class="caption"><span class="caption-text">dem1</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id15">
+<img alt="../../_images/dem2.png" src="../../_images/dem2.png" />
+<p class="caption"><span class="caption-text">dem2</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id16">
+<img alt="../../_images/dem3.png" src="../../_images/dem3.png" />
+<p class="caption"><span class="caption-text">dem3</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id17">
+<img alt="../../_images/dem4.png" src="../../_images/dem4.png" />
+<p class="caption"><span class="caption-text">dem4</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id18">
+<img alt="../../_images/drywet.png" src="../../_images/drywet.png" />
+<p class="caption"><span class="caption-text">drywet</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id19">
+<img alt="../../_images/earth.png" src="../../_images/earth.png" />
+<p class="caption"><span class="caption-text">earth</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id20">
+<img alt="../../_images/elevation.png" src="../../_images/elevation.png" />
+<p class="caption"><span class="caption-text">elevation</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id21">
+<img alt="../../_images/etopo1.png" src="../../_images/etopo1.png" />
+<p class="caption"><span class="caption-text">etopo1</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id22">
+<img alt="../../_images/gebco.png" src="../../_images/gebco.png" />
+<p class="caption"><span class="caption-text">gebco</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id23">
+<img alt="../../_images/geo.png" src="../../_images/geo.png" />
+<p class="caption"><span class="caption-text">geo</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id24">
+<img alt="../../_images/globe.png" src="../../_images/globe.png" />
+<p class="caption"><span class="caption-text">globe</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id25">
+<img alt="../../_images/gray.png" src="../../_images/gray.png" />
+<p class="caption"><span class="caption-text">gray</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id26">
+<img alt="../../_images/grayC.png" src="../../_images/grayC.png" />
+<p class="caption"><span class="caption-text">grayC</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id27">
+<img alt="../../_images/hawaii.png" src="../../_images/hawaii.png" />
+<p class="caption"><span class="caption-text">hawaii</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id28">
+<img alt="../../_images/haxby.png" src="../../_images/haxby.png" />
+<p class="caption"><span class="caption-text">haxby</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id29">
+<img alt="../../_images/hot.png" src="../../_images/hot.png" />
+<p class="caption"><span class="caption-text">hot</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id30">
+<img alt="../../_images/ibcso.png" src="../../_images/ibcso.png" />
+<p class="caption"><span class="caption-text">ibcso</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id31">
+<img alt="../../_images/inferno.png" src="../../_images/inferno.png" />
+<p class="caption"><span class="caption-text">inferno</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id32">
+<img alt="../../_images/jet.png" src="../../_images/jet.png" />
+<p class="caption"><span class="caption-text">jet</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id33">
+<img alt="../../_images/lajolla.png" src="../../_images/lajolla.png" />
+<p class="caption"><span class="caption-text">lajolla</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id34">
+<img alt="../../_images/lapaz.png" src="../../_images/lapaz.png" />
+<p class="caption"><span class="caption-text">lapaz</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id35">
+<img alt="../../_images/lisbon.png" src="../../_images/lisbon.png" />
+<p class="caption"><span class="caption-text">lisbon</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id36">
+<img alt="../../_images/magma.png" src="../../_images/magma.png" />
+<p class="caption"><span class="caption-text">magma</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id37">
+<img alt="../../_images/nighttime.png" src="../../_images/nighttime.png" />
+<p class="caption"><span class="caption-text">nighttime</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id38">
+<img alt="../../_images/no_green.png" src="../../_images/no_green.png" />
+<p class="caption"><span class="caption-text">no_green</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id39">
+<img alt="../../_images/ocean.png" src="../../_images/ocean.png" />
+<p class="caption"><span class="caption-text">ocean</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id40">
+<img alt="../../_images/oleron.png" src="../../_images/oleron.png" />
+<p class="caption"><span class="caption-text">oleron</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id41">
+<img alt="../../_images/oslo.png" src="../../_images/oslo.png" />
+<p class="caption"><span class="caption-text">oslo</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id42">
+<img alt="../../_images/paired.png" src="../../_images/paired.png" />
+<p class="caption"><span class="caption-text">paired</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id43">
+<img alt="../../_images/panoply.png" src="../../_images/panoply.png" />
+<p class="caption"><span class="caption-text">panoply</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id44">
+<img alt="../../_images/plasma.png" src="../../_images/plasma.png" />
+<p class="caption"><span class="caption-text">plasma</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id45">
+<img alt="../../_images/polar.png" src="../../_images/polar.png" />
+<p class="caption"><span class="caption-text">polar</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id46">
+<img alt="../../_images/rainbow.png" src="../../_images/rainbow.png" />
+<p class="caption"><span class="caption-text">rainbow</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id47">
+<img alt="../../_images/red2green.png" src="../../_images/red2green.png" />
+<p class="caption"><span class="caption-text">red2green</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id48">
+<img alt="../../_images/relief.png" src="../../_images/relief.png" />
+<p class="caption"><span class="caption-text">relief</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id49">
+<img alt="../../_images/roma.png" src="../../_images/roma.png" />
+<p class="caption"><span class="caption-text">roma</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id50">
+<img alt="../../_images/seafloor.png" src="../../_images/seafloor.png" />
+<p class="caption"><span class="caption-text">seafloor</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id51">
+<img alt="../../_images/sealand.png" src="../../_images/sealand.png" />
+<p class="caption"><span class="caption-text">sealand</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id52">
+<img alt="../../_images/seis.png" src="../../_images/seis.png" />
+<p class="caption"><span class="caption-text">seis</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id53">
+<img alt="../../_images/split.png" src="../../_images/split.png" />
+<p class="caption"><span class="caption-text">split</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id54">
+<img alt="../../_images/srtm.png" src="../../_images/srtm.png" />
+<p class="caption"><span class="caption-text">srtm</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id55">
+<img alt="../../_images/terra.png" src="../../_images/terra.png" />
+<p class="caption"><span class="caption-text">terra</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id56">
+<img alt="../../_images/tofino.png" src="../../_images/tofino.png" />
+<p class="caption"><span class="caption-text">tofino</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id57">
+<img alt="../../_images/tokyo.png" src="../../_images/tokyo.png" />
+<p class="caption"><span class="caption-text">tokyo</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id58">
+<img alt="../../_images/topo.png" src="../../_images/topo.png" />
+<p class="caption"><span class="caption-text">topo</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id59">
+<img alt="../../_images/turku.png" src="../../_images/turku.png" />
+<p class="caption"><span class="caption-text">turku</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id60">
+<img alt="../../_images/vik.png" src="../../_images/vik.png" />
+<p class="caption"><span class="caption-text">vik</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last figure align-center" id="id61">
+<img alt="../../_images/viridis.png" src="../../_images/viridis.png" />
+<p class="caption"><span class="caption-text">viridis</span></p>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id62">
+<img alt="../../_images/world.png" src="../../_images/world.png" />
+<p class="caption"><span class="caption-text">world</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last figure align-center" id="id63">
+<img alt="../../_images/wysiwyg.png" src="../../_images/wysiwyg.png" />
+<p class="caption"><span class="caption-text">wysiwyg</span></p>
+</div>
+</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<p>GMT内置CPT文件中，某些是针对特定的需求设计的，因而常用于特定的图件中：</p>
+<ol class="arabic simple">
+<li>海深：abyss、bathy、gebco、ibcso</li>
+<li>陆地高程：elevation</li>
+<li>全球地形起伏：dem1、dem2、dem3、dem4、earth、etopo1、geo、globe、oleron
+relief、terra、topo、world</li>
+<li>地震成像：seis、polar</li>
+<li>分类型数据：categorical</li>
+</ol>
 </div>
 
 
@@ -249,10 +606,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../resources/" class="btn btn-neutral float-right" title="7.6 其他CPT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../makecpt/" class="btn btn-neutral float-right" title="7.3 制作CPT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../generate-cpt/" class="btn btn-neutral float-left" title="7.4 调整CPT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../format/" class="btn btn-neutral float-left" title="7.1 CPT类型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -263,7 +620,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月25日.
+        最后更新于 2019年03月27日.
       </span>
 
     </p>
