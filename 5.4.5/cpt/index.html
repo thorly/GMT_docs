@@ -39,7 +39,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex/" />
     <link rel="search" title="搜索" href="../search/" />
-    <link rel="next" title="7.1 CPT简介" href="overview/" />
+    <link rel="next" title="7.1 CPT类型" href="format/" />
     <link rel="prev" title="6.6 查看netCDF文件" href="../grid/viewer/" /> 
 </head>
 
@@ -98,12 +98,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../table/">5 表数据</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../grid/">6 网格文件</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">7 CPT文件</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="overview/">7.1 CPT简介</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usage/">7.2 使用CPT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="format/">7.3 CPT文件格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="generate-cpt/">7.4 调整CPT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="builtin-cpt/">7.5 GMT内置CPT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resources/">7.6 其他CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="format/">7.1 CPT类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="builtin-cpt/">7.2 内置CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="makecpt/">7.3 制作CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/">7.4 使用CPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources/">7.5 CPT资源</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../option/">8 标准选项</a></li>
@@ -198,21 +197,9 @@
             
   <div class="section" id="cpt">
 <h1>7 CPT文件<a class="headerlink" href="#cpt" title="永久链接至标题">¶</a></h1>
+<p>CPT全称是Color Palette Table，也称为调色板或色标文件。</p>
+<p>CPT文件定义了数值与颜色之间的映射关系，对于每一个数值，都可以从CPT文件中查找到该数值对应的颜色。因而，CPT文件常用于绘制2D网格文件、随着数值变化颜色的线条或随着数值变化颜色的符号等。</p>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="overview/">7.1 CPT简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage/">7.2 使用CPT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="format/">7.3 CPT文件格式</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="format/#id1">7.3.1 分类CPT文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="format/#id2">7.3.2 常规CPT文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="format/#id3">7.3.3 周期性CPT文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="format/#id4">7.3.4 动态CPT</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="generate-cpt/">7.4 调整CPT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="builtin-cpt/">7.5 GMT内置CPT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources/">7.6 其他CPT</a></li>
-</ul>
 </div>
 </div>
 
@@ -245,7 +232,7 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="overview/" class="btn btn-neutral float-right" title="7.1 CPT简介" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="format/" class="btn btn-neutral float-right" title="7.1 CPT类型" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../grid/viewer/" class="btn btn-neutral float-left" title="6.6 查看netCDF文件" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -259,7 +246,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月25日.
+        最后更新于 2019年03月27日.
       </span>
 
     </p>
