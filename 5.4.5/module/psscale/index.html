@@ -336,97 +336,88 @@
             
   <div class="section" id="psscale">
 <span id="index-0"></span><h1>12.101 psscale<a class="headerlink" href="#psscale" title="永久链接至标题">¶</a></h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/psscale.html" title="(在 GMT v5.4.5)"><span>psscale</span></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">在地图上绘制灰色或彩色色条（colorbar）</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/psscale.html" title="(在 GMT v5.4.5)"><span>psscale</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>在地图上绘制灰色或彩色色条（colorbar）</p>
+</dd>
+</dl>
 <div class="section" id="id1">
 <h2>12.101.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-D[g|j|J|n|x]&lt;refpoint&gt;[+w&lt;length&gt;[/&lt;width&gt;]][+e[b|f][&lt;length&gt;]][+h|v][+j&lt;justify&gt;][+m[a|c|l|u]][+n[&lt;txt&gt;]][+o&lt;dx&gt;[/&lt;dy&gt;]]</span></code></dt>
-<dd><p class="first">指定色标的尺寸和位置。</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">-D[g|j|J|n|x]&lt;refpoint&gt;[+w&lt;length&gt;[/&lt;width&gt;]][+e[b|f][&lt;length&gt;]][+h|v][+j&lt;justify&gt;][+m[a|c|l|u]][+n[&lt;txt&gt;]][+o&lt;dx&gt;[/&lt;dy&gt;]]</span></code></dt><dd><p>指定色标的尺寸和位置。</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">[g|j|J|n|x]&lt;refpoint&gt;</span></code> 指定底图上的参考点，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</li>
-<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 指定色标上的锚点，默认锚点是 <code class="docutils literal notranslate"><span class="pre">BL</span></code> ，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</li>
-<li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;[/&lt;dy&gt;]</span></code> 指定参考点的额外偏移量，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a></li>
-<li><code class="docutils literal notranslate"><span class="pre">+w&lt;length&gt;[/&lt;width&gt;]</span></code> 指定色标的长度和宽度。若未指定宽度，则默认为长度的4%；若长度为负值则会反转色标</li>
-<li><code class="docutils literal notranslate"><span class="pre">+h</span></code> 绘制水平色标</li>
-<li><code class="docutils literal notranslate"><span class="pre">+v</span></code> 绘制垂直色标，默认值</li>
-<li><code class="docutils literal notranslate"><span class="pre">+e</span></code> 选项为前景色和背景色加一个三角形， <code class="docutils literal notranslate"><span class="pre">+ef</span></code> 表示只加前景色三角形，
-<code class="docutils literal notranslate"><span class="pre">+eb</span></code> 表示只加背景色三角形， <code class="docutils literal notranslate"><span class="pre">&lt;length&gt;</span></code> 是三角的高度，默认为色标宽度的一半</li>
-<li><code class="docutils literal notranslate"><span class="pre">+m[a|c|l|u]</span></code> 将标注、标签和单位放在色标的另一边， <code class="docutils literal notranslate"><span class="pre">a</span></code> 代表标注，
-<code class="docutils literal notranslate"><span class="pre">l</span></code> 代表标签， <code class="docutils literal notranslate"><span class="pre">u</span></code> 代表单位。 <code class="docutils literal notranslate"><span class="pre">c</span></code> 表示将标签以单列字符垂直打印。</li>
-<li><code class="docutils literal notranslate"><span class="pre">+n&lt;text&gt;</span></code> 在色标开始处绘制一个矩形，并用NaN的颜色填充</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[g|j|J|n|x]&lt;refpoint&gt;</span></code> 指定底图上的参考点，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 指定色标上的锚点，默认锚点是 <code class="docutils literal notranslate"><span class="pre">BL</span></code> ，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;[/&lt;dy&gt;]</span></code> 指定参考点的额外偏移量，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+w&lt;length&gt;[/&lt;width&gt;]</span></code> 指定色标的长度和宽度。若未指定宽度，则默认为长度的4%；若长度为负值则会反转色标</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+h</span></code> 绘制水平色标</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+v</span></code> 绘制垂直色标，默认值</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+e</span></code> 选项为前景色和背景色加一个三角形， <code class="docutils literal notranslate"><span class="pre">+ef</span></code> 表示只加前景色三角形，
+<code class="docutils literal notranslate"><span class="pre">+eb</span></code> 表示只加背景色三角形， <code class="docutils literal notranslate"><span class="pre">&lt;length&gt;</span></code> 是三角的高度，默认为色标宽度的一半</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+m[a|c|l|u]</span></code> 将标注、标签和单位放在色标的另一边， <code class="docutils literal notranslate"><span class="pre">a</span></code> 代表标注，
+<code class="docutils literal notranslate"><span class="pre">l</span></code> 代表标签， <code class="docutils literal notranslate"><span class="pre">u</span></code> 代表单位。 <code class="docutils literal notranslate"><span class="pre">c</span></code> 表示将标签以单列字符垂直打印。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+n&lt;text&gt;</span></code> 在色标开始处绘制一个矩形，并用NaN的颜色填充</p></li>
 </ol>
 <p>几种常用的放置色标的方式：</p>
-<ul class="last simple">
-<li>放在左边: <code class="docutils literal notranslate"><span class="pre">-DjML+w2c/0.5c+o-1c/0c+m</span></code></li>
-<li>放在右边: <code class="docutils literal notranslate"><span class="pre">-DjMR+w2c/0.5c+o-1c/0c</span></code>  可能存在问题</li>
-<li>放在上方: <code class="docutils literal notranslate"><span class="pre">-DjTC+w2c/0.5c+o0c/-1c+m</span></code></li>
-<li>放在下方: <code class="docutils literal notranslate"><span class="pre">-DjBC+w2c/0.5c+o0c/-1c+m</span></code> 可能存在问题</li>
-<li>放在左上角: <code class="docutils literal notranslate"><span class="pre">-DjTL+w2c/0.5c+o-1c/0c+m</span></code></li>
-<li>放在左下角: <code class="docutils literal notranslate"><span class="pre">-DjBL+w2c/0.5c+o-1c/0c+m</span></code></li>
-<li>放在右上角: <code class="docutils literal notranslate"><span class="pre">-DjTR+w2c/0.5c+o-1c/0c</span></code></li>
-<li>放在右下角: <code class="docutils literal notranslate"><span class="pre">-DjBR+w2c/0.5c+o-1c/0c</span></code></li>
+<ul class="simple">
+<li><p>放在左边: <code class="docutils literal notranslate"><span class="pre">-DjML+w2c/0.5c+o-1c/0c+m</span></code></p></li>
+<li><p>放在右边: <code class="docutils literal notranslate"><span class="pre">-DjMR+w2c/0.5c+o-1c/0c</span></code>  可能存在问题</p></li>
+<li><p>放在上方: <code class="docutils literal notranslate"><span class="pre">-DjTC+w2c/0.5c+o0c/-1c+m</span></code></p></li>
+<li><p>放在下方: <code class="docutils literal notranslate"><span class="pre">-DjBC+w2c/0.5c+o0c/-1c+m</span></code> 可能存在问题</p></li>
+<li><p>放在左上角: <code class="docutils literal notranslate"><span class="pre">-DjTL+w2c/0.5c+o-1c/0c+m</span></code></p></li>
+<li><p>放在左下角: <code class="docutils literal notranslate"><span class="pre">-DjBL+w2c/0.5c+o-1c/0c+m</span></code></p></li>
+<li><p>放在右上角: <code class="docutils literal notranslate"><span class="pre">-DjTR+w2c/0.5c+o-1c/0c</span></code></p></li>
+<li><p>放在右下角: <code class="docutils literal notranslate"><span class="pre">-DjBR+w2c/0.5c+o-1c/0c</span></code></p></li>
 </ul>
 </dd>
 </dl>
 </div>
 <div class="section" id="id2">
 <h2>12.101.2 选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-B[p|s]&lt;parameters&gt;</span></code></dt>
-<dd><p class="first">设置colorbar的标注、刻度和网格线间隔。</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">-B[p|s]&lt;parameters&gt;</span></code></dt><dd><p>设置colorbar的标注、刻度和网格线间隔。</p>
 <p>在不使用 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项，或者不指定标注间隔时，默认会根据CPT文件中每一行的内容对colorbar进行标注，具体见 <a class="reference internal" href="../../cpt/"><span class="doc">CPT文件</span></a>。</p>
-<p class="last">默认情况下，对于水平colorbar而言，X轴的标签会放在colorbar的下边，Y轴标签放在
+<p>默认情况下，对于水平colorbar而言，X轴的标签会放在colorbar的下边，Y轴标签放在
 colorbar的右边；对于垂直colorbar而言，X轴的标签放在colorbar的右边，Y轴标签放在colorbar的上边。除非在 <code class="docutils literal notranslate"><span class="pre">-D</span></code> 选项中使用了 <code class="docutils literal notranslate"><span class="pre">+m</span></code> 子选项。</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-C</span></code></dt>
-<dd>要绘制的CPT文件。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-F</span></code></dt>
-<dd>为colorbar加上背景边框，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;zlow&gt;/&lt;zhigh&gt;</span></code></dt>
-<dd>绘图前先对CPT文件做截断，使得其只绘制 <code class="docutils literal notranslate"><span class="pre">&lt;zlow&gt;</span></code> 到 <code class="docutils literal notranslate"><span class="pre">&lt;zhigh&gt;</span></code> 之间的部分。若其中某个值等于NaN，则不对CPT的那一端做处理。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-I[&lt;max_intens&gt;|&lt;low_i&gt;/&lt;high_i&gt;]</span></code></dt>
-<dd><p class="first">为色标加上光照效果</p>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">-I&lt;max_intens&gt;</span></code> 光照强度为 <code class="docutils literal notranslate"><span class="pre">[-&lt;max_intens&gt;,</span> <span class="pre">+&lt;max_intens]</span></code> ，默认值为1</li>
-<li><code class="docutils literal notranslate"><span class="pre">-I&lt;low_i&gt;/&lt;high_i&gt;</span></code> 指定非对称的光照强度范围</li>
+<dt><code class="docutils literal notranslate"><span class="pre">-C</span></code></dt><dd><p>要绘制的CPT文件。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-F</span></code></dt><dd><p>为colorbar加上背景边框，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;zlow&gt;/&lt;zhigh&gt;</span></code></dt><dd><p>绘图前先对CPT文件做截断，使得其只绘制 <code class="docutils literal notranslate"><span class="pre">&lt;zlow&gt;</span></code> 到 <code class="docutils literal notranslate"><span class="pre">&lt;zhigh&gt;</span></code> 之间的部分。若其中某个值等于NaN，则不对CPT的那一端做处理。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-I[&lt;max_intens&gt;|&lt;low_i&gt;/&lt;high_i&gt;]</span></code></dt><dd><p>为色标加上光照效果</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-I&lt;max_intens&gt;</span></code> 光照强度为 <code class="docutils literal notranslate"><span class="pre">[-&lt;max_intens&gt;,</span> <span class="pre">+&lt;max_intens]</span></code> ，默认值为1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-I&lt;low_i&gt;/&lt;high_i&gt;</span></code> 指定非对称的光照强度范围</p></li>
 </ol>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-L[i][&lt;gap&gt;]</span></code></dt>
-<dd><p class="first">生成等大小的颜色矩形。</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-L[i][&lt;gap&gt;]</span></code></dt><dd><p>生成等大小的颜色矩形。</p>
 <p>默认情况下，会根据CPT文件中Z值的范围决定颜色矩形的大小。若使用该选项，则会忽略 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项设置的间隔。若指定了 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 且CPT文件是离散的，则使用每个矩形的Z值下边界作为标注且将标注放在矩形的正中间。</p>
-<p class="last">If <strong>i</strong> is prepended we annotate the interval range instead.
+<p>If <strong>i</strong> is prepended we annotate the interval range instead.
 If <strong>-I</strong> is used then each rectangle will have its constant color
 modified by the specified intensity.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-M</span></code></dt>
-<dd>使用YIQ变换将色标变成单调灰度色标</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-N[p|&lt;dpi&gt;]</span></code></dt>
-<dd><p class="first">控制color scale如何用PostScript语言表示。</p>
-<ul class="last simple">
-<li><code class="docutils literal notranslate"><span class="pre">-Np</span></code> 用颜色矩形来表示（比如离散的颜色）</li>
-<li><code class="docutils literal notranslate"><span class="pre">-N&lt;dpi&gt;</span></code> 用图像来表示， <code class="docutils literal notranslate"><span class="pre">&lt;dpi&gt;</span></code> 默认值为 600</li>
+<dt><code class="docutils literal notranslate"><span class="pre">-M</span></code></dt><dd><p>使用YIQ变换将色标变成单调灰度色标</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-N[p|&lt;dpi&gt;]</span></code></dt><dd><p>控制color scale如何用PostScript语言表示。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-Np</span></code> 用颜色矩形来表示（比如离散的颜色）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-N&lt;dpi&gt;</span></code> 用图像来表示， <code class="docutils literal notranslate"><span class="pre">&lt;dpi&gt;</span></code> 默认值为 600</p></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Q</span></code></dt>
-<dd><p class="first">使用对数坐标，刻度表示为10的次幂</p>
-<p class="last">CPT文件中所有的Z值都会被转换成 p = log10(z)，其中整数的p会以10^p的格式标注。</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-Q</span></code></dt><dd><p>使用对数坐标，刻度表示为10的次幂</p>
+<p>CPT文件中所有的Z值都会被转换成 p = log10(z)，其中整数的p会以10^p的格式标注。</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-S</span></code></dt>
-<dd>去除不同色块之间的黑色网格线</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-W&lt;scale&gt;</span></code></dt>
-<dd>将CPT文件中所有的Z值乘以比例因子 <code class="docutils literal notranslate"><span class="pre">&lt;scale&gt;</span></code></dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Z&lt;zfile&gt;</span></code></dt>
-<dd><p class="first"><code class="docutils literal notranslate"><span class="pre">&lt;zfile&gt;</span></code> 文件用于指定每个颜色块的宽度。</p>
-<p class="last">默认情况下，颜色块的宽度由颜色的Z值范围决定，比如Z=0-100对应的色块宽度是
+<dt><code class="docutils literal notranslate"><span class="pre">-S</span></code></dt><dd><p>去除不同色块之间的黑色网格线</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-W&lt;scale&gt;</span></code></dt><dd><p>将CPT文件中所有的Z值乘以比例因子 <code class="docutils literal notranslate"><span class="pre">&lt;scale&gt;</span></code></p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Z&lt;zfile&gt;</span></code></dt><dd><p><code class="docutils literal notranslate"><span class="pre">&lt;zfile&gt;</span></code> 文件用于指定每个颜色块的宽度。</p>
+<p>默认情况下，颜色块的宽度由颜色的Z值范围决定，比如Z=0-100对应的色块宽度是
 Z=100-150的色块宽度的两倍。</p>
 </dd>
 </dl>

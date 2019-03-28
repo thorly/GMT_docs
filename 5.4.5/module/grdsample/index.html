@@ -336,59 +336,55 @@
             
   <div class="section" id="grdsample">
 <span id="index-0"></span><h1>12.58 grdsample<a class="headerlink" href="#grdsample" title="永久链接至标题">¶</a></h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/grdsample.html" title="(在 GMT v5.4.5)"><span>grdsample</span></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">对网格文件做重采样</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/grdsample.html" title="(在 GMT v5.4.5)"><span>grdsample</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>对网格文件做重采样</p>
+</dd>
+</dl>
 <p>该命令读取一个网格文件，并对其做插值以生成一个新的网格文件。新旧网格文件的区别在于：</p>
 <ol class="arabic simple">
-<li>不同的配准方式（ <code class="docutils literal notranslate"><span class="pre">-r</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-T</span></code> ）</li>
-<li>不同的网格间隔或网格节点数（ <code class="docutils literal notranslate"><span class="pre">-I</span></code> ）</li>
-<li>不同的网格范围（ <code class="docutils literal notranslate"><span class="pre">-R</span></code> ）</li>
+<li><p>不同的配准方式（ <code class="docutils literal notranslate"><span class="pre">-r</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-T</span></code> ）</p></li>
+<li><p>不同的网格间隔或网格节点数（ <code class="docutils literal notranslate"><span class="pre">-I</span></code> ）</p></li>
+<li><p>不同的网格范围（ <code class="docutils literal notranslate"><span class="pre">-R</span></code> ）</p></li>
 </ol>
 <p>默认使用 bicubic 插值方式，可以使用 <code class="docutils literal notranslate"><span class="pre">-n</span></code> 选项设置其他插值方式。该命令可以很安全地将粗网格插值为细网格；反之，将细网格插值为粗网格时，则可能存在混淆效应，因而需要在插值前使用 <code class="docutils literal notranslate"><span class="pre">grdfft</span></code> 或 <code class="docutils literal notranslate"><span class="pre">grdfilter</span></code> 对网格文件做滤波。</p>
 <div class="section" id="id1">
 <h2>12.58.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;in_grdfile&gt;</span></code></dt>
-<dd>要重采样的2D网格文件</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;out_grdfile&gt;</span></code></dt>
-<dd>重采样生成的网格文件</dd>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;in_grdfile&gt;</span></code></dt><dd><p>要重采样的2D网格文件</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;out_grdfile&gt;</span></code></dt><dd><p>重采样生成的网格文件</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="id2">
 <h2>12.58.2 可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-I&lt;xinc&gt;[&lt;unit&gt;][+e|+n]/&lt;yinc&gt;[&lt;unit&gt;][+e|+n]</span></code></dt>
-<dd><p class="first">指定X和Y方向的网格间隔</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">-I&lt;xinc&gt;[&lt;unit&gt;][+e|+n]/&lt;yinc&gt;[&lt;unit&gt;][+e|+n]</span></code></dt><dd><p>指定X和Y方向的网格间隔</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;</span></code> X方向的网格间隔</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;yinc&gt;</span></code> Y方向的网格间隔</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;unit&gt;</span></code> 网格间隔的单位。对于地理坐标系而言默认值为度，可以设置单位为
-<code class="docutils literal notranslate"><span class="pre">m|s|e|f|k|M|n|u</span></code> 。</li>
-<li><code class="docutils literal notranslate"><span class="pre">+e</span></code> 微调X和Y方向范围的最大值，使得其是网格间隔的整数倍（默认会微调网格间隔以适应给定的数据范围）</li>
-<li><code class="docutils literal notranslate"><span class="pre">+n</span></code> 表明 <code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;yinc&gt;</span></code> 不是网格间隔，而是X和Y方向的节点数。此时会根据节点数、网格区域范围以及网格配准方式重新计算网格间隔。</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;</span></code> X方向的网格间隔</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;yinc&gt;</span></code> Y方向的网格间隔</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;unit&gt;</span></code> 网格间隔的单位。对于地理坐标系而言默认值为度，可以设置单位为
+<code class="docutils literal notranslate"><span class="pre">m|s|e|f|k|M|n|u</span></code> 。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+e</span></code> 微调X和Y方向范围的最大值，使得其是网格间隔的整数倍（默认会微调网格间隔以适应给定的数据范围）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+n</span></code> 表明 <code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;yinc&gt;</span></code> 不是网格间隔，而是X和Y方向的节点数。此时会根据节点数、网格区域范围以及网格配准方式重新计算网格间隔。</p></li>
 </ul>
 <p>注意：</p>
-<ol class="last arabic simple">
-<li>若 <code class="docutils literal notranslate"><span class="pre">&lt;yinc&gt;</span></code> 设置为0，则表示其与 <code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;</span></code> 相同</li>
-<li>若使用 <code class="docutils literal notranslate"><span class="pre">-R&lt;grdfile&gt;</span></code> 选项，则网格网格已经根据网格文件自动初始化，此时依然可以使用 <code class="docutils literal notranslate"><span class="pre">-I</span></code> 覆盖网格文件中的间隔值</li>
+<ol class="arabic simple">
+<li><p>若 <code class="docutils literal notranslate"><span class="pre">&lt;yinc&gt;</span></code> 设置为0，则表示其与 <code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;</span></code> 相同</p></li>
+<li><p>若使用 <code class="docutils literal notranslate"><span class="pre">-R&lt;grdfile&gt;</span></code> 选项，则网格网格已经根据网格文件自动初始化，此时依然可以使用 <code class="docutils literal notranslate"><span class="pre">-I</span></code> 覆盖网格文件中的间隔值</p></li>
 </ol>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-R&lt;w&gt;/&lt;e&gt;/&lt;s&gt;/&lt;n&gt;</span></code></dt>
-<dd><p class="first">指定新网格的数据范围。</p>
-<p class="last">若只使用 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项，则等效于使用 <code class="docutils literal notranslate"><span class="pre">grdcut</span></code> 或 <code class="docutils literal notranslate"><span class="pre">grdedit</span> <span class="pre">-S</span></code> 。</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-R&lt;w&gt;/&lt;e&gt;/&lt;s&gt;/&lt;n&gt;</span></code></dt><dd><p>指定新网格的数据范围。</p>
+<p>若只使用 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项，则等效于使用 <code class="docutils literal notranslate"><span class="pre">grdcut</span></code> 或 <code class="docutils literal notranslate"><span class="pre">grdedit</span> <span class="pre">-S</span></code> 。</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-T</span></code></dt>
-<dd>交换网格文件的配准方式。即若输入是网格线配准，则输出为像素点配准；若输入是像素点配准，则输出为网格线配准。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-n[b|c|l|n][+a][+b&lt;BC&gt;][+c][+t&lt;threshold&gt;]</span></code></dt>
-<dd>重采样时使用的插值算法，见 <a class="reference internal" href="../../option/n/"><span class="doc">-n 选项</span></a> 一节。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-T</span></code></dt><dd><p>交换网格文件的配准方式。即若输入是网格线配准，则输出为像素点配准；若输入是像素点配准，则输出为网格线配准。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-n[b|c|l|n][+a][+b&lt;BC&gt;][+c][+t&lt;threshold&gt;]</span></code></dt><dd><p>重采样时使用的插值算法，见 <a class="reference internal" href="../../option/n/"><span class="doc">-n 选项</span></a> 一节。</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="id3">

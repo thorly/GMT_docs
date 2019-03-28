@@ -229,19 +229,19 @@
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;pattern&gt;</span></code> 有两种取法：</p>
 <ul class="simple">
-<li>取1到90内的整数，表示使用GMT提供的<a class="reference internal" href="../../appendix/patterns/"><span class="doc">90种内置位图图案</span></a></li>
-<li>取文件名，表示使用自定义的1、8、24位Sun光栅文件作为位图图案</li>
+<li><p>取1到90内的整数，表示使用GMT提供的<a class="reference internal" href="../../appendix/patterns/"><span class="doc">90种内置位图图案</span></a></p></li>
+<li><p>取文件名，表示使用自定义的1、8、24位Sun光栅文件作为位图图案</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">+r&lt;dpi&gt;</span></code> 设置了位图图案在当前页面上的分辨率。<code class="docutils literal notranslate"><span class="pre">&lt;dpi&gt;</span></code> 越大，则区域内位图重复的次数越多。<code class="docutils literal notranslate"><span class="pre">&lt;dpi&gt;</span></code> 的默认值为1200。</p>
 <p>若使用 <code class="docutils literal notranslate"><span class="pre">-GP</span></code> 而不是 <code class="docutils literal notranslate"><span class="pre">-Gp</span></code>，则图案会发生位反转，即白色区域变成黑色，黑色区域变成白色（仅对1位位图或GMT预定义位图图案有效）。</p>
 <p>对于GMT预定义的图案以及用户自定义的1位位图来说，可以用 <code class="docutils literal notranslate"><span class="pre">+b&lt;color&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">+f&lt;color&gt;</span></code>
 分别设置图案的前景色和背景色，以分别替换默认的黑色和白色像素点。若设置前景色或背景色为 <code class="docutils literal notranslate"><span class="pre">-</span></code>，则视为前景色或背景色为透明。</p>
 <div class="admonition note">
-<p class="first admonition-title">注解</p>
-<ol class="last arabic simple">
-<li>由于PostScript实现的限制，<code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项里使用的光栅图片必须小于146x146像素；若要使用更大的图像，需要使用 <a class="reference internal" href="../../module/psimage/"><span class="doc">psimage</span></a> 模块</li>
-<li>若GMT在编译时链接了GDAL，则也可以使用其他格式的图片。</li>
-<li>在PostScript Level 1下，图案填充是通过使用多边形做路径裁剪实现的。复杂的裁剪路径会需要更多的内存，因而可能导致某些PS解释器由于内存不足而退出。在这种情况下，建议使用灰度填充区域。</li>
+<p class="admonition-title">注解</p>
+<ol class="arabic simple">
+<li><p>由于PostScript实现的限制，<code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项里使用的光栅图片必须小于146x146像素；若要使用更大的图像，需要使用 <a class="reference internal" href="../../module/psimage/"><span class="doc">psimage</span></a> 模块</p></li>
+<li><p>若GMT在编译时链接了GDAL，则也可以使用其他格式的图片。</p></li>
+<li><p>在PostScript Level 1下，图案填充是通过使用多边形做路径裁剪实现的。复杂的裁剪路径会需要更多的内存，因而可能导致某些PS解释器由于内存不足而退出。在这种情况下，建议使用灰度填充区域。</p></li>
 </ol>
 </div>
 </div>
@@ -253,17 +253,17 @@
 </div>
 <p>请尝试将命令中的 <code class="docutils literal notranslate"><span class="pre">&lt;fill&gt;</span></code> 修改为以下不同的值并查看效果以理解这一节的内容：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">-G128</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">-G127/255/0</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">-G#00ff00</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">-G25-0.86-0.82</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">-GDarkOliveGreen1</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">-Gp7+r300</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">-Gp12+r300</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">-Gp7+r1000</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">-GP7+r1000</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">-Gp7+bred+r300</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">-Gp7+bred+f-+r300</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-G128</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-G127/255/0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-G#00ff00</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-G25-0.86-0.82</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-GDarkOliveGreen1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Gp7+r300</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Gp12+r300</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Gp7+r1000</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-GP7+r1000</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Gp7+bred+r300</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Gp7+bred+f-+r300</span></code></p></li>
 </ul>
 </div>
 </div>

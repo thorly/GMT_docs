@@ -219,29 +219,30 @@
 <h1>8.14 -g 选项<a class="headerlink" href="#g" title="永久链接至标题">¶</a></h1>
 <p>在处理多段数据时，GMT提供了三种机制来决定文件中数据的分段情况：</p>
 <ol class="arabic simple">
-<li>使用数据段头记录来标记一段数据的开始，详见 <a class="reference internal" href="../../table/ascii/"><span class="doc">ASCII表</span></a></li>
-<li>若输入数据中，某个记录的某个关键列的值为NaN，则也可以用于将该记录作为数据段的开始标识<ul>
-<li>当 <a class="reference internal" href="../../conf/io/#io-nan-records"><span class="std std-ref">IO_NAN_RECORDS</span></a> 为 <code class="docutils literal notranslate"><span class="pre">skip</span></code> 时，这些包含NaN值的记录会被自动跳过</li>
-<li>当 <a class="reference internal" href="../../conf/io/#io-nan-records"><span class="std std-ref">IO_NAN_RECORDS</span></a> 为 <code class="docutils literal notranslate"><span class="pre">pass</span></code> 时，这些包含NaN值的记录会被当做数据段的开始标识</li>
+<li><p>使用数据段头记录来标记一段数据的开始，详见 <a class="reference internal" href="../../table/ascii/"><span class="doc">ASCII表</span></a></p></li>
+<li><p>若输入数据中，某个记录的某个关键列的值为NaN，则也可以用于将该记录作为数据段的开始标识</p>
+<ul class="simple">
+<li><p>当 <a class="reference internal" href="../../conf/io/#io-nan-records"><span class="std std-ref">IO_NAN_RECORDS</span></a> 为 <code class="docutils literal notranslate"><span class="pre">skip</span></code> 时，这些包含NaN值的记录会被自动跳过</p></li>
+<li><p>当 <a class="reference internal" href="../../conf/io/#io-nan-records"><span class="std std-ref">IO_NAN_RECORDS</span></a> 为 <code class="docutils literal notranslate"><span class="pre">pass</span></code> 时，这些包含NaN值的记录会被当做数据段的开始标识</p></li>
 </ul>
 </li>
-<li>也可以使用 <code class="docutils literal notranslate"><span class="pre">-g</span></code> 选项，通过判断两个相邻的数据点是否符合某个准则来决定数据分段</li>
+<li><p>也可以使用 <code class="docutils literal notranslate"><span class="pre">-g</span></code> 选项，通过判断两个相邻的数据点是否符合某个准则来决定数据分段</p></li>
 </ol>
 <p><code class="docutils literal notranslate"><span class="pre">-g</span></code> 选项的完整语法为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-g<span class="o">[</span>a<span class="o">]</span>x<span class="p">|</span>y<span class="p">|</span>d<span class="p">|</span>X<span class="p">|</span>Y<span class="p">|</span>D<span class="p">|</span><span class="o">[</span>&lt;col&gt;<span class="o">]</span>z<span class="o">[</span>±<span class="o">]</span>&lt;gap&gt;<span class="o">[</span>u<span class="o">]</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">x</span></code> 两点的X坐标跳变超过 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">y</span></code> 两点的Y坐标跳变超过 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">d</span></code> 两点的距离超过 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;u&gt;</span></code> 是 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 的单位</li>
-<li><code class="docutils literal notranslate"><span class="pre">X|Y|D</span></code> 用于表示数据投影到纸上后X坐标、Y坐标和纸上距离的跳变</li>
-<li>若想要检查特定列是否满足分段准则，可以用 <code class="docutils literal notranslate"><span class="pre">[&lt;col&gt;]z</span></code>，<code class="docutils literal notranslate"><span class="pre">&lt;col&gt;</span></code> 的默认值为
-<code class="docutils literal notranslate"><span class="pre">2</span></code>，即第三列</li>
-<li><code class="docutils literal notranslate"><span class="pre">+&lt;gap&gt;</span></code> 表示前一数据减去当前数据超过 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 则分段</li>
-<li><code class="docutils literal notranslate"><span class="pre">-&lt;gap&gt;</span></code> 表示当前数据减去前一数据超过 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 则分段</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 表示两个数据的绝对值超过 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 则分段</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> 两点的X坐标跳变超过 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code> 两点的Y坐标跳变超过 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">d</span></code> 两点的距离超过 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;u&gt;</span></code> 是 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 的单位</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">X|Y|D</span></code> 用于表示数据投影到纸上后X坐标、Y坐标和纸上距离的跳变</p></li>
+<li><p>若想要检查特定列是否满足分段准则，可以用 <code class="docutils literal notranslate"><span class="pre">[&lt;col&gt;]z</span></code>，<code class="docutils literal notranslate"><span class="pre">&lt;col&gt;</span></code> 的默认值为
+<code class="docutils literal notranslate"><span class="pre">2</span></code>，即第三列</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+&lt;gap&gt;</span></code> 表示前一数据减去当前数据超过 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 则分段</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-&lt;gap&gt;</span></code> 表示当前数据减去前一数据超过 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 则分段</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 表示两个数据的绝对值超过 <code class="docutils literal notranslate"><span class="pre">&lt;gap&gt;</span></code> 则分段</p></li>
 </ul>
 <p>该选项可重复多次，以指定多个分段准则，默认情况下，若符合任意一个准则则分段，可以使用 <code class="docutils literal notranslate"><span class="pre">-ga</span></code> 选项，表明仅当所有准则都满足时才分段。</p>
 </div>

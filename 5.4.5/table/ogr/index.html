@@ -220,8 +220,8 @@
 <h2>5.4.1 简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>地理空间数据有多种格式，按照类型划分，可以大致分为光栅型（raster）和矢量型（vector）。</p>
 <ul class="simple">
-<li>光栅型数据格式不完整列表：<a class="reference external" href="http://www.gdal.org/formats_list.html">http://www.gdal.org/formats_list.html</a></li>
-<li>矢量型数据格式不完整列表：<a class="reference external" href="http://www.gdal.org/ogr_formats.html">http://www.gdal.org/ogr_formats.html</a></li>
+<li><p>光栅型数据格式不完整列表：<a class="reference external" href="http://www.gdal.org/formats_list.html">http://www.gdal.org/formats_list.html</a></p></li>
+<li><p>矢量型数据格式不完整列表：<a class="reference external" href="http://www.gdal.org/ogr_formats.html">http://www.gdal.org/ogr_formats.html</a></p></li>
 </ul>
 <p>简单的说，在GMT中，netCDF格式的网格文件属于光栅型地理空间数据，而一般的表数据则属于矢量型地理空间数据。</p>
 <p><a class="reference external" href="http://www.gdal.org/">GDAL</a> 是一个可以实现多种光栅型或矢量型地理空间数据格式间互相转换的库/工具，其全称为Geospatial Data Abstraction Library。历史上，GDAL仅用于处理光栅型数据格式，而OGR则仅用于处理矢量型数据格式。从GDAL 2.0开始，二者相互集成在一起，即GDAL已经具备了处理光栅型和矢量型地理空间数据格式的能力。本文中，提到OGR时，仅表示地理空间矢量数据格式。</p>
@@ -232,14 +232,14 @@ OGR/GMT格式的数据。OGR/GMT格式中包含了非空间数据，使得GMT的
 <h2>5.4.2 OGR/GMT格式<a class="headerlink" href="#ogr-gmt" title="永久链接至标题">¶</a></h2>
 <p>OGR/GMT格式的一些重要性质列举如下：</p>
 <ul class="simple">
-<li>所有非空间数据都以注释行的形式写到文件中，这些注释行在GMT4中会被直接忽略</li>
-<li>非空间数据的各个字段之间用空格分隔，每个字段均以字符 <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> 作为前缀，紧接着一个用于表征该字段内容的字符。每个字段内部的多个字符串之间用字符 <code class="docutils literal notranslate"><span class="pre">|</span></code> 分隔</li>
-<li>字符 <code class="docutils literal notranslate"><span class="pre">\</span></code> 作为转义字符，比如字符串内 <code class="docutils literal notranslate"><span class="pre">\n</span></code> 表示换行</li>
-<li>文件中，非空间数据均保存在空间数据之前。因而GMT在处理地理空间数据之前，已经解析了非地理空间信息，这些非地理空间信息可能会影响到地理空间数据的处理</li>
-<li>数据文件的第一个注释行必须指定OGR/GMT格式的版本号，即 <code class="docutils literal notranslate"><span class="pre">&#64;VGMT1.0</span></code></li>
-<li>为了兼容其他GIS格式（比如shapefiles），OGR/GMT格式中显式包含了一个字段，用于指定接下来的地理空间数据是点、线还是多边形</li>
-<li>每个文件有一个头段注释，其中指定了当前文件所包含的地理特征，以及每个特征所对应的非地理属性（比如区域范围，投影方式等）</li>
-<li>同一个OGR/GMT格式的文件中，所有数据段必须具有相同类型的特征（都是点或线或多边形）</li>
+<li><p>所有非空间数据都以注释行的形式写到文件中，这些注释行在GMT4中会被直接忽略</p></li>
+<li><p>非空间数据的各个字段之间用空格分隔，每个字段均以字符 <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> 作为前缀，紧接着一个用于表征该字段内容的字符。每个字段内部的多个字符串之间用字符 <code class="docutils literal notranslate"><span class="pre">|</span></code> 分隔</p></li>
+<li><p>字符 <code class="docutils literal notranslate"><span class="pre">\</span></code> 作为转义字符，比如字符串内 <code class="docutils literal notranslate"><span class="pre">\n</span></code> 表示换行</p></li>
+<li><p>文件中，非空间数据均保存在空间数据之前。因而GMT在处理地理空间数据之前，已经解析了非地理空间信息，这些非地理空间信息可能会影响到地理空间数据的处理</p></li>
+<li><p>数据文件的第一个注释行必须指定OGR/GMT格式的版本号，即 <code class="docutils literal notranslate"><span class="pre">&#64;VGMT1.0</span></code></p></li>
+<li><p>为了兼容其他GIS格式（比如shapefiles），OGR/GMT格式中显式包含了一个字段，用于指定接下来的地理空间数据是点、线还是多边形</p></li>
+<li><p>每个文件有一个头段注释，其中指定了当前文件所包含的地理特征，以及每个特征所对应的非地理属性（比如区域范围，投影方式等）</p></li>
+<li><p>同一个OGR/GMT格式的文件中，所有数据段必须具有相同类型的特征（都是点或线或多边形）</p></li>
 </ul>
 </div>
 <div class="section" id="id2">
@@ -257,12 +257,12 @@ OGR/GMT格式的数据。OGR/GMT格式中包含了非空间数据，使得GMT的
 <h3>几何类型 <code class="docutils literal notranslate"><span class="pre">&#64;G</span></code><a class="headerlink" href="#g" title="永久链接至标题">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">&#64;G</span></code> 用于指定当前数据文件的几何类型，其后接的参数可以是：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">POINT</span></code>: 包含多个数据点（每个点都可以有自己的头段记录）</li>
-<li><code class="docutils literal notranslate"><span class="pre">MULTIPOINT</span></code>: 多点数据（所有的点共用同一个头段记录）</li>
-<li><code class="docutils literal notranslate"><span class="pre">LINESTRING</span></code>: 包含多个独立的线段（即GMT中的多段数据，每条线段可以有自己的头段记录）</li>
-<li><code class="docutils literal notranslate"><span class="pre">MULTILINESTRING</span></code>: 多线数据（文件中的所有线段是一个特性，共用同一个头段记录）</li>
-<li><code class="docutils literal notranslate"><span class="pre">POLYGON</span></code>: 包含多个闭合多边形（每个多边形可以有自己的头段记录）</li>
-<li><code class="docutils literal notranslate"><span class="pre">MULTIPOLYGON</span></code>: 多个多边形数据（所有多边形共用同一个头段记录）</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">POINT</span></code>: 包含多个数据点（每个点都可以有自己的头段记录）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MULTIPOINT</span></code>: 多点数据（所有的点共用同一个头段记录）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LINESTRING</span></code>: 包含多个独立的线段（即GMT中的多段数据，每条线段可以有自己的头段记录）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MULTILINESTRING</span></code>: 多线数据（文件中的所有线段是一个特性，共用同一个头段记录）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">POLYGON</span></code>: 包含多个闭合多边形（每个多边形可以有自己的头段记录）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MULTIPOLYGON</span></code>: 多个多边形数据（所有多边形共用同一个头段记录）</p></li>
 </ul>
 <p>例如:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># @VGMT1.0 @GPOLYGON</span>
@@ -280,10 +280,10 @@ OGR/GMT格式的数据。OGR/GMT格式中包含了非空间数据，使得GMT的
 <h3>投影信息 <code class="docutils literal notranslate"><span class="pre">&#64;J</span></code><a class="headerlink" href="#j" title="永久链接至标题">¶</a></h3>
 <p>投影信息用四个可选的字符串表示，每个字符串以 <code class="docutils literal notranslate"><span class="pre">&#64;J</span></code> 开头。</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">&#64;Je</span></code>: 投影的EPSG代码</li>
-<li><code class="docutils literal notranslate"><span class="pre">&#64;Jg</span></code>: GMT中所使用的投影参数</li>
-<li><code class="docutils literal notranslate"><span class="pre">&#64;Jp</span></code>: 投影参数的Proj.4表示</li>
-<li><code class="docutils literal notranslate"><span class="pre">&#64;Jw</span></code>: 投影参数的OGR WKT (well known text)表示</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;Je</span></code>: 投影的EPSG代码</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;Jg</span></code>: GMT中所使用的投影参数</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;Jp</span></code>: 投影参数的Proj.4表示</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;Jw</span></code>: 投影参数的OGR WKT (well known text)表示</p></li>
 </ul>
 <p>示例:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># @Je4326 @JgX @Jp&quot;+proj=longlat +ellps=WGS84+datum=WGS84 +no_defs&quot;</span>

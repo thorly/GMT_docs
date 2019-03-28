@@ -336,28 +336,26 @@
             
   <div class="section" id="grdtrend">
 <span id="index-0"></span><h1>12.62 grdtrend<a class="headerlink" href="#grdtrend" title="永久链接至标题">¶</a></h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/grdtrend.html" title="(在 GMT v5.4.5)"><span>grdtrend</span></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">拟合网格的趋势面并计算残差</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/grdtrend.html" title="(在 GMT v5.4.5)"><span>grdtrend</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>拟合网格的趋势面并计算残差</p>
+</dd>
+</dl>
 <p>该命令会读取一个2D网格文件，并用最小二乘方法拟合一个低阶多项式趋势面。多项式趋势面的定义为：</p>
 <blockquote>
-<div>m1 + m2*x + m3*y + m4*x*y + m5*x*x + m6*y*y + m7*x*x*x +
-m8*x*x*y + m9*x*y*y + m10*y*y*y.</div></blockquote>
+<div><p>m1 + m2*x + m3*y + m4*x*y + m5*x*x + m6*y*y + m7*x*x*x +
+m8*x*x*y + m9*x*y*y + m10*y*y*y.</p>
+</div></blockquote>
 <div class="section" id="id1">
 <h2>12.62.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;gridfile&gt;</span></code></dt>
-<dd>2D网格文件名</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-N&lt;n_model&gt;[+r]</span></code></dt>
-<dd><p class="first">指定要拟合的模型。</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">&lt;n_model&gt;</span></code> 指定要拟合的模型的参数个数。例如 <code class="docutils literal notranslate"><span class="pre">-N3</span></code> 表示bilinear趋势，
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;gridfile&gt;</span></code></dt><dd><p>2D网格文件名</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-N&lt;n_model&gt;[+r]</span></code></dt><dd><p>指定要拟合的模型。</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;n_model&gt;</span></code> 指定要拟合的模型的参数个数。例如 <code class="docutils literal notranslate"><span class="pre">-N3</span></code> 表示bilinear趋势，
 <code class="docutils literal notranslate"><span class="pre">-N6</span></code> 表示 quadratic趋势面。加上 <code class="docutils literal notranslate"><span class="pre">+r</span></code> 表示robust拟合，此时，程序会根据
 robust scale estimate多次迭代，给数据重新赋予权重，以得到一个对outliers
 不敏感的解。</p>
@@ -366,13 +364,13 @@ robust scale estimate多次迭代，给数据重新赋予权重，以得到一�
 </div>
 <div class="section" id="id2">
 <h2>12.62.2 可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-D&lt;diff.nc&gt;</span></code></dt>
-<dd>将残差（输入减去拟合）结果写到网格文件中</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-T&lt;trend.nc&gt;</span></code></dt>
-<dd>将拟合得到的趋势文件写到网格文件 <code class="docutils literal notranslate"><span class="pre">&lt;trend.nc&gt;</span></code> 中</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-W&lt;weight.nc&gt;</span></code></dt>
-<dd>若 <code class="docutils literal notranslate"><span class="pre">&lt;weight.nc&gt;</span></code> 存在，则读取该文件，并求解一个有权重的最小二乘问题。默认为常规的最小二乘拟合。若 <code class="docutils literal notranslate"><span class="pre">-N</span></code> 选项中指定了robust拟合，则robust拟合中所使用的权重会写到文件 <code class="docutils literal notranslate"><span class="pre">&lt;weight.nc&gt;</span></code> 中。</dd>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-D&lt;diff.nc&gt;</span></code></dt><dd><p>将残差（输入减去拟合）结果写到网格文件中</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-T&lt;trend.nc&gt;</span></code></dt><dd><p>将拟合得到的趋势文件写到网格文件 <code class="docutils literal notranslate"><span class="pre">&lt;trend.nc&gt;</span></code> 中</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-W&lt;weight.nc&gt;</span></code></dt><dd><p>若 <code class="docutils literal notranslate"><span class="pre">&lt;weight.nc&gt;</span></code> 存在，则读取该文件，并求解一个有权重的最小二乘问题。默认为常规的最小二乘拟合。若 <code class="docutils literal notranslate"><span class="pre">-N</span></code> 选项中指定了robust拟合，则robust拟合中所使用的权重会写到文件 <code class="docutils literal notranslate"><span class="pre">&lt;weight.nc&gt;</span></code> 中。</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="id3">

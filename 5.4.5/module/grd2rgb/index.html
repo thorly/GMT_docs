@@ -336,64 +336,59 @@
             
   <div class="section" id="grd2rgb">
 <span id="index-0"></span><h1>12.33 grd2rgb<a class="headerlink" href="#grd2rgb" title="永久链接至标题">¶</a></h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/grd2rgb.html" title="(在 GMT v5.4.5)"><span>grd2rgb</span></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">将网格文件、原始RGB文件、SUN光栅文件转换成R/G/B三个网格文件</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/grd2rgb.html" title="(在 GMT v5.4.5)"><span>grd2rgb</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>将网格文件、原始RGB文件、SUN光栅文件转换成R/G/B三个网格文件</p>
+</dd>
+</dl>
 <p>该命令的作用是：</p>
 <ol class="arabic simple">
-<li>读取8、24或32位Sun光栅文件，并将其中的red、green、blue分量（0-255）分别写到三个网格文件中，由于光栅文件的头段信息有限，可以使用 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-I</span></code> 和
-<code class="docutils literal notranslate"><span class="pre">-r</span></code> 选项设置完整的头段信息</li>
-<li>读取2D网格文件，并根据指定的CPT文件，将Z值转换为对应的RGB值，然后将red、green、i
-blue分量分别写到单独的网格文件中</li>
-<li>读取RGB或RGBA原始光栅文件，并将red、green、blue分量分别写到单独的网格文件中，此时需要使用 <code class="docutils literal notranslate"><span class="pre">-W</span></code> 选项</li>
+<li><p>读取8、24或32位Sun光栅文件，并将其中的red、green、blue分量（0-255）分别写到三个网格文件中，由于光栅文件的头段信息有限，可以使用 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-I</span></code> 和
+<code class="docutils literal notranslate"><span class="pre">-r</span></code> 选项设置完整的头段信息</p></li>
+<li><p>读取2D网格文件，并根据指定的CPT文件，将Z值转换为对应的RGB值，然后将red、green、i
+blue分量分别写到单独的网格文件中</p></li>
+<li><p>读取RGB或RGBA原始光栅文件，并将red、green、blue分量分别写到单独的网格文件中，此时需要使用 <code class="docutils literal notranslate"><span class="pre">-W</span></code> 选项</p></li>
 </ol>
 <div class="section" id="id1">
 <h2>12.33.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;infile&gt;</span></code></dt>
-<dd>输入文件，可以是Sun光栅文件、2D网格文件或原始光栅文件</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;template&gt;</span></code></dt>
-<dd><p class="first">要生成的三个网格文件的文件名模板，模板中必须包含 <code class="docutils literal notranslate"><span class="pre">%c</span></code></p>
-<p class="last">例如， <code class="docutils literal notranslate"><span class="pre">-Gout_%c.nc</span></code> 会生成三个网格文件 out_r.nc、out_g.nc和out_b.nc</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;infile&gt;</span></code></dt><dd><p>输入文件，可以是Sun光栅文件、2D网格文件或原始光栅文件</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;template&gt;</span></code></dt><dd><p>要生成的三个网格文件的文件名模板，模板中必须包含 <code class="docutils literal notranslate"><span class="pre">%c</span></code></p>
+<p>例如， <code class="docutils literal notranslate"><span class="pre">-Gout_%c.nc</span></code> 会生成三个网格文件 out_r.nc、out_g.nc和out_b.nc</p>
 </dd>
 </dl>
 </div>
 <div class="section" id="id2">
 <h2>12.33.2 可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-C&lt;cpt&gt;</span></code></dt>
-<dd>若输入文件是2D网格文件，则需要指定CPT文件，以将Z值转换为RGB颜色</dd>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-C&lt;cpt&gt;</span></code></dt><dd><p>若输入文件是2D网格文件，则需要指定CPT文件，以将Z值转换为RGB颜色</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-I&lt;xinc&gt;[&lt;unit&gt;][+e|+n]/&lt;yinc&gt;[&lt;unit&gt;][+e|+n]</span></code></dt>
-<dd><p class="first">指定X和Y方向的网格间隔</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">-I&lt;xinc&gt;[&lt;unit&gt;][+e|+n]/&lt;yinc&gt;[&lt;unit&gt;][+e|+n]</span></code></dt><dd><p>指定X和Y方向的网格间隔</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;</span></code> X方向的网格间隔</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;yinc&gt;</span></code> Y方向的网格间隔</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;unit&gt;</span></code> 网格间隔的单位。对于地理坐标系而言默认值为度，可以设置单位为
-<code class="docutils literal notranslate"><span class="pre">m|s|e|f|k|M|n|u</span></code> 。</li>
-<li><code class="docutils literal notranslate"><span class="pre">+e</span></code> 微调X和Y方向范围的最大值，使得其是网格间隔的整数倍（默认会微调网格间隔以适应给定的数据范围）</li>
-<li><code class="docutils literal notranslate"><span class="pre">+n</span></code> 表明 <code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;yinc&gt;</span></code> 不是网格间隔，而是X和Y方向的节点数。此时会根据节点数、网格区域范围以及网格配准方式重新计算网格间隔。</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;</span></code> X方向的网格间隔</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;yinc&gt;</span></code> Y方向的网格间隔</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;unit&gt;</span></code> 网格间隔的单位。对于地理坐标系而言默认值为度，可以设置单位为
+<code class="docutils literal notranslate"><span class="pre">m|s|e|f|k|M|n|u</span></code> 。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+e</span></code> 微调X和Y方向范围的最大值，使得其是网格间隔的整数倍（默认会微调网格间隔以适应给定的数据范围）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+n</span></code> 表明 <code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;yinc&gt;</span></code> 不是网格间隔，而是X和Y方向的节点数。此时会根据节点数、网格区域范围以及网格配准方式重新计算网格间隔。</p></li>
 </ul>
 <p>注意：</p>
-<ol class="last arabic simple">
-<li>若 <code class="docutils literal notranslate"><span class="pre">&lt;yinc&gt;</span></code> 设置为0，则表示其与 <code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;</span></code> 相同</li>
-<li>若使用 <code class="docutils literal notranslate"><span class="pre">-R&lt;grdfile&gt;</span></code> 选项，则网格网格已经根据网格文件自动初始化，此时依然可以使用 <code class="docutils literal notranslate"><span class="pre">-I</span></code> 覆盖网格文件中的间隔值</li>
+<ol class="arabic simple">
+<li><p>若 <code class="docutils literal notranslate"><span class="pre">&lt;yinc&gt;</span></code> 设置为0，则表示其与 <code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;</span></code> 相同</p></li>
+<li><p>若使用 <code class="docutils literal notranslate"><span class="pre">-R&lt;grdfile&gt;</span></code> 选项，则网格网格已经根据网格文件自动初始化，此时依然可以使用 <code class="docutils literal notranslate"><span class="pre">-I</span></code> 覆盖网格文件中的间隔值</p></li>
 </ol>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-L&lt;layer&gt;</span></code></dt>
-<dd>只输出某一分量， <code class="docutils literal notranslate"><span class="pre">&lt;layer&gt;</span></code> 可以取 <code class="docutils literal notranslate"><span class="pre">r|g|b</span></code> 。默认会输出三个分量。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-W&lt;width&gt;/&lt;height&gt;[/&lt;n_bytes&gt;]</span></code></dt>
-<dd><p class="first">设置原始光栅文件中的尺寸信息。</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-L&lt;layer&gt;</span></code></dt><dd><p>只输出某一分量， <code class="docutils literal notranslate"><span class="pre">&lt;layer&gt;</span></code> 可以取 <code class="docutils literal notranslate"><span class="pre">r|g|b</span></code> 。默认会输出三个分量。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-W&lt;width&gt;/&lt;height&gt;[/&lt;n_bytes&gt;]</span></code></dt><dd><p>设置原始光栅文件中的尺寸信息。</p>
 <p>原始光栅文件中不包含图片的尺寸信息，因而需要单独的选项来设置。默认情况下，假定光栅文件是RGB原始文件，即每个像素3个字节；对于RGBA文件，每个像素4个字节，此时 <code class="docutils literal notranslate"><span class="pre">&lt;n_bytes&gt;=4</span></code> 。</p>
-<p class="last">使用 <code class="docutils literal notranslate"><span class="pre">-W=/=/4</span></code> 可以自动猜测RGBA光栅文件的尺寸信息。</p>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">-W=/=/4</span></code> 可以自动猜测RGBA光栅文件的尺寸信息。</p>
 </dd>
 </dl>
 </div>

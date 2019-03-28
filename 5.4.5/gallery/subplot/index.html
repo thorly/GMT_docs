@@ -245,12 +245,12 @@ gmt psxy -J<span class="nv">$J</span> -R<span class="nv">$R</span> -T -O &gt;&gt
 </div>
 <p>几点说明:</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">+cTL</span></code> 的作用从 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项中提取底图的左上角（<strong>T</strong>op <strong>L</strong>eft）作为当前字符串的坐标；</li>
-<li>由于使用了 <code class="docutils literal notranslate"><span class="pre">+cTL</span></code>，因而 <a class="reference internal" href="../../module/pstext/"><span class="doc">pstext</span></a> 不再需要 XY 坐标信息，只需要给出字符串 <code class="docutils literal notranslate"><span class="pre">(a)</span></code>、<code class="docutils literal notranslate"><span class="pre">(b)</span></code> 即可；</li>
-<li><code class="docutils literal notranslate"><span class="pre">+f15p,1</span></code> 将编号字号设置为 <code class="docutils literal notranslate"><span class="pre">5p</span></code>，1号字体（即粗体）</li>
-<li>将编号放在左上角还不够，还需要使用 <code class="docutils literal notranslate"><span class="pre">-Dj-1c/-0.75c</span></code> 对编号的位置进行微调，此处表示将编号向左边移动 1 cm 向上移动 0.75 cm</li>
-<li>由于编号位于子图的外部，故而需要加上 <code class="docutils literal notranslate"><span class="pre">-N</span></code> 选项使得 <a class="reference internal" href="../../module/pstext/"><span class="doc">pstext</span></a>
-绘制子图外部的字符串</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+cTL</span></code> 的作用从 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项中提取底图的左上角（<strong>T</strong>op <strong>L</strong>eft）作为当前字符串的坐标；</p></li>
+<li><p>由于使用了 <code class="docutils literal notranslate"><span class="pre">+cTL</span></code>，因而 <a class="reference internal" href="../../module/pstext/"><span class="doc">pstext</span></a> 不再需要 XY 坐标信息，只需要给出字符串 <code class="docutils literal notranslate"><span class="pre">(a)</span></code>、<code class="docutils literal notranslate"><span class="pre">(b)</span></code> 即可；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+f15p,1</span></code> 将编号字号设置为 <code class="docutils literal notranslate"><span class="pre">5p</span></code>，1号字体（即粗体）</p></li>
+<li><p>将编号放在左上角还不够，还需要使用 <code class="docutils literal notranslate"><span class="pre">-Dj-1c/-0.75c</span></code> 对编号的位置进行微调，此处表示将编号向左边移动 1 cm 向上移动 0.75 cm</p></li>
+<li><p>由于编号位于子图的外部，故而需要加上 <code class="docutils literal notranslate"><span class="pre">-N</span></code> 选项使得 <a class="reference internal" href="../../module/pstext/"><span class="doc">pstext</span></a>
+绘制子图外部的字符串</p></li>
 </ol>
 </div>
 

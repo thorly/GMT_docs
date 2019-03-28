@@ -216,18 +216,17 @@
 <h1>4.13 数据类型<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>GMT可以绘制笛卡尔坐标轴、地图的经纬度轴以及绝对时间轴、相对时间轴。对于不同的坐标轴，需要的数据类型也不同。GMT所支持的数据类型主要分为四大类：</p>
 <ul class="simple">
-<li>地理坐标</li>
-<li>绝对时间坐标</li>
-<li>相对时间坐标</li>
-<li>一般浮点数</li>
+<li><p>地理坐标</p></li>
+<li><p>绝对时间坐标</p></li>
+<li><p>相对时间坐标</p></li>
+<li><p>一般浮点数</p></li>
 </ul>
 <div class="section" id="geographic-coordinates">
 <span id="id2"></span><h2>4.13.1 地理坐标<a class="headerlink" href="#geographic-coordinates" title="永久链接至标题">¶</a></h2>
 <p>地理坐标（即经纬度）有两种表示方式：</p>
 <ol class="arabic">
-<li><p class="first">以浮点型的度数表示。比如 <code class="docutils literal notranslate"><span class="pre">-123.45</span></code> 代表-123.45度</p>
-</li>
-<li><p class="first">度分秒表示:</p>
+<li><p>以浮点型的度数表示。比如 <code class="docutils literal notranslate"><span class="pre">-123.45</span></code> 代表-123.45度</p></li>
+<li><p>度分秒表示:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>±<span class="o">]</span>ddd<span class="o">[</span>:mm<span class="o">[</span>:ss<span class="o">[</span>.xxx<span class="o">[</span>W<span class="p">|</span>E<span class="p">|</span>S<span class="p">|</span>N<span class="o">]]]]</span>
 </pre></div>
 </div>
@@ -245,9 +244,9 @@
 <p>其中 <code class="docutils literal notranslate"><span class="pre">T</span></code> 是关键字，用于分隔日期和时间。</p>
 <p>日期 <code class="docutils literal notranslate"><span class="pre">&lt;date&gt;</span></code> 可以是如下格式的一种：</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">yyyy[-mm[-dd]]</span></code>：年-月-日，例如 <code class="docutils literal notranslate"><span class="pre">2013</span></code>、<code class="docutils literal notranslate"><span class="pre">2015-10</span></code>、<code class="docutils literal notranslate"><span class="pre">2015-01-02</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">yyyy[-jjj]</span></code>：年-一年中的第几日，例如 <code class="docutils literal notranslate"><span class="pre">2015-040</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">yyyy[-Www[-d]]</span></code>：年-第几周-该周内第几天，例如 <code class="docutils literal notranslate"><span class="pre">2014-W01-3</span></code>、<code class="docutils literal notranslate"><span class="pre">2014-W01</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">yyyy[-mm[-dd]]</span></code>：年-月-日，例如 <code class="docutils literal notranslate"><span class="pre">2013</span></code>、<code class="docutils literal notranslate"><span class="pre">2015-10</span></code>、<code class="docutils literal notranslate"><span class="pre">2015-01-02</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">yyyy[-jjj]</span></code>：年-一年中的第几日，例如 <code class="docutils literal notranslate"><span class="pre">2015-040</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">yyyy[-Www[-d]]</span></code>：年-第几周-该周内第几天，例如 <code class="docutils literal notranslate"><span class="pre">2014-W01-3</span></code>、<code class="docutils literal notranslate"><span class="pre">2014-W01</span></code></p></li>
 </ol>
 <p>时间 <code class="docutils literal notranslate"><span class="pre">&lt;clock&gt;</span></code> 是24小时制，其格式为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hh:<span class="o">[</span>mm:<span class="o">[</span>ss<span class="o">[</span>.xxx<span class="o">]]]</span>
@@ -256,19 +255,19 @@
 <p>例如 <code class="docutils literal notranslate"><span class="pre">10:10:35.120</span></code>。</p>
 <p>使用过程中需要注意：</p>
 <ol class="arabic simple">
-<li>GMT的时间数据的输入/输出格式默认为 <code class="docutils literal notranslate"><span class="pre">yyyy-mm-ddThh:mm:ss.xxx</span></code>。若想要输入其他格式的时间数据，需要修改 <a class="reference internal" href="../../conf/format/#format-date-in"><span class="std std-ref">FORMAT_DATE_IN</span></a>
+<li><p>GMT的时间数据的输入/输出格式默认为 <code class="docutils literal notranslate"><span class="pre">yyyy-mm-ddThh:mm:ss.xxx</span></code>。若想要输入其他格式的时间数据，需要修改 <a class="reference internal" href="../../conf/format/#format-date-in"><span class="std std-ref">FORMAT_DATE_IN</span></a>
 和 <a class="reference internal" href="../../conf/format/#format-clock-in"><span class="std std-ref">FORMAT_CLOCK_IN</span></a>；若想要输出其他格式的时间数据，需要修改 <a class="reference internal" href="../../conf/format/#format-date-out"><span class="std std-ref">FORMAT_DATE_OUT</span></a>
-和 <a class="reference internal" href="../../conf/format/#format-clock-out"><span class="std std-ref">FORMAT_CLOCK_OUT</span></a></li>
-<li>若未指定 <code class="docutils literal notranslate"><span class="pre">&lt;date&gt;</span></code> 则假定 <code class="docutils literal notranslate"><span class="pre">&lt;date&gt;</span></code> 为今日</li>
-<li>若未指定 <code class="docutils literal notranslate"><span class="pre">&lt;clock&gt;</span></code> 则认为是 <code class="docutils literal notranslate"><span class="pre">00:00:00</span></code></li>
-<li>若指定了 <code class="docutils literal notranslate"><span class="pre">&lt;clock&gt;</span></code> 则必须要加 <code class="docutils literal notranslate"><span class="pre">T</span></code>，比如 <code class="docutils literal notranslate"><span class="pre">T10:20:34</span></code> 表示今天的早晨10点多</li>
-<li>所有绝对时间在程序内部都会被转换成相对于特定时刻的秒数</li>
+和 <a class="reference internal" href="../../conf/format/#format-clock-out"><span class="std std-ref">FORMAT_CLOCK_OUT</span></a></p></li>
+<li><p>若未指定 <code class="docutils literal notranslate"><span class="pre">&lt;date&gt;</span></code> 则假定 <code class="docutils literal notranslate"><span class="pre">&lt;date&gt;</span></code> 为今日</p></li>
+<li><p>若未指定 <code class="docutils literal notranslate"><span class="pre">&lt;clock&gt;</span></code> 则认为是 <code class="docutils literal notranslate"><span class="pre">00:00:00</span></code></p></li>
+<li><p>若指定了 <code class="docutils literal notranslate"><span class="pre">&lt;clock&gt;</span></code> 则必须要加 <code class="docutils literal notranslate"><span class="pre">T</span></code>，比如 <code class="docutils literal notranslate"><span class="pre">T10:20:34</span></code> 表示今天的早晨10点多</p></li>
+<li><p>所有绝对时间在程序内部都会被转换成相对于特定时刻的秒数</p></li>
 </ol>
 <p>下面举几个绝对日期的例子：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">2014-02-10T10:00:00.000</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">T10:20:44.234</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">2014-040T23:23:54.330</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2014-02-10T10:00:00.000</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">T10:20:44.234</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2014-040T23:23:54.330</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="relative-time-coordinates">
@@ -278,9 +277,9 @@
 <a class="reference internal" href="../../conf/time/#time-unit"><span class="std std-ref">TIME_UNIT</span></a> 用于指定相对时间的单位。也可以用参数 <a class="reference internal" href="../../conf/time/#time-system"><span class="std std-ref">TIME_SYSTEM</span></a> 同时指定这两个参数。默认的参考时刻为1970年1月1日午夜，默认的相对时间单位为秒。</p>
 <p>在指定了参考时刻后，相对时间就跟一般的浮点数没什么区别了。那如何区分一般的浮点数与相对时间呢？有两种方式：</p>
 <ol class="arabic simple">
-<li>在数据后加上小写的 <code class="docutils literal notranslate"><span class="pre">t</span></code>，比如 <code class="docutils literal notranslate"><span class="pre">30t</span></code> 表示相对于 <a class="reference internal" href="../../conf/time/#time-epoch"><span class="std std-ref">TIME_EPOCH</span></a>
-间隔了 30 个 <a class="reference internal" href="../../conf/time/#time-unit"><span class="std std-ref">TIME_UNIT</span></a> 时间单位的时刻</li>
-<li>在命令行中使用 <code class="docutils literal notranslate"><span class="pre">-ft</span></code> 选项表明当前数据是相对时间，此时不需要在数字后加 <code class="docutils literal notranslate"><span class="pre">t</span></code></li>
+<li><p>在数据后加上小写的 <code class="docutils literal notranslate"><span class="pre">t</span></code>，比如 <code class="docutils literal notranslate"><span class="pre">30t</span></code> 表示相对于 <a class="reference internal" href="../../conf/time/#time-epoch"><span class="std std-ref">TIME_EPOCH</span></a>
+间隔了 30 个 <a class="reference internal" href="../../conf/time/#time-unit"><span class="std std-ref">TIME_UNIT</span></a> 时间单位的时刻</p></li>
+<li><p>在命令行中使用 <code class="docutils literal notranslate"><span class="pre">-ft</span></code> 选项表明当前数据是相对时间，此时不需要在数字后加 <code class="docutils literal notranslate"><span class="pre">t</span></code></p></li>
 </ol>
 </div>
 <div class="section" id="float-coordinates">
@@ -288,8 +287,8 @@
 <p>在绘制常规的笛卡尔坐标轴时，即输入数据不是地理坐标、绝对时间或相对时间时，输入数据可以直接用浮点数表示，而不去在意其物理含义及单位。比如，5牛顿的力，5千克的质量，在 GMT 看来都只是浮点数 <code class="docutils literal notranslate"><span class="pre">5</span></code> 。</p>
 <p>这些浮点数坐标可以用两种方式表示：</p>
 <ol class="arabic simple">
-<li>一般表示： <code class="docutils literal notranslate"><span class="pre">[±]xxx.xxx</span></code>，比如 <code class="docutils literal notranslate"><span class="pre">123.45</span></code></li>
-<li>指数表示： <code class="docutils literal notranslate"><span class="pre">[±]xxx.xx[E|e|D|d[±]xx]</span></code>，比如 <code class="docutils literal notranslate"><span class="pre">1.23E10</span></code></li>
+<li><p>一般表示： <code class="docutils literal notranslate"><span class="pre">[±]xxx.xxx</span></code>，比如 <code class="docutils literal notranslate"><span class="pre">123.45</span></code></p></li>
+<li><p>指数表示： <code class="docutils literal notranslate"><span class="pre">[±]xxx.xx[E|e|D|d[±]xx]</span></code>，比如 <code class="docutils literal notranslate"><span class="pre">1.23E10</span></code></p></li>
 </ol>
 </div>
 </div>
