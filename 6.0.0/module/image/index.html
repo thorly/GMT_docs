@@ -342,34 +342,37 @@
             
   <div class="section" id="image">
 <span id="index-0"></span><h1>12.68 image<a class="headerlink" href="#image" title="永久链接至标题">¶</a></h1>
-<dl class="field-list simple">
-<dt class="field-odd">官方文档</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/image.html" title="(在 GMT v6.0.0)"><span>image</span></a></p>
-</dd>
-<dt class="field-even">简介</dt>
-<dd class="field-even"><p>将图片或EPS文件放在地图上</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/image.html" title="(在 GMT v6.0.0)"><span>image</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">将图片或EPS文件放在地图上</td>
+</tr>
+</tbody>
+</table>
 <p>该命令可以读取一个 EPS 文件或光栅图片格式，并将其画在地图上。</p>
 <p>该命令可以用于：</p>
 <ol class="arabic simple">
-<li><p>将多张图合并到一张图上</p></li>
-<li><p>将自己单位的 logo 放在 GMT 生成的图上</p></li>
-<li><p>将一般图片放在图上</p></li>
+<li>将多张图合并到一张图上</li>
+<li>将自己单位的 logo 放在 GMT 生成的图上</li>
+<li>将一般图片放在图上</li>
 </ol>
 <div class="section" id="id1">
 <h2>12.68.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl>
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;imagefile&gt;</span></code></dt><dd><p>EPS文件或其他光栅图片格式（GIF、PNG等）的文件</p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;imagefile&gt;</span></code></dt>
+<dd><p class="first">EPS文件或其他光栅图片格式（GIF、PNG等）的文件</p>
 <ul class="simple">
-<li><p>EPS文件必须包含合适的BoundingBox</p></li>
-<li><p>光栅文件的颜色深度可以是1、8、24、32位</p></li>
-<li><p>光栅文件是通过GDAL读入的，若安装GMT时未配置GDAL，则该命令只支持EPS文件</p></li>
+<li>EPS文件必须包含合适的BoundingBox</li>
+<li>光栅文件的颜色深度可以是1、8、24、32位</li>
+<li>光栅文件是通过GDAL读入的，若安装GMT时未配置GDAL，则该命令只支持EPS文件</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">注解</p>
+<div class="last admonition note">
+<p class="first admonition-title">注解</p>
 <p><code class="docutils literal notranslate"><span class="pre">psimage</span></code> 并不支持 PS 文件，建议使用如下命令将 PS 文件转化为 EPS 文件:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert -A -P -Te xxx.ps
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert -A -P -Te xxx.ps
 </pre></div>
 </div>
 </div>
@@ -378,43 +381,46 @@
 </div>
 <div class="section" id="id2">
 <h2>12.68.2 可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl>
-<dt><code class="docutils literal notranslate"><span class="pre">-D[g|j|J|n|x]&lt;refpoint&gt;+r&lt;dpi&gt;+w[-]&lt;width&gt;[/&lt;height&gt;][+j&lt;justify&gt;][+n&lt;nx&gt;[/&lt;ny&gt;]][+o&lt;dx&gt;[/&lt;dy&gt;]]</span></code></dt><dd><p>指定图片的尺寸和位置</p>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[g|j|J|n|x]&lt;refpoint&gt;</span></code> 指定底图上的参考点，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+r&lt;dpi&gt;</span></code> 指定图片的DPI以间接指定图片的尺寸</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+w[-]&lt;width&gt;[/&lt;height&gt;]</span></code> 直接指定图片的尺寸。若未给定 <code class="docutils literal notranslate"><span class="pre">&lt;height&gt;</span></code> 则按照 <code class="docutils literal notranslate"><span class="pre">&lt;width&gt;</span></code> 以及原图的横纵比进行缩放；若 <code class="docutils literal notranslate"><span class="pre">&lt;width&gt;</span></code> 为负值，则使用其绝对值作为宽度，并使用PS的图片操作符将图片插值到设备的分辨率</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 指定图片的锚点，默认锚点是 <code class="docutils literal notranslate"><span class="pre">BL</span></code> ，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;[/&lt;dy&gt;]</span></code> 指定参考点的额外偏移量，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+n&lt;nx&gt;/&lt;ny&gt;</span></code> 使图片在水平方向重复 <code class="docutils literal notranslate"><span class="pre">&lt;nx&gt;</span></code> 次，垂直方向重复 <code class="docutils literal notranslate"><span class="pre">&lt;ny&gt;</span></code> 次，若省略 <code class="docutils literal notranslate"><span class="pre">&lt;ny&gt;</span></code> 则默认其与 <code class="docutils literal notranslate"><span class="pre">&lt;nx&gt;</span></code> 相等，默认值为 <code class="docutils literal notranslate"><span class="pre">1/1</span></code></p></li>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-D[g|j|J|n|x]&lt;refpoint&gt;+r&lt;dpi&gt;+w[-]&lt;width&gt;[/&lt;height&gt;][+j&lt;justify&gt;][+n&lt;nx&gt;[/&lt;ny&gt;]][+o&lt;dx&gt;[/&lt;dy&gt;]]</span></code></dt>
+<dd><p class="first">指定图片的尺寸和位置</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">[g|j|J|n|x]&lt;refpoint&gt;</span></code> 指定底图上的参考点，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</li>
+<li><code class="docutils literal notranslate"><span class="pre">+r&lt;dpi&gt;</span></code> 指定图片的DPI以间接指定图片的尺寸</li>
+<li><code class="docutils literal notranslate"><span class="pre">+w[-]&lt;width&gt;[/&lt;height&gt;]</span></code> 直接指定图片的尺寸。若未给定 <code class="docutils literal notranslate"><span class="pre">&lt;height&gt;</span></code> 则按照 <code class="docutils literal notranslate"><span class="pre">&lt;width&gt;</span></code> 以及原图的横纵比进行缩放；若 <code class="docutils literal notranslate"><span class="pre">&lt;width&gt;</span></code> 为负值，则使用其绝对值作为宽度，并使用PS的图片操作符将图片插值到设备的分辨率</li>
+<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 指定图片的锚点，默认锚点是 <code class="docutils literal notranslate"><span class="pre">BL</span></code> ，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</li>
+<li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;[/&lt;dy&gt;]</span></code> 指定参考点的额外偏移量，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">+n&lt;nx&gt;/&lt;ny&gt;</span></code> 使图片在水平方向重复 <code class="docutils literal notranslate"><span class="pre">&lt;nx&gt;</span></code> 次，垂直方向重复 <code class="docutils literal notranslate"><span class="pre">&lt;ny&gt;</span></code> 次，若省略 <code class="docutils literal notranslate"><span class="pre">&lt;ny&gt;</span></code> 则默认其与 <code class="docutils literal notranslate"><span class="pre">&lt;nx&gt;</span></code> 相等，默认值为 <code class="docutils literal notranslate"><span class="pre">1/1</span></code></li>
 </ol>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-F[+c&lt;clearance(s)&gt;][+g&lt;fill&gt;][+i[[&lt;gap&gt;/]&lt;pen&gt;]][+p[&lt;pen&gt;]][+r[&lt;radius&gt;]][+s[&lt;dx&gt;/&lt;dy&gt;/][&lt;fill&gt;]]</span></code></dt><dd><p>为图片加上背景边框，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">+p&lt;pen&gt;</span></code> 面板边框的画笔属性</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+g&lt;fill&gt;</span></code> 面板填充色</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+c&lt;clearance&gt;</span></code> 设置 logo 与面板边框之间空白区域的大小</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+i&lt;gap&gt;/&lt;pen&gt;</span></code> 为背景面板加上额外的内边框</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+r&lt;radisu&gt;</span></code> 面板使用圆角矩形边框</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+s&lt;dx&gt;/&lt;dy&gt;/&lt;fill&gt;</span></code> 为面板增加阴影区</p></li>
+<dt><code class="docutils literal notranslate"><span class="pre">-F[+c&lt;clearance(s)&gt;][+g&lt;fill&gt;][+i[[&lt;gap&gt;/]&lt;pen&gt;]][+p[&lt;pen&gt;]][+r[&lt;radius&gt;]][+s[&lt;dx&gt;/&lt;dy&gt;/][&lt;fill&gt;]]</span></code></dt>
+<dd><p class="first">为图片加上背景边框，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">+p&lt;pen&gt;</span></code> 面板边框的画笔属性</li>
+<li><code class="docutils literal notranslate"><span class="pre">+g&lt;fill&gt;</span></code> 面板填充色</li>
+<li><code class="docutils literal notranslate"><span class="pre">+c&lt;clearance&gt;</span></code> 设置 logo 与面板边框之间空白区域的大小</li>
+<li><code class="docutils literal notranslate"><span class="pre">+i&lt;gap&gt;/&lt;pen&gt;</span></code> 为背景面板加上额外的内边框</li>
+<li><code class="docutils literal notranslate"><span class="pre">+r&lt;radisu&gt;</span></code> 面板使用圆角矩形边框</li>
+<li><code class="docutils literal notranslate"><span class="pre">+s&lt;dx&gt;/&lt;dy&gt;/&lt;fill&gt;</span></code> 为面板增加阴影区</li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-M</span></code></dt><dd><p>使用YIQ变换将彩图转换成灰度图</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-G[b|f|t]&lt;color&gt;</span></code></dt><dd><p>对光栅图片设置颜色属性</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-M</span></code></dt>
+<dd>使用YIQ变换将彩图转换成灰度图</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-G[b|f|t]&lt;color&gt;</span></code></dt>
+<dd><p class="first">对光栅图片设置颜色属性</p>
 <p>1-bit图片默认为黑色和白色，可以通过如下选项进行修改：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-Gb&lt;color&gt;</span></code> 设置背景色，即将白色替换成其他颜色</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-Gf&lt;color&gt;</span></code> 设置前景色，即将黑色替换成其他颜色</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;color&gt;</span></code> 可以取 <code class="docutils literal notranslate"><span class="pre">-</span></code> ，表示透明色</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">-Gb&lt;color&gt;</span></code> 设置背景色，即将白色替换成其他颜色</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Gf&lt;color&gt;</span></code> 设置前景色，即将黑色替换成其他颜色</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;color&gt;</span></code> 可以取 <code class="docutils literal notranslate"><span class="pre">-</span></code> ，表示透明色</li>
 </ul>
 <p>对于8、24、32位图片而言：</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-Gt&lt;color&gt;</span></code> 将某个特定颜色设置为透明</p></li>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">-Gt&lt;color&gt;</span></code> 将某个特定颜色设置为透明</li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-I</span></code></dt><dd><p>绘图前对1-bit图片进行反转，即黑色变白色，白色变黑色</p>
-</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-I</span></code></dt>
+<dd>绘图前对1-bit图片进行反转，即黑色变白色，白色变黑色</dd>
 </dl>
 </div>
 <div class="section" id="id3">

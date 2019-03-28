@@ -206,41 +206,41 @@
 <h1>2.5 macOS 下安装 GMT<a class="headerlink" href="#macos-gmt" title="永久链接至标题">¶</a></h1>
 <p>macOS 下 GMT 的安装方法有很多，可以直接使用安装包，也可以使用各种软件管理工具。</p>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="first admonition-title">注解</p>
 <p>由于GMT6.0.0尚未正式发布，因而只能通过编译源码的方式在 macOS 上安装。</p>
 <p>建议用 homebrew 安装软件。</p>
 <p>首先下载GMT6的formula： <a class="reference external" href="/install/gmt6.rb">gmt6.rb</a></p>
 <p>下载完成后执行如下命令:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew unlink gmt <span class="c1"># 删除 gmt5</span>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>brew unlink gmt <span class="c1"># 删除 gmt5</span>
 brew install --HEAD gmt6.rb <span class="c1"># 安装 gmt6</span>
 </pre></div>
 </div>
 </div>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
-<p>由于GMT 6.0.0尚未发布，请忽略以下内容。</p>
+<p class="first admonition-title">注解</p>
+<p class="last">由于GMT 6.0.0尚未发布，请忽略以下内容。</p>
 </div>
 <div class="section" id="homebrew">
 <h2>2.5.1 使用 homebrew 安装<a class="headerlink" href="#homebrew" title="永久链接至标题">¶</a></h2>
 <p><a class="reference external" href="https://brew.sh/">Homebrew</a> 是 macOS 下的第三方软件包管理工具。</p>
 <ol class="arabic">
-<li><p>安装 Homebrew:</p>
+<li><p class="first">安装 Homebrew:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ /usr/bin/ruby -e <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 </li>
-<li><p>安装 GMT:</p>
+<li><p class="first">安装 GMT:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ brew update <span class="o">&amp;&amp;</span> brew upgrade
 $ brew install gmt
 </pre></div>
 </div>
 </li>
-<li><p>安装 ghostscript:</p>
+<li><p class="first">安装 ghostscript:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ brew install ghostscript
 </pre></div>
 </div>
 </li>
-<li><p>测试安装是否成功:</p>
+<li><p class="first">测试安装是否成功:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt --version
 <span class="m">6</span>.0.0
 </pre></div>
@@ -267,15 +267,17 @@ $ find . -size -4c -delete       <span class="c1"># 删除所有文件大小小�
 <h2>2.5.2 使用 GMT 安装包<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
 <p>GMT 为 macOS 用户提供了 dmg 安装包，可以直接双击安装使用。</p>
 <ol class="arabic">
-<li><p>下载：<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0-darwin-x86_64.dmg">gmt-6.0.0-darwin-x86_64.dmg</a></p></li>
-<li><p>双击 dmg 包以解压，将解压得到的 <code class="docutils literal notranslate"><span class="pre">GMT-6.0.0.app</span></code> 拖动到 Applications 目录即可。</p></li>
-<li><p>GMT 默认会安装到 <code class="docutils literal notranslate"><span class="pre">/Applications/GMT-6.0.0.app/</span></code> 目录下，将如下语句:</p>
+<li><p class="first">下载：<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0-darwin-x86_64.dmg">gmt-6.0.0-darwin-x86_64.dmg</a></p>
+</li>
+<li><p class="first">双击 dmg 包以解压，将解压得到的 <code class="docutils literal notranslate"><span class="pre">GMT-6.0.0.app</span></code> 拖动到 Applications 目录即可。</p>
+</li>
+<li><p class="first">GMT 默认会安装到 <code class="docutils literal notranslate"><span class="pre">/Applications/GMT-6.0.0.app/</span></code> 目录下，将如下语句:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>:/Applications/GMT-6.0.0.app/Contents/Resources/bin
 </pre></div>
 </div>
 <p>加入到 <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> 中即可。</p>
 </li>
-<li><p>测试安装是否成功:</p>
+<li><p class="first">测试安装是否成功:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt --version
 <span class="m">6</span>.0.0
 </pre></div>

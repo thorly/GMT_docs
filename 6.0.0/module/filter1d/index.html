@@ -342,70 +342,76 @@
             
   <div class="section" id="filter1d">
 <span id="index-0"></span><h1>12.21 filter1d<a class="headerlink" href="#filter1d" title="永久链接至标题">¶</a></h1>
-<dl class="field-list simple">
-<dt class="field-odd">官方文档</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/filter1d.html" title="(在 GMT v6.0.0)"><span>filter1d</span></a></p>
-</dd>
-<dt class="field-even">简介</dt>
-<dd class="field-even"><p>对1D表数据做时间域滤波</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/filter1d.html" title="(在 GMT v6.0.0)"><span>filter1d</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">对1D表数据做时间域滤波</td>
+</tr>
+</tbody>
+</table>
 <p>该模块用于对多列时间序列数据做时间域滤波。用户需要指定哪一列数据代表时间（即自变量）。若输入的时间序列是等间隔且无间断或outliers则滤波速度较快。对于有间断的不等间隔数据，需要使用 <code class="docutils literal notranslate"><span class="pre">-L</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-Q</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项。</p>
 <div class="section" id="id1">
 <h2>12.21.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl>
-<dt><code class="docutils literal notranslate"><span class="pre">-F&lt;type&gt;&lt;width&gt;[&lt;mode&gt;][+h]</span></code></dt><dd><p>设置滤波器类型</p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-F&lt;type&gt;&lt;width&gt;[&lt;mode&gt;][+h]</span></code></dt>
+<dd><p class="first">设置滤波器类型</p>
 <p>滤波器分为两大类，卷积滤波器和非卷积滤波器。 <code class="docutils literal notranslate"><span class="pre">&lt;type&gt;</span></code> 用于指定滤波器类型，
 <code class="docutils literal notranslate"><span class="pre">&lt;width&gt;</span></code> 指定滤波器宽度（单位与时间数据相同）。</p>
 <p>对于卷积滤波器， <code class="docutils literal notranslate"><span class="pre">&lt;type&gt;</span></code> 可以取：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">b</span></code> Boxcar: All weights are equal</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code> Cosine Arch: Weights follow a cosine arch curve</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">g</span></code> Gaussian: Weights are given by the Gaussian function</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> Custom: Instead of <em>width</em> give name of a one-column file with your own weight coefficients.</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">b</span></code> Boxcar: All weights are equal</li>
+<li><code class="docutils literal notranslate"><span class="pre">c</span></code> Cosine Arch: Weights follow a cosine arch curve</li>
+<li><code class="docutils literal notranslate"><span class="pre">g</span></code> Gaussian: Weights are given by the Gaussian function</li>
+<li><code class="docutils literal notranslate"><span class="pre">f</span></code> Custom: Instead of <em>width</em> give name of a one-column file with your own weight coefficients.</li>
 </ul>
 <p>对于非卷积滤波器， <code class="docutils literal notranslate"><span class="pre">&lt;type&gt;</span></code> 可以取：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">m</span></code> Median: Returns median value</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">p</span></code> Maximum likelihood probability (a mode estimator): Return modal value.
+<li><code class="docutils literal notranslate"><span class="pre">m</span></code> Median: Returns median value</li>
+<li><code class="docutils literal notranslate"><span class="pre">p</span></code> Maximum likelihood probability (a mode estimator): Return modal value.
 If more than one mode is found we return their average value. Append - or +
 to the filter width if you rather want to return the smallest or largest
-of the modal values.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">l</span></code> Lower: Return the minimum of all values.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">L</span></code> Lower: Return minimum of all positive values only.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">u</span></code> Upper: Return maximum of all values.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">U</span></code> Upper: Return maximum or all negative values only.</p></li>
+of the modal values.</li>
+<li><code class="docutils literal notranslate"><span class="pre">l</span></code> Lower: Return the minimum of all values.</li>
+<li><code class="docutils literal notranslate"><span class="pre">L</span></code> Lower: Return minimum of all positive values only.</li>
+<li><code class="docutils literal notranslate"><span class="pre">u</span></code> Upper: Return maximum of all values.</li>
+<li><code class="docutils literal notranslate"><span class="pre">U</span></code> Upper: Return maximum or all negative values only.</li>
 </ul>
 <p>大写的 <code class="docutils literal notranslate"><span class="pre">B|C|G|M|P|F</span></code> will use robust filter versions, i.e.,
 replace outliers (2.5 L1 scale off median) with median during filtering.</p>
 <p>In the case of <strong>L</strong>|<strong>U</strong> it is possible that no data passes
 the initial sign test; in that case the filter will return 0.0.</p>
-<p>该模块默认对数据进行低通滤波，加上 <code class="docutils literal notranslate"><span class="pre">+h</span></code> 选项则对数据进行高通滤波。</p>
+<p class="last">该模块默认对数据进行低通滤波，加上 <code class="docutils literal notranslate"><span class="pre">+h</span></code> 选项则对数据进行高通滤波。</p>
 </dd>
 </dl>
 </div>
 <div class="section" id="id2">
 <h2>12.21.2 选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl>
-<dt><code class="docutils literal notranslate"><span class="pre">-D&lt;increment&gt;</span></code></dt><dd><p>当输入的时间序列是不等间隔采样时，需要使用该选项。 <code class="docutils literal notranslate"><span class="pre">&lt;increment&gt;</span></code> 为输出数据的分辨率，所有横坐标（时间）都会被rounded off到 <code class="docutils literal notranslate"><span class="pre">&lt;increment&gt;</span></code> 的整数倍。当然，也可以使用 <a class="reference internal" href="../sample1d/"><span class="doc">sample1d</span></a> 对时间序列做重采样。</p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-D&lt;increment&gt;</span></code></dt>
+<dd>当输入的时间序列是不等间隔采样时，需要使用该选项。 <code class="docutils literal notranslate"><span class="pre">&lt;increment&gt;</span></code> 为输出数据的分辨率，所有横坐标（时间）都会被rounded off到 <code class="docutils literal notranslate"><span class="pre">&lt;increment&gt;</span></code> 的整数倍。当然，也可以使用 <a class="reference internal" href="../sample1d/"><span class="doc">sample1d</span></a> 对时间序列做重采样。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-E</span></code></dt>
+<dd>输出时间序列的首尾端数据。默认情况下，首尾两端都会丢失半滤波器宽度的数据点</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-I&lt;ignore_val&gt;</span></code></dt>
+<dd>若输出数据等于 <code class="docutils literal notranslate"><span class="pre">&lt;ignore_val&gt;</span></code> ，则设置其值为NaN</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-L&lt;lack_width&gt;</span></code></dt>
+<dd>检查数据间断。若输入数据存在超过 <code class="docutils literal notranslate"><span class="pre">&lt;lack_width&gt;</span></code> 的间断，则该数据点不输出值。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-N&lt;t_col&gt;</span></code></dt>
+<dd>指定哪一列数据包含自变量（即时间）。默认值为0，即第一列。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Q&lt;q_factor&gt;</span></code></dt>
+<dd><p class="first">检查输出值的质量因子。</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">&lt;q_factor&gt;</span></code> 的取值为0到1，若某点的卷积的平均权重小于 <code class="docutils literal notranslate"><span class="pre">&lt;q_factor&gt;</span></code> ，则该点的输出会被压制。</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-E</span></code></dt><dd><p>输出时间序列的首尾端数据。默认情况下，首尾两端都会丢失半滤波器宽度的数据点</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-I&lt;ignore_val&gt;</span></code></dt><dd><p>若输出数据等于 <code class="docutils literal notranslate"><span class="pre">&lt;ignore_val&gt;</span></code> ，则设置其值为NaN</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-L&lt;lack_width&gt;</span></code></dt><dd><p>检查数据间断。若输入数据存在超过 <code class="docutils literal notranslate"><span class="pre">&lt;lack_width&gt;</span></code> 的间断，则该数据点不输出值。</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-N&lt;t_col&gt;</span></code></dt><dd><p>指定哪一列数据包含自变量（即时间）。默认值为0，即第一列。</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Q&lt;q_factor&gt;</span></code></dt><dd><p>检查输出值的质量因子。</p>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;q_factor&gt;</span></code> 的取值为0到1，若某点的卷积的平均权重小于 <code class="docutils literal notranslate"><span class="pre">&lt;q_factor&gt;</span></code> ，则该点的输出会被压制。</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-S&lt;symmetry_factor&gt;</span></code></dt><dd><p>检查数据关于时间窗中心的对称性。</p>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;symmetry_factor&gt;</span></code> 的取值范围为0到1。若
+<dt><code class="docutils literal notranslate"><span class="pre">-S&lt;symmetry_factor&gt;</span></code></dt>
+<dd><p class="first">检查数据关于时间窗中心的对称性。</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">&lt;symmetry_factor&gt;</span></code> 的取值范围为0到1。若
 ( (abs(n_left - n_right)) / (n_left + n_right) ) &gt; factor，则该点不输出值。</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-T&lt;t_min&gt;/&lt;t_max&gt;/&lt;t_inc&gt;[+n]</span></code></dt><dd><p>限定时间范围为 <code class="docutils literal notranslate"><span class="pre">&lt;t_min&gt;</span></code> 到 <code class="docutils literal notranslate"><span class="pre">&lt;t_max&gt;</span></code> ，时间间隔为 <code class="docutils literal notranslate"><span class="pre">&lt;t_inc&gt;</span></code> 。</p>
-<p><code class="docutils literal notranslate"><span class="pre">+n</span></code> 表示 <code class="docutils literal notranslate"><span class="pre">&lt;t_inc&gt;</span></code> 代表的是等间隔的时间点数目。</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-T&lt;t_min&gt;/&lt;t_max&gt;/&lt;t_inc&gt;[+n]</span></code></dt>
+<dd><p class="first">限定时间范围为 <code class="docutils literal notranslate"><span class="pre">&lt;t_min&gt;</span></code> 到 <code class="docutils literal notranslate"><span class="pre">&lt;t_max&gt;</span></code> ，时间间隔为 <code class="docutils literal notranslate"><span class="pre">&lt;t_inc&gt;</span></code> 。</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">+n</span></code> 表示 <code class="docutils literal notranslate"><span class="pre">&lt;t_inc&gt;</span></code> 代表的是等间隔的时间点数目。</p>
 </dd>
 </dl>
 </div>

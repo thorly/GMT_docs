@@ -231,39 +231,39 @@
 <h2>8.1.1 五种方式<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>可以用五种方式指定数据范围。</p>
 <ol class="arabic">
-<li><p><code class="docutils literal notranslate"><span class="pre">-R&lt;xmin&gt;/&lt;xmax&gt;/&lt;ymin&gt;/&lt;ymax&gt;</span></code></p>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">-R&lt;xmin&gt;/&lt;xmax&gt;/&lt;ymin&gt;/&lt;ymax&gt;</span></code></p>
 <p>通过给定X方向和Y方向的最大最小值来指定数据范围，是最常见的指定数据范围的方式。常用于指定笛卡尔数据的范围以及经线和纬线是直线的投影方式下的地理区域。例如 <code class="docutils literal notranslate"><span class="pre">-R0/360/-90/90</span></code> 表示X方向范围是0到360，Y方向范围是-90到90。</p>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-R&lt;xlleft&gt;/&lt;ylleft&gt;/&lt;xuright&gt;/&lt;yuright&gt;+r</span></code></p>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">-R&lt;xlleft&gt;/&lt;ylleft&gt;/&lt;xuright&gt;/&lt;yuright&gt;+r</span></code></p>
 <p>通过给定矩形区域的左下角坐标 <code class="docutils literal notranslate"><span class="pre">(xlleft,</span> <span class="pre">ylleft)</span></code> 和右上角坐标 <code class="docutils literal notranslate"><span class="pre">(xuright,</span> <span class="pre">yuright)</span></code>
 来指定数据范围。例如 <code class="docutils literal notranslate"><span class="pre">-R-90/20/-65/30+r</span></code>。这种形式通常用于倾斜的地图投影中，此时不适合将经线和纬线作为地图边界。使用这种形式可以保证底图为矩形，尽管经线和纬线可能不是直线。</p>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-R&lt;gridfile&gt;</span></code></p>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">-R&lt;gridfile&gt;</span></code></p>
 <p>该方式会直接从2D网格文件 <code class="docutils literal notranslate"><span class="pre">&lt;gridfile&gt;</span></code> 中提取数据范围信息。对于某些命令，这种方式不仅会从网格中读取范围信息，还会读入网格间隔和网格配准信息（见 <a class="reference internal" href="../gridreg/"><span class="doc">-r 选项</span></a>）。</p>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-R&lt;code1&gt;,&lt;code2&gt;,...[+r|R[&lt;incs&gt;]]</span></code></p>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">-R&lt;code1&gt;,&lt;code2&gt;,...[+r|R[&lt;incs&gt;]]</span></code></p>
 <p>通过直接指定区域代码 <code class="docutils literal notranslate"><span class="pre">&lt;code1&gt;</span></code>、<code class="docutils literal notranslate"><span class="pre">&lt;code2&gt;</span></code> 等间接指定研究区域范围。</p>
 <p>区域代码可以表示某个大洲、某个国家、某个州或省，详情见 <a class="reference internal" href="../../dataset/dcw/"><span class="doc">DCW: 世界数字图表</span></a> 一节。</p>
 <p><code class="docutils literal notranslate"><span class="pre">+r|+R&lt;incs&gt;</span></code> 用于对通过区域代码得到的研究区域范围进一步扩张或缩减。其中 <code class="docutils literal notranslate"><span class="pre">+r</span></code> 表示调整区域范围使得范围是 <code class="docutils literal notranslate"><span class="pre">&lt;incs&gt;</span></code> 的整数倍，
 <code class="docutils literal notranslate"><span class="pre">+R</span></code> 表示 <code class="docutils literal notranslate"><span class="pre">&lt;incs&gt;</span></code> 被解释为区域范围向外扩展的增量。其中 <code class="docutils literal notranslate"><span class="pre">&lt;incs&gt;</span></code> 有三种形式：</p>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;inc&gt;</span></code>：四个边具有相同的增量</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;/&lt;yinc&gt;</span></code>：X和Y方向具有不同的增量</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;winc&gt;/&lt;einc&gt;/&lt;sinc&gt;/&lt;ninc&gt;</span></code>：上下左右四个边具有不同的增量</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;inc&gt;</span></code>：四个边具有相同的增量</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;/&lt;yinc&gt;</span></code>：X和Y方向具有不同的增量</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;winc&gt;/&lt;einc&gt;/&lt;sinc&gt;/&lt;ninc&gt;</span></code>：上下左右四个边具有不同的增量</li>
 </ol>
 <p>例如 <code class="docutils literal notranslate"><span class="pre">-RFR+r1</span></code> 表示取法国国界对应的区域范围并将其调整到最近的整数度数。</p>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-R&lt;anchor&gt;&lt;x0&gt;/&lt;y0&gt;/&lt;nx&gt;/&lt;ny&gt;</span></code></p>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">-R&lt;anchor&gt;&lt;x0&gt;/&lt;y0&gt;/&lt;nx&gt;/&lt;ny&gt;</span></code></p>
 <p>该方法仅可用于创建新的网格文件。通过指定网格文件中某个特定点（由 <code class="docutils literal notranslate"><span class="pre">&lt;anchor&gt;</span></code> 决定，见 <a class="reference internal" href="../../basis/anchor/"><span class="doc">锚点</span></a> 一节）的坐标（由 <code class="docutils literal notranslate"><span class="pre">&lt;x0&gt;/&lt;y0&gt;</span></code> 决定），X和Y方向的网格点数（由 <code class="docutils literal notranslate"><span class="pre">&lt;nx&gt;/&lt;ny&gt;</span></code> 决定），以及X和Y方向的网格间隔（通常由 <code class="docutils literal notranslate"><span class="pre">-I&lt;xinc&gt;/&lt;yinc&gt;</span></code> 选项决定），即可指定网格文件的区域范围。</p>
 </li>
 </ol>
 <p><a class="reference download internal" download="" href="../../_downloads/2f4a967acda807a02d41f7d7b8a1f3f1/R-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center" id="id6">
 <img alt="../../_images/R-gmtplot-0.png" src="../../_images/R-gmtplot-0.png" />
-<p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项指定数据范围</span><a class="headerlink" href="#id6" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项指定数据范围</span></p>
 </div>
 <ol class="loweralpha simple">
-<li><p>指定每个维度的极值；(b) 指定左下角和右上角的坐标。</p></li>
+<li>指定每个维度的极值；(b) 指定左下角和右上角的坐标。</li>
 </ol>
 </div>
 <div class="section" id="id2">
@@ -271,12 +271,12 @@
 <p>GMT的坐标轴可以是多种类型，比如地图的经纬度轴、一般的笛卡尔轴、时间轴等等。不同类型的轴需要用不同类型的数据来指定数据的范围。
 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项可以使用五种不同的方式来指定数据范围：</p>
 <ol class="arabic simple">
-<li><p><a class="reference internal" href="../../basis/io-format/#float-coordinates"><span class="std std-ref">一般浮点坐标</span></a></p></li>
-<li><p><a class="reference internal" href="../../basis/io-format/#geographic-coordinates"><span class="std std-ref">地理坐标</span></a></p></li>
-<li><p><a class="reference internal" href="../../basis/io-format/#absolute-time-coordinates"><span class="std std-ref">绝对时间坐标</span></a></p></li>
-<li><p><a class="reference internal" href="../../basis/io-format/#relative-time-coordinates"><span class="std std-ref">相对时间坐标</span></a></p></li>
-<li><p>投影后坐标</p></li>
-<li><p>弧度坐标</p></li>
+<li><a class="reference internal" href="../../basis/io-format/#float-coordinates"><span class="std std-ref">一般浮点坐标</span></a></li>
+<li><a class="reference internal" href="../../basis/io-format/#geographic-coordinates"><span class="std std-ref">地理坐标</span></a></li>
+<li><a class="reference internal" href="../../basis/io-format/#absolute-time-coordinates"><span class="std std-ref">绝对时间坐标</span></a></li>
+<li><a class="reference internal" href="../../basis/io-format/#relative-time-coordinates"><span class="std std-ref">相对时间坐标</span></a></li>
+<li>投影后坐标</li>
+<li>弧度坐标</li>
 </ol>
 <p>其中地理坐标、浮点坐标、绝对时间坐标和相对时间坐标在 <a class="reference internal" href="../../basis/io-format/"><span class="doc">数据类型</span></a>
 中已经介绍过，此处不再赘述。</p>
@@ -284,20 +284,20 @@
 <h3>地理坐标<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p>对于常用的地图范围，GMT提供了两个简化写法：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-Rg</span></code> 等效于 <code class="docutils literal notranslate"><span class="pre">-R0/360/-90/90</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-Rd</span></code> 等效于 <code class="docutils literal notranslate"><span class="pre">-R-180/180/-90/90</span></code></p></li>
+<li><code class="docutils literal notranslate"><span class="pre">-Rg</span></code> 等效于 <code class="docutils literal notranslate"><span class="pre">-R0/360/-90/90</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">-Rd</span></code> 等效于 <code class="docutils literal notranslate"><span class="pre">-R-180/180/-90/90</span></code></li>
 </ul>
 <p>GMT 对于地理投影和线性投影的默认设置有很大区别。有些时候数据是地理坐标，但是因为某些原因不能选择地理投影，只能选择线性投影（<code class="docutils literal notranslate"><span class="pre">-JX</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-Jx</span></code>），此时可以通过如下几种方式表明当前数据是地理坐标下的数据，而不是简单的笛卡尔坐标：</p>
 <ol class="arabic simple">
-<li><p>使用 <code class="docutils literal notranslate"><span class="pre">-Rg</span></code> 而不是 <code class="docutils literal notranslate"><span class="pre">0/360/-90/90</span></code></p></li>
-<li><p>使用 <code class="docutils literal notranslate"><span class="pre">-Rd</span></code> 而不是 <code class="docutils literal notranslate"><span class="pre">-180/180/-90/90</span></code></p></li>
-<li><p>使用 <code class="docutils literal notranslate"><span class="pre">-Rg&lt;xmin&gt;/&lt;xmax&gt;/&lt;ymin&gt;/&lt;ymax&gt;</span></code> 表明是某个有限范围的地理区域</p></li>
-<li><p>在范围后加后缀 <code class="docutils literal notranslate"><span class="pre">W|E|S|N</span></code> 或更通用的 <code class="docutils literal notranslate"><span class="pre">D|G</span></code>，比如 <code class="docutils literal notranslate"><span class="pre">-R0/360G/-90/90N</span></code></p></li>
-<li><p>使用 <code class="docutils literal notranslate"><span class="pre">-fg</span></code> 选项表明输入数据是地理坐标，见 <a class="reference internal" href="../f/"><span class="doc">-f 选项</span></a></p></li>
+<li>使用 <code class="docutils literal notranslate"><span class="pre">-Rg</span></code> 而不是 <code class="docutils literal notranslate"><span class="pre">0/360/-90/90</span></code></li>
+<li>使用 <code class="docutils literal notranslate"><span class="pre">-Rd</span></code> 而不是 <code class="docutils literal notranslate"><span class="pre">-180/180/-90/90</span></code></li>
+<li>使用 <code class="docutils literal notranslate"><span class="pre">-Rg&lt;xmin&gt;/&lt;xmax&gt;/&lt;ymin&gt;/&lt;ymax&gt;</span></code> 表明是某个有限范围的地理区域</li>
+<li>在范围后加后缀 <code class="docutils literal notranslate"><span class="pre">W|E|S|N</span></code> 或更通用的 <code class="docutils literal notranslate"><span class="pre">D|G</span></code>，比如 <code class="docutils literal notranslate"><span class="pre">-R0/360G/-90/90N</span></code></li>
+<li>使用 <code class="docutils literal notranslate"><span class="pre">-fg</span></code> 选项表明输入数据是地理坐标，见 <a class="reference internal" href="../f/"><span class="doc">-f 选项</span></a></li>
 </ol>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
-<p>推荐使用 <code class="docutils literal notranslate"><span class="pre">-fg</span></code> 这种方式来指定输入数据的类型。</p>
+<p class="first admonition-title">注解</p>
+<p class="last">推荐使用 <code class="docutils literal notranslate"><span class="pre">-fg</span></code> 这种方式来指定输入数据的类型。</p>
 </div>
 </div>
 <div class="section" id="id4">

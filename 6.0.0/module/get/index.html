@@ -341,20 +341,23 @@
             
   <div class="section" id="gmtget">
 <span id="index-0"></span><h1>12.24 gmtget<a class="headerlink" href="#gmtget" title="永久链接至标题">¶</a></h1>
-<dl class="field-list simple">
-<dt class="field-odd">官方文档</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/gmtget.html" title="(在 GMT v6.0.0)"><span>get</span></a></p>
-</dd>
-<dt class="field-even">简介</dt>
-<dd class="field-even"><p>列出单个或多个GMT参数的当前值</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/gmtget.html" title="(在 GMT v6.0.0)"><span>get</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">列出单个或多个GMT参数的当前值</td>
+</tr>
+</tbody>
+</table>
 <div class="section" id="id1">
 <h2>12.24.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl>
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;PARAMETER&gt;</span></code></dt><dd><p>GMT的参数名，见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;PARAMETER&gt;</span></code></dt>
+<dd><p class="first">GMT的参数名，见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
 <p><code class="docutils literal notranslate"><span class="pre">gmtset</span></code> 后直接跟一个或多个参数名:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt gmtget PS_MEDIA
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt gmtget PS_MEDIA
 a4
 
 $ gmt get MAP_GRID_CROSS_SIZE_PRIMARY MAP_GRID_CROSS_SIZE_SECONDARY
@@ -366,16 +369,18 @@ $ gmt get MAP_GRID_CROSS_SIZE_PRIMARY MAP_GRID_CROSS_SIZE_SECONDARY
 </div>
 <div class="section" id="id2">
 <h2>12.24.2 可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl>
-<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;defaultsfile&gt;</span></code></dt><dd><p>读取指定的GMT配置文件</p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;defaultsfile&gt;</span></code></dt>
+<dd><p class="first">读取指定的GMT配置文件</p>
 <p>默认情况下，该模块会按照如下优先级寻找配置文件 <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./gmt.conf  &gt; ~/gmt.conf &gt; ~/.gmt/gmt.conf &gt; 系统默认参数
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>./gmt.conf  &gt; ~/gmt.conf &gt; ~/.gmt/gmt.conf &gt; 系统默认参数
 </pre></div>
 </div>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-L</span></code></dt><dd><p>输出时一行只输出一个返回值。</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-L</span></code></dt>
+<dd><p class="first">输出时一行只输出一个返回值。</p>
 <p>一次指定多个参数名时，默认会将所有返回值输出在一行，各值之间以空格分隔。该选项会一行只输出一个返回值:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt get FONT_TITLE FONT_LABEL MAP_FRAME_TYPE -L
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt get FONT_TITLE FONT_LABEL MAP_FRAME_TYPE -L
 24p,Helvetica,black
 16p,Helvetica,black
 fancy
