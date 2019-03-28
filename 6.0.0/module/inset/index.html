@@ -346,21 +346,19 @@
             
   <div class="section" id="inset">
 <span id="index-0"></span><h1>12.72 inset<a class="headerlink" href="#inset" title="永久链接至标题">¶</a></h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/inset.html" title="(在 GMT v6.0.0)"><span>inset</span></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">管理和设置图中图模式</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/inset.html" title="(在 GMT v6.0.0)"><span>inset</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>管理和设置图中图模式</p>
+</dd>
+</dl>
 <p><code class="docutils literal notranslate"><span class="pre">inset</span></code> 模块用于创建图中图模式，即在纸张上规划出一小片区域，并限制接下来的绘制操作均只在该小区域内操作。</p>
 <p><code class="docutils literal notranslate"><span class="pre">inset</span></code> 模块包含两个命令：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">begin</span></code> 用于设置图中图模式，其定义了图中图区域的位置和大小</li>
-<li><code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">end</span></code> 用于结束图中图模式，此时所有的操作都会回到大区域图中</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">begin</span></code> 用于设置图中图模式，其定义了图中图区域的位置和大小</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">end</span></code> 用于结束图中图模式，此时所有的操作都会回到大区域图中</p></li>
 </ul>
 <div class="section" id="inset-begin">
 <h2>12.72.1 <code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">begin</span></code><a class="headerlink" href="#inset-begin" title="永久链接至标题">¶</a></h2>
@@ -372,26 +370,24 @@
 </div>
 <div class="section" id="id2">
 <h3>必须选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-D[unit]xmin/xmax/ymin/ymax[r]</span></code></dt>
-<dd>类似 <a class="reference internal" href="../../option/R/"><span class="doc">-R 选项</span></a> 选项，使用该选项会在大区域地图中框出该选项所指定的小区域。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-D[g|j|J|n|x]&lt;refpoint&gt;+w&lt;width&gt;[/&lt;height&gt;][+j&lt;justify&gt;][+o&lt;dx&gt;[/&lt;dy&gt;]]</span></code></dt>
-<dd><p class="first">确定一个图中图区域，接下来的所有绘图操作仅在该小区域内操作。</p>
-<ul class="last simple">
-<li><code class="docutils literal notranslate"><span class="pre">g|j|J|n|x&lt;refpoint&gt;</span></code> 用于指定图中图区域的参考点，通常用 <code class="docutils literal notranslate"><span class="pre">j</span></code> 比较方便，例如 <code class="docutils literal notranslate"><span class="pre">jTL</span></code> 表示图中图区域位于左上角，<code class="docutils literal notranslate"><span class="pre">jBR</span></code> 表示图中图区域位于右下角。详情见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</li>
-<li><code class="docutils literal notranslate"><span class="pre">+w&lt;width&gt;/&lt;height&gt;</span></code> 指定了图中图区域的宽度和高度</li>
-<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify</span></code> 控制图中图区域的锚点，见 <a class="reference internal" href="../../basis/anchor/"><span class="doc">锚点</span></a> 一节</li>
-<li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;/&lt;dy&gt;</span></code> 见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</li>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-D[unit]xmin/xmax/ymin/ymax[r]</span></code></dt><dd><p>类似 <a class="reference internal" href="../../option/R/"><span class="doc">-R 选项</span></a> 选项，使用该选项会在大区域地图中框出该选项所指定的小区域。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-D[g|j|J|n|x]&lt;refpoint&gt;+w&lt;width&gt;[/&lt;height&gt;][+j&lt;justify&gt;][+o&lt;dx&gt;[/&lt;dy&gt;]]</span></code></dt><dd><p>确定一个图中图区域，接下来的所有绘图操作仅在该小区域内操作。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">g|j|J|n|x&lt;refpoint&gt;</span></code> 用于指定图中图区域的参考点，通常用 <code class="docutils literal notranslate"><span class="pre">j</span></code> 比较方便，例如 <code class="docutils literal notranslate"><span class="pre">jTL</span></code> 表示图中图区域位于左上角，<code class="docutils literal notranslate"><span class="pre">jBR</span></code> 表示图中图区域位于右下角。详情见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+w&lt;width&gt;/&lt;height&gt;</span></code> 指定了图中图区域的宽度和高度</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+j&lt;justify</span></code> 控制图中图区域的锚点，见 <a class="reference internal" href="../../basis/anchor/"><span class="doc">锚点</span></a> 一节</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;/&lt;dy&gt;</span></code> 见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</p></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-F[+c&lt;clearances&gt;][+g&lt;fill&gt;][+i[[&lt;gap&gt;/]&lt;pen&gt;]][+p[&lt;pen&gt;]][+r[&lt;radius&gt;]][+s[[&lt;dx&gt;/&lt;dy&gt;/][&lt;shade&gt;]]]</span></code></dt>
-<dd>设置图中图区域的背景色、轮廓等属性，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-M&lt;margins&gt;</span></code></dt>
-<dd><p class="first">图中图内部的额外空白区域。其可以取三种形式：</p>
-<ol class="last arabic simple">
-<li>一个值，表示四个边的空白相同</li>
-<li>两个用斜杠分隔的值，分别设置水平和垂直方向的空白</li>
-<li>四个用斜杠分隔的值，分别设置左右下上四条边的空白</li>
+<dt><code class="docutils literal notranslate"><span class="pre">-F[+c&lt;clearances&gt;][+g&lt;fill&gt;][+i[[&lt;gap&gt;/]&lt;pen&gt;]][+p[&lt;pen&gt;]][+r[&lt;radius&gt;]][+s[[&lt;dx&gt;/&lt;dy&gt;/][&lt;shade&gt;]]]</span></code></dt><dd><p>设置图中图区域的背景色、轮廓等属性，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-M&lt;margins&gt;</span></code></dt><dd><p>图中图内部的额外空白区域。其可以取三种形式：</p>
+<ol class="arabic simple">
+<li><p>一个值，表示四个边的空白相同</p></li>
+<li><p>两个用斜杠分隔的值，分别设置水平和垂直方向的空白</p></li>
+<li><p>四个用斜杠分隔的值，分别设置左右下上四条边的空白</p></li>
 </ol>
 </dd>
 </dl>

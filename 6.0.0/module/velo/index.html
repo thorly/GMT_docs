@@ -342,104 +342,97 @@
             
   <div class="section" id="velo">
 <span id="index-0"></span><h1>12.130 velo<a class="headerlink" href="#velo" title="永久链接至标题">¶</a></h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/supplements/meca/velo.html" title="(在 GMT v6.0.0)"><span>velo</span></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">在地图上绘制速度矢量、十字线、楔形图</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/supplements/meca/velo.html" title="(在 GMT v6.0.0)"><span>velo</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>在地图上绘制速度矢量、十字线、楔形图</p>
+</dd>
+</dl>
 <div class="section" id="s">
 <h2>12.130.1 -S选项<a class="headerlink" href="#s" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项决定了要绘制的符号的类型，以及输入数据的格式。</p>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-Se&lt;velscale&gt;/&lt;confidence&gt;/&lt;fontsize&gt;</span></code></dt>
-<dd><p class="first">绘制速度椭圆。速度用矢量表示，速度的不确定度用椭圆表示。输入数据中每列的含义为：</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">-Se&lt;velscale&gt;/&lt;confidence&gt;/&lt;fontsize&gt;</span></code></dt><dd><p>绘制速度椭圆。速度用矢量表示，速度的不确定度用椭圆表示。输入数据中每列的含义为：</p>
 <ol class="arabic simple">
-<li>台站经度</li>
-<li>台站纬度</li>
-<li>速度矢量的东向分量</li>
-<li>速度矢量的北向分量</li>
-<li>东向分量的不确定度（1-sigma）</li>
-<li>北向分量的不确定度（1-sigma）</li>
-<li>东向分量和北向分量的correlation</li>
-<li>台站名（可选）</li>
+<li><p>台站经度</p></li>
+<li><p>台站纬度</p></li>
+<li><p>速度矢量的东向分量</p></li>
+<li><p>速度矢量的北向分量</p></li>
+<li><p>东向分量的不确定度（1-sigma）</p></li>
+<li><p>北向分量的不确定度（1-sigma）</p></li>
+<li><p>东向分量和北向分量的correlation</p></li>
+<li><p>台站名（可选）</p></li>
 </ol>
 <p>说明：</p>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;velscale&gt;</span></code> 控制了速度矢量的缩放比例，其对应了速度值为1的箭头的长度，默认单位由参数 <code class="docutils literal notranslate"><span class="pre">PROJ_LENGTH_UNIT</span></code> 决定，也可以自己添加长度单位 <code class="docutils literal notranslate"><span class="pre">i|c|p</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;confidence&gt;</span></code> 设置了椭圆的2D置信区间的极限，比如0.95代表95%置信区间</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;fontsize&gt;</span></code> 是文本（台站名）的大小</li>
-<li>椭圆的填充色由 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项控制</li>
-<li>椭圆的轮廓以及矢量的画笔属性由 <code class="docutils literal notranslate"><span class="pre">-W</span></code> 选项控</li>
-</ol>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Sr&lt;velscale&gt;/&lt;confidence&gt;/&lt;fontsize&gt;</span></code></dt>
-<dd><p class="first">绘制速度椭圆，与 <code class="docutils literal notranslate"><span class="pre">-Se</span></code> 类似，区别在于输入文件不同：</p>
-<ol class="last arabic simple">
-<li>经度</li>
-<li>纬度</li>
-<li>速度矢量的东向分量</li>
-<li>速度矢量的北向分量</li>
-<li>椭圆的半长轴</li>
-<li>椭圆的半短轴</li>
-<li>椭圆的长轴相对于水平方向逆时针旋转的角度</li>
-<li>台站名（可选）</li>
-</ol>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Sn&lt;barscale&gt;</span></code></dt>
-<dd><p class="first">绘制各向异性矢量， <code class="docutils literal notranslate"><span class="pre">&lt;barscale&gt;</span></code> 是各向异性矢量的缩放比例。输入数据中每列的含义为：</p>
-<ol class="last arabic simple">
-<li>经度</li>
-<li>纬度</li>
-<li>各向异性矢量的东向分量</li>
-<li>各向异性矢量的北向分量</li>
-</ol>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Sw&lt;wedge_scale&gt;/&lt;wedge_mag&gt;</span></code></dt>
-<dd><p class="first">绘制旋转饼图。输入数据中每列的含义为：</p>
 <ol class="arabic simple">
-<li>经度</li>
-<li>纬度</li>
-<li>旋转的角度（以radians为单位）</li>
-<li>旋转的不确定度（以radians为单位）</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;velscale&gt;</span></code> 控制了速度矢量的缩放比例，其对应了速度值为1的箭头的长度，默认单位由参数 <code class="docutils literal notranslate"><span class="pre">PROJ_LENGTH_UNIT</span></code> 决定，也可以自己添加长度单位 <code class="docutils literal notranslate"><span class="pre">i|c|p</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;confidence&gt;</span></code> 设置了椭圆的2D置信区间的极限，比如0.95代表95%置信区间</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;fontsize&gt;</span></code> 是文本（台站名）的大小</p></li>
+<li><p>椭圆的填充色由 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项控制</p></li>
+<li><p>椭圆的轮廓以及矢量的画笔属性由 <code class="docutils literal notranslate"><span class="pre">-W</span></code> 选项控</p></li>
 </ol>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">&lt;wedge_scale&gt;</span></code> 设置了饼图的大小。所有的数值在绘图之前会先乘以 <code class="docutils literal notranslate"><span class="pre">&lt;wedge_mag&gt;</span></code> 。饼图的填充色由 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项控制， 不确定度的颜色由 <code class="docutils literal notranslate"><span class="pre">-E</span></code> 控制。</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Sx&lt;cross_scale&gt;</span></code></dt>
-<dd><p class="first">绘制应变十字线。 <code class="docutils literal notranslate"><span class="pre">&lt;cross_scale&gt;</span></code> 控制十字线的大小。输入文件中每列的含义为：</p>
-<ol class="last arabic simple">
-<li>经度</li>
-<li>纬度</li>
-<li>eps1：应变张量的扩张本征值，扩张为正</li>
-<li>eps2： 应变张量的压缩本征值，扩张为正</li>
-<li>eps2的方位角（北方向顺时针旋转的角度）</li>
+<dt><code class="docutils literal notranslate"><span class="pre">-Sr&lt;velscale&gt;/&lt;confidence&gt;/&lt;fontsize&gt;</span></code></dt><dd><p>绘制速度椭圆，与 <code class="docutils literal notranslate"><span class="pre">-Se</span></code> 类似，区别在于输入文件不同：</p>
+<ol class="arabic simple">
+<li><p>经度</p></li>
+<li><p>纬度</p></li>
+<li><p>速度矢量的东向分量</p></li>
+<li><p>速度矢量的北向分量</p></li>
+<li><p>椭圆的半长轴</p></li>
+<li><p>椭圆的半短轴</p></li>
+<li><p>椭圆的长轴相对于水平方向逆时针旋转的角度</p></li>
+<li><p>台站名（可选）</p></li>
+</ol>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Sn&lt;barscale&gt;</span></code></dt><dd><p>绘制各向异性矢量， <code class="docutils literal notranslate"><span class="pre">&lt;barscale&gt;</span></code> 是各向异性矢量的缩放比例。输入数据中每列的含义为：</p>
+<ol class="arabic simple">
+<li><p>经度</p></li>
+<li><p>纬度</p></li>
+<li><p>各向异性矢量的东向分量</p></li>
+<li><p>各向异性矢量的北向分量</p></li>
+</ol>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Sw&lt;wedge_scale&gt;/&lt;wedge_mag&gt;</span></code></dt><dd><p>绘制旋转饼图。输入数据中每列的含义为：</p>
+<ol class="arabic simple">
+<li><p>经度</p></li>
+<li><p>纬度</p></li>
+<li><p>旋转的角度（以radians为单位）</p></li>
+<li><p>旋转的不确定度（以radians为单位）</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;wedge_scale&gt;</span></code> 设置了饼图的大小。所有的数值在绘图之前会先乘以 <code class="docutils literal notranslate"><span class="pre">&lt;wedge_mag&gt;</span></code> 。饼图的填充色由 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项控制， 不确定度的颜色由 <code class="docutils literal notranslate"><span class="pre">-E</span></code> 控制。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Sx&lt;cross_scale&gt;</span></code></dt><dd><p>绘制应变十字线。 <code class="docutils literal notranslate"><span class="pre">&lt;cross_scale&gt;</span></code> 控制十字线的大小。输入文件中每列的含义为：</p>
+<ol class="arabic simple">
+<li><p>经度</p></li>
+<li><p>纬度</p></li>
+<li><p>eps1：应变张量的扩张本征值，扩张为正</p></li>
+<li><p>eps2： 应变张量的压缩本征值，扩张为正</p></li>
+<li><p>eps2的方位角（北方向顺时针旋转的角度）</p></li>
 </ol>
 </dd>
 </dl>
 </div>
 <div class="section" id="id1">
 <h2>12.130.2 选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-A&lt;params&gt;</span></code></dt>
-<dd>修改矢量的属性，见 <a class="reference internal" href="../../basis/vector/"><span class="doc">绘制矢量/箭头</span></a> 一节</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-D&lt;sigma_scale&gt;</span></code></dt>
-<dd>控制 <code class="docutils literal notranslate"><span class="pre">-Se</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Sr</span></code> 中速度不确定度以及 <code class="docutils literal notranslate"><span class="pre">-Sw</span></code> 中旋转不确定度的缩放。该参数可以与 <code class="docutils literal notranslate"><span class="pre">&lt;confidence&gt;</span></code> 一起控制不确定度的绘制</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-F&lt;fill&gt;</span></code></dt>
-<dd>控制边框和标注的颜色</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-E&lt;fill&gt;</span></code></dt>
-<dd>控制 <code class="docutils literal notranslate"><span class="pre">-Sw</span></code> 中饼图不确定度的填充</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;fill&gt;</span></code></dt>
-<dd>控制颜色？</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-L</span></code></dt>
-<dd>绘制线段。使用该选择，则椭圆和断层面会根据 <code class="docutils literal notranslate"><span class="pre">-W</span></code> 选项绘制轮廓</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-N</span></code></dt>
-<dd>不跳过区域范围外的符号</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-W&lt;pen&gt;</span></code></dt>
-<dd>设置速度箭头、椭圆轮廓以及断层边界的颜色</dd>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-A&lt;params&gt;</span></code></dt><dd><p>修改矢量的属性，见 <a class="reference internal" href="../../basis/vector/"><span class="doc">绘制矢量/箭头</span></a> 一节</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-D&lt;sigma_scale&gt;</span></code></dt><dd><p>控制 <code class="docutils literal notranslate"><span class="pre">-Se</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Sr</span></code> 中速度不确定度以及 <code class="docutils literal notranslate"><span class="pre">-Sw</span></code> 中旋转不确定度的缩放。该参数可以与 <code class="docutils literal notranslate"><span class="pre">&lt;confidence&gt;</span></code> 一起控制不确定度的绘制</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-F&lt;fill&gt;</span></code></dt><dd><p>控制边框和标注的颜色</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-E&lt;fill&gt;</span></code></dt><dd><p>控制 <code class="docutils literal notranslate"><span class="pre">-Sw</span></code> 中饼图不确定度的填充</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;fill&gt;</span></code></dt><dd><p>控制颜色？</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-L</span></code></dt><dd><p>绘制线段。使用该选择，则椭圆和断层面会根据 <code class="docutils literal notranslate"><span class="pre">-W</span></code> 选项绘制轮廓</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-N</span></code></dt><dd><p>不跳过区域范围外的符号</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-W&lt;pen&gt;</span></code></dt><dd><p>设置速度箭头、椭圆轮廓以及断层边界的颜色</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="id2">
@@ -469,7 +462,7 @@ rm gmt.*
 </div>
 <div class="figure align-center" id="id3">
 <a class="reference internal image-reference" href="../../_images/psvelo_ex1.png"><img alt="../../_images/psvelo_ex1.png" src="../../_images/psvelo_ex1.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">psvelo示例图1</span></p>
+<p class="caption"><span class="caption-text">psvelo示例图1</span><a class="headerlink" href="#id3" title="永久链接至图片">¶</a></p>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="nv">ps</span><span class="o">=</span>psvelo_ex2.ps
@@ -501,7 +494,7 @@ rm gmt.*
 </div>
 <div class="figure align-center" id="id4">
 <a class="reference internal image-reference" href="../../_images/psvelo_ex2.png"><img alt="../../_images/psvelo_ex2.png" src="../../_images/psvelo_ex2.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">psvelo示例图2</span></p>
+<p class="caption"><span class="caption-text">psvelo示例图2</span><a class="headerlink" href="#id4" title="永久链接至图片">¶</a></p>
 </div>
 <p>下面的示例展示了如何绘制应变十字线:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psvelo -JX10c/10c -R0/10/0/10 -Sx10 -W1p &gt; test.ps <span class="s">&lt;&lt; EOF</span>

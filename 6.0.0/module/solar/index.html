@@ -343,47 +343,43 @@
             
   <div class="section" id="solar">
 <span id="index-0"></span><h1>12.112 solar<a class="headerlink" href="#solar" title="永久链接至标题">¶</a></h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/solar.html" title="(在 GMT v6.0.0)"><span>solar</span></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">计算或/和绘制晨昏线以及民用、航海用以及天文用曙暮光区域</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/solar.html" title="(在 GMT v6.0.0)"><span>solar</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>计算或/和绘制晨昏线以及民用、航海用以及天文用曙暮光区域</p>
+</dd>
+</dl>
 <div class="section" id="id1">
 <h2>12.112.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">-I</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-T</span></code> 中必须要有一个。</p>
 </div>
 <div class="section" id="id2">
 <h2>12.112.2 可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-C</span></code></dt>
-<dd><p class="first">在一行内格式化打印（以Tab键分隔） <code class="docutils literal notranslate"><span class="pre">-I</span></code> 选项输出的信息。输出内容包括：</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">-C</span></code></dt><dd><p>在一行内格式化打印（以Tab键分隔） <code class="docutils literal notranslate"><span class="pre">-I</span></code> 选项输出的信息。输出内容包括：</p>
 <ol class="arabic simple">
-<li>太阳的经度、纬度、方位角、高度角，单位为度</li>
-<li>日出、日落、正午的时间，单位为天</li>
-<li>日长，单位为分钟</li>
-<li>考虑折射效应矫正后的太阳高度较正以及均时差，单位为分钟</li>
+<li><p>太阳的经度、纬度、方位角、高度角，单位为度</p></li>
+<li><p>日出、日落、正午的时间，单位为天</p></li>
+<li><p>日长，单位为分钟</p></li>
+<li><p>考虑折射效应矫正后的太阳高度较正以及均时差，单位为分钟</p></li>
 </ol>
 <div class="admonition note">
-<p class="first admonition-title">注解</p>
-<p class="last">若没有通过 <code class="docutils literal notranslate"><span class="pre">-Ilon/lat</span></code> 提供经纬度，则太阳高度角之后的数据均以 (0,0)
+<p class="admonition-title">注解</p>
+<p>若没有通过 <code class="docutils literal notranslate"><span class="pre">-Ilon/lat</span></code> 提供经纬度，则太阳高度角之后的数据均以 (0,0)
 作为参考点</p>
 </div>
 <p>示例:</p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt pssolar -I120/40+d2016-11-01T01:00:00+z8 -C
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt pssolar -I120/40+d2016-11-01T01:00:00+z8 -C
 <span class="m">160</span>.885755836   -14.5068940782  <span class="m">38</span>.6719503593   -59.513608404   <span class="m">0</span>.270214374769  <span class="m">0</span>.706928713211  <span class="m">0</span>.48857154399   <span class="m">628</span>.868647356   -59.5102114599  <span class="m">16</span>.4569766548
 </pre></div>
 </div>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;fill&gt;|c</span></code></dt>
-<dd>根据晨昏线对黑夜区域填充颜色或图案，见 <a class="reference internal" href="../../basis/fill/"><span class="doc">填充</span></a> 一节。也可以使用 <code class="docutils literal notranslate"><span class="pre">-Gc</span></code> 剪裁黑夜区域，并通过使用 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">psclip</span> <span class="pre">-C</span></code> 停止区域剪裁，见 <a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/clip.html" title="(在 GMT v6.0.0)"><span>clip</span></a> 。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-I[&lt;lon&gt;/&lt;lat&gt;][+d&lt;date&gt;][+z&lt;TZ&gt;]</span></code></dt>
-<dd><p class="first">输出太阳的当前位置、方位角和高度角。加上 <code class="docutils literal notranslate"><span class="pre">&lt;lon&gt;/&lt;lat&gt;</span></code> 则输出日出、日落、正午时间以及一天时间长度。用 <code class="docutils literal notranslate"><span class="pre">+d&lt;data&gt;</span></code> 指定ISO格式的日期时间（ 比如 <code class="docutils literal notranslate"><span class="pre">+d2000-04-25T10:00:00</span></code> ）来计算特定时刻的太阳参数。如果有需要，也可以通过 <code class="docutils literal notranslate"><span class="pre">+z&lt;TZ&gt;</span></code> 加上时区。</p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt pssolar -I120/40+d2016-11-01T01:00:00+z8
+<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;fill&gt;|c</span></code></dt><dd><p>根据晨昏线对黑夜区域填充颜色或图案，见 <a class="reference internal" href="../../basis/fill/"><span class="doc">填充</span></a> 一节。也可以使用 <code class="docutils literal notranslate"><span class="pre">-Gc</span></code> 剪裁黑夜区域，并通过使用 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">psclip</span> <span class="pre">-C</span></code> 停止区域剪裁，见 <a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/clip.html" title="(在 GMT v6.0.0)"><span>clip</span></a> 。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-I[&lt;lon&gt;/&lt;lat&gt;][+d&lt;date&gt;][+z&lt;TZ&gt;]</span></code></dt><dd><p>输出太阳的当前位置、方位角和高度角。加上 <code class="docutils literal notranslate"><span class="pre">&lt;lon&gt;/&lt;lat&gt;</span></code> 则输出日出、日落、正午时间以及一天时间长度。用 <code class="docutils literal notranslate"><span class="pre">+d&lt;data&gt;</span></code> 指定ISO格式的日期时间（ 比如 <code class="docutils literal notranslate"><span class="pre">+d2000-04-25T10:00:00</span></code> ）来计算特定时刻的太阳参数。如果有需要，也可以通过 <code class="docutils literal notranslate"><span class="pre">+z&lt;TZ&gt;</span></code> 加上时区。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt pssolar -I120/40+d2016-11-01T01:00:00+z8
     Sun current position:    <span class="nv">long</span> <span class="o">=</span> <span class="m">160</span>.885756    <span class="nv">lat</span> <span class="o">=</span> -14.506894
                           <span class="nv">Azimuth</span> <span class="o">=</span> <span class="m">38</span>.6720    <span class="nv">Elevation</span> <span class="o">=</span> -59.5136
 <span class="nv">Sunrise</span>  <span class="o">=</span> <span class="m">06</span>:29
@@ -393,42 +389,42 @@
 </pre></div>
 </div>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-M</span></code></dt>
-<dd>将晨昏线数据以多段ASCII表格式写到标准输出（或二进制格式，见 <a class="reference internal" href="../../option/binary/"><span class="doc">-b 选项</span></a> ）。使用该选项，则只输出数据不绘图。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-N</span></code></dt>
-<dd>反转晨昏线“内”和“外”概念颠倒。仅可与 <code class="docutils literal notranslate"><span class="pre">-Gc</span></code> 一起使用以剪裁出白日区，不可与 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 一同使用。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-T&lt;dcna&gt;[+d&lt;date&gt;][+z&lt;TZ&gt;]</span></code></dt>
-<dd><p class="first">绘制一个或多个不同定义的晨昏线。若需要导出晨昏线数据，见 <code class="docutils literal notranslate"><span class="pre">-M</span></code> 选项。</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-M</span></code></dt><dd><p>将晨昏线数据以多段ASCII表格式写到标准输出（或二进制格式，见 <a class="reference internal" href="../../option/binary/"><span class="doc">-b 选项</span></a> ）。使用该选项，则只输出数据不绘图。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-N</span></code></dt><dd><p>反转晨昏线“内”和“外”概念颠倒。仅可与 <code class="docutils literal notranslate"><span class="pre">-Gc</span></code> 一起使用以剪裁出白日区，不可与 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 一同使用。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-T&lt;dcna&gt;[+d&lt;date&gt;][+z&lt;TZ&gt;]</span></code></dt><dd><p>绘制一个或多个不同定义的晨昏线。若需要导出晨昏线数据，见 <code class="docutils literal notranslate"><span class="pre">-M</span></code> 选项。</p>
 <p>通过添加 <code class="docutils literal notranslate"><span class="pre">dcna</span></code> 来绘制一个或多个不同定义的晨昏线。其中，</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">d</span></code> 指晨昏线</li>
-<li><code class="docutils literal notranslate"><span class="pre">c</span></code> 指民用曙暮光</li>
-<li><code class="docutils literal notranslate"><span class="pre">n</span></code> 指航海曙暮光</li>
-<li><code class="docutils literal notranslate"><span class="pre">a</span></code> 指天文曙暮光</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">d</span></code> 指晨昏线</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code> 指民用曙暮光</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code> 指航海曙暮光</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> 指天文曙暮光</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">+d&lt;date&gt;</span></code> 为ISO格式的日期时间（例如 <code class="docutils literal notranslate"><span class="pre">+d2000-04-25T12:15:00</span></code> ），以得到该时刻晨昏交替的位置。如果有需要，也可以通过 <code class="docutils literal notranslate"><span class="pre">+z&lt;TZ&gt;</span></code> 加上时区。</p>
 <p>不同曙暮光区的定义如下图所示：</p>
 <div class="figure align-center" id="id4">
 <a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Twilight_subcategories.svg/640px-Twilight_subcategories.svg.png"><img alt="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Twilight_subcategories.svg/640px-Twilight_subcategories.svg.png" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Twilight_subcategories.svg/640px-Twilight_subcategories.svg.png" style="width: 80%;" /></a>
-<p class="caption"><span class="caption-text">曙暮光区的多种定义（图片来自于 <a class="reference external" href="https://en.wikipedia.org/wiki/Twilight">https://en.wikipedia.org/wiki/Twilight</a>）</span></p>
+<p class="caption"><span class="caption-text">曙暮光区的多种定义（图片来自于 <a class="reference external" href="https://en.wikipedia.org/wiki/Twilight">https://en.wikipedia.org/wiki/Twilight</a>）</span><a class="headerlink" href="#id4" title="永久链接至图片">¶</a></p>
 </div>
 <ul class="simple">
-<li>民用曙暮光分为晨间曙光区和晚间暮光区：<ul>
-<li>晨间曙光区是指太阳的几何中心位于地平线以下6˚至地平线以下0˚50’（或日出，即太阳上边缘接触地平线）这段时间</li>
-<li>晚间曙光区是指太阳的几何中心位于地平线以下 0˚50’（或日落，即太阳下边缘接触地平线）至地平线以下6˚ 这段时间</li>
+<li><p>民用曙暮光分为晨间曙光区和晚间暮光区：</p>
+<ul>
+<li><p>晨间曙光区是指太阳的几何中心位于地平线以下6˚至地平线以下0˚50’（或日出，即太阳上边缘接触地平线）这段时间</p></li>
+<li><p>晚间曙光区是指太阳的几何中心位于地平线以下 0˚50’（或日落，即太阳下边缘接触地平线）至地平线以下6˚ 这段时间</p></li>
 </ul>
 </li>
-<li>航海曙暮光指太阳中心位于地平线以下 0˚50’ 至 12˚ 这段时间</li>
-<li>天文曙暮光指太阳中心位于地平线以下 0˚50’ 至 18˚ 这段时间</li>
+<li><p>航海曙暮光指太阳中心位于地平线以下 0˚50’ 至 12˚ 这段时间</p></li>
+<li><p>天文曙暮光指太阳中心位于地平线以下 0˚50’ 至 18˚ 这段时间</p></li>
 </ul>
 <p>下面的命令绘制了晨昏线以及三条曙暮光线:</p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt coast -Rd -W0.1p -JQ0/14c -Ba -BWSen -Dl -A1000 -P -K &gt; terminator.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt coast -Rd -W0.1p -JQ0/14c -Ba -BWSen -Dl -A1000 -P -K &gt; terminator.ps
 $ gmt pssolar -R -J -W1p -Tdcna -O &gt;&gt; terminator.ps
 </pre></div>
 </div>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-W[&lt;pen&gt;]</span></code></dt>
-<dd>设置晨昏线的画笔属性，见 <a class="reference internal" href="../../basis/pen/"><span class="doc">画笔</span></a> 。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-W[&lt;pen&gt;]</span></code></dt><dd><p>设置晨昏线的画笔属性，见 <a class="reference internal" href="../../basis/pen/"><span class="doc">画笔</span></a> 。</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="id3">
@@ -438,7 +434,7 @@ $ gmt pssolar -R -J -W1p -Tdcna -O &gt;&gt; terminator.ps
 <div class="section" id="bugs">
 <h2>12.112.4 BUGS<a class="headerlink" href="#bugs" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">-T+d&lt;date&gt;</span></code> 在取某些值时会段错误退出（v5.3.1）</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-T+d&lt;date&gt;</span></code> 在取某些值时会段错误退出（v5.3.1）</p></li>
 </ol>
 </div>
 </div>

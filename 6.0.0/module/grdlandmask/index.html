@@ -343,69 +343,64 @@
             
   <div class="section" id="grdlandmask">
 <span id="index-0"></span><h1>12.48 grdlandmask<a class="headerlink" href="#grdlandmask" title="永久链接至标题">¶</a></h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/grdlandmask.html" title="(在 GMT v6.0.0)"><span>grdlandmask</span></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">根据海岸线数据创建陆地-海洋的mask网格文件</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/grdlandmask.html" title="(在 GMT v6.0.0)"><span>grdlandmask</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>根据海岸线数据创建陆地-海洋的mask网格文件</p>
+</dd>
+</dl>
 <p>该命令会根据海岸线数据，确定指定网格内的每个节点是在陆地上还是在水中，并给节点赋予不同的值。</p>
 <div class="section" id="id1">
 <h2>12.48.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;mask_grd_file&gt;</span></code></dt>
-<dd>生成的mask网格文件的文件名</dd>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;mask_grd_file&gt;</span></code></dt><dd><p>生成的mask网格文件的文件名</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-I&lt;xinc&gt;[&lt;unit&gt;][+e|+n]/&lt;yinc&gt;[&lt;unit&gt;][+e|+n]</span></code></dt>
-<dd><p class="first">指定X和Y方向的网格间隔</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">-I&lt;xinc&gt;[&lt;unit&gt;][+e|+n]/&lt;yinc&gt;[&lt;unit&gt;][+e|+n]</span></code></dt><dd><p>指定X和Y方向的网格间隔</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;</span></code> X方向的网格间隔</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;yinc&gt;</span></code> Y方向的网格间隔</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;unit&gt;</span></code> 网格间隔的单位。对于地理坐标系而言默认值为度，可以设置单位为
-<code class="docutils literal notranslate"><span class="pre">m|s|e|f|k|M|n|u</span></code> 。</li>
-<li><code class="docutils literal notranslate"><span class="pre">+e</span></code> 微调X和Y方向范围的最大值，使得其是网格间隔的整数倍（默认会微调网格间隔以适应给定的数据范围）</li>
-<li><code class="docutils literal notranslate"><span class="pre">+n</span></code> 表明 <code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;yinc&gt;</span></code> 不是网格间隔，而是X和Y方向的节点数。此时会根据节点数、网格区域范围以及网格配准方式重新计算网格间隔。</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;</span></code> X方向的网格间隔</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;yinc&gt;</span></code> Y方向的网格间隔</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;unit&gt;</span></code> 网格间隔的单位。对于地理坐标系而言默认值为度，可以设置单位为
+<code class="docutils literal notranslate"><span class="pre">m|s|e|f|k|M|n|u</span></code> 。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+e</span></code> 微调X和Y方向范围的最大值，使得其是网格间隔的整数倍（默认会微调网格间隔以适应给定的数据范围）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+n</span></code> 表明 <code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;yinc&gt;</span></code> 不是网格间隔，而是X和Y方向的节点数。此时会根据节点数、网格区域范围以及网格配准方式重新计算网格间隔。</p></li>
 </ul>
 <p>注意：</p>
-<ol class="last arabic simple">
-<li>若 <code class="docutils literal notranslate"><span class="pre">&lt;yinc&gt;</span></code> 设置为0，则表示其与 <code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;</span></code> 相同</li>
-<li>若使用 <code class="docutils literal notranslate"><span class="pre">-R&lt;grdfile&gt;</span></code> 选项，则网格网格已经根据网格文件自动初始化，此时依然可以使用 <code class="docutils literal notranslate"><span class="pre">-I</span></code> 覆盖网格文件中的间隔值</li>
+<ol class="arabic simple">
+<li><p>若 <code class="docutils literal notranslate"><span class="pre">&lt;yinc&gt;</span></code> 设置为0，则表示其与 <code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;</span></code> 相同</p></li>
+<li><p>若使用 <code class="docutils literal notranslate"><span class="pre">-R&lt;grdfile&gt;</span></code> 选项，则网格网格已经根据网格文件自动初始化，此时依然可以使用 <code class="docutils literal notranslate"><span class="pre">-I</span></code> 覆盖网格文件中的间隔值</p></li>
 </ol>
 </dd>
 </dl>
 </div>
 <div class="section" id="id2">
 <h2>12.48.2 可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-A&lt;min_area&gt;[/&lt;min_level&gt;/&lt;max_level&gt;][+ag|i|s|S][+r|l][+p&lt;percent&gt;]</span></code></dt>
-<dd><p class="first">不绘制面积过小的区域（湖泊或岛屿），或不绘制某个级别的湖泊边界。</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">-A&lt;min_area&gt;[/&lt;min_level&gt;/&lt;max_level&gt;][+ag|i|s|S][+r|l][+p&lt;percent&gt;]</span></code></dt><dd><p>不绘制面积过小的区域（湖泊或岛屿），或不绘制某个级别的湖泊边界。</p>
 <p>在绘制湖泊时，若不管湖泊的面积大小而把所有湖泊的边界都画上去，可能导致图看上去比较乱，该选项用于对湖泊进行筛选。面积小于 <code class="docutils literal notranslate"><span class="pre">&lt;min_area&gt;</span></code> 平方千米或者湖泊级别不在 <code class="docutils literal notranslate"><span class="pre">[min_level,max_level]</span></code> 范围的边界都不会被绘制。默认值为 <code class="docutils literal notranslate"><span class="pre">0/0/4</span></code> ，即绘制所有湖泊边界，即绘制0到4级所有级别的面积大于0的湖泊。</p>
 <p>对于level=2，即湖岸线，包括常规的湖以及很宽的河流。加上 <code class="docutils literal notranslate"><span class="pre">+r</span></code> 则只绘制河流，加上 <code class="docutils literal notranslate"><span class="pre">+l</span></code> 则只绘制常规湖。</p>
 <p>对于南极洲而言，因为有冰层的存在，所以海岸线有多种处理方式：</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">+ai</span></code> 用ice shell boundary作为南极洲的海岸线，默认值</li>
-<li><code class="docutils literal notranslate"><span class="pre">+ag</span></code> 以ice grounding line作为海岸线</li>
-<li><code class="docutils literal notranslate"><span class="pre">+as</span></code> 忽略南纬60度以南的海岸线，用户可以使用 <code class="docutils literal notranslate"><span class="pre">psxy</span></code> 绘制自己的南极洲海岸线</li>
-<li><code class="docutils literal notranslate"><span class="pre">+aS</span></code> 忽略南纬60度以北的海岸线</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+ai</span></code> 用ice shell boundary作为南极洲的海岸线，默认值</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+ag</span></code> 以ice grounding line作为海岸线</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+as</span></code> 忽略南纬60度以南的海岸线，用户可以使用 <code class="docutils literal notranslate"><span class="pre">psxy</span></code> 绘制自己的南极洲海岸线</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+aS</span></code> 忽略南纬60度以北的海岸线</p></li>
 </ol>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">+p&lt;precent&gt;</span></code> ：一个多边形，降低精度后，边数减少，面积变化，当面积变化过大时再绘制这个多边形就不合适了，该子选项用于去除那些面积与最高精度面积之比小于 <code class="docutils literal notranslate"><span class="pre">&lt;percent&gt;</span></code> 的多边形。</p>
+<p><code class="docutils literal notranslate"><span class="pre">+p&lt;precent&gt;</span></code> ：一个多边形，降低精度后，边数减少，面积变化，当面积变化过大时再绘制这个多边形就不合适了，该子选项用于去除那些面积与最高精度面积之比小于 <code class="docutils literal notranslate"><span class="pre">&lt;percent&gt;</span></code> 的多边形。</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-D&lt;resolution&gt;[+]</span></code></dt>
-<dd>选项海岸线数据的精度，见 <a class="reference internal" href="../coast/"><span class="doc">coast</span></a> 中的介绍。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-E</span></code></dt>
-<dd>默认情况下会将恰好位于多边形边界上的节点当作是在多边形的内部，使用该选项则会将其认为是在多边形的外部。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-N&lt;maskvale&gt;[o]</span></code></dt>
-<dd><p class="first">设置网格节点的值，可以是数字，也可以是NaN。该选项可以取两种格式：</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-D&lt;resolution&gt;[+]</span></code></dt><dd><p>选项海岸线数据的精度，见 <a class="reference internal" href="../coast/"><span class="doc">coast</span></a> 中的介绍。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-E</span></code></dt><dd><p>默认情况下会将恰好位于多边形边界上的节点当作是在多边形的内部，使用该选项则会将其认为是在多边形的外部。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-N&lt;maskvale&gt;[o]</span></code></dt><dd><p>设置网格节点的值，可以是数字，也可以是NaN。该选项可以取两种格式：</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">-N&lt;wet&gt;/&lt;dry&gt;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">-N&lt;ocean&gt;/&lt;land&gt;/&lt;lake&gt;/&lt;island&gt;/&lt;pond&gt;</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-N&lt;wet&gt;/&lt;dry&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-N&lt;ocean&gt;/&lt;land&gt;/&lt;lake&gt;/&lt;island&gt;/&lt;pond&gt;</span></code></p></li>
 </ol>
-<p class="last">默认值为 <code class="docutils literal notranslate"><span class="pre">0/1/0/1/0</span></code> （即 <code class="docutils literal notranslate"><span class="pre">0/1</span></code> ），即将水域内的网格设置为0，将陆地内的网格设置为1。</p>
+<p>默认值为 <code class="docutils literal notranslate"><span class="pre">0/1/0/1/0</span></code> （即 <code class="docutils literal notranslate"><span class="pre">0/1</span></code> ），即将水域内的网格设置为0，将陆地内的网格设置为1。</p>
 </dd>
 </dl>
 </div>

@@ -274,10 +274,10 @@ gmt end
 <p>针对这种需求，GMT的 <a class="reference internal" href="../../module/subplot/"><span class="doc">subplot</span></a> 模块提供了子图模式。子图模式的基本思想是将整体绘图区域分割成M行N列的网格，每个网格区域内均可以绘制一张子图。子图模式主要适用于子图具有相似的底图的情况。若子图的底图差异太大，或者多个子图的布局不规则，则不建议使用子图模式，而是直接使用 <a class="reference internal" href="../../option/XY/"><span class="doc">-X 和 -Y 选项</span></a>人工设定每个子图的绘图原点。</p>
 <p>子图模式的特色在于：</p>
 <ul class="simple">
-<li>自动控制每个子图的位置而无需用户自己移动坐标原点；</li>
-<li>自动为每个子图编号；</li>
-<li>每张子图可以有各自的子图标题，整张图也可以有自己的标题；</li>
-<li>多张子图可以共享X轴或Y轴</li>
+<li><p>自动控制每个子图的位置而无需用户自己移动坐标原点；</p></li>
+<li><p>自动为每个子图编号；</p></li>
+<li><p>每张子图可以有各自的子图标题，整张图也可以有自己的标题；</p></li>
+<li><p>多张子图可以共享X轴或Y轴</p></li>
 </ul>
 <p>子图模式的选项比较多，此处仅举一个示例，详细用法见 <a class="reference internal" href="../../module/subplot/"><span class="doc">subplot</span></a> 的说明文档。本示例中整张图片包含了2行3列共计6个子图，且每列的两张子图共享X轴，每列的子图共享Y轴。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin subplot-example png,pdf

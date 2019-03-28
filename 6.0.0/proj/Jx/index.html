@@ -233,9 +233,9 @@
 <h1>9.1 -Jx：笛卡尔变换<a class="headerlink" href="#jx" title="永久链接至标题">¶</a></h1>
 <p>GMT中笛卡尔坐标变换分为三类：</p>
 <ul class="simple">
-<li>线性坐标</li>
-<li>log<span class="math notranslate nohighlight">\(_{10}\)</span> 坐标</li>
-<li>指数坐标</li>
+<li><p>线性坐标</p></li>
+<li><p>log<span class="math notranslate nohighlight">\(_{10}\)</span> 坐标</p></li>
+<li><p>指数坐标</p></li>
 </ul>
 <p>在开始之前，先用 <a class="reference internal" href="../../module/math/"><span class="doc">gmtmath</span></a> 生成两个数据以供接下来示例使用:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -T0/100/1  T <span class="nv">SQRT</span> <span class="o">=</span> sqrt.txt
@@ -246,16 +246,16 @@ gmt math -T0/100/10 T <span class="nv">SQRT</span> <span class="o">=</span> sqrt
 <h2>9.1.1 笛卡尔线性坐标<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>笛卡尔线性坐标可以通过四种方式指定：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">-Jx&lt;scale&gt;</span></code> X轴和Y轴拥有相同的比例尺 <code class="docutils literal notranslate"><span class="pre">&lt;scale&gt;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">-JX&lt;width&gt;</span></code> X轴和Y轴拥有相同的长度 <code class="docutils literal notranslate"><span class="pre">&lt;width&gt;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">-Jx&lt;xscale&gt;/&lt;yscale&gt;</span></code> 分别为X轴和Y轴指定不同的比例尺</li>
-<li><code class="docutils literal notranslate"><span class="pre">-JX&lt;width&gt;/&lt;height&gt;</span></code> 分别为X轴和Y轴指定不同的长度</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Jx&lt;scale&gt;</span></code> X轴和Y轴拥有相同的比例尺 <code class="docutils literal notranslate"><span class="pre">&lt;scale&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-JX&lt;width&gt;</span></code> X轴和Y轴拥有相同的长度 <code class="docutils literal notranslate"><span class="pre">&lt;width&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Jx&lt;xscale&gt;/&lt;yscale&gt;</span></code> 分别为X轴和Y轴指定不同的比例尺</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-JX&lt;width&gt;/&lt;height&gt;</span></code> 分别为X轴和Y轴指定不同的长度</p></li>
 </ul>
 <p>笛卡尔线性坐标的使用场景可以分为三类：</p>
 <ol class="arabic simple">
-<li>常规的浮点数坐标</li>
-<li>地理坐标</li>
-<li>日期时间坐标</li>
+<li><p>常规的浮点数坐标</p></li>
+<li><p>地理坐标</p></li>
+<li><p>日期时间坐标</p></li>
 </ol>
 <div class="section" id="id2">
 <h3>常规浮点数坐标<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
@@ -270,21 +270,21 @@ gmt end
 </div>
 <div class="figure align-center" id="id7">
 <img alt="../../_images/Jx-gmtplot-0.png" src="../../_images/Jx-gmtplot-0.png" />
-<p class="caption"><span class="caption-text">笛卡尔坐标的线性变换</span></p>
+<p class="caption"><span class="caption-text">笛卡尔坐标的线性变换</span><a class="headerlink" href="#id7" title="永久链接至图片">¶</a></p>
 </div>
 <p>说明：</p>
 <ul class="simple">
-<li>正常情况下，X轴向右递增，Y轴向上递增。有些时候可能需要X轴向左递增或者Y轴向下递增（比如Y轴是深度时），只要将轴的比例尺或者轴长度设置为负值即可。</li>
-<li>若指定X轴的长度，并设置Y轴的长度为0，则会根据X轴的长度和范围计算出X轴的比例尺，并对Y轴使用相同的比例尺，进而计算出Y轴的长度，即 <code class="docutils literal notranslate"><span class="pre">-JX10c/0c</span></code>，<code class="docutils literal notranslate"><span class="pre">-JX0c/10c</span></code> 同理。</li>
+<li><p>正常情况下，X轴向右递增，Y轴向上递增。有些时候可能需要X轴向左递增或者Y轴向下递增（比如Y轴是深度时），只要将轴的比例尺或者轴长度设置为负值即可。</p></li>
+<li><p>若指定X轴的长度，并设置Y轴的长度为0，则会根据X轴的长度和范围计算出X轴的比例尺，并对Y轴使用相同的比例尺，进而计算出Y轴的长度，即 <code class="docutils literal notranslate"><span class="pre">-JX10c/0c</span></code>，<code class="docutils literal notranslate"><span class="pre">-JX0c/10c</span></code> 同理。</p></li>
 </ul>
 </div>
 <div class="section" id="id3">
 <h3>地理坐标<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p>理论上地理坐标应该用地理投影画，而不应该用线性投影，但是有时候可能的确需要使用线性投影。用线性投影绘制地理坐标时会碰到一个问题，即经度有一个360度的周期性。因而在使用线性投影时需要通知GMT数据实际上是地理坐标。有三种办法：</p>
 <ol class="arabic simple">
-<li>在 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 后、数据范围前加上 <code class="docutils literal notranslate"><span class="pre">g</span></code> 或 <code class="docutils literal notranslate"><span class="pre">d</span></code>，比如 <code class="docutils literal notranslate"><span class="pre">-Rg-55/305/-90/90</span></code></li>
-<li>在 <code class="docutils literal notranslate"><span class="pre">-Jx</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-JX</span></code> 选项的最后加上 <code class="docutils literal notranslate"><span class="pre">g</span></code> 或 <code class="docutils literal notranslate"><span class="pre">d</span></code>，比如 <code class="docutils literal notranslate"><span class="pre">-JX10c/6cd</span></code></li>
-<li>使用 <code class="docutils literal notranslate"><span class="pre">-fg</span></code> 选项</li>
+<li><p>在 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 后、数据范围前加上 <code class="docutils literal notranslate"><span class="pre">g</span></code> 或 <code class="docutils literal notranslate"><span class="pre">d</span></code>，比如 <code class="docutils literal notranslate"><span class="pre">-Rg-55/305/-90/90</span></code></p></li>
+<li><p>在 <code class="docutils literal notranslate"><span class="pre">-Jx</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-JX</span></code> 选项的最后加上 <code class="docutils literal notranslate"><span class="pre">g</span></code> 或 <code class="docutils literal notranslate"><span class="pre">d</span></code>，比如 <code class="docutils literal notranslate"><span class="pre">-JX10c/6cd</span></code></p></li>
+<li><p>使用 <code class="docutils literal notranslate"><span class="pre">-fg</span></code> 选项</p></li>
 </ol>
 <p>下面的例子用线性投影绘制了一个中心位于125ºE的世界地图。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_linear_d pdf,png
@@ -295,7 +295,7 @@ gmt end
 </div>
 <div class="figure align-center" id="id8">
 <img alt="../../_images/Jx-gmtplot-1.png" src="../../_images/Jx-gmtplot-1.png" />
-<p class="caption"><span class="caption-text">地理坐标的线性变换</span></p>
+<p class="caption"><span class="caption-text">地理坐标的线性变换</span><a class="headerlink" href="#id8" title="永久链接至图片">¶</a></p>
 </div>
 </div>
 <div class="section" id="id4">
@@ -313,7 +313,7 @@ gmt end
 </div>
 <div class="figure align-center" id="id9">
 <img alt="../../_images/Jx-gmtplot-2.png" src="../../_images/Jx-gmtplot-2.png" />
-<p class="caption"><span class="caption-text">日期时间坐标的线性变换</span></p>
+<p class="caption"><span class="caption-text">日期时间坐标的线性变换</span><a class="headerlink" href="#id9" title="永久链接至图片">¶</a></p>
 </div>
 </div>
 </div>
@@ -330,7 +330,7 @@ gmt end
 </div>
 <div class="figure align-center" id="id10">
 <img alt="../../_images/Jx-gmtplot-3.png" src="../../_images/Jx-gmtplot-3.png" />
-<p class="caption"><span class="caption-text">对数投影</span></p>
+<p class="caption"><span class="caption-text">对数投影</span><a class="headerlink" href="#id10" title="永久链接至图片">¶</a></p>
 </div>
 <p>注意：若想要X轴和Y轴都使用对数投影，且X轴和Y轴比例尺不同，则必须在指定每个轴的比例尺时分别加上 <code class="docutils literal notranslate"><span class="pre">l</span></code>，例如 <code class="docutils literal notranslate"><span class="pre">-JX10cl/6cl</span></code>。</p>
 </div>
@@ -349,7 +349,7 @@ gmt end
 </div>
 <div class="figure align-center" id="id11">
 <img alt="../../_images/Jx-gmtplot-4.png" src="../../_images/Jx-gmtplot-4.png" />
-<p class="caption"><span class="caption-text">指数变换</span></p>
+<p class="caption"><span class="caption-text">指数变换</span><a class="headerlink" href="#id11" title="永久链接至图片">¶</a></p>
 </div>
 </div>
 </div>

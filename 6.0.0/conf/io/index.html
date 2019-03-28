@@ -213,69 +213,61 @@
 <h1>10.8 IO参数<a class="headerlink" href="#io" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id1">
 <h2>10.8.1 表数据相关参数<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl class="docutils" id="io-header">
-<dt>IO_HEADER</dt>
-<dd><p class="first">指定输入/输出的表文件中是否有文件头记录 [false]</p>
-<p class="last">可以取 <code class="docutils literal notranslate"><span class="pre">true|false</span></code>。若值为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则等效于使用 <a class="reference internal" href="../../option/h/"><span class="doc">-h 选项</span></a></p>
+<dl id="io-header">
+<dt>IO_HEADER</dt><dd><p>指定输入/输出的表文件中是否有文件头记录 [false]</p>
+<p>可以取 <code class="docutils literal notranslate"><span class="pre">true|false</span></code>。若值为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则等效于使用 <a class="reference internal" href="../../option/h/"><span class="doc">-h 选项</span></a></p>
 </dd>
 </dl>
-<dl class="docutils" id="io-header-marker">
-<dt>IO_HEADER_MARKER</dt>
-<dd><p class="first">输入ASCII表文件中文件头记录的标识符 [<code class="docutils literal notranslate"><span class="pre">#</span></code>]</p>
-<p class="last">若希望输入和输出数据中使用不同的文件头标识符，则可以使用逗号分隔输入和输出数据的文件头标识符，比如 <code class="docutils literal notranslate"><span class="pre">#,:</span></code>。</p>
+<dl id="io-header-marker">
+<dt>IO_HEADER_MARKER</dt><dd><p>输入ASCII表文件中文件头记录的标识符 [<code class="docutils literal notranslate"><span class="pre">#</span></code>]</p>
+<p>若希望输入和输出数据中使用不同的文件头标识符，则可以使用逗号分隔输入和输出数据的文件头标识符，比如 <code class="docutils literal notranslate"><span class="pre">#,:</span></code>。</p>
 </dd>
 </dl>
-<dl class="docutils" id="io-n-header-recs">
-<dt>IO_N_HEADER_RECS</dt>
-<dd><p class="first">在使用 <code class="docutils literal notranslate"><span class="pre">-h</span></code> 选项时，要跳过的文件头记录的数目 [0]</p>
-<p class="last">见 <a class="reference internal" href="../../option/h/"><span class="doc">-h 选项</span></a> 和 <a class="reference internal" href="../../table/ascii/"><span class="doc">ASCII表</span></a>。</p>
+<dl id="io-n-header-recs">
+<dt>IO_N_HEADER_RECS</dt><dd><p>在使用 <code class="docutils literal notranslate"><span class="pre">-h</span></code> 选项时，要跳过的文件头记录的数目 [0]</p>
+<p>见 <a class="reference internal" href="../../option/h/"><span class="doc">-h 选项</span></a> 和 <a class="reference internal" href="../../table/ascii/"><span class="doc">ASCII表</span></a>。</p>
 </dd>
 </dl>
-<dl class="docutils" id="io-first-header">
-<dt>IO_FIRST_HEADER</dt>
-<dd>若整个数据中只有一个数据段时，是否要写这个数据段的文件头记录。默认情况下，只有当这个单独段的头段记录中有额外的内容时才会写该头记录。可选的值包括 <code class="docutils literal notranslate"><span class="pre">always</span></code>、<code class="docutils literal notranslate"><span class="pre">never</span></code> 和 <code class="docutils literal notranslate"><span class="pre">maybe</span></code> [<code class="docutils literal notranslate"><span class="pre">maybe</span></code>]</dd>
-</dl>
-<dl class="docutils" id="io-col-separator">
-<dt>IO_COL_SEPARATOR</dt>
-<dd><p class="first">GMT输出ASCII表数据时列与列之间的分隔符 [tab]</p>
-<p class="last">可以取 <code class="docutils literal notranslate"><span class="pre">tab</span></code>、<code class="docutils literal notranslate"><span class="pre">space</span></code>、<code class="docutils literal notranslate"><span class="pre">comma</span></code> 和 <code class="docutils literal notranslate"><span class="pre">none</span></code></p>
+<dl class="simple" id="io-first-header">
+<dt>IO_FIRST_HEADER</dt><dd><p>若整个数据中只有一个数据段时，是否要写这个数据段的文件头记录。默认情况下，只有当这个单独段的头段记录中有额外的内容时才会写该头记录。可选的值包括 <code class="docutils literal notranslate"><span class="pre">always</span></code>、<code class="docutils literal notranslate"><span class="pre">never</span></code> 和 <code class="docutils literal notranslate"><span class="pre">maybe</span></code> [<code class="docutils literal notranslate"><span class="pre">maybe</span></code>]</p>
 </dd>
 </dl>
-<dl class="docutils" id="io-segment-marker">
-<dt>IO_SEGMENT_MARKER</dt>
-<dd><p class="first">多段数据中每段数据开始的标识符 [<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>]</p>
+<dl id="io-col-separator">
+<dt>IO_COL_SEPARATOR</dt><dd><p>GMT输出ASCII表数据时列与列之间的分隔符 [tab]</p>
+<p>可以取 <code class="docutils literal notranslate"><span class="pre">tab</span></code>、<code class="docutils literal notranslate"><span class="pre">space</span></code>、<code class="docutils literal notranslate"><span class="pre">comma</span></code> 和 <code class="docutils literal notranslate"><span class="pre">none</span></code></p>
+</dd>
+</dl>
+<dl id="io-segment-marker">
+<dt>IO_SEGMENT_MARKER</dt><dd><p>多段数据中每段数据开始的标识符 [<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>]</p>
 <p>见 <a class="reference internal" href="../../table/ascii/"><span class="doc">ASCII表</span></a> 中的相关介绍。若希望输入和输出数据中使用不同的数据段标识符，则可以使用逗号分隔输入和输出数据的段标识符，比如 <code class="docutils literal notranslate"><span class="pre">&gt;,:</span></code>。</p>
 <p>有两个特殊的标识符：</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">B</span></code> 表示将空行作为数据段开始的标识符</li>
-<li><code class="docutils literal notranslate"><span class="pre">N</span></code> 表示将一个NaN记录作为数据段开始的标识符</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">B</span></code> 表示将空行作为数据段开始的标识符</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">N</span></code> 表示将一个NaN记录作为数据段开始的标识符</p></li>
 </ol>
-<p class="last">若想要将字符 <code class="docutils literal notranslate"><span class="pre">B</span></code> 或 <code class="docutils literal notranslate"><span class="pre">N</span></code> 作为段数据标识符，而不是使用上面提到的特殊含义，则必须使用 <code class="docutils literal notranslate"><span class="pre">\B</span></code> 或 <code class="docutils literal notranslate"><span class="pre">\N</span></code>。</p>
+<p>若想要将字符 <code class="docutils literal notranslate"><span class="pre">B</span></code> 或 <code class="docutils literal notranslate"><span class="pre">N</span></code> 作为段数据标识符，而不是使用上面提到的特殊含义，则必须使用 <code class="docutils literal notranslate"><span class="pre">\B</span></code> 或 <code class="docutils literal notranslate"><span class="pre">\N</span></code>。</p>
 </dd>
 </dl>
-<dl class="docutils" id="io-segment-binary">
-<dt>IO_SEGMENT_BINARY</dt>
-<dd><p class="first">二进制数据中，某个记录的所有值都是NaN时该如何解释 [2]</p>
-<p class="last">默认情况下，当二进制数据中某个记录的值为NaN的列数超过了 <code class="docutils literal notranslate"><span class="pre">IO_SEGMENT_BINARY</span></code>
+<dl id="io-segment-binary">
+<dt>IO_SEGMENT_BINARY</dt><dd><p>二进制数据中，某个记录的所有值都是NaN时该如何解释 [2]</p>
+<p>默认情况下，当二进制数据中某个记录的值为NaN的列数超过了 <code class="docutils literal notranslate"><span class="pre">IO_SEGMENT_BINARY</span></code>
 的值时，则将该记录解释为二进制数据中的数据段头记录。将该参数赋值为0或off可以关闭这一特性。</p>
 </dd>
 </dl>
 </div>
 <div class="section" id="id2">
 <h2>10.8.2 网格文件相关参数<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl class="docutils" id="io-nc4-chunk-size">
-<dt>IO_NC4_CHUNK_SIZE</dt>
-<dd>控制写netCDF文件时的分块大小 [auto]</dd>
-</dl>
-<dl class="docutils" id="io-nc4-deflation-level">
-<dt>IO_NC4_DEFLATION_LEVEL</dt>
-<dd><p class="first">输出netCDF4格式的数据时所使用的压缩等级 [3]</p>
-<p class="last">可以取0到9的整数，0表示不压缩，9表示最大压缩。低压缩率可以提高性能并减少文件尺寸，而高压缩率虽然可以进一步减小文件尺寸，但却需要更多的处理时间。</p>
+<dl class="simple" id="io-nc4-chunk-size">
+<dt>IO_NC4_CHUNK_SIZE</dt><dd><p>控制写netCDF文件时的分块大小 [auto]</p>
 </dd>
 </dl>
-<dl class="docutils" id="io-gridfile-shorthand">
-<dt>IO_GRIDFILE_SHORTHAND</dt>
-<dd><p class="first">是否支持自动识别网格文件后缀的功能 [false]</p>
+<dl id="io-nc4-deflation-level">
+<dt>IO_NC4_DEFLATION_LEVEL</dt><dd><p>输出netCDF4格式的数据时所使用的压缩等级 [3]</p>
+<p>可以取0到9的整数，0表示不压缩，9表示最大压缩。低压缩率可以提高性能并减少文件尺寸，而高压缩率虽然可以进一步减小文件尺寸，但却需要更多的处理时间。</p>
+</dd>
+</dl>
+<dl id="io-gridfile-shorthand">
+<dt>IO_GRIDFILE_SHORTHAND</dt><dd><p>是否支持自动识别网格文件后缀的功能 [false]</p>
 <p>GMT中也可以将网格文件的后缀与网格文件格式关联起来这样GMT就可以直接根据文件后缀确定网格文件的格式了。</p>
 <p>这一特性通过一个叫 <code class="docutils literal notranslate"><span class="pre">gmt.io</span></code> 的文件来实现。GMT会依次在当前目录、家目录或
 <code class="docutils literal notranslate"><span class="pre">~/.gmt</span></code> 目录下寻找 <code class="docutils literal notranslate"><span class="pre">gmt.io</span></code>。</p>
@@ -295,39 +287,36 @@ faa        bs       <span class="m">0</span>.1    -    <span class="m">32767</sp
 ns         ns        a     a      -    <span class="m">16</span>-bit integer netCDF grid with auto-scale and auto-offset
 </pre></div>
 </div>
-<p class="last">要使用这一特性，需要将参数 <a class="reference internal" href="#io-gridfile-shorthand"><span class="std std-ref">IO_GRIDFILE_SHORTHAND</span></a>
+<p>要使用这一特性，需要将参数 <a class="reference internal" href="#io-gridfile-shorthand"><span class="std std-ref">IO_GRIDFILE_SHORTHAND</span></a>
 设置为 <code class="docutils literal notranslate"><span class="pre">true</span></code>。此时，文件名 <code class="docutils literal notranslate"><span class="pre">file.i2</span></code> 等效于 <code class="docutils literal notranslate"><span class="pre">file.i2=bs///32767</span></code>，
 <code class="docutils literal notranslate"><span class="pre">wet.mask</span></code> 等效于 <code class="docutils literal notranslate"><span class="pre">wet.mask=bm+n0</span></code>。</p>
 </dd>
 </dl>
-<dl class="docutils" id="io-gridfile-format">
-<dt>IO_GRIDFILE_FORMAT</dt>
-<dd><p class="first">GMT默认使用的网格文件格式 [nf]</p>
-<p class="last">见 <a class="reference internal" href="../../grid/format/"><span class="doc">网格文件格式</span></a> 一节。</p>
+<dl id="io-gridfile-format">
+<dt>IO_GRIDFILE_FORMAT</dt><dd><p>GMT默认使用的网格文件格式 [nf]</p>
+<p>见 <a class="reference internal" href="../../grid/format/"><span class="doc">网格文件格式</span></a> 一节。</p>
 </dd>
 </dl>
 </div>
 <div class="section" id="id3">
 <h2>10.8.3 其他IO参数<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<dl class="docutils" id="io-lonlat-toggle">
-<dt>IO_LONLAT_TOGGLE</dt>
-<dd><p class="first">数据的前两列是纬度、经度而不是经度、纬度 [false]</p>
+<dl id="io-lonlat-toggle">
+<dt>IO_LONLAT_TOGGLE</dt><dd><p>数据的前两列是纬度、经度而不是经度、纬度 [false]</p>
 <p>该参数的作用与 <a class="reference internal" href="../../option/colon/"><span class="doc">-: 选项</span></a> 功能相同。其可以取如下值：</p>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">false</span></code> 默认值，输入/输出数据均为 (x, y)</li>
-<li><code class="docutils literal notranslate"><span class="pre">true</span></code> 输入/输出数据均为 (y, x)</li>
-<li><code class="docutils literal notranslate"><span class="pre">IN</span></code> 仅输入数据为 (y, x)</li>
-<li><code class="docutils literal notranslate"><span class="pre">OUT</span></code> 仅输出数据为 (y, x)</li>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">false</span></code> 默认值，输入/输出数据均为 (x, y)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">true</span></code> 输入/输出数据均为 (y, x)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IN</span></code> 仅输入数据为 (y, x)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OUT</span></code> 仅输出数据为 (y, x)</p></li>
 </ol>
 </dd>
 </dl>
-<dl class="docutils" id="io-nan-records">
-<dt>IO_NAN_RECORDS</dt>
-<dd><p class="first">控制当读入的记录中的X、Y或Z包含NaN记录时的处理方式 [pass]</p>
+<dl id="io-nan-records">
+<dt>IO_NAN_RECORDS</dt><dd><p>控制当读入的记录中的X、Y或Z包含NaN记录时的处理方式 [pass]</p>
 <p>可以取如下值：</p>
-<ul class="last simple">
-<li><code class="docutils literal notranslate"><span class="pre">skip</span></code>：直接跳过NaN记录，并报告NaN记录的数目</li>
-<li><code class="docutils literal notranslate"><span class="pre">pass</span></code>：将所有记录传递给程序</li>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">skip</span></code>：直接跳过NaN记录，并报告NaN记录的数目</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pass</span></code>：将所有记录传递给程序</p></li>
 </ul>
 </dd>
 </dl>

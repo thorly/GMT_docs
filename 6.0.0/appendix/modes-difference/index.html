@@ -234,12 +234,12 @@ rm gmt.* Tibet.grd int.grad
 </div>
 <p>从上面的示例脚本中以及实际使用经验中会发现GMT经典模式存在的一些明显的缺点或问题：</p>
 <ol class="arabic simple">
-<li>大部分命令需要使用 <code class="docutils literal notranslate"><span class="pre">-K</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-O</span></code> 选项，而且极其容易出错</li>
-<li>需要使用 <code class="docutils literal notranslate"><span class="pre">-P</span></code> 选项决定画布的摆放方式</li>
-<li>每个绘图命令都需要使用重定向符号 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 或 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code></li>
-<li>每个绘图命令中都需要给定PS文件的名字</li>
-<li>大部分命令都需要重复使用 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项，尽管具体数值可以省略</li>
-<li>需要调用单独的命令将生成的PS文件转换为PDF、JPG、PNG等格式</li>
+<li><p>大部分命令需要使用 <code class="docutils literal notranslate"><span class="pre">-K</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-O</span></code> 选项，而且极其容易出错</p></li>
+<li><p>需要使用 <code class="docutils literal notranslate"><span class="pre">-P</span></code> 选项决定画布的摆放方式</p></li>
+<li><p>每个绘图命令都需要使用重定向符号 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 或 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code></p></li>
+<li><p>每个绘图命令中都需要给定PS文件的名字</p></li>
+<li><p>大部分命令都需要重复使用 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项，尽管具体数值可以省略</p></li>
+<li><p>需要调用单独的命令将生成的PS文件转换为PDF、JPG、PNG等格式</p></li>
 </ol>
 </div>
 <div class="section" id="id2">
@@ -264,29 +264,29 @@ gmt end
 </div>
 <p>现代模式下的GMT绘图命令更加简洁，具有如下优点：</p>
 <ol class="arabic simple">
-<li>不再需要考虑 <code class="docutils literal notranslate"><span class="pre">-K</span></code>、<code class="docutils literal notranslate"><span class="pre">-O</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-P</span></code> 选项</li>
-<li>不再需要使用 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 或 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> 重定向，也无需为每个命令都指定PS文件名</li>
-<li>用户完全不需要意识到 PS 文件的存在</li>
-<li>不再需要为每个命令都是用 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 选项</li>
-<li>最终可生成PDF、PNG等多种格式的图片文件，无需再转换</li>
-<li>自动确定纸张大小并进行裁剪</li>
-<li>整个脚本在独立的临时文件夹下执行，因而可以同时执行多个脚本而不互相干扰</li>
-<li>不再需要手动清理 <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code> 和 <code class="docutils literal notranslate"><span class="pre">gmt.history</span></code> 等临时文件</li>
+<li><p>不再需要考虑 <code class="docutils literal notranslate"><span class="pre">-K</span></code>、<code class="docutils literal notranslate"><span class="pre">-O</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-P</span></code> 选项</p></li>
+<li><p>不再需要使用 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 或 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> 重定向，也无需为每个命令都指定PS文件名</p></li>
+<li><p>用户完全不需要意识到 PS 文件的存在</p></li>
+<li><p>不再需要为每个命令都是用 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 选项</p></li>
+<li><p>最终可生成PDF、PNG等多种格式的图片文件，无需再转换</p></li>
+<li><p>自动确定纸张大小并进行裁剪</p></li>
+<li><p>整个脚本在独立的临时文件夹下执行，因而可以同时执行多个脚本而不互相干扰</p></li>
+<li><p>不再需要手动清理 <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code> 和 <code class="docutils literal notranslate"><span class="pre">gmt.history</span></code> 等临时文件</p></li>
 </ol>
 <p>除此之外，现代模式还提供了更方便的子图模式和图中图模式：</p>
 <ul class="simple">
-<li><a class="reference internal" href="../../module/subplot/"><span class="doc">subplot</span></a>: 子图模式</li>
-<li><a class="reference internal" href="../../module/inset/"><span class="doc">inset</span></a>: 图中图模式</li>
+<li><p><a class="reference internal" href="../../module/subplot/"><span class="doc">subplot</span></a>: 子图模式</p></li>
+<li><p><a class="reference internal" href="../../module/inset/"><span class="doc">inset</span></a>: 图中图模式</p></li>
 </ul>
 </div>
 <div class="section" id="id3">
 <h2>15.4.3 从经典到现代<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>将一个经典模式的脚本改成现代模式下的脚本也很简单，基本遵循如下几点：</p>
 <ol class="arabic simple">
-<li>绘图脚本以 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">begin</span> <span class="pre">figname</span> <span class="pre">pdf</span></code> 开头，以 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">end</span></code> 结束</li>
-<li>去掉 <code class="docutils literal notranslate"><span class="pre">-K</span></code>、<code class="docutils literal notranslate"><span class="pre">-O</span></code>、<code class="docutils literal notranslate"><span class="pre">-P</span></code>、重定向符号以及PS文件名</li>
-<li>去掉多余的 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 选项</li>
-<li>某些模块重新命名了。经典模式下以 <code class="docutils literal notranslate"><span class="pre">ps</span></code> 开头的模块省略了 <code class="docutils literal notranslate"><span class="pre">ps</span></code>，比如 <code class="docutils literal notranslate"><span class="pre">pscoast</span> <span class="pre">=&gt;</span> <span class="pre">coast</span></code>、<code class="docutils literal notranslate"><span class="pre">psbasemap</span> <span class="pre">=&gt;</span> <span class="pre">basemap</span></code>。几个例外包括 <code class="docutils literal notranslate"><span class="pre">psxy</span> <span class="pre">=&gt;</span> <span class="pre">plot</span></code>，<code class="docutils literal notranslate"><span class="pre">psxyz</span> <span class="pre">=&gt;</span> <span class="pre">plot3d</span></code>，<code class="docutils literal notranslate"><span class="pre">psscale</span> <span class="pre">=&gt;</span> <span class="pre">colorbar</span></code>。</li>
+<li><p>绘图脚本以 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">begin</span> <span class="pre">figname</span> <span class="pre">pdf</span></code> 开头，以 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">end</span></code> 结束</p></li>
+<li><p>去掉 <code class="docutils literal notranslate"><span class="pre">-K</span></code>、<code class="docutils literal notranslate"><span class="pre">-O</span></code>、<code class="docutils literal notranslate"><span class="pre">-P</span></code>、重定向符号以及PS文件名</p></li>
+<li><p>去掉多余的 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 选项</p></li>
+<li><p>某些模块重新命名了。经典模式下以 <code class="docutils literal notranslate"><span class="pre">ps</span></code> 开头的模块省略了 <code class="docutils literal notranslate"><span class="pre">ps</span></code>，比如 <code class="docutils literal notranslate"><span class="pre">pscoast</span> <span class="pre">=&gt;</span> <span class="pre">coast</span></code>、<code class="docutils literal notranslate"><span class="pre">psbasemap</span> <span class="pre">=&gt;</span> <span class="pre">basemap</span></code>。几个例外包括 <code class="docutils literal notranslate"><span class="pre">psxy</span> <span class="pre">=&gt;</span> <span class="pre">plot</span></code>，<code class="docutils literal notranslate"><span class="pre">psxyz</span> <span class="pre">=&gt;</span> <span class="pre">plot3d</span></code>，<code class="docutils literal notranslate"><span class="pre">psscale</span> <span class="pre">=&gt;</span> <span class="pre">colorbar</span></code>。</p></li>
 </ol>
 </div>
 </div>

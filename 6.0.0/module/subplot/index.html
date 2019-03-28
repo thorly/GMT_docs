@@ -352,22 +352,20 @@
             
   <div class="section" id="subplot">
 <span id="index-0"></span><h1>12.120 subplot<a class="headerlink" href="#subplot" title="永久链接至标题">¶</a></h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/subplot.html" title="(在 GMT v6.0.0)"><span>subplot</span></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">设置子图模式</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/subplot.html" title="(在 GMT v6.0.0)"><span>subplot</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>设置子图模式</p>
+</dd>
+</dl>
 <p><code class="docutils literal notranslate"><span class="pre">subplot</span></code> 模块可以将当前纸张分隔成若干个网格区域，每个区域内都可以包含一张单独的子图。</p>
 <p><code class="docutils literal notranslate"><span class="pre">subplot</span></code> 模块提供了三条命令：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">begin</span></code> 用于设置子图的布局</li>
-<li><code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 用于指定当前绘图在哪一个子图中进行</li>
-<li><code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">end</span></code> 用于结束子图模式</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">begin</span></code> 用于设置子图的布局</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 用于指定当前绘图在哪一个子图中进行</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">end</span></code> 用于结束子图模式</p></li>
 </ul>
 <div class="section" id="subplot-begin">
 <h2>12.120.1 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">begin</span></code><a class="headerlink" href="#subplot-begin" title="永久链接至标题">¶</a></h2>
@@ -388,88 +386,79 @@
 </div>
 <div class="section" id="id2">
 <h3>必须选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;nrows&gt;x&lt;ncols&gt;</span></code></dt>
-<dd><p class="first">指定子图模式下的行数和列数。</p>
-<p class="last">每一行的子图数目相同，每一列的子图数目也相同。若需要实现每行有不同的子图数目，你需要多次叠加使用 <code class="docutils literal notranslate"><span class="pre">subplot</span></code> 模块。注意：你无需在每个子图内都绘图。</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;nrows&gt;x&lt;ncols&gt;</span></code></dt><dd><p>指定子图模式下的行数和列数。</p>
+<p>每一行的子图数目相同，每一列的子图数目也相同。若需要实现每行有不同的子图数目，你需要多次叠加使用 <code class="docutils literal notranslate"><span class="pre">subplot</span></code> 模块。注意：你无需在每个子图内都绘图。</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-F[f]&lt;width&gt;/&lt;height&gt;[+f&lt;wfracs&gt;/&lt;hfracs&gt;]</span></code></dt>
-<dd><p class="first">指定整张图片的长度 <code class="docutils literal notranslate"><span class="pre">&lt;width&gt;</span></code> 和宽度 <code class="docutils literal notranslate"><span class="pre">&lt;height&gt;</span></code>。</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-F[f]&lt;width&gt;/&lt;height&gt;[+f&lt;wfracs&gt;/&lt;hfracs&gt;]</span></code></dt><dd><p>指定整张图片的长度 <code class="docutils literal notranslate"><span class="pre">&lt;width&gt;</span></code> 和宽度 <code class="docutils literal notranslate"><span class="pre">&lt;height&gt;</span></code>。</p>
 <p>在这种情况下，会根据整张图片的长宽以及子图的数目自动计算每张子图的尺寸，在计算子图尺寸时会考虑每个子图的刻度线、标记、标签所占据的空间，以及不同子图之间的间隔。整张图的最外圈的刻度线、标记和标签不算在整张图片尺寸之内。</p>
 <p>若想要每行或每列的子图具有不同的尺寸，则可以使用 <code class="docutils literal notranslate"><span class="pre">+f</span></code> 子选项，后面紧跟着一系列逗号分隔的宽度比例和以逗号分隔的高度比例。单个数则表示所有行或列有相同的宽度或高度。</p>
-<p class="last">例如，<code class="docutils literal notranslate"><span class="pre">-Ff4i/4i+f3,1/1,2</span></code> 设置了整张图的宽度和高度均为4英寸，其中，第一列的宽度是第二列的三倍，而第二行的高度则是第一行的两倍。默认是所有行以及列的尺度是相同的。</p>
+<p>例如，<code class="docutils literal notranslate"><span class="pre">-Ff4i/4i+f3,1/1,2</span></code> 设置了整张图的宽度和高度均为4英寸，其中，第一列的宽度是第二列的三倍，而第二行的高度则是第一行的两倍。默认是所有行以及列的尺度是相同的。</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Fs&lt;widths&gt;/&lt;heights&gt;</span></code></dt>
-<dd><p class="first">通过指定每个子图的长宽间接指定图片尺寸。</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-Fs&lt;widths&gt;/&lt;heights&gt;</span></code></dt><dd><p>通过指定每个子图的长宽间接指定图片尺寸。</p>
 <p>在这种情况下，整张图片的尺寸由每个子图的尺寸以及刻度线、标记、标签所占据的空间和子图之间的间隙共同决定，但最外圈的刻度线、标记、标签所占据的空间不算在整张图的尺寸之内。</p>
 <p>为了给每行或每列指定不同的子图尺寸，可以加上一系列以逗号分隔的宽度，然后再加上一个斜杠，并加上一系列以逗号分隔的高度。单个数则表示所有行或列有相同的宽度或高度。</p>
 <p>例如，<code class="docutils literal notranslate"><span class="pre">-Fs2i,3i/3i</span></code> 设置了第一列为2英寸宽，第二列为3英寸宽，所有列的高度均为3英寸。需要注意，宽度值或高度值的数目必须是一个或者与行数/列数相匹配。</p>
-<p class="last">对于地理地图而言，每张子图的高度由地图区域以及投影方式决定。有两个选择：(1) 同时指定 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-J</span></code>，并利用其计算每张子图的高度，所有的子图必须共享相同的研究区域和投影方式，且你必须指定一个0高度；（2）不断尝试并修改子图的高度以得到最佳的绘图布局。</p>
+<p>对于地理地图而言，每张子图的高度由地图区域以及投影方式决定。有两个选择：(1) 同时指定 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-J</span></code>，并利用其计算每张子图的高度，所有的子图必须共享相同的研究区域和投影方式，且你必须指定一个0高度；（2）不断尝试并修改子图的高度以得到最佳的绘图布局。</p>
 </dd>
 </dl>
 </div>
 <div class="section" id="id3">
 <h3>可选选项<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-A[&lt;autolabel&gt;][+j|J&lt;refpoint&gt;][+c&lt;dx&gt;/&lt;dy&gt;][+g&lt;fill&gt;][+p&lt;pen&gt;][+o&lt;dx&gt;/&lt;dy&gt;][+r][+R][+v]</span></code></dt>
-<dd><p class="first">为每个子图自动指定编号。</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">-A[&lt;autolabel&gt;][+j|J&lt;refpoint&gt;][+c&lt;dx&gt;/&lt;dy&gt;][+g&lt;fill&gt;][+p&lt;pen&gt;][+o&lt;dx&gt;/&lt;dy&gt;][+r][+R][+v]</span></code></dt><dd><p>为每个子图自动指定编号。</p>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;autolabel&gt;</span></code> 可以是一个数字或字母，也可以在数字或字母的一侧或两侧加上括号，其设置了左上角第一张子图的编号，而其余子图则按照递增的顺序依次编号。</p>
 <p>可以加上子选项以指定编号的更多属性：</p>
-<ul class="last simple">
-<li><code class="docutils literal notranslate"><span class="pre">+j|J&lt;refpoint&gt;</span></code> 指定子图编号在底图上的位置，默认值为 <code class="docutils literal notranslate"><span class="pre">TL</span></code>，即编号位于底图的左上角。<code class="docutils literal notranslate"><span class="pre">+j</span></code> 和 <code class="docutils literal notranslate"><span class="pre">+J</span></code> 分别适用于子图编号位于底图内部和底图外部的情况。</li>
-<li><code class="docutils literal notranslate"><span class="pre">+p&lt;pen&gt;</span></code> 绘制编号的文本框的轮廓</li>
-<li><code class="docutils literal notranslate"><span class="pre">+g&lt;fill&gt;</span></code> 为编号的文本框填充颜色</li>
-<li><code class="docutils literal notranslate"><span class="pre">+c&lt;dx&gt;[/&lt;dy&gt;]</span></code> 设置编号与其文本框轮廓间的距离，默认值为 <a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/gmt.conf.html#font-tag" title="(在 GMT v6.0.0)"><span class="xref std std-ref">FONT_TAG</span></a> 的15%</li>
-<li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;[/&lt;dy&gt;]</span></code> 设置编号与 <code class="docutils literal notranslate"><span class="pre">+j|J</span></code> 指定的参考位置之间的偏移量，默认值为
-<a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/gmt.conf.html#font-tag" title="(在 GMT v6.0.0)"><span class="xref std std-ref">FONT_TAG</span></a> 的20%</li>
-<li><code class="docutils literal notranslate"><span class="pre">+r</span></code> 表示用小写罗马数字编号</li>
-<li><code class="docutils literal notranslate"><span class="pre">+R</span></code> 表示用大小罗马数字编号</li>
-<li><code class="docutils literal notranslate"><span class="pre">+v</span></code> 表示沿着垂直列方向依次增加编号，默认沿着水平行方向依次增加</li>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+j|J&lt;refpoint&gt;</span></code> 指定子图编号在底图上的位置，默认值为 <code class="docutils literal notranslate"><span class="pre">TL</span></code>，即编号位于底图的左上角。<code class="docutils literal notranslate"><span class="pre">+j</span></code> 和 <code class="docutils literal notranslate"><span class="pre">+J</span></code> 分别适用于子图编号位于底图内部和底图外部的情况。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+p&lt;pen&gt;</span></code> 绘制编号的文本框的轮廓</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+g&lt;fill&gt;</span></code> 为编号的文本框填充颜色</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+c&lt;dx&gt;[/&lt;dy&gt;]</span></code> 设置编号与其文本框轮廓间的距离，默认值为 <a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/gmt.conf.html#font-tag" title="(在 GMT v6.0.0)"><span class="xref std std-ref">FONT_TAG</span></a> 的15%</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;[/&lt;dy&gt;]</span></code> 设置编号与 <code class="docutils literal notranslate"><span class="pre">+j|J</span></code> 指定的参考位置之间的偏移量，默认值为
+<a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/gmt.conf.html#font-tag" title="(在 GMT v6.0.0)"><span class="xref std std-ref">FONT_TAG</span></a> 的20%</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+r</span></code> 表示用小写罗马数字编号</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+R</span></code> 表示用大小罗马数字编号</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+v</span></code> 表示沿着垂直列方向依次增加编号，默认沿着水平行方向依次增加</p></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-B&lt;params&gt;</span></code></dt>
-<dd>同时设置所有子图的 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项，参考 <a class="reference internal" href="../../option/B/"><span class="doc">-B 选项</span></a></dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-C&lt;side&gt;/&lt;clearance&gt;[u]</span></code></dt>
-<dd><p class="first">设置子图的某个边与图件边沿的额外的空白量。这些空白量独立于子图之外，可以用于绘制比例尺、添加额外的文字等。</p>
-<p class="last">其中 <code class="docutils literal notranslate"><span class="pre">&lt;side&gt;</span></code> 可以取 <code class="docutils literal notranslate"><span class="pre">e|w|s|n</span></code> 分别代表东西南北四条边。该选项可以重复多次，对不同边分别设置不同的间距。在 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">begin</span></code> 中使用该选项，则其对所有子图均有效。</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-B&lt;params&gt;</span></code></dt><dd><p>同时设置所有子图的 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项，参考 <a class="reference internal" href="../../option/B/"><span class="doc">-B 选项</span></a></p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-J&lt;params&gt;</span></code></dt>
-<dd>设置底图投影方式，见 <a class="reference internal" href="../../proj/"><span class="doc">投影方式</span></a></dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-M&lt;margins&gt;</span></code></dt>
-<dd><p class="first">除了子图的刻度、标注和标签之外，子图之间的额外间隔。</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-C&lt;side&gt;/&lt;clearance&gt;[u]</span></code></dt><dd><p>设置子图的某个边与图件边沿的额外的空白量。这些空白量独立于子图之外，可以用于绘制比例尺、添加额外的文字等。</p>
+<p>其中 <code class="docutils literal notranslate"><span class="pre">&lt;side&gt;</span></code> 可以取 <code class="docutils literal notranslate"><span class="pre">e|w|s|n</span></code> 分别代表东西南北四条边。该选项可以重复多次，对不同边分别设置不同的间距。在 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">begin</span></code> 中使用该选项，则其对所有子图均有效。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-J&lt;params&gt;</span></code></dt><dd><p>设置底图投影方式，见 <a class="reference internal" href="../../proj/"><span class="doc">投影方式</span></a></p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-M&lt;margins&gt;</span></code></dt><dd><p>除了子图的刻度、标注和标签之外，子图之间的额外间隔。</p>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;margins&gt;</span></code> 可以有三种情况：</p>
-<ol class="last arabic simple">
-<li>取一个值，表示子图的四个方向的间隔</li>
-<li>取两个值，表示子图的水平和垂直方向的间隔，两个值之间用斜杠分隔</li>
-<li>取四个值，表示子图的左右下上四个方向的间隔，四个值之间用斜杠分隔</li>
+<ol class="arabic simple">
+<li><p>取一个值，表示子图的四个方向的间隔</p></li>
+<li><p>取两个值，表示子图的水平和垂直方向的间隔，两个值之间用斜杠分隔</p></li>
+<li><p>取四个值，表示子图的左右下上四个方向的间隔，四个值之间用斜杠分隔</p></li>
 </ol>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-R&lt;region&gt;</span></code></dt>
-<dd>设置所有子图的共同研究区域</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-SC[b|t][+l&lt;label&gt;]</span></code></dt>
-<dd><p class="first">设置共享X轴的所有子图的X轴属性。</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-R&lt;region&gt;</span></code></dt><dd><p>设置所有子图的共同研究区域</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-SC[b|t][+l&lt;label&gt;]</span></code></dt><dd><p>设置共享X轴的所有子图的X轴属性。</p>
 <p>若使用 <code class="docutils literal notranslate"><span class="pre">-SC</span></code> 则一列中只有第一行子图的顶部X轴和最后一行子图的底部X轴有标注。</p>
-<ul class="last simple">
-<li><code class="docutils literal notranslate"><span class="pre">-SCb</span></code> 一列中只有最后一行子图的底部X轴有标注</li>
-<li><code class="docutils literal notranslate"><span class="pre">-SCt</span></code> 一列中只有第一行子图的顶部X轴有标注</li>
-<li><code class="docutils literal notranslate"><span class="pre">+l&lt;label&gt;</span></code> 用于给子图的共享X轴添加标注</li>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-SCb</span></code> 一列中只有最后一行子图的底部X轴有标注</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-SCt</span></code> 一列中只有第一行子图的顶部X轴有标注</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+l&lt;label&gt;</span></code> 用于给子图的共享X轴添加标注</p></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-SR[l|r][+l&lt;label&gt;][+p][+t]</span></code></dt>
-<dd><p class="first">设置共享Y轴的所有子图的Y轴属性。</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-SR[l|r][+l&lt;label&gt;][+p][+t]</span></code></dt><dd><p>设置共享Y轴的所有子图的Y轴属性。</p>
 <p>若使用 <code class="docutils literal notranslate"><span class="pre">-SR</span></code> 则一行中只有第一列子图的左边Y轴和最后一列子图的右边Y轴有标注。</p>
-<ul class="last simple">
-<li><code class="docutils literal notranslate"><span class="pre">-SRl</span></code> 一行中只有第一列子图的左边Y轴有标注</li>
-<li><code class="docutils literal notranslate"><span class="pre">-SRr</span></code> 一行中只有最后一列子图的右边Y轴有标注</li>
-<li><code class="docutils literal notranslate"><span class="pre">+l&lt;label&gt;</span></code> 用于给子图的共享Y轴添加标注</li>
-<li><code class="docutils literal notranslate"><span class="pre">+p</span></code> 设置所有标注与Y轴平行，此时可能需要使用 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 选项为长水平标注增加更多的空间</li>
-<li><code class="docutils literal notranslate"><span class="pre">+t</span></code> 为每一行子图的标题保留额外空间</li>
-<li><code class="docutils literal notranslate"><span class="pre">+tc</span></code> 仅为第一个子图的标题保留额外空间</li>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-SRl</span></code> 一行中只有第一列子图的左边Y轴有标注</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-SRr</span></code> 一行中只有最后一列子图的右边Y轴有标注</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+l&lt;label&gt;</span></code> 用于给子图的共享Y轴添加标注</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+p</span></code> 设置所有标注与Y轴平行，此时可能需要使用 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 选项为长水平标注增加更多的空间</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+t</span></code> 为每一行子图的标题保留额外空间</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+tc</span></code> 仅为第一个子图的标题保留额外空间</p></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-T&lt;heading&gt;</span></code></dt>
-<dd><p class="first">设置整张图的总标题，标题文字的属性由 <a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/gmt.conf.html#font-heading" title="(在 GMT v6.0.0)"><span class="xref std std-ref">FONT_HEADING</span></a> 控制。</p>
-<p class="last">每张子图各自的标题可以用 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项控制。</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-T&lt;heading&gt;</span></code></dt><dd><p>设置整张图的总标题，标题文字的属性由 <a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/gmt.conf.html#font-heading" title="(在 GMT v6.0.0)"><span class="xref std std-ref">FONT_HEADING</span></a> 控制。</p>
+<p>每张子图各自的标题可以用 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项控制。</p>
 </dd>
 </dl>
 </div>
@@ -490,15 +479,14 @@
 </div>
 <div class="section" id="id5">
 <h3>可选选项<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;row&gt;,&lt;col&gt;</span></code></dt>
-<dd>要激活的子图所在的行和列。行列均从1开始数起。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-A&lt;fixedlabel&gt;</span></code></dt>
-<dd>设置当前子图的编号，而忽略 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">begin</span></code> 中 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 选项的设置的自动编号。但该选项只能修改编号的字符串，其余属性（如位置、文本框）等均只能继承自
-<code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">begin</span></code> 的 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 选项。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-C&lt;side&gt;/&lt;clearance&gt;[u]</span></code></dt>
-<dd><p class="first">设置当前子图的某个边与图件边沿的额外的空白量。这些空白量独立于子图之外，可以用于绘制比例尺、添加额外的文字等。</p>
-<p class="last">其中 <code class="docutils literal notranslate"><span class="pre">&lt;side&gt;</span></code> 可以取 <code class="docutils literal notranslate"><span class="pre">e|w|s|n</span></code> 分别代表东西南北四条边。该选项可以重复多次，对不同边分别设置不同的间距。该选项会覆盖 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">begin</span></code> 中 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 选项的效果。</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;row&gt;,&lt;col&gt;</span></code></dt><dd><p>要激活的子图所在的行和列。行列均从1开始数起。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-A&lt;fixedlabel&gt;</span></code></dt><dd><p>设置当前子图的编号，而忽略 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">begin</span></code> 中 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 选项的设置的自动编号。但该选项只能修改编号的字符串，其余属性（如位置、文本框）等均只能继承自
+<code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">begin</span></code> 的 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 选项。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-C&lt;side&gt;/&lt;clearance&gt;[u]</span></code></dt><dd><p>设置当前子图的某个边与图件边沿的额外的空白量。这些空白量独立于子图之外，可以用于绘制比例尺、添加额外的文字等。</p>
+<p>其中 <code class="docutils literal notranslate"><span class="pre">&lt;side&gt;</span></code> 可以取 <code class="docutils literal notranslate"><span class="pre">e|w|s|n</span></code> 分别代表东西南北四条边。该选项可以重复多次，对不同边分别设置不同的间距。该选项会覆盖 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">begin</span></code> 中 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 选项的效果。</p>
 </dd>
 </dl>
 </div>

@@ -216,8 +216,8 @@
 用户可以直接在 Julia 脚本中调用 GMT 的相关模块。</p>
 <p>GMT 的 Julia 接口的官方地址为： <a class="reference external" href="https://github.com/GenericMappingTools/GMT.jl">https://github.com/GenericMappingTools/GMT.jl</a></p>
 <div class="admonition note">
-<p class="first admonition-title">注解</p>
-<p class="last">GMT 的 julia 接口还在开发中，因而用法可能出现改动，一切以
+<p class="admonition-title">注解</p>
+<p>GMT 的 julia 接口还在开发中，因而用法可能出现改动，一切以
 <a class="reference external" href="https://github.com/GenericMappingTools/GMT.jl">https://github.com/GenericMappingTools/GMT.jl</a> 中的说明为准。</p>
 </div>
 </div>
@@ -260,11 +260,11 @@ INFO: Precompiling module Compat.
 </div>
 <p>说明：</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">using</span> <span class="pre">GMT</span></code> 的作用是在 Julia 中导入 GMT 模块，使得可以在 Julia 中通过
-<code class="docutils literal notranslate"><span class="pre">gmt()</span></code> 函数调用 GMT 的所有模块</li>
-<li>安装完 GMT 即可后第一次使用 <code class="docutils literal notranslate"><span class="pre">using</span> <span class="pre">GMT</span></code> 时，Julia 会对 GMT 即可进行预编译，因而会消耗一段时间，但之后再调用时，速度就非常快了</li>
-<li>函数 <code class="docutils literal notranslate"><span class="pre">gmt()</span></code> 用于调用 GMT 模块，其第一个参数与 GMT 命令行版本的参数几乎一致，之后的参数是当前命令所需的输入数据</li>
-<li>最后，调用函数 <code class="docutils literal notranslate"><span class="pre">gmt(&quot;destroy&quot;)</span></code> 以清理不需要的内存</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">using</span> <span class="pre">GMT</span></code> 的作用是在 Julia 中导入 GMT 模块，使得可以在 Julia 中通过
+<code class="docutils literal notranslate"><span class="pre">gmt()</span></code> 函数调用 GMT 的所有模块</p></li>
+<li><p>安装完 GMT 即可后第一次使用 <code class="docutils literal notranslate"><span class="pre">using</span> <span class="pre">GMT</span></code> 时，Julia 会对 GMT 即可进行预编译，因而会消耗一段时间，但之后再调用时，速度就非常快了</p></li>
+<li><p>函数 <code class="docutils literal notranslate"><span class="pre">gmt()</span></code> 用于调用 GMT 模块，其第一个参数与 GMT 命令行版本的参数几乎一致，之后的参数是当前命令所需的输入数据</p></li>
+<li><p>最后，调用函数 <code class="docutils literal notranslate"><span class="pre">gmt(&quot;destroy&quot;)</span></code> 以清理不需要的内存</p></li>
 </ol>
 <div class="section" id="id5">
 <h3>最简单的例子<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
@@ -278,12 +278,12 @@ INFO: Precompiling module Compat.
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">注解</p>
+<p class="admonition-title">注解</p>
 <p>Julia 接口能够正确使用的前提是 Julia 可以找到 GMT 的动态链接库文件。所以，若以上命令报错，则可以执行:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;push!(Libdl.DL_LOAD_PATH, &quot;/opt/GMT-5.4.5/lib64&quot;)&#39;</span> &gt;&gt; ~/.juliarc.jl
 </pre></div>
 </div>
-<p class="last">将 GMT 的动态库文件所在目录添加到 Julia 的搜索路径中。</p>
+<p>将 GMT 的动态库文件所在目录添加到 Julia 的搜索路径中。</p>
 </div>
 </div>
 <div class="section" id="gmt">

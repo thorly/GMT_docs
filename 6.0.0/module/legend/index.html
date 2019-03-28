@@ -342,140 +342,127 @@
             
   <div class="section" id="legend">
 <span id="index-0"></span><h1>12.75 legend<a class="headerlink" href="#legend" title="永久链接至标题">¶</a></h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/legend.html" title="(在 GMT v6.0.0)"><span>legend</span></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">在图上添加图例</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/legend.html" title="(在 GMT v6.0.0)"><span>legend</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>在图上添加图例</p>
+</dd>
+</dl>
 <div class="section" id="id1">
 <h2>12.75.1 选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-C&lt;dx&gt;/&lt;dy&gt;</span></code></dt>
-<dd>设置图例边框与内部图例之间的空白，默认值为 <code class="docutils literal notranslate"><span class="pre">4p/4p</span></code></dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-D[g|j|J|n|x]&lt;refpoint&gt;+w&lt;width&gt;[/&lt;height&gt;][+j&lt;justify&gt;][+l&lt;spacing&gt;][+o&lt;dx&gt;[/&lt;dy&gt;]]</span></code></dt>
-<dd><p class="first">设置图例的位置和大小</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">-C&lt;dx&gt;/&lt;dy&gt;</span></code></dt><dd><p>设置图例边框与内部图例之间的空白，默认值为 <code class="docutils literal notranslate"><span class="pre">4p/4p</span></code></p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-D[g|j|J|n|x]&lt;refpoint&gt;+w&lt;width&gt;[/&lt;height&gt;][+j&lt;justify&gt;][+l&lt;spacing&gt;][+o&lt;dx&gt;[/&lt;dy&gt;]]</span></code></dt><dd><p>设置图例的位置和大小</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">[g|j|J|n|x]&lt;refpoint&gt;</span></code> 指定底图上的参考点，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a></li>
-<li><code class="docutils literal notranslate"><span class="pre">+w&lt;width&gt;/&lt;height&gt;</span></code> 用于指定图例框的尺寸，若 <code class="docutils literal notranslate"><span class="pre">&lt;height&gt;</span></code> 未指定或取0，则GMT会自动估算所需的高度</li>
-<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 指定图例上的锚点，默认锚点是 <code class="docutils literal notranslate"><span class="pre">BL</span></code> ，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</li>
-<li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;/&lt;dy&gt;</span></code> 指定参考点的额外偏移量</li>
-<li><code class="docutils literal notranslate"><span class="pre">+l&lt;spacing&gt;</span></code> 行间距因子，默认值为1.1，则当前字体大小的1.1倍</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[g|j|J|n|x]&lt;refpoint&gt;</span></code> 指定底图上的参考点，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+w&lt;width&gt;/&lt;height&gt;</span></code> 用于指定图例框的尺寸，若 <code class="docutils literal notranslate"><span class="pre">&lt;height&gt;</span></code> 未指定或取0，则GMT会自动估算所需的高度</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 指定图例上的锚点，默认锚点是 <code class="docutils literal notranslate"><span class="pre">BL</span></code> ，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;/&lt;dy&gt;</span></code> 指定参考点的额外偏移量</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+l&lt;spacing&gt;</span></code> 行间距因子，默认值为1.1，则当前字体大小的1.1倍</p></li>
 </ul>
 <p>该选项几个比较有用的用法是：</p>
-<ol class="last arabic simple">
-<li>将图例放在左下角： <code class="docutils literal notranslate"><span class="pre">-DjBL+w4c+o0.2c/0.2c</span></code></li>
-<li>将图例放在左上角： <code class="docutils literal notranslate"><span class="pre">-DjTL+w4c+o0.2c/0.2c</span></code></li>
-<li>将图例放在右下角： <code class="docutils literal notranslate"><span class="pre">-DjBR+w4c+o0.2c/0.2c</span></code></li>
-<li>将图例放在右上角： <code class="docutils literal notranslate"><span class="pre">-DjTR+w4c+o0.2c/0.2c</span></code></li>
+<ol class="arabic simple">
+<li><p>将图例放在左下角： <code class="docutils literal notranslate"><span class="pre">-DjBL+w4c+o0.2c/0.2c</span></code></p></li>
+<li><p>将图例放在左上角： <code class="docutils literal notranslate"><span class="pre">-DjTL+w4c+o0.2c/0.2c</span></code></p></li>
+<li><p>将图例放在右下角： <code class="docutils literal notranslate"><span class="pre">-DjBR+w4c+o0.2c/0.2c</span></code></p></li>
+<li><p>将图例放在右上角： <code class="docutils literal notranslate"><span class="pre">-DjTR+w4c+o0.2c/0.2c</span></code></p></li>
 </ol>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-F</span></code></dt>
-<dd><p class="first">控制图例的背景属性，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</p>
-<p class="last">默认图例无边框，使用该选项则会给图例绘制边框。</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-F</span></code></dt><dd><p>控制图例的背景属性，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</p>
+<p>默认图例无边框，使用该选项则会给图例绘制边框。</p>
 </dd>
 </dl>
 </div>
 <div class="section" id="id2">
 <h2>12.75.2 图例文件格式<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>图例文件用于控制图例中各项的布局。图例文件中的每个记录对应图例中的一项，图例中每项的顺序由记录的先后顺序决定。每个记录的第一个字符决定了当前记录的图例类型。GMT中共有14种图例类型，列举如下：</p>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">comment</span></code></dt>
-<dd>以#开头的行或空行都会被跳过</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">cptname</span></code></dt>
-<dd>指定CPT文件，使得某些记录可以通过指定Z值来设定颜色，可以多次使用该记录以指定不同的CPT文件</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">B</span> <span class="pre">cptname</span> <span class="pre">offset</span> <span class="pre">height</span> <span class="pre">[optional</span> <span class="pre">arguments]</span></code></dt>
-<dd><p class="first">绘制水平colorbar</p>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">offset</span></code> 是colorbar相对于图例框左边界的距离</li>
-<li><code class="docutils literal notranslate"><span class="pre">height</span></code> 是colorbar高度，其后可以加上子选项 <code class="docutils literal notranslate"><span class="pre">+e[b|f][&lt;length&gt;]][+h][+ma|c|l|u][+n[&lt;txt&gt;]</span></code></li>
-<li>还可以添加其他一些参数：-B、-I、-L、-M、-N、-S、-Z、-p等，详情见 <a class="reference internal" href="../colorbar/"><span class="doc">colorbar</span></a> 命令</li>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">comment</span></code></dt><dd><p>以#开头的行或空行都会被跳过</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">cptname</span></code></dt><dd><p>指定CPT文件，使得某些记录可以通过指定Z值来设定颜色，可以多次使用该记录以指定不同的CPT文件</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">B</span> <span class="pre">cptname</span> <span class="pre">offset</span> <span class="pre">height</span> <span class="pre">[optional</span> <span class="pre">arguments]</span></code></dt><dd><p>绘制水平colorbar</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">offset</span></code> 是colorbar相对于图例框左边界的距离</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">height</span></code> 是colorbar高度，其后可以加上子选项 <code class="docutils literal notranslate"><span class="pre">+e[b|f][&lt;length&gt;]][+h][+ma|c|l|u][+n[&lt;txt&gt;]</span></code></p></li>
+<li><p>还可以添加其他一些参数：-B、-I、-L、-M、-N、-S、-Z、-p等，详情见 <a class="reference internal" href="../colorbar/"><span class="doc">colorbar</span></a> 命令</p></li>
 </ol>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">textcolor</span></code></dt>
-<dd><p class="first">接下来的所有文本所使用的颜色。</p>
-<p class="last">可以直接指定颜色，也可以用 <code class="docutils literal notranslate"><span class="pre">z=&lt;val&gt;</span></code> 指定Z值，以从CPT文件中查找相应的颜色（CPT文件由A记录指定），若 <code class="docutils literal notranslate"><span class="pre">textcolor</span></code> 为 <code class="docutils literal notranslate"><span class="pre">-</span></code> ，则使用默认颜色</p>
+<dt><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">textcolor</span></code></dt><dd><p>接下来的所有文本所使用的颜色。</p>
+<p>可以直接指定颜色，也可以用 <code class="docutils literal notranslate"><span class="pre">z=&lt;val&gt;</span></code> 指定Z值，以从CPT文件中查找相应的颜色（CPT文件由A记录指定），若 <code class="docutils literal notranslate"><span class="pre">textcolor</span></code> 为 <code class="docutils literal notranslate"><span class="pre">-</span></code> ，则使用默认颜色</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">D</span> <span class="pre">[offset]</span> <span class="pre">pen</span> <span class="pre">[-|+|=]</span></code></dt>
-<dd><p class="first">绘制一条水平线</p>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">offset</span></code> 为线条左右顶端与图例边框的空白距离</li>
-<li><code class="docutils literal notranslate"><span class="pre">pen</span></code> 为线条属性<ol class="arabic">
-<li>默认值为0</li>
-<li>若未指定pen，则使用 <code class="docutils literal notranslate"><span class="pre">MAP_GRID_PEN_PRIMARY</span></code></li>
-<li>若pen设置为 <code class="docutils literal notranslate"><span class="pre">-</span></code> ，则绘制一条不可见的线</li>
+<dt><code class="docutils literal notranslate"><span class="pre">D</span> <span class="pre">[offset]</span> <span class="pre">pen</span> <span class="pre">[-|+|=]</span></code></dt><dd><p>绘制一条水平线</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">offset</span></code> 为线条左右顶端与图例边框的空白距离</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pen</span></code> 为线条属性</p>
+<ol class="arabic simple">
+<li><p>默认值为0</p></li>
+<li><p>若未指定pen，则使用 <code class="docutils literal notranslate"><span class="pre">MAP_GRID_PEN_PRIMARY</span></code></p></li>
+<li><p>若pen设置为 <code class="docutils literal notranslate"><span class="pre">-</span></code> ，则绘制一条不可见的线</p></li>
 </ol>
 </li>
-<li>默认情况下，线条上下各留出四分之一的行间距， <code class="docutils literal notranslate"><span class="pre">-|+|=</span></code> 分别表示线条上方无空白、线条下方无空白和线条上下均无空白。</li>
+<li><p>默认情况下，线条上下各留出四分之一的行间距， <code class="docutils literal notranslate"><span class="pre">-|+|=</span></code> 分别表示线条上方无空白、线条下方无空白和线条上下均无空白。</p></li>
 </ol>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">F</span> <span class="pre">fill1</span> <span class="pre">fill2</span> <span class="pre">...</span> <span class="pre">filln</span></code></dt>
-<dd><p class="first">指定单元的填充色。</p>
-<p class="last">可以直接指定颜色，也可使用 <code class="docutils literal notranslate"><span class="pre">z=&lt;value&gt;</span></code> 形式指定从CPT文件中查找颜色。若只给定了一个 <code class="docutils literal notranslate"><span class="pre">fill</span></code> ，则整行都使用相同的填充色，否则依次为当前行的每列应用不同的 <code class="docutils literal notranslate"><span class="pre">fill</span></code> ，若 <code class="docutils literal notranslate"><span class="pre">fill</span></code> 为 <code class="docutils literal notranslate"><span class="pre">-</span></code> ，则不填充。</p>
+<dt><code class="docutils literal notranslate"><span class="pre">F</span> <span class="pre">fill1</span> <span class="pre">fill2</span> <span class="pre">...</span> <span class="pre">filln</span></code></dt><dd><p>指定单元的填充色。</p>
+<p>可以直接指定颜色，也可使用 <code class="docutils literal notranslate"><span class="pre">z=&lt;value&gt;</span></code> 形式指定从CPT文件中查找颜色。若只给定了一个 <code class="docutils literal notranslate"><span class="pre">fill</span></code> ，则整行都使用相同的填充色，否则依次为当前行的每列应用不同的 <code class="docutils literal notranslate"><span class="pre">fill</span></code> ，若 <code class="docutils literal notranslate"><span class="pre">fill</span></code> 为 <code class="docutils literal notranslate"><span class="pre">-</span></code> ，则不填充。</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">G</span> <span class="pre">gap</span></code></dt>
-<dd><p class="first">给定一个垂直空白</p>
-<p class="last">空白的高度由 <code class="docutils literal notranslate"><span class="pre">gap</span></code> 决定， <code class="docutils literal notranslate"><span class="pre">gap</span></code> 可以用 <code class="docutils literal notranslate"><span class="pre">i|c|p</span></code> 单位，也可以用 <code class="docutils literal notranslate"><span class="pre">l</span></code>
+<dt><code class="docutils literal notranslate"><span class="pre">G</span> <span class="pre">gap</span></code></dt><dd><p>给定一个垂直空白</p>
+<p>空白的高度由 <code class="docutils literal notranslate"><span class="pre">gap</span></code> 决定， <code class="docutils literal notranslate"><span class="pre">gap</span></code> 可以用 <code class="docutils literal notranslate"><span class="pre">i|c|p</span></code> 单位，也可以用 <code class="docutils literal notranslate"><span class="pre">l</span></code>
 作为单位表示多少行空白， <code class="docutils literal notranslate"><span class="pre">gap</span></code> 也可以取负值，表示将当前行上移。</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">H</span> <span class="pre">fontsize|-</span> <span class="pre">font|-</span> <span class="pre">header</span></code></dt>
-<dd><p class="first">为图例指定一个居中的标题。</p>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">header</span></code> 为标题</li>
-<li><code class="docutils literal notranslate"><span class="pre">fontsize</span></code> 为字号</li>
-<li><code class="docutils literal notranslate"><span class="pre">font</span></code> 为字体号</li>
-<li><code class="docutils literal notranslate"><span class="pre">-</span></code> 表示使用默认的文字大小以及默认字体 <code class="docutils literal notranslate"><span class="pre">FONT_TITLE</span></code></li>
+<dt><code class="docutils literal notranslate"><span class="pre">H</span> <span class="pre">fontsize|-</span> <span class="pre">font|-</span> <span class="pre">header</span></code></dt><dd><p>为图例指定一个居中的标题。</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">header</span></code> 为标题</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fontsize</span></code> 为字号</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">font</span></code> 为字体号</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> 表示使用默认的文字大小以及默认字体 <code class="docutils literal notranslate"><span class="pre">FONT_TITLE</span></code></p></li>
 </ol>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">I</span> <span class="pre">imagefile</span> <span class="pre">width</span> <span class="pre">justification</span></code></dt>
-<dd><p class="first">将EPS或光栅文件放在图例中</p>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">width</span></code> 为图片宽度</li>
-<li><code class="docutils literal notranslate"><span class="pre">justification</span></code> 为图片的对齐方式</li>
+<dt><code class="docutils literal notranslate"><span class="pre">I</span> <span class="pre">imagefile</span> <span class="pre">width</span> <span class="pre">justification</span></code></dt><dd><p>将EPS或光栅文件放在图例中</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">width</span></code> 为图片宽度</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">justification</span></code> 为图片的对齐方式</p></li>
 </ol>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">L</span> <span class="pre">fontsize|-</span> <span class="pre">font|-</span> <span class="pre">justification</span> <span class="pre">label</span></code></dt>
-<dd><p class="first">在图例中某列增加指定的文字</p>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">label</span></code> 为显示的文本</li>
-<li><code class="docutils literal notranslate"><span class="pre">fontsize</span></code> 为字号</li>
-<li><code class="docutils literal notranslate"><span class="pre">font</span></code> 为字体号</li>
-<li><code class="docutils literal notranslate"><span class="pre">justification</span></code> 为对齐方式，可以取 <code class="docutils literal notranslate"><span class="pre">L|C|R</span></code> ，分别表示左对齐、居中对齐和右对齐</li>
-<li><code class="docutils literal notranslate"><span class="pre">-</span></code> 表示使用默认的文字大小以及默认字体 <code class="docutils literal notranslate"><span class="pre">FONT_TITLE</span></code></li>
+<dt><code class="docutils literal notranslate"><span class="pre">L</span> <span class="pre">fontsize|-</span> <span class="pre">font|-</span> <span class="pre">justification</span> <span class="pre">label</span></code></dt><dd><p>在图例中某列增加指定的文字</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">label</span></code> 为显示的文本</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fontsize</span></code> 为字号</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">font</span></code> 为字体号</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">justification</span></code> 为对齐方式，可以取 <code class="docutils literal notranslate"><span class="pre">L|C|R</span></code> ，分别表示左对齐、居中对齐和右对齐</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> 表示使用默认的文字大小以及默认字体 <code class="docutils literal notranslate"><span class="pre">FONT_TITLE</span></code></p></li>
 </ol>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">M</span> <span class="pre">slon|-</span> <span class="pre">slat</span> <span class="pre">length</span> <span class="pre">[+f][+l[label]][+u]</span> <span class="pre">[-Fparam]</span> <span class="pre">[-Rw/e/s/n</span> <span class="pre">-Jparam]</span></code></dt>
-<dd>在图例中绘制比例尺，在 <a class="reference internal" href="../basemap/"><span class="doc">basemap</span></a> 命令中有详细介绍</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">ncolumns</span></code> 或 <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">relwidth1</span> <span class="pre">relwidth2</span> <span class="pre">...</span> <span class="pre">relwidthn</span></code></dt>
-<dd><p class="first">修改图例中的列数</p>
-<p class="last">默认只有一列，该记录仅对S和L记录有效。该记录指定的列数会一直有效直到再次使用N记录。 <code class="docutils literal notranslate"><span class="pre">ncolumns</span></code> 用于指定若干个等宽的列， <code class="docutils literal notranslate"><span class="pre">relwidth1</span> <span class="pre">relwidth2</span> <span class="pre">...</span> <span class="pre">relwidthn</span></code>
+<dt><code class="docutils literal notranslate"><span class="pre">M</span> <span class="pre">slon|-</span> <span class="pre">slat</span> <span class="pre">length</span> <span class="pre">[+f][+l[label]][+u]</span> <span class="pre">[-Fparam]</span> <span class="pre">[-Rw/e/s/n</span> <span class="pre">-Jparam]</span></code></dt><dd><p>在图例中绘制比例尺，在 <a class="reference internal" href="../basemap/"><span class="doc">basemap</span></a> 命令中有详细介绍</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">ncolumns</span></code> 或 <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">relwidth1</span> <span class="pre">relwidth2</span> <span class="pre">...</span> <span class="pre">relwidthn</span></code></dt><dd><p>修改图例中的列数</p>
+<p>默认只有一列，该记录仅对S和L记录有效。该记录指定的列数会一直有效直到再次使用N记录。 <code class="docutils literal notranslate"><span class="pre">ncolumns</span></code> 用于指定若干个等宽的列， <code class="docutils literal notranslate"><span class="pre">relwidth1</span> <span class="pre">relwidth2</span> <span class="pre">...</span> <span class="pre">relwidthn</span></code>
 用于指定每列所占的相对宽度，所有宽度的和应等于 <code class="docutils literal notranslate"><span class="pre">-D</span></code> 选项所设置的宽度相等。</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">P</span> <span class="pre">paragraph-mode-header-for-pstext</span></code></dt>
-<dd>在图例中添加段落，参考 <a class="reference internal" href="../text/"><span class="doc">text</span></a> 命令中的段落模式</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">S</span> <span class="pre">[dx1</span> <span class="pre">symbol</span> <span class="pre">size</span> <span class="pre">fill</span> <span class="pre">pen]</span> <span class="pre">[dx2</span> <span class="pre">text]</span></code></dt>
-<dd><p class="first">在图例中绘制符号</p>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">symbol</span></code> 指定要绘制的符号类型， 见 <a class="reference internal" href="../plot/"><span class="doc">plot</span></a> 命令的 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项。若 <code class="docutils literal notranslate"><span class="pre">symbol</span></code> 设置为 <code class="docutils literal notranslate"><span class="pre">-</span></code> 则表示绘制线段</li>
-<li><code class="docutils literal notranslate"><span class="pre">dx1</span></code> 是符号中心与左边界的距离</li>
-<li><code class="docutils literal notranslate"><span class="pre">dx2</span></code> 是 <code class="docutils literal notranslate"><span class="pre">text</span></code> 与左边界的距离</li>
-<li><code class="docutils literal notranslate"><span class="pre">text</span></code> 的字体由参数 <code class="docutils literal notranslate"><span class="pre">FONT_ANNOT_PRIMARY</span></code> 控制</li>
-<li><code class="docutils literal notranslate"><span class="pre">fill</span></code> 和 <code class="docutils literal notranslate"><span class="pre">pen</span></code> 控制符号的填充和轮廓颜色，设置为 <code class="docutils literal notranslate"><span class="pre">-</span></code> 则表示不填充或无轮廓颜色</li>
-<li><code class="docutils literal notranslate"><span class="pre">fill</span></code> 可以使用 <code class="docutils literal notranslate"><span class="pre">z=&lt;val&gt;</span></code> 的形式，从CPT文件中查找颜色</li>
-<li><code class="docutils literal notranslate"><span class="pre">dx1</span></code> 除了可以指定距离，还可以使用 <code class="docutils literal notranslate"><span class="pre">L|C|R</span></code> 表示符号在当前列的对齐方式</li>
-<li>若S记录中无其他参数，则直接调至下一列</li>
-<li>若 <code class="docutils literal notranslate"><span class="pre">symbol</span></code> 取为 <code class="docutils literal notranslate"><span class="pre">f|q|v</span></code> ，则可以在 <code class="docutils literal notranslate"><span class="pre">symbol</span></code> 后加上额外的子选项</li>
-<li>某些符号可能需要指定多个size，将多个size用逗号分隔作为size即可</li>
+<dt><code class="docutils literal notranslate"><span class="pre">P</span> <span class="pre">paragraph-mode-header-for-pstext</span></code></dt><dd><p>在图例中添加段落，参考 <a class="reference internal" href="../text/"><span class="doc">text</span></a> 命令中的段落模式</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">S</span> <span class="pre">[dx1</span> <span class="pre">symbol</span> <span class="pre">size</span> <span class="pre">fill</span> <span class="pre">pen]</span> <span class="pre">[dx2</span> <span class="pre">text]</span></code></dt><dd><p>在图例中绘制符号</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">symbol</span></code> 指定要绘制的符号类型， 见 <a class="reference internal" href="../plot/"><span class="doc">plot</span></a> 命令的 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项。若 <code class="docutils literal notranslate"><span class="pre">symbol</span></code> 设置为 <code class="docutils literal notranslate"><span class="pre">-</span></code> 则表示绘制线段</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dx1</span></code> 是符号中心与左边界的距离</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dx2</span></code> 是 <code class="docutils literal notranslate"><span class="pre">text</span></code> 与左边界的距离</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text</span></code> 的字体由参数 <code class="docutils literal notranslate"><span class="pre">FONT_ANNOT_PRIMARY</span></code> 控制</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fill</span></code> 和 <code class="docutils literal notranslate"><span class="pre">pen</span></code> 控制符号的填充和轮廓颜色，设置为 <code class="docutils literal notranslate"><span class="pre">-</span></code> 则表示不填充或无轮廓颜色</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fill</span></code> 可以使用 <code class="docutils literal notranslate"><span class="pre">z=&lt;val&gt;</span></code> 的形式，从CPT文件中查找颜色</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dx1</span></code> 除了可以指定距离，还可以使用 <code class="docutils literal notranslate"><span class="pre">L|C|R</span></code> 表示符号在当前列的对齐方式</p></li>
+<li><p>若S记录中无其他参数，则直接调至下一列</p></li>
+<li><p>若 <code class="docutils literal notranslate"><span class="pre">symbol</span></code> 取为 <code class="docutils literal notranslate"><span class="pre">f|q|v</span></code> ，则可以在 <code class="docutils literal notranslate"><span class="pre">symbol</span></code> 后加上额外的子选项</p></li>
+<li><p>某些符号可能需要指定多个size，将多个size用逗号分隔作为size即可</p></li>
 </ol>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">T</span> <span class="pre">paragraph-text</span></code></dt>
-<dd>用参数 <code class="docutils literal notranslate"><span class="pre">FONT_ANNOT_PRIMARY</span></code> 打印一段文本</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">V</span> <span class="pre">[offset]</span> <span class="pre">pen</span></code></dt>
-<dd>在两列之间绘制垂直的线条</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">T</span> <span class="pre">paragraph-text</span></code></dt><dd><p>用参数 <code class="docutils literal notranslate"><span class="pre">FONT_ANNOT_PRIMARY</span></code> 打印一段文本</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">V</span> <span class="pre">[offset]</span> <span class="pre">pen</span></code></dt><dd><p>在两列之间绘制垂直的线条</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="id3">
@@ -519,7 +506,7 @@ rm gmt.*
 </div>
 <div class="figure align-center" id="id4">
 <a class="reference internal image-reference" href="../../_images/pslegend_ex1.png"><img alt="../../_images/pslegend_ex1.png" src="../../_images/pslegend_ex1.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">pslegend示例图1</span></p>
+<p class="caption"><span class="caption-text">pslegend示例图1</span><a class="headerlink" href="#id4" title="永久链接至图片">¶</a></p>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="nv">ps</span><span class="o">=</span>pslegend_ex2.ps
@@ -631,7 +618,7 @@ rm -f table.txt t.cpt gmt.*
 </div>
 <div class="figure align-center" id="id5">
 <a class="reference internal image-reference" href="../../_images/pslegend_ex2.png"><img alt="../../_images/pslegend_ex2.png" src="../../_images/pslegend_ex2.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">pslegend示例图2</span></p>
+<p class="caption"><span class="caption-text">pslegend示例图2</span><a class="headerlink" href="#id5" title="永久链接至图片">¶</a></p>
 </div>
 </div>
 </div>
