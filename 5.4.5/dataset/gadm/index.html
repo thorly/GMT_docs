@@ -222,8 +222,8 @@
 <h2>11.5.1 数据下载<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>GADM提供了两种下载方式：</p>
 <ol class="arabic simple">
-<li><p>下载全球所有国家和地区的所有数据 <a class="reference external" href="https://gadm.org/download_world.html">https://gadm.org/download_world.html</a></p></li>
-<li><p>按国家下载 <a class="reference external" href="https://gadm.org/download_country_v3.html">https://gadm.org/download_country_v3.html</a></p></li>
+<li>下载全球所有国家和地区的所有数据 <a class="reference external" href="https://gadm.org/download_world.html">https://gadm.org/download_world.html</a></li>
+<li>按国家下载 <a class="reference external" href="https://gadm.org/download_country_v3.html">https://gadm.org/download_country_v3.html</a></li>
 </ol>
 <p>推荐只下载自己需要的国家的数据。</p>
 <p>需要说明的是，GADM 中对country 的定义为“any entity with <a class="reference external" href="http://zh.wikipedia.org/wiki/ISO_3166-1">an ISO country code</a>”。因而如果想要下载完整的中国数据，实际上需要下载China、Hong Kong、Macao和Taiwan
@@ -233,11 +233,11 @@
 <h2>11.5.2 数据格式及转换<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>对于每个数据，GADM提供了5种不同的格式：</p>
 <ul class="simple">
-<li><p>Geopackage：可以被GDAL/OGR、ArcGIS、QGIS等软件读取</p></li>
-<li><p>Shapefile：可直接用于ArcGIS等软件</p></li>
-<li><p>KMZ：可直接在Google Earth中打开</p></li>
-<li><p>R (sp)：可直接用于R语言绘图</p></li>
-<li><p>R (sf)：可直接用于R语言绘图</p></li>
+<li>Geopackage：可以被GDAL/OGR、ArcGIS、QGIS等软件读取</li>
+<li>Shapefile：可直接用于ArcGIS等软件</li>
+<li>KMZ：可直接在Google Earth中打开</li>
+<li>R (sp)：可直接用于R语言绘图</li>
+<li>R (sf)：可直接用于R语言绘图</li>
 </ul>
 <p>如果在安装GMT时，GMT已经正确链接了GDAL库，则Shapefile格式的数据可以直接用于绘图。实际绘图时，可能只想要一小部分数据（比如某个省的省界），这种情况下，则需要将数据转换成纯文本文件，以方便从数据中提取出需要的部分。</p>
 <p>GDAL 的 <a class="reference external" href="https://www.gdal.org/ogr2ogr.html">ogr2ogr</a> 可以实现多种地理数据格式之间的互相转换。该软件的安装及介绍见
@@ -282,10 +282,10 @@ ogr2ogr -f OGR_GMT gadm36_CHN_3.gmt gadm36_CHN_3.shp
 <p>提取得到的数据文件的文件名类似 <code class="docutils literal notranslate"><span class="pre">gadm36_CHN_0.gmt</span></code>，其中 <code class="docutils literal notranslate"><span class="pre">CHN</span></code> 为国家/地区代码，<code class="docutils literal notranslate"><span class="pre">0</span></code> 表示行政等级。</p>
 <p>以中国数据为例，其数据包含了四个等级：</p>
 <ul class="simple">
-<li><p>0级：即国界</p></li>
-<li><p>1级：即省界</p></li>
-<li><p>2级：即市界</p></li>
-<li><p>3级：即区界</p></li>
+<li>0级：即国界</li>
+<li>1级：即省界</li>
+<li>2级：即市界</li>
+<li>3级：即区界</li>
 </ul>
 <p>对于Hong Kong而言，则只包含0级和1级边界。</p>
 </div>
@@ -395,7 +395,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月28日.
+        最后更新于 2019年03月29日.
       </span>
 
     </p>

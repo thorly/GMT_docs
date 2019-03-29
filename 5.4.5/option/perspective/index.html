@@ -232,8 +232,8 @@
 </div>
 <p>对于3D底图而言（使用了 <code class="docutils literal notranslate"><span class="pre">-JZ</span></code> 选项），默认会在Z轴底部绘制XY平面的边框。</p>
 <ul class="simple">
-<li><p>设置 <code class="docutils literal notranslate"><span class="pre">&lt;zlevel&gt;</span></code> 则可以指定在 <code class="docutils literal notranslate"><span class="pre">Z=&lt;zlevel&gt;</span></code> 平面内绘制边框。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-px|y|z</span></code> 则分别用于指定绘制 YZ 平面、XZ平面或XY平面。默认为 <code class="docutils literal notranslate"><span class="pre">-pz</span></code> 即绘制XY平面</p></li>
+<li>设置 <code class="docutils literal notranslate"><span class="pre">&lt;zlevel&gt;</span></code> 则可以指定在 <code class="docutils literal notranslate"><span class="pre">Z=&lt;zlevel&gt;</span></code> 平面内绘制边框。</li>
+<li><code class="docutils literal notranslate"><span class="pre">-px|y|z</span></code> 则分别用于指定绘制 YZ 平面、XZ平面或XY平面。默认为 <code class="docutils literal notranslate"><span class="pre">-pz</span></code> 即绘制XY平面</li>
 </ul>
 <p>下图给出了3D底图上使用不同的 <code class="docutils literal notranslate"><span class="pre">-p</span></code> 选项绘制出来的效果图。绘制底图使用的命令为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R0/10/0/10/0/20 -JX3c -JZ3c -Baf -Bzaf -BwsENZ1+b -p135/40 &gt; xxx.ps
@@ -245,9 +245,9 @@
 </div>
 <p>在绘制动画时，如果不同帧使用的 <code class="docutils literal notranslate"><span class="pre">-p</span></code> 透视参数不同，则由于投影的问题可能会导致底图在纸上的位置出现不规则运动。可以有三种方式解决：</p>
 <ol class="arabic simple">
-<li><p>加上 <code class="docutils literal notranslate"><span class="pre">+</span></code> 使得数据范围的中心点固定在纸张的中心</p></li>
-<li><p>加上 <code class="docutils literal notranslate"><span class="pre">+w&lt;lon0&gt;/&lt;lat0&gt;/&lt;z&gt;</span></code> 将地图上的某个点固定在纸张的中心</p></li>
-<li><p>加上 <code class="docutils literal notranslate"><span class="pre">+v&lt;x0&gt;/&lt;y0&gt;</span></code> 使得数据范围的中心点或地图上的某个点，在投影后的位置始终固定在纸张上的 <code class="docutils literal notranslate"><span class="pre">&lt;x0&gt;/&lt;y0&gt;</span></code> 处</p></li>
+<li>加上 <code class="docutils literal notranslate"><span class="pre">+</span></code> 使得数据范围的中心点固定在纸张的中心</li>
+<li>加上 <code class="docutils literal notranslate"><span class="pre">+w&lt;lon0&gt;/&lt;lat0&gt;/&lt;z&gt;</span></code> 将地图上的某个点固定在纸张的中心</li>
+<li>加上 <code class="docutils literal notranslate"><span class="pre">+v&lt;x0&gt;/&lt;y0&gt;</span></code> 使得数据范围的中心点或地图上的某个点，在投影后的位置始终固定在纸张上的 <code class="docutils literal notranslate"><span class="pre">&lt;x0&gt;/&lt;y0&gt;</span></code> 处</li>
 </ol>
 <p>除此之外，若 <code class="docutils literal notranslate"><span class="pre">-p</span></code> 选项后不接任何参数，则其会继承前一GMT绘图命令的 <code class="docutils literal notranslate"><span class="pre">-p</span></code> 参数。</p>
 </div>
@@ -295,7 +295,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月28日.
+        最后更新于 2019年03月29日.
       </span>
 
     </p>

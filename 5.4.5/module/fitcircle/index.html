@@ -336,27 +336,29 @@
             
   <div class="section" id="fitcircle">
 <span id="index-0"></span><h1>12.7 fitcircle<a class="headerlink" href="#fitcircle" title="永久链接至标题">¶</a></h1>
-<dl class="field-list simple">
-<dt class="field-odd">官方文档</dt>
-<dd class="field-odd"><p><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/fitcircle.html" title="(在 GMT v5.4.5)"><span>fitcircle</span></a></p>
-</dd>
-<dt class="field-even">简介</dt>
-<dd class="field-even"><p>拟合球面上数据点的平均位置及圆弧</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/fitcircle.html" title="(在 GMT v5.4.5)"><span>fitcircle</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">拟合球面上数据点的平均位置及圆弧</td>
+</tr>
+</tbody>
+</table>
 <p>该命令从输入数据的前两列读取经纬度数据，将其转换为单位球面上的笛卡尔三维矢量，然后计算输入坐标数据的平均位置以及可以拟合这些坐标点的大圆路径的pole。</p>
 <div class="section" id="id1">
 <h2>12.7.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code></dt><dd><p>输入数据</p>
-</dd>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code></dt>
+<dd>输入数据</dd>
 </dl>
 <p><code class="docutils literal notranslate"><span class="pre">-L&lt;norm&gt;</span></code></p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-L1</span></code> 解法1</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-L2</span></code> 解法2</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-L</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-L3</span></code> 同时输出解法1和解法2的结果</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">-L1</span></code> 解法1</li>
+<li><code class="docutils literal notranslate"><span class="pre">-L2</span></code> 解法2</li>
+<li><code class="docutils literal notranslate"><span class="pre">-L</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-L3</span></code> 同时输出解法1和解法2的结果</li>
 </ul>
 <p>在计算输入坐标的均值和大圆弧pole时有两种计算方法，分别用 <code class="docutils literal notranslate"><span class="pre">-L1</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-L2</span></code>
 表示。当数据沿着某个大圆弧且距离接近时，两组解结果相似。若数据较分散，则大圆弧的pole要比均值不精确得多。此时可以比较两组结果以作为相互的验证。</p>
@@ -379,19 +381,21 @@ represented factor in the data and is not easily estimated by either method.</p>
 </div>
 <div class="section" id="id2">
 <h2>12.7.2 选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl>
-<dt><code class="docutils literal notranslate"><span class="pre">-Ff|m|n|s|c</span></code></dt><dd><p>控制输出格式。</p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-Ff|m|n|s|c</span></code></dt>
+<dd><p class="first">控制输出格式。</p>
 <p>正常情况下，该命令会将计算结果以较复杂的形式输出。使用 <code class="docutils literal notranslate"><span class="pre">-F</span></code> 选项，则只返回简单的坐标。 <code class="docutils literal notranslate"><span class="pre">-F</span></code> 后可以加上其他修饰符以指定要返回的坐标：</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> Flat Earth mean location</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">m</span></code> mean location</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code> north pole of great circle</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">s</span></code> south pole of great circle</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code> pole of small circle and its colatitude, which requires <code class="docutils literal notranslate"><span class="pre">-S</span></code></p></li>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">f</span></code> Flat Earth mean location</li>
+<li><code class="docutils literal notranslate"><span class="pre">m</span></code> mean location</li>
+<li><code class="docutils literal notranslate"><span class="pre">n</span></code> north pole of great circle</li>
+<li><code class="docutils literal notranslate"><span class="pre">s</span></code> south pole of great circle</li>
+<li><code class="docutils literal notranslate"><span class="pre">c</span></code> pole of small circle and its colatitude, which requires <code class="docutils literal notranslate"><span class="pre">-S</span></code></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-S[&lt;lat&gt;]</span></code></dt><dd><p>拟合小圆弧而不是大圆弧</p>
-<p>The pole will be constrained to lie on the great circle connecting the pole
+<dt><code class="docutils literal notranslate"><span class="pre">-S[&lt;lat&gt;]</span></code></dt>
+<dd><p class="first">拟合小圆弧而不是大圆弧</p>
+<p class="last">The pole will be constrained to lie on the great circle connecting the pole
 of the best-fit great circle and the mean location of the data.
 Optionally append the desired fixed latitude of the small circle
 [Default will determine the latitude].</p>
@@ -440,7 +444,7 @@ rm g.txt s.txt gmt.*
 </div>
 <div class="figure align-center" id="id4">
 <a class="reference internal image-reference" href="../../_images/fitcircle_ex1.png"><img alt="../../_images/fitcircle_ex1.png" src="../../_images/fitcircle_ex1.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">fitcircle示例</span><a class="headerlink" href="#id4" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text">fitcircle示例</span></p>
 </div>
 </div>
 </div>
@@ -488,7 +492,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月28日.
+        最后更新于 2019年03月29日.
       </span>
 
     </p>

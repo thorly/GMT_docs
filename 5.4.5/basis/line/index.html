@@ -223,9 +223,9 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>若只给了一个 <code class="docutils literal notranslate"><span class="pre">&lt;offset&gt;</span></code>，则表示起点和终点共用同一个偏移量</p></li>
-<li><p>也可以用 <code class="docutils literal notranslate"><span class="pre">&lt;offset&gt;/&lt;offset&gt;</span></code> 分别为起点和终点指定不同的偏移量</p></li>
-<li><p>对于每个偏移量，都可以使用长度单位或距离单位</p></li>
+<li>若只给了一个 <code class="docutils literal notranslate"><span class="pre">&lt;offset&gt;</span></code>，则表示起点和终点共用同一个偏移量</li>
+<li>也可以用 <code class="docutils literal notranslate"><span class="pre">&lt;offset&gt;/&lt;offset&gt;</span></code> 分别为起点和终点指定不同的偏移量</li>
+<li>对于每个偏移量，都可以使用长度单位或距离单位</li>
 </ul>
 <p>图中，细线和粗线使用了完全相同的输入数据，其中细线没有使用 <code class="docutils literal notranslate"><span class="pre">+o</span></code> 选项的结果，此时线段的起点和终点与数据指定的点重合，粗线在绘制线条时使用了 <code class="docutils literal notranslate"><span class="pre">-W2p+o1c/500k</span></code> 选项，即在起点处偏移1厘米，在终点处偏移500千米。</p>
 <p><a class="reference download internal" download="" href="../../_downloads/f3f26ac1c806972b4a1693b6c6a864d2/line-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
@@ -249,8 +249,8 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>默认会在线段两端都加上箭头，<code class="docutils literal notranslate"><span class="pre">b|e</span></code> 表示只绘制开头或结尾的箭头</p></li>
-<li><p>箭头属性 <code class="docutils literal notranslate"><span class="pre">&lt;vspecs&gt;</span></code> 的细节参考 <a class="reference internal" href="../vector/"><span class="doc">绘制矢量/箭头</span></a> 一节的内容</p></li>
+<li>默认会在线段两端都加上箭头，<code class="docutils literal notranslate"><span class="pre">b|e</span></code> 表示只绘制开头或结尾的箭头</li>
+<li>箭头属性 <code class="docutils literal notranslate"><span class="pre">&lt;vspecs&gt;</span></code> 的细节参考 <a class="reference internal" href="../vector/"><span class="doc">绘制矢量/箭头</span></a> 一节的内容</li>
 </ul>
 <p>下图中细线是通常绘制的线段，粗线使用的选项是 <code class="docutils literal notranslate"><span class="pre">-W2p+o1c/500k+vb0.2i+gred+pfaint+bc+ve0.3i+gblue</span></code>。</p>
 <p><a class="reference download internal" download="" href="../../_downloads/a3eea3566b0f798ffb5dd7b5f07e6487/line-gmtplot-2.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
@@ -262,9 +262,9 @@
 <h2>4.10.4 其他属性<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>除了上面提到的属性之外，GMT中还有一些参数可以影响线段的外观。这些参数包括：</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="../../conf/ps/#ps-line-cap"><span class="std std-ref">PS_LINE_CAP</span></a>：控制线段顶端的绘制方式</p></li>
-<li><p><a class="reference internal" href="../../conf/ps/#ps-line-join"><span class="std std-ref">PS_LINE_JOIN</span></a>：控制线段拐点/交点的绘制方式</p></li>
-<li><p><a class="reference internal" href="../../conf/ps/#ps-miter-limit"><span class="std std-ref">PS_MITER_LIMIT</span></a>：控制线段拐点在 <code class="docutils literal notranslate"><span class="pre">miter</span></code> 模式下的阈值</p></li>
+<li><a class="reference internal" href="../../conf/ps/#ps-line-cap"><span class="std std-ref">PS_LINE_CAP</span></a>：控制线段顶端的绘制方式</li>
+<li><a class="reference internal" href="../../conf/ps/#ps-line-join"><span class="std std-ref">PS_LINE_JOIN</span></a>：控制线段拐点/交点的绘制方式</li>
+<li><a class="reference internal" href="../../conf/ps/#ps-miter-limit"><span class="std std-ref">PS_MITER_LIMIT</span></a>：控制线段拐点在 <code class="docutils literal notranslate"><span class="pre">miter</span></code> 模式下的阈值</li>
 </ul>
 </div>
 </div>
@@ -312,7 +312,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月28日.
+        最后更新于 2019年03月29日.
       </span>
 
     </p>

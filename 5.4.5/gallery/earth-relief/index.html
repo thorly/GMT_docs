@@ -211,11 +211,11 @@
 <h1>13.7 绘制地形起伏图<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>本节描述如何绘制带有颜色和阴影的地形图。主要用到的模块有：</p>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">grdcut</span></code>：裁切地形数据</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">grdgradient</span></code>：制作阴影梯度数据</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">grdimage</span></code>：绘制地形</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pscoast</span></code>：绘制政区边界、湿地（水体）、比例尺</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">psscale</span></code>: 绘制色标图例</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">grdcut</span></code>：裁切地形数据</li>
+<li><code class="docutils literal notranslate"><span class="pre">grdgradient</span></code>：制作阴影梯度数据</li>
+<li><code class="docutils literal notranslate"><span class="pre">grdimage</span></code>：绘制地形</li>
+<li><code class="docutils literal notranslate"><span class="pre">pscoast</span></code>：绘制政区边界、湿地（水体）、比例尺</li>
+<li><code class="docutils literal notranslate"><span class="pre">psscale</span></code>: 绘制色标图例</li>
 </ol>
 <p>绘图过程中需要的 <a class="reference external" href="https://github.com/gmt-china/GMT_docs/blob/master/source/scripts/Tibet.cpt">Tibet.cpt</a> 。</p>
 <p>代码为：</p>
@@ -255,13 +255,13 @@ rm gmt.* Tibet.grd int.grad
 </div>
 <p>主要参数解释：</p>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">grdcut</span></code> 指从大区域地形中裁剪出自定义范围的数据（本例中为55-120°E，纬度10-50°N），该操作可降低后续梯度计算的复杂度，提高绘图效率。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">grdgradient</span></code> 模块中： <code class="docutils literal notranslate"><span class="pre">-A</span></code> 设置梯度计算的角度（以北为起始，顺时针计算），也可用 <code class="docutils literal notranslate"><span class="pre">-Aazim/azim2</span></code> 表示计算两个方向梯度并取最大值。<code class="docutils literal notranslate"><span class="pre">-N</span></code> 表示归一化算法，一般有 <code class="docutils literal notranslate"><span class="pre">-Nt</span></code> （累积Cauchy分布）和 <code class="docutils literal notranslate"><span class="pre">-Ne</span></code> （累积Laplace分布）两种。
-<code class="docutils literal notranslate"><span class="pre">-N</span></code> 后可接参数，具体参考帮助手册，一般使用默认即可。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">grdimage</span></code> 模块中： <code class="docutils literal notranslate"><span class="pre">-I</span></code> 接 <code class="docutils literal notranslate"><span class="pre">grdgradient</span></code> 计算得到的梯度文件，<code class="docutils literal notranslate"><span class="pre">-C</span></code>
+<li><code class="docutils literal notranslate"><span class="pre">grdcut</span></code> 指从大区域地形中裁剪出自定义范围的数据（本例中为55-120°E，纬度10-50°N），该操作可降低后续梯度计算的复杂度，提高绘图效率。</li>
+<li><code class="docutils literal notranslate"><span class="pre">grdgradient</span></code> 模块中： <code class="docutils literal notranslate"><span class="pre">-A</span></code> 设置梯度计算的角度（以北为起始，顺时针计算），也可用 <code class="docutils literal notranslate"><span class="pre">-Aazim/azim2</span></code> 表示计算两个方向梯度并取最大值。<code class="docutils literal notranslate"><span class="pre">-N</span></code> 表示归一化算法，一般有 <code class="docutils literal notranslate"><span class="pre">-Nt</span></code> （累积Cauchy分布）和 <code class="docutils literal notranslate"><span class="pre">-Ne</span></code> （累积Laplace分布）两种。
+<code class="docutils literal notranslate"><span class="pre">-N</span></code> 后可接参数，具体参考帮助手册，一般使用默认即可。</li>
+<li><code class="docutils literal notranslate"><span class="pre">grdimage</span></code> 模块中： <code class="docutils literal notranslate"><span class="pre">-I</span></code> 接 <code class="docutils literal notranslate"><span class="pre">grdgradient</span></code> 计算得到的梯度文件，<code class="docutils literal notranslate"><span class="pre">-C</span></code>
 接地形渲染颜色表文件。GMT5.4版本中，<code class="docutils literal notranslate"><span class="pre">-I</span></code> 若未指定文件，则自动调用
-<code class="docutils literal notranslate"><span class="pre">grdgradient</span></code> 计算梯度。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pscoast</span></code> 模块绘制行政边界、水体等，为避免被地形覆盖，需在 <code class="docutils literal notranslate"><span class="pre">grdimage</span></code>
+<code class="docutils literal notranslate"><span class="pre">grdgradient</span></code> 计算梯度。</li>
+<li><code class="docutils literal notranslate"><span class="pre">pscoast</span></code> 模块绘制行政边界、水体等，为避免被地形覆盖，需在 <code class="docutils literal notranslate"><span class="pre">grdimage</span></code>
 之后进行。<code class="docutils literal notranslate"><span class="pre">-N1/0.5p,white</span></code> 表示以 <code class="docutils literal notranslate"><span class="pre">0.5p</span></code> 宽的白色线条绘制国界。
 <code class="docutils literal notranslate"><span class="pre">-Ia/0.15p,177/178/183</span></code> 指绘制所有自然河流、人工运河，<code class="docutils literal notranslate"><span class="pre">177/178/183</span></code>
 为线条颜色的RGB参数（浅灰）。<code class="docutils literal notranslate"><span class="pre">-I1</span></code> 表示绘制主要的恒流河，颜色为 <code class="docutils literal notranslate"><span class="pre">61/99/172</span></code> （深蓝）。
@@ -270,10 +270,10 @@ rm gmt.* Tibet.grd int.grad
 <code class="docutils literal notranslate"><span class="pre">+c30</span></code> 指所绘为30°N，中心经度之处的比例尺；
 <code class="docutils literal notranslate"><span class="pre">+w1000</span></code> 指比例尺长度为1000km；
 <code class="docutils literal notranslate"><span class="pre">+u</span></code> 表示在文字标注后显示长度单位，即 <code class="docutils literal notranslate"><span class="pre">km</span></code>；
-<code class="docutils literal notranslate"><span class="pre">+f</span></code> 表示比例尺样式为黑白相间的fancy样式。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">psscale</span></code> 模块绘制图中左侧的两个色标。两个色标均绘制了颜色表 <code class="docutils literal notranslate"><span class="pre">Tibet.cpt</span></code> 的一部分，用 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 表示截断范围。<code class="docutils literal notranslate"><span class="pre">-D</span></code> 选项表示色标在图中的位置：如第一句中
+<code class="docutils literal notranslate"><span class="pre">+f</span></code> 表示比例尺样式为黑白相间的fancy样式。</li>
+<li><code class="docutils literal notranslate"><span class="pre">psscale</span></code> 模块绘制图中左侧的两个色标。两个色标均绘制了颜色表 <code class="docutils literal notranslate"><span class="pre">Tibet.cpt</span></code> 的一部分，用 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 表示截断范围。<code class="docutils literal notranslate"><span class="pre">-D</span></code> 选项表示色标在图中的位置：如第一句中
 <code class="docutils literal notranslate"><span class="pre">-Dx-0.3i/1.4i</span></code> 表示第一个色标绘在左下角原点左移0.3 inch，上移1.4 inch的位置，
-<code class="docutils literal notranslate"><span class="pre">+w2.5i/0.15i</span></code> 表示色标高2.5 inch，宽0.15 inch，<code class="docutils literal notranslate"><span class="pre">+ma</span></code> 表示色标的文字标注位于左侧。</p></li>
+<code class="docutils literal notranslate"><span class="pre">+w2.5i/0.15i</span></code> 表示色标高2.5 inch，宽0.15 inch，<code class="docutils literal notranslate"><span class="pre">+ma</span></code> 表示色标的文字标注位于左侧。</li>
 </ol>
 </div>
 
@@ -320,7 +320,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月28日.
+        最后更新于 2019年03月29日.
       </span>
 
     </p>

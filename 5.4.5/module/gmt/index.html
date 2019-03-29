@@ -331,14 +331,16 @@
             
   <div class="section" id="gmt">
 <span id="index-0"></span><h1>12.8 gmt<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h1>
-<dl class="field-list simple">
-<dt class="field-odd">官方文档</dt>
-<dd class="field-odd"><p><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/gmt.html" title="(在 GMT v5.4.5)"><span>gmt</span></a></p>
-</dd>
-<dt class="field-even">说明</dt>
-<dd class="field-even"><p>GMT的主程序</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/gmt.html" title="(在 GMT v5.4.5)"><span>gmt</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">说明:</th><td class="field-body">GMT的主程序</td>
+</tr>
+</tbody>
+</table>
 <p>GMT的所有功能通过如下语法调用:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt &lt;module&gt; &lt;module-options&gt;
 </pre></div>
@@ -353,22 +355,22 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">clear</span> <span class="pre">history</span></code>：删除当前目录下的 <code class="docutils literal notranslate"><span class="pre">gmt.history</span></code> 文件</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">clear</span> <span class="pre">conf</span></code>：删除当前目录下的 <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code> 文件</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">clear</span> <span class="pre">cache</span></code>：删除用户目录（<code class="docutils literal notranslate"><span class="pre">~/.gmt</span></code>）下的缓存文件夹</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">clear</span> <span class="pre">all</span></code>：清理 history、conf 和 cache</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">clear</span> <span class="pre">history</span></code>：删除当前目录下的 <code class="docutils literal notranslate"><span class="pre">gmt.history</span></code> 文件</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">clear</span> <span class="pre">conf</span></code>：删除当前目录下的 <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code> 文件</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">clear</span> <span class="pre">cache</span></code>：删除用户目录（<code class="docutils literal notranslate"><span class="pre">~/.gmt</span></code>）下的缓存文件夹</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">clear</span> <span class="pre">all</span></code>：清理 history、conf 和 cache</li>
 </ul>
 <p>除此之外，还有一些其他选项可以使用：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--help</span></code>：列出GMT提供的所有模块名及其功能</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--version</span></code>：显示GMT版本</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--show-bindir</span></code>：显示GMT的bin目录</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--show-datadir</span></code>：显示GMT的数据目录，默认为空</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--show-sharedir</span></code>：显示GMT的share目录</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--show-plugindir</span></code>：显示GMT的插件目录</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--show-modules</span></code>：列出GMT的所有模块名</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--show-cores</span></code>：显示当前计算机可以使用的核数</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">&lt;module&gt;</span> <span class="pre">=</span></code>：检测模块 <code class="docutils literal notranslate"><span class="pre">&lt;module&gt;</span></code> 是否存在，若存在则返回0，否则返回非零值</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--help</span></code>：列出GMT提供的所有模块名及其功能</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--version</span></code>：显示GMT版本</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--show-bindir</span></code>：显示GMT的bin目录</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--show-datadir</span></code>：显示GMT的数据目录，默认为空</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--show-sharedir</span></code>：显示GMT的share目录</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--show-plugindir</span></code>：显示GMT的插件目录</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--show-modules</span></code>：列出GMT的所有模块名</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--show-cores</span></code>：显示当前计算机可以使用的核数</li>
+<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">&lt;module&gt;</span> <span class="pre">=</span></code>：检测模块 <code class="docutils literal notranslate"><span class="pre">&lt;module&gt;</span></code> 是否存在，若存在则返回0，否则返回非零值</li>
 </ul>
 </div>
 
@@ -415,7 +417,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月28日.
+        最后更新于 2019年03月29日.
       </span>
 
     </p>

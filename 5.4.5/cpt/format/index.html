@@ -219,15 +219,15 @@ N   &lt;fill_nan&gt;
 </div>
 <p>其中：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;key&gt;</span></code> 是分类数据的可能取值。<code class="docutils literal notranslate"><span class="pre">&lt;key&gt;</span></code> 必须单调递增但可不连续</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;fill&gt;</span></code> 是相应数据的填充色。可以是颜色，也可以是图案，见 <a class="reference internal" href="../../basis/fill/"><span class="doc">填充</span></a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> 则是数据的标签（可选）。通常设置为类型名，其主要有两个用途：让用户知道每一个可能取值代表的具体类型；在使用 <a class="reference internal" href="../../module/psscale/"><span class="doc">psscale</span></a> 绘制色标时可以将标签显示到色标旁边。</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;key&gt;</span></code> 是分类数据的可能取值。<code class="docutils literal notranslate"><span class="pre">&lt;key&gt;</span></code> 必须单调递增但可不连续</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;fill&gt;</span></code> 是相应数据的填充色。可以是颜色，也可以是图案，见 <a class="reference internal" href="../../basis/fill/"><span class="doc">填充</span></a></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> 则是数据的标签（可选）。通常设置为类型名，其主要有两个用途：让用户知道每一个可能取值代表的具体类型；在使用 <a class="reference internal" href="../../module/psscale/"><span class="doc">psscale</span></a> 绘制色标时可以将标签显示到色标旁边。</li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;key&gt;</span></code> 还可以取以下特殊值：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">B</span></code>：定义小于 <code class="docutils literal notranslate"><span class="pre">&lt;key1&gt;</span></code> 的值的填充色，即背景色，默认值由 <a class="reference internal" href="../../conf/color/#color-background"><span class="std std-ref">COLOR_BACKGROUND</span></a> 控制</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code>：定义大于 <code class="docutils literal notranslate"><span class="pre">&lt;keyn&gt;</span></code> 的值的填充色，即前景色，默认值由 <a class="reference internal" href="../../conf/color/#color-foreground"><span class="std std-ref">COLOR_FOREGROUND</span></a> 控制</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">N</span></code>：定义值为 NaN 时使用的填充色，默认值由 <a class="reference internal" href="../../conf/color/#color-nan"><span class="std std-ref">COLOR_NAN</span></a> 控制</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">B</span></code>：定义小于 <code class="docutils literal notranslate"><span class="pre">&lt;key1&gt;</span></code> 的值的填充色，即背景色，默认值由 <a class="reference internal" href="../../conf/color/#color-background"><span class="std std-ref">COLOR_BACKGROUND</span></a> 控制</li>
+<li><code class="docutils literal notranslate"><span class="pre">F</span></code>：定义大于 <code class="docutils literal notranslate"><span class="pre">&lt;keyn&gt;</span></code> 的值的填充色，即前景色，默认值由 <a class="reference internal" href="../../conf/color/#color-foreground"><span class="std std-ref">COLOR_FOREGROUND</span></a> 控制</li>
+<li><code class="docutils literal notranslate"><span class="pre">N</span></code>：定义值为 NaN 时使用的填充色，默认值由 <a class="reference internal" href="../../conf/color/#color-nan"><span class="std std-ref">COLOR_NAN</span></a> 控制</li>
 </ul>
 <p>下面是一个分类CPT文件的示例:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">0</span>  yellow  <span class="p">;</span>desert
@@ -237,9 +237,9 @@ N   &lt;fill_nan&gt;
 </div>
 <p>从中可以看出CPT文件是如何完成数据与颜色之间的映射：</p>
 <ul class="simple">
-<li><p>当数据值为0时，其填充色为黄色，代表沙漠</p></li>
-<li><p>当数据值为1时，其填充色为绿色，代表森林</p></li>
-<li><p>当数据值为2时，其填充色为红色，代表冰川</p></li>
+<li>当数据值为0时，其填充色为黄色，代表沙漠</li>
+<li>当数据值为1时，其填充色为绿色，代表森林</li>
+<li>当数据值为2时，其填充色为红色，代表冰川</li>
 </ul>
 </div>
 <div class="section" id="id2">
@@ -259,33 +259,35 @@ N   &lt;fill_nan&gt;
 <code class="docutils literal notranslate"><span class="pre">&lt;z1&gt;</span></code> 之间时颜色则通过对 <code class="docutils literal notranslate"><span class="pre">&lt;color_min_1&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;color_max_1&gt;</span></code> 线性或非线性插值得到。由此即定义了任意数值与颜色之间的映射关系。</p>
 <p>在每一行后面，还可以加上两个可选项：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">;&lt;label&gt;</span></code> 是Z值范围所对应的标签，使用 <a class="reference internal" href="../../module/psscale/"><span class="doc">psscale</span></a> 模块绘制色标时加上 <code class="docutils literal notranslate"><span class="pre">-L</span></code> 选项则会将 <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> 作为色标的标注</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">L|U|B</span></code> 用于控制绘制色标时标注的放置位置。<code class="docutils literal notranslate"><span class="pre">L</span></code>、<code class="docutils literal notranslate"><span class="pre">U</span></code>、<code class="docutils literal notranslate"><span class="pre">B</span></code>分别标注每个Z值范围的下限、上限或者同时标注Z值上下限</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">;&lt;label&gt;</span></code> 是Z值范围所对应的标签，使用 <a class="reference internal" href="../../module/psscale/"><span class="doc">psscale</span></a> 模块绘制色标时加上 <code class="docutils literal notranslate"><span class="pre">-L</span></code> 选项则会将 <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> 作为色标的标注</li>
+<li><code class="docutils literal notranslate"><span class="pre">L|U|B</span></code> 用于控制绘制色标时标注的放置位置。<code class="docutils literal notranslate"><span class="pre">L</span></code>、<code class="docutils literal notranslate"><span class="pre">U</span></code>、<code class="docutils literal notranslate"><span class="pre">B</span></code>分别标注每个Z值范围的下限、上限或者同时标注Z值上下限</li>
 </ul>
 <p>Z值还可以取以下特殊值：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">B</span></code>：定义小于 <code class="docutils literal notranslate"><span class="pre">&lt;z0&gt;</span></code> 的值的填充色，即背景色，默认值由 <a class="reference internal" href="../../conf/color/#color-background"><span class="std std-ref">COLOR_BACKGROUND</span></a> 控制</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code>：定义大于 <code class="docutils literal notranslate"><span class="pre">&lt;zn&gt;</span></code> 的值的填充色，即前景色，默认值由 <a class="reference internal" href="../../conf/color/#color-foreground"><span class="std std-ref">COLOR_FOREGROUND</span></a> 控制</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">N</span></code>：定义值为 NaN 时使用的填充色，默认值由 <a class="reference internal" href="../../conf/color/#color-nan"><span class="std std-ref">COLOR_NAN</span></a> 控制</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">B</span></code>：定义小于 <code class="docutils literal notranslate"><span class="pre">&lt;z0&gt;</span></code> 的值的填充色，即背景色，默认值由 <a class="reference internal" href="../../conf/color/#color-background"><span class="std std-ref">COLOR_BACKGROUND</span></a> 控制</li>
+<li><code class="docutils literal notranslate"><span class="pre">F</span></code>：定义大于 <code class="docutils literal notranslate"><span class="pre">&lt;zn&gt;</span></code> 的值的填充色，即前景色，默认值由 <a class="reference internal" href="../../conf/color/#color-foreground"><span class="std std-ref">COLOR_FOREGROUND</span></a> 控制</li>
+<li><code class="docutils literal notranslate"><span class="pre">N</span></code>：定义值为 NaN 时使用的填充色，默认值由 <a class="reference internal" href="../../conf/color/#color-nan"><span class="std std-ref">COLOR_NAN</span></a> 控制</li>
 </ul>
 <p>GMT对于常规CPT文件的格式由如下要求：</p>
 <ol class="arabic simple">
-<li><p>Z值必须单调递增</p></li>
-<li><p>Z值不能存在间断，即每行的最大Z值必须与下一行的最小Z值相同</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">B|F|N</span></code> 语句要放在CPT文件的开头或结尾</p></li>
-<li><p>可以指定颜色也可以指定填充图案，若 <code class="docutils literal notranslate"><span class="pre">&lt;color_min_1&gt;</span></code> 指定了填充图案，则
-<code class="docutils literal notranslate"><span class="pre">&lt;color_max_1&gt;</span></code> 必须设置为 <code class="docutils literal notranslate"><span class="pre">-</span></code></p></li>
+<li>Z值必须单调递增</li>
+<li>Z值不能存在间断，即每行的最大Z值必须与下一行的最小Z值相同</li>
+<li><code class="docutils literal notranslate"><span class="pre">B|F|N</span></code> 语句要放在CPT文件的开头或结尾</li>
+<li>可以指定颜色也可以指定填充图案，若 <code class="docutils literal notranslate"><span class="pre">&lt;color_min_1&gt;</span></code> 指定了填充图案，则
+<code class="docutils literal notranslate"><span class="pre">&lt;color_max_1&gt;</span></code> 必须设置为 <code class="docutils literal notranslate"><span class="pre">-</span></code></li>
 </ol>
 <p>常规CPT文件的格式是相对比较灵活的，其又可以进一步细分为连续型CPT和间断性CPT：</p>
-<dl>
-<dt>连续型CPT</dt><dd><p>当一行的最大Z值与下一行的最小Z值对应同一个颜色</p>
+<dl class="docutils">
+<dt>连续型CPT</dt>
+<dd><p class="first">当一行的最大Z值与下一行的最小Z值对应同一个颜色</p>
 <p>例如，下面的示例CPT文件中在Z取0.5处颜色是连续的:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">0</span>       black   <span class="m">0</span>.5     red
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">0</span>       black   <span class="m">0</span>.5     red
 <span class="m">0</span>.5     red         <span class="m">1</span>   yellow
 </pre></div>
 </div>
 </dd>
-<dt>间断型CPT</dt><dd><p>即某一行的最大Z值与下一行的最小Z值对应不同的颜色。</p>
+<dt>间断型CPT</dt>
+<dd><p class="first">即某一行的最大Z值与下一行的最小Z值对应不同的颜色。</p>
 <p>例如，下面的示例CPT文件中，第一行表明Z取0.5时为红色，第二行表明Z取0.5时为蓝色，即在Z取0.5处颜色存在间断:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">0</span>       black   <span class="m">0</span>.5     red
 <span class="m">0</span>.5     blue    <span class="m">1</span>       yellow
@@ -293,7 +295,7 @@ N   &lt;fill_nan&gt;
 </div>
 <p>进一步，当某一行内最小Z值和最大Z值对应相同的颜色时则构成了单色间断型CPT。例如，下面的示例CPT文件中，第一行指定了Z取0和0.5均定义为黑色，意味着Z取0到
 0.5之间的任意数值均为黑色。第二行则指定了Z取0.5到1之间的任意数值均为红色:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">0</span>       black   <span class="m">0</span>.5     black
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">0</span>       black   <span class="m">0</span>.5     black
 <span class="m">0</span>.5     red     <span class="m">1</span>       red
 </pre></div>
 </div>
@@ -345,7 +347,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月28日.
+        最后更新于 2019年03月29日.
       </span>
 
     </p>
