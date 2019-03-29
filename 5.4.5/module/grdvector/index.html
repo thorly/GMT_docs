@@ -419,6 +419,7 @@ X分量和Y分量，最终矢量场用不同长度和方向的箭头表示。两
 <div id="gitalk-container"></div>
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
 <script type="text/javascript">
   var gitalk = new Gitalk({
     clientID: '0e924d7b349247809740',
@@ -426,6 +427,7 @@ X分量和Y分量，最终矢量场用不同长度和方向的箭头表示。两
     owner: 'gmt-china',
     repo: 'gitalk',
     admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989'],
+    id: md5(location.pathname),
     body: location.href,
   });
 gitalk.render('gitalk-container');
