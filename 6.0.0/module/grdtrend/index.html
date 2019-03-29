@@ -404,6 +404,7 @@ robust scale estimate多次迭代，给数据重新赋予权重，以得到一�
 <div id="gitalk-container"></div>
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
 <script type="text/javascript">
   var gitalk = new Gitalk({
     clientID: '0e924d7b349247809740',
@@ -411,6 +412,7 @@ robust scale estimate多次迭代，给数据重新赋予权重，以得到一�
     owner: 'gmt-china',
     repo: 'gitalk',
     admin: ['zhaozhiyuan1989','cehui07226','NothingIsBig','seisman','SeisPider','wangliang1989'],
+    id: md5(location.pathname),
     body: location.href,
   });
 gitalk.render('gitalk-container');
@@ -437,7 +439,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年03月28日.
+        最后更新于 2019年03月29日.
       </span>
 
     </p>
