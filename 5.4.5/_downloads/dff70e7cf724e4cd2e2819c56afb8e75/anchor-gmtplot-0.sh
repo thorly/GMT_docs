@@ -1,61 +1,33 @@
-#!/bin/bash
-B=0.2
-M=0.38
-T=0.56
-L=0.10
-C=1.04
-R=1.98
-PS=GMT_text_anchors.ps
-gmt pstext -R0/3/0/1.5 -Jx1i -P -K -N -C0 -Wthin,- -F+f36p,Helvetica-Bold+jLB << EOF > $PS
-0.1	0.2	My Text
+PS=anchor-1.ps
+gmt set MAP_TICK_LENGTH_PRIMARY 20p MAP_TICK_PEN_PRIMARY 1p
+gmt psbasemap -R0/10/0/6 -JX10c/6c -BENws -Bxf5 -Byf3 -P -K > $PS
+gmt psxy -R -J -Sc0.3c -Gred -N -K -O >> $PS << EOF
+0 0
+0 3
+0 6
+5 0
+5 3
+5 6
+10 0
+10 3
+10 6
 EOF
-gmt psxy -R -J -O -K -N << EOF >> $PS
->
-0.05	$B
-2.04	$B
->
-0.05	$M
-2.04	$M
->
-0.05	$T
-2.04	$T
->
-$L	0
-$L	0.65
->
-$C	0
-$C	0.65
->
-$R	0
-$R	0.65
+gmt pstext -J -R -F+f15p+j -Dj0.5c/0.5c -N -K -O >> $PS << EOF
+10 6 ML @%1%T@%%op
+10 3 ML @%1%M@%%iddle
+10 0 ML @%1%B@%%ottom
+0  6 BC @%1%L@%%eft
+5  6 BC @%1%C@%%enter
+10 6 BC @%1%R@%%ight
 EOF
-gmt psxy -R -J -O -K -N -Wthinner << EOF >> $PS
->
-0.7	-0.1
-$L	$M
->
-1.3	-0.1
-$R	$T
+gmt pstext -J -R -F+f15p,1,red+c+j -Dj0.5c/0.5c+v2p -O >> $PS << EOF
+TL TL TL
+TC TC TC
+TR TR TR
+ML ML ML
+MC BL MC
+MR MR MR
+BL BL BL
+BC BC BC
+BR BR BR
 EOF
-gmt pstext -R -J -O -K -N -F+f8p+j << EOF >> $PS
-$L	0.69	CB	L (Left)
-$C	0.69	CB	C (Center)
-$R	0.69	CB	R (Right)
-2.07	$T	LM	T (Top)
-2.07	$M	LM	M (Middle)
-2.07	$B	LM	B (Bottom)
-0.6	-0.05	LM	LM
-1.37	-0.05	RM	TR
-EOF
-gmt psxy -R -J -O -Sc0.05 << EOF >> $PS
-$L	$B
-$L	$M
-$L	$T
-$C	$B
-$C	$M
-$C	$T
-$R	$B
-$R	$M
-$R	$T
-EOF
-rm gmt.*

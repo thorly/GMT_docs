@@ -1,13 +1,25 @@
-#!/bin/bash
-gmt pstext -R0/10/0/2 -Jx2c -B1g1 -BWS -F+j+f20p,blue > GMT_text_justification.ps << EOF
-1 1 LT LT
-2 1 LM LM
-3 1 LB LB
-4 1 CT CT
-5 1 CM CM
-6 1 CB CB
-7 1 RT RT
-8 1 RM RM
-9 1 RB RB
+PS=anchor-2.ps
+gmt psbasemap -Rg -JH10c -B0 -P -K > $PS
+gmt pstext -J -R -F+f15p,1,red+c+j -Dj0.5c/0.5c+v2p -N -K -O >> $PS << EOF
+TL TL TL
+TC TC TC
+TR TR TR
+ML ML ML
+MC BL MC
+MR MR MR
+BL BL BL
+BC BC BC
+BR BR BR
 EOF
-rm gmt.*
+
+gmt psxy -R0/10/0/6 -JX10c/5c -Sc0.3c -Gred -N -O >> $PS << EOF
+0 0
+0 3
+0 6
+5 0
+5 3
+5 6
+10 0
+10 3
+10 6
+EOF
