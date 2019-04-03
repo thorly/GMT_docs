@@ -208,27 +208,23 @@
             
   <div class="section" id="id1">
 <h1>4.11 锚点<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<p>要将一个矩形物体放在指定的坐标处，该怎么放呢？是把矩形中心放在指定坐标处？还是把矩形左上角放在坐标处？最好能够控制将矩形的任意一点放在指定坐标处。</p>
-<p>GMT提供了这样一种机制，可以很方便地将矩形的任意一点放在指定坐标处。这里所说的矩形，并不是一个真正的矩形，而是一串文本、比例尺、指南针、颜色条等等。这些东西都可以被抽象成一个矩形，这一节仅以字符串为例，介绍GMT中矩形的锚点。</p>
-<p>任意一个字符串，都有一个将其包起来的矩形。如图所示：</p>
+<p>锚 ⚓是船舶停泊时固定船只使之不能漂走的工具。GMT中的锚点也具有类似的作用，用于将某个元素固定在图中的某个位置。这一节将介绍GMT中锚点的概念，具体的使用场景及使用方法将在下一节介绍。</p>
+<p>对于任意一个矩形元素，GMT为其定义了9个锚点。每个锚点的位置用一个水平位置代码和一个垂直位置代码组合定义得到。水平位置代码可以取 <code class="docutils literal notranslate"><span class="pre">L</span></code>、<code class="docutils literal notranslate"><span class="pre">C</span></code>或 <code class="docutils literal notranslate"><span class="pre">R</span></code>，分别表示左中右；垂直位置代码可以取 <code class="docutils literal notranslate"><span class="pre">T</span></code>、<code class="docutils literal notranslate"><span class="pre">M</span></code>或 <code class="docutils literal notranslate"><span class="pre">B</span></code>，分别表示上中下。3个水平位置代码与3个垂直位置代码自由组合，得到9个锚点，每个锚点均对应矩形元素的某个特定位置，如下图中红点和红字所示。例如，锚点 <code class="docutils literal notranslate"><span class="pre">BL</span></code> 位于矩形元素的左下角，而锚点 <code class="docutils literal notranslate"><span class="pre">MC</span></code> 则位于矩形元素的中心。</p>
 <p><a class="reference download internal" download="" href="../../_downloads/dff70e7cf724e4cd2e2819c56afb8e75/anchor-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center">
-<img alt="../../_images/anchor-gmtplot-0.png" src="../../_images/anchor-gmtplot-0.png" />
+<a class="reference internal image-reference" href="../../_images/anchor-gmtplot-0.png"><img alt="../../_images/anchor-gmtplot-0.png" src="../../_images/anchor-gmtplot-0.png" style="width: 70%;" /></a>
 </div>
-<p>如上图所示，在水平方向上，定义 <code class="docutils literal notranslate"><span class="pre">L</span></code> 、 <code class="docutils literal notranslate"><span class="pre">C</span></code> 、 <code class="docutils literal notranslate"><span class="pre">R</span></code> 三个水平位置代码，表示左、中、右三个水平位置；在垂直方向上，定义 <code class="docutils literal notranslate"><span class="pre">T</span></code> 、 <code class="docutils literal notranslate"><span class="pre">M</span></code> 、 <code class="docutils literal notranslate"><span class="pre">B</span></code> 三个垂直位置代码，代表上、中、下三个垂直位置。</p>
-<div class="admonition note">
-<p class="first admonition-title">注解</p>
-<p class="last">图中 <code class="docutils literal notranslate"><span class="pre">B</span></code> 代表的是字符 <code class="docutils literal notranslate"><span class="pre">M</span></code> 的底部，而不是字符 <code class="docutils literal notranslate"><span class="pre">y</span></code> 的底部，这在印刷行业里称为baseline。</p>
-</div>
-<p>将任意一个水平位置代码与任意一个垂直位置组合起来，就构成了矩形的9个锚点（图中的9个圆圈），分别是 <code class="docutils literal notranslate"><span class="pre">LT</span></code> 、 <code class="docutils literal notranslate"><span class="pre">LM</span></code> 、 <code class="docutils literal notranslate"><span class="pre">LB</span></code> 、 <code class="docutils literal notranslate"><span class="pre">CT</span></code> 、 <code class="docutils literal notranslate"><span class="pre">CM</span></code> 、 <code class="docutils literal notranslate"><span class="pre">CB</span></code> 、 <code class="docutils literal notranslate"><span class="pre">RT</span></code> 、 <code class="docutils literal notranslate"><span class="pre">RM</span></code> 、 <code class="docutils literal notranslate"><span class="pre">RB</span></code> 。先后顺序不重要，<code class="docutils literal notranslate"><span class="pre">LT</span></code> 和 <code class="docutils literal notranslate"><span class="pre">TL</span></code> 是一个意思。</p>
-<p>要指定一串文本相对于特定坐标的对齐方式，可以通过指定将文本的某个锚点放在特定坐标处来实现。下图展示了9种文本对齐方式的效果。图中将九个字符串按照相应的对齐方式放在坐标
-<code class="docutils literal notranslate"><span class="pre">(1,1)</span></code> 、 <code class="docutils literal notranslate"><span class="pre">(2,1)</span></code> 到 <code class="docutils literal notranslate"><span class="pre">(9,1)</span></code> 处，即将字符 <code class="docutils literal notranslate"><span class="pre">LT</span></code> 的 <code class="docutils literal notranslate"><span class="pre">LT</span></code> 锚点放在 <code class="docutils literal notranslate"><span class="pre">(1,1)</span></code> 处，其他同理。</p>
+<p>此处的矩形元素并不一定是一个真正的矩形，GMT中很多绘图元素都可以抽象为一个矩形元素。例如常规的矩形底图、非矩形的地理底图、比例尺、色标、指南针、文本字符串等，都可以抽象为一个矩形元素。</p>
+<p>例如，对于一个非矩形的地理底图来说，其9个锚点的位置如下图所示：</p>
 <p><a class="reference download internal" download="" href="../../_downloads/9dd4d48bcab515bf289b53a5b963b498/anchor-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center">
-<img alt="../../_images/anchor-gmtplot-1.png" src="../../_images/anchor-gmtplot-1.png" />
+<a class="reference internal image-reference" href="../../_images/anchor-gmtplot-1.png"><img alt="../../_images/anchor-gmtplot-1.png" src="../../_images/anchor-gmtplot-1.png" style="width: 70%;" /></a>
 </div>
-<p>从图中可以直观得看到，<code class="docutils literal notranslate"><span class="pre">CM</span></code> 对齐方式将字符串的中心放在了指定坐标处，<code class="docutils literal notranslate"><span class="pre">LT</span></code>
-对齐方式将字符串的左上角放在了指定坐标处，其他同理。</p>
+<p>指南针、比例尺、图例、色标、文本字符串等也可以抽象为一个矩形，也有自己的锚点。下图展示了色标的9个锚点的位置：</p>
+<p><a class="reference download internal" download="" href="../../_downloads/ea4cdac636a6f17a544624886f506776/anchor-gmtplot-2.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/anchor-gmtplot-2.png"><img alt="../../_images/anchor-gmtplot-2.png" src="../../_images/anchor-gmtplot-2.png" style="width: 70%;" /></a>
+</div>
 </div>
 
 
@@ -276,7 +272,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年04月02日.
+        最后更新于 2019年04月03日.
       </span>
 
     </p>
