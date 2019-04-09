@@ -210,16 +210,16 @@
   <div class="section" id="linux-gmt">
 <h1>2.1 Linux 下安装GMT<a class="headerlink" href="#linux-gmt" title="永久链接至标题">¶</a></h1>
 <div class="admonition note">
-<p class="first admonition-title">注解</p>
-<p class="last">大多数Linux发行版都提供了预编译的GMT二进制包，可以通过发行版的软件包安装工具，如 <code class="docutils literal notranslate"><span class="pre">apt-get</span></code> 或 <code class="docutils literal notranslate"><span class="pre">yum</span></code> 等进行直接安装GMT。但大多数发行版提供的
+<p class="admonition-title">注解</p>
+<p>大多数Linux发行版都提供了预编译的GMT二进制包，可以通过发行版的软件包安装工具，如 <code class="docutils literal notranslate"><span class="pre">apt-get</span></code> 或 <code class="docutils literal notranslate"><span class="pre">yum</span></code> 等进行直接安装GMT。但大多数发行版提供的
 GMT版本都较老，故本文仅介绍如何从源码编译GMT。</p>
 </div>
 <div class="section" id="id1">
 <h2>2.1.1 解决依赖关系<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>GMT 在运行时依赖 fftw（&gt;=3.3）、netCDF（&gt;4.0且支持netCDF-4/HDF5）、ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（&gt;=2.8.5）。因而，需要先安装GMT所依赖的软件包。</p>
 <div class="admonition warning">
-<p class="first admonition-title">警告</p>
-<p class="last">由于 Linux 发行版众多，不同发行版下软件包的名称不同。因而，以下仅所列仅供参考，其他用户应自行根据关键词到
+<p class="admonition-title">警告</p>
+<p>由于 Linux 发行版众多，不同发行版下软件包的名称不同。因而，以下仅所列仅供参考，其他用户应自行根据关键词到
 <a class="reference external" href="https://pkgs.org">https://pkgs.org</a> 上确认自己使用的发行版上软件包的具体名字。</p>
 </div>
 <p>对于Ubuntu/Debian:</p>
@@ -273,9 +273,9 @@ yes
 <h2>2.1.2 下载<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>Linux下安装GMT需要下载如下三个文件（这里提供中科大提供的国内下载镜像）：</p>
 <ol class="arabic simple">
-<li>GMT源码：<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/gmt-5.4.5-src.tar.gz">gmt-5.4.5-src.tar.gz</a></li>
-<li>全球海岸线数据GSHHG：<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz">gshhg-gmt-2.3.7.tar.gz</a></li>
-<li>全球数字图表DCW：<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/dcw-gmt-1.1.4.tar.gz">dcw-gmt-1.1.4.tar.gz</a></li>
+<li><p>GMT源码：<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/gmt-5.4.5-src.tar.gz">gmt-5.4.5-src.tar.gz</a></p></li>
+<li><p>全球海岸线数据GSHHG：<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz">gshhg-gmt-2.3.7.tar.gz</a></p></li>
+<li><p>全球数字图表DCW：<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/dcw-gmt-1.1.4.tar.gz">dcw-gmt-1.1.4.tar.gz</a></p></li>
 </ol>
 </div>
 <div class="section" id="gmt">
@@ -307,20 +307,20 @@ $ gedit cmake/ConfigUser.cmake
 </div>
 <p>其中，</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">CMAKE_INSTALL_PREFIX</span></code> 用于设置GMT的安装路径，上面的语句会将GMT安装在
-<code class="docutils literal notranslate"><span class="pre">/opt/GMT-5.4.5</span></code> 目录下，用户可以自行修改为其他路径。没有 root 权限的一般用户，可以将安装路径设置为 <code class="docutils literal notranslate"><span class="pre">/home/xxx/software/GMT-5.4.5</span></code> 等有可读写权限的路径；</li>
-<li><code class="docutils literal notranslate"><span class="pre">COPY_GSHHG</span></code> 和 <code class="docutils literal notranslate"><span class="pre">COPY_DCW</span></code> 设置为 TRUE 会将相关数据复制到 GMT 的 share 目录下</li>
-<li><code class="docutils literal notranslate"><span class="pre">GMT_INSTALL_MODULE_LINKS</span></code> 为 <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>，表明不在GMT的bin目录下建立命令的软链接，不建议设置为 <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> （可选）</li>
-<li><code class="docutils literal notranslate"><span class="pre">GMT_USE_THREADS</span></code> 表示是否开启某些模块的并行功能（可选）</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CMAKE_INSTALL_PREFIX</span></code> 用于设置GMT的安装路径，上面的语句会将GMT安装在
+<code class="docutils literal notranslate"><span class="pre">/opt/GMT-5.4.5</span></code> 目录下，用户可以自行修改为其他路径。没有 root 权限的一般用户，可以将安装路径设置为 <code class="docutils literal notranslate"><span class="pre">/home/xxx/software/GMT-5.4.5</span></code> 等有可读写权限的路径；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">COPY_GSHHG</span></code> 和 <code class="docutils literal notranslate"><span class="pre">COPY_DCW</span></code> 设置为 TRUE 会将相关数据复制到 GMT 的 share 目录下</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GMT_INSTALL_MODULE_LINKS</span></code> 为 <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>，表明不在GMT的bin目录下建立命令的软链接，不建议设置为 <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> （可选）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GMT_USE_THREADS</span></code> 表示是否开启某些模块的并行功能（可选）</p></li>
 </ul>
 <div class="admonition warning">
-<p class="first admonition-title">警告</p>
-<p class="last">CentOS 6 用户需要将用户配置文件的最后一行改为 <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">(GMT_USE_THREADS</span> <span class="pre">FALSE)</span></code></p>
+<p class="admonition-title">警告</p>
+<p>CentOS 6 用户需要将用户配置文件的最后一行改为 <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">(GMT_USE_THREADS</span> <span class="pre">FALSE)</span></code></p>
 </div>
 <div class="admonition tip">
-<p class="first admonition-title">小技巧</p>
+<p class="admonition-title">小技巧</p>
 <p>此处为了便于一般用户理解，只向 <code class="docutils literal notranslate"><span class="pre">cmake/ConfigUser.cmake</span></code> 中写入了必要的语句。</p>
-<p class="last">高级用户可以直接在 GMT 提供的模板配置文件的基础上进行更多配置。将 <code class="docutils literal notranslate"><span class="pre">cmake/ConfigUserTemplate.cmake</span></code> 复制为 <code class="docutils literal notranslate"><span class="pre">cmake/ConfigUser.cmake</span></code>，然后根据配置文件中的大量注释说明信息自行修改配置文件。</p>
+<p>高级用户可以直接在 GMT 提供的模板配置文件的基础上进行更多配置。将 <code class="docutils literal notranslate"><span class="pre">cmake/ConfigUserTemplate.cmake</span></code> 复制为 <code class="docutils literal notranslate"><span class="pre">cmake/ConfigUser.cmake</span></code>，然后根据配置文件中的大量注释说明信息自行修改配置文件。</p>
 </div>
 <p>继续执行如下命令以检查GMT的依赖是否满足:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 注意，此处新建的 build 文件夹位于 gmt-5.4.5 目录下，不是 gmt-5.4.5/cmake 目录下</span>
@@ -367,9 +367,9 @@ $ cmake ..
 </div>
 <p>正常情况下的检查结果应该与上面给出的类似。若出现问题，则需要检查之前的步骤是否有误，检查完成后删除原build目录再新建build，继续执行 <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">..</span></code>，直到出现类似的检查结果。</p>
 <div class="admonition warning">
-<p class="first admonition-title">警告</p>
+<p class="admonition-title">警告</p>
 <p>Anaconda用户请注意！由于Anaconda中也安装了FFTW、GDAL、netCDF等库文件，GMT在配置过程中通常会找到Anaconda提供的库文件，进而导致配置、编译或执行过程中出错。</p>
-<p class="last">解决办法是，在 <cite>~/.bashrc</cite> 中将 Anaconda 相关的环境变量注释掉，以保证GMT
+<p>解决办法是，在 <cite>~/.bashrc</cite> 中将 Anaconda 相关的环境变量注释掉，以保证GMT
 在配置和编译过程中找到的不是 Anaconda 提供的库文件。待GMT安装完成后，再将 Anaconda 相关环境变量改回即可。</p>
 </div>
 <p>检查完毕后，开始编译和安装:</p>
@@ -378,8 +378,8 @@ $ sudo make -j install
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">注解</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">-j</span></code> 选项可以实现并行编译以减少编译时间。但据用户报告，某些Ubuntu发行版下使用 <code class="docutils literal notranslate"><span class="pre">-j</span></code> 选项会导致编译过程卡死。若出现此种情况，建议去除 <code class="docutils literal notranslate"><span class="pre">-j</span></code> 选项。</p>
+<p class="admonition-title">注解</p>
+<p><code class="docutils literal notranslate"><span class="pre">-j</span></code> 选项可以实现并行编译以减少编译时间。但据用户报告，某些Ubuntu发行版下使用 <code class="docutils literal notranslate"><span class="pre">-j</span></code> 选项会导致编译过程卡死。若出现此种情况，建议去除 <code class="docutils literal notranslate"><span class="pre">-j</span></code> 选项。</p>
 </div>
 </div>
 <div class="section" id="id3">
@@ -392,9 +392,9 @@ $ sudo make -j install
 </div>
 <p>说明：</p>
 <ul class="simple">
-<li>第一个命令添加了环境变量 <code class="docutils literal notranslate"><span class="pre">GMT5HOME</span></code></li>
-<li>第二个命令修改 GMT5 的 bin 目录加入到 <code class="docutils literal notranslate"><span class="pre">PATH</span></code> 中，使得终端可以找到GMT命令</li>
-<li>第三个命令将 GMT5 的 lib 目录加入到动态链接库路径中。通常，32位系统的路径为 <code class="docutils literal notranslate"><span class="pre">lib</span></code>，64位系统的路径为 <code class="docutils literal notranslate"><span class="pre">lib64</span></code></li>
+<li><p>第一个命令添加了环境变量 <code class="docutils literal notranslate"><span class="pre">GMT5HOME</span></code></p></li>
+<li><p>第二个命令修改 GMT5 的 bin 目录加入到 <code class="docutils literal notranslate"><span class="pre">PATH</span></code> 中，使得终端可以找到GMT命令</p></li>
+<li><p>第三个命令将 GMT5 的 lib 目录加入到动态链接库路径中。通常，32位系统的路径为 <code class="docutils literal notranslate"><span class="pre">lib</span></code>，64位系统的路径为 <code class="docutils literal notranslate"><span class="pre">lib64</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="id4">
@@ -452,7 +452,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年04月08日.
+        最后更新于 2019年04月09日.
       </span>
 
     </p>

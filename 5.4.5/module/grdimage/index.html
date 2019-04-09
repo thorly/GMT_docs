@@ -319,65 +319,59 @@
             
   <div class="section" id="grdimage">
 <span id="index-0"></span><h1>12.46 grdimage<a class="headerlink" href="#grdimage" title="永久链接至标题">¶</a></h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/grdimage.html" title="(在 GMT v5.4.5)"><span>grdimage</span></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">在地图上绘制网格数据</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/grdimage.html" title="(在 GMT v5.4.5)"><span>grdimage</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>在地图上绘制网格数据</p>
+</dd>
+</dl>
 <div class="section" id="id1">
 <h2>12.46.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;grid&gt;</span></code></dt>
-<dd>该命令的输入文件必须是2D网格文件，可以是一个只包含Z数据的网格文件，也可以是三个分别包含R、G、B值的网格文件。</dd>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;grid&gt;</span></code></dt><dd><p>该命令的输入文件必须是2D网格文件，可以是一个只包含Z数据的网格文件，也可以是三个分别包含R、G、B值的网格文件。</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="id2">
 <h2>12.46.2 可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-A&lt;out_img&gt;[=&lt;driver&gt;]</span></code></dt>
-<dd><p class="first">将图片以光栅格式保存</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">-A&lt;out_img&gt;[=&lt;driver&gt;]</span></code></dt><dd><p>将图片以光栅格式保存</p>
 <p>默认图片会以PostScript代码的形式输出，使用此选项可以以其他图片格式保存。文件名中使用后缀 <code class="docutils literal notranslate"><span class="pre">.ppm</span></code> 则会以Portable Pixel Map格式保存。</p>
 <p>若GMT支持GDAL，则可以以更多的光栅格式保存。</p>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;out_img&gt;</span></code> 为要保存的文件名</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;driver&gt;</span></code> 图片格式，见GDAL的文档</li>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;out_img&gt;</span></code> 为要保存的文件名</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;driver&gt;</span></code> 图片格式，见GDAL的文档</p></li>
 </ol>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-C&lt;cpt&gt;</span></code></dt>
-<dd><p class="first">绘图时要使用的CPT文件名。</p>
-<p class="last">也可以直接使用GMT自带的CPT文件名，此时GMT会自动根据网格文件的Z值范围将自带的CPT采样成16级的连续CPT文件。也可以通过 <code class="docutils literal notranslate"><span class="pre">-C&lt;color1&gt;,&lt;color2&gt;[,&lt;color3&gt;,..]</span></code>
+<dt><code class="docutils literal notranslate"><span class="pre">-C&lt;cpt&gt;</span></code></dt><dd><p>绘图时要使用的CPT文件名。</p>
+<p>也可以直接使用GMT自带的CPT文件名，此时GMT会自动根据网格文件的Z值范围将自带的CPT采样成16级的连续CPT文件。也可以通过 <code class="docutils literal notranslate"><span class="pre">-C&lt;color1&gt;,&lt;color2&gt;[,&lt;color3&gt;,..]</span></code>
 的语法构建一个线性连续CPT文件。</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-D[r]</span></code></dt>
-<dd>表明输入的网格文件是需要通过GDAL读取的图片文件，见官方文档。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-E[i|&lt;dpi&gt;]</span></code></dt>
-<dd>设置投影后网格的精度，默认值为100。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-G[f|b]&lt;color&gt;</span></code></dt>
-<dd><p class="first">该选项仅当生成的图片是黑白图时才可用。</p>
-<p class="last">This option will instead use the image as a transparent mask and paint
+<dt><code class="docutils literal notranslate"><span class="pre">-D[r]</span></code></dt><dd><p>表明输入的网格文件是需要通过GDAL读取的图片文件，见官方文档。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-E[i|&lt;dpi&gt;]</span></code></dt><dd><p>设置投影后网格的精度，默认值为100。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-G[f|b]&lt;color&gt;</span></code></dt><dd><p>该选项仅当生成的图片是黑白图时才可用。</p>
+<p>This option will instead use the image as a transparent mask and paint
 the mask (or its inverse, with <strong>-Gb</strong>) with the given color combination.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-I[&lt;intensfile&gt;|&lt;intensity&gt;|&lt;modifiers&gt;]</span></code></dt>
-<dd><p class="first">增加光照效果</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-I[&lt;intensfile&gt;|&lt;intensity&gt;|&lt;modifiers&gt;]</span></code></dt><dd><p>增加光照效果</p>
 <p>可以通过三种方式设置光照效果:</p>
-<ol class="last arabic simple">
-<li>给定一个Z值范围为(-1,1)的网格文件，该文件可以用 <code class="docutils literal notranslate"><span class="pre">grdgradient</span></code> 生成</li>
-<li>给定一个常数作为光照强度</li>
-<li>不指定光照强度文件，只使用 <code class="docutils literal notranslate"><span class="pre">-I+</span></code> 则会自动调用 <code class="docutils literal notranslate"><span class="pre">grdgradient</span></code>
-并使用参数 <code class="docutils literal notranslate"><span class="pre">-A-45</span> <span class="pre">-Nt1</span></code> 计算输入网格数据的梯度作为光照强度文件。用户可以使用 <code class="docutils literal notranslate"><span class="pre">+a&lt;azimuth&gt;+n&lt;args&gt;</span></code> 以自定义 grdgradient 的 -A 和 -N 选项</li>
+<ol class="arabic simple">
+<li><p>给定一个Z值范围为(-1,1)的网格文件，该文件可以用 <code class="docutils literal notranslate"><span class="pre">grdgradient</span></code> 生成</p></li>
+<li><p>给定一个常数作为光照强度</p></li>
+<li><p>不指定光照强度文件，只使用 <code class="docutils literal notranslate"><span class="pre">-I+</span></code> 则会自动调用 <code class="docutils literal notranslate"><span class="pre">grdgradient</span></code>
+并使用参数 <code class="docutils literal notranslate"><span class="pre">-A-45</span> <span class="pre">-Nt1</span></code> 计算输入网格数据的梯度作为光照强度文件。用户可以使用 <code class="docutils literal notranslate"><span class="pre">+a&lt;azimuth&gt;+n&lt;args&gt;</span></code> 以自定义 grdgradient 的 -A 和 -N 选项</p></li>
 </ol>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-M</span></code></dt>
-<dd>使用YIQ转换强制将其转换为灰度图。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-N</span></code></dt>
-<dd>对于非矩形地图，在地图边界处不对图片做裁剪。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Q</span></code></dt>
-<dd>将值为NaN的节点处设置为透明色</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-M</span></code></dt><dd><p>使用YIQ转换强制将其转换为灰度图。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-N</span></code></dt><dd><p>对于非矩形地图，在地图边界处不对图片做裁剪。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Q</span></code></dt><dd><p>将值为NaN的节点处设置为透明色</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="id3">
@@ -434,7 +428,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年04月08日.
+        最后更新于 2019年04月09日.
       </span>
 
     </p>

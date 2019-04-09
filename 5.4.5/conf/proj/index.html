@@ -209,72 +209,66 @@
   <div class="section" id="proj">
 <h1>10.9 PROJ参数<a class="headerlink" href="#proj" title="永久链接至标题">¶</a></h1>
 <p>本节列出投影相关参数，参数的默认值在中括号内列出。</p>
-<dl class="docutils" id="proj-length-unit">
-<dt>PROJ_LENGTH_UNIT</dt>
-<dd><p class="first">长度量的默认单位 [<code class="docutils literal notranslate"><span class="pre">c</span></code>]</p>
-<p class="last">见 <a class="reference internal" href="../../basis/unit/"><span class="doc">单位</span></a> 一节的介绍。</p>
+<dl id="proj-length-unit">
+<dt>PROJ_LENGTH_UNIT</dt><dd><p>长度量的默认单位 [<code class="docutils literal notranslate"><span class="pre">c</span></code>]</p>
+<p>见 <a class="reference internal" href="../../basis/unit/"><span class="doc">单位</span></a> 一节的介绍。</p>
 </dd>
 </dl>
-<dl class="docutils" id="proj-ellipsoid">
-<dt>PROJ_ELLIPSOID</dt>
-<dd><p class="first">地图投影中使用的地球椭球标准 [<code class="docutils literal notranslate"><span class="pre">WGS-84</span></code>]</p>
+<dl id="proj-ellipsoid">
+<dt>PROJ_ELLIPSOID</dt><dd><p>地图投影中使用的地球椭球标准 [<code class="docutils literal notranslate"><span class="pre">WGS-84</span></code>]</p>
 <p>GMT支持几十种地球椭球标准（此处不一一列举，详见官方文档）。除此之外，GMT还支持自定义椭球，用户只需按照固定的格式对椭球命名，GMT会从椭球名字中提取半长轴以及扁率。可用的格式如下：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">a</span></code>：球半径为a，单位为 <code class="docutils literal notranslate"><span class="pre">m</span></code>，扁率为零。比如 <code class="docutils literal notranslate"><span class="pre">6378137</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">a,inv_f</span></code>：<code class="docutils literal notranslate"><span class="pre">inv_f</span></code> 为扁率的倒数，比如 <code class="docutils literal notranslate"><span class="pre">6378137,298.257223563</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">a,b=semi_minor</span></code>：<code class="docutils literal notranslate"><span class="pre">semi_minor</span></code> 为半短轴长度，单位为 <code class="docutils literal notranslate"><span class="pre">m</span></code>。比如 <code class="docutils literal notranslate"><span class="pre">6378137,b=6356752.3142</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">a,f=flattening</span></code>：<code class="docutils literal notranslate"><span class="pre">flattening</span></code> 为扁率，比如 <code class="docutils literal notranslate"><span class="pre">6378137,f=0.0033528</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code>：球半径为a，单位为 <code class="docutils literal notranslate"><span class="pre">m</span></code>，扁率为零。比如 <code class="docutils literal notranslate"><span class="pre">6378137</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a,inv_f</span></code>：<code class="docutils literal notranslate"><span class="pre">inv_f</span></code> 为扁率的倒数，比如 <code class="docutils literal notranslate"><span class="pre">6378137,298.257223563</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a,b=semi_minor</span></code>：<code class="docutils literal notranslate"><span class="pre">semi_minor</span></code> 为半短轴长度，单位为 <code class="docutils literal notranslate"><span class="pre">m</span></code>。比如 <code class="docutils literal notranslate"><span class="pre">6378137,b=6356752.3142</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a,f=flattening</span></code>：<code class="docutils literal notranslate"><span class="pre">flattening</span></code> 为扁率，比如 <code class="docutils literal notranslate"><span class="pre">6378137,f=0.0033528</span></code></p></li>
 </ul>
-<p class="last">需要注意，对于某些全球投影，GMT会对选中的地球椭球做球状近似，将扁率设为零，并使用其平均半径。当GMT做此类近似时，会给出警告信息。</p>
+<p>需要注意，对于某些全球投影，GMT会对选中的地球椭球做球状近似，将扁率设为零，并使用其平均半径。当GMT做此类近似时，会给出警告信息。</p>
 </dd>
 </dl>
-<dl class="docutils" id="proj-aux-latitude">
-<dt>PROJ_AUX_LATITUDE</dt>
-<dd><p class="first">球体近似时的辅助纬线 [authalic]</p>
+<dl id="proj-aux-latitude">
+<dt>PROJ_AUX_LATITUDE</dt><dd><p>球体近似时的辅助纬线 [authalic]</p>
 <p>在使用大圆弧距离计算方式时，需要将真实地球近似为一个半径为
 <a class="reference internal" href="#proj-mean-radius"><span class="std std-ref">PROJ_MEAN_RADIUS</span></a> 的球体，在做球体近似时需要选择合适的辅助纬线。可选值包括</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">authalic</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">geocentric</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">conformal</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">meridional</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">parametric</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">none</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">authalic</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">geocentric</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conformal</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">meridional</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">parametric</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">none</span></code></p></li>
 </ul>
-<p class="last">当设置为除 <code class="docutils literal notranslate"><span class="pre">none</span></code> 外的其他值时，GMT会在计算距离前，将大圆弧距离计算时使用的两点中任意一点的纬度转换成辅助纬度。</p>
+<p>当设置为除 <code class="docutils literal notranslate"><span class="pre">none</span></code> 外的其他值时，GMT会在计算距离前，将大圆弧距离计算时使用的两点中任意一点的纬度转换成辅助纬度。</p>
 </dd>
 </dl>
-<dl class="docutils" id="proj-mean-radius">
-<dt>PROJ_MEAN_RADIUS</dt>
-<dd><p class="first">地球/行星的平均半径 [authalic]</p>
+<dl id="proj-mean-radius">
+<dt>PROJ_MEAN_RADIUS</dt><dd><p>地球/行星的平均半径 [authalic]</p>
 <p>在计算两点间的大圆弧距离或区域的表面积时才会被使用。可选值包括</p>
-<ul class="last simple">
-<li><code class="docutils literal notranslate"><span class="pre">mean</span> <span class="pre">(R_1)</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">authalic</span> <span class="pre">(R_2)</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">volumetric(R_3)</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">meridional</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">quadratic</span></code></li>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mean</span> <span class="pre">(R_1)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">authalic</span> <span class="pre">(R_2)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">volumetric(R_3)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">meridional</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">quadratic</span></code></p></li>
 </ul>
 </dd>
 </dl>
-<dl class="docutils" id="proj-scale-factor">
-<dt>PROJ_SCALE_FACTOR</dt>
-<dd><p class="first">修改某些投影的地图缩放因子以减小面积失真</p>
-<ul class="last simple">
-<li>Polar Stereographic：默认值为0.9996</li>
-<li>UTM：默认值为0.9996</li>
-<li>Transverse Mercator：默认值为1</li>
+<dl class="simple" id="proj-scale-factor">
+<dt>PROJ_SCALE_FACTOR</dt><dd><p>修改某些投影的地图缩放因子以减小面积失真</p>
+<ul class="simple">
+<li><p>Polar Stereographic：默认值为0.9996</p></li>
+<li><p>UTM：默认值为0.9996</p></li>
+<li><p>Transverse Mercator：默认值为1</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="docutils" id="proj-geodesic">
-<dt>PROJ_GEODESIC</dt>
-<dd><p class="first">指定大地测量距离中所使用的算法 [Vincenty]</p>
+<dl id="proj-geodesic">
+<dt>PROJ_GEODESIC</dt><dd><p>指定大地测量距离中所使用的算法 [Vincenty]</p>
 <p>可以取：</p>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">Vincenty</span></code> 默认值，精确到0.5mm</li>
-<li><code class="docutils literal notranslate"><span class="pre">Rudoe</span></code> given for legacy purpose</li>
-<li><code class="docutils literal notranslate"><span class="pre">Andoyer</span></code> 精度为10米量级，比 <code class="docutils literal notranslate"><span class="pre">Vincenty</span></code> 快5倍</li>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Vincenty</span></code> 默认值，精确到0.5mm</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Rudoe</span></code> given for legacy purpose</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Andoyer</span></code> 精度为10米量级，比 <code class="docutils literal notranslate"><span class="pre">Vincenty</span></code> 快5倍</p></li>
 </ol>
 </dd>
 </dl>
@@ -325,7 +319,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年04月08日.
+        最后更新于 2019年04月09日.
       </span>
 
     </p>

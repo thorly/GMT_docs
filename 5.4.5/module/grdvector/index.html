@@ -319,64 +319,59 @@
             
   <div class="section" id="grdvector">
 <span id="index-0"></span><h1>12.63 grdvector<a class="headerlink" href="#grdvector" title="永久链接至标题">¶</a></h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/grdvector.html" title="(在 GMT v5.4.5)"><span>grdvector</span></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">根据两个网格文件绘制矢量场</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/grdvector.html" title="(在 GMT v5.4.5)"><span>grdvector</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>根据两个网格文件绘制矢量场</p>
+</dd>
+</dl>
 <p>该命令会读取两个2D网格文件并绘制矢量场。两个网格文件分别代表平面内矢量场的
 X分量和Y分量，最终矢量场用不同长度和方向的箭头表示。两个网格文件，也可以分别是极坐标下r方向和theta方向的分量。</p>
 <div class="section" id="id1">
 <h2>12.63.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;compx.nc&gt;</span></code></dt>
-<dd>矢量场的X分量网格</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;compy.nc&gt;</span></code></dt>
-<dd>矢量场的Y分量网格</dd>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;compx.nc&gt;</span></code></dt><dd><p>矢量场的X分量网格</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;compy.nc&gt;</span></code></dt><dd><p>矢量场的Y分量网格</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="id2">
 <h2>12.63.2 可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-A</span></code></dt>
-<dd>输入数据为极坐标表示。即网格文件包含的是 (r, theta) 分量而不是 (x, y) 分量</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-C[&lt;cpt&gt;]</span></code></dt>
-<dd><p class="first">根据矢量的长度决定矢量的颜色。</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">-A</span></code></dt><dd><p>输入数据为极坐标表示。即网格文件包含的是 (r, theta) 分量而不是 (x, y) 分量</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-C[&lt;cpt&gt;]</span></code></dt><dd><p>根据矢量的长度决定矢量的颜色。</p>
 <p>有三种方式：</p>
-<ol class="last arabic simple">
-<li>指定用户自己的CPT文件</li>
-<li>使用GMT自带的CPT文件（默认是rainbow），该命令会根据网格的Z值范围，自动生成一个16级的连续CPT文件</li>
-<li>指定 <code class="docutils literal notranslate"><span class="pre">-C&lt;color1&gt;,&lt;color2&gt;[,&lt;color3&gt;,...]</span></code> ，根据这些颜色自动构建一个线性连续CPT文件</li>
+<ol class="arabic simple">
+<li><p>指定用户自己的CPT文件</p></li>
+<li><p>使用GMT自带的CPT文件（默认是rainbow），该命令会根据网格的Z值范围，自动生成一个16级的连续CPT文件</p></li>
+<li><p>指定 <code class="docutils literal notranslate"><span class="pre">-C&lt;color1&gt;,&lt;color2&gt;[,&lt;color3&gt;,...]</span></code> ，根据这些颜色自动构建一个线性连续CPT文件</p></li>
 </ol>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;fill&gt;</span></code></dt>
-<dd>设置矢量内部的填充色</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-I[x]&lt;dx&gt;[/&lt;dy&gt;]</span></code></dt>
-<dd><p class="first">每隔 <code class="docutils literal notranslate"><span class="pre">&lt;dx&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;dy&gt;</span></code> 绘制一个矢量。其中 <code class="docutils literal notranslate"><span class="pre">&lt;dx&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;dy&gt;</span></code> 必须是原始网格间隔的整数倍， <code class="docutils literal notranslate"><span class="pre">&lt;dx&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;dy&gt;</span></code> 后加上m表示弧分，加上s表示弧秒。</p>
-<p class="last">也可以使用 <code class="docutils literal notranslate"><span class="pre">-Ix&lt;dx&gt;/&lt;dy&gt;</span></code> ，此时 <code class="docutils literal notranslate"><span class="pre">&lt;dx&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;dy&gt;</span></code> 表示倍数。</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;fill&gt;</span></code></dt><dd><p>设置矢量内部的填充色</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-N</span></code></dt>
-<dd>不裁剪地图边界外的矢量。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Q&lt;parameters&gt;</span></code></dt>
-<dd>修改矢量的属性。见 <a class="reference internal" href="../../basis/vector/"><span class="doc">绘制矢量/箭头</span></a> 一节。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-S[i|l]&lt;scale&gt;</span></code></dt>
-<dd><p class="first">设置矢量长度的缩放比例。</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-I[x]&lt;dx&gt;[/&lt;dy&gt;]</span></code></dt><dd><p>每隔 <code class="docutils literal notranslate"><span class="pre">&lt;dx&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;dy&gt;</span></code> 绘制一个矢量。其中 <code class="docutils literal notranslate"><span class="pre">&lt;dx&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;dy&gt;</span></code> 必须是原始网格间隔的整数倍， <code class="docutils literal notranslate"><span class="pre">&lt;dx&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;dy&gt;</span></code> 后加上m表示弧分，加上s表示弧秒。</p>
+<p>也可以使用 <code class="docutils literal notranslate"><span class="pre">-Ix&lt;dx&gt;/&lt;dy&gt;</span></code> ，此时 <code class="docutils literal notranslate"><span class="pre">&lt;dx&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;dy&gt;</span></code> 表示倍数。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-N</span></code></dt><dd><p>不裁剪地图边界外的矢量。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Q&lt;parameters&gt;</span></code></dt><dd><p>修改矢量的属性。见 <a class="reference internal" href="../../basis/vector/"><span class="doc">绘制矢量/箭头</span></a> 一节。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-S[i|l]&lt;scale&gt;</span></code></dt><dd><p>设置矢量长度的缩放比例。</p>
 <p>对于笛卡尔数据而言，缩放比例即图上单位距离所对应的实际数据的多少，默认值为1。可以加上 <code class="docutils literal notranslate"><span class="pre">c|i|p</span></code> 以指定测量单位。</p>
 <p><code class="docutils literal notranslate"><span class="pre">-Sl&lt;scale&gt;</span></code> 表示所有矢量拥有固定的长度。</p>
-<p class="last">对于地理数据而言，缩放比例表示每千米所对应的数据单位。使用 <code class="docutils literal notranslate"><span class="pre">-Si&lt;scale&gt;</span></code>
+<p>对于地理数据而言，缩放比例表示每千米所对应的数据单位。使用 <code class="docutils literal notranslate"><span class="pre">-Si&lt;scale&gt;</span></code>
 则缩放比例表示每数据单位所对应的千米数。</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-T</span></code></dt>
-<dd>该选项意味着笛卡尔数据的方位角会根据X和Y方向缩放比例的符号而改变。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-W&lt;pen&gt;</span></code></dt>
-<dd>设置矢量轮廓的画笔属性。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Z</span></code></dt>
-<dd>与 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 选项一起使用，表明输入的theta分量数据表示方位角而不是方向信息。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-T</span></code></dt><dd><p>该选项意味着笛卡尔数据的方位角会根据X和Y方向缩放比例的符号而改变。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-W&lt;pen&gt;</span></code></dt><dd><p>设置矢量轮廓的画笔属性。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Z</span></code></dt><dd><p>与 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 选项一起使用，表明输入的theta分量数据表示方位角而不是方向信息。</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="id3">
@@ -437,7 +432,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年04月08日.
+        最后更新于 2019年04月09日.
       </span>
 
     </p>

@@ -224,25 +224,25 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;n&gt;</span></code> 表示要跳过的记录数</li>
-<li><code class="docutils literal notranslate"><span class="pre">i</span></code> 和 <code class="docutils literal notranslate"><span class="pre">o</span></code> 分别表示仅对读数据或写数据时有效</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;n&gt;</span></code> 表示要跳过的记录数</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code> 和 <code class="docutils literal notranslate"><span class="pre">o</span></code> 分别表示仅对读数据或写数据时有效</p></li>
 </ul>
 <p>对于输出数据，默认会将输入文件中的头段信息原样输出。使用如下子选项可以修改这一行为：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">+c</span></code> 将列名写到输出的头段记录中</li>
-<li><code class="docutils literal notranslate"><span class="pre">+d</span></code> 删除之前的头段信息</li>
-<li><code class="docutils literal notranslate"><span class="pre">+r&lt;remark&gt;</span></code> 加一个remarke注释语句到输出文件的开头</li>
-<li><code class="docutils literal notranslate"><span class="pre">+t&lt;title&gt;</span></code> 加一个title语句到输出文件的开头</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+c</span></code> 将列名写到输出的头段记录中</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+d</span></code> 删除之前的头段信息</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+r&lt;remark&gt;</span></code> 加一个remarke注释语句到输出文件的开头</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+t&lt;title&gt;</span></code> 加一个title语句到输出文件的开头</p></li>
 </ul>
 <p>几点注意事项：</p>
 <ol class="arabic simple">
-<li>输入文件中的空行以及以“#”开头的行都会被自动当做头段记录，因而会被自动跳过，在指定 <code class="docutils literal notranslate"><span class="pre">&lt;n&gt;</span></code> 时不需要再考虑空行以及以“#”开头的行。</li>
-<li>对于二进制输入文件，<code class="docutils literal notranslate"><span class="pre">&lt;n&gt;</span></code> 表示输入数据中要跳过的字节数，或输出数据中用空白字符补充的字节数。</li>
+<li><p>输入文件中的空行以及以“#”开头的行都会被自动当做头段记录，因而会被自动跳过，在指定 <code class="docutils literal notranslate"><span class="pre">&lt;n&gt;</span></code> 时不需要再考虑空行以及以“#”开头的行。</p></li>
+<li><p>对于二进制输入文件，<code class="docutils literal notranslate"><span class="pre">&lt;n&gt;</span></code> 表示输入数据中要跳过的字节数，或输出数据中用空白字符补充的字节数。</p></li>
 </ol>
 <p>几种常见的用法：</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">-h</span></code>：使用GMT参数 <a class="reference internal" href="../../conf/io/#io-n-header-recs"><span class="std std-ref">IO_N_HEADER_RECS</span></a> 的值作为头段记录数（默认值为0）</li>
-<li><code class="docutils literal notranslate"><span class="pre">-h3</span></code>：表示跳过3个头段记录</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-h</span></code>：使用GMT参数 <a class="reference internal" href="../../conf/io/#io-n-header-recs"><span class="std std-ref">IO_N_HEADER_RECS</span></a> 的值作为头段记录数（默认值为0）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-h3</span></code>：表示跳过3个头段记录</p></li>
 </ol>
 </div>
 
@@ -291,7 +291,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年04月08日.
+        最后更新于 2019年04月09日.
       </span>
 
     </p>

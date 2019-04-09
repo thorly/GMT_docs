@@ -226,15 +226,15 @@
 </div>
 <div class="figure align-center" id="id6">
 <img alt="../../_images/basemap-gmtplot-0.png" src="../../_images/basemap-gmtplot-0.png" />
-<p class="caption"><span class="caption-text">线性X-Y图</span></p>
+<p class="caption"><span class="caption-text">线性X-Y图</span><a class="headerlink" href="#id6" title="永久链接至图片">¶</a></p>
 </div>
 <p>在这个示例中：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">-R10/70/-3/8</span></code> 设置了X轴范围是10到70，Y轴范围为-3到8</li>
-<li><code class="docutils literal notranslate"><span class="pre">-JX8c/5c</span></code> 指定了整张图为线性投影，图的宽度（X轴长度）为8厘米，图的高度（Y轴长度）为5厘米</li>
-<li><code class="docutils literal notranslate"><span class="pre">-Bx10</span> <span class="pre">-By3</span></code> 分别设置了X、Y轴标注以及刻度的间隔为10和3</li>
-<li><code class="docutils literal notranslate"><span class="pre">-B+t&quot;Linear</span> <span class="pre">X-Y</span> <span class="pre">Plot&quot;</span></code> 为整张图添加了标题</li>
-<li><code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">linearXY.ps</span></code> GMT绘图模块的输出是PS代码，因而需要使用重定向符号 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 将PS代码输出到PS文件中</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-R10/70/-3/8</span></code> 设置了X轴范围是10到70，Y轴范围为-3到8</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-JX8c/5c</span></code> 指定了整张图为线性投影，图的宽度（X轴长度）为8厘米，图的高度（Y轴长度）为5厘米</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Bx10</span> <span class="pre">-By3</span></code> 分别设置了X、Y轴标注以及刻度的间隔为10和3</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-B+t&quot;Linear</span> <span class="pre">X-Y</span> <span class="pre">Plot&quot;</span></code> 为整张图添加了标题</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">linearXY.ps</span></code> GMT绘图模块的输出是PS代码，因而需要使用重定向符号 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 将PS代码输出到PS文件中</p></li>
 </ul>
 </div>
 <div class="section" id="id3">
@@ -246,14 +246,14 @@
 </div>
 <div class="figure align-center" id="id7">
 <img alt="../../_images/basemap-gmtplot-1.png" src="../../_images/basemap-gmtplot-1.png" />
-<p class="caption"><span class="caption-text">对数X-Y图</span></p>
+<p class="caption"><span class="caption-text">对数X-Y图</span><a class="headerlink" href="#id7" title="永久链接至图片">¶</a></p>
 </div>
 <p>此示例中：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">-R1/10000/1e20/1e25</span></code> 设置了X和Y轴的范围</li>
-<li><code class="docutils literal notranslate"><span class="pre">-JX15cl/10cl</span></code> 中 <code class="docutils literal notranslate"><span class="pre">l</span></code> 表明用对数轴表示</li>
-<li><code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项中 <code class="docutils literal notranslate"><span class="pre">+l</span></code> 用于指定每个轴的轴标签</li>
-<li><code class="docutils literal notranslate"><span class="pre">-BWS</span></code> 表示只绘制图边框左（W）和下（S）边框</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-R1/10000/1e20/1e25</span></code> 设置了X和Y轴的范围</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-JX15cl/10cl</span></code> 中 <code class="docutils literal notranslate"><span class="pre">l</span></code> 表明用对数轴表示</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项中 <code class="docutils literal notranslate"><span class="pre">+l</span></code> 用于指定每个轴的轴标签</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-BWS</span></code> 表示只绘制图边框左（W）和下（S）边框</p></li>
 </ul>
 </div>
 <div class="section" id="y">
@@ -268,12 +268,12 @@ gmt psbasemap -R1/10000/1/20 -JX15cl/10c -Bya5f2+l<span class="s2">&quot;linear 
 </div>
 <div class="figure align-center" id="id8">
 <img alt="../../_images/basemap-gmtplot-2.png" src="../../_images/basemap-gmtplot-2.png" />
-<p class="caption"><span class="caption-text">双Y轴图</span></p>
+<p class="caption"><span class="caption-text">双Y轴图</span><a class="headerlink" href="#id8" title="永久链接至图片">¶</a></p>
 </div>
 <p>此示例中：</p>
 <ul class="simple">
-<li>第一句 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">psbasemap</span></code> 绘制了指数Y轴坐标系底图</li>
-<li>第二句 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">psbasemap</span></code> 绘制了线性Y轴坐标系底图</li>
+<li><p>第一句 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">psbasemap</span></code> 绘制了指数Y轴坐标系底图</p></li>
+<li><p>第二句 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">psbasemap</span></code> 绘制了线性Y轴坐标系底图</p></li>
 </ul>
 </div>
 <div class="section" id="id4">
@@ -284,24 +284,24 @@ gmt psbasemap -R1/10000/1/20 -JX15cl/10c -Bya5f2+l<span class="s2">&quot;linear 
 </div>
 <div class="figure align-center" id="id9">
 <img alt="../../_images/basemap-gmtplot-3.png" src="../../_images/basemap-gmtplot-3.png" />
-<p class="caption"><span class="caption-text">区域地图</span></p>
+<p class="caption"><span class="caption-text">区域地图</span><a class="headerlink" href="#id9" title="永久链接至图片">¶</a></p>
 </div>
 <p>此示例中使用 <code class="docutils literal notranslate"><span class="pre">pscoast</span></code> 绘制了拉丁美洲区域的海岸线。</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">-R-90/-70/0/20</span></code> 指定了地理区域的范围</li>
-<li><code class="docutils literal notranslate"><span class="pre">-JM6i</span></code> 表示使用墨卡托投影，地图的宽度为6英寸，高度由投影自动决定</li>
-<li><code class="docutils literal notranslate"><span class="pre">-Ba</span></code> 会根据地理范围以及图片大小自动计算出适合的标注和刻度间隔</li>
-<li><code class="docutils literal notranslate"><span class="pre">-Gchocolate</span></code> 将陆地区域填充颜色chocolate</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-R-90/-70/0/20</span></code> 指定了地理区域的范围</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-JM6i</span></code> 表示使用墨卡托投影，地图的宽度为6英寸，高度由投影自动决定</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Ba</span></code> 会根据地理范围以及图片大小自动计算出适合的标注和刻度间隔</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Gchocolate</span></code> 将陆地区域填充颜色chocolate</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">pscoast</span></code> 还有很多常用的选项：</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">-D</span></code> 选项海岸线数据的精度</li>
-<li><code class="docutils literal notranslate"><span class="pre">-G</span></code> 设置陆地区域的填充色</li>
-<li><code class="docutils literal notranslate"><span class="pre">-S</span></code> 设置海洋、湖泊区域的填充色</li>
-<li><code class="docutils literal notranslate"><span class="pre">-W</span></code> 绘制海岸线，并设置海岸线的画笔属性</li>
-<li><code class="docutils literal notranslate"><span class="pre">-N</span></code> 绘制政治边界</li>
-<li><code class="docutils literal notranslate"><span class="pre">-I</span></code> 绘制河流</li>
-<li><code class="docutils literal notranslate"><span class="pre">-L</span></code> 在图上绘制比例尺</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-D</span></code> 选项海岸线数据的精度</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-G</span></code> 设置陆地区域的填充色</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-S</span></code> 设置海洋、湖泊区域的填充色</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-W</span></code> 绘制海岸线，并设置海岸线的画笔属性</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-N</span></code> 绘制政治边界</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-I</span></code> 绘制河流</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-L</span></code> 在图上绘制比例尺</p></li>
 </ol>
 </div>
 <div class="section" id="id5">
@@ -312,12 +312,12 @@ gmt psbasemap -R1/10000/1/20 -JX15cl/10c -Bya5f2+l<span class="s2">&quot;linear 
 </div>
 <div class="figure align-center" id="id10">
 <img alt="../../_images/basemap-gmtplot-4.png" src="../../_images/basemap-gmtplot-4.png" />
-<p class="caption"><span class="caption-text">全球地图</span></p>
+<p class="caption"><span class="caption-text">全球地图</span><a class="headerlink" href="#id10" title="永久链接至图片">¶</a></p>
 </div>
 <p>此示例中：</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">-JK180/9i</span></code> 表明使用Eckert投影，地图中心位于经度180度，地图宽度为9英寸</li>
-<li><code class="docutils literal notranslate"><span class="pre">-Rg</span></code> 等效于 <code class="docutils literal notranslate"><span class="pre">-R0/360/-90/90</span></code> 即绘制全球区域</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-JK180/9i</span></code> 表明使用Eckert投影，地图中心位于经度180度，地图宽度为9英寸</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Rg</span></code> 等效于 <code class="docutils literal notranslate"><span class="pre">-R0/360/-90/90</span></code> 即绘制全球区域</p></li>
 </ol>
 </div>
 </div>
@@ -367,7 +367,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年04月08日.
+        最后更新于 2019年04月09日.
       </span>
 
     </p>

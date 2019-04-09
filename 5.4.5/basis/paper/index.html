@@ -219,8 +219,8 @@
 <h1>4.1 画布<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>要画一张图，首先需要准备一个画布。GMT 默认的画布是 A4 大小的横置的白色PS文件。</p>
 <div class="admonition note">
-<p class="first admonition-title">注解</p>
-<p class="last">本节介绍的内容，涉及到后面的一些知识。因而这里只是做简单介绍，具体的操作看不懂也没关系。</p>
+<p class="admonition-title">注解</p>
+<p>本节介绍的内容，涉及到后面的一些知识。因而这里只是做简单介绍，具体的操作看不懂也没关系。</p>
 </div>
 <div class="section" id="id2">
 <h2>4.1.1 图片格式<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
@@ -245,8 +245,8 @@ gmt psconvert -A -P -Tj xxx.ps
 <h2>4.1.3 画布颜色<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>默认的画布颜色为白色，可以通过设置 <a class="reference internal" href="../../conf/ps/#ps-page-color"><span class="std std-ref">PS_PAGE_COLOR</span></a> 来修改画布颜色。</p>
 <div class="admonition warning">
-<p class="first admonition-title">警告</p>
-<p class="last">若设置画布颜色为其他颜色，则使用 <code class="docutils literal notranslate"><span class="pre">psconvert</span></code> 将 PS 文件转化为其他图片格式时无法使用 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 选项进行裁边。</p>
+<p class="admonition-title">警告</p>
+<p>若设置画布颜色为其他颜色，则使用 <code class="docutils literal notranslate"><span class="pre">psconvert</span></code> 将 PS 文件转化为其他图片格式时无法使用 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 选项进行裁边。</p>
 </div>
 </div>
 <div class="section" id="id5">
@@ -260,12 +260,12 @@ gmt psconvert -A -P -Tj xxx.ps
 Landscape（风景）模式。记起来也很简单，人是瘦长的，所以人的肖像照需要竖着拍，风景是矮胖的，就需要横着拍。</p>
 <p>由于历史原因，GMT中画布的默认放置方式是Landscape模式。有两种方式可以修改画布方向：</p>
 <ol class="arabic simple">
-<li>在第一个<strong>绘图</strong>命令中使用 <a class="reference internal" href="../../option/P/"><span class="doc">-P 选项</span></a></li>
-<li>设置GMT参数 <a class="reference internal" href="../../conf/ps/#ps-page-orientation"><span class="std std-ref">PS_PAGE_ORIENTATION</span></a> 为 <code class="docutils literal notranslate"><span class="pre">portrait</span></code></li>
+<li><p>在第一个<strong>绘图</strong>命令中使用 <a class="reference internal" href="../../option/P/"><span class="doc">-P 选项</span></a></p></li>
+<li><p>设置GMT参数 <a class="reference internal" href="../../conf/ps/#ps-page-orientation"><span class="std std-ref">PS_PAGE_ORIENTATION</span></a> 为 <code class="docutils literal notranslate"><span class="pre">portrait</span></code></p></li>
 </ol>
 <div class="admonition tip">
-<p class="first admonition-title">小技巧</p>
-<p class="last">Linux下默认的PS阅读器evince可以自动识别两种模式，Landscape模式的PS文件横着放，Portrait模式的文件竖着放，所以看上去总是对的。而 <code class="docutils literal notranslate"><span class="pre">gs</span></code> 无法自动识别两种模式，总是将文件竖着放，因而用gs看Landscape模式的PS文件时就会很别扭。</p>
+<p class="admonition-title">小技巧</p>
+<p>Linux下默认的PS阅读器evince可以自动识别两种模式，Landscape模式的PS文件横着放，Portrait模式的文件竖着放，所以看上去总是对的。而 <code class="docutils literal notranslate"><span class="pre">gs</span></code> 无法自动识别两种模式，总是将文件竖着放，因而用gs看Landscape模式的PS文件时就会很别扭。</p>
 </div>
 </div>
 <div class="section" id="id6">
@@ -282,8 +282,8 @@ Landscape（风景）模式。记起来也很简单，人是瘦长的，所以�
 <p>该命令中，<code class="docutils literal notranslate"><span class="pre">-JX10c/10c</span></code> 规定了底图的宽和高都是 10 cm，可以看到，底图的左边界位于
 <code class="docutils literal notranslate"><span class="pre">1i</span></code>，右边界位于 <code class="docutils literal notranslate"><span class="pre">1i+10c</span></code> 处，下边界位于 <code class="docutils literal notranslate"><span class="pre">1i</span></code>，上边界位于 <code class="docutils literal notranslate"><span class="pre">1i+10c</span></code> 处。</p>
 <div class="admonition important">
-<p class="first admonition-title">重要</p>
-<p class="last">此处提到的底图原点是指矩形底图的坐标轴的左下角相对于画布左下角的位置，而不包括坐标轴的标注或标签部分。</p>
+<p class="admonition-title">重要</p>
+<p>此处提到的底图原点是指矩形底图的坐标轴的左下角相对于画布左下角的位置，而不包括坐标轴的标注或标签部分。</p>
 </div>
 <p>可以在命令中使用 <a class="reference internal" href="../../option/XY/"><span class="doc">-X 和 -Y 选项</span></a> 来修改底图的原点位置。</p>
 </div>
@@ -334,7 +334,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年04月08日.
+        最后更新于 2019年04月09日.
       </span>
 
     </p>

@@ -224,17 +224,17 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">-U</span></code> 不加任何参数时会在当前图的左下角添加一个带GMT标识的时间戳</li>
-<li><code class="docutils literal notranslate"><span class="pre">-U&lt;just&gt;/&lt;dx&gt;/&lt;dy&gt;</span></code> 用于设置时间戳的锚点（见 <a class="reference internal" href="../../basis/anchor/"><span class="doc">锚点</span></a>）及时间戳相对于当前坐标原点的位置，比如 <code class="docutils literal notranslate"><span class="pre">-UBL/-1c/-1c</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">-U&lt;label&gt;</span></code> 会在时间戳后打印字符串 <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code>，比如 <code class="docutils literal notranslate"><span class="pre">-U&quot;This</span> <span class="pre">is</span> <span class="pre">string&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">-Uc</span></code> 会在时间戳后打印当前命令</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-U</span></code> 不加任何参数时会在当前图的左下角添加一个带GMT标识的时间戳</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-U&lt;just&gt;/&lt;dx&gt;/&lt;dy&gt;</span></code> 用于设置时间戳的锚点（见 <a class="reference internal" href="../../basis/anchor/"><span class="doc">锚点</span></a>）及时间戳相对于当前坐标原点的位置，比如 <code class="docutils literal notranslate"><span class="pre">-UBL/-1c/-1c</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-U&lt;label&gt;</span></code> 会在时间戳后打印字符串 <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code>，比如 <code class="docutils literal notranslate"><span class="pre">-U&quot;This</span> <span class="pre">is</span> <span class="pre">string&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Uc</span></code> 会在时间戳后打印当前命令</p></li>
 </ul>
 <p>GMT参数中有一些与时间戳相关的参数：</p>
 <ul class="simple">
-<li><a class="reference internal" href="../../conf/map/#map-logo"><span class="std std-ref">MAP_LOGO</span></a> 控制是否绘制时间戳，默认值为 <code class="docutils literal notranslate"><span class="pre">FALSE</span></code></li>
-<li><a class="reference internal" href="../../conf/map/#map-logo-pos"><span class="std std-ref">MAP_LOGO_POS</span></a> 用于控制时间戳的位置</li>
-<li><a class="reference internal" href="../../conf/format/#format-time-stamp"><span class="std std-ref">FORMAT_TIME_STAMP</span></a> 用于控制时间戳的显示格式</li>
-<li><a class="reference internal" href="../../conf/font/#font-logo"><span class="std std-ref">FONT_LOGO</span></a> 时间戳中文本的字体</li>
+<li><p><a class="reference internal" href="../../conf/map/#map-logo"><span class="std std-ref">MAP_LOGO</span></a> 控制是否绘制时间戳，默认值为 <code class="docutils literal notranslate"><span class="pre">FALSE</span></code></p></li>
+<li><p><a class="reference internal" href="../../conf/map/#map-logo-pos"><span class="std std-ref">MAP_LOGO_POS</span></a> 用于控制时间戳的位置</p></li>
+<li><p><a class="reference internal" href="../../conf/format/#format-time-stamp"><span class="std std-ref">FORMAT_TIME_STAMP</span></a> 用于控制时间戳的显示格式</p></li>
+<li><p><a class="reference internal" href="../../conf/font/#font-logo"><span class="std std-ref">FONT_LOGO</span></a> 时间戳中文本的字体</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R0/10/0/5 -JX10c/3c -Bx1 -By1 -P <span class="se">\</span>
     -UBL/-1.5c/-1.5c/<span class="s2">&quot;This is a GMT logo&quot;</span> &gt; GMT_-U.ps
@@ -242,11 +242,11 @@
 </div>
 <div class="figure align-center" id="id1">
 <img alt="../../_images/U-gmtplot-0.png" src="../../_images/U-gmtplot-0.png" />
-<p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">-U</span></code> 选项加时间戳</span></p>
+<p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">-U</span></code> 选项加时间戳</span><a class="headerlink" href="#id1" title="永久链接至图片">¶</a></p>
 </div>
 <div class="admonition important">
-<p class="first admonition-title">重要</p>
-<p class="last">每个带有 <code class="docutils literal notranslate"><span class="pre">-U</span></code> 选项的绘图命令都会绘制一遍时间戳，因而只需要一个绘图命令中使用 <code class="docutils literal notranslate"><span class="pre">-U</span></code> 即可。</p>
+<p class="admonition-title">重要</p>
+<p>每个带有 <code class="docutils literal notranslate"><span class="pre">-U</span></code> 选项的绘图命令都会绘制一遍时间戳，因而只需要一个绘图命令中使用 <code class="docutils literal notranslate"><span class="pre">-U</span></code> 即可。</p>
 </div>
 </div>
 
@@ -295,7 +295,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年04月08日.
+        最后更新于 2019年04月09日.
       </span>
 
     </p>

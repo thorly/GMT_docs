@@ -220,95 +220,95 @@
 <p>GMT 模块众多，每个模块的具体效果由模块的众多选项来决定。不同的模块有不同的选项，这其中有一些选项是标准选项，即这些选项在所有的命令里都具有完全相同的意义。故而把这些通用的选项单独拿出来介绍。</p>
 <p>GMT 中的选项都是以 <code class="docutils literal notranslate"><span class="pre">-</span></code> 加一个字符的形式构成，通常这个字符是经过精心挑选的，使得用户很容易根据字符记住该选项的作用。</p>
 <p>本章将介绍 GMT 中标准选项的用法。由于标准选项在所有 GMT 模块中的用法是一样的，所以在模块手册中介绍每个模块的具体语法时，则不再介绍这些选项。</p>
-<table border="1" class="docutils align-center" id="id2">
+<table class="docutils align-center" id="id2">
 <caption><span class="caption-text">GMT标准选项列表</span><a class="headerlink" href="#id2" title="永久链接至表格">¶</a></caption>
 <colgroup>
-<col width="16%" />
-<col width="84%" />
+<col style="width: 16%" />
+<col style="width: 84%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head"><strong>选项</strong></th>
-<th class="head">说明</th>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>选项</strong></p></th>
+<th class="head"><p>说明</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><strong>-B</strong></td>
-<td>定义底图边框和轴的刻度、标注、标签等属性</td>
+<tbody>
+<tr class="row-even"><td><p><strong>-B</strong></p></td>
+<td><p>定义底图边框和轴的刻度、标注、标签等属性</p></td>
 </tr>
-<tr class="row-odd"><td><strong>-J</strong></td>
-<td>选择地图投影方式或坐标变换</td>
+<tr class="row-odd"><td><p><strong>-J</strong></p></td>
+<td><p>选择地图投影方式或坐标变换</p></td>
 </tr>
-<tr class="row-even"><td><strong>-K</strong></td>
-<td>省略PS文件尾以追加更多PS代码</td>
+<tr class="row-even"><td><p><strong>-K</strong></p></td>
+<td><p>省略PS文件尾以追加更多PS代码</p></td>
 </tr>
-<tr class="row-odd"><td><strong>-O</strong></td>
-<td>省略PS文件头以将PS代码追加到已有的文件中</td>
+<tr class="row-odd"><td><p><strong>-O</strong></p></td>
+<td><p>省略PS文件头以将PS代码追加到已有的文件中</p></td>
 </tr>
-<tr class="row-even"><td><strong>-P</strong></td>
-<td>设置纸张方向为Portrait模式</td>
+<tr class="row-even"><td><p><strong>-P</strong></p></td>
+<td><p>设置纸张方向为Portrait模式</p></td>
 </tr>
-<tr class="row-odd"><td><strong>-R</strong></td>
-<td>指定区域范围</td>
+<tr class="row-odd"><td><p><strong>-R</strong></p></td>
+<td><p>指定区域范围</p></td>
 </tr>
-<tr class="row-even"><td><strong>-U</strong></td>
-<td>在图上绘制时间戳</td>
+<tr class="row-even"><td><p><strong>-U</strong></p></td>
+<td><p>在图上绘制时间戳</p></td>
 </tr>
-<tr class="row-odd"><td><strong>-V</strong></td>
-<td>详细报告模式</td>
+<tr class="row-odd"><td><p><strong>-V</strong></p></td>
+<td><p>详细报告模式</p></td>
 </tr>
-<tr class="row-even"><td><strong>-X</strong></td>
-<td>移动X方向上的绘图原点</td>
+<tr class="row-even"><td><p><strong>-X</strong></p></td>
+<td><p>移动X方向上的绘图原点</p></td>
 </tr>
-<tr class="row-odd"><td><strong>-Y</strong></td>
-<td>移动Y方向上的绘图原点</td>
+<tr class="row-odd"><td><p><strong>-Y</strong></p></td>
+<td><p>移动Y方向上的绘图原点</p></td>
 </tr>
-<tr class="row-even"><td><strong>-a</strong></td>
-<td>将非空间数据与某些列联系在一起</td>
+<tr class="row-even"><td><p><strong>-a</strong></p></td>
+<td><p>将非空间数据与某些列联系在一起</p></td>
 </tr>
-<tr class="row-odd"><td><strong>-b</strong></td>
-<td>控制二进制的输入或输出</td>
+<tr class="row-odd"><td><p><strong>-b</strong></p></td>
+<td><p>控制二进制的输入或输出</p></td>
 </tr>
-<tr class="row-even"><td><strong>-d</strong></td>
-<td>将输入或输出中的 <em>nodata</em> 替换成NaN</td>
+<tr class="row-even"><td><p><strong>-d</strong></p></td>
+<td><p>将输入或输出中的 <em>nodata</em> 替换成NaN</p></td>
 </tr>
-<tr class="row-odd"><td><strong>-e</strong></td>
-<td>仅处理与指定 pattern 匹配的数据</td>
+<tr class="row-odd"><td><p><strong>-e</strong></p></td>
+<td><p>仅处理与指定 pattern 匹配的数据</p></td>
 </tr>
-<tr class="row-even"><td><strong>-f</strong></td>
-<td>设置ASCII输入或输出的格式</td>
+<tr class="row-even"><td><p><strong>-f</strong></p></td>
+<td><p>设置ASCII输入或输出的格式</p></td>
 </tr>
-<tr class="row-odd"><td><strong>-g</strong></td>
-<td>根据数据间断对数据进行分段</td>
+<tr class="row-odd"><td><p><strong>-g</strong></p></td>
+<td><p>根据数据间断对数据进行分段</p></td>
 </tr>
-<tr class="row-even"><td><strong>-h</strong></td>
-<td>跳过数据的文件头段记录</td>
+<tr class="row-even"><td><p><strong>-h</strong></p></td>
+<td><p>跳过数据的文件头段记录</p></td>
 </tr>
-<tr class="row-odd"><td><strong>-i</strong></td>
-<td>选择输入列</td>
+<tr class="row-odd"><td><p><strong>-i</strong></p></td>
+<td><p>选择输入列</p></td>
 </tr>
-<tr class="row-even"><td><strong>-n</strong></td>
-<td>设置网格插值方式</td>
+<tr class="row-even"><td><p><strong>-n</strong></p></td>
+<td><p>设置网格插值方式</p></td>
 </tr>
-<tr class="row-odd"><td><strong>-o</strong></td>
-<td>选择输出列</td>
+<tr class="row-odd"><td><p><strong>-o</strong></p></td>
+<td><p>选择输出列</p></td>
 </tr>
-<tr class="row-even"><td><strong>-p</strong></td>
-<td>控制3D视角图</td>
+<tr class="row-even"><td><p><strong>-p</strong></p></td>
+<td><p>控制3D视角图</p></td>
 </tr>
-<tr class="row-odd"><td><strong>-r</strong></td>
-<td>设置网格配准方式</td>
+<tr class="row-odd"><td><p><strong>-r</strong></p></td>
+<td><p>设置网格配准方式</p></td>
 </tr>
-<tr class="row-even"><td><strong>-s</strong></td>
-<td>控制NaN记录的处理方式</td>
+<tr class="row-even"><td><p><strong>-s</strong></p></td>
+<td><p>控制NaN记录的处理方式</p></td>
 </tr>
-<tr class="row-odd"><td><strong>-t</strong></td>
-<td>设置图层透明度</td>
+<tr class="row-odd"><td><p><strong>-t</strong></p></td>
+<td><p>设置图层透明度</p></td>
 </tr>
-<tr class="row-even"><td><strong>-x</strong></td>
-<td>设置并行的核数（仅限于支持并行的模块）</td>
+<tr class="row-even"><td><p><strong>-x</strong></p></td>
+<td><p>设置并行的核数（仅限于支持并行的模块）</p></td>
 </tr>
-<tr class="row-odd"><td><strong>-:</strong></td>
-<td>输入数据是 <em>y</em>/<em>x</em> 而不是 <em>x</em>/<em>y</em></td>
+<tr class="row-odd"><td><p><strong>-:</strong></p></td>
+<td><p>输入数据是 <em>y</em>/<em>x</em> 而不是 <em>x</em>/<em>y</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -361,7 +361,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年04月08日.
+        最后更新于 2019年04月09日.
       </span>
 
     </p>

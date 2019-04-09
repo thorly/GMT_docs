@@ -318,24 +318,22 @@
             
   <div class="section" id="grdpaste">
 <span id="index-0"></span><h1>12.51 grdpaste<a class="headerlink" href="#grdpaste" title="永久链接至标题">¶</a></h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/grdpaste.html" title="(在 GMT v5.4.5)"><span>grdpaste</span></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">将两个网格文件沿着其共同边界拼接成一个文件</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/grdpaste.html" title="(在 GMT v5.4.5)"><span>grdpaste</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>将两个网格文件沿着其共同边界拼接成一个文件</p>
+</dd>
+</dl>
 <p>要合并的两个网格文件必须拥有相同的网格间隔以及一条共同的边。若不满足，则需要使用 <a class="reference internal" href="../grdcut/"><span class="doc">grdcut</span></a> 、 <a class="reference internal" href="../grdsample/"><span class="doc">grdsample</span></a> 命令对网格数据做处理再拼接。对于地理网格数据而言，可能需要使用 <code class="docutils literal notranslate"><span class="pre">-f</span></code> 选项以正确处理经度的周期性。</p>
 <div class="section" id="id1">
 <h2>12.51.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;file_a.nc&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;file_b.nc&gt;</span></code></dt>
-<dd>要进行拼接的两个网格文件名</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;outfile.nc&gt;</span></code></dt>
-<dd>拼接后生成的网格文件名</dd>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;file_a.nc&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;file_b.nc&gt;</span></code></dt><dd><p>要进行拼接的两个网格文件名</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;outfile.nc&gt;</span></code></dt><dd><p>拼接后生成的网格文件名</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="id2">
@@ -396,7 +394,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年04月08日.
+        最后更新于 2019年04月09日.
       </span>
 
     </p>

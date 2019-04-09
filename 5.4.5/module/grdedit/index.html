@@ -319,55 +319,52 @@
             
   <div class="section" id="grdedit">
 <span id="index-0"></span><h1>12.39 grdedit<a class="headerlink" href="#grdedit" title="永久链接至标题">¶</a></h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/grdedit.html" title="(在 GMT v5.4.5)"><span>grdedit</span></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">修改网格文件的头段或内容</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/grdedit.html" title="(在 GMT v5.4.5)"><span>grdedit</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>修改网格文件的头段或内容</p>
+</dd>
+</dl>
 <p>该模块具有如下功能：</p>
 <ol class="arabic simple">
-<li>从2D网格文件中读入头段信息，并使用命令行中的值替换头段信息</li>
-<li>对全球地理网格文件还可以在东西方向旋转</li>
-<li>可以用 <code class="docutils literal notranslate"><span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">z</span></code> 值替换网格文件中特定结点处的值</li>
+<li><p>从2D网格文件中读入头段信息，并使用命令行中的值替换头段信息</p></li>
+<li><p>对全球地理网格文件还可以在东西方向旋转</p></li>
+<li><p>可以用 <code class="docutils literal notranslate"><span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">z</span></code> 值替换网格文件中特定结点处的值</p></li>
 </ol>
 <div class="section" id="id1">
 <h2>12.39.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;grid&gt;</span></code></dt>
-<dd>要修改的2D网格文件</dd>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;grid&gt;</span></code></dt><dd><p>要修改的2D网格文件</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="id2">
 <h2>12.39.2 可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-A</span></code></dt>
-<dd>如有必要，则对网格间隔做微调使得其与数据的范围相兼容。仅用于处理 GMT 3.1
-之前版本生成的网格文件。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-C</span></code></dt>
-<dd>清除网格文件头段区中生成该网格所使用的命令历史</dd>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-A</span></code></dt><dd><p>如有必要，则对网格间隔做微调使得其与数据的范围相兼容。仅用于处理 GMT 3.1
+之前版本生成的网格文件。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-C</span></code></dt><dd><p>清除网格文件头段区中生成该网格所使用的命令历史</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-D[+x&lt;xname&gt;][+y&lt;yname&gt;][+z&lt;zname&gt;][+s&lt;scale&gt;][+o&lt;offset&gt;][+n&lt;invalid&gt;][+t&lt;title&gt;][+r&lt;remark&gt;]</span></code></dt>
-<dd><p class="first">修改网格文件头段中的基本信息：</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">-D[+x&lt;xname&gt;][+y&lt;yname&gt;][+z&lt;zname&gt;][+s&lt;scale&gt;][+o&lt;offset&gt;][+n&lt;invalid&gt;][+t&lt;title&gt;][+r&lt;remark&gt;]</span></code></dt><dd><p>修改网格文件头段中的基本信息：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">+x&lt;xname&gt;</span></code> X变量名及其单位，格式为 <code class="docutils literal notranslate"><span class="pre">varname</span> <span class="pre">[unit]</span></code> ，比如 <code class="docutils literal notranslate"><span class="pre">&quot;distance</span> <span class="pre">[km]&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">+s&lt;scale&gt;</span></code> 读入网格数据后要乘以的因子，默认值为 1</li>
-<li><code class="docutils literal notranslate"><span class="pre">+o&lt;offset&gt;</span></code> 读入数据后并乘以因子后要加入的常数，默认值为 0</li>
-<li><code class="docutils literal notranslate"><span class="pre">+n&lt;invalid&gt;</span></code> 指定特定的数用于表示该节点处无有效值，默认为NaN</li>
-<li><code class="docutils literal notranslate"><span class="pre">+t&lt;title&gt;</span></code> 网格文件的标题</li>
-<li><code class="docutils literal notranslate"><span class="pre">+r&lt;remark&gt;</span></code> 网格文件的注释信息</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+x&lt;xname&gt;</span></code> X变量名及其单位，格式为 <code class="docutils literal notranslate"><span class="pre">varname</span> <span class="pre">[unit]</span></code> ，比如 <code class="docutils literal notranslate"><span class="pre">&quot;distance</span> <span class="pre">[km]&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+s&lt;scale&gt;</span></code> 读入网格数据后要乘以的因子，默认值为 1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+o&lt;offset&gt;</span></code> 读入数据后并乘以因子后要加入的常数，默认值为 0</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+n&lt;invalid&gt;</span></code> 指定特定的数用于表示该节点处无有效值，默认为NaN</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+t&lt;title&gt;</span></code> 网格文件的标题</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+r&lt;remark&gt;</span></code> 网格文件的注释信息</p></li>
 </ul>
 <p>其他说明：</p>
-<ol class="last arabic simple">
-<li>未指定的项其值保持不变</li>
-<li>可以给一个空值以重置某一项，比如使用 <code class="docutils literal notranslate"><span class="pre">+t</span></code> 而不指定标题则设置标题为空</li>
-<li>若文本中包含空格则需要用引号括起来</li>
-<li>对于地理数据（比如 <code class="docutils literal notranslate"><span class="pre">-fg</span></code> ）而言， <code class="docutils literal notranslate"><span class="pre">&lt;xname&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;yname&gt;</span></code> 会自动设置</li>
+<ol class="arabic simple">
+<li><p>未指定的项其值保持不变</p></li>
+<li><p>可以给一个空值以重置某一项，比如使用 <code class="docutils literal notranslate"><span class="pre">+t</span></code> 而不指定标题则设置标题为空</p></li>
+<li><p>若文本中包含空格则需要用引号括起来</p></li>
+<li><p>对于地理数据（比如 <code class="docutils literal notranslate"><span class="pre">-fg</span></code> ）而言， <code class="docutils literal notranslate"><span class="pre">&lt;xname&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;yname&gt;</span></code> 会自动设置</p></li>
 </ol>
 </dd>
 </dl>
@@ -377,42 +374,39 @@
 </pre></div>
 </div>
 </div></blockquote>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-E[a|h|l|r|t|v]</span></code></dt>
-<dd><p class="first">对网格进行处理，该选项与除 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 外的其他选项不兼容</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">-E[a|h|l|r|t|v]</span></code></dt><dd><p>对网格进行处理，该选项与除 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 外的其他选项不兼容</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">-Ea</span></code> rotate the grid around 180 degrees</li>
-<li><code class="docutils literal notranslate"><span class="pre">-Eh</span></code> 水平翻转网格（从左到右）</li>
-<li><code class="docutils literal notranslate"><span class="pre">-El</span></code> 逆时针将网格旋转90度</li>
-<li><code class="docutils literal notranslate"><span class="pre">-Er</span></code> 顺时针将网格旋转90度</li>
-<li><code class="docutils literal notranslate"><span class="pre">-Et</span></code> 对网格进行转置（想象成一个二维矩阵），默认使用该选项</li>
-<li><code class="docutils literal notranslate"><span class="pre">-Ev</span></code> 垂直旋转网格（从上到下）</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Ea</span></code> rotate the grid around 180 degrees</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Eh</span></code> 水平翻转网格（从左到右）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-El</span></code> 逆时针将网格旋转90度</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Er</span></code> 顺时针将网格旋转90度</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Et</span></code> 对网格进行转置（想象成一个二维矩阵），默认使用该选项</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Ev</span></code> 垂直旋转网格（从上到下）</p></li>
 </ul>
 <p>将网格数据逆时针旋转90度，并将旋转后的网格写到新网格文件中:</p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdedit oblique.nc -El -Goblique_rot.nc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdedit oblique.nc -El -Goblique_rot.nc
 </pre></div>
 </div>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;outgrid&gt;</span></code></dt>
-<dd>默认情况下，该命令会直接修改并覆盖原始网格文件，使用该选项则将修改后的网格写到新的文件中。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-J&lt;params&gt;</span></code></dt>
-<dd>使用该选项，则会将地理相关信息以 CF-1 兼容的元数据形式（可被GDAL识别）保存到 netCDF 文件中。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-N&lt;table&gt;</span></code></dt>
-<dd>从文件 <code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code> 中读入XYZ数据，并用这些XYZ数据替换网格中对应节点的值。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-R&lt;w&gt;/&lt;e&gt;/&lt;s&gt;/&lt;n&gt;</span></code></dt>
-<dd>修改网格文件的范围。同时，网格间隔会做相应修改。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-S</span></code></dt>
-<dd><p class="first">仅用于全球地理网格数据。将网格沿着经度范围整体偏移，使得其满足 <code class="docutils literal notranslate"><span class="pre">-R</span></code>
+<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;outgrid&gt;</span></code></dt><dd><p>默认情况下，该命令会直接修改并覆盖原始网格文件，使用该选项则将修改后的网格写到新的文件中。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-J&lt;params&gt;</span></code></dt><dd><p>使用该选项，则会将地理相关信息以 CF-1 兼容的元数据形式（可被GDAL识别）保存到 netCDF 文件中。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-N&lt;table&gt;</span></code></dt><dd><p>从文件 <code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code> 中读入XYZ数据，并用这些XYZ数据替换网格中对应节点的值。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-R&lt;w&gt;/&lt;e&gt;/&lt;s&gt;/&lt;n&gt;</span></code></dt><dd><p>修改网格文件的范围。同时，网格间隔会做相应修改。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-S</span></code></dt><dd><p>仅用于全球地理网格数据。将网格沿着经度范围整体偏移，使得其满足 <code class="docutils literal notranslate"><span class="pre">-R</span></code>
 定义的新范围。</p>
 <p>原数据范围是 <code class="docutils literal notranslate"><span class="pre">0/360/-72/72</span></code> ，现将数据整体偏移180度使得数据范围是
 <code class="docutils literal notranslate"><span class="pre">-180/180/-72/72</span></code></p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdedit world.nc -R-180/180/-72/72 -S
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdedit world.nc -R-180/180/-72/72 -S
 </pre></div>
 </div>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-T</span></code></dt>
-<dd><p class="first">修改网格文件的头段，将一个网格线配准的文件变成像素配准的文件，或反之。</p>
-<p class="last">使用该选项后，网格线配准的数据的范围将在四个方向上扩大半个网格间隔，像素点配置的数据的范围将在四个方向上缩小半个网格间隔。</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-T</span></code></dt><dd><p>修改网格文件的头段，将一个网格线配准的文件变成像素配准的文件，或反之。</p>
+<p>使用该选项后，网格线配准的数据的范围将在四个方向上扩大半个网格间隔，像素点配置的数据的范围将在四个方向上缩小半个网格间隔。</p>
 </dd>
 </dl>
 </div>
@@ -466,7 +460,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年04月08日.
+        最后更新于 2019年04月09日.
       </span>
 
     </p>

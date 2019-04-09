@@ -236,44 +236,44 @@
 <h3>海岸线<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p>海岸线数据可以进一步细分为4个不同的等级：</p>
 <ul class="simple">
-<li>1: 陆地和海洋的分界线，即真正意义上的海岸线</li>
-<li>2: 陆地与湖泊的分界线</li>
-<li>3: 湖泊中的岛屿与湖泊的分界线</li>
-<li>4: 湖泊中的岛屿里的池塘与岛屿的分界线</li>
+<li><p>1: 陆地和海洋的分界线，即真正意义上的海岸线</p></li>
+<li><p>2: 陆地与湖泊的分界线</p></li>
+<li><p>3: 湖泊中的岛屿与湖泊的分界线</p></li>
+<li><p>4: 湖泊中的岛屿里的池塘与岛屿的分界线</p></li>
 </ul>
 <p><a class="reference internal" href="../../module/pscoast/"><span class="doc">pscoast</span></a> 模块中有如下几个与海岸线相关的选项：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">-W[&lt;level&gt;/]&lt;pen&gt;</span></code> 绘制不同等级的海岸线</li>
-<li><code class="docutils literal notranslate"><span class="pre">-G&lt;fill&gt;</span></code> 设置陆地、岛屿等陆区的填充色</li>
-<li><code class="docutils literal notranslate"><span class="pre">-S&lt;fill&gt;</span></code> 设置海洋、湖泊等水区的填充色</li>
-<li><code class="docutils literal notranslate"><span class="pre">-Cl&lt;fill&gt;</span></code> 设置湖泊的填充色</li>
-<li><code class="docutils literal notranslate"><span class="pre">-Cr&lt;fill&gt;</span></code> 设置河流湖的填充色</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-W[&lt;level&gt;/]&lt;pen&gt;</span></code> 绘制不同等级的海岸线</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-G&lt;fill&gt;</span></code> 设置陆地、岛屿等陆区的填充色</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-S&lt;fill&gt;</span></code> 设置海洋、湖泊等水区的填充色</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Cl&lt;fill&gt;</span></code> 设置湖泊的填充色</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Cr&lt;fill&gt;</span></code> 设置河流湖的填充色</p></li>
 </ul>
 </div>
 <div class="section" id="id4">
 <h3>河流<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <p>河流进一步可以细分为10个等级：</p>
 <ul class="simple">
-<li>0: Double-lined rivers (river-lakes).</li>
-<li>1: Permanent major rivers.</li>
-<li>2: Additional major rivers.</li>
-<li>3: Additional rivers.</li>
-<li>4: Minor rivers.</li>
-<li>5: Intermittent rivers - major.</li>
-<li>6: Intermittent rivers - additional.</li>
-<li>7: Intermittent rivers - minor.</li>
-<li>8: Major canals.</li>
-<li>9: Minor canals.</li>
-<li>10: Irrigation canals.</li>
+<li><p>0: Double-lined rivers (river-lakes).</p></li>
+<li><p>1: Permanent major rivers.</p></li>
+<li><p>2: Additional major rivers.</p></li>
+<li><p>3: Additional rivers.</p></li>
+<li><p>4: Minor rivers.</p></li>
+<li><p>5: Intermittent rivers - major.</p></li>
+<li><p>6: Intermittent rivers - additional.</p></li>
+<li><p>7: Intermittent rivers - minor.</p></li>
+<li><p>8: Major canals.</p></li>
+<li><p>9: Minor canals.</p></li>
+<li><p>10: Irrigation canals.</p></li>
 </ul>
 <p><a class="reference internal" href="../../module/pscoast/"><span class="doc">pscoast</span></a> 模块的 <code class="docutils literal notranslate"><span class="pre">-I</span></code> 选项可以用于绘制不同等级的河流，其基本语法为 <code class="docutils literal notranslate"><span class="pre">-I&lt;level&gt;/&lt;pen&gt;</span></code>。其中 <code class="docutils literal notranslate"><span class="pre">&lt;level&gt;</span></code> 除了可以取1至10之外，还可以取：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">a</span></code>: 所有河流和运河，即包含0-10等级的所有河流</li>
-<li><code class="docutils literal notranslate"><span class="pre">A</span></code>: 除了河流湖之外的所有河流和运河，即包含1-10等级的河流</li>
-<li><code class="docutils literal notranslate"><span class="pre">r</span></code>: 所有永久河流，即0-4等级</li>
-<li><code class="docutils literal notranslate"><span class="pre">R</span></code>: 除了河流湖之外的永久河流，即1-4等级</li>
-<li><code class="docutils literal notranslate"><span class="pre">i</span></code>: 所有间歇性河流，即5-7等级</li>
-<li><code class="docutils literal notranslate"><span class="pre">c</span></code>: 所有运河，即8-10等级</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code>: 所有河流和运河，即包含0-10等级的所有河流</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A</span></code>: 除了河流湖之外的所有河流和运河，即包含1-10等级的河流</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">r</span></code>: 所有永久河流，即0-4等级</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">R</span></code>: 除了河流湖之外的永久河流，即1-4等级</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>: 所有间歇性河流，即5-7等级</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code>: 所有运河，即8-10等级</p></li>
 </ul>
 <p>该选项可以重复多次使用，为不同等级的河流设置不同的画笔属性。</p>
 </div>
@@ -281,9 +281,9 @@
 <h3>国界线<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <p>国界线进一步细分为三个等级</p>
 <ul class="simple">
-<li>1: 国界</li>
-<li>2: 美国州界</li>
-<li>3: 海洋边界</li>
+<li><p>1: 国界</p></li>
+<li><p>2: 美国州界</p></li>
+<li><p>3: 海洋边界</p></li>
 </ul>
 <p><a class="reference internal" href="../../module/pscoast/"><span class="doc">pscoast</span></a> 模块的 <code class="docutils literal notranslate"><span class="pre">-N</span></code> 选项可以用于绘制不同等级的国界线，其基本语法为 <code class="docutils literal notranslate"><span class="pre">-N&lt;level&gt;/&lt;pen&gt;</span></code>。其中 <code class="docutils literal notranslate"><span class="pre">&lt;level&gt;</span></code> 可以取1至3，也可以取 <code class="docutils literal notranslate"><span class="pre">a</span></code> （表示所有边界）。该选项可以重复多次使用，为不同等级的国界设置不同的画笔属性。</p>
 </div>
@@ -375,7 +375,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年04月08日.
+        最后更新于 2019年04月09日.
       </span>
 
     </p>
