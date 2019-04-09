@@ -215,27 +215,26 @@
 <p>这一节列出所有与颜色相关的配置参数，参数的默认值在中括号内列出。</p>
 <div class="section" id="cpt">
 <h2>10.5.1 CPT相关参数<a class="headerlink" href="#cpt" title="永久链接至标题">¶</a></h2>
-<dl class="docutils" id="color-background">
-<dt>COLOR_BACKGROUND</dt>
-<dd>数据Z值小于CPT文件中最小值时使用的背景色 [<code class="docutils literal notranslate"><span class="pre">black</span></code>]</dd>
+<dl class="simple" id="color-background">
+<dt>COLOR_BACKGROUND</dt><dd><p>数据Z值小于CPT文件中最小值时使用的背景色 [<code class="docutils literal notranslate"><span class="pre">black</span></code>]</p>
+</dd>
 </dl>
-<dl class="docutils" id="color-foreground">
-<dt>COLOR_FOREGROUND</dt>
-<dd>数据Z值大于CPT文件中最大值时使用的前景色 [<code class="docutils literal notranslate"><span class="pre">white</span></code>]</dd>
+<dl class="simple" id="color-foreground">
+<dt>COLOR_FOREGROUND</dt><dd><p>数据Z值大于CPT文件中最大值时使用的前景色 [<code class="docutils literal notranslate"><span class="pre">white</span></code>]</p>
+</dd>
 </dl>
-<dl class="docutils" id="color-nan">
-<dt>COLOR_NAN</dt>
-<dd>数值Z值为 NaN 时使用的颜色 [<code class="docutils literal notranslate"><span class="pre">127.5</span></code>]</dd>
+<dl class="simple" id="color-nan">
+<dt>COLOR_NAN</dt><dd><p>数值Z值为 NaN 时使用的颜色 [<code class="docutils literal notranslate"><span class="pre">127.5</span></code>]</p>
+</dd>
 </dl>
-<dl class="docutils" id="color-model">
-<dt>COLOR_MODEL</dt>
-<dd><p class="first">对CPT文件做插值生成新CPT时所使用的色彩模型 [<code class="docutils literal notranslate"><span class="pre">none</span></code>]</p>
+<dl id="color-model">
+<dt>COLOR_MODEL</dt><dd><p>对CPT文件做插值生成新CPT时所使用的色彩模型 [<code class="docutils literal notranslate"><span class="pre">none</span></code>]</p>
 <p>可以取如下值：</p>
-<ul class="last simple">
-<li><code class="docutils literal notranslate"><span class="pre">none</span></code>：使用CPT文件中指定的 <code class="docutils literal notranslate"><span class="pre">COLOR_MODEL</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">rgb</span></code>：在RGB色彩空间中插值</li>
-<li><code class="docutils literal notranslate"><span class="pre">hsv</span></code>：在HSV色彩空间中插值</li>
-<li><code class="docutils literal notranslate"><span class="pre">cmyk</span></code>：假定颜色是CMYK色彩空间，但在RGB空间内插值</li>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">none</span></code>：使用CPT文件中指定的 <code class="docutils literal notranslate"><span class="pre">COLOR_MODEL</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rgb</span></code>：在RGB色彩空间中插值</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hsv</span></code>：在HSV色彩空间中插值</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cmyk</span></code>：假定颜色是CMYK色彩空间，但在RGB空间内插值</p></li>
 </ul>
 </dd>
 </dl>
@@ -243,21 +242,21 @@
 <div class="section" id="id1">
 <h2>10.5.2 光照相关参数<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>某些绘图模块（如 <a class="reference internal" href="../../module/grdimage/"><span class="doc">grdimage</span></a>、<a class="reference internal" href="../../module/colorbar/"><span class="doc">colorbar</span></a>）可以利用强度文件模拟光照效果。光照效果的实现，本质上是先将任意颜色转换成HSV模型，然后根据强度的正负，增大/减小HSV模型中的S（饱和度）和V（明度），以达到模拟光照的效果。下面的四个参数控制了模拟光照过程中S和V变化的极限值，以避免模拟的光照过亮或过暗。</p>
-<dl class="docutils" id="color-hsv-min-s">
-<dt>COLOR_HSV_MIN_S</dt>
-<dd>负强度最小值对应的S值，取值范围0到1 [1.0]</dd>
+<dl class="simple" id="color-hsv-min-s">
+<dt>COLOR_HSV_MIN_S</dt><dd><p>负强度最小值对应的S值，取值范围0到1 [1.0]</p>
+</dd>
 </dl>
-<dl class="docutils" id="color-hsv-max-s">
-<dt>COLOR_HSV_MAX_S</dt>
-<dd>正强度最大值对应的S值，取值范围0到1 [0.1]</dd>
+<dl class="simple" id="color-hsv-max-s">
+<dt>COLOR_HSV_MAX_S</dt><dd><p>正强度最大值对应的S值，取值范围0到1 [0.1]</p>
+</dd>
 </dl>
-<dl class="docutils" id="color-hsv-min-v">
-<dt>COLOR_HSV_MIN_V</dt>
-<dd>负强度最小值对应的V值，取值范围0到1 [0.3]</dd>
+<dl class="simple" id="color-hsv-min-v">
+<dt>COLOR_HSV_MIN_V</dt><dd><p>负强度最小值对应的V值，取值范围0到1 [0.3]</p>
+</dd>
 </dl>
-<dl class="docutils" id="color-hsv-max-v">
-<dt>COLOR_HSV_MAX_V</dt>
-<dd>正强度最大值对应的V值，取值范围0到1 [1.0]</dd>
+<dl class="simple" id="color-hsv-max-v">
+<dt>COLOR_HSV_MAX_V</dt><dd><p>正强度最大值对应的V值，取值范围0到1 [1.0]</p>
+</dd>
 </dl>
 </div>
 </div>

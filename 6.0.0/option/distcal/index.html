@@ -232,9 +232,9 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">-jg</span></code> 将地球当做球体，用大圆路径公式计算球面距离，GMT默认使用此方式</li>
-<li><code class="docutils literal notranslate"><span class="pre">-jf</span></code> 使用Flat Earth公式计算球面距离</li>
-<li><code class="docutils literal notranslate"><span class="pre">-je</span></code> 使用测地公式计算球面距离，计算距离时考虑了地球椭率</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-jg</span></code> 将地球当做球体，用大圆路径公式计算球面距离，GMT默认使用此方式</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-jf</span></code> 使用Flat Earth公式计算球面距离</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-je</span></code> 使用测地公式计算球面距离，计算距离时考虑了地球椭率</p></li>
 </ul>
 <div class="section" id="id1">
 <h2>8.16.1 三种距离计算方式<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
@@ -260,8 +260,8 @@
 <p>该方法是 GMT 默认使用的距离计算方法，适用于大多数情况。</p>
 <p>有两个 GMT 参数可以控制大圆路径距离的计算细节，分别是：</p>
 <ul class="simple">
-<li><a class="reference internal" href="../../conf/proj/#proj-mean-radius"><span class="std std-ref">PROJ_MEAN_RADIUS</span></a> 地球平均半径</li>
-<li><a class="reference internal" href="../../conf/proj/#proj-aux-latitude"><span class="std std-ref">PROJ_AUX_LATITUDE</span></a> 指定将大地纬度转换为多个适合球状近似的辅助纬度中的其中一个</li>
+<li><p><a class="reference internal" href="../../conf/proj/#proj-mean-radius"><span class="std std-ref">PROJ_MEAN_RADIUS</span></a> 地球平均半径</p></li>
+<li><p><a class="reference internal" href="../../conf/proj/#proj-aux-latitude"><span class="std std-ref">PROJ_AUX_LATITUDE</span></a> 指定将大地纬度转换为多个适合球状近似的辅助纬度中的其中一个</p></li>
 </ul>
 <p>需要注意，这两个选项仅当 <a class="reference internal" href="../../conf/proj/#proj-ellipsoid"><span class="std std-ref">PROJ_ELLIPSOID</span></a> 不为 <code class="docutils literal notranslate"><span class="pre">sphere</span></code> 时才有效。</p>
 </div>

@@ -233,12 +233,12 @@ The GMT/MATLAB Toolbox,
 <p>GMT5.3以后的用户在GMT执行路径（默认为 <code class="docutils literal notranslate"><span class="pre">C:\programs\gmt5\bin</span></code> ）下已经存在 <code class="docutils literal notranslate"><span class="pre">gmt.m</span></code>
 和 <code class="docutils literal notranslate"><span class="pre">gmtmex.mexw64|32</span></code> 两个文件，只要确保如下两点即可在Windows下使用该接口了。</p>
 <ul class="simple">
-<li>GMT的执行路径已经加入了系统环境变量path中，保证系统可调用GMT命令；</li>
-<li>GMT的执行路径已经加入Matlab的搜索路径下，保证Matlab可调用GMT命令，如下图所示。</li>
+<li><p>GMT的执行路径已经加入了系统环境变量path中，保证系统可调用GMT命令；</p></li>
+<li><p>GMT的执行路径已经加入Matlab的搜索路径下，保证Matlab可调用GMT命令，如下图所示。</p></li>
 </ul>
 <div class="figure align-center" id="id9">
 <a class="reference internal image-reference" href="../../_images/Matlab_path.png"><img alt="../../_images/Matlab_path.png" src="../../_images/Matlab_path.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">Matlab PATH 设置</span></p>
+<p class="caption"><span class="caption-text">Matlab PATH 设置</span><a class="headerlink" href="#id9" title="永久链接至图片">¶</a></p>
 </div>
 <p>测试安装是否正确：在Matlab的命令行窗口直接敲入 <code class="docutils literal notranslate"><span class="pre">gmt</span></code>，若出现GMT的版本及使用方法介绍，则安装成功。</p>
 </div>
@@ -246,18 +246,15 @@ The GMT/MATLAB Toolbox,
 <h3>macOS 平台<a class="headerlink" href="#macos" title="永久链接至标题">¶</a></h3>
 <p>在macOS上按照如下流程可以成功编译GMT的Matlab接口。但由于Matlab处理动态链接库的方式很特别，因而该接口可能不太稳定。GMT开发者正试图与MathWorks合作以解决这个问题，将来以下编译方法可能会修改：</p>
 <ol class="arabic">
-<li><p class="first">安装macOS平台下最新版本的GMT；</p>
-</li>
-<li><p class="first">运行安装目录下 <code class="docutils literal notranslate"><span class="pre">share/tools</span></code> 下的 <code class="docutils literal notranslate"><span class="pre">gmt_prepmex.sh</span></code> 文件。此操作会复制GMT的已安装文件到 <code class="docutils literal notranslate"><span class="pre">/opt/gmt</span></code> 目录下，并且会重新检查所有的共享库；</p>
-</li>
-<li><p class="first">使用 <code class="docutils literal notranslate"><span class="pre">gmtswitch</span></code> 切换当前使用的GMT版本，确保 <code class="docutils literal notranslate"><span class="pre">/opt/gmt</span></code> 下的GMT为当前激活版本；</p>
-</li>
-<li><p class="first">使用svn获取 <code class="docutils literal notranslate"><span class="pre">gmt-mex</span></code> 项目文件到本地:</p>
+<li><p>安装macOS平台下最新版本的GMT；</p></li>
+<li><p>运行安装目录下 <code class="docutils literal notranslate"><span class="pre">share/tools</span></code> 下的 <code class="docutils literal notranslate"><span class="pre">gmt_prepmex.sh</span></code> 文件。此操作会复制GMT的已安装文件到 <code class="docutils literal notranslate"><span class="pre">/opt/gmt</span></code> 目录下，并且会重新检查所有的共享库；</p></li>
+<li><p>使用 <code class="docutils literal notranslate"><span class="pre">gmtswitch</span></code> 切换当前使用的GMT版本，确保 <code class="docutils literal notranslate"><span class="pre">/opt/gmt</span></code> 下的GMT为当前激活版本；</p></li>
+<li><p>使用svn获取 <code class="docutils literal notranslate"><span class="pre">gmt-mex</span></code> 项目文件到本地:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>svn checkout svn://gmtserver.soest.hawaii.edu/gmt-mex gmt-mex
 </pre></div>
 </div>
 </li>
-<li><p class="first">进入 <code class="docutils literal notranslate"><span class="pre">get-mex</span></code> 目录并编译生成 <code class="docutils literal notranslate"><span class="pre">gmtmex.mexmaci64</span></code></p>
+<li><p>进入 <code class="docutils literal notranslate"><span class="pre">get-mex</span></code> 目录并编译生成 <code class="docutils literal notranslate"><span class="pre">gmtmex.mexmaci64</span></code></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> gmt-mex/trunk/
 autoconf
 ./configure --enable-matlab
@@ -265,10 +262,8 @@ make
 </pre></div>
 </div>
 </li>
-<li><p class="first">将 <code class="docutils literal notranslate"><span class="pre">gmt.m</span></code> 和 <code class="docutils literal notranslate"><span class="pre">gmtmex.mexmaci64</span></code> 所在目录添加到MTATLAB路径中</p>
-</li>
-<li><p class="first">确保 <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code> 文件中包含选项： <code class="docutils literal notranslate"><span class="pre">GMT_CUSTOM_LIBS=/opt/gmt/lib/gmt/plugins/supplements.so</span></code></p>
-</li>
+<li><p>将 <code class="docutils literal notranslate"><span class="pre">gmt.m</span></code> 和 <code class="docutils literal notranslate"><span class="pre">gmtmex.mexmaci64</span></code> 所在目录添加到MTATLAB路径中</p></li>
+<li><p>确保 <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code> 文件中包含选项： <code class="docutils literal notranslate"><span class="pre">GMT_CUSTOM_LIBS=/opt/gmt/lib/gmt/plugins/supplements.so</span></code></p></li>
 </ol>
 <p>经测试，该项目在2015a、2015b的MATLAB版本中可使用，对于更老版本的MATLAB，还未进行测试。</p>
 </div>
@@ -343,9 +338,9 @@ gmt<span class="o">(</span><span class="s1">&#39;destroy&#39;</span><span class=
 <div class="section" id="id8">
 <h2>14.2.4 常见问题<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li>使用完GMT接口后要记得 <code class="docutils literal notranslate"><span class="pre">gmt('destroy')</span></code> 释放内存，不然有可能出现不可预知错误。</li>
-<li>gmt括号内直接写module名，看似GMT4语句，实际只支持GMT5的语法。</li>
-<li>绘制地理投影时，经纬度标注可能会出现 <code class="docutils literal notranslate"><span class="pre">%s</span></code> 乱码（即使设置为不显示任何度分秒符号），目前已知Matlab2016存在该问题，其他版本还未有此类反馈。</li>
+<li><p>使用完GMT接口后要记得 <code class="docutils literal notranslate"><span class="pre">gmt('destroy')</span></code> 释放内存，不然有可能出现不可预知错误。</p></li>
+<li><p>gmt括号内直接写module名，看似GMT4语句，实际只支持GMT5的语法。</p></li>
+<li><p>绘制地理投影时，经纬度标注可能会出现 <code class="docutils literal notranslate"><span class="pre">%s</span></code> 乱码（即使设置为不显示任何度分秒符号），目前已知Matlab2016存在该问题，其他版本还未有此类反馈。</p></li>
 </ul>
 </div>
 </div>

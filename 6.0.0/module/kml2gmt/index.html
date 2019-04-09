@@ -325,41 +325,38 @@
             
   <div class="section" id="kml2gmt">
 <span id="index-0"></span><h1>12.74 kml2gmt<a class="headerlink" href="#kml2gmt" title="永久链接至标题">¶</a></h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/kml2gmt.html" title="(在 GMT v6.0.0)"><span>kml2gmt</span></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">将Google Earth的KML文件转换为GMT表数据</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/kml2gmt.html" title="(在 GMT v6.0.0)"><span>kml2gmt</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>将Google Earth的KML文件转换为GMT表数据</p>
+</dd>
+</dl>
 <p>该模块可以将 KML 文件中包含的点、线或多边形导出为 GMT 可用的格式。</p>
 <div class="admonition note">
-<p class="first admonition-title">注解</p>
-<p class="last">KMZ 文件本质上是一个 ZIP 压缩包，其中包含了一个 KML 文件以及若干个辅助文件。可以将 KMZ 文件解压得到 KML 文件，再使用该模块进行转换。</p>
+<p class="admonition-title">注解</p>
+<p>KMZ 文件本质上是一个 ZIP 压缩包，其中包含了一个 KML 文件以及若干个辅助文件。可以将 KMZ 文件解压得到 KML 文件，再使用该模块进行转换。</p>
 </div>
 <div class="section" id="id1">
 <h2>12.74.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;kmlfiles&gt;</span></code></dt>
-<dd>要转换的KML文件</dd>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;kmlfiles&gt;</span></code></dt><dd><p>要转换的KML文件</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="id2">
 <h2>12.74.2 可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-F[s|l|p]</span></code></dt>
-<dd><p class="first">指定要输出的数据类型。默认会输出KML中包含的所有点、线或多边形</p>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">-Fs</span></code> 只输出点</li>
-<li><code class="docutils literal notranslate"><span class="pre">-Fl</span></code> 只输出线</li>
-<li><code class="docutils literal notranslate"><span class="pre">-Fp</span></code> 只输出多边形</li>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-F[s|l|p]</span></code></dt><dd><p>指定要输出的数据类型。默认会输出KML中包含的所有点、线或多边形</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-Fs</span></code> 只输出点</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Fl</span></code> 只输出线</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Fp</span></code> 只输出多边形</p></li>
 </ol>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Z</span></code></dt>
-<dd>默认只输出经纬度信息，若使用 <code class="docutils literal notranslate"><span class="pre">-Z</span></code> 选项，则输出坐标的高程信息作为GMT的Z值</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Z</span></code></dt><dd><p>默认只输出经纬度信息，若使用 <code class="docutils literal notranslate"><span class="pre">-Z</span></code> 选项，则输出坐标的高程信息作为GMT的Z值</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="id3">

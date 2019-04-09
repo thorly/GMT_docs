@@ -229,10 +229,9 @@
 <div class="section" id="id3">
 <h2>10.1.2 修改配置参数的值<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>GMT提供了多种方法来控制或修改配置参数的值。</p>
-<dl class="docutils">
-<dt>设置全局参数</dt>
-<dd><p class="first">用 <a class="reference internal" href="../../module/set/"><span class="doc">gmtset</span></a> 模块可以为GMT设置全局参数，此类参数会影响到接下来所有GMT命令的执行，直到绘图结束或者被 <a class="reference internal" href="../../module/set/"><span class="doc">gmtset</span></a> 再次修改为其他值为止。例如:</p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map png
+<dl>
+<dt>设置全局参数</dt><dd><p>用 <a class="reference internal" href="../../module/set/"><span class="doc">gmtset</span></a> 模块可以为GMT设置全局参数，此类参数会影响到接下来所有GMT命令的执行，直到绘图结束或者被 <a class="reference internal" href="../../module/set/"><span class="doc">gmtset</span></a> 再次修改为其他值为止。例如:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map png
 <span class="c1"># 设置全局参数 FONT_ANNOT_PRIMARY 的值为 12p,Times-Bold,red</span>
 gmt <span class="nb">set</span> FONT_ANNOT_PRIMARY 12p,Times-Bold,red
 gmt basemap ...
@@ -240,9 +239,8 @@ gmt end
 </pre></div>
 </div>
 </dd>
-<dt>设置临时参数</dt>
-<dd><p class="first">在单个命令上加上 <code class="docutils literal notranslate"><span class="pre">--KEY=value</span></code> 可以临时设置配置参数的值。此类参数仅对当前命令有效，而不影响接下来其他命令的执行效果。例如:</p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map png
+<dt>设置临时参数</dt><dd><p>在单个命令上加上 <code class="docutils literal notranslate"><span class="pre">--KEY=value</span></code> 可以临时设置配置参数的值。此类参数仅对当前命令有效，而不影响接下来其他命令的执行效果。例如:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map png
 <span class="c1"># 使用默认参数绘制底图</span>
 gmt basemap ...
 <span class="c1"># 该底图的 FONT_ANNOT_PRIMARY 为 12p,Times-Bold,red</span>
@@ -253,14 +251,13 @@ gmt end
 </pre></div>
 </div>
 </dd>
-<dt>使用配置文件设置全局参数</dt>
-<dd><p class="first">可以将需要配置的一系列参数值写到GMT配置文件 <code class="file docutils literal notranslate"><span class="pre">gmt.conf</span></code> 中。当GMT在执行时，会在当前目录-&gt;<code class="docutils literal notranslate"><span class="pre">~/.gmt/</span></code>以及家目录下寻找GMT配置文件
+<dt>使用配置文件设置全局参数</dt><dd><p>可以将需要配置的一系列参数值写到GMT配置文件 <code class="file docutils literal notranslate"><span class="pre">gmt.conf</span></code> 中。当GMT在执行时，会在当前目录-&gt;<code class="docutils literal notranslate"><span class="pre">~/.gmt/</span></code>以及家目录下寻找GMT配置文件
 <code class="file docutils literal notranslate"><span class="pre">gmt.conf</span></code>。若找到该配置文件，则会读取该配置文件中参数的值作为全局参数。</p>
 <p>此种方式通常用于制作某个特定风格的图件（比如黑底白线）或者某个符合某个期刊特定要求的图件。可以使用:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt defaults -D &gt; gmt.conf
 </pre></div>
 </div>
-<p class="last">生成一个包含所有参数的配置文件，然后手动修改。</p>
+<p>生成一个包含所有参数的配置文件，然后手动修改。</p>
 </dd>
 </dl>
 </div>

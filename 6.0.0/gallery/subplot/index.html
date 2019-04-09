@@ -217,8 +217,8 @@
 <h1>13.13 多子图<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>GMT6中绘制多子图有两种方式：</p>
 <ul class="simple">
-<li>常规方式：即利用 <a class="reference internal" href="../../option/XY/"><span class="doc">-X 和 -Y 选项</span></a> 移动每个子图的原点</li>
-<li>现代方式：即利用 <a class="reference internal" href="../../module/subplot/"><span class="doc">subplot</span></a> 提供的子图模式</li>
+<li><p>常规方式：即利用 <a class="reference internal" href="../../option/XY/"><span class="doc">-X 和 -Y 选项</span></a> 移动每个子图的原点</p></li>
+<li><p>现代方式：即利用 <a class="reference internal" href="../../module/subplot/"><span class="doc">subplot</span></a> 提供的子图模式</p></li>
 </ul>
 <p>两种方法各有利弊，现代方式更加简洁，但通常只适用于所有子图的底图类似的情况；常规方式更加灵活，但使用起来相对比较繁琐。</p>
 <div class="section" id="id2">
@@ -258,20 +258,20 @@ gmt end
 </div>
 <p>几点说明:</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">+cTL</span></code> 的作用从 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项中提取底图的左上角（<strong>T</strong>op <strong>L</strong>eft）作为当前字符串的坐标；</li>
-<li>由于使用了 <code class="docutils literal notranslate"><span class="pre">+cTL</span></code>，因而 <a class="reference internal" href="../../module/text/"><span class="doc">text</span></a> 不再需要 XY 坐标信息，只需要给出字符串 <code class="docutils literal notranslate"><span class="pre">(a)</span></code>、<code class="docutils literal notranslate"><span class="pre">(b)</span></code> 即可；</li>
-<li><code class="docutils literal notranslate"><span class="pre">+f15p,1</span></code> 将编号字号设置为 <code class="docutils literal notranslate"><span class="pre">5p</span></code>，1号字体（即粗体）</li>
-<li>将编号放在左上角还不够，还需要使用 <code class="docutils literal notranslate"><span class="pre">-Dj-1c/-0.75c</span></code> 对编号的位置进行微调，此处表示将编号向左边移动 1 cm 向上移动 0.75 cm</li>
-<li>由于编号位于子图的外部，故而需要加上 <code class="docutils literal notranslate"><span class="pre">-N</span></code> 选项使得 <a class="reference internal" href="../../module/text/"><span class="doc">text</span></a>
-绘制子图外部的字符串</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+cTL</span></code> 的作用从 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项中提取底图的左上角（<strong>T</strong>op <strong>L</strong>eft）作为当前字符串的坐标；</p></li>
+<li><p>由于使用了 <code class="docutils literal notranslate"><span class="pre">+cTL</span></code>，因而 <a class="reference internal" href="../../module/text/"><span class="doc">text</span></a> 不再需要 XY 坐标信息，只需要给出字符串 <code class="docutils literal notranslate"><span class="pre">(a)</span></code>、<code class="docutils literal notranslate"><span class="pre">(b)</span></code> 即可；</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+f15p,1</span></code> 将编号字号设置为 <code class="docutils literal notranslate"><span class="pre">5p</span></code>，1号字体（即粗体）</p></li>
+<li><p>将编号放在左上角还不够，还需要使用 <code class="docutils literal notranslate"><span class="pre">-Dj-1c/-0.75c</span></code> 对编号的位置进行微调，此处表示将编号向左边移动 1 cm 向上移动 0.75 cm</p></li>
+<li><p>由于编号位于子图的外部，故而需要加上 <code class="docutils literal notranslate"><span class="pre">-N</span></code> 选项使得 <a class="reference internal" href="../../module/text/"><span class="doc">text</span></a>
+绘制子图外部的字符串</p></li>
 </ol>
 </div>
 <div class="section" id="id3">
 <h2>13.13.2 现代方式<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>现代方式使用 <a class="reference internal" href="../../module/subplot/"><span class="doc">subplot</span></a> 绘制多子图。</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">begin</span></code> 将整个绘图区域分为2x2的网格并设置子图的大小及其它属性</li>
-<li><code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 通过指定行和列以激活指定的子图</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">begin</span></code> 将整个绘图区域分为2x2的网格并设置子图的大小及其它属性</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 通过指定行和列以激活指定的子图</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="nv">R</span><span class="o">=</span><span class="m">0</span>/5/0/3

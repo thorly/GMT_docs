@@ -207,10 +207,10 @@
 </div>
 <p>其中，</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">gmt</span></code> 是GMT中“唯一”的一个二进制文件，所有GMT命令必须以 <code class="docutils literal notranslate"><span class="pre">gmt</span></code> 开头</li>
-<li><code class="docutils literal notranslate"><span class="pre">module</span></code> 是用于完成某个特定操作的模块的名字</li>
-<li><code class="docutils literal notranslate"><span class="pre">-A</span></code> 是模块 <code class="docutils literal notranslate"><span class="pre">module</span></code> 提供的选项，<code class="docutils literal notranslate"><span class="pre">xx</span></code> 为选项 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 的参数</li>
-<li><code class="docutils literal notranslate"><span class="pre">+b</span></code> 是选项 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 的子选项，<code class="docutils literal notranslate"><span class="pre">xxxx</span></code> 为该子选项的参数</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gmt</span></code> 是GMT中“唯一”的一个二进制文件，所有GMT命令必须以 <code class="docutils literal notranslate"><span class="pre">gmt</span></code> 开头</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">module</span></code> 是用于完成某个特定操作的模块的名字</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-A</span></code> 是模块 <code class="docutils literal notranslate"><span class="pre">module</span></code> 提供的选项，<code class="docutils literal notranslate"><span class="pre">xx</span></code> 为选项 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 的参数</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+b</span></code> 是选项 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 的子选项，<code class="docutils literal notranslate"><span class="pre">xxxx</span></code> 为该子选项的参数</p></li>
 </ul>
 <p>一个完整的示例:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R0/20/0/20 -JM6i -Ggray -Wthin -B5 -B+t<span class="s2">&quot;Title with spaces&quot;</span> -V -pdf map
@@ -218,23 +218,23 @@
 </div>
 <p>其中，</p>
 <ul class="simple">
-<li>命令以 <code class="docutils literal notranslate"><span class="pre">gmt</span></code> 开头</li>
-<li><code class="docutils literal notranslate"><span class="pre">coast</span></code> 是用于绘制海岸线的模块</li>
-<li><code class="docutils literal notranslate"><span class="pre">-R</span></code>、<code class="docutils literal notranslate"><span class="pre">-J</span></code>、<code class="docutils literal notranslate"><span class="pre">-G</span></code> 等都是 <code class="docutils literal notranslate"><span class="pre">coast</span></code> 模块的选项</li>
-<li><code class="docutils literal notranslate"><span class="pre">-B+t&quot;Title</span> <span class="pre">with</span> <span class="pre">spaces&quot;</span></code> 中 <code class="docutils literal notranslate"><span class="pre">+t</span></code> 是选项 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 的子选项，<code class="docutils literal notranslate"><span class="pre">&quot;Title</span> <span class="pre">with</span> <span class="pre">spaces&quot;</span></code> 是子选项 <code class="docutils literal notranslate"><span class="pre">+t</span></code> 的参数</li>
+<li><p>命令以 <code class="docutils literal notranslate"><span class="pre">gmt</span></code> 开头</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">coast</span></code> 是用于绘制海岸线的模块</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-R</span></code>、<code class="docutils literal notranslate"><span class="pre">-J</span></code>、<code class="docutils literal notranslate"><span class="pre">-G</span></code> 等都是 <code class="docutils literal notranslate"><span class="pre">coast</span></code> 模块的选项</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-B+t&quot;Title</span> <span class="pre">with</span> <span class="pre">spaces&quot;</span></code> 中 <code class="docutils literal notranslate"><span class="pre">+t</span></code> 是选项 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 的子选项，<code class="docutils literal notranslate"><span class="pre">&quot;Title</span> <span class="pre">with</span> <span class="pre">spaces&quot;</span></code> 是子选项 <code class="docutils literal notranslate"><span class="pre">+t</span></code> 的参数</p></li>
 </ul>
 <p>几点说明：</p>
 <ul class="simple">
-<li>若模块名以 <code class="docutils literal notranslate"><span class="pre">gmt</span></code> 开头，则模块名中的 <code class="docutils literal notranslate"><span class="pre">gmt</span></code> 可省略。比如 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">gmtset</span> <span class="pre">xxx</span> <span class="pre">xxx</span></code>
-可以简写为 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">set</span> <span class="pre">xxx</span> <span class="pre">xxx</span></code></li>
-<li>模块名、选项等均区分大小写</li>
-<li>每个模块可以使用哪些选项由模块自己定义，具体参考每个模块的语法说明</li>
-<li>选项以 <code class="docutils literal notranslate"><span class="pre">-</span></code> 开头，后接<strong>单个字符</strong>表示某个选项，字符后接选项的参数以及子选项</li>
-<li>不以 <code class="docutils literal notranslate"><span class="pre">-</span></code> 开头的参数，都会被当做文件，GMT会尝试去读取</li>
-<li>子选项以 <code class="docutils literal notranslate"><span class="pre">+</span></code> 开头，后接<strong>单个字符</strong>以及子选项的参数</li>
-<li>官方文档中子选项称为modifier，可以译为“修饰符”，本文档中统一使用“子选项”</li>
-<li>各选项间以空格分隔，选项内部不能有空格。选项内部的字符串中若存在空格，应用单引号或双引号括起来</li>
-<li>注意 <code class="docutils literal notranslate"><span class="pre">-A</span></code>、<code class="docutils literal notranslate"><span class="pre">—A</span></code> 以及 <code class="docutils literal notranslate"><span class="pre">－A</span></code> 的细微区别。GMT中只能使用第一种。GMT4官方文档以及某些介绍GMT的博客中都可能存在 <code class="docutils literal notranslate"><span class="pre">-</span></code> 被误写为其他相似的符号的情况。GMT5、6的官方文档以及本文档不存在该问题。</li>
+<li><p>若模块名以 <code class="docutils literal notranslate"><span class="pre">gmt</span></code> 开头，则模块名中的 <code class="docutils literal notranslate"><span class="pre">gmt</span></code> 可省略。比如 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">gmtset</span> <span class="pre">xxx</span> <span class="pre">xxx</span></code>
+可以简写为 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">set</span> <span class="pre">xxx</span> <span class="pre">xxx</span></code></p></li>
+<li><p>模块名、选项等均区分大小写</p></li>
+<li><p>每个模块可以使用哪些选项由模块自己定义，具体参考每个模块的语法说明</p></li>
+<li><p>选项以 <code class="docutils literal notranslate"><span class="pre">-</span></code> 开头，后接<strong>单个字符</strong>表示某个选项，字符后接选项的参数以及子选项</p></li>
+<li><p>不以 <code class="docutils literal notranslate"><span class="pre">-</span></code> 开头的参数，都会被当做文件，GMT会尝试去读取</p></li>
+<li><p>子选项以 <code class="docutils literal notranslate"><span class="pre">+</span></code> 开头，后接<strong>单个字符</strong>以及子选项的参数</p></li>
+<li><p>官方文档中子选项称为modifier，可以译为“修饰符”，本文档中统一使用“子选项”</p></li>
+<li><p>各选项间以空格分隔，选项内部不能有空格。选项内部的字符串中若存在空格，应用单引号或双引号括起来</p></li>
+<li><p>注意 <code class="docutils literal notranslate"><span class="pre">-A</span></code>、<code class="docutils literal notranslate"><span class="pre">—A</span></code> 以及 <code class="docutils literal notranslate"><span class="pre">－A</span></code> 的细微区别。GMT中只能使用第一种。GMT4官方文档以及某些介绍GMT的博客中都可能存在 <code class="docutils literal notranslate"><span class="pre">-</span></code> 被误写为其他相似的符号的情况。GMT5、6的官方文档以及本文档不存在该问题。</p></li>
 </ul>
 </div>
 

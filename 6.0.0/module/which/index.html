@@ -324,16 +324,14 @@
             
   <div class="section" id="gmtwhich">
 <span id="index-0"></span><h1>12.122 gmtwhich<a class="headerlink" href="#gmtwhich" title="永久链接至标题">¶</a></h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/gmtwhich.html" title="(在 GMT v6.0.0)"><span>which</span></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">返回指定文件的完整路径</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/gmtwhich.html" title="(在 GMT v6.0.0)"><span>which</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>返回指定文件的完整路径</p>
+</dd>
+</dl>
 <p>GMT会依次在如下目录中去寻找命令行中指定的文件:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>当前目录 &gt; <span class="nv">$GMT_USERDIR</span> &gt; <span class="nv">$GMT_DATADIR</span> &gt; <span class="nv">$GMT_CACHEDIR</span>
 </pre></div>
@@ -341,28 +339,27 @@
 <p>该命令会报告文件的完整路径，使得用户可以确认自己在使用的究竟是哪个数据文件。</p>
 <div class="section" id="id1">
 <h2>12.122.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;files&gt;</span></code></dt>
-<dd>任意数据文件名</dd>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;files&gt;</span></code></dt><dd><p>任意数据文件名</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="id2">
 <h2>12.122.2 可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-A</span></code></dt>
-<dd>仅考虑用户有读权限的文件</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-C</span></code></dt>
-<dd>不报告完整路径，只打印 <code class="docutils literal notranslate"><span class="pre">Y</span></code> 或 <code class="docutils literal notranslate"><span class="pre">N</span></code> 以表示是否找到文件</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-D</span></code></dt>
-<dd>不报告完整路径，仅打印包含该文件的目录名</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-G</span></code></dt>
-<dd><p class="first">GMT可以自动下载某些文件：</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">-A</span></code></dt><dd><p>仅考虑用户有读权限的文件</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-C</span></code></dt><dd><p>不报告完整路径，只打印 <code class="docutils literal notranslate"><span class="pre">Y</span></code> 或 <code class="docutils literal notranslate"><span class="pre">N</span></code> 以表示是否找到文件</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-D</span></code></dt><dd><p>不报告完整路径，仅打印包含该文件的目录名</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-G</span></code></dt><dd><p>GMT可以自动下载某些文件：</p>
 <ul class="simple">
-<li>以URL形式给出的文件会自动下载</li>
-<li>以 <code class="docutils literal notranslate"><span class="pre">&#64;filename</span></code> 形式给出的文件会从GMT网站上下载</li>
-<li>GMT提供的全球地形起伏数据 <code class="docutils literal notranslate"><span class="pre">earth_relief_*.grd</span></code></li>
+<li><p>以URL形式给出的文件会自动下载</p></li>
+<li><p>以 <code class="docutils literal notranslate"><span class="pre">&#64;filename</span></code> 形式给出的文件会从GMT网站上下载</p></li>
+<li><p>GMT提供的全球地形起伏数据 <code class="docutils literal notranslate"><span class="pre">earth_relief_*.grd</span></code></p></li>
 </ul>
-<p class="last">使用该选项，若GMT没有在本地缓存目录中找到这些文件，则会尝试下载。</p>
+<p>使用该选项，若GMT没有在本地缓存目录中找到这些文件，则会尝试下载。</p>
 </dd>
 </dl>
 </div>

@@ -325,37 +325,34 @@
             
   <div class="section" id="grdclip">
 <span id="index-0"></span><h1>12.35 grdclip<a class="headerlink" href="#grdclip" title="永久链接至标题">¶</a></h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/grdclip.html" title="(在 GMT v6.0.0)"><span>grdclip</span></a></td>
-</tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">对网格文件的Z值范围做裁剪</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">官方文档</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/grdclip.html" title="(在 GMT v6.0.0)"><span>grdclip</span></a></p>
+</dd>
+<dt class="field-even">简介</dt>
+<dd class="field-even"><p>对网格文件的Z值范围做裁剪</p>
+</dd>
+</dl>
 <div class="section" id="id1">
 <h2>12.35.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;ingrid&gt;</span></code></dt>
-<dd>输入网格文件名</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;outgrid&gt;</span></code></dt>
-<dd>输出网格文件名</dd>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;ingrid&gt;</span></code></dt><dd><p>输入网格文件名</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;outgrid&gt;</span></code></dt><dd><p>输出网格文件名</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="id2">
 <h2>12.35.2 可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-R&lt;west&gt;/&lt;east&gt;/&lt;south&gt;/&lt;north&gt;[+r][+u&lt;unit&gt;]</span></code></dt>
-<dd>指定要截取的网格区域。若该选项指定的范围超过了网格文件的边界，则仅提取二者公共的区域。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-S</span></code></dt>
-<dd><p class="first">裁剪参数，该选项可以多次使用。</p>
-<ul class="last simple">
-<li><code class="docutils literal notranslate"><span class="pre">-Sa&lt;high&gt;/&lt;above&gt;</span></code> 将所有大于 <code class="docutils literal notranslate"><span class="pre">&lt;high&gt;</span></code> 的值设置为 <code class="docutils literal notranslate"><span class="pre">&lt;above&gt;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">-Sb&lt;low&gt;/&lt;below&gt;</span></code> 将所有小于 <code class="docutils literal notranslate"><span class="pre">&lt;low&gt;</span></code> 的值设置为 <code class="docutils literal notranslate"><span class="pre">&lt;below&gt;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">-Si&lt;low&gt;/&lt;high&gt;/&lt;between&gt;</span></code> 将所有在 <code class="docutils literal notranslate"><span class="pre">&lt;low&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;high&gt;</span></code> 范围内的值设置为 <code class="docutils literal notranslate"><span class="pre">&lt;between&gt;</span></code> ，该选项可多次使用</li>
-<li><code class="docutils literal notranslate"><span class="pre">-Sr&lt;old&gt;/&lt;new&gt;</span></code> 将所有等于 <code class="docutils literal notranslate"><span class="pre">&lt;old&gt;</span></code> 的值设置为 <code class="docutils literal notranslate"><span class="pre">&lt;new&gt;</span></code>  ，该选项可以多次使用</li>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">-R&lt;west&gt;/&lt;east&gt;/&lt;south&gt;/&lt;north&gt;[+r][+u&lt;unit&gt;]</span></code></dt><dd><p>指定要截取的网格区域。若该选项指定的范围超过了网格文件的边界，则仅提取二者公共的区域。</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-S</span></code></dt><dd><p>裁剪参数，该选项可以多次使用。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-Sa&lt;high&gt;/&lt;above&gt;</span></code> 将所有大于 <code class="docutils literal notranslate"><span class="pre">&lt;high&gt;</span></code> 的值设置为 <code class="docutils literal notranslate"><span class="pre">&lt;above&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Sb&lt;low&gt;/&lt;below&gt;</span></code> 将所有小于 <code class="docutils literal notranslate"><span class="pre">&lt;low&gt;</span></code> 的值设置为 <code class="docutils literal notranslate"><span class="pre">&lt;below&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Si&lt;low&gt;/&lt;high&gt;/&lt;between&gt;</span></code> 将所有在 <code class="docutils literal notranslate"><span class="pre">&lt;low&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;high&gt;</span></code> 范围内的值设置为 <code class="docutils literal notranslate"><span class="pre">&lt;between&gt;</span></code> ，该选项可多次使用</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Sr&lt;old&gt;/&lt;new&gt;</span></code> 将所有等于 <code class="docutils literal notranslate"><span class="pre">&lt;old&gt;</span></code> 的值设置为 <code class="docutils literal notranslate"><span class="pre">&lt;new&gt;</span></code>  ，该选项可以多次使用</p></li>
 </ul>
 </dd>
 </dl>
