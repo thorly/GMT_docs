@@ -104,9 +104,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../escape-character/">4.7 转义序列</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../special-character/">4.8 特殊字符</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">4.9 绘制矢量/箭头</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">4.9.1 矢量分类</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">4.9.2 矢量箭头属性</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">4.9.3 矢量示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">4.9.1 矢量头位置及形状</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">4.9.2 矢量头线条颜色和填充色</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">4.9.3 其它属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">4.9.4 矢量类型及输入数据格式</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6">笛卡尔矢量和地理矢量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">圆弧矢量</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../line/">4.10 线条属性</a></li>
@@ -215,128 +220,136 @@
             
   <div class="section" id="id1">
 <h1>4.9 绘制矢量/箭头<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<p>矢量是一个有大小和方向的量。</p>
-<p>GMT 中能够绘制矢量的模块包括 <code class="docutils literal notranslate"><span class="pre">psxy</span></code>、 <code class="docutils literal notranslate"><span class="pre">psxyz</span></code>、 <code class="docutils literal notranslate"><span class="pre">grdvector</span></code> 和 <code class="docutils literal notranslate"><span class="pre">psvelo</span></code> 等。除此之外，大多数简单的线段也可以加上矢量箭头。</p>
-<p>GMT 中绘制的矢量都可以分为两个独立的部分：</p>
-<ol class="arabic simple">
-<li><p>矢量线</p></li>
-<li><p>矢量箭头</p></li>
-</ol>
-<div class="section" id="id2">
-<h2>4.9.1 矢量分类<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p>GMT 中的矢量可以分为三类：</p>
-<ul class="simple">
-<li><p>笛卡尔矢量：矢量线是直线。可以通过如下几种方式指定</p>
-<ol class="arabic simple">
-<li><p>给定起点坐标和终点坐标</p></li>
-<li><p>给定起点坐标、方向和长度（长度单位可以取 <code class="docutils literal notranslate"><span class="pre">c|i|p</span></code> ）</p></li>
-<li><p>给定起点坐标、方位角和长度（长度单位为km）</p></li>
-</ol>
-</li>
-<li><p>弧形矢量：矢量线是圆弧。通过给定圆心坐标、半径以及圆弧起始和结束的角度来指定</p></li>
-<li><p>地理矢量：矢量线是大圆弧路径。可以通过两种方式指定</p>
-<ol class="arabic simple">
-<li><p>给定起点坐标和终点坐标</p></li>
-<li><p>给定起点坐标、方位角和长度（单位为km）</p></li>
-</ol>
-</li>
-</ul>
-<p>以 <code class="docutils literal notranslate"><span class="pre">psxy</span></code> 模块为例，<code class="docutils literal notranslate"><span class="pre">-Sv</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-SV</span></code> 用于绘制笛卡尔矢量，
-<code class="docutils literal notranslate"><span class="pre">-Sm</span></code> 用于绘制弧形矢量，<code class="docutils literal notranslate"><span class="pre">-S=</span></code> 用于绘制地理矢量。</p>
-<p>下面的例子分别绘制了三种矢量箭头：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-gmt begin arrows pdf,png
-<span class="c1"># 笛卡尔矢量</span>
-<span class="nb">echo</span> <span class="m">0</span>.5 <span class="m">1</span>.5 <span class="m">4</span>.5 <span class="m">1</span>.5 <span class="p">|</span> gmt plot -R0/5/0/5 -JX1.75i -Sv0.2i+s+b+e -W1.5p -Gred
-
-<span class="c1"># 弧形矢量</span>
-<span class="nb">echo</span> <span class="m">0</span>.5 <span class="m">0</span>.5 <span class="m">0</span>.9i <span class="m">0</span> <span class="m">90</span> <span class="p">|</span> gmt plot -Sm0.2i+b+e -W1.5p -Gred -X2i
-
-<span class="c1"># 地理矢量</span>
-<span class="nb">echo</span> <span class="m">10</span> -35 <span class="m">90</span> <span class="m">8000</span> <span class="p">|</span> gmt plot -R0/90/-41.17/41.17 -JM1.75i -S<span class="o">=</span><span class="m">0</span>.2i+b+e -W1.5p -Gred -X2i
-gmt end
+<p>矢量是一个有大小和方向的量，通常用箭头↗ 表征矢量。一个矢量由两个独立的部分组成：矢量线和矢量头。矢量线与一般的线没有区别，通常由画笔属性（<a class="reference internal" href="../pen/"><span class="doc">画笔</span></a>）控制。这一节则主要介绍矢量头的属性及控制方式。</p>
+<p>GMT 中能够绘制矢量的模块有
+<a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a>、
+<a class="reference internal" href="../../module/plot3d/"><span class="doc">plot3d</span></a>、
+<a class="reference internal" href="../../module/grdvector/"><span class="doc">grdvector</span></a>、
+<a class="reference internal" href="../../module/velo/"><span class="doc">velo</span></a> 、
+<a class="reference internal" href="../../module/rose/"><span class="doc">rose</span></a>、
+<a class="reference internal" href="../../module/ternary/"><span class="doc">ternary</span></a> 和
+<a class="reference internal" href="../../module/polar/"><span class="doc">polar</span></a>。其中最常见的绘制矢量的模块是 <a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a>。</p>
+<p>下面的命令使用 <a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a> 的 <code class="docutils literal notranslate"><span class="pre">-Sv</span></code> 选项绘制了一个最简单的矢量。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">3</span> <span class="p">|</span> gmt plot -R0/5/0/2 -JX5c/2c -Sv0.5c+e -W1.5p -Gred -png vector
 </pre></div>
 </div>
-<div class="figure align-center" id="id5">
+<div class="figure align-center">
 <img alt="../../_images/vector-gmtplot-0.png" src="../../_images/vector-gmtplot-0.png" />
-<p class="caption"><span class="caption-text">GMT中的三种矢量箭头</span><a class="headerlink" href="#id5" title="永久链接至图片">¶</a></p>
 </div>
-<p>（左）笛卡尔矢量；（中）弧形矢量；（右）地理矢量</p>
+<p>接下来将介绍如何通过在 <code class="docutils literal notranslate"><span class="pre">-Sv0.5c</span></code> 后增加更多的子选项来进一步修改矢量头的属性。</p>
+<div class="section" id="id2">
+<h2>4.9.1 矢量头位置及形状<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>在绘制矢量时，默认只绘制矢量线而不绘制矢量头。下面的几个子选项用于指定矢量头的位置以及形状：</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">+b[t|c|a|A|i|I][l|r]</span></code>：在矢量线的起点加上矢量头</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+e[t|c|a|i|A|I][l|r]</span></code>：在矢量线的终点加上矢量头</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+m[f|r][t|c|a][l|r]</span></code>：在矢量线的中间加上矢量头</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">t|c|a|i|A|I</span></code> 用于控制矢量头的形状。取不同值所对应的矢量头形状如下图所示：</p>
+<p><a class="reference download internal" download="" href="../../_downloads/469a7e5b61cd7171e70622da05d223c1/vector-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<img alt="../../_images/vector-gmtplot-1.png" src="../../_images/vector-gmtplot-1.png" />
 </div>
-<div class="section" id="id3">
-<h2>4.9.2 矢量箭头属性<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">注解</p>
-<p>读者可以修改上面示例中的 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项后的参数并查看效果来理解接下来的内容。</p>
-</div>
-<p>绘制矢量时，默认只有矢量线没有矢量头，可以使用下面几个子选项为矢量加上矢量头：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">+b[t|c|a|i|A|I][l|r]</span></code>：在矢量线的首端加上矢量头</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">t|c|a|i|A|I</span></code> 用于控制矢量头的形状，默认是 <code class="docutils literal notranslate"><span class="pre">a</span></code></p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">t</span></code> 矢量头为终点线（垂直于矢量线的短线）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code> 矢量头为圆圈</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> 矢量头为箭头</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code> 矢量头为箭尾</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">A</span></code> 矢量头为简单箭头</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">I</span></code> 矢量头为简单箭尾</p></li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">l|r</span></code> 表示只绘制矢量的头的左半边或右半边（默认两边都绘制）</p></li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+e[t|c|a|i|A|I][l|r]</span></code>：在矢量线的尾端加上矢量头。其他同上</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+m[f|r][t|c|a][l|r]</span></code>：在矢量线的中间加上矢量头。</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">f|r</span></code> 表示矢量头沿着正方向或逆方向（默认值从首端指向尾端）</p></li>
-<li><p>其他同上</p></li>
-</ul>
-</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f|r</span></code> 在 <code class="docutils literal notranslate"><span class="pre">+m</span></code> 用用于指定矢量头的方向沿着正方向或逆方向（默认为正方向，即从起点指向终点）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">l|r</span></code> 表示只绘制矢量头的左半边或右半边（默认两边都绘制）</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
 <p><code class="docutils literal notranslate"><span class="pre">+m</span></code> 不能与 <code class="docutils literal notranslate"><span class="pre">+b</span></code> 或 <code class="docutils literal notranslate"><span class="pre">+e</span></code> 一起使用</p>
 </div>
-<p>下面的子选项可以进一步控制矢量头的外观：</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">+a&lt;angle&gt;</span></code> 控制矢量箭头顶端的夹角，默认值为30度</p></li>
-<li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">+h&lt;shape&gt;</span></code> 控制矢量头的形状，可以取-2到2之间的值，该选项的效果等效于修改参数</dt><dd><p><a class="reference internal" href="../../conf/map/#map-vector-shape"><span class="std std-ref">MAP_VECTOR_SHAPE</span></a> （默认值为0）</p>
-</dd>
-</dl>
+</div></blockquote>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+l</span></code> 表示只绘制左半个箭头</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+r</span></code> 表示只绘制右半个箭头</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+g&lt;fill&gt;</span></code> 设置箭头填充色，<code class="docutils literal notranslate"><span class="pre">&lt;fill&gt;</span></code> 为 <code class="docutils literal notranslate"><span class="pre">-</span></code> 表示不填充，默认使用 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 指定的填充色</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+p[-][&lt;pen&gt;]</span></code> 设置矢量的画笔属性，<code class="docutils literal notranslate"><span class="pre">-&lt;pen&gt;</span></code> 表示不绘制矢量箭头的轮廓，默认使用 <code class="docutils literal notranslate"><span class="pre">-W</span></code> 所指定的画笔属性</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+l</span></code> 只绘制左半个矢量头</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+r</span></code> 只绘制右半个矢量头</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+a&lt;angle&gt;</span></code> 用于控制矢量箭头的顶端的夹角，默认值为30度。对于 <code class="docutils literal notranslate"><span class="pre">t</span></code> 和 <code class="docutils literal notranslate"><span class="pre">c</span></code>
+而言则可以绘制端点线段的长度和圆圈的大小</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+h&lt;shape&gt;</span></code> 进一步控制矢量箭头 <strong>a</strong> 的形状，可以取-2到2之间的值。设置该子选项的值等效于修改参数 <a class="reference internal" href="../../conf/map/#map-vector-shape"><span class="std std-ref">MAP_VECTOR_SHAPE</span></a> （默认值为0）</p>
+<p>下面展示了 <code class="docutils literal notranslate"><span class="pre">+h</span></code> 后取不同值的矢量箭头的形状：</p>
+<blockquote>
+<div><p><a class="reference download internal" download="" href="../../_downloads/46e3a567b1aa82cba734d2c4d4de2c68/vector-gmtplot-2.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<img alt="../../_images/vector-gmtplot-2.png" src="../../_images/vector-gmtplot-2.png" />
+</div>
+</div></blockquote>
+</li>
 </ul>
-<p>还有其他一些子选项：</p>
+</div>
+<div class="section" id="id3">
+<h2>4.9.2 矢量头线条颜色和填充色<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>默认情况下，<code class="docutils literal notranslate"><span class="pre">-W</span></code> 选项同时控制矢量线和矢量头的画笔属性，<code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项则控制矢量头的填充色。下面两个子选项可以单独控制矢量头的画笔属性和填充色。</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">+n&lt;norm&gt;</span></code> 默认情况下，矢量头的大小不随着矢量线的长度变化而变化，这可能会出现矢量长度太小时矢量头过大的情况。该选项使得矢量长度小于 <code class="docutils literal notranslate"><span class="pre">&lt;norm&gt;</span></code> 时，矢量头的属性（画笔宽度，箭头大小）会根据矢量长度按照 <code class="docutils literal notranslate"><span class="pre">length/&lt;norm&gt;</span></code> 缩放</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+t[b|e]&lt;trim&gt;</span></code> 将矢量的首端或尾端偏移一定长度，
-<code class="docutils literal notranslate"><span class="pre">&lt;trim&gt;</span></code> 为正值表示矢量长度变短，为负值表示矢量长度变长。还可以使用 <code class="docutils literal notranslate"><span class="pre">+t&lt;trim1&gt;/&lt;trim2&gt;</span></code> 语法分别为首端和尾端指定偏移量。正值表示将矢量线缩短。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+o&lt;plon&gt;/&lt;plat&gt;</span></code> specifies the oblique pole for the great or small circles. 仅当与 <code class="docutils literal notranslate"><span class="pre">+q</span></code> 一起使用时有效</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+q</span></code> 表明输入数据中的 <code class="docutils literal notranslate"><span class="pre">angle</span></code> 和 <code class="docutils literal notranslate"><span class="pre">length</span></code> 被解释为矢量的开始和结束的角度</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+p&lt;pen&gt;</span></code> 设置矢量头的画笔属性，<code class="docutils literal notranslate"><span class="pre">&lt;pen&gt;</span></code> 为 <code class="docutils literal notranslate"><span class="pre">-</span></code> 表示不绘制矢量头的轮廓</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+g&lt;fill&gt;</span></code> 设置矢量头的填充色，<code class="docutils literal notranslate"><span class="pre">&lt;fill&gt;</span></code> 为 <code class="docutils literal notranslate"><span class="pre">-</span></code> 表示不填充</p></li>
 </ul>
-<p>除了弧形矢量外，其他矢量还可以使用如下子选项：</p>
+</div>
+<div class="section" id="id4">
+<h2>4.9.3 其它属性<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>还可以使用如下子选项进一步控制矢量头的属性：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">+j[b|c|e]</span></code> 默认情况下，输入数据中的XY坐标会作为矢量的首端坐标，该选项可以修改这一行为，<code class="docutils literal notranslate"><span class="pre">b|e|c</span></code> 分别代表输入数据中的XY坐标作为矢量的首端、尾端和中间</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+s</span></code> 表明输入数据中的 <code class="docutils literal notranslate"><span class="pre">angle</span></code> 和 <code class="docutils literal notranslate"><span class="pre">length</span></code> 被解释为矢量的尾端XY坐标</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+n&lt;norm&gt;</span></code> 默认情况下，矢量头的大小不随着矢量线的长度变化而变化，这可能会出现矢量线很短而矢量头过大，或者矢量线很长而矢量头过小的情况。该子选项使得矢量长度小于 <code class="docutils literal notranslate"><span class="pre">&lt;norm&gt;</span></code> 时，矢量头的属性（画笔宽度，箭头大小）会根据矢量长度按照 <code class="docutils literal notranslate"><span class="pre">length/&lt;norm&gt;</span></code> 缩放</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+t[b|e]&lt;trim&gt;</span></code> 用于增长或缩短矢量线首端或尾端的长度。其中 <code class="docutils literal notranslate"><span class="pre">b</span></code> 表示首端，<code class="docutils literal notranslate"><span class="pre">e</span></code> 表示尾端。
+<code class="docutils literal notranslate"><span class="pre">&lt;trim&gt;</span></code> 为正值表示缩短矢量线，为负值表示增长矢量线。也可以直接使用 <code class="docutils literal notranslate"><span class="pre">+t&lt;trim1&gt;/&lt;trim2&gt;</span></code> 分别为首端和尾端指定增长/缩短量。</p></li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2>4.9.4 矢量类型及输入数据格式<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>GMT提供了三类矢量：</p>
+<ul class="simple">
+<li><p>笛卡尔矢量：矢量起点到终点的矢量线以直线方式连接</p></li>
+<li><p>地理矢量：矢量起点到终点之间的矢量线以大圆弧路径连接</p></li>
+<li><p>弧形矢量：矢量线是以某一点为中心的一段圆弧</p></li>
+</ul>
+<p><a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a> 模块中：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-Sv</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-SV</span></code> 用于绘制笛卡尔矢量</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-S=</span></code> 用于绘制地理矢量</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Sm</span></code> 用于绘制弧形矢量</p></li>
+</ul>
+<p>下面的例子分别绘制了三种矢量：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin arrows pdf,png
+
+<span class="c1"># 笛卡尔矢量</span>
+<span class="nb">echo</span> <span class="m">0</span>.5 <span class="m">1</span>.5 <span class="m">4</span>.5 <span class="m">1</span>.5 <span class="p">|</span> gmt plot -R0/5/0/5 -JX1.75i -Sv0.2i+s+b+e -W1.5p -Gred
+
+<span class="c1"># 地理矢量</span>
+<span class="nb">echo</span> <span class="m">10</span> -35 <span class="m">90</span> <span class="m">8000</span> <span class="p">|</span> gmt plot -R0/90/-41.17/41.17 -JM1.75i -S<span class="o">=</span><span class="m">0</span>.2i+b+e -W1.5p -Gred -X2i
+
+<span class="c1"># 弧形矢量</span>
+<span class="nb">echo</span> <span class="m">0</span>.5 <span class="m">0</span>.5 <span class="m">0</span>.9i <span class="m">0</span> <span class="m">90</span> <span class="p">|</span> gmt plot -R0/5/0/5 -JX1.75i -Sm0.2i+b+e -W1.5p -Gred -X2i
+
+gmt end
+</pre></div>
+</div>
+<div class="figure align-center" id="id8">
+<img alt="../../_images/vector-gmtplot-3.png" src="../../_images/vector-gmtplot-3.png" />
+<p class="caption"><span class="caption-text">三种矢量：（左）笛卡尔矢量；（中）地理矢量；（右）弧形矢量</span><a class="headerlink" href="#id8" title="永久链接至图片">¶</a></p>
+</div>
+<div class="section" id="id6">
+<h3>笛卡尔矢量和地理矢量<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>对于笛卡尔矢量和地理矢量，输入数据的格式为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X    Y    angle  length
+</pre></div>
+</div>
+<p>其中X和Y是矢量起点坐标，<code class="docutils literal notranslate"><span class="pre">angle</span></code> 为矢量方向（相对于水平方向逆时针旋转的角度或相对于北向顺时针的方位角），<code class="docutils literal notranslate"><span class="pre">length</span></code> 为矢量线长度（长度单位为 <code class="docutils literal notranslate"><span class="pre">c|i|p</span></code>或km）。</p>
+<p>使用如下子选项则可以指定其它输入数据格式：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+s</span></code> 表示将输入数据的中的angle和length解释为矢量的终点坐标</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+j[b|c|e]</span></code> 表示将输入数据中的X和Y坐标解释为矢量的起点坐标、中点坐标或终点坐标</p></li>
+</ul>
+<p>对于地理矢量，还可以使用如下选项：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+q</span></code> 表明输入数据中的 <code class="docutils literal notranslate"><span class="pre">angle</span></code> 和 <code class="docutils literal notranslate"><span class="pre">length</span></code> 表示相对于某个指定极点的大圆路径的起始和结束的角度。该极点默认为北极，可以使用 <code class="docutils literal notranslate"><span class="pre">+o</span></code> 修改该点的位置</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+o&lt;plon&gt;/&lt;plat&gt;</span></code> 用于指定 <code class="docutils literal notranslate"><span class="pre">+q</span></code> 中大圆路径中的倾斜极点</p></li>
 </ul>
 <p>对于笛卡尔矢量而言，还可以使用：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">+z&lt;scale&gt;[&lt;unit&gt;]</span></code> expects input <em>dx</em>,<em>dy</em> vector components and uses
-the <em>scale</em> to convert to polar coordinates with length in given unit.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+z&lt;scale&gt;[&lt;unit&gt;]</span></code> 表示输入数据中的 <code class="docutils literal notranslate"><span class="pre">angle</span></code> 和 <code class="docutils literal notranslate"><span class="pre">length</span></code> 被解释为矢量的X分量dx和Y分量dy，然后计算出对应的极坐标下的方向和长度，并将矢量长度乘以 <code class="docutils literal notranslate"><span class="pre">&lt;scale&gt;</span></code></p></li>
 </ul>
-<p>除此之外，GMT配置参数中 <a class="reference internal" href="../../conf/map/#map-vector-shape"><span class="std std-ref">MAP_VECTOR_SHAPE</span></a> 也可以用于修改箭头的外观。</p>
 </div>
-<div class="section" id="id4">
-<h2>4.9.3 矢量示例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
-<p>下图展示了部分 GMT 可以绘制的矢量，每个矢量右边给出了其对应的选项。需要注意的是，某些矢量设置了 <code class="docutils literal notranslate"><span class="pre">MAP_VECTOR_SHAPE</span></code> 的值为 0.5。</p>
-<p><a class="reference download internal" download="" href="../../_downloads/469a7e5b61cd7171e70622da05d223c1/vector-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
-<div class="figure align-center">
-<img alt="../../_images/vector-gmtplot-1.png" src="../../_images/vector-gmtplot-1.png" />
+<div class="section" id="id7">
+<h3>圆弧矢量<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>对于圆弧矢量，输入数据中需要给定圆弧对应的圆心坐标、半径，以及圆弧起始和结束的角度。</p>
 </div>
 </div>
 </div>
@@ -386,7 +399,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年04月09日.
+        最后更新于 2019年04月10日.
       </span>
 
     </p>
