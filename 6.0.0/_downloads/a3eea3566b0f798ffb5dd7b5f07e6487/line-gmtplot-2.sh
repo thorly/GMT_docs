@@ -1,4 +1,3 @@
-#!/bin/bash
 gmt begin line_arrow pdf,png
 gmt math -T10/30/1 T 20 SUB 10 DIV 2 POW 41.5 ADD = line.txt
 
