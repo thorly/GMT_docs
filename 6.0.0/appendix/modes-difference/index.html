@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>15.4 现代模式 vs 经典模式 &mdash; GMT中文手册</title>
+  <title>16.4 现代模式 vs 经典模式 &mdash; GMT中文手册</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="15.5 GMT底层原理" href="../low-level/" />
-    <link rel="prev" title="15.3 GMT预定义填充图案" href="../patterns/" /> 
+    <link rel="next" title="16.5 GMT底层原理" href="../low-level/" />
+    <link rel="prev" title="16.3 GMT预定义填充图案" href="../patterns/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -102,24 +102,25 @@
 <li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module/">12 模块手册</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../gallery/">13 绘图示例</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">15 附录</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../cmd/">15.1 命令行及脚本基础</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../colors/">15.2 GMT 颜色表</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../patterns/">15.3 GMT预定义填充图案</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">15.4 现代模式 vs 经典模式</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">15.4.1 经典模式的问题</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">15.4.2 现代模式的优点</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">15.4.3 从经典到现代</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">13 模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">16 附录</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../cmd/">16.1 命令行及脚本基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colors/">16.2 GMT 颜色表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../patterns/">16.3 GMT预定义填充图案</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">16.4 现代模式 vs 经典模式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">16.4.1 经典模式的问题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">16.4.2 现代模式的优点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">16.4.3 从经典到现代</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../low-level/">15.5 GMT底层原理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../variables/">15.6 环境变量</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../custom-fonts/">15.7 自定义字体</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-dirs/">15.8 目录参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contour-annot/">15.9 等值线标注和“线条标注”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../low-level/">16.5 GMT底层原理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../variables/">16.6 环境变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../custom-fonts/">16.7 自定义字体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-dirs/">16.8 目录参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour-annot/">16.9 等值线标注和“线条标注”</a></li>
 </ul>
 </li>
 </ul>
@@ -185,9 +186,9 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">15 附录</a> &raquo;</li>
+          <li><a href="../">16 附录</a> &raquo;</li>
         
-      <li>15.4 现代模式 vs 经典模式</li>
+      <li>16.4 现代模式 vs 经典模式</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -209,11 +210,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="vs">
-<h1>15.4 现代模式 vs 经典模式<a class="headerlink" href="#vs" title="永久链接至标题">¶</a></h1>
+<h1>16.4 现代模式 vs 经典模式<a class="headerlink" href="#vs" title="永久链接至标题">¶</a></h1>
 <p>GMT自6.0.0版本开始，引入了一种全新的绘图命令执行模式，称之为现代模式。而GMT5以及之前的命令风格则称之为经典模式。GMT6既支持经典模式也支持现代模式，因而GMT6可以完全兼容GMT5的代码。本手册只介绍现代模式，而不介绍经典模式。对于GMT新用户而言，只需要了解现代模式；而对于GMT老用户，应了解现代模式与经典模式的区别，并尽快开始使用现代模式进行绘图。</p>
 <p>这一节将主要介绍经典模式存在的问题，现代模式的优点，以及如何将经典模式的代码转换为现代模式。</p>
 <div class="section" id="id1">
-<h2>15.4.1 经典模式的问题<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>16.4.1 经典模式的问题<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>一个GMT经典模式下的绘图脚本如下所示:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="nv">R</span><span class="o">=</span><span class="m">65</span>/18/117/45+r
@@ -245,7 +246,7 @@ rm gmt.* Tibet.grd int.grad
 </ol>
 </div>
 <div class="section" id="id2">
-<h2>15.4.2 现代模式的优点<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>16.4.2 现代模式的优点<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>上面的示例在现代模式下可以改写为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="nv">D</span><span class="o">=</span>@earth_relief_03m.grd
@@ -282,7 +283,7 @@ gmt end
 </ul>
 </div>
 <div class="section" id="id3">
-<h2>15.4.3 从经典到现代<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>16.4.3 从经典到现代<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>将一个经典模式的脚本改成现代模式下的脚本也很简单，基本遵循如下几点：</p>
 <ol class="arabic simple">
 <li><p>绘图脚本以 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">begin</span> <span class="pre">figname</span> <span class="pre">pdf</span></code> 开头，以 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">end</span></code> 结束</p></li>
@@ -324,10 +325,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../low-level/" class="btn btn-neutral float-right" title="15.5 GMT底层原理" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../low-level/" class="btn btn-neutral float-right" title="16.5 GMT底层原理" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../patterns/" class="btn btn-neutral float-left" title="15.3 GMT预定义填充图案" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../patterns/" class="btn btn-neutral float-left" title="16.3 GMT预定义填充图案" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -338,7 +339,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年04月12日.
+        最后更新于 2019年04月15日.
       </span>
 
     </p>

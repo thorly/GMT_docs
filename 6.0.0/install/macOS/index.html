@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.5 macOS 下安装 GMT &mdash; GMT中文手册</title>
+  <title>2.3 macOS 下安装 GMT &mdash; GMT中文手册</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="2.6 macOS 下的 GMT 中文支持" href="../cn-macOS/" />
-    <link rel="prev" title="2.4 Windows 下的 GMT 中文支持" href="../cn-windows/" /> 
+    <link rel="next" title="3 GMT初探" href="../../get-started/" />
+    <link rel="prev" title="2.2 Windows 下安装 GMT" href="../windows/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,15 +94,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../">2 安装</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../linux/">2.1 Linux 下安装GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cn-linux/">2.2 Linux 下的 GMT 中文支持</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../windows/">2.3 Windows 下安装 GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cn-windows/">2.4 Windows 下的 GMT 中文支持</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.5 macOS 下安装 GMT</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#homebrew">2.5.1 使用 homebrew 安装</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gmt">2.5.2 使用 GMT 安装包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../windows/">2.2 Windows 下安装 GMT</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.3 macOS 下安装 GMT</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#homebrew">2.3.1 使用 homebrew 安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gmt">2.3.2 使用 GMT 安装包</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../cn-macOS/">2.6 macOS 下的 GMT 中文支持</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
@@ -114,10 +111,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module/">12 模块手册</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../gallery/">13 绘图示例</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">13 模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
 </ul>
 
             
@@ -183,7 +181,7 @@
         
           <li><a href="../">2 安装</a> &raquo;</li>
         
-      <li>2.5 macOS 下安装 GMT</li>
+      <li>2.3 macOS 下安装 GMT</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -205,7 +203,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="macos-gmt">
-<h1>2.5 macOS 下安装 GMT<a class="headerlink" href="#macos-gmt" title="永久链接至标题">¶</a></h1>
+<h1>2.3 macOS 下安装 GMT<a class="headerlink" href="#macos-gmt" title="永久链接至标题">¶</a></h1>
 <p>macOS 下 GMT 的安装方法有很多，可以直接使用安装包，也可以使用各种软件管理工具。</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
@@ -223,7 +221,7 @@ brew install --HEAD gmt6.rb <span class="c1"># 安装 gmt6</span>
 <p>由于GMT 6.0.0尚未发布，请忽略以下内容。</p>
 </div>
 <div class="section" id="homebrew">
-<h2>2.5.1 使用 homebrew 安装<a class="headerlink" href="#homebrew" title="永久链接至标题">¶</a></h2>
+<h2>2.3.1 使用 homebrew 安装<a class="headerlink" href="#homebrew" title="永久链接至标题">¶</a></h2>
 <p><a class="reference external" href="https://brew.sh/">Homebrew</a> 是 macOS 下的第三方软件包管理工具。</p>
 <ol class="arabic">
 <li><p>安装 Homebrew:</p>
@@ -266,7 +264,7 @@ $ find . -size -4c -delete       <span class="c1"># 删除所有文件大小小�
 </div>
 </div>
 <div class="section" id="gmt">
-<h2>2.5.2 使用 GMT 安装包<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
+<h2>2.3.2 使用 GMT 安装包<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
 <p>GMT 为 macOS 用户提供了 dmg 安装包，可以直接双击安装使用。</p>
 <ol class="arabic">
 <li><p>下载：<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0-darwin-x86_64.dmg">gmt-6.0.0-darwin-x86_64.dmg</a></p></li>
@@ -318,10 +316,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../cn-macOS/" class="btn btn-neutral float-right" title="2.6 macOS 下的 GMT 中文支持" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../get-started/" class="btn btn-neutral float-right" title="3 GMT初探" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../cn-windows/" class="btn btn-neutral float-left" title="2.4 Windows 下的 GMT 中文支持" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../windows/" class="btn btn-neutral float-left" title="2.2 Windows 下安装 GMT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -332,7 +330,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年04月12日.
+        最后更新于 2019年04月15日.
       </span>
 
     </p>
