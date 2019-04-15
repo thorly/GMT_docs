@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.2 Linux 下的 GMT 中文支持 &mdash; GMT中文手册</title>
+  <title>12.2 macOS 下的 GMT 中文支持 &mdash; GMT中文手册</title>
   
 
   
@@ -39,8 +39,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="2.3 Windows 下安装 GMT" href="../windows/" />
-    <link rel="prev" title="2.1 Linux 下安装GMT" href="../linux/" /> 
+    <link rel="next" title="12.3 Windows 下的 GMT 中文支持" href="../windows/" />
+    <link rel="prev" title="12.1 Linux 下的 GMT 中文支持" href="../linux/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,20 +92,7 @@
               <p class="caption"><span class="caption-text">目 录</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">2 安装</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../linux/">2.1 Linux 下安装GMT</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.2 Linux 下的 GMT 中文支持</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#ghostscript">2.2.1 ghostscript的中文支持</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gmt">2.2.2 GMT的中文支持</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">2.2.3 GMT 中文测试</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../windows/">2.3 Windows 下安装 GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cn-windows/">2.4 Windows 下的 GMT 中文支持</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../macOS/">2.5 macOS 下安装 GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cn-macOS/">2.6 macOS 下的 GMT 中文支持</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
@@ -115,10 +102,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module/">12 模块手册</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../gallery/">13 绘图示例</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">14 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">15 附录</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">12 中文支持</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../linux/">12.1 Linux 下的 GMT 中文支持</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">12.2 macOS 下的 GMT 中文支持</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ghostscript">12.2.1 ghostscript的中文支持</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gmt">12.2.2 GMT的中文支持</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">12.2.3 GMT 中文测试</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../windows/">12.3 Windows 下的 GMT 中文支持</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">13 模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
 </ul>
 
             
@@ -182,16 +180,16 @@
     
       <li><a href="../../">Docs</a> &raquo;</li>
         
-          <li><a href="../">2 安装</a> &raquo;</li>
+          <li><a href="../">12 中文支持</a> &raquo;</li>
         
-      <li>2.2 Linux 下的 GMT 中文支持</li>
+      <li>12.2 macOS 下的 GMT 中文支持</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/install/cn-linux.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/chinese/macOS.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -205,17 +203,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="linux-gmt">
-<h1>2.2 Linux 下的 GMT 中文支持<a class="headerlink" href="#linux-gmt" title="永久链接至标题">¶</a></h1>
-<p>本文介绍如何让 GMT 在 Linux 下支持中文。</p>
+  <div class="section" id="macos-gmt">
+<h1>12.2 macOS 下的 GMT 中文支持<a class="headerlink" href="#macos-gmt" title="永久链接至标题">¶</a></h1>
+<p>本文介绍如何让 GMT 在 macOS 下支持中文。</p>
 <div class="section" id="ghostscript">
-<h2>2.2.1 ghostscript的中文支持<a class="headerlink" href="#ghostscript" title="永久链接至标题">¶</a></h2>
-<p>Linux 的中文字体较少，这里使用 Windows 下提供的四个基本字体：宋体、仿宋、黑体和楷体。对于 Windows 下的其他中文字体、Linux 的其他中文字体甚至日韩字体来说，方法类似。</p>
-<p>可以使用 <a class="reference external" href="https://github.com/texjporg/cjk-gs-support">cjk-gs-support</a>
-项目提供的脚本 <a class="reference external" href="https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjk-gs-integrate.pl">cjk-gs-integrate.pl</a> 来实现ghostscript的中文支持。</p>
+<h2>12.2.1 ghostscript的中文支持<a class="headerlink" href="#ghostscript" title="永久链接至标题">¶</a></h2>
+<p>首先需要使 ghostscript 支持中文，这可以通过
+<a class="reference external" href="https://github.com/texjporg/cjk-gs-support">cjk-gs-support</a> 项目提供的脚本
+<a class="reference external" href="https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjk-gs-integrate.pl">cjk-gs-integrate.pl</a> 实现。</p>
 <ol class="arabic">
-<li><p>从Windows下获取四种基本字体的字体文件（文件名类似于 <code class="docutils literal notranslate"><span class="pre">simsun.ttc</span></code>）并复制到
-<code class="docutils literal notranslate"><span class="pre">/usr/share/fonts/winfonts/</span></code> 目录下</p></li>
 <li><p>下载脚本 <a class="reference external" href="https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjk-gs-integrate.pl">cjk-gs-integrate.pl</a></p></li>
 <li><p>执行脚本:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo perl cjk-gs-integrate.pl
@@ -226,7 +222,7 @@
 </ol>
 </div>
 <div class="section" id="gmt">
-<h2>2.2.2 GMT的中文支持<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
+<h2>12.2.2 GMT的中文支持<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
 <p>在 <code class="docutils literal notranslate"><span class="pre">~/.gmt</span></code>（若无该文件夹，请自行新建）下创建字体配置文件:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ touch ~/.gmt/PSL_custom_fonts.txt
 $ open ~/.gmt/PSL_custom_fonts.txt
@@ -264,7 +260,7 @@ Font <span class="c1">#  Font Name</span>
 <p>其中 39-46 号字体为新添加的中文字体。以后要用中文字体时，需要用这些编号来指定字体，也许你的机器上的编号和这里不同。</p>
 </div>
 <div class="section" id="id1">
-<h2>2.2.3 GMT 中文测试<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>12.2.3 GMT 中文测试<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
 <p>请自行确认你的中文字体编号。如果编号不是39到46，请自行修改以下测试脚本。</p>
@@ -293,6 +289,10 @@ rm gmt.*
 <p>成图效果如下：</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../_images/GMT_Chinese.png"><img alt="../../_images/GMT_Chinese.png" src="../../_images/GMT_Chinese.png" style="width: 100%;" /></a>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>生成的 PNG、JPG格式的图片中可直接显示中文，而生成的 PDF 文件用 macOS 自带的 PDF 预览工具打开无法显示中文，使用 Adobe Reader 打开则可以正常显示中文。</p>
 </div>
 </div>
 </div>
@@ -328,10 +328,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../windows/" class="btn btn-neutral float-right" title="2.3 Windows 下安装 GMT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../windows/" class="btn btn-neutral float-right" title="12.3 Windows 下的 GMT 中文支持" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../linux/" class="btn btn-neutral float-left" title="2.1 Linux 下安装GMT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../linux/" class="btn btn-neutral float-left" title="12.1 Linux 下的 GMT 中文支持" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -342,7 +342,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年04月12日.
+        最后更新于 2019年04月15日.
       </span>
 
     </p>
