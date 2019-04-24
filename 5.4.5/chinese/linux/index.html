@@ -216,6 +216,16 @@
 <li><p>从Windows下获取四种基本字体的字体文件（文件名类似于 <code class="docutils literal notranslate"><span class="pre">simsun.ttc</span></code>）并复制到
 <code class="docutils literal notranslate"><span class="pre">/usr/share/fonts/winfonts/</span></code> 目录下</p></li>
 <li><p>下载脚本 <a class="reference external" href="https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjk-gs-integrate.pl">cjk-gs-integrate.pl</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cjk-gs-integrate.pl</span></code> 脚本的执行依赖于命令 <code class="docutils literal notranslate"><span class="pre">kpsewhich</span></code>，该命令由 TeXLive 提供。执行 <code class="docutils literal notranslate"><span class="pre">kpsewhich</span> <span class="pre">--version</span></code> 检查 <code class="docutils literal notranslate"><span class="pre">kpsewhich</span></code> 这个命令是否存在。若不存在，则需要单独安装。</p>
+<p>对于Ubuntu/Debian用户，执行:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install texlive-binaries
+</pre></div>
+</div>
+<p>对于CentOS/RHEL/Fedora用户，执行</p>
+<blockquote>
+<div><p>sudo yum install texlive-kpathsea-bin</p>
+</div></blockquote>
+</li>
 <li><p>执行脚本:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo perl cjk-gs-integrate.pl
 </pre></div>
@@ -341,7 +351,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年04月22日.
+        最后更新于 2019年04月24日.
       </span>
 
     </p>
