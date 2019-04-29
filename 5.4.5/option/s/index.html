@@ -226,11 +226,11 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-s</span></code> 若Z值（即第三列）为NaN则不输出</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-sa</span></code> 表示任意一列有NaN则不输出</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-sr</span></code> 表示反操作，即只输出某列有 NaN 的记录</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;cols&gt;</span></code> 用于指定要检查的列，即只有指定的所有列都为NaN时，才输出或不输出该记录。
-<code class="docutils literal notranslate"><span class="pre">&lt;cols&gt;</span></code> 是一系列用逗号分隔的列号或者列号范围。列号范围的格式为 <code class="docutils literal notranslate"><span class="pre">&lt;start&gt;[:&lt;inc&gt;]:&lt;stop&gt;</span></code>，若省略 <code class="docutils literal notranslate"><span class="pre">&lt;inc&gt;</span></code> 则默认其值为1。比如 <code class="docutils literal notranslate"><span class="pre">2,5,7</span></code> 和 <code class="docutils literal notranslate"><span class="pre">1,2:4</span></code>，表示检测这些列数据是否全是 NaN。</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">-s</span></code> 若Z值（即第三列）为NaN则不输出</li>
+<li><code class="docutils literal notranslate"><span class="pre">-sa</span></code> 表示任意一列有NaN则不输出</li>
+<li><code class="docutils literal notranslate"><span class="pre">-sr</span></code> 表示反操作，即只输出某列有 NaN 的记录</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;cols&gt;</span></code> 用于指定要检查的列，即只有指定的所有列都为NaN时，才输出或不输出该记录。
+<code class="docutils literal notranslate"><span class="pre">&lt;cols&gt;</span></code> 是一系列用逗号分隔的列号或者列号范围。列号范围的格式为 <code class="docutils literal notranslate"><span class="pre">&lt;start&gt;[:&lt;inc&gt;]:&lt;stop&gt;</span></code>，若省略 <code class="docutils literal notranslate"><span class="pre">&lt;inc&gt;</span></code> 则默认其值为1。比如 <code class="docutils literal notranslate"><span class="pre">2,5,7</span></code> 和 <code class="docutils literal notranslate"><span class="pre">1,2:4</span></code>，表示检测这些列数据是否全是 NaN。</li>
 </ul>
 <p>举几个例子。输入数据 <code class="docutils literal notranslate"><span class="pre">input.dat</span></code> 的内容为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="m">1</span> <span class="m">1</span>   <span class="m">0</span>

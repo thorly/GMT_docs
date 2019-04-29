@@ -318,36 +318,39 @@
             
   <div class="section" id="psternary">
 <span id="index-0"></span><h1>13.96 psternary<a class="headerlink" href="#psternary" title="永久链接至标题">¶</a></h1>
-<dl class="field-list simple">
-<dt class="field-odd">官方文档</dt>
-<dd class="field-odd"><p><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/psternary.html" title="(在 GMT v5.4.5)"><span>psternary</span></a></p>
-</dd>
-<dt class="field-even">简介</dt>
-<dd class="field-even"><p>绘制三角图解</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/psternary.html" title="(在 GMT v5.4.5)"><span>psternary</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">绘制三角图解</td>
+</tr>
+</tbody>
+</table>
 <p><code class="docutils literal notranslate"><span class="pre">psternary</span></code>从文件（三列或者更多列数据）或者标准输出中读取数据，并在三角图中绘制符号。如果给定符号类型，但是没有给出符号大小，<code class="docutils literal notranslate"><span class="pre">psternary</span></code>会将第四列数据作为符号大小，符号大小值小于0的将会被跳过。如果没指定符号类型，就必须在数据的最后一列给出符号代码。</p>
 <div class="section" id="id1">
 <h2>13.96.1 可选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl>
-<dt><code class="docutils literal notranslate"><span class="pre">-B[a|b|c]&lt;args&gt;</span></code></dt><dd><p>对于三角图，三条边从下面这条边开始，逆时针旋转，分别称为a、b、c。详细用法类似 <code class="docutils literal notranslate"><span class="pre">-Bx,</span> <span class="pre">-By</span></code>。</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-C&lt;cpt&gt;</span></code></dt><dd><p>使用cpt文件，或者直接使用 <code class="docutils literal notranslate"><span class="pre">-Ccolor1,color2[,color3,…]</span></code> 自动建立一个线性连续的cpt。如果使用了 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项，符号填充颜色由第四列数值决定。其它字段向右移动一列，如符号大小将会被放在第五列。</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-JXwidth&lt;unit&gt;</span></code></dt><dd><p>线性投影，仅用来指定三角图的宽度。</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-La/b/c</span></code></dt><dd><p>设置三个顶点的标签，标签距离顶点的距离为 <code class="docutils literal notranslate"><span class="pre">MAP_LABEL_OFFSET</span></code> 设定值的三倍。</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-M</span></code></dt><dd><p>不绘图。将三角图数据(a,b,c[,*z*])转换为笛卡尔坐标(x,y,[,*z*])，x,y
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-B[a|b|c]&lt;args&gt;</span></code></dt>
+<dd>对于三角图，三条边从下面这条边开始，逆时针旋转，分别称为a、b、c。详细用法类似 <code class="docutils literal notranslate"><span class="pre">-Bx,</span> <span class="pre">-By</span></code>。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-C&lt;cpt&gt;</span></code></dt>
+<dd>使用cpt文件，或者直接使用 <code class="docutils literal notranslate"><span class="pre">-Ccolor1,color2[,color3,…]</span></code> 自动建立一个线性连续的cpt。如果使用了 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项，符号填充颜色由第四列数值决定。其它字段向右移动一列，如符号大小将会被放在第五列。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-JXwidth&lt;unit&gt;</span></code></dt>
+<dd>线性投影，仅用来指定三角图的宽度。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-La/b/c</span></code></dt>
+<dd>设置三个顶点的标签，标签距离顶点的距离为 <code class="docutils literal notranslate"><span class="pre">MAP_LABEL_OFFSET</span></code> 设定值的三倍。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-M</span></code></dt>
+<dd><p class="first">不绘图。将三角图数据(a,b,c[,*z*])转换为笛卡尔坐标(x,y,[,*z*])，x,y
 为在三角图解基础上标准化后的值。x、y取值范围为0-1，z的取值范围为0到 <span class="math notranslate nohighlight">\(\frac{\sqrt{3}}{2}\)</span></p>
 <p>如果一个点在三角图中坐标为（a，b，c），则笛卡尔坐标(x, y)为:</p>
-<div class="math notranslate nohighlight">
+<div class="last math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}x = \frac{(100-a)+b}{2\times100}\\y =\frac{\sqrt{3}}{2\times 100}\times c\end{aligned}\end{align} \]</div>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Ramin/amax/bmin/bmax/cmin/cmax</span></code></dt><dd><p>分别给a、b、c三边指定最小值最大值。</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-S</span></code></dt><dd><p>见 <code class="docutils literal notranslate"><span class="pre">psxy</span></code> 中的 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项</p>
-</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Ramin/amax/bmin/bmax/cmin/cmax</span></code></dt>
+<dd>分别给a、b、c三边指定最小值最大值。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-S</span></code></dt>
+<dd>见 <code class="docutils literal notranslate"><span class="pre">psxy</span></code> 中的 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项</dd>
 </dl>
 </div>
 </div>

@@ -222,16 +222,16 @@
 <p><strong>DCW数据主页</strong>： <a class="reference external" href="http://www.soest.hawaii.edu/wessel/dcw/">http://www.soest.hawaii.edu/wessel/dcw/</a></p>
 <p>DCW，全称为 Digital Chart of the World，即世界数字图表。GMT提供的DCW数据是在原始DCW数据的基础上修改得到的，其中包含了如下行政边界数据：</p>
 <ol class="arabic simple">
-<li><p>七大洲的洲界</p></li>
-<li><p>全球250个国家或地区的边界</p></li>
-<li><p>8个大国的省界/州界</p></li>
+<li>七大洲的洲界</li>
+<li>全球250个国家或地区的边界</li>
+<li>8个大国的省界/州界</li>
 </ol>
 <p>GMT的 <a class="reference internal" href="../../module/pscoast/"><span class="doc">pscoast</span></a> 模块可以直接绘制DCW数据中提供的行政边界数据，也可以使用 <a class="reference internal" href="../../module/pscoast/"><span class="doc">pscoast</span></a> 的 <code class="docutils literal notranslate"><span class="pre">-M</span></code> 选项将边界数据导出为纯文本文件供其他程序使用。</p>
 <p>GMT提供的DCW数据默认位于GMT安装目录下的 <code class="docutils literal notranslate"><span class="pre">share/dcw</span></code> 下，其中主要包含了三个文件：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">dcw-gmt.nc</span></code>: netCDF格式的DCW数据</p></li>
-<li><p><a class="reference download internal" download="" href="../../_downloads/d7130ea9354cea6cd45f9d56d0e8beb0/dcw-countries.txt"><code class="xref download docutils literal notranslate"><span class="pre">dcw-countries.txt</span></code></a>: 辅助文件，内含国家代码</p></li>
-<li><p><a class="reference download internal" download="" href="../../_downloads/2d83257bed3bc83e90befdf93540d18c/dcw-states.txt"><code class="xref download docutils literal notranslate"><span class="pre">dcw-states.txt</span></code></a>: 辅助文件，内含省界代码</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">dcw-gmt.nc</span></code>: netCDF格式的DCW数据</li>
+<li><a class="reference download internal" download="" href="../../_downloads/d7130ea9354cea6cd45f9d56d0e8beb0/dcw-countries.txt"><code class="xref download docutils literal notranslate"><span class="pre">dcw-countries.txt</span></code></a>: 辅助文件，内含国家代码</li>
+<li><a class="reference download internal" download="" href="../../_downloads/2d83257bed3bc83e90befdf93540d18c/dcw-states.txt"><code class="xref download docutils literal notranslate"><span class="pre">dcw-states.txt</span></code></a>: 辅助文件，内含省界代码</li>
 </ul>
 <div class="section" id="id1">
 <h2>11.3.1 区域代码<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
@@ -240,13 +240,13 @@
 <h3>洲代码<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <p>七大洲都有各自的代码，其代码分别为:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">AF</span></code>: 非洲（Africa）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">AN</span></code>: 南极洲（Antarctica）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">AS</span></code>: 亚洲（Asia）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">EU</span></code>: 欧洲（Europe）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">OC</span></code>: 大洋洲（Oceania）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">NA</span></code>: 北美洲（North America）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">SA</span></code>: 南美洲（South America）</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">AF</span></code>: 非洲（Africa）</li>
+<li><code class="docutils literal notranslate"><span class="pre">AN</span></code>: 南极洲（Antarctica）</li>
+<li><code class="docutils literal notranslate"><span class="pre">AS</span></code>: 亚洲（Asia）</li>
+<li><code class="docutils literal notranslate"><span class="pre">EU</span></code>: 欧洲（Europe）</li>
+<li><code class="docutils literal notranslate"><span class="pre">OC</span></code>: 大洋洲（Oceania）</li>
+<li><code class="docutils literal notranslate"><span class="pre">NA</span></code>: 北美洲（North America）</li>
+<li><code class="docutils literal notranslate"><span class="pre">SA</span></code>: 南美洲（South America）</li>
 </ul>
 </div>
 <div class="section" id="id3">
@@ -275,14 +275,14 @@ AS IN India
 <h3>省/州代码<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <p>目前有如下八个国家的省界/州界数据：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">AR</span></code>: 阿根廷</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">AU</span></code>: 澳大利亚</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">BR</span></code>: 巴西</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">CA</span></code>: 加拿大</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">US</span></code>: 美国</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">CN</span></code>: 中国</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">IN</span></code>: 印度</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">RU</span></code>: 俄罗斯</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">AR</span></code>: 阿根廷</li>
+<li><code class="docutils literal notranslate"><span class="pre">AU</span></code>: 澳大利亚</li>
+<li><code class="docutils literal notranslate"><span class="pre">BR</span></code>: 巴西</li>
+<li><code class="docutils literal notranslate"><span class="pre">CA</span></code>: 加拿大</li>
+<li><code class="docutils literal notranslate"><span class="pre">US</span></code>: 美国</li>
+<li><code class="docutils literal notranslate"><span class="pre">CN</span></code>: 中国</li>
+<li><code class="docutils literal notranslate"><span class="pre">IN</span></code>: 印度</li>
+<li><code class="docutils literal notranslate"><span class="pre">RU</span></code>: 俄罗斯</li>
 </ul>
 <p>省代码可以从 DCW 辅助文件 <a class="reference download internal" download="" href="../../_downloads/2d83257bed3bc83e90befdf93540d18c/dcw-states.txt"><code class="xref download docutils literal notranslate"><span class="pre">dcw-states.txt</span></code></a> 中查找到，其文件格式为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>国家代码 省代码 省名
@@ -331,9 +331,9 @@ CN <span class="m">92</span> Aomen <span class="o">(</span>Macao<span class="o">
 <h2>11.3.2 使用说明<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>洲代码、国家代码和省代码都是字母，GMT通过如下方式区分：</p>
 <ul class="simple">
-<li><p>在洲代码前加上 <code class="docutils literal notranslate"><span class="pre">=</span></code> 号表示某个大洲，比如 <code class="docutils literal notranslate"><span class="pre">=AS</span></code> 表示亚洲</p></li>
-<li><p>国家代码不需要做任何处理格式，比如 <code class="docutils literal notranslate"><span class="pre">GB</span></code> 表示英国</p></li>
-<li><p>省代码的格式为 <code class="docutils literal notranslate"><span class="pre">country.state</span></code>，即必须在省代码前加上国家代码才可以，比如 <code class="docutils literal notranslate"><span class="pre">US.TX</span></code> 表示美国 Texas 州</p></li>
+<li>在洲代码前加上 <code class="docutils literal notranslate"><span class="pre">=</span></code> 号表示某个大洲，比如 <code class="docutils literal notranslate"><span class="pre">=AS</span></code> 表示亚洲</li>
+<li>国家代码不需要做任何处理格式，比如 <code class="docutils literal notranslate"><span class="pre">GB</span></code> 表示英国</li>
+<li>省代码的格式为 <code class="docutils literal notranslate"><span class="pre">country.state</span></code>，即必须在省代码前加上国家代码才可以，比如 <code class="docutils literal notranslate"><span class="pre">US.TX</span></code> 表示美国 Texas 州</li>
 </ul>
 </div>
 <div class="section" id="id6">

@@ -318,32 +318,36 @@
             
   <div class="section" id="makecpt">
 <span id="index-0"></span><h1>13.73 makecpt<a class="headerlink" href="#makecpt" title="永久链接至标题">¶</a></h1>
-<dl class="field-list simple">
-<dt class="field-odd">官方文档</dt>
-<dd class="field-odd"><p><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/makecpt.html" title="(在 GMT v5.4.5)"><span>makecpt</span></a></p>
-</dd>
-<dt class="field-even">简介</dt>
-<dd class="field-even"><p>制作GMT CPT文件</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/makecpt.html" title="(在 GMT v5.4.5)"><span>makecpt</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">制作GMT CPT文件</td>
+</tr>
+</tbody>
+</table>
 <div class="section" id="id1">
 <h2>13.73.1 选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl>
-<dt><code class="docutils literal notranslate"><span class="pre">-A[+]&lt;transparency&gt;</span></code></dt><dd><p>为所有的颜色切片设置相同的透明度， <code class="docutils literal notranslate"><span class="pre">&lt;transparency&gt;</span></code> 的取值范围是0到100。加上 <code class="docutils literal notranslate"><span class="pre">+</span></code> 则该透明度同时应用于前景色、背景色和NaN颜色。</p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-A[+]&lt;transparency&gt;</span></code></dt>
+<dd>为所有的颜色切片设置相同的透明度， <code class="docutils literal notranslate"><span class="pre">&lt;transparency&gt;</span></code> 的取值范围是0到100。加上 <code class="docutils literal notranslate"><span class="pre">+</span></code> 则该透明度同时应用于前景色、背景色和NaN颜色。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-C&lt;cpt&gt;</span></code></dt>
+<dd><p class="first">指定要进行插值的主CPT文件，默认值是 <code class="docutils literal notranslate"><span class="pre">rainbow</span></code> 。</p>
+<p class="last">可以是GMT自带的CPT文件，也可以是用户自定义的CPT文件，也可以是通过 <code class="docutils literal notranslate"><span class="pre">-C&lt;color1&gt;,&lt;color2&gt;[,&lt;color3&gt;]</span></code> 语法指定一个线性连续变化的颜色列表。</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-C&lt;cpt&gt;</span></code></dt><dd><p>指定要进行插值的主CPT文件，默认值是 <code class="docutils literal notranslate"><span class="pre">rainbow</span></code> 。</p>
-<p>可以是GMT自带的CPT文件，也可以是用户自定义的CPT文件，也可以是通过 <code class="docutils literal notranslate"><span class="pre">-C&lt;color1&gt;,&lt;color2&gt;[,&lt;color3&gt;]</span></code> 语法指定一个线性连续变化的颜色列表。</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-T&lt;z_min&gt;/&lt;z_max&gt;[/&lt;z_inc&gt;[+]]</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-T&lt;ztable&gt;</span></code></dt><dd><p>定义要生成的CPT文件的Z值范围及Z值间隔</p>
-<ul class="simple">
-<li><p>若使用了 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 选项且 <code class="docutils literal notranslate"><span class="pre">&lt;z_inc&gt;</span></code> 未指定，则Z值间隔的数目与输入的主CPT文件相同。</p></li>
-<li><p>若 <code class="docutils literal notranslate"><span class="pre">&lt;z_inc&gt;</span></code> 后有 <code class="docutils literal notranslate"><span class="pre">+</span></code> ，则将 <code class="docutils literal notranslate"><span class="pre">&lt;z_inc&gt;</span></code> 解释为Z值间隔的数目而不是Z值间隔</p></li>
-<li><p>也可以指定文件 <code class="docutils literal notranslate"><span class="pre">&lt;ztable&gt;</span></code> ，其中每行一个Z值</p></li>
-<li><p>若不使用 <code class="docutils literal notranslate"><span class="pre">-T</span></code> 选项，则默认使用主CPT文件中的Z值范围</p></li>
+<dt><code class="docutils literal notranslate"><span class="pre">-T&lt;z_min&gt;/&lt;z_max&gt;[/&lt;z_inc&gt;[+]]</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-T&lt;ztable&gt;</span></code></dt>
+<dd><p class="first">定义要生成的CPT文件的Z值范围及Z值间隔</p>
+<ul class="last simple">
+<li>若使用了 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 选项且 <code class="docutils literal notranslate"><span class="pre">&lt;z_inc&gt;</span></code> 未指定，则Z值间隔的数目与输入的主CPT文件相同。</li>
+<li>若 <code class="docutils literal notranslate"><span class="pre">&lt;z_inc&gt;</span></code> 后有 <code class="docutils literal notranslate"><span class="pre">+</span></code> ，则将 <code class="docutils literal notranslate"><span class="pre">&lt;z_inc&gt;</span></code> 解释为Z值间隔的数目而不是Z值间隔</li>
+<li>也可以指定文件 <code class="docutils literal notranslate"><span class="pre">&lt;ztable&gt;</span></code> ，其中每行一个Z值</li>
+<li>若不使用 <code class="docutils literal notranslate"><span class="pre">-T</span></code> 选项，则默认使用主CPT文件中的Z值范围</li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Z</span></code></dt><dd><p>生成连续CPT文件。默认生成不连续CPT文件，即每个Z值切片内为同一颜色</p>
-</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Z</span></code></dt>
+<dd>生成连续CPT文件。默认生成不连续CPT文件，即每个Z值切片内为同一颜色</dd>
 </dl>
 </div>
 </div>

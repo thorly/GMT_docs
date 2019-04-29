@@ -320,23 +320,24 @@
             
   <div class="section" id="pscoupe">
 <span id="index-0"></span><h1>13.83 pscoupe<a class="headerlink" href="#pscoupe" title="永久链接至标题">¶</a></h1>
-<dl class="field-list simple">
-<dt class="field-odd">官方文档</dt>
-<dd class="field-odd"><p><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/supplements/meca/pscoupe.html" title="(在 GMT v5.4.5)"><span>pscoupe</span></a></p>
-</dd>
-<dt class="field-even">简介</dt>
-<dd class="field-even"><p>绘制震源机制解的剖面图</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/supplements/meca/pscoupe.html" title="(在 GMT v5.4.5)"><span>pscoupe</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">绘制震源机制解的剖面图</td>
+</tr>
+</tbody>
+</table>
 <p><a class="reference internal" href="../psmeca/"><span class="doc">psmeca</span></a> 在绘制震源球时，本质上是取了一个水平剖面，并将三维震源球的下半球投影到该水平剖面上。而 <a class="reference internal" href="#"><span class="doc">pscoupe</span></a> 则更灵活一些，可以将三维震源球投影到任意一个剖面上。</p>
 <ul class="simple">
-<li><p>对于一个水平剖面，会将下半球投影到平面上（即 <a class="reference internal" href="../psmeca/"><span class="doc">psmeca</span></a> 的做法）</p></li>
-<li><p>对于一个垂直剖面，会将垂直平面后的半球投影到平面上</p></li>
-<li><p>对于任意一个非水平的平面而言：</p>
-<ul>
-<li><p>北方向为平面的最速下降方向</p></li>
-<li><p>东方向为平面的走向方向</p></li>
-<li><p>下方向则根据右手定则确定</p></li>
+<li>对于一个水平剖面，会将下半球投影到平面上（即 <a class="reference internal" href="../psmeca/"><span class="doc">psmeca</span></a> 的做法）</li>
+<li>对于一个垂直剖面，会将垂直平面后的半球投影到平面上</li>
+<li>对于任意一个非水平的平面而言：<ul>
+<li>北方向为平面的最速下降方向</li>
+<li>东方向为平面的走向方向</li>
+<li>下方向则根据右手定则确定</li>
 </ul>
 </li>
 </ul>
@@ -346,74 +347,75 @@
 <p><code class="docutils literal notranslate"><span class="pre">-Aa&lt;lon1&gt;/&lt;lat1&gt;/&lt;lon2&gt;/&lt;lat2&gt;/&lt;dip&gt;/&lt;p_width&gt;/&lt;dmin&gt;/&lt;dmax&gt;[f]</span></code></p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;lon1&gt;/&lt;lat1&gt;</span></code> 剖面起点的经纬度</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;lon2&gt;/&lt;lat2&gt;</span></code> 剖面终点的经纬度</p></li>
-<li><p>起点和终点确定了剖面的长度</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;dip&gt;</span></code> 剖面所在平面的倾角（0表示水平剖面，90表示垂直剖面）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;p_width&gt;</span></code> 剖面的宽度（即剖面不是一个平面，而是一个有厚度的长方体）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;dmin&gt;/&lt;dmax&gt;</span></code> 是沿着最速下降方向（“北”方向）的最小、最大距离</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> 表示根据剖面的参数自动计算边框的范围</p></li>
-<li><p>TODO: <code class="docutils literal notranslate"><span class="pre">&lt;p_width&gt;/&lt;dmin&gt;/&lt;dmax&gt;</span></code> 的具体含义尚不明确</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;lon1&gt;/&lt;lat1&gt;</span></code> 剖面起点的经纬度</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;lon2&gt;/&lt;lat2&gt;</span></code> 剖面终点的经纬度</li>
+<li>起点和终点确定了剖面的长度</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;dip&gt;</span></code> 剖面所在平面的倾角（0表示水平剖面，90表示垂直剖面）</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;p_width&gt;</span></code> 剖面的宽度（即剖面不是一个平面，而是一个有厚度的长方体）</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;dmin&gt;/&lt;dmax&gt;</span></code> 是沿着最速下降方向（“北”方向）的最小、最大距离</li>
+<li><code class="docutils literal notranslate"><span class="pre">f</span></code> 表示根据剖面的参数自动计算边框的范围</li>
+<li>TODO: <code class="docutils literal notranslate"><span class="pre">&lt;p_width&gt;/&lt;dmin&gt;/&lt;dmax&gt;</span></code> 的具体含义尚不明确</li>
 </ul>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">-Ab&lt;lon1&gt;/&lt;lat1&gt;/&lt;strike&gt;/&lt;p_length&gt;/&lt;dip&gt;/&lt;p_width&gt;/&lt;dmin&gt;/&lt;dmax&gt;[f]</span></code></p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;lon1&gt;/&lt;lat1&gt;</span></code> 剖面起点的经纬度</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;strike&gt;</span></code> 是剖面的走向</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;p_length&gt;</span></code> 是剖面的长度</p></li>
-<li><p>其他参数与 <code class="docutils literal notranslate"><span class="pre">-Aa</span></code> 相同</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;lon1&gt;/&lt;lat1&gt;</span></code> 剖面起点的经纬度</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;strike&gt;</span></code> 是剖面的走向</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;p_length&gt;</span></code> 是剖面的长度</li>
+<li>其他参数与 <code class="docutils literal notranslate"><span class="pre">-Aa</span></code> 相同</li>
 </ul>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">-Ac&lt;x1&gt;/&lt;y1&gt;/&lt;x2&gt;/&lt;y2&gt;/&lt;dip&gt;/&lt;p_width&gt;/&lt;dmin&gt;/&lt;dmax&gt;[f]</span></code></p>
 <blockquote>
-<div><p>与 <code class="docutils literal notranslate"><span class="pre">-Aa</span></code> 选项相同，只是 <code class="docutils literal notranslate"><span class="pre">&lt;x&gt;/&lt;y&gt;</span></code> 为笛卡尔坐标而不是地理坐标</p>
-</div></blockquote>
+<div>与 <code class="docutils literal notranslate"><span class="pre">-Aa</span></code> 选项相同，只是 <code class="docutils literal notranslate"><span class="pre">&lt;x&gt;/&lt;y&gt;</span></code> 为笛卡尔坐标而不是地理坐标</div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">-Ad&lt;x1&gt;/&lt;y1&gt;/&lt;strike&gt;/&lt;p_length&gt;/&lt;dip&gt;/&lt;p_width&gt;/&lt;dmin&gt;/&lt;dmax&gt;[f]</span></code></p>
 <blockquote>
-<div><p>与 <code class="docutils literal notranslate"><span class="pre">-Ab</span></code> 选项相同，只是 <code class="docutils literal notranslate"><span class="pre">&lt;x&gt;/&lt;y&gt;</span></code> 为笛卡尔坐标而不是地理坐标</p>
-</div></blockquote>
+<div>与 <code class="docutils literal notranslate"><span class="pre">-Ab</span></code> 选项相同，只是 <code class="docutils literal notranslate"><span class="pre">&lt;x&gt;/&lt;y&gt;</span></code> 为笛卡尔坐标而不是地理坐标</div></blockquote>
 </div>
 <div class="section" id="id2">
 <h2>13.83.2 选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl>
-<dt><code class="docutils literal notranslate"><span class="pre">-E&lt;color&gt;</span></code></dt><dd><p>扩张部分的填充色，默认为白色</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-F&lt;mode&gt;[&lt;args&gt;]</span></code></dt><dd><p>设置多个属性，可重复使用多次</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-Fs&lt;symbol&gt;[&lt;size[/&lt;fontsize&gt;[/&lt;offset&gt;[&lt;u&gt;]]]]</span></code> 见官方文档</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-Fa[&lt;size&gt;][/&lt;P_axis_symbol&gt;[&lt;T_axis_symbol&gt;]]</span></code> 计算并绘制P和T轴的符号。 <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 是符号大小，符号与 <a class="reference internal" href="../psxy/"><span class="doc">psxy</span></a> 类似，可以取 <code class="docutils literal notranslate"><span class="pre">c|d|h|i|p|s|t|x</span></code> ，默认值为 <code class="docutils literal notranslate"><span class="pre">6p/cc</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-Fe&lt;fill&gt;</span></code> 设置T轴符号的填充色</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-Fg&lt;fill&gt;</span></code> 设置P轴符号的填充色</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-Fp&lt;pen&gt;</span></code> P轴轮廓的画笔属性</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-Ft&lt;pen&gt;</span></code> T轴轮廓的画笔属性</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-Fr&lt;fill&gt;</span></code> 在标签后加一个方框</p></li>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-E&lt;color&gt;</span></code></dt>
+<dd>扩张部分的填充色，默认为白色</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-F&lt;mode&gt;[&lt;args&gt;]</span></code></dt>
+<dd><p class="first">设置多个属性，可重复使用多次</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">-Fs&lt;symbol&gt;[&lt;size[/&lt;fontsize&gt;[/&lt;offset&gt;[&lt;u&gt;]]]]</span></code> 见官方文档</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Fa[&lt;size&gt;][/&lt;P_axis_symbol&gt;[&lt;T_axis_symbol&gt;]]</span></code> 计算并绘制P和T轴的符号。 <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 是符号大小，符号与 <a class="reference internal" href="../psxy/"><span class="doc">psxy</span></a> 类似，可以取 <code class="docutils literal notranslate"><span class="pre">c|d|h|i|p|s|t|x</span></code> ，默认值为 <code class="docutils literal notranslate"><span class="pre">6p/cc</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">-Fe&lt;fill&gt;</span></code> 设置T轴符号的填充色</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Fg&lt;fill&gt;</span></code> 设置P轴符号的填充色</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Fp&lt;pen&gt;</span></code> P轴轮廓的画笔属性</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Ft&lt;pen&gt;</span></code> T轴轮廓的画笔属性</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Fr&lt;fill&gt;</span></code> 在标签后加一个方框</li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;color&gt;</span></code></dt><dd><p>指定压缩部分的填充色，默认值为黑色</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-L[&lt;pen&gt;]</span></code></dt><dd><p>设置震源球外部轮廓的线条属性</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-M</span></code></dt><dd><p>所有震级使用相同的大小，具体大小由 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项的 <code class="docutils literal notranslate"><span class="pre">&lt;scale&gt;</span></code> 参数决定。</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-N</span></code></dt><dd><p>地图区域外的震源球也要绘制，默认不绘制。</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Q</span></code></dt><dd><p>默认会生成一些临时文件，其中包含了剖面和剖面上的震源机制的信息，使用该选项，则不会生成这些临时文件。</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-T&lt;num_of_planes][/&lt;pen&gt;]</span></code></dt><dd><p>绘制断层平面。 <code class="docutils literal notranslate"><span class="pre">&lt;num_of_planes&gt;</span></code> 可以取：</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> 绘制两个断层面</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> 绘制第一个断层面</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code> 绘制第二个断层面</p></li>
+<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;color&gt;</span></code></dt>
+<dd>指定压缩部分的填充色，默认值为黑色</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-L[&lt;pen&gt;]</span></code></dt>
+<dd>设置震源球外部轮廓的线条属性</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-M</span></code></dt>
+<dd>所有震级使用相同的大小，具体大小由 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项的 <code class="docutils literal notranslate"><span class="pre">&lt;scale&gt;</span></code> 参数决定。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-N</span></code></dt>
+<dd>地图区域外的震源球也要绘制，默认不绘制。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Q</span></code></dt>
+<dd>默认会生成一些临时文件，其中包含了剖面和剖面上的震源机制的信息，使用该选项，则不会生成这些临时文件。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-T&lt;num_of_planes][/&lt;pen&gt;]</span></code></dt>
+<dd><p class="first">绘制断层平面。 <code class="docutils literal notranslate"><span class="pre">&lt;num_of_planes&gt;</span></code> 可以取：</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">0</span></code> 绘制两个断层面</li>
+<li><code class="docutils literal notranslate"><span class="pre">1</span></code> 绘制第一个断层面</li>
+<li><code class="docutils literal notranslate"><span class="pre">2</span></code> 绘制第二个断层面</li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-S</span></code></dt><dd><p>选择震源机制解的格式。与 <a class="reference internal" href="../psmeca/"><span class="doc">psmeca</span></a> 中 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项用法相同</p>
-<p>唯一的不同在于，输入文件中 <code class="docutils literal notranslate"><span class="pre">newX</span></code> 和 <code class="docutils literal notranslate"><span class="pre">newY</span></code> 对该命令无效，这里加上 <code class="docutils literal notranslate"><span class="pre">newX</span></code> 和 <code class="docutils literal notranslate"><span class="pre">newY</span></code> 只是为了是的该命令可以使用与 <a class="reference internal" href="../psmeca/"><span class="doc">psmeca</span></a> 相同的输入文件。</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-S</span></code></dt>
+<dd><p class="first">选择震源机制解的格式。与 <a class="reference internal" href="../psmeca/"><span class="doc">psmeca</span></a> 中 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项用法相同</p>
+<p class="last">唯一的不同在于，输入文件中 <code class="docutils literal notranslate"><span class="pre">newX</span></code> 和 <code class="docutils literal notranslate"><span class="pre">newY</span></code> 对该命令无效，这里加上 <code class="docutils literal notranslate"><span class="pre">newX</span></code> 和 <code class="docutils literal notranslate"><span class="pre">newY</span></code> 只是为了是的该命令可以使用与 <a class="reference internal" href="../psmeca/"><span class="doc">psmeca</span></a> 相同的输入文件。</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-W&lt;pen&gt;</span></code></dt><dd><p>设置断层边界的画笔属性</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Z&lt;cpt&gt;</span></code></dt><dd><p>指定CPT文件，根据数据文件中第三列的值（即地震深度）确定震源球的压缩部分的颜色。</p>
-</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-W&lt;pen&gt;</span></code></dt>
+<dd>设置断层边界的画笔属性</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Z&lt;cpt&gt;</span></code></dt>
+<dd>指定CPT文件，根据数据文件中第三列的值（即地震深度）确定震源球的压缩部分的颜色。</dd>
 </dl>
 </div>
 <div class="section" id="id3">
@@ -478,7 +480,7 @@ rm gmt.*
 </div>
 <div class="figure align-center" id="id4">
 <a class="reference internal image-reference" href="../../_images/pscoupe_ex1.png"><img alt="pscoupe example 1" src="../../_images/pscoupe_ex1.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">pscoupe示例图1</span><a class="headerlink" href="#id4" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text">pscoupe示例图1</span></p>
 </div>
 <p>下面的示例将震源球投影到不同方位角的剖面上的效果：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
@@ -533,7 +535,7 @@ rm gmt.*
 </div>
 <div class="figure align-center" id="id5">
 <a class="reference internal image-reference" href="../../_images/pscoupe_ex2.png"><img alt="pscoupe example 2" src="../../_images/pscoupe_ex2.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">pscoupe示例图2</span><a class="headerlink" href="#id5" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text">pscoupe示例图2</span></p>
 </div>
 </div>
 </div>

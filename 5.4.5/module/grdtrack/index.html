@@ -319,30 +319,32 @@
             
   <div class="section" id="grdtrack">
 <span id="index-0"></span><h1>13.61 grdtrack<a class="headerlink" href="#grdtrack" title="永久链接至标题">¶</a></h1>
-<dl class="field-list simple">
-<dt class="field-odd">官方文档</dt>
-<dd class="field-odd"><p><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/grdtrack.html" title="(在 GMT v5.4.5)"><span>grdtrack</span></a></p>
-</dd>
-<dt class="field-even">简介</dt>
-<dd class="field-even"><p>沿着指定的 (x,y) 位置采样网格点</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/grdtrack.html" title="(在 GMT v5.4.5)"><span>grdtrack</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">沿着指定的 (x,y) 位置采样网格点</td>
+</tr>
+</tbody>
+</table>
 <p>该命令会读取一个或多个网格文件以及一个表数据。表数据中前两列分别是经纬度，其余列可忽略。该命令会提取指定位置处网格的值，若有必要，会对网格进行插值。</p>
 <div class="section" id="id1">
 <h2>13.61.1 选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;grdfile&gt;</span></code></dt><dd><p>要采样的2D网格文件，若需要同时采样多个网格文件，可以重复使用 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项。</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;xyfile&gt;</span></code></dt><dd><p>表数据，前两列为 (x,y) 位置信息</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Z</span></code></dt><dd><p>仅输出采样后的Z值，默认会输出所有列数据。</p>
-</dd>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;grdfile&gt;</span></code></dt>
+<dd>要采样的2D网格文件，若需要同时采样多个网格文件，可以重复使用 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;xyfile&gt;</span></code></dt>
+<dd>表数据，前两列为 (x,y) 位置信息</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Z</span></code></dt>
+<dd>仅输出采样后的Z值，默认会输出所有列数据。</dd>
 </dl>
 </div>
 <div class="section" id="id2">
 <h2>13.61.2 相关<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="../project/"><span class="doc">project</span></a></p></li>
+<li><a class="reference internal" href="../project/"><span class="doc">project</span></a></li>
 </ul>
 </div>
 </div>
