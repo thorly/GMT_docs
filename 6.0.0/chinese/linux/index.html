@@ -213,10 +213,12 @@
 <p>可以使用 <a class="reference external" href="https://github.com/texjporg/cjk-gs-support">cjk-gs-support</a>
 项目提供的脚本 <a class="reference external" href="https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjk-gs-integrate.pl">cjk-gs-integrate.pl</a> 来实现ghostscript的中文支持。</p>
 <ol class="arabic">
-<li><p>从Windows下获取四种基本字体的字体文件（文件名类似于 <code class="docutils literal notranslate"><span class="pre">simsun.ttc</span></code>）并复制到
-<code class="docutils literal notranslate"><span class="pre">/usr/share/fonts/winfonts/</span></code> 目录下</p></li>
-<li><p>下载脚本 <a class="reference external" href="https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjk-gs-integrate.pl">cjk-gs-integrate.pl</a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cjk-gs-integrate.pl</span></code> 脚本的执行依赖于命令 <code class="docutils literal notranslate"><span class="pre">kpsewhich</span></code>，该命令由 TeXLive 提供。执行 <code class="docutils literal notranslate"><span class="pre">kpsewhich</span> <span class="pre">--version</span></code> 检查 <code class="docutils literal notranslate"><span class="pre">kpsewhich</span></code> 这个命令是否存在。若不存在，则需要单独安装。</p>
+<li><p class="first">从Windows下获取四种基本字体的字体文件（文件名类似于 <code class="docutils literal notranslate"><span class="pre">simsun.ttc</span></code>）并复制到
+<code class="docutils literal notranslate"><span class="pre">/usr/share/fonts/winfonts/</span></code> 目录下</p>
+</li>
+<li><p class="first">下载脚本 <a class="reference external" href="https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjk-gs-integrate.pl">cjk-gs-integrate.pl</a></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">cjk-gs-integrate.pl</span></code> 脚本的执行依赖于命令 <code class="docutils literal notranslate"><span class="pre">kpsewhich</span></code>，该命令由 TeXLive 提供。执行 <code class="docutils literal notranslate"><span class="pre">kpsewhich</span> <span class="pre">--version</span></code> 检查 <code class="docutils literal notranslate"><span class="pre">kpsewhich</span></code> 这个命令是否存在。若不存在，则需要单独安装。</p>
 <p>对于Ubuntu/Debian用户，执行:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install texlive-binaries
 </pre></div>
@@ -226,7 +228,7 @@
 </pre></div>
 </div>
 </li>
-<li><p>执行脚本:</p>
+<li><p class="first">执行脚本:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo perl cjk-gs-integrate.pl
 </pre></div>
 </div>
@@ -275,8 +277,8 @@ Font <span class="c1">#  Font Name</span>
 <div class="section" id="id1">
 <h2>12.1.3 GMT 中文测试<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
-<p>请自行确认你的中文字体编号。如果编号不是39到46，请自行修改以下测试脚本。</p>
+<p class="first admonition-title">注解</p>
+<p class="last">请自行确认你的中文字体编号。如果编号不是39到46，请自行修改以下测试脚本。</p>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 gmt begin GMT_Chinese pdf,png

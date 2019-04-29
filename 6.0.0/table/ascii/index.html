@@ -279,21 +279,21 @@
 <p>用户可以通过设置 <a class="reference internal" href="../../conf/io/#io-segment-marker"><span class="std std-ref">IO_SEGMENT_MARKER</span></a> 将段头记录的标识符修改为任意字符，例如 <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>、<code class="docutils literal notranslate"><span class="pre">%</span></code>等。</p>
 <p><a class="reference internal" href="../../conf/io/#io-segment-marker"><span class="std std-ref">IO_SEGMENT_MARKER</span></a> 可以取两个特殊的值：</p>
 <ul class="simple">
-<li><p>取 <code class="docutils literal notranslate"><span class="pre">B</span></code> 表示用空行作为数据段的分隔符</p></li>
-<li><p>取 <code class="docutils literal notranslate"><span class="pre">N</span></code> 表示用一个所有列都是NaN的记录作为数据段分隔符</p></li>
+<li>取 <code class="docutils literal notranslate"><span class="pre">B</span></code> 表示用空行作为数据段的分隔符</li>
+<li>取 <code class="docutils literal notranslate"><span class="pre">N</span></code> 表示用一个所有列都是NaN的记录作为数据段分隔符</li>
 </ul>
 </div>
 <div class="section" id="id4">
 <h2>5.1.4 数据段头记录中的额外属性<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>数据段头记录不仅用于标记数据段的开始，还可以额外指定该段数据的其他属性。比如在绘制线段时，可以在段头记录中加上如下一系列选项，以分别控制每段线段的属性：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-W</span></code> 指定当前数据段的画笔颜色</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-G</span></code> 指定当前数据段的填充色</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-Z</span></code> 设置当前数据对应的Z值，并从CPT文件中获取Z值对应的颜色</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-L</span></code> 设置当前数据段的标签信息</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-T</span></code> 设置当前数据段的一般描述信息</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-Ph</span></code> 表明当前数据段构成的闭合多边形位于另一个闭合多边形的内部</p></li>
-<li><p>…</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">-W</span></code> 指定当前数据段的画笔颜色</li>
+<li><code class="docutils literal notranslate"><span class="pre">-G</span></code> 指定当前数据段的填充色</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Z</span></code> 设置当前数据对应的Z值，并从CPT文件中获取Z值对应的颜色</li>
+<li><code class="docutils literal notranslate"><span class="pre">-L</span></code> 设置当前数据段的标签信息</li>
+<li><code class="docutils literal notranslate"><span class="pre">-T</span></code> 设置当前数据段的一般描述信息</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Ph</span></code> 表明当前数据段构成的闭合多边形位于另一个闭合多边形的内部</li>
+<li>…</li>
 </ul>
 <p>下面的多段数据，分别设置两段数据拥有不同的画笔颜色和填充色:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; -W2p,red -Glightred

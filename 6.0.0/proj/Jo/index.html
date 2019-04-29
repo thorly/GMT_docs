@@ -238,10 +238,10 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;lon&gt;/&lt;lat&gt;</span></code> 投影中心的经纬度</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;azi&gt;</span></code> 倾斜赤道的方位角</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;lon2&gt;/&lt;lat2&gt;</span></code> 倾斜赤道另一个点的经纬度</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;lonp&gt;/&lt;latp&gt;</span></code> 投影极点的经纬度</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;lon&gt;/&lt;lat&gt;</span></code> 投影中心的经纬度</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;azi&gt;</span></code> 倾斜赤道的方位角</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;lon2&gt;/&lt;lat2&gt;</span></code> 倾斜赤道另一个点的经纬度</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;lonp&gt;/&lt;latp&gt;</span></code> 投影极点的经纬度</li>
 </ul>
 <p>在三种定义中， 大写的 <code class="docutils literal notranslate"><span class="pre">A|B|C</span></code> 表示允许投影极点位于南半球。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R270/20/305/25r -JOc280/25.5/22/69/4.8i -Bag -Di -A250 -Gburlywood <span class="se">\</span>
@@ -251,13 +251,13 @@
 </div>
 <div class="figure align-center" id="id1">
 <img alt="../../_images/Jo-gmtplot-0.png" src="../../_images/Jo-gmtplot-0.png" />
-<p class="caption"><span class="caption-text">使用 <code class="docutils literal notranslate"><span class="pre">-Joc</span></code> 倾斜Mercator投影</span><a class="headerlink" href="#id1" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text">使用 <code class="docutils literal notranslate"><span class="pre">-Joc</span></code> 倾斜Mercator投影</span></p>
 </div>
 <p>在使用倾斜投影时，直接指定整个区域相对地图中心的相对投影坐标更为方便，下面的示例中使用了 <code class="docutils literal notranslate"><span class="pre">-Rk-1000/1000/-500/500</span></code> 来指定相对投影坐标。</p>
 <p><a class="reference download internal" download="" href="../../_downloads/6726c0f729c529ac03939c0f71b814fd/Jo-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center" id="id2">
 <img alt="../../_images/Jo-gmtplot-1.png" src="../../_images/Jo-gmtplot-1.png" />
-<p class="caption"><span class="caption-text">使用 <code class="docutils literal notranslate"><span class="pre">-JOa</span></code> 倾斜Mercator投影</span><a class="headerlink" href="#id2" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text">使用 <code class="docutils literal notranslate"><span class="pre">-JOa</span></code> 倾斜Mercator投影</span></p>
 </div>
 <p>(左) <code class="docutils literal notranslate"><span class="pre">-JOa173:17:02E/41:16:15S/35/3i</span></code>
 (右) <code class="docutils literal notranslate"><span class="pre">-JOA173:17:02E/41:16:15S/215/3i</span></code></p>

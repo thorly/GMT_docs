@@ -202,38 +202,38 @@
 <h1>2.2 Windows 下安装 GMT<a class="headerlink" href="#windows-gmt" title="永久链接至标题">¶</a></h1>
 <p>GMT 为 Windows 用户提供了安装包，可以直接安装使用。Windows 下需要安装 GMT、ghostscript，查看PS文件需要使用 GSview。日常数据处理需要Linux下的小工具。</p>
 <div class="admonition warning">
-<p class="admonition-title">警告</p>
-<p>从 GMT 5.2.1 开始，GMT 提供的 Windows 下的安装包已经不再支持 Windows XP。</p>
+<p class="first admonition-title">警告</p>
+<p class="last">从 GMT 5.2.1 开始，GMT 提供的 Windows 下的安装包已经不再支持 Windows XP。</p>
 </div>
 <ol class="arabic">
-<li><p>下载</p>
+<li><p class="first">下载</p>
 <p>由于GMT6.0.0尚未正式发布，请到
 <a class="reference external" href="http://w3.ualg.pt/~jluis/mirone/downloads/gmt.html">http://w3.ualg.pt/~jluis/mirone/downloads/gmt.html</a>
 下载最新开发版源码的二进制安装包。</p>
 <ul class="simple">
-<li><p>ghostscript 9.26:
+<li>ghostscript 9.26:
 <a class="reference external" href="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/gs926aw32.exe">32位</a>
-<a class="reference external" href="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/gs926aw64.exe">64位</a></p></li>
-<li><p>GSview 5.0:
+<a class="reference external" href="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/gs926aw64.exe">64位</a></li>
+<li>GSview 5.0:
 <a class="reference external" href="http://www.ghostgum.com.au/download/gsv50w32.exe">32位</a>
-<a class="reference external" href="http://www.ghostgum.com.au/download/gsv50w64.exe">64位</a></p></li>
-<li><p><a class="reference external" href="https://gmt-china.org/data/UnixTools.zip">UnixTools.zip</a></p></li>
+<a class="reference external" href="http://www.ghostgum.com.au/download/gsv50w64.exe">64位</a></li>
+<li><a class="reference external" href="https://gmt-china.org/data/UnixTools.zip">UnixTools.zip</a></li>
 </ul>
 </li>
-<li><p>安装GMT</p>
+<li><p class="first">安装GMT</p>
 <p>直接双击安装包即可安装，直接点击下一步，使用默认的选项即可，无须做任何修改。在“选择组件”页面，建议将四个选项都勾选上，然后点击下一步安装完成。</p>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="first admonition-title">注解</p>
 <p>安装过程中可能会出现如下警告:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Warning! Failed to add GMT to PATH. Please add the GMT bin path to PATH manually.
 </pre></div>
 </div>
 <p>出现此警告的原因是系统的环境变量 <code class="docutils literal notranslate"><span class="pre">PATH</span></code> 太长，GMT安装包无法直接修改。</p>
 <p>解决办法是，先忽略这一警告，待安装完成后按照如下步骤手动修改系统环境变量 <code class="docutils literal notranslate"><span class="pre">PATH</span></code>。</p>
-<ol class="arabic simple">
-<li><p>点击“计算机”-&gt;“属性”-&gt;“高级系统设置”-&gt;“环境变量”打开“环境变量”编辑工具</p></li>
-<li><p>在“系统变量”部分中，选中“Path”并点击“编辑”</p></li>
-<li><p>在“变量值”的最后加上GMT的bin目录的路径，默认值为 <code class="docutils literal notranslate"><span class="pre">C:\programs\gmt5\bin</span></code>。需要注意“path”变量值中多个路径之间用英文分号分隔</p></li>
+<ol class="last arabic simple">
+<li>点击“计算机”-&gt;“属性”-&gt;“高级系统设置”-&gt;“环境变量”打开“环境变量”编辑工具</li>
+<li>在“系统变量”部分中，选中“Path”并点击“编辑”</li>
+<li>在“变量值”的最后加上GMT的bin目录的路径，默认值为 <code class="docutils literal notranslate"><span class="pre">C:\programs\gmt5\bin</span></code>。需要注意“path”变量值中多个路径之间用英文分号分隔</li>
 </ol>
 </div>
 <p>安装完成后，“开始”-&gt;“所有程序”-&gt;“附件”-&gt;“命令提示符”以启动cmd。在cmd窗口中执行:</p>
@@ -243,7 +243,7 @@
 </div>
 <p>即表示安装成功。</p>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
+<p class="first admonition-title">注解</p>
 <p>某些情况下，运行 GMT 命令时会出现警告信息:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt: Unable to create GMT User directory : /Users/用户名/.gmt
 gmt: Auto-downloading of earth_relief_##m<span class="p">|</span>s.grd files has been disabled.
@@ -251,20 +251,20 @@ gmt: Auto-downloading of earth_relief_##m<span class="p">|</span>s.grd files has
 </div>
 <p>解决办法:</p>
 <ol class="arabic simple">
-<li><p>打开 “我的电脑”-&gt;“属性”-&gt;“高级系统设置”-&gt;“环境变量”</p></li>
-<li><p>新建 “系统变量”。变量名：<code class="docutils literal notranslate"><span class="pre">HOME</span></code>；变量值：<code class="docutils literal notranslate"><span class="pre">C:\Users\用户名</span></code></p></li>
+<li>打开 “我的电脑”-&gt;“属性”-&gt;“高级系统设置”-&gt;“环境变量”</li>
+<li>新建 “系统变量”。变量名：<code class="docutils literal notranslate"><span class="pre">HOME</span></code>；变量值：<code class="docutils literal notranslate"><span class="pre">C:\Users\用户名</span></code></li>
 </ol>
-<p>重新执行命令检查问题是否得到解决。经过测试，<code class="docutils literal notranslate"><span class="pre">HOME</span></code> 变量的值可以取任意盘符中任何已存在的文件夹，正常情况下，执行脚本后会生成 <code class="docutils literal notranslate"><span class="pre">%HOME%/.gmt/cache</span></code> 空文件夹。</p>
+<p class="last">重新执行命令检查问题是否得到解决。经过测试，<code class="docutils literal notranslate"><span class="pre">HOME</span></code> 变量的值可以取任意盘符中任何已存在的文件夹，正常情况下，执行脚本后会生成 <code class="docutils literal notranslate"><span class="pre">%HOME%/.gmt/cache</span></code> 空文件夹。</p>
 </div>
 </li>
-<li><p>安装ghostscript</p>
+<li><p class="first">安装ghostscript</p>
 <p>安装的过程没什么可说的，在最后一步，记得勾选
 <code class="docutils literal notranslate"><span class="pre">Generate</span> <span class="pre">cidfmap</span> <span class="pre">for</span> <span class="pre">Windows</span> <span class="pre">CJK</span> <span class="pre">TrueType</span> <span class="pre">fonts</span></code>。</p>
 </li>
-<li><p>安装GSview</p>
+<li><p class="first">安装GSview</p>
 <p>双击直接安装即可。</p>
 </li>
-<li><p>安装 UnixTools</p>
+<li><p class="first">安装 UnixTools</p>
 <p>解压压缩包，并将解压得到的 exe 文件移动到 GMT 的 bin 目录即可。</p>
 </li>
 </ol>

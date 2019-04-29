@@ -326,14 +326,16 @@
             
   <div class="section" id="meca">
 <span id="index-0"></span><h1>13.81 meca<a class="headerlink" href="#meca" title="永久链接至标题">¶</a></h1>
-<dl class="field-list simple">
-<dt class="field-odd">官方文档</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/supplements/meca/meca.html" title="(在 GMT v6.0.0)"><span>meca</span></a></p>
-</dd>
-<dt class="field-even">简介</dt>
-<dd class="field-even"><p>在地图上绘制震源机制解</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/supplements/meca/meca.html" title="(在 GMT v6.0.0)"><span>meca</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">在地图上绘制震源机制解</td>
+</tr>
+</tbody>
+</table>
 <div class="section" id="s">
 <h2>13.81.1 -S选项<a class="headerlink" href="#s" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">-S</span></code> 确定了输入文件的格式，其语法为:</p>
@@ -341,15 +343,19 @@
 </pre></div>
 </div>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;format&gt;</span></code> 可以取 <code class="docutils literal notranslate"><span class="pre">a</span></code> 、 <code class="docutils literal notranslate"><span class="pre">c</span></code> 等，在下面会介绍</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;scale&gt;</span></code> 指定了5级地震（地震矩为4.0E23 dynes-cm）的震源球的直径。默认情况下，震源球的直径与震级大小成正比，实际直径由如下公式决定:</p>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">&lt;format&gt;</span></code> 可以取 <code class="docutils literal notranslate"><span class="pre">a</span></code> 、 <code class="docutils literal notranslate"><span class="pre">c</span></code> 等，在下面会介绍</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">&lt;scale&gt;</span></code> 指定了5级地震（地震矩为4.0E23 dynes-cm）的震源球的直径。默认情况下，震源球的直径与震级大小成正比，实际直径由如下公式决定:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">size</span> <span class="o">=</span> M / <span class="m">5</span> * &lt;scale&gt;
 </pre></div>
 </div>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;fontsize&gt;</span></code> 是震源球的标题的字体大小</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;offset&gt;</span></code> 震源球标题相对于震源球的偏移量</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">u</span></code> 震源球标题位于震源球的下方</p></li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">&lt;fontsize&gt;</span></code> 是震源球的标题的字体大小</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">&lt;offset&gt;</span></code> 震源球标题相对于震源球的偏移量</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">u</span></code> 震源球标题位于震源球的下方</p>
+</li>
 </ul>
 <p>下面介绍各种震源机制解的格式，使用下面这个地震作为示例:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Date: <span class="m">1976</span>/ <span class="m">1</span>/ <span class="m">1</span>   Centroid Time:  <span class="m">1</span>:29:53.4 GMT
@@ -362,146 +368,155 @@ Fault plane:  <span class="nv">strike</span><span class="o">=</span><span class=
 Fault plane:  <span class="nv">strike</span><span class="o">=</span><span class="m">18</span>    <span class="nv">dip</span><span class="o">=</span><span class="m">60</span>   <span class="nv">slip</span><span class="o">=</span><span class="m">88</span>
 </pre></div>
 </div>
-<dl>
-<dt><code class="docutils literal notranslate"><span class="pre">-Sa</span></code></dt><dd><p>Aki and Richards约定的震源机制格式，输入文件的具体格式为:</p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-Sa</span></code></dt>
+<dd><p class="first">Aki and Richards约定的震源机制格式，输入文件的具体格式为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X  Y  depth  strike  dip  rake  mag  newX  newY  title
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Y</span></code> 为震源经纬度</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">depth</span></code> 是地震深度，单位为km</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">strike</span></code> 、 <code class="docutils literal notranslate"><span class="pre">dip</span></code> 、 <code class="docutils literal notranslate"><span class="pre">rake</span></code> 断层的三个参数，单位为度</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mag</span></code> 为震级</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">newX</span></code> 和 <code class="docutils literal notranslate"><span class="pre">newY</span></code> 放置震源球的经纬度，这样可以避免震源球覆盖震源位置。若值为0，则表示将震源球放在震源位置</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">title</span></code> 出现中震源球上方/下方的字符串（可选）</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Y</span></code> 为震源经纬度</li>
+<li><code class="docutils literal notranslate"><span class="pre">depth</span></code> 是地震深度，单位为km</li>
+<li><code class="docutils literal notranslate"><span class="pre">strike</span></code> 、 <code class="docutils literal notranslate"><span class="pre">dip</span></code> 、 <code class="docutils literal notranslate"><span class="pre">rake</span></code> 断层的三个参数，单位为度</li>
+<li><code class="docutils literal notranslate"><span class="pre">mag</span></code> 为震级</li>
+<li><code class="docutils literal notranslate"><span class="pre">newX</span></code> 和 <code class="docutils literal notranslate"><span class="pre">newY</span></code> 放置震源球的经纬度，这样可以避免震源球覆盖震源位置。若值为0，则表示将震源球放在震源位置</li>
+<li><code class="docutils literal notranslate"><span class="pre">title</span></code> 出现中震源球上方/下方的字符串（可选）</li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psmeca -Rg -JN15c -Sa2c &gt; meca.ps <span class="s">&lt;&lt; EOF</span>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psmeca -Rg -JN15c -Sa2c &gt; meca.ps <span class="s">&lt;&lt; EOF</span>
 <span class="s">-176.96 -29.25 47.8 202 30 93 7.3 0 0 197601010129</span>
 <span class="s">EOF</span>
 </pre></div>
 </div>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">−Sc</span></code></dt><dd><p>Harvard CMT（现在的Global CMT）定义的格式:</p>
+<dt><code class="docutils literal notranslate"><span class="pre">−Sc</span></code></dt>
+<dd><p class="first">Harvard CMT（现在的Global CMT）定义的格式:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X Y depth strike1 dip1 rake1 strike2 dip2 rake2 mantissa exponent newX newY title
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Y</span></code> 为震源经纬度</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">depth</span></code> 是地震深度，单位为km</p></li>
-<li><p>两组 <code class="docutils literal notranslate"><span class="pre">strike</span></code> 、 <code class="docutils literal notranslate"><span class="pre">dip</span></code> 、 <code class="docutils literal notranslate"><span class="pre">rake</span></code> 分别是两个断层面的参数</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mantissa</span></code> 和 <code class="docutils literal notranslate"><span class="pre">exponent</span></code> 是地震标量矩的尾数和指数部分。例如，地震标量矩为9.56e+26 dyne-cm，则 <code class="docutils literal notranslate"><span class="pre">mantissa=9.56</span></code> 、 <code class="docutils literal notranslate"><span class="pre">exponent=26</span></code></p></li>
+<li><code class="docutils literal notranslate"><span class="pre">X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Y</span></code> 为震源经纬度</li>
+<li><code class="docutils literal notranslate"><span class="pre">depth</span></code> 是地震深度，单位为km</li>
+<li>两组 <code class="docutils literal notranslate"><span class="pre">strike</span></code> 、 <code class="docutils literal notranslate"><span class="pre">dip</span></code> 、 <code class="docutils literal notranslate"><span class="pre">rake</span></code> 分别是两个断层面的参数</li>
+<li><code class="docutils literal notranslate"><span class="pre">mantissa</span></code> 和 <code class="docutils literal notranslate"><span class="pre">exponent</span></code> 是地震标量矩的尾数和指数部分。例如，地震标量矩为9.56e+26 dyne-cm，则 <code class="docutils literal notranslate"><span class="pre">mantissa=9.56</span></code> 、 <code class="docutils literal notranslate"><span class="pre">exponent=26</span></code></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psmeca -Rg -JN15c -Sc2c &gt; meca.ps <span class="s">&lt;&lt; EOF</span>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psmeca -Rg -JN15c -Sc2c &gt; meca.ps <span class="s">&lt;&lt; EOF</span>
 <span class="s">-176.96 -29.25 47.8 202 30 93 18 60 88 9.56 26 0 0 197601010129</span>
 <span class="s">EOF</span>
 </pre></div>
 </div>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Sm|d|z</span></code></dt><dd><p>GCMT的零迹矩张量解，输入数据格式为:</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-Sm|d|z</span></code></dt>
+<dd><p class="first">GCMT的零迹矩张量解，输入数据格式为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X Y depth mrr mtt mff mrt mrf mtf exp newX newY title
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Y</span></code> 为震源经纬度</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">depth</span></code> 是地震深度，单位为km</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mrr</span></code> 等是地震矩的6个分量，单位是 <span class="math notranslate nohighlight">\(10^{exp}\)</span> dyne-cm</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">exp</span></code> 地震矩的指数部分（比如， <code class="docutils literal notranslate"><span class="pre">mrr=2.0</span></code> 、 <code class="docutils literal notranslate"><span class="pre">exp=26</span></code> ，则真实的 <code class="docutils literal notranslate"><span class="pre">mrr=2.0e26</span></code> ）</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Y</span></code> 为震源经纬度</li>
+<li><code class="docutils literal notranslate"><span class="pre">depth</span></code> 是地震深度，单位为km</li>
+<li><code class="docutils literal notranslate"><span class="pre">mrr</span></code> 等是地震矩的6个分量，单位是 <span class="math notranslate nohighlight">\(10^{exp}\)</span> dyne-cm</li>
+<li><code class="docutils literal notranslate"><span class="pre">exp</span></code> 地震矩的指数部分（比如， <code class="docutils literal notranslate"><span class="pre">mrr=2.0</span></code> 、 <code class="docutils literal notranslate"><span class="pre">exp=26</span></code> ，则真实的 <code class="docutils literal notranslate"><span class="pre">mrr=2.0e26</span></code> ）</li>
 </ul>
 <p>地震矩张量可以分解成各向同性部分（ISO）、双力偶部分（DC）和补偿线性向量偶极部分（CLVD）。</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">m</span></code> 表示绘制地震矩的零迹部分（DC+CLVD）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">d</span></code> 表示仅绘制地震矩的双力偶部分（DC）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">z</span></code> 表示仅绘制地震矩的零迹各向异性部分（DC+CLVD）</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">m</span></code> 表示绘制地震矩的零迹部分（DC+CLVD）</li>
+<li><code class="docutils literal notranslate"><span class="pre">d</span></code> 表示仅绘制地震矩的双力偶部分（DC）</li>
+<li><code class="docutils literal notranslate"><span class="pre">z</span></code> 表示仅绘制地震矩的零迹各向异性部分（DC+CLVD）</li>
 </ul>
 <p>说明：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">m</span></code> 和 <code class="docutils literal notranslate"><span class="pre">z</span></code> 是一个东西？还是我的理解有误？ TODO</p></li>
-<li><p>GMCT所使用的rtf坐标，实际上就是USE坐标系</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">m</span></code> 和 <code class="docutils literal notranslate"><span class="pre">z</span></code> 是一个东西？还是我的理解有误？ TODO</li>
+<li>GMCT所使用的rtf坐标，实际上就是USE坐标系</li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psmeca -Rg -JN15c -Sm2c &gt; meca.ps <span class="s">&lt;&lt; EOF</span>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psmeca -Rg -JN15c -Sm2c &gt; meca.ps <span class="s">&lt;&lt; EOF</span>
 <span class="s">-176.96 -29.25 47.8 7.680 0.090 -7.770 1.390 4.520 -3.260 26 0 0 title</span>
 <span class="s">EOF</span>
 </pre></div>
 </div>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Sp</span></code></dt><dd><p>由两个断层平面的部分数据构成的机制解，输入数据格式为:</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-Sp</span></code></dt>
+<dd><p class="first">由两个断层平面的部分数据构成的机制解，输入数据格式为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X Y depth strike1 dip1 strike2 fault mag newX newY title
 </pre></div>
 </div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Y</span></code> 为震源经纬度</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">depth</span></code> 是地震深度，单位为km</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">strike1</span></code> 和 <code class="docutils literal notranslate"><span class="pre">dip1</span></code> 平面1的断层参数</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">strike2</span></code> 平面2的断层参数</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">fault</span></code> 取-1或+1，表示正断层和逆断层</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mag</span></code> 震级</p></li>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Y</span></code> 为震源经纬度</li>
+<li><code class="docutils literal notranslate"><span class="pre">depth</span></code> 是地震深度，单位为km</li>
+<li><code class="docutils literal notranslate"><span class="pre">strike1</span></code> 和 <code class="docutils literal notranslate"><span class="pre">dip1</span></code> 平面1的断层参数</li>
+<li><code class="docutils literal notranslate"><span class="pre">strike2</span></code> 平面2的断层参数</li>
+<li><code class="docutils literal notranslate"><span class="pre">fault</span></code> 取-1或+1，表示正断层和逆断层</li>
+<li><code class="docutils literal notranslate"><span class="pre">mag</span></code> 震级</li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Sx|y|t</span></code></dt><dd><p>指定主坐标轴的方位，即T、N、P轴，输入数据格式为:</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-Sx|y|t</span></code></dt>
+<dd><p class="first">指定主坐标轴的方位，即T、N、P轴，输入数据格式为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X Y depth Tvalue Tazim Tplunge Nvalue Nazim Nplunge Pvalue Pazim Pplunge exp newX newY title
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Y</span></code> 为震源经纬度</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">depth</span></code> 是地震深度，单位为km</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Tvalue</span></code> 等9个量定义了T、N、P轴的大小和方向</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">exp</span></code> 是 <code class="docutils literal notranslate"><span class="pre">Tvalue</span></code> 等的指数部分</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Y</span></code> 为震源经纬度</li>
+<li><code class="docutils literal notranslate"><span class="pre">depth</span></code> 是地震深度，单位为km</li>
+<li><code class="docutils literal notranslate"><span class="pre">Tvalue</span></code> 等9个量定义了T、N、P轴的大小和方向</li>
+<li><code class="docutils literal notranslate"><span class="pre">exp</span></code> 是 <code class="docutils literal notranslate"><span class="pre">Tvalue</span></code> 等的指数部分</li>
 </ul>
 <p>对这种表示不太熟悉，应该是跟地震矩等效的：</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> 绘制标准的GCMT解</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code> 只绘制地震矩的double couple部分（DC）</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">z</span></code> 绘制0迹地震矩</p></li>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">x</span></code> 绘制标准的GCMT解</li>
+<li><code class="docutils literal notranslate"><span class="pre">y</span></code> 只绘制地震矩的double couple部分（DC）</li>
+<li><code class="docutils literal notranslate"><span class="pre">z</span></code> 绘制0迹地震矩</li>
 </ul>
 </dd>
 </dl>
 </div>
 <div class="section" id="id1">
 <h2>13.81.2 选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl>
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code></dt><dd><p>输入文件，文件中震源机制信息，具体格式由 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项决定。</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-C[&lt;pen&gt;][P&lt;pointsize&gt;]</span></code></dt><dd><p>绘制 (X,Y) 和 (newX,newY) 的连线</p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code></dt>
+<dd>输入文件，文件中震源机制信息，具体格式由 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项决定。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-C[&lt;pen&gt;][P&lt;pointsize&gt;]</span></code></dt>
+<dd><p class="first">绘制 (X,Y) 和 (newX,newY) 的连线</p>
 <p>将震源球放在输入文件的 <code class="docutils literal notranslate"><span class="pre">newX</span></code> 和 <code class="docutils literal notranslate"><span class="pre">newY</span></code> 所指定的位置，在震源位置处绘制一个小圆，并绘制一条直线连接小圆和震源球。</p>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;pen&gt;</span></code> 指定直线的属性， <code class="docutils literal notranslate"><span class="pre">&lt;pointsize&gt;</span></code> 指定圆的大小。</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">&lt;pen&gt;</span></code> 指定直线的属性， <code class="docutils literal notranslate"><span class="pre">&lt;pointsize&gt;</span></code> 指定圆的大小。</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-D&lt;depmin&gt;/&lt;depmax&gt;</span></code></dt><dd><p>只绘制震源深度在 <code class="docutils literal notranslate"><span class="pre">&lt;depmin&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;depmax&gt;</span></code> 之间的地震。</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-E&lt;fill&gt;</span></code></dt><dd><p>扩张部分的填充色，默认为白色</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-F&lt;mode&gt;[&lt;args&gt;]</span></code></dt><dd><p>设置多个属性，可重复使用多次。</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-Fa[&lt;size&gt;][/&lt;P_axis_symbol&gt;[&lt;T_axis_symbol&gt;]]</span></code> 在震源球上P轴和T轴处绘制符号。 <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 是符号大小；符号可以取 <code class="docutils literal notranslate"><span class="pre">c|d|h|i|p|s|t|x</span></code>
-（具体含义见 <a class="reference internal" href="../plot/"><span class="doc">plot</span></a> 的 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项），默认值为 <code class="docutils literal notranslate"><span class="pre">6p/cc</span></code> ，即在P轴和T轴处分别绘制一个大小为6p的圆</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-Fe&lt;fill&gt;</span></code> 设置T轴符号的填充色</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-Fg&lt;fill&gt;</span></code> 设置P轴符号的填充色</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-Fp&lt;pen&gt;</span></code> 设置P轴符号的画笔属性</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-Ft&lt;pen&gt;</span></code> 设置T轴符号的画笔属性</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-Fo</span></code> 使用旧版本的 <code class="docutils literal notranslate"><span class="pre">psvelomeca</span></code> 命令的输入数据格式，即不需要第三列的深度信息</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-Fr&lt;fill&gt;</span></code> 在标签后加一个方框</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-Fz&lt;pen&gt;</span></code> 覆盖零迹矩张量的画笔属性</p></li>
+<dt><code class="docutils literal notranslate"><span class="pre">-D&lt;depmin&gt;/&lt;depmax&gt;</span></code></dt>
+<dd>只绘制震源深度在 <code class="docutils literal notranslate"><span class="pre">&lt;depmin&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;depmax&gt;</span></code> 之间的地震。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-E&lt;fill&gt;</span></code></dt>
+<dd>扩张部分的填充色，默认为白色</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-F&lt;mode&gt;[&lt;args&gt;]</span></code></dt>
+<dd><p class="first">设置多个属性，可重复使用多次。</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">-Fa[&lt;size&gt;][/&lt;P_axis_symbol&gt;[&lt;T_axis_symbol&gt;]]</span></code> 在震源球上P轴和T轴处绘制符号。 <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 是符号大小；符号可以取 <code class="docutils literal notranslate"><span class="pre">c|d|h|i|p|s|t|x</span></code>
+（具体含义见 <a class="reference internal" href="../plot/"><span class="doc">plot</span></a> 的 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项），默认值为 <code class="docutils literal notranslate"><span class="pre">6p/cc</span></code> ，即在P轴和T轴处分别绘制一个大小为6p的圆</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Fe&lt;fill&gt;</span></code> 设置T轴符号的填充色</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Fg&lt;fill&gt;</span></code> 设置P轴符号的填充色</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Fp&lt;pen&gt;</span></code> 设置P轴符号的画笔属性</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Ft&lt;pen&gt;</span></code> 设置T轴符号的画笔属性</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Fo</span></code> 使用旧版本的 <code class="docutils literal notranslate"><span class="pre">psvelomeca</span></code> 命令的输入数据格式，即不需要第三列的深度信息</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Fr&lt;fill&gt;</span></code> 在标签后加一个方框</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Fz&lt;pen&gt;</span></code> 覆盖零迹矩张量的画笔属性</li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;fill&gt;</span></code></dt><dd><p>指定压缩部分的填充色，默认值为黑色</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-L&lt;pen&gt;</span></code></dt><dd><p>设置震源球外部轮廓的线条属性。</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-M</span></code></dt><dd><p>所有震级使用相同的大小，具体大小由 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项的 <code class="docutils literal notranslate"><span class="pre">&lt;scale&gt;</span></code> 参数决定。</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-N</span></code></dt><dd><p>地图区域外的震源球也要绘制，默认不绘制。</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-T&lt;num_of_planes][/&lt;pen&gt;]</span></code></dt><dd><p>绘制断层平面。 <code class="docutils literal notranslate"><span class="pre">&lt;num_of_planes&gt;</span></code> 可以取：</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> 绘制两个断层面</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> 绘制第一个断层面</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code> 绘制第二个断层面</p></li>
+<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;fill&gt;</span></code></dt>
+<dd>指定压缩部分的填充色，默认值为黑色</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-L&lt;pen&gt;</span></code></dt>
+<dd>设置震源球外部轮廓的线条属性。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-M</span></code></dt>
+<dd>所有震级使用相同的大小，具体大小由 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项的 <code class="docutils literal notranslate"><span class="pre">&lt;scale&gt;</span></code> 参数决定。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-N</span></code></dt>
+<dd>地图区域外的震源球也要绘制，默认不绘制。</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-T&lt;num_of_planes][/&lt;pen&gt;]</span></code></dt>
+<dd><p class="first">绘制断层平面。 <code class="docutils literal notranslate"><span class="pre">&lt;num_of_planes&gt;</span></code> 可以取：</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">0</span></code> 绘制两个断层面</li>
+<li><code class="docutils literal notranslate"><span class="pre">1</span></code> 绘制第一个断层面</li>
+<li><code class="docutils literal notranslate"><span class="pre">2</span></code> 绘制第二个断层面</li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-W&lt;pen&gt;</span></code></dt><dd><p>同时设置所有线条以及符号轮廓的画笔属性以及标题颜色。</p>
-<p>该选项设置的属性可以被 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-L</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-T</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-Fz</span></code> 指定的属性替代。</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-W&lt;pen&gt;</span></code></dt>
+<dd><p class="first">同时设置所有线条以及符号轮廓的画笔属性以及标题颜色。</p>
+<p class="last">该选项设置的属性可以被 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-L</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-T</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-Fz</span></code> 指定的属性替代。</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Z&lt;cpt&gt;</span></code></dt><dd><p>指定CPT文件，根据数据文件中第三列的值（即地震深度）确定震源球的压缩部分的颜色。</p>
-</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-Z&lt;cpt&gt;</span></code></dt>
+<dd>指定CPT文件，根据数据文件中第三列的值（即地震深度）确定震源球的压缩部分的颜色。</dd>
 </dl>
 </div>
 <div class="section" id="id2">
@@ -518,7 +533,7 @@ rm gmt.*
 </div>
 <div class="figure align-center" id="id3">
 <a class="reference internal image-reference" href="../../_images/psmeca_ex1.png"><img alt="meca" src="../../_images/psmeca_ex1.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">psmeca示例图1</span><a class="headerlink" href="#id3" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text">psmeca示例图1</span></p>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1"># test/meca/meca_1.sh</span>
@@ -548,7 +563,7 @@ rm gmt.*
 </div>
 <div class="figure align-center" id="id4">
 <a class="reference internal image-reference" href="../../_images/psmeca_ex2.png"><img alt="meca" src="../../_images/psmeca_ex2.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">psmeca示例图2</span><a class="headerlink" href="#id4" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text">psmeca示例图2</span></p>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1"># test/meca/meca_2.sh</span>
@@ -593,7 +608,7 @@ rm gmt.*
 </div>
 <div class="figure align-center" id="id5">
 <a class="reference internal image-reference" href="../../_images/psmeca_ex3.png"><img alt="meca" src="../../_images/psmeca_ex3.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">psmeca示例图3</span><a class="headerlink" href="#id5" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text">psmeca示例图3</span></p>
 </div>
 </div>
 </div>

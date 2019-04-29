@@ -211,8 +211,8 @@
 <h2>12.3.1 ghostscript 的中文支持<a class="headerlink" href="#ghostscript" title="永久链接至标题">¶</a></h2>
 <p>通常，在 <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\gs\gs9.26\examples\cjk</span></code> 目录下可以找到文件 <code class="docutils literal notranslate"><span class="pre">gscjk_ag.ps</span></code>。</p>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
-<p>如果找不到该文件，请尝试重新安装ghostscript。在安装的过程中，会有一个生成
+<p class="first admonition-title">注解</p>
+<p class="last">如果找不到该文件，请尝试重新安装ghostscript。在安装的过程中，会有一个生成
 cidmap 的选项，选中该选项则表示会为当前系统自动生成中文所需的 cidmap 文件。默认该选项是被选中的，一定 <strong>不要</strong> 将该选项取消；</p>
 </div>
 <p>启动 cmd，键入如下命令:</p>
@@ -226,8 +226,8 @@ ghostscript 是可以正常支持中文的。</p>
 <div class="section" id="gsview">
 <h2>12.3.2 gsview 的中文支持<a class="headerlink" href="#gsview" title="永久链接至标题">¶</a></h2>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
-<p>如果你需要用gsview查看PS文件，则需要为gsview配置中文显示。否则，则可以跳过这一部分。</p>
+<p class="first admonition-title">注解</p>
+<p class="last">如果你需要用gsview查看PS文件，则需要为gsview配置中文显示。否则，则可以跳过这一部分。</p>
 </div>
 <p>安装好 gsview 之后，PS 格式会自动与 gsview 关联。一般情况下，直接双击 PS 文件，就会用 gsview 打开该 PS 文件。</p>
 <p>双击打开 <code class="docutils literal notranslate"><span class="pre">gscjk_ag.ps</span></code>，一般情况下不会正确显示汉字。这是因为 gsview 在打开
@@ -276,8 +276,8 @@ Font <span class="c1">#  Font Name</span>
 <div class="section" id="id1">
 <h2>12.3.4 GMT 中文测试<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
-<p>请自行确认你的中文字体编号。如果编号不是39到46，请自行修改以下测试脚本。</p>
+<p class="first admonition-title">注解</p>
+<p class="last">请自行确认你的中文字体编号。如果编号不是39到46，请自行修改以下测试脚本。</p>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
 gmt figure map pdf,png C-sFONTPATH<span class="o">=</span>C:<span class="se">\w</span>indows<span class="se">\f</span>onts
@@ -304,8 +304,8 @@ gmt end
 <a class="reference internal image-reference" href="../../_images/GMT_Chinese.png"><img alt="../../_images/GMT_Chinese.png" src="../../_images/GMT_Chinese.png" style="width: 100%;" /></a>
 </div>
 <div class="admonition note">
-<p class="admonition-title">注解</p>
-<p>若使用记事本编辑 bat 文件，则保存时应注意编码方式为 ANSI、Unicode 或
+<p class="first admonition-title">注解</p>
+<p class="last">若使用记事本编辑 bat 文件，则保存时应注意编码方式为 ANSI、Unicode 或
 Unicode big endian，若使用 UTF-8 编码则会出现乱码；另外，很多编辑器默认将文本文件以 UTF-8 编码保存，因而可能需要修改编辑器的默认编码。</p>
 </div>
 </div>

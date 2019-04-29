@@ -235,9 +235,9 @@
 <p>标准输出流（STDOUT）用于显示输出数据，标准错误流（STDERR）用于显示错误消息。一般来说，标准输出流和标准错误流都是屏幕。</p>
 <p>GMT中，模块的正常输出都发送到标准输出流，模块的语法、警告、错误以及进程报告都发送到标准错误流，由于这两者默认情况下都是屏幕，所以标准输出流和标准错误流会混在一起，因而需要对输出进行重定向。常见的做法可以是下面的一种或多种的组合：</p>
 <ol class="arabic simple">
-<li><p>将标准输出流重定向到数据文件中</p></li>
-<li><p>将标准错误流重定向到日志文件中</p></li>
-<li><p>将标准输出流通过管道传递给下一个命令</p></li>
+<li>将标准输出流重定向到数据文件中</li>
+<li>将标准错误流重定向到日志文件中</li>
+<li>将标准输出流通过管道传递给下一个命令</li>
 </ol>
 </div>
 <div class="section" id="id4">
@@ -245,8 +245,8 @@
 <p>这里只介绍GMT中经常使用的最简单的重定向功能。</p>
 <p>对于标准输出流：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code>：将标准输出流重定向到新文件中。若该文件已存在，则覆盖文件中原内容；若该文件不存在，则创建该文件</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>：将标准输出流追加到文件中。若文件已存在，则将标准输出流追加到已有文件后面；若文件不存在，则创建该文件</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">&gt;</span></code>：将标准输出流重定向到新文件中。若该文件已存在，则覆盖文件中原内容；若该文件不存在，则创建该文件</li>
+<li><code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>：将标准输出流追加到文件中。若文件已存在，则将标准输出流追加到已有文件后面；若文件不存在，则创建该文件</li>
 </ul>
 <p>对于标准错误流，重定向符号是 <code class="docutils literal notranslate"><span class="pre">2&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">2&gt;&gt;</span></code>。这里的 <code class="docutils literal notranslate"><span class="pre">2</span></code> 表示标准错误流，大于号的含义与标准输出流相同。</p>
 </div>
@@ -280,12 +280,12 @@
 </div>
 <p>将这些数据传给GMT有如下几种方法。</p>
 <ol class="arabic">
-<li><p>直接在命令行指定文件名，命令会自动读取该文件的内容:</p>
+<li><p class="first">直接在命令行指定文件名，命令会自动读取该文件的内容:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psxy event.loc -R70/140/20/60 -JM6i -B5 -Sc0.2c -Gred &gt; map.ps
 </pre></div>
 </div>
 </li>
-<li><p>直接从键盘输入</p>
+<li><p class="first">直接从键盘输入</p>
 <p>标准输入流的默认设备是键盘。下面的例子中直接从键盘输入GMT所需的数据。首先执行 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">plot</span></code> 命令，然后键盘键入两行数据，再按下 <code class="docutils literal notranslate"><span class="pre">Ctrl+C</span></code> 中断输入，GMT会给出中断警告，然后按下回车键即可:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt psxy -R70/140/20/60 -JM6i -B5 -Sc0.2c -Gred &gt; map.ps
 <span class="m">100</span>.0 <span class="m">40</span>.0
@@ -297,19 +297,19 @@ $
 </pre></div>
 </div>
 </li>
-<li><p>标准输入流重定向 <code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p>
+<li><p class="first">标准输入流重定向 <code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> 的作用是读取 <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> 后的文件的内容并将其作为标准输入流，与直接在命令行指定文件名类似:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psxy -R70/140/20/60 -JM6i -B5 -Sc0.2c -Gred &gt; map.ps &lt; event.loc
 </pre></div>
 </div>
 </li>
-<li><p>通过管道输入</p>
+<li><p class="first">通过管道输入</p>
 <p>管道可以将前一个命令的标准输出作为后一个命令的标准输入:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat event.loc <span class="p">|</span> gmt psxy -R70/140/20/60 -JM6i -B5 -Sc0.2c -Gred &gt; map.ps
 </pre></div>
 </div>
 </li>
-<li><p>Here Documents</p>
+<li><p class="first">Here Documents</p>
 <p>示例如下，两个 <code class="docutils literal notranslate"><span class="pre">EOF</span></code> 之间的所有数据都会被传递给GMT:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psxy -R70/140/20/60 -JM6i -B5 -Sc0.2c -Gred &gt; map.ps <span class="s">&lt;&lt; EOF</span>
 <span class="s">100.0 40.0</span>
@@ -321,9 +321,9 @@ $
 </ol>
 <p>说明：</p>
 <ol class="arabic simple">
-<li><p>上面列出的5种方式中，常用的是第1、4、5种；</p></li>
-<li><p>Here Documents方法中，<code class="docutils literal notranslate"><span class="pre">EOF</span></code> 可以被替换成其他任意字符（比如 <code class="docutils literal notranslate"><span class="pre">END</span></code> ），只要保证开始和结束的符号一致即可</p></li>
-<li><p>Here Documents方法仅适用于bash，不适用于bat</p></li>
+<li>上面列出的5种方式中，常用的是第1、4、5种；</li>
+<li>Here Documents方法中，<code class="docutils literal notranslate"><span class="pre">EOF</span></code> 可以被替换成其他任意字符（比如 <code class="docutils literal notranslate"><span class="pre">END</span></code> ），只要保证开始和结束的符号一致即可</li>
+<li>Here Documents方法仅适用于bash，不适用于bat</li>
 </ol>
 </div>
 <div class="section" id="id7">
@@ -355,38 +355,38 @@ gmt psxy in.dat -JX10c <span class="nv">$R</span> &gt; map.ps
 <h2>通配符<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
 <p>UNIX下提供了通配符功能，使得可以基于文件名的模式选择一组文件。</p>
 <p>UNIX下的通配符包括：</p>
-<table class="docutils align-center" id="id9">
+<table border="1" class="docutils align-center" id="id9">
 <caption><span class="caption-text">通配符</span><a class="headerlink" href="#id9" title="永久链接至表格">¶</a></caption>
 <colgroup>
-<col style="width: 22%" />
-<col style="width: 78%" />
+<col width="22%" />
+<col width="78%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>通配符</p></th>
-<th class="head"><p>含义</p></th>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">通配符</th>
+<th class="head">含义</th>
 </tr>
 </thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
-<td><p>匹配任意数目的任意字符</p></td>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">*</span></code></td>
+<td>匹配任意数目的任意字符</td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">?</span></code></p></td>
-<td><p>匹配任意单个字符</p></td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">?</span></code></td>
+<td>匹配任意单个字符</td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">[ABC]</span></code></p></td>
-<td><p>匹配中括号内的任意单个字符</p></td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">[ABC]</span></code></td>
+<td>匹配中括号内的任意单个字符</td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">[A-Z]</span></code></p></td>
-<td><p>匹配给定范围内的任意单个字符</p></td>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">[A-Z]</span></code></td>
+<td>匹配给定范围内的任意单个字符</td>
 </tr>
 </tbody>
 </table>
 <p>示例：</p>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">data_*.d</span></code> 会匹配所有以 <code class="docutils literal notranslate"><span class="pre">data_</span></code> 开头，并以 <code class="docutils literal notranslate"><span class="pre">.d</span></code> 结尾的文件</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">line_?.d</span></code> 会匹配所有以 <code class="docutils literal notranslate"><span class="pre">line_</span></code> 开头，后接任意一个字符，并以 <code class="docutils literal notranslate"><span class="pre">.d</span></code> 结尾的文件</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">section_1[0-9]0.part</span></code> 会匹配 <code class="docutils literal notranslate"><span class="pre">section_1x0.part</span></code> 中 <code class="docutils literal notranslate"><span class="pre">x</span></code> 为0到9的文件</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">section_[12].part</span></code> 会匹配 <code class="docutils literal notranslate"><span class="pre">section_1.part</span></code> 和 <code class="docutils literal notranslate"><span class="pre">section_2.par</span></code> 两个文件</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">data_*.d</span></code> 会匹配所有以 <code class="docutils literal notranslate"><span class="pre">data_</span></code> 开头，并以 <code class="docutils literal notranslate"><span class="pre">.d</span></code> 结尾的文件</li>
+<li><code class="docutils literal notranslate"><span class="pre">line_?.d</span></code> 会匹配所有以 <code class="docutils literal notranslate"><span class="pre">line_</span></code> 开头，后接任意一个字符，并以 <code class="docutils literal notranslate"><span class="pre">.d</span></code> 结尾的文件</li>
+<li><code class="docutils literal notranslate"><span class="pre">section_1[0-9]0.part</span></code> 会匹配 <code class="docutils literal notranslate"><span class="pre">section_1x0.part</span></code> 中 <code class="docutils literal notranslate"><span class="pre">x</span></code> 为0到9的文件</li>
+<li><code class="docutils literal notranslate"><span class="pre">section_[12].part</span></code> 会匹配 <code class="docutils literal notranslate"><span class="pre">section_1.part</span></code> 和 <code class="docutils literal notranslate"><span class="pre">section_2.par</span></code> 两个文件</li>
 </ol>
 </div>
 </div>

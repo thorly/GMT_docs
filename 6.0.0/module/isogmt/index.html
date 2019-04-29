@@ -327,14 +327,16 @@
             
   <div class="section" id="isogmt">
 <span id="index-0"></span><h1>13.73 isogmt<a class="headerlink" href="#isogmt" title="永久链接至标题">¶</a></h1>
-<dl class="field-list simple">
-<dt class="field-odd">官方文档</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/isogmt.html" title="(在 GMT v6.0.0)"><span>isogmt</span></a></p>
-</dd>
-<dt class="field-even">简介</dt>
-<dd class="field-even"><p>在“隔离模式”下运行GMT命令或脚本</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/isogmt.html" title="(在 GMT v6.0.0)"><span>isogmt</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">在“隔离模式”下运行GMT命令或脚本</td>
+</tr>
+</tbody>
+</table>
 <div class="section" id="id1">
 <h2>13.73.1 用法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>isogmt <span class="nb">command</span>
@@ -357,9 +359,9 @@ rm -rf <span class="nv">$GMT_TMPDIR</span>
 </div>
 <p>该脚本做了如下几件事情：</p>
 <ol class="arabic simple">
-<li><p>定义环境变量 <code class="docutils literal notranslate"><span class="pre">${GMT_TMPDIR}</span></code> 该环境变量指定了GMT的临时文件目录，接下来执行的GMT命令所生成的临时文件都会保存在该临时目录下</p></li>
-<li><p>检查 <cite>isogmt</cite> 后接的是一个GMT模块名还是一个脚本，并根据不同情况分别执行该模块/脚本</p></li>
-<li><p>待命令/脚本执行完毕后，再删除临时目录和环境变量</p></li>
+<li>定义环境变量 <code class="docutils literal notranslate"><span class="pre">${GMT_TMPDIR}</span></code> 该环境变量指定了GMT的临时文件目录，接下来执行的GMT命令所生成的临时文件都会保存在该临时目录下</li>
+<li>检查 <cite>isogmt</cite> 后接的是一个GMT模块名还是一个脚本，并根据不同情况分别执行该模块/脚本</li>
+<li>待命令/脚本执行完毕后，再删除临时目录和环境变量</li>
 </ol>
 </div>
 <div class="section" id="id3">
@@ -376,7 +378,7 @@ rm -rf <span class="nv">$GMT_TMPDIR</span>
 <div class="section" id="bugs">
 <h2>13.73.4 已知BUGS<a class="headerlink" href="#bugs" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
-<li><p>无法在隔离模式下执行脚本（v5.2.1）</p></li>
+<li>无法在隔离模式下执行脚本（v5.2.1）</li>
 </ol>
 </div>
 </div>

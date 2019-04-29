@@ -326,70 +326,75 @@
             
   <div class="section" id="grd2xyz">
 <span id="index-0"></span><h1>13.33 grd2xyz<a class="headerlink" href="#grd2xyz" title="永久链接至标题">¶</a></h1>
-<dl class="field-list simple">
-<dt class="field-odd">官方文档</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/grd2xyz.html" title="(在 GMT v6.0.0)"><span>grd2xyz</span></a></p>
-</dd>
-<dt class="field-even">简介</dt>
-<dd class="field-even"><p>将网格文件转换成表数据</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/grd2xyz.html" title="(在 GMT v6.0.0)"><span>grd2xyz</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">将网格文件转换成表数据</td>
+</tr>
+</tbody>
+</table>
 <p>该命令读取一个或多个2D网格文件，并将XYZ数据以ASCII或二进制格式写到标准输出中。ASCII输出的格式由参数 <code class="docutils literal notranslate"><span class="pre">FORMAT_FLOAT_OUT</span></code> 控制。</p>
 <div class="section" id="id1">
 <h2>13.33.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;grid&gt;</span></code></dt><dd><p>要转换的2D网格文件</p>
-</dd>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;grid&gt;</span></code></dt>
+<dd>要转换的2D网格文件</dd>
 </dl>
 </div>
 <div class="section" id="id2">
 <h2>13.33.2 可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl>
-<dt><code class="docutils literal notranslate"><span class="pre">-C[f|i]</span></code></dt><dd><p>输出的XY坐标值用对应的列、行号替代</p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">-C[f|i]</span></code></dt>
+<dd><p class="first">输出的XY坐标值用对应的列、行号替代</p>
 <p>默认输出的三列数据是：X坐标、Y坐标和Z值。使用该选项，则输出的三列数据为：列号、行号和Z值。其中，行号和列号从0开始算起。</p>
-<ul class="simple">
-<li><p>使用 <code class="docutils literal notranslate"><span class="pre">-Cf</span></code> 则行号和列号从1开始算起</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-Ci</span></code> 会输出两列数据：索引和Z值。索引相当于是将二维数组用一维数组表示</p></li>
+<ul class="last simple">
+<li>使用 <code class="docutils literal notranslate"><span class="pre">-Cf</span></code> 则行号和列号从1开始算起</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Ci</span></code> 会输出两列数据：索引和Z值。索引相当于是将二维数组用一维数组表示</li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-R&lt;west&gt;/&lt;east&gt;/&lt;south&gt;/&lt;north&gt;</span></code></dt><dd><p>指定要转换的网格文件的数据范围</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-R&lt;west&gt;/&lt;east&gt;/&lt;south&gt;/&lt;north&gt;</span></code></dt>
+<dd>指定要转换的网格文件的数据范围</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-W[a|&lt;weight&gt;]</span></code></dt>
+<dd><p class="first">默认输出XYZ三列数据，使用该选项则输出四列XYZW，其中W即 <code class="docutils literal notranslate"><span class="pre">&lt;weight&gt;</span></code></p>
+<p class="last">若使用 <code class="docutils literal notranslate"><span class="pre">-Wa</span></code> 则权重为每个节点所占据的面积。</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-W[a|&lt;weight&gt;]</span></code></dt><dd><p>默认输出XYZ三列数据，使用该选项则输出四列XYZW，其中W即 <code class="docutils literal notranslate"><span class="pre">&lt;weight&gt;</span></code></p>
-<p>若使用 <code class="docutils literal notranslate"><span class="pre">-Wa</span></code> 则权重为每个节点所占据的面积。</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Z[flags]</span></code></dt><dd><p>以 ASCII 或二进制形式输出表数据</p>
+<dt><code class="docutils literal notranslate"><span class="pre">-Z[flags]</span></code></dt>
+<dd><p class="first">以 ASCII 或二进制形式输出表数据</p>
 <p>使用该选项，则输出时只有Z值，没有XY信息。输出Z值的顺序由 <code class="docutils literal notranslate"><span class="pre">&lt;flags&gt;</span></code>
 决定。若是行优先， <code class="docutils literal notranslate"><span class="pre">&lt;flags&gt;</span></code> 的第一个字符可以取：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code> 表示第一行是y=ymax</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">B</span></code> 表示第一行是y=ynin</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">T</span></code> 表示第一行是y=ymax</li>
+<li><code class="docutils literal notranslate"><span class="pre">B</span></code> 表示第一行是y=ynin</li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;flags&gt;</span></code> 的第二个字符可以取：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">L</span></code> 表示每一行的第一个元素是x=xmin</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">R</span></code> 表示每一行的第一个元素是x=xmax</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">L</span></code> 表示每一行的第一个元素是x=xmin</li>
+<li><code class="docutils literal notranslate"><span class="pre">R</span></code> 表示每一行的第一个元素是x=xmax</li>
 </ul>
 <p>若是列优先，则 <code class="docutils literal notranslate"><span class="pre">L|R</span></code> 为第一个字符， <code class="docutils literal notranslate"><span class="pre">B|T</span></code> 为第二个字符。</p>
 <p>对于网格线配准的网格文件而言：</p>
 <ul class="simple">
-<li><p>若网格在X方向是周期的，输出数据时不需要包含x=xmax所在的列，则加上 <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
-<li><p>若网格在Y方向是周期的，输出数据时不需要包含y=ymax所在的行，则加上 <code class="docutils literal notranslate"><span class="pre">y</span></code></p></li>
+<li>若网格在X方向是周期的，输出数据时不需要包含x=xmax所在的列，则加上 <code class="docutils literal notranslate"><span class="pre">x</span></code></li>
+<li>若网格在Y方向是周期的，输出数据时不需要包含y=ymax所在的行，则加上 <code class="docutils literal notranslate"><span class="pre">y</span></code></li>
 </ul>
 <p>若数据需要做字节交换，则加上 <code class="docutils literal notranslate"><span class="pre">w</span></code> 。最后需要指定，数据以何种数据类型保存：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> ASCII表，每行输出一个Z值</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code> int8_t, signed 1-byte character</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">u</span></code> uint8_t, unsigned 1-byte character</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">h</span></code> int16_t, short 2-byte integer</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">H</span></code> uint16_t, unsigned short 2-byte integer</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code> int32_t, 4-byte integer</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">I</span></code> uint32_t, unsigned 4-byte integer</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">l</span></code> int64_t, long (8-byte) integer</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">L</span></code> uint64_t, unsigned long (8-byte) integer</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> 4-byte floating point single precision</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">d</span></code> 8-byte floating point double precision</p></li>
+<li><code class="docutils literal notranslate"><span class="pre">a</span></code> ASCII表，每行输出一个Z值</li>
+<li><code class="docutils literal notranslate"><span class="pre">c</span></code> int8_t, signed 1-byte character</li>
+<li><code class="docutils literal notranslate"><span class="pre">u</span></code> uint8_t, unsigned 1-byte character</li>
+<li><code class="docutils literal notranslate"><span class="pre">h</span></code> int16_t, short 2-byte integer</li>
+<li><code class="docutils literal notranslate"><span class="pre">H</span></code> uint16_t, unsigned short 2-byte integer</li>
+<li><code class="docutils literal notranslate"><span class="pre">i</span></code> int32_t, 4-byte integer</li>
+<li><code class="docutils literal notranslate"><span class="pre">I</span></code> uint32_t, unsigned 4-byte integer</li>
+<li><code class="docutils literal notranslate"><span class="pre">l</span></code> int64_t, long (8-byte) integer</li>
+<li><code class="docutils literal notranslate"><span class="pre">L</span></code> uint64_t, unsigned long (8-byte) integer</li>
+<li><code class="docutils literal notranslate"><span class="pre">f</span></code> 4-byte floating point single precision</li>
+<li><code class="docutils literal notranslate"><span class="pre">d</span></code> 8-byte floating point double precision</li>
 </ul>
-<p>默认值为 <code class="docutils literal notranslate"><span class="pre">-ZTLa</span></code> 。</p>
+<p class="last">默认值为 <code class="docutils literal notranslate"><span class="pre">-ZTLa</span></code> 。</p>
 </dd>
 </dl>
 </div>

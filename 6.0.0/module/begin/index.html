@@ -327,14 +327,16 @@
             
   <div class="section" id="begin">
 <span id="index-0"></span><h1>13.4 begin<a class="headerlink" href="#begin" title="永久链接至标题">¶</a></h1>
-<dl class="field-list simple">
-<dt class="field-odd">官方文档</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/begin.html" title="(在 GMT v6.0.0)"><span>begin</span></a></p>
-</dd>
-<dt class="field-even">简介</dt>
-<dd class="field-even"><p>初始化一个新的GMT现代模式会话</p>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/begin.html" title="(在 GMT v6.0.0)"><span>begin</span></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">初始化一个新的GMT现代模式会话</td>
+</tr>
+</tbody>
+</table>
 <p>在GMT现代模式下，一个GMT会话总是用 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">begin</span></code> 开始，用 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">end</span></code> 结束。</p>
 <p><code class="docutils literal notranslate"><span class="pre">begin</span></code> 模块告诉GMT要开始一个新的现代模式会话。如果你的脚本只绘制一张图，那么你可以直接指定要生成的图片的文件名和文件格式。如果你的脚本绘制多张图，则你需要使用 <a class="reference internal" href="../figure/"><span class="doc">figure</span></a> 来分别为每张图指定文件名和文件格式。现代会话模式下，每个会话均独立于其他进程，每个会话负责管理各自的配置参数、命令历史等，因而可以同时执行多个GMT会话而不会互相干扰。</p>
 <div class="section" id="id1">
@@ -345,27 +347,29 @@
 </div>
 <div class="section" id="id2">
 <h2>13.4.2 可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl>
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;prefix&gt;</span></code></dt><dd><p>文件名前缀，默认文件名前缀为 <code class="docutils literal notranslate"><span class="pre">gmtsession</span></code>。后缀由文件格式自动决定。</p>
-<p>如果一个GMT会话只用于进行计算而不绘图，或者需要绘制多张图，则不需要指定该参数。</p>
+<dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;prefix&gt;</span></code></dt>
+<dd><p class="first">文件名前缀，默认文件名前缀为 <code class="docutils literal notranslate"><span class="pre">gmtsession</span></code>。后缀由文件格式自动决定。</p>
+<p class="last">如果一个GMT会话只用于进行计算而不绘图，或者需要绘制多张图，则不需要指定该参数。</p>
 </dd>
 </dl>
-<dl id="fig-formats">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;formats&gt;</span></code></dt><dd><p>图片文件格式。多个格式之间可以用逗号分开。默认为 <code class="docutils literal notranslate"><span class="pre">pdf</span></code>。</p>
+<dl class="docutils" id="fig-formats">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;formats&gt;</span></code></dt>
+<dd><p class="first">图片文件格式。多个格式之间可以用逗号分开。默认为 <code class="docutils literal notranslate"><span class="pre">pdf</span></code>。</p>
 <p>GMT支持输出如下矢量图片格式：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pdf</span></code>：<a class="reference external" href="https://zh.wikipedia.org/wiki/可移植文档格式">Portable Document Format</a> [默认格式]</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ps</span></code>： <a class="reference external" href="https://zh.wikipedia.org/wiki/PostScript">Plain PostScript</a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">eps</span></code>：<a class="reference external" href="https://zh.wikipedia.org/wiki/EPS">Encapsulated PostScript</a></p></li>
+<li><code class="docutils literal notranslate"><span class="pre">pdf</span></code>：<a class="reference external" href="https://zh.wikipedia.org/wiki/可移植文档格式">Portable Document Format</a> [默认格式]</li>
+<li><code class="docutils literal notranslate"><span class="pre">ps</span></code>： <a class="reference external" href="https://zh.wikipedia.org/wiki/PostScript">Plain PostScript</a></li>
+<li><code class="docutils literal notranslate"><span class="pre">eps</span></code>：<a class="reference external" href="https://zh.wikipedia.org/wiki/EPS">Encapsulated PostScript</a></li>
 </ul>
 <p>GMT支持输出如下位图图片格式：</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">bmp</span></code>：<a class="reference external" href="https://zh.wikipedia.org/wiki/BMP">Microsoft Bit Map</a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">jpg</span></code>：<a class="reference external" href="https://zh.wikipedia.org/wiki/JPEG">Joint Photographic Experts Group Format</a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">png</span></code>：<a class="reference external" href="https://zh.wikipedia.org/wiki/PNG">Portable Network Graphics</a> (不透明)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PNG</span></code>：<a class="reference external" href="https://zh.wikipedia.org/wiki/PNG">Portable Network Graphics</a> (支持透明)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ppm</span></code>：<a class="reference external" href="https://zh.wikipedia.org/wiki/PBM格式">Portable Pixel Map</a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tif</span></code>：<a class="reference external" href="https://zh.wikipedia.org/wiki/TIFF">Tagged Image Format File</a></p></li>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">bmp</span></code>：<a class="reference external" href="https://zh.wikipedia.org/wiki/BMP">Microsoft Bit Map</a></li>
+<li><code class="docutils literal notranslate"><span class="pre">jpg</span></code>：<a class="reference external" href="https://zh.wikipedia.org/wiki/JPEG">Joint Photographic Experts Group Format</a></li>
+<li><code class="docutils literal notranslate"><span class="pre">png</span></code>：<a class="reference external" href="https://zh.wikipedia.org/wiki/PNG">Portable Network Graphics</a> (不透明)</li>
+<li><code class="docutils literal notranslate"><span class="pre">PNG</span></code>：<a class="reference external" href="https://zh.wikipedia.org/wiki/PNG">Portable Network Graphics</a> (支持透明)</li>
+<li><code class="docutils literal notranslate"><span class="pre">ppm</span></code>：<a class="reference external" href="https://zh.wikipedia.org/wiki/PBM格式">Portable Pixel Map</a></li>
+<li><code class="docutils literal notranslate"><span class="pre">tif</span></code>：<a class="reference external" href="https://zh.wikipedia.org/wiki/TIFF">Tagged Image Format File</a></li>
 </ul>
 </dd>
 </dl>
