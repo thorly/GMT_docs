@@ -52,24 +52,29 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
           
+    
+    <a href="../../" class="icon icon-home"> GMT中文手册
+    
 
-          
-            <a href="../../" class="icon icon-home"> GMT中文手册
-          
+    
+    </a>
 
-          
-          </a>
-
-          
+    
+    
+    
+    <div class="version">
+        <select onchange="location = this.options[this.selectedIndex].value;">
             
+            <option value="/6.0.0/" > v6.0.0 </option>
             
-              <div class="version">
-                5.4.5
-              </div>
+            <option value="/5.4.5/"  selected > v5.4.5 </option>
             
-          
+        </select>
+    </div>
+    
+    
 
-          
+    
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -78,7 +83,6 @@
   </form>
 </div>
 
-          
         </div>
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
@@ -212,15 +216,14 @@
 <p>首先需要使 ghostscript 支持中文，这可以通过
 <a class="reference external" href="https://github.com/texjporg/cjk-gs-support">cjk-gs-support</a> 项目提供的脚本
 <a class="reference external" href="https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjk-gs-integrate.pl">cjk-gs-integrate.pl</a> 实现。</p>
-<p>1.  下载脚本 <a class="reference external" href="https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjk-gs-integrate.pl">cjk-gs-integrate.pl</a>
-3.  <code class="docutils literal notranslate"><span class="pre">cjk-gs-integrate.pl</span></code> 脚本的执行依赖于命令 <code class="docutils literal notranslate"><span class="pre">kpsewhich</span></code>，该命令由 TeXLive 提供。</p>
-<blockquote>
-<div><p>执行 <code class="docutils literal notranslate"><span class="pre">kpsewhich</span> <span class="pre">--version</span></code> 检查 <code class="docutils literal notranslate"><span class="pre">kpsewhich</span></code> 这个命令是否存在。若不存在，则需要单独安装。使用homebrew安装安装:</p>
+<ol class="arabic">
+<li><p class="first">下载脚本 <a class="reference external" href="https://raw.githubusercontent.com/texjporg/cjk-gs-support/master/cjk-gs-integrate.pl">cjk-gs-integrate.pl</a></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">cjk-gs-integrate.pl</span></code> 脚本的执行依赖于命令 <code class="docutils literal notranslate"><span class="pre">kpsewhich</span></code>，该命令由 TeXLive 提供。执行 <code class="docutils literal notranslate"><span class="pre">kpsewhich</span> <span class="pre">--version</span></code> 检查 <code class="docutils literal notranslate"><span class="pre">kpsewhich</span></code> 这个命令是否存在。若不存在，则需要单独安装。使用homebrew安装安装:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew cask install basictex
 </pre></div>
 </div>
-</div></blockquote>
-<ol class="arabic" start="2">
+</li>
 <li><p class="first">执行脚本:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo perl cjk-gs-integrate.pl
 </pre></div>
@@ -350,7 +353,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年04月29日.
+        最后更新于 2019年04月30日.
       </span>
 
     </p>
