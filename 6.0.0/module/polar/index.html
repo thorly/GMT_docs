@@ -402,20 +402,19 @@
 <div class="section" id="id2">
 <h2>13.88.2 示例<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="nv">ps</span><span class="o">=</span>pspolar_ex1.ps
 
-gmt gmtset PROJ_LENGTH_UNIT inch MAP_TICK_LENGTH_PRIMARY <span class="m">0</span>.075i MAP_FRAME_WIDTH <span class="m">0</span>.1i <span class="se">\</span>
+gmt begin polar_ex1 png,pdf
+gmt <span class="nb">set</span> PROJ_LENGTH_UNIT inch MAP_TICK_LENGTH_PRIMARY <span class="m">0</span>.075i MAP_FRAME_WIDTH <span class="m">0</span>.1i <span class="se">\</span>
     MAP_ORIGIN_X <span class="m">2</span>.5c MAP_ORIGIN_Y <span class="m">1</span>.3i FONT_TITLE 18p
 
 <span class="c1"># this is Harvard CMT for tibethan earthquake (1997)</span>
-gmt psmeca -Fo -R85/89/25/50 -JX7i -P -M -Sm4i -N  -L -K -G150 -T0 <span class="s">&lt;&lt; EOF &gt; $ps</span>
+gmt meca -Fo -R85/89/25/50 -JX7i -M -Sm4i -N  -L -G150 -T0 <span class="s">&lt;&lt; EOF</span>
 <span class="s"># lon  lat  mrr   mtt  mff   mrt   mrf  mtf ex nlon nlat</span>
 <span class="s"> 87  35 -0.26 -0.71 0.97 -0.20 -0.61 2.60 27  0    0</span>
 <span class="s">EOF</span>
 
 <span class="c1"># and polarities observed</span>
-gmt pspolar -R -J -D87/35 -M4i -N -Sc0.3i -Qe -O <span class="se">\</span>
-    -B0 -B+t<span class="s2">&quot;Tibet earthquake (1997) - polarities distribution&quot;</span> <span class="s">&lt;&lt; EOF &gt;&gt; $ps</span>
+gmt polar -D87/35 -M4i -N -Sc0.3i -Qe -B0 -B+t<span class="s2">&quot;Tibet earthquake (1997) - polarities distribution&quot;</span> <span class="s">&lt;&lt; EOF</span>
 <span class="s">1 147.8 53 c</span>
 <span class="s">2 318.6 53 c</span>
 <span class="s">3 311.9 53 c</span>
@@ -484,11 +483,11 @@ gmt pspolar -R -J -D87/35 -M4i -N -Sc0.3i -Qe -O <span class="se">\</span>
 <span class="s">69 131.7 15 d</span>
 <span class="s">70 114.1 15 c</span>
 <span class="s">EOF</span>
-rm gmt.*
+gmt end
 </pre></div>
 </div>
 <div class="figure align-center" id="id3">
-<a class="reference internal image-reference" href="../../_images/pspolar_ex1.png"><img alt="../../_images/pspolar_ex1.png" src="../../_images/pspolar_ex1.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../../_images/polar-gmtplot-0.png"><img alt="../../_images/polar-gmtplot-0.png" src="../../_images/polar-gmtplot-0.png" style="width: 100%;" /></a>
 <p class="caption"><span class="caption-text">pspolar示例</span></p>
 </div>
 </div>
@@ -539,7 +538,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年05月05日.
+        最后更新于 2019年05月07日.
       </span>
 
     </p>
