@@ -336,30 +336,41 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://www.generic-mapping-tools.org/gmt/latest/project.html" title="(在 GMT v6.0.0)"><span>project</span></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">将数据点投影到线或大圆路径上，生成测线，坐标转换</td>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">生成测线、将数据点投影到测线上</td>
 </tr>
 </tbody>
 </table>
-<p>不管是要生成测线还是要将数据投影到测线上，首先要定义测线。</p>
-<p>测线可以用如下三种方式中的任意一种来定义：</p>
+<p>该模块具有三个主要功能：</p>
+<ol class="arabic simple">
+<li>生成测线</li>
+<li>指定测线和数据点，得到该点在测线坐标系下的坐标，即下文中提及的 <code class="docutils literal notranslate"><span class="pre">p</span></code> 和 <code class="docutils literal notranslate"><span class="pre">q</span></code></li>
+<li>指定测线和数据点，得到该点在测线上的投影点的坐标，即下文中提及的 <code class="docutils literal notranslate"><span class="pre">r</span></code> 和 <code class="docutils literal notranslate"><span class="pre">s</span></code></li>
+</ol>
+<p>以上三个功能均要求用户首先定义测线，测线可以用如下三种方式中的任意一种来定义：</p>
 <ol class="arabic simple">
 <li>用 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 选项定义测线的起点，并用 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 定义测线方位角</li>
 <li>用 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 选项定义测线的起点，并用 <code class="docutils literal notranslate"><span class="pre">-E</span></code> 选项定义测线的结束点</li>
 <li>用 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 选项定义测线的中心，并用 <code class="docutils literal notranslate"><span class="pre">-T</span></code> 选项定义rotation pole的位置</li>
 </ol>
-<p>在指定测线后，该命令可以将输入的 (x, y) 数据投影到该测线上，默认的输出格式为:</p>
+<p>在指定测线后，如果要生成测线，输出测线上的点的坐标，可以使用 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项。在指定测线后，用户再给出一个点(x,y) ，可以得到该点在测线的投影点以及该点在测线坐标系下的坐标:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>x  y   z   p   q   r   s
 </pre></div>
 </div>
 <p>其中：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y</span></code> 是数据在原坐标系下的位置，</li>
+<li><code class="docutils literal notranslate"><span class="pre">x</span></code> 和 <code class="docutils literal notranslate"><span class="pre">y</span></code> 是数据在原坐标系下的坐标</li>
 <li><code class="docutils literal notranslate"><span class="pre">z</span></code> 是输入数据中的其余所有列</li>
-<li><code class="docutils literal notranslate"><span class="pre">p</span></code> 和 <code class="docutils literal notranslate"><span class="pre">q</span></code> 是数据 (x,y) 在测线坐标系下的位置</li>
-<li><code class="docutils literal notranslate"><span class="pre">r</span></code> 和 <code class="docutils literal notranslate"><span class="pre">s</span></code> 是测线上与(x,y)最近的点在XY坐标系下的坐标</li>
+<li><code class="docutils literal notranslate"><span class="pre">p</span></code> 和 <code class="docutils literal notranslate"><span class="pre">q</span></code> 是数据点 (x,y) 在测线坐标系下的坐标</li>
+<li><code class="docutils literal notranslate"><span class="pre">r</span></code> 和 <code class="docutils literal notranslate"><span class="pre">s</span></code> 是数据点 (x,y) 在测线上的投影点在原坐标系下的坐标</li>
 </ul>
-<p>关于测线坐标系，在指定了测线后，会创建一个倾斜的坐标系。该倾斜坐标系的赤道线沿着测线，零经度线则穿过测线的中心，此时 <code class="docutils literal notranslate"><span class="pre">p</span></code> 是倾斜坐标系下的经度， <code class="docutils literal notranslate"><span class="pre">q</span></code>
-是倾斜坐标系下的纬度。</p>
+<p>可以使用 <code class="docutils literal notranslate"><span class="pre">-F</span></code> 选项设置要输出哪些变量。</p>
+<p>下面详细解释一下这些变量的物理意义。</p>
+<p><a class="reference download internal" download="" href="../../_downloads/7b3f836152ff51add2a20820d3802e52/project-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/project-gmtplot-0.png"><img alt="../../_images/project-gmtplot-0.png" src="../../_images/project-gmtplot-0.png" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-text">project 示意图</span></p>
+</div>
+<p>图中的红点就是给出的点(x,y)。绿色粗线为测线。测线上有 3 个点，蓝色和黄色两个点为测线的起点和终点。以测线起点为原点，以测线为P轴，在测线起点按右手螺旋法则做垂直于P轴的Q轴，构成测线坐标系。点(x,y)在测线坐标系的坐标即为(p,q)。紫色点为点(x,y)在测线上的投影点，坐标为(r,s)。</p>
 <div class="section" id="id1">
 <h2>13.89.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <dl class="docutils">
