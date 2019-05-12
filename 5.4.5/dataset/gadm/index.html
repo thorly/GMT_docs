@@ -121,11 +121,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#id4">11.5.4 使用示例</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id5">中国全图</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id6">1 级行政区划/省界</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">2 级行政区划/市界</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">11.5.5 2 级行政区划/市界</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">11.5.6 许可协议</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">11.5.7 备注</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">11.5.5 许可协议</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">11.5.6 备注</a></li>
 </ul>
 </li>
 </ul>
@@ -337,9 +337,8 @@ gmt psxy -J -R -T -O &gt;&gt; <span class="nv">$PS</span>
 </div>
 <p>此处绘制了全国所有省的省界数据。如果只想要绘制某个省的省界数据，可以用文本编辑器打开CHN的一级数据文件，在注释行中有清晰地标记出每段数据是哪个省的边界，因而可以很方便地提取出来。</p>
 </div>
-</div>
 <div class="section" id="id7">
-<h2>11.5.5 2 级行政区划/市界<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<h3>2 级行政区划/市界<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <p>2 级数据中包含了全国所有的市级边界。此处以安徽省为例，用文本编辑器打开 <code class="docutils literal notranslate"><span class="pre">gadm36_CHN_2.gmt</span></code>，从中提取安徽相关的数据保存到文件 <code class="docutils literal notranslate"><span class="pre">gadm36_CHN_Anhui_2.gmt</span></code> 中，绘图效果如下：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psxy -JM10c -R114/120/29/35 gadm36_CHN_Anhui_2.gmt -P &gt; gadm_level2.ps
 </pre></div>
@@ -349,12 +348,13 @@ gmt psxy -J -R -T -O &gt;&gt; <span class="nv">$PS</span>
 <a class="reference internal image-reference" href="../../_images/gadm_level2.png"><img alt="../../_images/gadm_level2.png" src="../../_images/gadm_level2.png" style="width: 40%;" /></a>
 </div>
 </div>
+</div>
 <div class="section" id="id8">
-<h2>11.5.6 许可协议<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<h2>11.5.5 许可协议<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
 <p>GADM的<a class="reference external" href="https://gadm.org/license.html">许可协议</a> 表明该数据可以免费用于学术和非商业用途，可以利用该数据绘制学术出版物的地图，但禁止重新分发或商业用途。</p>
 </div>
 <div class="section" id="id10">
-<h2>11.5.7 备注<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<h2>11.5.6 备注<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
 <p>GADM提供的中国国界数据不一定符合中国的领土主张，省界、市界、区界等数据也不一定能够是最新的版本，在正式刊物中发表使用此类数据的图件时需要谨慎。</p>
 </div>
 </div>
@@ -404,7 +404,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年05月10日.
+        最后更新于 2019年05月12日.
       </span>
 
     </p>
