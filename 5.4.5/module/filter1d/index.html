@@ -340,7 +340,7 @@ the initial sign test; in that case the filter will return 0.0.</p>
 </div>
 <div class="section" id="id3">
 <h2>13.1.3 示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>数据 <code class="docutils literal notranslate"><span class="pre">cruise.gmtd</span></code> 中包含了撕裂数据，分别是重力、磁场、地形和距离（单位为m），现对其做10 km Gaussian滤波，去除outliers，并在0到100 km内每2 km输出一个滤波后的数据点:</p>
+<p>数据 <code class="docutils literal notranslate"><span class="pre">cruise.gmtd</span></code> 中包含了四列数据，分别是重力、磁场、地形和距离（单位为m），现对其做10 km Gaussian滤波，去除outliers，并在0到100 km内每2 km输出一个滤波后的数据点:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt filter1d cruise.gmtd -T0/1.0e5/2000 -FG10000 -N3 -V &gt; filtered_cruise.gmtd
 </pre></div>
 </div>
@@ -395,7 +395,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年05月13日.
+        最后更新于 2019年05月15日.
       </span>
 
     </p>
