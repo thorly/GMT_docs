@@ -98,7 +98,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../">2 安装</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../linux/">2.1 Linux 下安装GMT</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.2 Windows 下安装 GMT</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.2 Windows 下安装 GMT</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#windows">2.2.1 使用Windows下的安装包进行安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#windows-subsystem-for-linux-wsl-gmt">2.2.2 在 Windows Subsystem for Linux (WSL) 下安装 GMT</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../macOS/">2.3 macOS 下安装 GMT</a></li>
 </ul>
 </li>
@@ -204,6 +208,8 @@
             
   <div class="section" id="windows-gmt">
 <h1>2.2 Windows 下安装 GMT<a class="headerlink" href="#windows-gmt" title="永久链接至标题">¶</a></h1>
+<div class="section" id="windows">
+<h2>2.2.1 使用Windows下的安装包进行安装<a class="headerlink" href="#windows" title="永久链接至标题">¶</a></h2>
 <p>GMT 为 Windows 用户提供了安装包，可以直接安装使用。Windows 下需要安装 GMT、ghostscript，查看PS文件需要使用 GSview。日常数据处理需要Linux下的小工具。</p>
 <div class="admonition warning">
 <p class="first admonition-title">警告</p>
@@ -275,6 +281,20 @@ gmt: Auto-downloading of earth_relief_##m<span class="p">|</span>s.grd files has
 <p>GMT6可以和GMT4共存，但不能与GMT5共存。若想要同时使用 GMT4 和 GMT6，则需要在安装完
 GMT4 和 GMT6 之后到 GMT6 的 bin目录下，将该目录下的所有文件按照大小排序，所有大小为 6 KB 的都是 “符号链接”，直接选中删除就好。</p>
 </div>
+<div class="section" id="windows-subsystem-for-linux-wsl-gmt">
+<h2>2.2.2 在 Windows Subsystem for Linux (WSL) 下安装 GMT<a class="headerlink" href="#windows-subsystem-for-linux-wsl-gmt" title="永久链接至标题">¶</a></h2>
+<p>Windows 下使用 GMT 有诸多不便，主要在于Windows下的bat脚本功能太局限。基于同样的理由，本手册和 GMT 中文社区均不提供 Windows 下的批处理示例脚本。</p>
+<p>Windows 10 用户可以考虑使用 Windows Subsystem for Linux (WSL)。WSL 是微软与 Canonical 公司合作开发的，为在 Windows 10 上能够原生运行 Linux 二进制可执行文件而制作的兼容层，使得Windows 10 用户可以直接在 Windows 下使用 Linux 系统的所有工具及功能。</p>
+<p>WSL 要求 Windows 10 且版本号为 Windows build 16215 或以上。如果不满足，则需要升级。</p>
+<p>在确认自己的Windows 10支持WSL后，首先要开启WSL功能。在左下角的搜索里搜索 powershell，右键点击以管理员权限打开，执行以下命令:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+</pre></div>
+</div>
+<p>然后，重启电脑。</p>
+<p>访问“Windows 软件商店”，并下载安装 Ubuntu 或 Debian 等任一 Linux 发行版。下载及安装过程完全自动。安装完成后，在开始菜单中即可看到 Ubuntu 或 Debian，点击即可启动 Linux。</p>
+<p>启动Linux后，则可完全按照 <a class="reference internal" href="../linux/"><span class="doc">Linux下安装GMT</span></a> 的说明在WSL中安装GMT。</p>
+</div>
+</div>
 
 
            </div>
@@ -321,7 +341,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年05月17日.
+        最后更新于 2019年05月20日.
       </span>
 
     </p>
