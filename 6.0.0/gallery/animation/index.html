@@ -263,8 +263,8 @@ cat <span class="s">&lt;&lt; EOF &gt; main.sh</span>
 <span class="s">    gmt convert sin_curve.txt -Z0:\${last} | gmt plot -W1p,blue -R0/360/-1.2/1.6 -JX3.5i/1.65i -X0.35i -Y0.25i</span>
 <span class="s">    gmt convert sin_point.txt -Z0:\${MOVIE_FRAME} | gmt plot -Sc0.1i -Gdarkred</span>
 <span class="s">#   Plot bright red dot at current angle and annotate</span>
-<span class="s">    gmt plot -Sc0.1i -Gred &lt;&lt;&lt; &quot;\${MOVIE_COL1} \${MOVIE_COL2}&quot;</span>
-<span class="s">    printf &quot;0 1.6 a = %3.3d&quot; \${MOVIE_COL1} | gmt text -F+f14p,Helvetica-Bold+jTL -N -Dj0.1i/0.05i</span>
+<span class="s">    gmt plot -Sc0.1i -Gred &lt;&lt;&lt; &quot;\${MOVIE_COL0} \${MOVIE_COL1}&quot;</span>
+<span class="s">    printf &quot;0 1.6 a = %3.3d&quot; \${MOVIE_COL0} | gmt text -F+f14p,Helvetica-Bold+jTL -N -Dj0.1i/0.05i</span>
 <span class="s">gmt end</span>
 <span class="s">EOF</span>
 
@@ -297,9 +297,9 @@ cat <span class="s">&lt;&lt; EOF &gt; main.sh</span>
 <span class="s">	# Let HSV minimum value go to zero</span>
 <span class="s">	gmt set COLOR_HSV_MIN_V 0</span>
 <span class="s">	# Fake simulation of sun illumination from east combined with relief slopes</span>
-<span class="s">	gmt grdmath intens.nc X \${MOVIE_COL2} SUB DUP -180 LE 360 MUL ADD 90 DIV ERF ADD 0.25 SUB = s.nc</span>
+<span class="s">	gmt grdmath intens.nc X \${MOVIE_COL1} SUB DUP -180 LE 360 MUL ADD 90 DIV ERF ADD 0.25 SUB = s.nc</span>
 <span class="s">	# Plot age grid first using age cpt</span>
-<span class="s">	gmt grdimage @age.3.20.nc -Is.nc -C@crustal_age.cpt -JG\${MOVIE_COL1}/0/6i -X0 -Y0</span>
+<span class="s">	gmt grdimage @age.3.20.nc -Is.nc -C@crustal_age.cpt -JG\${MOVIE_COL0}/0/6i -X0 -Y0</span>
 <span class="s">	# Clip to expose land areas only</span>
 <span class="s">	gmt coast -Gc</span>
 <span class="s">	# Overlay relief over land only using dem cpt</span>
@@ -367,7 +367,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年05月22日.
+        最后更新于 2019年05月23日.
       </span>
 
     </p>
