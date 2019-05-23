@@ -103,6 +103,13 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.2 Windows 下安装 GMT</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#windows">2.2.1 使用Windows下的安装包进行安装</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#windows-subsystem-for-linux-wsl-gmt">2.2.2 在 Windows Subsystem for Linux (WSL) 下安装 GMT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gmt">2.2.3 编译GMT源码</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">准备工作</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vcpkg">安装vcpkg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">安装依赖库</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">编译GMT</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../macOS/">2.3 macOS 下安装 GMT</a></li>
@@ -295,6 +302,79 @@ gmt: Auto-downloading of earth_relief_##m<span class="p">|</span>s.grd files has
 <p>然后，重启电脑。</p>
 <p>访问“Windows 软件商店”，并下载安装 Ubuntu 或 Debian 等任一 Linux 发行版。下载及安装过程完全自动。安装完成后，在开始菜单中即可看到 Ubuntu 或 Debian，点击即可启动 Linux。</p>
 <p>启动Linux后，则可完全按照 <a class="reference internal" href="../linux/"><span class="doc">Linux下安装GMT</span></a> 的说明在WSL中安装GMT。</p>
+</div>
+<div class="section" id="gmt">
+<h2>2.2.3 编译GMT源码<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
+<p>高级用户可以自行在Windows下编译GMT源码。</p>
+<div class="section" id="id1">
+<h3>准备工作<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h3>
+<p>在Windows下编译GMT源码，需要满足如下条件：</p>
+<ol class="arabic simple">
+<li>Windows版本为Windows 7, Windows 8.1 或 Windows 10</li>
+<li>已安装 <a class="reference external" href="https://visualstudio.microsoft.com/">Visual Studio 2015 Update 3</a> 或更新版本。需要注意，安装 Visual Studio 时要选中“Desktop development with C++”，即安装
+C/C++开发工具</li>
+<li>已安装 <a class="reference external" href="https://git-scm.com/">git</a></li>
+<li>已安装 <a class="reference external" href="https://cmake.org/">cmake</a></li>
+<li>安装ghostscript</li>
+<li>安装gsview</li>
+</ol>
+</div>
+<div class="section" id="vcpkg">
+<h3>安装vcpkg<a class="headerlink" href="#vcpkg" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="https://github.com/microsoft/vcpkg">vcpkg</a> 是微软开发的跨平台C/C++开发库管理工具。这里安装vcpkg并通过vcpkg编译安装GMT所需的依赖库。</p>
+<p>打开终端，执行如下命令以安装vcpkg。这里假定安装到 <code class="docutils literal notranslate"><span class="pre">C:\vcpkg</span></code> 目录下:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> C:<span class="se">\</span>
+git clone https://github.com/microsoft/vcpkg.git
+<span class="nb">cd</span> C:<span class="se">\v</span>cpkg
+.<span class="se">\b</span>ootstrap-vcpkg.bat
+</pre></div>
+</div>
+<p>稍等片刻即安装完成。</p>
+</div>
+<div class="section" id="id3">
+<h3>安装依赖库<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>vcpkg在编译库文件时，默认会编译两次，分别生成Release和Debug两个版本的库文件。一般用户只需要Release版本的库文件即可，因而可以设置vcpkg只编译Release版本，以节省将近一半的编译时间。具体做法为，在 <code class="docutils literal notranslate"><span class="pre">C:\vcpkg\triplets\</span></code> 目录下找到文件
+<code class="docutils literal notranslate"><span class="pre">x64-windows.cmake</span></code> 和 <code class="docutils literal notranslate"><span class="pre">x86-windows.cmake</span></code>，在两个文件的末尾加上
+<code class="docutils literal notranslate"><span class="pre">set(VCPKG_BUILD_TYPE</span> <span class="pre">release)</span></code> 即可。</p>
+<p>设置完成后执行如下命令以安装依赖库:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> C:<span class="se">\v</span>cpkg
+vcpkg install netcdf-c gdal pcre clapack openblas
+vcpkg integrate install
+</pre></div>
+</div>
+<p>vcpkg会编译安装一堆库文件，这一过程较为耗时，大概需要30分钟到1小时。</p>
+<p>安装的库文件位于 <code class="docutils literal notranslate"><span class="pre">C:\vcpkg\installed\x64-windows</span></code> 目录下，需要手动修改环境变量将 <code class="docutils literal notranslate"><span class="pre">C:\vcpkg\installed\x64-windows\bin</span></code> 加到 PATH 中。</p>
+</div>
+<div class="section" id="id4">
+<h3>编译GMT<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>下载GMT源码包或者从GitHub获取开发版源码:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/GenericMappingTools/gmt.git
+</pre></div>
+</div>
+<p>下载GSHHG数据和DCW数据，并解压。</p>
+<p>进入 gmt 源码目录，并在 <code class="docutils literal notranslate"><span class="pre">cmake</span></code> 目录下创建文件 <code class="docutils literal notranslate"><span class="pre">ConfigUser.cmake</span></code>,其内容为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="o">(</span>CMAKE_INSTALL_PREFIX <span class="s2">&quot;C:/programs/gmt&quot;</span><span class="o">)</span>
+<span class="nb">set</span> <span class="o">(</span>GSHHG_ROOT <span class="s2">&quot;D:/datas/gshhg-gmt-2.2.7&quot;</span><span class="o">)</span>
+<span class="nb">set</span> <span class="o">(</span>DCW_ROOT <span class="s2">&quot;D:/datas/dcw-gmt-1.1.4&quot;</span><span class="o">)</span>
+<span class="nb">set</span> <span class="o">(</span>COPY_GSHHG <span class="nb">true</span><span class="o">)</span>
+<span class="nb">set</span> <span class="o">(</span>COPY_DCW <span class="nb">true</span><span class="o">)</span>
+<span class="nb">set</span> <span class="o">(</span>GMT_INSTALL_MODULE_LINKS FALSE<span class="o">)</span>
+<span class="nb">set</span> <span class="o">(</span>CMAKE_C_FLAGS <span class="s2">&quot;/D_CRT_SECURE_NO_WARNINGS /D_CRT_SECURE_NO_DEPRECATE </span><span class="si">${</span><span class="nv">CMAKE_C_FLAGS</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">)</span>
+<span class="nb">set</span> <span class="o">(</span>CMAKE_C_FLAGS <span class="s2">&quot;/D_CRT_NONSTDC_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE </span><span class="si">${</span><span class="nv">CMAKE_C_FLAGS</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
+<p>其中 <code class="docutils literal notranslate"><span class="pre">CMAKE_INSTALL_PREFIX</span></code> 是GMT安装路径，<code class="docutils literal notranslate"><span class="pre">GSHHG_ROOT</span></code> 和 <code class="docutils literal notranslate"><span class="pre">DCW_ROOT</span></code> 是之前解压的GSHHG和DCW数据文件夹的路径。</p>
+<p>修改为配置文件后。从程序中找到“Developer Command Prompt for VS 2017”并打开（注意，不要使用CMD），并执行如下命令:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> gmt
+mkdir build
+<span class="nb">cd</span> build
+cmake .. -DCMAKE_TOOLCHAIN_FILE<span class="o">=</span>C:<span class="se">\v</span>cpkg<span class="se">\s</span>cripts<span class="se">\b</span>uildsystems<span class="se">\v</span>cpkg.cmake
+cmake --build . --config Release
+cmake --build . --config Release --target install
+</pre></div>
+</div>
+<p>安装完成后，需要将GMT安装目录的bin目录（即 <code class="docutils literal notranslate"><span class="pre">C:\programs\gmt\bin</span></code> ）手动添加到环境变量PATH中。</p>
+</div>
 </div>
 </div>
 
