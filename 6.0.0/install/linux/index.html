@@ -213,11 +213,21 @@
             
   <div class="section" id="linux-gmt">
 <h1>2.1 Linux 下安装GMT<a class="headerlink" href="#linux-gmt" title="永久链接至标题">¶</a></h1>
-<div class="admonition note">
-<p class="first admonition-title">注解</p>
-<p class="last">大多数Linux发行版都提供了预编译的GMT二进制包，可以通过发行版的软件包安装工具，如 <code class="docutils literal notranslate"><span class="pre">apt-get</span></code> 或 <code class="docutils literal notranslate"><span class="pre">yum</span></code> 等进行直接安装GMT。但大多数发行版提供的
-GMT版本都较老，故本文仅介绍如何从源码编译GMT。</p>
+<p>大多数Linux发行版都提供了预编译的GMT二进制包，可以通过发行版的软件包安装工具进行安装GMT。</p>
+<p>Ubuntu/Debian用户:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install gmt gmt-dcw gmt-gshhg
+</pre></div>
 </div>
+<p>RHEL/CentOS用户:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo yum install epel-release
+sudo yum install GMT gshhg-gmt-nc4-all dcw-gmt
+</pre></div>
+</div>
+<p>Fedora用户:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo dnf install GMT gshhg-gmt-nc4-all dcw-gmt
+</pre></div>
+</div>
+<p>大多数发行版提供的GMT版本都较老，故不推荐直接安装发行版提供的版本，而建议直接从源码编译GMT。</p>
 <div class="section" id="id1">
 <h2>2.1.1 解决依赖关系<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>GMT 在运行时依赖 fftw（&gt;=3.3）、netCDF（&gt;4.0且支持netCDF-4/HDF5）、ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（&gt;=2.8.5）。因而，需要先安装GMT所依赖的软件包。</p>
@@ -378,7 +388,7 @@ $ cmake ..
 <div class="admonition warning">
 <p class="first admonition-title">警告</p>
 <p>Anaconda用户请注意！由于Anaconda中也安装了FFTW、GDAL、netCDF等库文件，GMT在配置过程中通常会找到Anaconda提供的库文件，进而导致配置、编译或执行过程中出错。</p>
-<p class="last">解决办法是，在 <cite>~/.bashrc</cite> 中将 Anaconda 相关的环境变量注释掉，以保证GMT
+<p class="last">解决办法是，在 <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> 中将 Anaconda 相关的环境变量注释掉，以保证GMT
 在配置和编译过程中找到的不是 Anaconda 提供的库文件。待GMT安装完成后，再将 Anaconda 相关环境变量改回即可。</p>
 </div>
 <p>检查完毕后，开始编译和安装:</p>
