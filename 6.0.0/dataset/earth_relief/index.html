@@ -301,6 +301,7 @@
 </tbody>
 </table>
 <p>这些数据保存在GMT的 <a class="reference external" href="ftp://ftp.soest.hawaii.edu/gmt/data/">FTP服务器</a> 上（<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/data/">国内镜像</a>）。当用户第一次使用某个精度的地形起伏数据时，GMT会自动从服务器上下载该数据文件，并保存到GMT的缓存文件夹下（由 <a class="reference internal" href="../../conf/dir/#dir-cache"><span class="std std-ref">DIR_CACHE</span></a> 控制，默认为 <code class="docutils literal notranslate"><span class="pre">~/.gmt/server</span></code> 目录），然后再读取该文件。以后再使用该数据时，GMT会自动从缓存文件夹下读取该数据文件，而无需再次从服务器下载。</p>
+<p>建议用户自行手动下载所有的地形起伏数据并将数据放在 <code class="docutils literal notranslate"><span class="pre">~/.gmt/server</span></code> 下，以免绘图时第一次使用地形数据下载耗时太久，耽误绘图。</p>
 </div>
 <div class="section" id="id3">
 <h2>11.4.2 使用方法<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
