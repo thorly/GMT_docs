@@ -17,7 +17,7 @@
   
   
   
-    <link rel="canonical" href="https://docs.gmt-china.org/latest/gallery/histogram.html"/>
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/gallery/histogram/index.html"/>
   
 
   
@@ -122,7 +122,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../beachball/">14.5 绘制震源球</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../legend/">14.6 绘制图例</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../earth-relief/">14.7 绘制地形起伏图</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">14.8 绘制直方图</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">14.8 绘制直方图</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">14.8.1 垂直直方图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">14.8.2 水平直方图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">14.8.3 累积直方图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">14.8.4 百分比直方图</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../inset-map/">14.9 绘制图中图</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sac-waveforms/">14.10 绘制SAC格式地震波形图</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ternary-diagram/">14.11 绘制三角图解</a></li>
@@ -206,7 +212,7 @@
         
             
             
-              <a href="https://github.com/gmt-china/GMT_Docs/blob/6.0.0/source/gallery/histogram.rst" class="fa fa-github"> 编辑本页</a>
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/6.0.0/source/gallery/histogram/index.rst" class="fa fa-github"> 编辑本页</a>
             
           
         
@@ -222,6 +228,67 @@
             
   <div class="section" id="id1">
 <h1>14.8 绘制直方图<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p><a class="reference internal" href="../../module/histogram/"><span class="doc">histogram</span></a> 模块可以用于统计并绘制直方图。</p>
+<p>该模块可以绘制不同类型的直方图，具体选项为：</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">-Z</span></code> <code class="docutils literal notranslate"><span class="pre">-Z0</span></code> 为默认情况下的缺省值，绘制统计直方图，<code class="docutils literal notranslate"><span class="pre">-Z1</span></code> 绘制百分比直方图</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Q</span></code> 绘制累积直方图</li>
+<li><code class="docutils literal notranslate"><span class="pre">-A</span></code> 绘制水平直方图，默认情况绘制垂直直方图</li>
+</ol>
+<p>以下示例使用的数据为  <a class="reference download internal" download="" href="../../_downloads/0ccc5de41f1278ef0014c92708d6ebc8/eq.dat"><code class="xref download docutils literal notranslate"><span class="pre">eq.dat</span></code></a>。数据格式为三列，分别为：地震纬度、地震经度、震源深度。</p>
+<div class="section" id="id2">
+<h2>14.8.1 垂直直方图<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt histogram eq.dat -R0/35/0/600 -JX8c -Bxa5+l<span class="s2">&quot;Depth/km&quot;</span> -Bya100+l<span class="s2">&quot;Counts&quot;</span> -BWSne -D+f10p,4+o8p -W5+b -L1p -i2 -png histVert
+</pre></div>
+</div>
+<div class="figure align-center" id="id6">
+<img alt="../../_images/index-gmtplot-03.png" src="../../_images/index-gmtplot-03.png" />
+<p class="caption"><span class="caption-text">垂直直方图</span></p>
+</div>
+<p>此示例中：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">-R0/35/0/600</span></code> 设置了X轴范围是0到35，Y轴范围为0到600</li>
+<li><code class="docutils literal notranslate"><span class="pre">-JX8c</span></code> 指定了整张图为线性投影，图的宽度（X轴长度）和图的高度（Y轴长度）均为8厘米</li>
+<li><code class="docutils literal notranslate"><span class="pre">-Bxa5+l&quot;Depth/km&quot;</span> <span class="pre">-Bya100+l&quot;Counts&quot;</span></code> 分别设置了X、Y轴标注、刻度的间隔、标签</li>
+<li><code class="docutils literal notranslate"><span class="pre">-D+f10p,Times-Roman+o8p</span></code> 为每个bar设置标注，标注字号为10p、字体为4号Times-Roman，标注与bar之间距离为8p</li>
+<li><code class="docutils literal notranslate"><span class="pre">-W5+b</span></code> 设置直方图bin宽度为5，<code class="docutils literal notranslate"><span class="pre">+b</span></code> 表示将落在范围外的数据包含在第一个或最后一个bin中</li>
+<li><code class="docutils literal notranslate"><span class="pre">-L1p</span></code> 设置bar边框为1p</li>
+<li><code class="docutils literal notranslate"><span class="pre">-i2</span></code> 从输入文件eq.dat中读取第3列，<code class="docutils literal notranslate"><span class="pre">-i0</span></code> 表示输入文件第1列</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>14.8.2 水平直方图<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">-A</span></code> 用于控制绘制水平直方图，上一个例子中默认绘制垂直直方图。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt histogram eq.dat -R0/35/0/600 -JX8c -Bxa5+l<span class="s2">&quot;Depth/km&quot;</span> -Bya100+l<span class="s2">&quot;Counts&quot;</span> -BWSne -D+f10p,4+o8p -A -W5+b -L1p -i2 -png histHori
+</pre></div>
+</div>
+<div class="figure align-center" id="id7">
+<img alt="../../_images/index-gmtplot-12.png" src="../../_images/index-gmtplot-12.png" />
+<p class="caption"><span class="caption-text">水平直方图</span></p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>14.8.3 累积直方图<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">-Q</span></code> 表示绘制累积直方图。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt histogram eq.dat -R0/35/0/1000 -JX8c -Bxa5+l<span class="s2">&quot;Depth/km&quot;</span> -Bya200+l<span class="s2">&quot;Counts&quot;</span> -BWSne -W5+b -L1p -i2 -Q -png histCumu
+</pre></div>
+</div>
+<div class="figure align-center" id="id8">
+<img alt="../../_images/index-gmtplot-22.png" src="../../_images/index-gmtplot-22.png" />
+<p class="caption"><span class="caption-text">累积直方图</span></p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>14.8.4 百分比直方图<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">-Z1</span></code> 设置纵轴为百分比，<code class="docutils literal notranslate"><span class="pre">-N</span></code> 绘制等效的正态分布曲线。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt histogram eq.dat -R0/35/0/100 -JX8c/8c -Bxa5+l<span class="s2">&quot;Depth/km&quot;</span> -Bya20+l<span class="s2">&quot;Frequency&quot;</span> -BWSne -W5+b -L1p -i2 -N -Z1 -png histFreq
+</pre></div>
+</div>
+<div class="figure align-center" id="id9">
+<img alt="../../_images/index-gmtplot-3.png" src="../../_images/index-gmtplot-3.png" />
+<p class="caption"><span class="caption-text">百分比直方图</span></p>
+</div>
+</div>
 </div>
 
 
@@ -269,7 +336,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年05月31日.
+        最后更新于 2019年06月07日.
       </span>
 
     </p>

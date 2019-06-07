@@ -229,10 +229,10 @@
 <span class="nv">SIZE</span><span class="o">=</span>w15c/0.25c
 
 gmt begin cpt_4 pdf,png
-gmt makecpt -Chaxby -T-10/10/1 &gt; Icpt.cpt
-gmt makecpt -Chaxby -T-10/10/1 -Iz &gt; Icpt_z.cpt
-gmt makecpt -Chaxby -T-10/10/1 -Ic &gt; Icpt_c.cpt
-gmt makecpt -Chaxby -T-10/10/1 -Icz &gt; Icpt_cz.cpt
+gmt makecpt -Chaxby -T-10/10/1 -H &gt; Icpt.cpt
+gmt makecpt -Chaxby -T-10/10/1 -H -Iz &gt; Icpt_z.cpt
+gmt makecpt -Chaxby -T-10/10/1 -H -Ic &gt; Icpt_c.cpt
+gmt makecpt -Chaxby -T-10/10/1 -H -Icz &gt; Icpt_cz.cpt
 
 gmt plot -R1/10/1/10 -JX20c -T
 
@@ -302,12 +302,9 @@ CPT文件。该选项本质上是在CPT文件中加上一个特殊的注释行:<
 <p>下图展示了动态的内置CPT如何拉伸适用于用户自定义数据，绘制命令如下:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 gmt begin cpt_3 pdf,png
-gmt makecpt -Cglobe -T-8000/3000 &gt; t.cpt
-
-gmt colorbar -Ct.cpt -Baf -Dx0/0+w4.5i/0.1i+h
+gmt makecpt -Cglobe -T-8000/3000
+gmt colorbar -C -Baf -Dx0/0+w4.5i/0.1i+h
 gmt colorbar -Cglobe -Baf -Dx0/0+w4.5i/0.1i+h -Y0.5i
-
-rm t.cpt
 gmt end
 </pre></div>
 </div>
@@ -364,7 +361,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年05月31日.
+        最后更新于 2019年06月07日.
       </span>
 
     </p>
