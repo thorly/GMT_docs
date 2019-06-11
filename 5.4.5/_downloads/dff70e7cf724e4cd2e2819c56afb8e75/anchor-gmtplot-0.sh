@@ -20,14 +20,14 @@ gmt pstext -J -R -F+f15p+j -Dj0.5c/0.5c -N -K -O >> $PS << EOF
 5  6 BC @%1%C@%%enter
 10 6 BC @%1%R@%%ight
 EOF
-gmt pstext -J -R -F+f15p,1,red+c+j -Dj0.5c/0.5c+v2p -O >> $PS << EOF
-TL TL TL
-TC TC TC
-TR TR TR
-ML ML ML
-MC BL MC
-MR MR MR
-BL BL BL
-BC BC BC
-BR BR BR
+gmt pstext -J -R -F+f15p,1,red+j -Dj0.5c/0.5c+v2p -O >> $PS << EOF
+0 6 TL TL
+5 6 TC TC
+10 6 TR TR
+0 3 ML ML
+5 3 BL MC
+10 3 MR MR
+0 0 BL BL
+5 0 BC BC
+10 0 BR BR
 EOF
