@@ -309,9 +309,9 @@ gmt end
 <span class="nv">J</span><span class="o">=</span>X16c/9c
 
 gmt begin lineColor png,pdf
-gmt makecpt -Crainbow -T-0.5/2.5/1 &gt; lineC.cpt
+gmt makecpt -Crainbow -T-0.5/2.5/1
 gmt basemap -JX16c/9c -R0/9/0/4 -B1
-gmt plot -ClineC.cpt -W2p <span class="s">&lt;&lt; EOF</span>
+gmt plot -C -W2p <span class="s">&lt;&lt; EOF</span>
 <span class="s">&gt; -Z0</span>
 <span class="s">1 1</span>
 <span class="s">2 3</span>
@@ -343,7 +343,7 @@ gmt end
 <p>此示例中：</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">makecpt</span></code> 生成CPT文件，<code class="docutils literal notranslate"><span class="pre">-T-0.5/2.5/1</span></code> 指定了范围为 <code class="docutils literal notranslate"><span class="pre">-0.5/2.5</span></code> 是为了与 <code class="docutils literal notranslate"><span class="pre">&lt;val&gt;</span></code> 相对应</li>
-<li><code class="docutils literal notranslate"><span class="pre">-ClineC.cpt</span></code> 表示线段颜色分别由生成的 <code class="docutils literal notranslate"><span class="pre">lineC.cpt</span></code> 文件指定</li>
+<li><code class="docutils literal notranslate"><span class="pre">-C</span></code> 表示线段颜色分别由生成的 <code class="docutils literal notranslate"><span class="pre">lineC.cpt</span></code> 文件指定</li>
 <li><code class="docutils literal notranslate"><span class="pre">-Cblue,red,green</span></code> 表示设置值为0、1、2的线段颜色分别为 blue, red 和 green</li>
 </ul>
 </div>
