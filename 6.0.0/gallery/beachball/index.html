@@ -267,7 +267,7 @@ gmt meca -JQ104/15c -R102.5/105.5/30.5/32.5 -Ba -Sa1c -png beachball_1 <span cla
 </div>
 <div class="section" id="id3">
 <h2>14.5.2 固定大小的震源球<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>使用选项 <code class="docutils literal notranslate"><span class="pre">-M</span></code> 则所有震源球的大小均为定值，不随震级变化。</p>
+<p>使用选项 <code class="docutils literal notranslate"><span class="pre">-M</span></code> 使所有震源球的大小均为定值，不随震级变化。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 gmt meca -JQ104/15c -R102.5/105.5/30.5/32.5 -Ba -Sa1c -M -png beachball_2 <span class="s">&lt;&lt; EOF</span>
 <span class="s"># 经度 纬度 深度(km) strike dip rake 震级 newX newY ID</span>
@@ -363,7 +363,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年06月14日.
+        最后更新于 2019年06月17日.
       </span>
 
     </p>
@@ -383,7 +383,7 @@ gitalk.render('gitalk-container');
 
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.Navigation.enable(false);
       });
   </script>
 
