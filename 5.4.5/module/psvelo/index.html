@@ -277,46 +277,46 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/supplements/meca/psvelo.html" title="(在 GMT v5.4.5)"><span>psvelo</span></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">在地图上绘制速度矢量、十字线、楔形图</td>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">在地图上绘制三种符号：矢量（向量）、十字线和旋转饼图</td>
 </tr>
 </tbody>
 </table>
 <div class="section" id="s">
 <h2>13.55.1 -S选项<a class="headerlink" href="#s" title="永久链接至标题">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项决定了要绘制的符号的类型，以及输入数据的格式。</p>
+<p><code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项决定要绘制哪一种符号，及其输入数据的格式。</p>
 <dl class="docutils">
 <dt><code class="docutils literal notranslate"><span class="pre">-Se&lt;velscale&gt;/&lt;confidence&gt;/&lt;fontsize&gt;</span></code></dt>
-<dd><p class="first">绘制速度椭圆。速度用矢量表示，速度的不确定度用椭圆表示。输入数据中每列的含义为：</p>
+<dd><p class="first">绘制矢量，并可选择用椭圆表示不确定度。输入数据中每列的含义为：</p>
 <ol class="arabic simple">
-<li>台站经度</li>
-<li>台站纬度</li>
-<li>速度矢量的东向分量</li>
-<li>速度矢量的北向分量</li>
+<li>起点的经度</li>
+<li>起点的纬度</li>
+<li>矢量的东向分量</li>
+<li>矢量的北向分量</li>
 <li>东向分量的不确定度（1-sigma）</li>
 <li>北向分量的不确定度（1-sigma）</li>
 <li>东向分量和北向分量的correlation</li>
-<li>台站名（可选）</li>
+<li>名称（可选）</li>
 </ol>
 <p>说明：</p>
 <ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;velscale&gt;</span></code> 控制了速度矢量的缩放比例，其对应了速度值为1的箭头的长度，默认单位由参数 <code class="docutils literal notranslate"><span class="pre">PROJ_LENGTH_UNIT</span></code> 决定，也可以自己添加长度单位 <code class="docutils literal notranslate"><span class="pre">i|c|p</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;velscale&gt;</span></code> 控制了矢量的缩放比例，其对应了速度值为1的箭头的长度，默认单位由参数 <code class="docutils literal notranslate"><span class="pre">PROJ_LENGTH_UNIT</span></code> 决定，也可以自己添加长度单位 <code class="docutils literal notranslate"><span class="pre">i|c|p</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">&lt;confidence&gt;</span></code> 设置了椭圆的2D置信区间的极限，比如0.95代表95%置信区间</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;fontsize&gt;</span></code> 是文本（台站名）的大小</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;fontsize&gt;</span></code> 是名称的文本字号</li>
 <li>椭圆的填充色由 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项控制</li>
 <li>椭圆的轮廓以及矢量的画笔属性由 <code class="docutils literal notranslate"><span class="pre">-W</span></code> 选项控</li>
 </ol>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-Sr&lt;velscale&gt;/&lt;confidence&gt;/&lt;fontsize&gt;</span></code></dt>
-<dd><p class="first">绘制速度椭圆，与 <code class="docutils literal notranslate"><span class="pre">-Se</span></code> 类似，区别在于输入文件不同：</p>
+<dd><p class="first">与 <code class="docutils literal notranslate"><span class="pre">-Se</span></code> 类似，区别在于输入文件不同：</p>
 <ol class="last arabic simple">
-<li>经度</li>
-<li>纬度</li>
-<li>速度矢量的东向分量</li>
-<li>速度矢量的北向分量</li>
+<li>起点的经度</li>
+<li>起点的纬度</li>
+<li>矢量的东向分量</li>
+<li>矢量的北向分量</li>
 <li>椭圆的半长轴</li>
 <li>椭圆的半短轴</li>
 <li>椭圆的长轴相对于水平方向逆时针旋转的角度</li>
-<li>台站名（可选）</li>
+<li>名称（可选）</li>
 </ol>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-Sn&lt;barscale&gt;</span></code></dt>
@@ -333,10 +333,10 @@
 <ol class="arabic simple">
 <li>经度</li>
 <li>纬度</li>
-<li>旋转的角度（以radians为单位）</li>
-<li>旋转的不确定度（以radians为单位）</li>
+<li>旋转饼图的旋转角度（弧度制）</li>
+<li>旋转饼图的不确定度（弧度制）</li>
 </ol>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">&lt;wedge_scale&gt;</span></code> 设置了饼图的大小。所有的数值在绘图之前会先乘以 <code class="docutils literal notranslate"><span class="pre">&lt;wedge_mag&gt;</span></code> 。饼图的填充色由 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项控制， 不确定度的颜色由 <code class="docutils literal notranslate"><span class="pre">-E</span></code> 控制。</p>
+<p class="last">旋转饼图由两个同心扇形组成。一个扇形是旋转饼图本身（下称饼图扇形），另一个扇形则表示旋转饼图的不确定度（下称不确定度扇形）。两个扇形的半径由 <code class="docutils literal notranslate"><span class="pre">&lt;wedge_scale&gt;</span></code> 给出。两个扇形的角度分别为旋转饼图的旋转角度和不确定度乘以 <code class="docutils literal notranslate"><span class="pre">&lt;wedge_mag&gt;</span></code> 。饼图的填充色由 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项控制， 不确定度的颜色由 <code class="docutils literal notranslate"><span class="pre">-E</span></code> 控制。饼图扇形从正北开始，顺时针旋转。不确定度扇形从旋转饼图的结束开始，向顺时针和逆时针两个方向旋转，两个方向旋转的角度均为不确定度的 2 倍。</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-Sx&lt;cross_scale&gt;</span></code></dt>
 <dd><p class="first">绘制应变十字线。 <code class="docutils literal notranslate"><span class="pre">&lt;cross_scale&gt;</span></code> 控制十字线的大小。输入文件中每列的含义为：</p>
@@ -486,7 +486,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年06月19日.
+        最后更新于 2019年06月20日.
       </span>
 
     </p>
