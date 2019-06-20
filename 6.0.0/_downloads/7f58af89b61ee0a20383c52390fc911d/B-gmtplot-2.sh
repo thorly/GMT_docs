@@ -1,29 +1,10 @@
-#!/bin/bash
-gmt begin B_geo_2 pdf,png
-gmt set FORMAT_GEO_MAP ddd:mm:ssF FONT_ANNOT_PRIMARY +9p
-gmt basemap -R-2/1/0/0.35 -JM4i -Bpa15mf5mg5m -BwSe -Bs1f30mg15m --MAP_FRAME_TYPE=fancy+ \
-	--MAP_GRID_PEN_PRIMARY=thinnest,black,. --MAP_GRID_CROSS_SIZE_SECONDARY=0.1i \
-	--MAP_FRAME_WIDTH=0.075i --MAP_TICK_LENGTH_PRIMARY=0.1i
-gmt plot -Sv0.03i+b+e+jc -W0.5p -Gblack -Y-0.5i -N << EOF
--1.875 0 0 0.33333
--0.45833 0 0 0.11111
-0.541666 0 0 0.11111
-EOF
-gmt text -N -F+f+j << EOF
--2.1 0.025 10p RM P:
--1.875 0.05 6p CB annotation
--0.45833 0.05 6p CB frame
-0.541666 0.05 6p CB grid
-EOF
-gmt plot -Sv0.03i+b+e+jc -W0.5p -Gblack -Y-0.225i -N << EOF
--1.5 0 0 1.33333
--0.25 0 0 0.66666
-0.625 0 0 0.33333
-EOF
-gmt text -N -F+f+j << EOF
--2.1 0.025 10p RM S:
--1.5  0.05 9p CB annotation
--0.25 0.05 9p CB frame
-0.625 0.05 9p CB grid
-EOF
+gmt begin 3D-axes-examples png,pdf
+gmt set FONT_TITLE 15p
+gmt subplot begin 1x7 -Fs4c/4c -M20p/10p
+    gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bxaf -Byaf -Bzaf -BwesnZ+t'-BwesnZ' -p130/30 -c1,1
+    gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bxaf -Byaf -Bzaf -Bwesnz+t'-Bwesnz' -p130/30 -c1,2
+    gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bxaf -Byaf -Bzaf -BwesnZ1234+t'-BwesnZ1234' -p130/30 -c1,3
+    gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bxaf -Byaf -Bzaf -Bwesnz1234+t'-Bwesnz1234' -p130/30 -c1,4
+    gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bxaf -Byaf -Bzaf -BwesnZ+b+t'-BwesnZ+b' -p130/30 -c1,5
+gmt subplot end
 gmt end
