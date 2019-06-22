@@ -232,23 +232,11 @@ Windows下使用bat脚本，并且对bash和bat脚本的区别不太了解，强
 <li>台站位置（三角形）、射线路径（大圆弧线段）</li>
 <li>台站名（文本）</li>
 </ol>
-<p><a class="reference download internal" download="" href="../../_downloads/77248414ba73cfab62a66ca08c1a6c25/first-plot-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
-<div class="figure align-center">
-<img alt="../../_images/first-plot-gmtplot-0.png" src="../../_images/first-plot-gmtplot-0.png" />
-</div>
 <p>下面会一步步地把整张图绘制出来。</p>
 </div>
 <div class="section" id="id3">
 <h2>3.4.2 绘制底图<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>GMT中的 <a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 模块，可以绘制带海岸线的底图，并可以给陆地和海洋分别填充不同的颜色，绘图命令及效果如下：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin first-plot pdf,png
-gmt coast -JH110/24c -Rg -Bg30 -Glightgreen -Slightblue -A1000 -Dc
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center">
-<img alt="../../_images/first-plot-gmtplot-1.png" src="../../_images/first-plot-gmtplot-1.png" />
-</div>
 <p>GMT绘图脚本总是以 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">begin</span></code> 开始制图，并以 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">end</span></code> 结束制图。其中 <code class="docutils literal notranslate"><span class="pre">first-plot</span></code> 为生成的图件名，<code class="docutils literal notranslate"><span class="pre">pdf,png</span></code> 表示最终生成的图片格式为
 PDF和PNG格式。</p>
 <p>解释一下 <code class="docutils literal notranslate"><span class="pre">coast</span></code> 模块中的一些选项：</p>
@@ -263,32 +251,6 @@ PDF和PNG格式。</p>
 <div class="section" id="id4">
 <h2>3.4.3 绘制震中和台站位置<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p><a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a> 模块可以用于绘制多种不同类型的符号，比如五角星和三角形。绘图脚本如下：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-gmt begin first-plot pdf,png
-gmt coast -JH110/24c -Rg -Bg30 -Glightgreen -Slightblue -A1000 -Dc
-
-<span class="c1"># 绘制震中位置</span>
-gmt plot -Sa0.5c -W0.5p,black,solid -Gyellow <span class="s">&lt;&lt; EOF</span>
-<span class="s">130.72 32.78</span>
-<span class="s">EOF</span>
-
-<span class="c1"># 绘制台站位置</span>
-gmt plot -St0.2c -W0.5p,black,solid -Gblack <span class="s">&lt;&lt; EOF</span>
-<span class="s">104.39 29.90</span>
-<span class="s">13.14 52.50</span>
-<span class="s">19.99 -34.52</span>
-<span class="s">-77.15 38.89</span>
-<span class="s">-52.47 -31.62</span>
-<span class="s">150.36 -33.79</span>
-<span class="s">76.22 -69.22</span>
-<span class="s">EOF</span>
-
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center">
-<img alt="../../_images/first-plot-gmtplot-2.png" src="../../_images/first-plot-gmtplot-2.png" />
-</div>
 <p>这里我们通过两次调用 <code class="docutils literal notranslate"><span class="pre">plot</span></code> 命令分别绘制了五角星和三角形。</p>
 <p>解释一下：</p>
 <ol class="arabic simple">
@@ -305,130 +267,11 @@ gmt end
 <div class="section" id="id5">
 <h2>3.4.4 绘制射线路径<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">plot</span></code> 模块还可以用于绘制线段，默认情况下，<code class="docutils literal notranslate"><span class="pre">plot</span></code> 会自动用大圆路径连接地球上的两个位置，不需要额外设置。首先直接看代码：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-gmt begin first-plot pdf,png
-gmt coast -JH110/24c -Rg -Bg30 -Glightgreen -Slightblue -A1000 -Dc
-
-<span class="c1"># 绘制震中位置</span>
-gmt plot -Sa0.5c -W0.5p,black,solid -Gyellow <span class="s">&lt;&lt; EOF</span>
-<span class="s">130.72 32.78</span>
-<span class="s">EOF</span>
-
-<span class="c1"># 绘制台站位置</span>
-gmt plot -St0.2c -W0.5p,black,solid -Gblack <span class="s">&lt;&lt; EOF</span>
-<span class="s">104.39 29.90</span>
-<span class="s">13.14 52.50</span>
-<span class="s">19.99 -34.52</span>
-<span class="s">-77.15 38.89</span>
-<span class="s">-52.47 -31.62</span>
-<span class="s">150.36 -33.79</span>
-<span class="s">76.22 -69.22</span>
-<span class="s">EOF</span>
-
-<span class="c1"># 绘制大圆路径</span>
-gmt plot -W1p,red <span class="s">&lt;&lt; EOF</span>
-<span class="s">&gt;</span>
-<span class="s">130.72 32.78</span>
-<span class="s">104.39 29.90</span>
-<span class="s">&gt;</span>
-<span class="s">130.72 32.78</span>
-<span class="s">13.14 52.50</span>
-<span class="s">&gt;</span>
-<span class="s">130.72 32.78</span>
-<span class="s">19.99 -34.52</span>
-<span class="s">&gt;</span>
-<span class="s">130.72 32.78</span>
-<span class="s">-77.15 38.89</span>
-<span class="s">&gt;</span>
-<span class="s">130.72 32.78</span>
-<span class="s">-52.47 -31.62</span>
-<span class="s">&gt;</span>
-<span class="s">130.72 32.78</span>
-<span class="s">150.36 -33.79</span>
-<span class="s">&gt;</span>
-<span class="s">130.72 32.78</span>
-<span class="s">76.22 -69.22</span>
-<span class="s">EOF</span>
-
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center">
-<img alt="../../_images/first-plot-gmtplot-3.png" src="../../_images/first-plot-gmtplot-3.png" />
-</div>
 <p>用于绘制射线路径的 <code class="docutils literal notranslate"><span class="pre">plot</span></code> 命令和之前的命令的区别在于没有了 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项。为了绘制一条线段，至少需要指定两个端点，输入数据中每个 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 之后的两行数据分别代表一条线条的两个端点位置。</p>
 </div>
 <div class="section" id="id6">
 <h2>3.4.5 添加台站名<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>最后还需要往图画里添加台站所在地区的名字。添加文字使用 <a class="reference internal" href="../../module/text/"><span class="doc">text</span></a> 模块：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-gmt begin fist-plot pdf,png
-gmt coast -JH110/24c -Rg -Bg30 -Glightgreen -Slightblue -A1000 -Dc
-
-<span class="c1"># 绘制震中位置</span>
-gmt plot -Sa0.5c -W0.5p,black,solid -Gyellow <span class="s">&lt;&lt; EOF</span>
-<span class="s">130.72 32.78</span>
-<span class="s">EOF</span>
-
-<span class="c1"># 绘制台站位置</span>
-gmt plot -St0.2c -W0.5p,black,solid -Gblack <span class="s">&lt;&lt; EOF</span>
-<span class="s">104.39 29.90</span>
-<span class="s">13.14 52.50</span>
-<span class="s">19.99 -34.52</span>
-<span class="s">-77.15 38.89</span>
-<span class="s">-52.47 -31.62</span>
-<span class="s">150.36 -33.79</span>
-<span class="s">76.22 -69.22</span>
-<span class="s">EOF</span>
-
-<span class="c1"># 绘制大圆路径</span>
-gmt plot -W1p,red <span class="s">&lt;&lt; EOF</span>
-<span class="s">&gt;</span>
-<span class="s">130.72 32.78</span>
-<span class="s">104.39 29.90</span>
-<span class="s">&gt;</span>
-<span class="s">130.72 32.78</span>
-<span class="s">13.14 52.50</span>
-<span class="s">&gt;</span>
-<span class="s">130.72 32.78</span>
-<span class="s">19.99 -34.52</span>
-<span class="s">&gt;</span>
-<span class="s">130.72 32.78</span>
-<span class="s">-77.15 38.89</span>
-<span class="s">&gt;</span>
-<span class="s">130.72 32.78</span>
-<span class="s">-52.47 -31.62</span>
-<span class="s">&gt;</span>
-<span class="s">130.72 32.78</span>
-<span class="s">150.36 -33.79</span>
-<span class="s">&gt;</span>
-<span class="s">130.72 32.78</span>
-<span class="s">76.22 -69.22</span>
-<span class="s">EOF</span>
-
-<span class="c1"># 添加文本</span>
-gmt text -F+f12p,1,black+jTL -D-1.5c/-0.15c <span class="s">&lt;&lt; EOF</span>
-<span class="s">-77.15 38.89 Washington</span>
-<span class="s">76.22 -69.22 Zhongshanzhan</span>
-<span class="s">EOF</span>
-gmt text -F+f12p,1,black+jTL -D-1c/-0.15c <span class="s">&lt;&lt; EOF</span>
-<span class="s">104.39 29.90 Zigong</span>
-<span class="s">13.14 52.50 Berlin</span>
-<span class="s">19.99 -34.52 Bredasdorp</span>
-<span class="s">EOF</span>
-gmt text -F+f12p,1,black+jTL -D-0.6c/-0.15c <span class="s">&lt;&lt; EOF</span>
-<span class="s">150.36 -33.79 Sydney</span>
-<span class="s">EOF</span>
-gmt text -F+f12p,1,black+jTL -D-0.6c/-0.15c <span class="s">&lt;&lt; EOF</span>
-<span class="s">-52.47 -31.62 Pelotas</span>
-<span class="s">EOF</span>
-
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center">
-<img alt="../../_images/first-plot-gmtplot-4.png" src="../../_images/first-plot-gmtplot-4.png" />
-</div>
 <p>解释如下：</p>
 <ol class="arabic simple">
 <li><code class="docutils literal notranslate"><span class="pre">EOF</span></code> 之间的每一行依次是加入的文本的纬度、经度和内容，这与 <code class="docutils literal notranslate"><span class="pre">plot</span></code> 类似，只是因为有内容，所以多了一列。之所以没有写在一个 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">text</span></code> 命令之下，是因为不同位置的文本的具体位置需要些许不同的调整，你可以看到每个 <code class="docutils literal notranslate"><span class="pre">text</span></code>
@@ -444,74 +287,6 @@ gmt end
 <p>上面的绘图脚本已经基本绘制出我们最初想要的图件了。细细看会发现，还有一些不完美的地方：比如黄色五角星和三角形被线段盖住了。</p>
 <p>这是因为，GMT的每一个绘图命令都会产生一个图层，后绘制的图层会覆盖在先绘制的图层的上面，即后来者居上。解决办法也很简单，先绘制线段，再绘制三角形和五角星即可。</p>
 <p>对脚本中命令的先后顺序进行微调，如下所示：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-gmt begin fist-plot pdf,png
-gmt coast -JH110/24c -Rg -Bg30 -Glightgreen -Slightblue -A1000 -Dc
-
-<span class="c1"># 绘制大圆路径</span>
-gmt plot -W1p,red <span class="s">&lt;&lt; EOF</span>
-<span class="s">&gt;</span>
-<span class="s">130.72 32.78</span>
-<span class="s">104.39 29.90</span>
-<span class="s">&gt;</span>
-<span class="s">130.72 32.78</span>
-<span class="s">13.14 52.50</span>
-<span class="s">&gt;</span>
-<span class="s">130.72 32.78</span>
-<span class="s">19.99 -34.52</span>
-<span class="s">&gt;</span>
-<span class="s">130.72 32.78</span>
-<span class="s">-77.15 38.89</span>
-<span class="s">&gt;</span>
-<span class="s">130.72 32.78</span>
-<span class="s">-52.47 -31.62</span>
-<span class="s">&gt;</span>
-<span class="s">130.72 32.78</span>
-<span class="s">150.36 -33.79</span>
-<span class="s">&gt;</span>
-<span class="s">130.72 32.78</span>
-<span class="s">76.22 -69.22</span>
-<span class="s">EOF</span>
-
-<span class="c1"># 绘制震中位置</span>
-gmt plot -Sa0.5c -W0.5p,black,solid -Gyellow <span class="s">&lt;&lt; EOF</span>
-<span class="s">130.72 32.78</span>
-<span class="s">EOF</span>
-
-<span class="c1"># 绘制台站位置</span>
-gmt plot -St0.2c -W0.5p,black,solid -Gblack <span class="s">&lt;&lt; EOF</span>
-<span class="s">104.39 29.90</span>
-<span class="s">13.14 52.50</span>
-<span class="s">19.99 -34.52</span>
-<span class="s">-77.15 38.89</span>
-<span class="s">-52.47 -31.62</span>
-<span class="s">150.36 -33.79</span>
-<span class="s">76.22 -69.22</span>
-<span class="s">EOF</span>
-
-<span class="c1"># 添加文本</span>
-gmt text -F+f12p,1,black+jTL -D-1.5c/-0.15c <span class="s">&lt;&lt; EOF</span>
-<span class="s">-77.15 38.89 Washington</span>
-<span class="s">76.22 -69.22 Zhongshanzhan</span>
-<span class="s">EOF</span>
-gmt text -F+f12p,1,black+jTL -D-1c/-0.15c <span class="s">&lt;&lt; EOF</span>
-<span class="s">104.39 29.90 Zigong</span>
-<span class="s">13.14 52.50 Berlin</span>
-<span class="s">19.99 -34.52 Bredasdorp</span>
-<span class="s">EOF</span>
-gmt text -F+f12p,1,black+jTL -D-0.6c/-0.15c <span class="s">&lt;&lt; EOF</span>
-<span class="s">150.36 -33.79 Sydney</span>
-<span class="s">EOF</span>
-gmt text -F+f12p,1,black+jTL -D-0.6c/-0.15c <span class="s">&lt;&lt; EOF</span>
-<span class="s">-52.47 -31.62 Pelotas</span>
-<span class="s">EOF</span>
-
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center">
-<img alt="../../_images/first-plot-gmtplot-5.png" src="../../_images/first-plot-gmtplot-5.png" />
-</div>
 <p>需要注意的是，本节内容仅作演示用，实际绘图时通常会写脚本来处理自己的数据，以使得其符合GMT输入数据的要求，而不是像本节示例中这样手写所有的数据。</p>
 </div>
 </div>
@@ -561,7 +336,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年06月21日.
+        最后更新于 2019年06月22日.
       </span>
 
     </p>

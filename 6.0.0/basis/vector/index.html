@@ -236,12 +236,6 @@
 <a class="reference internal" href="../../module/ternary/"><span class="doc">ternary</span></a> 和
 <a class="reference internal" href="../../module/polar/"><span class="doc">polar</span></a>。其中最常见的绘制矢量的模块是 <a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a>。</p>
 <p>下面的命令使用 <a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a> 的 <code class="docutils literal notranslate"><span class="pre">-Sv</span></code> 选项绘制了一个最简单的矢量。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">3</span> <span class="p">|</span> gmt plot -R0/5/0/2 -JX5c/2c -Sv0.5c+e -W1.5p -Gred -png vector
-</pre></div>
-</div>
-<div class="figure align-center">
-<img alt="../../_images/vector-gmtplot-0.png" src="../../_images/vector-gmtplot-0.png" />
-</div>
 <p>接下来将介绍如何通过在 <code class="docutils literal notranslate"><span class="pre">-Sv0.5c</span></code> 后增加更多的子选项来进一步修改矢量头的属性。</p>
 <div class="section" id="id2">
 <h2>4.9.1 矢量头位置及形状<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
@@ -254,10 +248,6 @@
 <li><p class="first"><code class="docutils literal notranslate"><span class="pre">+m[f|r][t|c|a][l|r]</span></code>：在矢量线的中间加上矢量头</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">t|c|a|i|A|I</span></code> 用于控制矢量头的形状。取不同值所对应的矢量头形状如下图所示：</p>
-<p><a class="reference download internal" download="" href="../../_downloads/469a7e5b61cd7171e70622da05d223c1/vector-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
-<div class="figure align-center">
-<img alt="../../_images/vector-gmtplot-1.png" src="../../_images/vector-gmtplot-1.png" />
-</div>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">f|r</span></code> 在 <code class="docutils literal notranslate"><span class="pre">+m</span></code> 用用于指定矢量头的方向沿着正方向或逆方向（默认为正方向，即从起点指向终点）</li>
 <li><code class="docutils literal notranslate"><span class="pre">l|r</span></code> 表示只绘制矢量头的左半边或右半边（默认两边都绘制）</li>
@@ -278,11 +268,7 @@
 <li><p class="first"><code class="docutils literal notranslate"><span class="pre">+h&lt;shape&gt;</span></code> 进一步控制矢量箭头 <strong>a</strong> 的形状，可以取-2到2之间的值。设置该子选项的值等效于修改参数 <a class="reference internal" href="../../conf/map/#map-vector-shape"><span class="std std-ref">MAP_VECTOR_SHAPE</span></a> （默认值为0）</p>
 <p>下面展示了 <code class="docutils literal notranslate"><span class="pre">+h</span></code> 后取不同值的矢量箭头的形状：</p>
 <blockquote>
-<div><p><a class="reference download internal" download="" href="../../_downloads/46e3a567b1aa82cba734d2c4d4de2c68/vector-gmtplot-2.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
-<div class="figure align-center">
-<img alt="../../_images/vector-gmtplot-2.png" src="../../_images/vector-gmtplot-2.png" />
-</div>
-</div></blockquote>
+<div></div></blockquote>
 </li>
 </ul>
 </div>
@@ -318,24 +304,6 @@
 <li><code class="docutils literal notranslate"><span class="pre">-Sm</span></code> 用于绘制弧形矢量</li>
 </ul>
 <p>下面的例子分别绘制了三种矢量：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin arrows pdf,png
-
-<span class="c1"># 笛卡尔矢量</span>
-<span class="nb">echo</span> <span class="m">0</span>.5 <span class="m">1</span>.5 <span class="m">4</span>.5 <span class="m">1</span>.5 <span class="p">|</span> gmt plot -R0/5/0/5 -JX1.75i -Sv0.2i+s+b+e -W1.5p -Gred
-
-<span class="c1"># 地理矢量</span>
-<span class="nb">echo</span> <span class="m">10</span> -35 <span class="m">90</span> <span class="m">8000</span> <span class="p">|</span> gmt plot -R0/90/-41.17/41.17 -JM1.75i -S<span class="o">=</span><span class="m">0</span>.2i+b+e -W1.5p -Gred -X2i
-
-<span class="c1"># 弧形矢量</span>
-<span class="nb">echo</span> <span class="m">0</span>.5 <span class="m">0</span>.5 <span class="m">0</span>.9i <span class="m">0</span> <span class="m">90</span> <span class="p">|</span> gmt plot -R0/5/0/5 -JX1.75i -Sm0.2i+b+e -W1.5p -Gred -X2i
-
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center" id="id8">
-<img alt="../../_images/vector-gmtplot-3.png" src="../../_images/vector-gmtplot-3.png" />
-<p class="caption"><span class="caption-text">三种矢量：（左）笛卡尔矢量；（中）地理矢量；（右）弧形矢量</span></p>
-</div>
 <div class="section" id="id6">
 <h3>笛卡尔矢量和地理矢量<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <p>对于笛卡尔矢量和地理矢量，输入数据的格式为:</p>
@@ -410,7 +378,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年06月21日.
+        最后更新于 2019年06月22日.
       </span>
 
     </p>

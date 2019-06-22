@@ -221,29 +221,6 @@
 <li>利用 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项提取主CPT的一部分颜色</li>
 <li>最后，将初始的内置CPT或修改后的CPT拉伸为自定义数据范围</li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="nv">SIZE</span><span class="o">=</span>w15c/0.25c
-
-gmt begin cpt_4 pdf,png
-gmt makecpt -Chaxby -T-10/10/1 -H &gt; Icpt.cpt
-gmt makecpt -Chaxby -T-10/10/1 -H -Iz &gt; Icpt_z.cpt
-gmt makecpt -Chaxby -T-10/10/1 -H -Ic &gt; Icpt_c.cpt
-gmt makecpt -Chaxby -T-10/10/1 -H -Icz &gt; Icpt_cz.cpt
-
-gmt plot -R1/10/1/10 -JX20c -T
-
-gmt colorbar -CIcpt.cpt   -Dn0.5/0.25+jCM+<span class="nv">$SIZE</span>+h+e+n -B+l<span class="s2">&quot;Master CPT&quot;</span>
-gmt colorbar -CIcpt_c.cpt -Dn0.5/0.4+jCM+<span class="nv">$SIZE</span>+h+e+n  -B+l<span class="s2">&quot;-Ic&quot;</span>
-gmt colorbar -CIcpt_z.cpt -Dn0.5/0.55+jCM+<span class="nv">$SIZE</span>+h+e+n -B+l<span class="s2">&quot;-Iz&quot;</span>
-gmt colorbar -CIcpt_cz.cpt -Dn0.5/0.7+jCM+<span class="nv">$SIZE</span>+h+e+n -B+l<span class="s2">&quot;-Icz&quot;</span>
-
-rm Icpt*.cpt
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center">
-<img alt="../../_images/makecpt-gmtplot-0.png" src="../../_images/makecpt-gmtplot-0.png" />
-</div>
 <p>注：这些CPT的调整选项顺序也是有优先级的。比如 <code class="docutils literal notranslate"><span class="pre">-Iz</span></code> 使用后，所有其他的更改都是基于z值反向的前提进行的。</p>
 <p>CPT文件可以在 <a class="reference internal" href="../../module/grdimage/"><span class="doc">grdimage</span></a>、<a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a>、<a class="reference external" href="http://docs.generic-mapping-tools.org/latest/plot3d.html" title="(在 GMT v6.0.0)"><span>plot3d</span></a>
 等命令中使用。通常，你可以使用 <a class="reference internal" href="../../module/makecpt/"><span class="doc">makecpt</span></a> 或 <a class="reference external" href="http://docs.generic-mapping-tools.org/latest/grd2cpt.html" title="(在 GMT v6.0.0)"><span>grd2cpt</span></a>
@@ -265,10 +242,6 @@ CPT文件。该选项本质上是在CPT文件中加上一个特殊的注释行:<
 </pre></div>
 </div>
 <p>GMT在CPT中看到这一注释行时就会将该CPT当作时周期性CPT文件。</p>
-<p><a class="reference download internal" download="" href="../../_downloads/b85da03b7623e214f8ddb6a7a377ef6c/makecpt-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
-<div class="figure align-center">
-<img alt="../../_images/makecpt-gmtplot-1.png" src="../../_images/makecpt-gmtplot-1.png" />
-</div>
 </div>
 <div class="section" id="id2">
 <h2>7.3.2 动态CPT<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
@@ -296,17 +269,6 @@ CPT文件。该选项本质上是在CPT文件中加上一个特殊的注释行:<
 </li>
 </ol>
 <p>下图展示了动态的内置CPT如何拉伸适用于用户自定义数据，绘制命令如下:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-gmt begin cpt_3 pdf,png
-gmt makecpt -Cglobe -T-8000/3000
-gmt colorbar -C -Baf -Dx0/0+w4.5i/0.1i+h
-gmt colorbar -Cglobe -Baf -Dx0/0+w4.5i/0.1i+h -Y0.5i
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center">
-<img alt="../../_images/makecpt-gmtplot-2.png" src="../../_images/makecpt-gmtplot-2.png" />
-</div>
 <p>原始的内置CPT（globe，上图）的初始范围为-10000至10000，颜色不连续处的分界值（hinge）为0，小于0的部分为海蓝色系，大于0的部分为大地色系。但实际上，我们要绘制的区域高程值是非对称的，从-8000米到3000米（下图）。由于hinge值的存在，负高程依旧由海蓝色拉伸填充，正高程则由大地色压缩填充。</p>
 <p>注：若要实现hinge分界效果，<code class="docutils literal notranslate"><span class="pre">makecpt</span></code> 命令中的 <code class="docutils literal notranslate"><span class="pre">-T</span></code> 选项不可设置 <code class="docutils literal notranslate"><span class="pre">/&lt;z_int&gt;</span></code>。</p>
 </div>
@@ -357,7 +319,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年06月21日.
+        最后更新于 2019年06月22日.
       </span>
 
     </p>

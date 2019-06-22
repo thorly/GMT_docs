@@ -242,17 +242,6 @@
 <li><code class="docutils literal notranslate"><span class="pre">&lt;lat1&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;lat2&gt;</span></code> 是两条标准纬线</li>
 </ul>
 <p>Lambert保角投影场用于绘制美国地图，两个固定的标准纬线是33ºN和45ºN。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_lambert_conic pdf,png
-gmt <span class="nb">set</span> MAP_FRAME_TYPE FANCY FORMAT_GEO_MAP ddd:mm:ssF MAP_GRID_CROSS_SIZE_PRIMARY <span class="m">0</span>.05i
-gmt coast -R-130/-70/24/52 -Jl-100/35/33/45/1:50000000 -Bag -Dl -N1/thick,red <span class="se">\</span>
-            -N2/thinner -A500 -Gtan -Wthinnest,white -Sblue
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center" id="id1">
-<img alt="../../_images/Jl-gmtplot-0.png" src="../../_images/Jl-gmtplot-0.png" />
-<p class="caption"><span class="caption-text">Lambert保角圆锥投影</span></p>
-</div>
 <p>投影中心的选取并不影响投影，但其指定了哪一条经线垂直于地图。</p>
 </div>
 
@@ -301,7 +290,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年06月21日.
+        最后更新于 2019年06月22日.
       </span>
 
     </p>

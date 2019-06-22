@@ -251,41 +251,13 @@
 <div class="section" id="id1">
 <h2>9.22.1 极区立体地图<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>下面的示例中，投影中心为北极，地图边界与经线和纬线完全重合。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R-30/30/60/72 -Js0/90/4.5i/60 -B10g -Dl -A250 -Groyalblue <span class="se">\</span>
-            -Sseashell -png GMT_stereographic_polar
-</pre></div>
-</div>
-<div class="figure align-center" id="id4">
-<img alt="../../_images/Js-gmtplot-0.png" src="../../_images/Js-gmtplot-0.png" />
-<p class="caption"><span class="caption-text">极区立体保角投影</span></p>
-</div>
 </div>
 <div class="section" id="id2">
 <h2>9.22.2 矩形立体地图<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>与Lambert方位等面积投影类似，也可以通过指定地图区域左下角和右上角的坐标来绘制一个矩形区域。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_stereographic_rect pdf,png
-gmt <span class="nb">set</span> MAP_ANNOT_OBLIQUE <span class="m">30</span>
-gmt coast -R-25/59/70/72r -JS10/90/11c -B20g -Dl -A250 -Gdarkbrown -Wthinnest -Slightgray
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center" id="id5">
-<img alt="../../_images/Js-gmtplot-1.png" src="../../_images/Js-gmtplot-1.png" />
-<p class="caption"><span class="caption-text">矩形边界下的极区立体保角投影</span></p>
-</div>
 </div>
 <div class="section" id="id3">
 <h2>9.22.3 一般立体地图<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_stereographic_general pdf,png
-gmt <span class="nb">set</span> MAP_ANNOT_OBLIQUE <span class="m">0</span>
-gmt coast -R100/-42/160/-8r -JS130/-30/4i -Bag -Dl -A500 -Ggreen -Slightblue -Wthinnest
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center" id="id6">
-<img alt="../../_images/Js-gmtplot-2.png" src="../../_images/Js-gmtplot-2.png" />
-<p class="caption"><span class="caption-text">一般立体投影</span></p>
-</div>
 </div>
 </div>
 
@@ -334,7 +306,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年06月21日.
+        最后更新于 2019年06月22日.
       </span>
 
     </p>

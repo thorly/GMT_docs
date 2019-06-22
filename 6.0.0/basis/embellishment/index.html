@@ -251,10 +251,6 @@
 <li>将修饰物的偏移后的锚点与底图上的参考点重合以实现修饰物的放置</li>
 </ol>
 <p>下图展示了GMT如何实现修饰物的精确放置。其中大矩形代表底图，小矩形代表修饰物。本示例中首先指定了底图左上角为参考点，并指定了修饰物的左上角为锚点，通过 <code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;/&lt;dy&gt;</span></code> 对修饰物锚点进行微调。</p>
-<p><a class="reference download internal" download="" href="../../_downloads/645d2bae500662b03b235bb261812b3e/embellishment-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
-<div class="figure align-center">
-<img alt="../../_images/embellishment-gmtplot-0.png" src="../../_images/embellishment-gmtplot-0.png" />
-</div>
 <div class="section" id="id3">
 <h3>底图参考点<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p>GMT提供了5种方法用于指定底图的参考点，使得用户可以灵活地指定底图内/外的任意一点作为参考点。五种方法分别以 <code class="docutils literal notranslate"><span class="pre">x|g|n|j|J</span></code> 开头。若未指定使用何种方式，则默认使用 <code class="docutils literal notranslate"><span class="pre">x</span></code> 方式指定参考点。</p>
@@ -316,12 +312,6 @@ X轴范围为0到1，Y轴同理。使用负值或者大于1的值则可以指定
 <li><code class="docutils literal notranslate"><span class="pre">+s&lt;dx&gt;/&lt;dy&gt;/&lt;fill&gt;</span></code> 下拉阴影区。<code class="docutils literal notranslate"><span class="pre">&lt;dx&gt;/&lt;dy&gt;</span></code> 是阴影区相对于面板的偏移量，
 <code class="docutils literal notranslate"><span class="pre">&lt;shade&gt;</span></code> 是阴影区的颜色，默认值为 <code class="docutils literal notranslate"><span class="pre">4p/-4p/gray50</span></code> 。</li>
 </ul>
-<p><a class="reference download internal" download="" href="../../_downloads/9af249c1dd156fc8dafaefea7440591f/embellishment-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
-<div class="figure align-center" id="id9">
-<img alt="../../_images/embellishment-gmtplot-1.png" src="../../_images/embellishment-gmtplot-1.png" />
-<p class="caption"><span class="caption-text">GMT修饰物背景面板</span></p>
-</div>
-<p>左图使用了 <code class="docutils literal notranslate"><span class="pre">-F+glightgreen+r</span></code>，右图使用了 <code class="docutils literal notranslate"><span class="pre">-F+p1p+i+s+glightblue+c0.1i</span></code> (不包含最内侧虚线框)</p>
 </div>
 </div>
 
@@ -370,7 +360,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年06月21日.
+        最后更新于 2019年06月22日.
       </span>
 
     </p>

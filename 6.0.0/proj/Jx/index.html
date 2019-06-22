@@ -271,16 +271,6 @@ gmt math -T0/100/10 T <span class="nv">SQRT</span> <span class="o">=</span> sqrt
 <p>对于常规的浮点型数据而言，选择笛卡尔线性坐标意味着对输入坐标做简单的线性变换
 <span class="math notranslate nohighlight">\(u' = a u + b\)</span>，即将输入坐标 <span class="math notranslate nohighlight">\(u\)</span> 投影到纸张坐标 <span class="math notranslate nohighlight">\(u'\)</span>。</p>
 <p>下面的命令将函数 <span class="math notranslate nohighlight">\(y=\sqrt{x}\)</span> 用笛卡尔线性变换画在图上。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_linear pdf,png
-gmt plot -R0/100/0/10 -JX3i/1.5i -Bag -BWSne+gsnow -Wthick,blue,- sqrt.txt
-gmt plot -St0.1i -N -Gred -Wfaint sqrt10.txt
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center" id="id7">
-<img alt="../../_images/Jx-gmtplot-0.png" src="../../_images/Jx-gmtplot-0.png" />
-<p class="caption"><span class="caption-text">笛卡尔坐标的线性变换</span></p>
-</div>
 <p>说明：</p>
 <ul class="simple">
 <li>正常情况下，X轴向右递增，Y轴向上递增。有些时候可能需要X轴向左递增或者Y轴向下递增（比如Y轴是深度时），只要将轴的比例尺或者轴长度设置为负值即可。</li>
@@ -296,51 +286,18 @@ gmt end
 <li>使用 <code class="docutils literal notranslate"><span class="pre">-fg</span></code> 选项</li>
 </ol>
 <p>下面的例子用线性投影绘制了一个中心位于125ºE的世界地图。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_linear_d pdf,png
-gmt <span class="nb">set</span> MAP_GRID_CROSS_SIZE_PRIMARY <span class="m">0</span>.1i MAP_FRAME_TYPE FANCY FORMAT_GEO_MAP ddd:mm:ssF
-gmt coast -Rg-55/305/-90/90 -Jx0.014i -Bagf -BWSen -Dc -A1000 -Glightbrown -Wthinnest -Slightblue
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center" id="id8">
-<img alt="../../_images/Jx-gmtplot-1.png" src="../../_images/Jx-gmtplot-1.png" />
-<p class="caption"><span class="caption-text">地理坐标的线性变换</span></p>
-</div>
 </div>
 <div class="section" id="id4">
 <h3>日期时间坐标<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <p>时间日期坐标也可以用线性投影绘制，此时需要告诉GMT输入坐标是绝对时间还是相对时间。</p>
 <p>可以通过在 <code class="docutils literal notranslate"><span class="pre">-Jx</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-JX</span></code> 的最后加上 <code class="docutils literal notranslate"><span class="pre">T</span></code> 或 <code class="docutils literal notranslate"><span class="pre">t</span></code>，不过实际上 <code class="docutils literal notranslate"><span class="pre">-R</span></code>
 选项中已经指定了时间范围，所以没有必要在 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项中都指定。当 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 选项给出的坐标类型相冲突时，GMT会给出警告，并以 <code class="docutils literal notranslate"><span class="pre">-JX</span></code> 选项为准。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_linear_cal pdf,png
-gmt <span class="nb">set</span> FORMAT_DATE_MAP o TIME_WEEK_START Sunday <span class="nv">FORMAT_CLOCK_MAP</span><span class="o">=</span>-hham <span class="se">\</span>
-        FORMAT_TIME_PRIMARY_MAP full
-gmt psbasemap -R2001-9-24T/2001-9-29T/T07:0/T15:0 -JX4i/-2i -Bxa1Kf1kg1d <span class="se">\</span>
-              -Bya1Hg1h -BWsNe+glightyellow
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center" id="id9">
-<img alt="../../_images/Jx-gmtplot-2.png" src="../../_images/Jx-gmtplot-2.png" />
-<p class="caption"><span class="caption-text">日期时间坐标的线性变换</span></p>
-</div>
 </div>
 </div>
 <div class="section" id="id5">
 <h2>9.1.2 笛卡尔对数投影<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>对数变换 <span class="math notranslate nohighlight">\(\log_{10}\)</span> 的数学表示是 <span class="math notranslate nohighlight">\(u' = a \log_{10}(u) + b\)</span> ，可以通过在比例尺或轴长度后加上 <code class="docutils literal notranslate"><span class="pre">l</span></code> 指定。</p>
 <p>下面的命令绘制了一个X轴为对数轴Y轴为线性轴的图。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_log pdf,png
-gmt plot -R1/100/0/10 -Jx1.5il/0.15i -Bx2g3 -Bya2f1g2 -BWSne+gbisque <span class="se">\</span>
-         -Wthick,blue,- -h sqrt.txt
-gmt plot -Ss0.1i -N -Gred -W -h sqrt10.txt
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center" id="id10">
-<img alt="../../_images/Jx-gmtplot-3.png" src="../../_images/Jx-gmtplot-3.png" />
-<p class="caption"><span class="caption-text">对数投影</span></p>
-</div>
 <p>注意：若想要X轴和Y轴都使用对数投影，且X轴和Y轴比例尺不同，则必须在指定每个轴的比例尺时分别加上 <code class="docutils literal notranslate"><span class="pre">l</span></code>，例如 <code class="docutils literal notranslate"><span class="pre">-JX10cl/6cl</span></code>。</p>
 </div>
 <div class="section" id="id6">
@@ -349,17 +306,6 @@ gmt end
 <span class="math notranslate nohighlight">\(x^p\)</span> - <span class="math notranslate nohighlight">\(y^q\)</span> 这样的函数关系。如果选 <code class="docutils literal notranslate"><span class="pre">p=0.5</span></code>、<code class="docutils literal notranslate"><span class="pre">q=1</span></code>
 则相对于绘制 <code class="docutils literal notranslate"><span class="pre">x</span></code> 与 <span class="math notranslate nohighlight">\(\sqrt{x}\)</span> 的函数曲线。</p>
 <p>要使用指数投影，需要在比例尺或轴长度后加上 <code class="docutils literal notranslate"><span class="pre">p&lt;exp&gt;</span></code>，其中 <code class="docutils literal notranslate"><span class="pre">&lt;exp&gt;</span></code> 是要使用的指数。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_pow pdf,png
-gmt plot -R0/100/0/10 -Jx0.3ip0.5/0.15i -Bxa1p -Bya2f1 -BWSne+givory <span class="se">\</span>
-         -Wthick sqrt.txt
-gmt plot -Sc0.075i -Ggreen -W sqrt10.txt
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center" id="id11">
-<img alt="../../_images/Jx-gmtplot-4.png" src="../../_images/Jx-gmtplot-4.png" />
-<p class="caption"><span class="caption-text">指数变换</span></p>
-</div>
 </div>
 </div>
 
@@ -408,7 +354,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年06月21日.
+        最后更新于 2019年06月22日.
       </span>
 
     </p>

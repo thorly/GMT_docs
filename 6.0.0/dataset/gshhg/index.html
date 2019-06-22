@@ -231,10 +231,6 @@
 </div>
 <p><a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 的 <code class="docutils literal notranslate"><span class="pre">-D</span></code> 选项加上每种精度的单词首字母即可指定使用何种精度的数据。在绘制全球地图时，可以用 <code class="docutils literal notranslate"><span class="pre">-Dc</span></code> 指定使用最低精度的数据，以避免绘制了大量细节而导致文件太大；在绘制几度范围的小区域地图时，则可以使用 <code class="docutils literal notranslate"><span class="pre">-Df</span></code> 指定使用最高精度的数据。当然，也可以使用 <code class="docutils literal notranslate"><span class="pre">-Da</span></code> 选项，此时GMT会根据当前绘图区域的大小自动选择合适的数据精度。</p>
 <p>下面的示例绘制了一个小区域的海岸线边界，可以看到 <code class="docutils literal notranslate"><span class="pre">-D</span></code> 取不同精度时边界精细程度的差异:</p>
-<p><a class="reference download internal" download="" href="../../_downloads/6b5b6fcf173527d4aff395bb75ce29e4/gshhg-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
-<div class="figure align-center">
-<img alt="../../_images/gshhg-gmtplot-0.png" src="../../_images/gshhg-gmtplot-0.png" />
-</div>
 </div>
 <div class="section" id="id2">
 <h2>11.2.2 数据内容<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
@@ -298,38 +294,9 @@
 <div class="section" id="id6">
 <h2>11.2.3 使用示例<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>绘制1级海岸线：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 -W1/0.5p -png map
-</pre></div>
-</div>
-<div class="figure align-center">
-<img alt="../../_images/gshhg-gmtplot-1.png" src="../../_images/gshhg-gmtplot-1.png" />
-</div>
 <p>同时绘制1-3级海岸线，黑色的为1级海岸线，红色的为2级湖泊线（图中的大面积红色区域为五大湖），蓝色的为3级岛屿线（即五大湖内部的岛屿）：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 <span class="se">\</span>
-    -W1/0.5p -W2/0.3p,red -W3/0.2p,blue -png map
-</pre></div>
-</div>
-<div class="figure align-center">
-<img alt="../../_images/gshhg-gmtplot-2.png" src="../../_images/gshhg-gmtplot-2.png" />
-</div>
 <p>绘制1-3级海岸线，并为陆地、还有、湖泊填充不同的颜色：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 <span class="se">\</span>
-    -W1/0.5p -W2/0.3p,red -W3/0.2p,blue <span class="se">\</span>
-    -Gtan -Slightblue -Cl/royalblue -png map
-</pre></div>
-</div>
-<div class="figure align-center">
-<img alt="../../_images/gshhg-gmtplot-3.png" src="../../_images/gshhg-gmtplot-3.png" />
-</div>
 <p>绘制海岸线、国界和美国州界：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R-130/-70/24/52 -JL-100/35/33/45/15c -Ba -Dh -A1000 <span class="se">\</span>
-    -W1/0.5p -N1/thick,red -N2/thinner <span class="se">\</span>
-    -Gtan -Slightblue -Cl/royalblue -png map
-</pre></div>
-</div>
-<div class="figure align-center">
-<img alt="../../_images/gshhg-gmtplot-4.png" src="../../_images/gshhg-gmtplot-4.png" />
-</div>
 </div>
 <div class="section" id="id7">
 <h2>11.2.4 备注<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
@@ -382,7 +349,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年06月21日.
+        最后更新于 2019年06月22日.
       </span>
 
     </p>

@@ -343,95 +343,6 @@
 </div>
 <div class="section" id="id2">
 <h2>13.52.2 示例<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-
-gmt begin polar_ex1 png,pdf
-gmt <span class="nb">set</span> PROJ_LENGTH_UNIT inch MAP_TICK_LENGTH_PRIMARY <span class="m">0</span>.075i MAP_FRAME_WIDTH <span class="m">0</span>.1i <span class="se">\</span>
-    MAP_ORIGIN_X <span class="m">2</span>.5c MAP_ORIGIN_Y <span class="m">1</span>.3i FONT_TITLE 18p
-
-<span class="c1"># this is Harvard CMT for tibethan earthquake (1997)</span>
-gmt meca -Fo -R85/89/25/50 -JX7i -M -Sm4i -N  -L -G150 -T0 <span class="s">&lt;&lt; EOF</span>
-<span class="s"># lon  lat  mrr   mtt  mff   mrt   mrf  mtf ex nlon nlat</span>
-<span class="s"> 87  35 -0.26 -0.71 0.97 -0.20 -0.61 2.60 27  0    0</span>
-<span class="s">EOF</span>
-
-<span class="c1"># and polarities observed</span>
-gmt polar -D87/35 -M4i -N -Sc0.3i -Qe -B0 -B+t<span class="s2">&quot;Tibet earthquake (1997) - polarities distribution&quot;</span> <span class="s">&lt;&lt; EOF</span>
-<span class="s">1 147.8 53 c</span>
-<span class="s">2 318.6 53 c</span>
-<span class="s">3 311.9 53 c</span>
-<span class="s">4 122.5 45 c</span>
-<span class="s">5 87.1 44 c</span>
-<span class="s">6 259.9 44 c</span>
-<span class="s">7 358.0 43 d</span>
-<span class="s">8 32.3 40 d</span>
-<span class="s">9 144.5 40 c</span>
-<span class="s">10 206.2 40 d</span>
-<span class="s">11 30.0 36 d</span>
-<span class="s">12 88.3 31 c</span>
-<span class="s">13 326.5 31 c</span>
-<span class="s">14 298.4 29 c</span>
-<span class="s">15 298.3 29 c</span>
-<span class="s">16 316.2 28 c</span>
-<span class="s">17 301.5 27 c</span>
-<span class="s">18 300.7 27 c</span>
-<span class="s">19 303.0 27 d</span>
-<span class="s">20 302.7 26 c</span>
-<span class="s">21 301.7 26 c</span>
-<span class="s">22 302.3 26 c</span>
-<span class="s">23 302.2 26 c</span>
-<span class="s">24 314.1 26 c</span>
-<span class="s">25 296.2 26 c</span>
-<span class="s">26 302.3 26 c</span>
-<span class="s">27 146.8 26 c</span>
-<span class="s">28 145.7 26 d</span>
-<span class="s">29 145.7 26 c</span>
-<span class="s">30 307.0 26 c</span>
-<span class="s">31 311.9 26 c</span>
-<span class="s">32 136.4 25 c</span>
-<span class="s">33 297.6 25 c</span>
-<span class="s">34 306.1 25 c</span>
-<span class="s">35 306.8 25 c</span>
-<span class="s">36 307.6 25 c</span>
-<span class="s">37 346.5 25 c</span>
-<span class="s">39 306.5 24 c</span>
-<span class="s">40 317.3 24 c</span>
-<span class="s">41 305.2 24 c</span>
-<span class="s">42 305.9 24 c</span>
-<span class="s">43 311.9 24 c</span>
-<span class="s">44 307.5 24 c</span>
-<span class="s">45 138.7 24 d</span>
-<span class="s">46 322.4 24 c</span>
-<span class="s">47 305.3 24 c</span>
-<span class="s">48 304.9 24 c</span>
-<span class="s">49 309.3 24 c</span>
-<span class="s">50 307.6 24 c</span>
-<span class="s">51 315.5 24 d</span>
-<span class="s">52 310.3 24 c</span>
-<span class="s">53 308.5 24 c</span>
-<span class="s">54 307.4 24 c</span>
-<span class="s">55 307.5 24 c</span>
-<span class="s">56 307.4 24 c</span>
-<span class="s">57 307.6 24 c</span>
-<span class="s">58 307.1 24 c</span>
-<span class="s">59 311.5 23 d</span>
-<span class="s">61 243.5 23 d</span>
-<span class="s">63 345.2 23 c</span>
-<span class="s">64 117.0 21 d</span>
-<span class="s">65 133.1 20 c</span>
-<span class="s">66 116.0 20 c</span>
-<span class="s">67 231.3 17 d</span>
-<span class="s">68 139.9 16 c</span>
-<span class="s">69 131.7 15 d</span>
-<span class="s">70 114.1 15 c</span>
-<span class="s">EOF</span>
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center" id="id3">
-<a class="reference internal image-reference" href="../../_images/polar-gmtplot-0.png"><img alt="../../_images/polar-gmtplot-0.png" src="../../_images/polar-gmtplot-0.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">polar示例</span></p>
-</div>
 </div>
 </div>
 
@@ -480,7 +391,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年06月21日.
+        最后更新于 2019年06月22日.
       </span>
 
     </p>

@@ -269,10 +269,6 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>WSENZ<span class="o">[</span><span class="m">1234</span><span class="o">]</span>wesez<span class="o">[</span><span class="m">1234</span><span class="o">]</span>lrbtu
 </pre></div>
 </div>
-<p><a class="reference download internal" download="" href="../../_downloads/7e953e70f84796bd5d5869510ae01887/B-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
-<div class="figure align-center">
-<img alt="../../_images/B-gmtplot-0.png" src="../../_images/B-gmtplot-0.png" />
-</div>
 <p>二维底图（上图左图）有四条边，分别用东西南北（WSEN或wsen）或左右上下（lrtb）的单词首字母表示。每条边都有四种状态：</p>
 <ol class="arabic simple">
 <li>不出现某个字母 =&gt; 不绘制该字母所对应的边</li>
@@ -285,10 +281,6 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -R0/4/0/4 -JX10c -BWS -pdf axes
 </pre></div>
 </div>
-<p><a class="reference download internal" download="" href="../../_downloads/419c0b1dfb07fd916978ca9bc0216e61/B-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
-<div class="figure align-center">
-<img alt="../../_images/B-gmtplot-1.png" src="../../_images/B-gmtplot-1.png" />
-</div>
 <p>3D底图有12条边（上图右图）。对于3D底图而言，<code class="docutils literal notranslate"><span class="pre">Zzu</span></code> 用于控制Z轴的绘制。</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">Z</span></code> 表示有刻度和标注</li>
@@ -299,10 +291,6 @@
 <p>下图展示了3D绘图中 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项的不同用法。读者可以修改如下命令中的 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项来实现不同搭配的效果:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -R0/10/0/10/0/10 -JX5c -JZ5c -Bxaf -Byaf -Bzaf -BwesnZ+t<span class="s1">&#39;-BwesnZ&#39;</span> -p130/30 -pdf map
 </pre></div>
-</div>
-<p><a class="reference download internal" download="" href="../../_downloads/7f58af89b61ee0a20383c52390fc911d/B-gmtplot-2.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
-<div class="figure align-center">
-<img alt="../../_images/B-gmtplot-2.png" src="../../_images/B-gmtplot-2.png" />
 </div>
 </div>
 </div>
@@ -341,10 +329,6 @@
 <div class="section" id="interval">
 <h3><code class="docutils literal notranslate"><span class="pre">&lt;interval&gt;</span></code><a class="headerlink" href="#interval" title="永久链接至标题">¶</a></h3>
 <p>每个轴都有三个属性，分别是标注（annotation）、刻度（frame）和网格线（grid）。下图展示了这三个名词在绘图时的具体含义。</p>
-<p><a class="reference download internal" download="" href="../../_downloads/875318d1659de376a78bdb4c4fcc0397/B-gmtplot-3.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
-<div class="figure align-center">
-<img alt="../../_images/B-gmtplot-3.png" src="../../_images/B-gmtplot-3.png" />
-</div>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;interval&gt;</span></code> 用于设置这三个属性的间隔，它是一个或多个 <code class="docutils literal notranslate"><span class="pre">[&lt;t&gt;]&lt;stride&gt;[±&lt;phase&gt;][&lt;u&gt;]</span></code>
 的组合。</p>
 <ul class="simple">
@@ -376,32 +360,14 @@
 <h2>8.3.3 地理底图<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>地理底图与一般的坐标轴不同，其底图类型 <a class="reference internal" href="../../conf/map/#map-frame-type"><span class="std std-ref">MAP_FRAME_TYPE</span></a>
 使用 <code class="docutils literal notranslate"><span class="pre">fancy</span></code> 形式。</p>
-<p><a class="reference download internal" download="" href="../../_downloads/0302520f3a32db686e7eff9864cfcca8/B-gmtplot-4.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
-<div class="figure align-center" id="id8">
-<img alt="../../_images/B-gmtplot-4.png" src="../../_images/B-gmtplot-4.png" />
-<p class="caption"><span class="caption-text">地理底图示例1</span></p>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">-Ba1f15mg5m</span> <span class="pre">-BS</span></code></p>
 <p>下图同时使用了 <code class="docutils literal notranslate"><span class="pre">p</span></code> 和 <code class="docutils literal notranslate"><span class="pre">s</span></code> 两级属性。这里 <code class="docutils literal notranslate"><span class="pre">p</span></code> 属性用于显示弧度，<code class="docutils literal notranslate"><span class="pre">s</span></code>
 属性用于显示弧分。</p>
-<p><a class="reference download internal" download="" href="../../_downloads/7b61cda3009e117f0de4be5a00f9bda9/B-gmtplot-5.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
-<div class="figure align-center" id="id9">
-<img alt="../../_images/B-gmtplot-5.png" src="../../_images/B-gmtplot-5.png" />
-<p class="caption"><span class="caption-text">地理底图示例2</span></p>
-</div>
-<p>同时使用P和S两级属性 <code class="docutils literal notranslate"><span class="pre">-Bpa15mf5mg5m</span> <span class="pre">-BwSe</span> <span class="pre">-Bs1f30mg15m</span></code></p>
 </div>
 <div class="section" id="id4">
 <h2>8.3.4 笛卡尔线性轴<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>对于一般的线性轴而言，标注的格式由 <a class="reference internal" href="../../conf/format/#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a>
 决定，其默认值为 <code class="docutils literal notranslate"><span class="pre">%g</span></code>，即根据数据的大小决定用一般表示还是指数表示，小数位的数目会根据 <code class="docutils literal notranslate"><span class="pre">&lt;stride&gt;</span></code> 自动决定。若设置 <a class="reference internal" href="../../conf/format/#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a>
 为其他值，则会严格使用其定义的格式，比如 <code class="docutils literal notranslate"><span class="pre">%.2f</span></code> 表示显示两位小数。</p>
-<p><a class="reference download internal" download="" href="../../_downloads/fd854ab6e256e3e282a526c65e93cbcc/B-gmtplot-6.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
-<div class="figure align-center" id="id10">
-<img alt="../../_images/B-gmtplot-6.png" src="../../_images/B-gmtplot-6.png" />
-<p class="caption"><span class="caption-text">笛卡尔线性轴</span></p>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">-R0/12/0/0.95</span> <span class="pre">-JX3i/0.3i</span> <span class="pre">-Ba4f2g1+lFrequency+u&quot;</span> <span class="pre">%&quot;</span> <span class="pre">-BS</span></code></p>
 </div>
 <div class="section" id="log10">
 <h2>8.3.5 笛卡尔log<sub>10</sub>轴<a class="headerlink" href="#log10" title="永久链接至标题">¶</a></h2>
@@ -418,30 +384,17 @@
 <li>在 <code class="docutils literal notranslate"><span class="pre">&lt;stride&gt;</span></code> 后加 <code class="docutils literal notranslate"><span class="pre">l</span></code>，则标注会以log<sub>10</sub>的值显示，比如100会显示成2</li>
 <li>在 <code class="docutils literal notranslate"><span class="pre">&lt;stride&gt;</span></code> 后加 <code class="docutils literal notranslate"><span class="pre">p</span></code>，则标注会以10的n次方的形式显示，比如10<sup>-5</sup></li>
 </ul>
-<p><a class="reference download internal" download="" href="../../_downloads/577dd889f6d6c976bc315b185aedeaac/B-gmtplot-7.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
-<div class="figure align-center" id="id11">
-<img alt="../../_images/B-gmtplot-7.png" src="../../_images/B-gmtplot-7.png" />
-<p class="caption"><span class="caption-text">对数坐标轴</span></p>
-</div>
-<p>(上) <code class="docutils literal notranslate"><span class="pre">-R1/1000/0/1</span> <span class="pre">-JX3il/0.25i</span> <span class="pre">-Ba1f2g3</span></code>(中) <code class="docutils literal notranslate"><span class="pre">-R1/1000/0/1</span> <span class="pre">-JX3il/0.25i</span> <span class="pre">-Ba1f2g3l</span></code>(下) <code class="docutils literal notranslate"><span class="pre">-R1/1000/0/1</span> <span class="pre">-JX3il/0.25i</span> <span class="pre">-Ba1f2g3p</span></code></p>
 </div>
 <div class="section" id="id5">
 <h2>8.3.6 笛卡尔指数轴<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>正常情况下，<code class="docutils literal notranslate"><span class="pre">&lt;stride&gt;</span></code> 用于生成等间隔的标注或刻度，但是由于指数函数的特性，这样的标注会在坐标轴的某一端挤在一起。为了避免这个问题，可以在 <code class="docutils literal notranslate"><span class="pre">&lt;stride&gt;</span></code> 后加 <code class="docutils literal notranslate"><span class="pre">p</span></code>，则标注会按照转换后的值等间隔出现，而标注本身依然使用未转换的值。比如，若stride=1，pow=0.5（即sqrt），则在1、4、处会出现标注。</p>
-<p><a class="reference download internal" download="" href="../../_downloads/295671b7c3bd3b498160acaead92ad1f/B-gmtplot-8.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
-<div class="figure align-center" id="id12">
-<img alt="../../_images/B-gmtplot-8.png" src="../../_images/B-gmtplot-8.png" />
-<p class="caption"><span class="caption-text">指数投影坐标轴</span></p>
-</div>
-<p>(上) <code class="docutils literal notranslate"><span class="pre">-R0/100/0/0.9</span> <span class="pre">-JX3ip0.5/0.25i</span> <span class="pre">-Ba20f10g5</span></code>
-(下) <code class="docutils literal notranslate"><span class="pre">-R0/100/0/0.9</span> <span class="pre">-JX3ip0.5/0.25i</span> <span class="pre">-Ba3f2g1p</span></code></p>
 </div>
 <div class="section" id="id6">
 <h2>8.3.7 时间轴<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>时间轴与其他轴不同的地方在于，时间轴可以有多种不同的标注方式。下面会用一系列示例来演示时间轴的灵活性。在下面的例子中，尽管只绘制了X轴（绘图时使用了 <code class="docutils literal notranslate"><span class="pre">-BS</span></code>），实际上时间轴标注的各种用法使用于全部轴。</p>
 <p>在绘制时间轴时，需要指定时间间隔，时间间隔的单位可以取如下值：</p>
-<table border="1" class="docutils align-center" id="id13">
-<caption><span class="caption-text">GMT时间单位</span><a class="headerlink" href="#id13" title="永久链接至表格">¶</a></caption>
+<table border="1" class="docutils align-center" id="id8">
+<caption><span class="caption-text">GMT时间单位</span><a class="headerlink" href="#id8" title="永久链接至表格">¶</a></caption>
 <colgroup>
 <col width="12%" />
 <col width="17%" />
@@ -529,87 +482,13 @@
 </tbody>
 </table>
 <p>第一个例子展示了2000年春天的两个月，想要将这两个月的每周的第一天的日期标注出来。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time1 pdf,png
-gmt <span class="nb">set</span> <span class="nv">FORMAT_DATE_MAP</span><span class="o">=</span>-o FONT_ANNOT_PRIMARY +9p
-gmt basemap -R2000-4-1T/2000-5-25T/0/1 -JX5i/0.2i -Bpa7Rf1d -Bsa1O -BS
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center" id="id14">
-<img alt="../../_images/B-gmtplot-9.png" src="../../_images/B-gmtplot-9.png" />
-<p class="caption"><span class="caption-text">时间轴示例1</span></p>
-</div>
 <p>需要注意，<code class="docutils literal notranslate"><span class="pre">-Bsa1O</span></code> 指定了次级标注的间隔为一个月，由于此处使用的是大写的 <code class="docutils literal notranslate"><span class="pre">O</span></code>，因而具体的显式方式由 <a class="reference internal" href="../../conf/format/#format-date-map"><span class="std std-ref">FORMAT_DATE_MAP</span></a> 决定。根据 <a class="reference internal" href="../../conf/format/#format-date-map"><span class="std std-ref">FORMAT_DATE_MAP</span></a> 的说明可知，其值为 <code class="docutils literal notranslate"><span class="pre">-o</span></code> 表明以月份名格式显式。破折号表示要去掉日期前面的前置零（即02变成2）。</p>
 <p>下面的例子用两种不同的方式标注了1969年的两天。图中下面的例子使用周来标注，上面的例子使用日期来标注。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time2 pdf,png
-gmt <span class="nb">set</span> FORMAT_DATE_MAP <span class="s2">&quot;o dd&quot;</span> FORMAT_CLOCK_MAP hh:mm FONT_ANNOT_PRIMARY +9p
-gmt basemap -R1969-7-21T/1969-7-23T/0/1 -JX5i/0.2i -Bpa6Hf1h -Bsa1K -BS
-gmt basemap -Bpa6Hf1h -Bsa1D -BS -Y0.65i
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center" id="id15">
-<img alt="../../_images/B-gmtplot-10.png" src="../../_images/B-gmtplot-10.png" />
-<p class="caption"><span class="caption-text">时间轴示例2</span></p>
-</div>
 <p>第三个例子展示了两年的时间，并标注了每年以及每三个月。年标注位于一年间隔的中间，月标注位于对应月的中间而不是三个月间隔的中间。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time3 pdf,png
-gmt <span class="nb">set</span> FORMAT_DATE_MAP o FORMAT_TIME_PRIMARY_MAP Character FONT_ANNOT_PRIMARY +9p
-gmt basemap -R1997T/1999T/0/1 -JX5i/0.2i -Bpa3Of1o -Bsa1Y -BS
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center" id="id16">
-<img alt="../../_images/B-gmtplot-11.png" src="../../_images/B-gmtplot-11.png" />
-<p class="caption"><span class="caption-text">时间示例3</span></p>
-</div>
 <p>第四个例子展示了一天中的几个小时，通过在R选项中指定 <code class="docutils literal notranslate"><span class="pre">t</span></code> 来使用相对时间坐标。这里使用了 <code class="docutils literal notranslate"><span class="pre">p</span></code> 属性和 <code class="docutils literal notranslate"><span class="pre">s</span></code> 属性，12小时制，时间从右向左增加：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time4 pdf,png
-gmt <span class="nb">set</span> <span class="nv">FORMAT_CLOCK_MAP</span><span class="o">=</span>-hham FONT_ANNOT_PRIMARY +9p TIME_UNIT d
-gmt basemap -R0.2t/0.35t/0/1 -JX-5i/0.2i -Bpa15mf5m -Bsa1H -BS
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center" id="id17">
-<img alt="../../_images/B-gmtplot-12.png" src="../../_images/B-gmtplot-12.png" />
-<p class="caption"><span class="caption-text">时间轴示例4</span></p>
-</div>
 <p>第五个例子用两种方式展示了几周的时间：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time5 png,pdf
-gmt <span class="nb">set</span> FORMAT_DATE_MAP u FORMAT_TIME_PRIMARY_MAP Character <span class="se">\</span>
-       FORMAT_TIME_SECONDARY_MAP full FONT_ANNOT_PRIMARY +9p
-gmt basemap -R1969-7-21T/1969-8-9T/0/1 -JX5i/0.2i -Bpa1K -Bsa1U -BS
-gmt <span class="nb">set</span> FORMAT_DATE_MAP o TIME_WEEK_START Sunday FORMAT_TIME_SECONDARY_MAP Chararacter
-gmt basemap -Bpa3Kf1k -Bsa1r -BS -Y0.65i
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center" id="id18">
-<img alt="../../_images/B-gmtplot-13.png" src="../../_images/B-gmtplot-13.png" />
-<p class="caption"><span class="caption-text">时间轴示例5</span></p>
-</div>
 <p>第六个例子展示了1996年的前5个月，每个月用月份的简写以及两位年份标注：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time6 pdf,png
-gmt <span class="nb">set</span> FORMAT_DATE_MAP <span class="s2">&quot;o yy&quot;</span> FORMAT_TIME_PRIMARY_MAP Abbreviated
-gmt basemap -R1996T/1996-6T/0/1 -JX5i/0.2i -Ba1Of1d -BS
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center" id="id19">
-<img alt="../../_images/B-gmtplot-14.png" src="../../_images/B-gmtplot-14.png" />
-<p class="caption"><span class="caption-text">时间轴示例6</span></p>
-</div>
 <p>第七个例子：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time7 pdf,png
-gmt <span class="nb">set</span> FORMAT_DATE_MAP jjj TIME_INTERVAL_FRACTION <span class="m">0</span>.05 FONT_ANNOT_PRIMARY +9p
-gmt basemap -R2000-12-15T/2001-1-15T/0/1 -JX5i/0.2i -Bpa5Df1d -Bsa1Y -BS
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center" id="id20">
-<img alt="../../_images/B-gmtplot-15.png" src="../../_images/B-gmtplot-15.png" />
-<p class="caption"><span class="caption-text">时间轴示例7</span></p>
-</div>
 </div>
 <div class="section" id="pi">
 <h2>8.3.8 弧度轴 <span class="math notranslate nohighlight">\(\pi\)</span> 的标注<a class="headerlink" href="#pi" title="永久链接至标题">¶</a></h2>
@@ -641,37 +520,6 @@ gmt basemap -JX10c/5c -R-pi/pi/-1/1 -Bxapi4 -pdf test2
 <p>需要注意，<code class="docutils literal notranslate"><span class="pre">coord</span></code> 必须按递增顺序排列。</p>
 <p>下面的例子展示中展示了自定义标注的用法，<code class="docutils literal notranslate"><span class="pre">xannots.txt</span></code> 和 <code class="docutils literal notranslate"><span class="pre">yannots.txt</span></code>
 分别是X轴和Y轴的标注文件：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat <span class="s">&lt;&lt; EOF &gt; xannots.txt</span>
-<span class="s">416.0 ig Devonian</span>
-<span class="s">443.7 ig Silurian</span>
-<span class="s">488.3 ig Ordovician</span>
-<span class="s">542 ig Cambrian</span>
-<span class="s">EOF</span>
-cat <span class="s">&lt;&lt; EOF &gt; yannots.txt</span>
-<span class="s">0 a</span>
-<span class="s">1 a</span>
-<span class="s">2 f</span>
-<span class="s">2.71828 ag e</span>
-<span class="s">3 f</span>
-<span class="s">3.1415926 ag @~p@~</span>
-<span class="s">4 f</span>
-<span class="s">5 f</span>
-<span class="s">6 f</span>
-<span class="s">6.2831852 ag 2@~p@~</span>
-<span class="s">EOF</span>
-
-gmt begin GMT_-B_custom pdf,png
-gmt basemap -R416/542/0/6.2831852 -JX-5i/2.5i -Bpx25f5g25+u<span class="s2">&quot; Ma&quot;</span> -Bpycyannots.txt -BWS+glightblue
-gmt basemap -R416/542/0/6.2831852 -JX-5i/2.5i -Bsxcxannots.txt -BWS <span class="se">\</span>
-              --MAP_ANNOT_OFFSET_SECONDARY<span class="o">=</span>10p --MAP_GRID_PEN_SECONDARY<span class="o">=</span>2p
-gmt end
-rm -f <span class="o">[</span>xy<span class="o">]</span>annots.txt
-</pre></div>
-</div>
-<div class="figure align-center" id="id21">
-<img alt="../../_images/B-gmtplot-16.png" src="../../_images/B-gmtplot-16.png" />
-<p class="caption"><span class="caption-text">自定义坐标轴</span></p>
-</div>
 </div>
 </div>
 
@@ -720,7 +568,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年06月21日.
+        最后更新于 2019年06月22日.
       </span>
 
     </p>

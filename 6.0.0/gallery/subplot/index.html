@@ -233,36 +233,6 @@
 <p>常规方式下使用 <a class="reference internal" href="../../option/XY/"><span class="doc">-X 和 -Y 选项</span></a> 移动每个子图的原点，并使用 <a class="reference internal" href="../../module/text/"><span class="doc">text</span></a>
 为子图添加编号。</p>
 <p>下面的命令展示了如何绘制四个子图，并给每个子图进行编号。需要注意，绘图时通常从左下角开始画起，因而这里绘制子图的顺序是 c =&gt; d =&gt; a =&gt; b。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="nv">J</span><span class="o">=</span>X5c/3c
-<span class="nv">R</span><span class="o">=</span><span class="m">0</span>/5/0/3
-
-gmt begin subplot pdf,png
-
-<span class="c1"># 绘制子图 c</span>
-gmt basemap -J<span class="nv">$J</span> -R<span class="nv">$R</span> -Ba -BWSen
-<span class="c1"># 此处可以放置一堆子图A内的绘制命令</span>
-<span class="c1"># 给子图编号</span>
-<span class="nb">echo</span> <span class="s2">&quot;(c)&quot;</span> <span class="p">|</span> gmt text -F+cTL+f15p,1 -Dj-1c/-0.75c -N
-
-<span class="c1"># 绘制子图 d 并编号</span>
-gmt basemap -J<span class="nv">$J</span> -R<span class="nv">$R</span> -Ba -BWSen -X7c
-<span class="nb">echo</span> <span class="s2">&quot;(d)&quot;</span> <span class="p">|</span> gmt text -F+cTL+f15p,1 -Dj-1c/-0.75c -N
-
-<span class="c1"># 绘制子图 a 并编号</span>
-gmt basemap -J<span class="nv">$J</span> -R<span class="nv">$R</span> -Ba -BWSen -X-7c -Y5c
-<span class="nb">echo</span> <span class="s2">&quot;(a)&quot;</span> <span class="p">|</span> gmt text -F+cTL+f15p,1 -Dj-1c/-0.75c -N
-
-<span class="c1"># 绘制子图 b 并编号</span>
-gmt basemap -J<span class="nv">$J</span> -R<span class="nv">$R</span> -Ba -BWSen -X7c
-<span class="nb">echo</span> <span class="s2">&quot;(b)&quot;</span> <span class="p">|</span> gmt text -F+cTL+f15p,1 -Dj-1c/-0.75c -N
-
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center">
-<img alt="../../_images/subplot-gmtplot-0.png" src="../../_images/subplot-gmtplot-0.png" />
-</div>
 <p>几点说明:</p>
 <ol class="arabic simple">
 <li><code class="docutils literal notranslate"><span class="pre">+cTL</span></code> 的作用从 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项中提取底图的左上角（<strong>T</strong>op <strong>L</strong>eft）作为当前字符串的坐标；</li>
@@ -280,32 +250,6 @@ gmt end
 <li><code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">begin</span></code> 将整个绘图区域分为2x2的网格并设置子图的大小及其它属性</li>
 <li><code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 通过指定行和列以激活指定的子图</li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="nv">R</span><span class="o">=</span><span class="m">0</span>/5/0/3
-
-gmt begin subplot pdf,png
-gmt <span class="nb">set</span> FONT_TAG 15p,1
-
-gmt subplot begin 2x2 -Fs5c/3c -A<span class="s1">&#39;(a)&#39;</span>+JTL+o0.2c/0.4c -M0.5c/0.2c
-gmt subplot <span class="nb">set</span> <span class="m">1</span>,1
-gmt basemap -R<span class="nv">$R</span> -Ba -BWSen
-
-gmt subplot <span class="nb">set</span> <span class="m">1</span>,2
-gmt basemap -R<span class="nv">$R</span> -Ba -BWSen
-
-gmt subplot <span class="nb">set</span> <span class="m">2</span>,1
-gmt basemap -R<span class="nv">$R</span> -Ba -BWSen
-
-gmt subplot <span class="nb">set</span> <span class="m">2</span>,2
-gmt basemap -R<span class="nv">$R</span> -Ba -BWSen
-
-gmt subplot end
-gmt end
-</pre></div>
-</div>
-<div class="figure align-center">
-<img alt="../../_images/subplot-gmtplot-1.png" src="../../_images/subplot-gmtplot-1.png" />
-</div>
 <p>若 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 不指定子图行和列，则GMT自动依次激活下一个子图。因而下面的示例也可以实现相同的效果，但更加简洁：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="nv">R</span><span class="o">=</span><span class="m">0</span>/5/0/3
@@ -394,7 +338,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年06月21日.
+        最后更新于 2019年06月22日.
       </span>
 
     </p>
