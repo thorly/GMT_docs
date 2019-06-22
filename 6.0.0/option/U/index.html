@@ -243,6 +243,13 @@
 <li><a class="reference internal" href="../../conf/format/#format-time-stamp"><span class="std std-ref">FORMAT_TIME_STAMP</span></a> 用于控制时间戳的显示格式</li>
 <li><a class="reference internal" href="../../conf/font/#font-logo"><span class="std std-ref">FONT_LOGO</span></a> 时间戳中文本的字体</li>
 </ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -R0/10/0/5 -JX10c/3c -Bx1 -By1 -U<span class="s2">&quot;This is a GMT logo&quot;</span> -png GMT_-U
+</pre></div>
+</div>
+<div class="figure align-center" id="id1">
+<img alt="../../_images/U-gmtplot-0.png" src="../../_images/U-gmtplot-0.png" />
+<p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">-U</span></code> 选项加时间戳</span></p>
+</div>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
 <p class="last">每个带有 <code class="docutils literal notranslate"><span class="pre">-U</span></code> 选项的绘图命令都会绘制一遍时间戳，因而只需要一个绘图命令中使用 <code class="docutils literal notranslate"><span class="pre">-U</span></code> 即可。</p>

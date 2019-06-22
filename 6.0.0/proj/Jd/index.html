@@ -242,6 +242,17 @@
 <li><code class="docutils literal notranslate"><span class="pre">&lt;lat1&gt;/&lt;lat2&gt;</span></code> 两条标准纬线</li>
 </ul>
 <p>等距圆锥投影常用于绘制小国家的地图集。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_equidistant_conic pdf,png
+gmt <span class="nb">set</span> FORMAT_GEO_MAP ddd:mm:ssF MAP_GRID_CROSS_SIZE_PRIMARY <span class="m">0</span>.05i
+gmt coast -R-88/-70/18/24 -JD-79/21/19/23/4.5i -Bag -Di -N1/thick,red <span class="se">\</span>
+            -Glightgreen -Wthinnest
+gmt end
+</pre></div>
+</div>
+<div class="figure align-center" id="id1">
+<img alt="../../_images/Jd-gmtplot-0.png" src="../../_images/Jd-gmtplot-0.png" />
+<p class="caption"><span class="caption-text">等距圆锥地图投影</span></p>
+</div>
 </div>
 
 

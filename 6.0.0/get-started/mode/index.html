@@ -289,12 +289,43 @@ gmt end
 <li>多张子图可以共享X轴或Y轴</li>
 </ul>
 <p>子图模式的选项比较多，此处仅举一个示例，详细用法见 <a class="reference internal" href="../../module/subplot/"><span class="doc">subplot</span></a> 的说明文档。本示例中整张图片包含了2行3列共计6个子图，且每列的两张子图共享X轴，每列的子图共享Y轴。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin subplot-example png,pdf
+gmt subplot begin 2x3 -Fs4c/4c -A<span class="s1">&#39;(a)&#39;</span> -M5p/10p -BWsrt -SCb -SRl -T<span class="s2">&quot;Subplot Example&quot;</span>
+    gmt basemap -R0/80/0/10 -c
+    gmt basemap -R0/50/0/10 -c
+    gmt basemap -R0/20/0/10 -c
+    gmt basemap -R0/80/0/20 -c
+    gmt basemap -R0/50/0/20 -c
+    gmt basemap -R0/20/0/20 -c
+gmt subplot end
+gmt end
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="../../_images/mode-gmtplot-0.png" src="../../_images/mode-gmtplot-0.png" />
+</div>
 </div>
 <div class="section" id="id6">
 <h2>3.3.5 图中图模式<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>在绘制研究区域的地图时，有时研究区域的范围比较小。在这种情况下，为了更好地显示研究区域的具体地理位置，通常会绘制一个更大区域的地图，并在大区域地图中框出研究区域的位置，这种图件称之为 inset map，中文没有统一的翻译，通常称之为图中图或者小图。图中图模式可以通过模块 <a class="reference internal" href="../../module/inset/"><span class="doc">inset</span></a> 实现。</p>
 <p><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">inset</span> <span class="pre">begin</span></code> 用于进入图中图模式，其作用是在图纸上标记出一个矩形区域，并将绘图原点移动到该矩形区域的左下角，接下来的所有绘图命令均只在该图中图区域内操作，而 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">inset</span> <span class="pre">end</span></code> 则用于退出图中图模式，并将坐标原点移动回原大图中。</p>
 <p>下面仅展示一个简单的示例：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin inset-map png
+    gmt basemap -R0/40/40/60 -JM6.5i -Bafg -B+glightgreen
+
+    <span class="c1"># 图中图模式</span>
+    gmt inset begin -DjTR+w2.5i+o0.2i -F+gpink+p0.5p -M0.1i
+        gmt basemap -Rg -JA20/20/2.3i -Bafg
+        <span class="nb">echo</span> INSET <span class="p">|</span> gmt text -F+f12p+cTR
+    gmt inset end
+
+    <span class="nb">echo</span> MAP <span class="p">|</span> gmt text -F+f18p+cBL -Dj0.2i
+gmt end
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="../../_images/mode-gmtplot-1.png" src="../../_images/mode-gmtplot-1.png" />
+</div>
 </div>
 </div>
 

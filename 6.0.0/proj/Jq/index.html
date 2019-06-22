@@ -241,6 +241,13 @@
 <li><code class="docutils literal notranslate"><span class="pre">&lt;lon&gt;</span></code> 是中心经线，默认为地图区域的中心</li>
 <li><code class="docutils literal notranslate"><span class="pre">&lt;lat&gt;</span></code> 是标准纬线，默认为赤道，若指定了标准纬线，则必须指定中心经线</li>
 </ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -Rg -JQ4.5i -B60f30g30 -Dc -A5000 -Gtan4 -Slightcyan -png GMT_equi_cyl
+</pre></div>
+</div>
+<div class="figure align-center" id="id1">
+<img alt="../../_images/Jq-gmtplot-0.png" src="../../_images/Jq-gmtplot-0.png" />
+<p class="caption"><span class="caption-text">使用Plate Carrée投影绘制全球地图</span></p>
+</div>
 <p>选择不同的标准纬线，则可以获取经度和纬度的不同缩放比例。流行的几个标准纬线如下：</p>
 <table border="1" class="docutils align-center">
 <colgroup>

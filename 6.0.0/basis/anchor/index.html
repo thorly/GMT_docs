@@ -218,9 +218,21 @@
 <h1>4.11 锚点<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>锚 ⚓是船舶停泊时固定船只使之不能漂走的工具。GMT中的锚点也具有类似的作用，用于将某个元素固定在图中的某个位置。这一节将介绍GMT中锚点的概念，具体的使用场景及使用方法将在下一节介绍。</p>
 <p>对于任意一个矩形元素，GMT为其定义了9个锚点。每个锚点的位置用一个水平位置代码和一个垂直位置代码组合定义得到。水平位置代码可以取 <code class="docutils literal notranslate"><span class="pre">L</span></code>、<code class="docutils literal notranslate"><span class="pre">C</span></code>或 <code class="docutils literal notranslate"><span class="pre">R</span></code>，分别表示左中右；垂直位置代码可以取 <code class="docutils literal notranslate"><span class="pre">T</span></code>、<code class="docutils literal notranslate"><span class="pre">M</span></code>或 <code class="docutils literal notranslate"><span class="pre">B</span></code>，分别表示上中下。3个水平位置代码与3个垂直位置代码自由组合，得到9个锚点，每个锚点均对应矩形元素的某个特定位置，如下图中红点和红字所示。例如，锚点 <code class="docutils literal notranslate"><span class="pre">BL</span></code> 位于矩形元素的左下角，而锚点 <code class="docutils literal notranslate"><span class="pre">MC</span></code> 则位于矩形元素的中心。</p>
+<p><a class="reference download internal" download="" href="../../_downloads/dff70e7cf724e4cd2e2819c56afb8e75/anchor-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/anchor-gmtplot-0.png"><img alt="../../_images/anchor-gmtplot-0.png" src="../../_images/anchor-gmtplot-0.png" style="width: 70%;" /></a>
+</div>
 <p>此处的矩形元素并不一定是一个真正的矩形，GMT中很多绘图元素都可以抽象为一个矩形元素。例如常规的矩形底图、非矩形的地理底图、比例尺、色标、指南针、文本字符串等，都可以抽象为一个矩形元素。</p>
 <p>例如，对于一个非矩形的地理底图来说，其9个锚点的位置如下图所示：</p>
+<p><a class="reference download internal" download="" href="../../_downloads/9dd4d48bcab515bf289b53a5b963b498/anchor-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/anchor-gmtplot-1.png"><img alt="../../_images/anchor-gmtplot-1.png" src="../../_images/anchor-gmtplot-1.png" style="width: 70%;" /></a>
+</div>
 <p>指南针、比例尺、图例、色标、文本字符串等也可以抽象为一个矩形，也有自己的锚点。下图展示了色标的9个锚点的位置：</p>
+<p><a class="reference download internal" download="" href="../../_downloads/ea4cdac636a6f17a544624886f506776/anchor-gmtplot-2.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/anchor-gmtplot-2.png"><img alt="../../_images/anchor-gmtplot-2.png" src="../../_images/anchor-gmtplot-2.png" style="width: 70%;" /></a>
+</div>
 </div>
 
 

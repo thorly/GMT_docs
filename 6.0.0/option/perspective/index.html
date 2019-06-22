@@ -235,6 +235,10 @@
 <p><code class="docutils literal notranslate"><span class="pre">&lt;elev&gt;</span></code> 指定视角的海拔，即视角相对于纸张平面向上旋转的角度，其取值范围为
 0到90（不含0），其中0表示视角与纸张平面平行，90表示视角垂直于纸张平面，默认值为90。</p>
 <p>下图给出了2D底图下透视视角取不同值时所看到的底图。</p>
+<p><a class="reference download internal" download="" href="../../_downloads/68d698ae37b3e080b65e037f860ff752/perspective-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<img alt="../../_images/perspective-gmtplot-0.png" src="../../_images/perspective-gmtplot-0.png" />
+</div>
 <p>对于3D底图而言（使用了 <code class="docutils literal notranslate"><span class="pre">-JZ</span></code> 选项），默认会在Z轴底部绘制XY平面的边框。</p>
 <ul class="simple">
 <li>设置 <code class="docutils literal notranslate"><span class="pre">&lt;zlevel&gt;</span></code> 则可以指定在 <code class="docutils literal notranslate"><span class="pre">Z=&lt;zlevel&gt;</span></code> 平面内绘制边框。</li>
@@ -243,6 +247,10 @@
 <p>下图给出了3D底图上使用不同的 <code class="docutils literal notranslate"><span class="pre">-p</span></code> 选项绘制出来的效果图。绘制底图使用的命令为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R0/10/0/10/0/20 -JX3c -JZ3c -Baf -Bzaf -BwsENZ1+b -p135/40 &gt; xxx.ps
 </pre></div>
+</div>
+<p><a class="reference download internal" download="" href="../../_downloads/b2f8cd274057c293c1e3572f2eccee88/perspective-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="figure align-center">
+<img alt="../../_images/perspective-gmtplot-1.png" src="../../_images/perspective-gmtplot-1.png" />
 </div>
 <p>在绘制动画时，如果不同帧使用的 <code class="docutils literal notranslate"><span class="pre">-p</span></code> 透视参数不同，则由于投影的问题可能会导致底图在纸上的位置出现不规则运动。可以有三种方式解决：</p>
 <ol class="arabic simple">

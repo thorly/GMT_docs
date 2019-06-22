@@ -243,6 +243,17 @@
 <p>具体的格式见 <a class="reference internal" href="../../module/meca/"><span class="doc">meca</span></a> 的说明文档。</p>
 <div class="section" id="id2">
 <h2>14.5.1 震源球大小随震级变化<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+gmt meca -JQ104/15c -R102.5/105.5/30.5/32.5 -Ba -Sa1c -png beachball_1 <span class="s">&lt;&lt; EOF</span>
+<span class="s"># 经度 纬度 深度(km) strike dip rake 震级 newX newY ID</span>
+<span class="s">104.33 31.91 39.8 32 64 85 7 0 0 A</span>
+<span class="s">104.11 31.52 27.1 22 53 57 6 0 0 B</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="../../_images/index-gmtplot-01.png" src="../../_images/index-gmtplot-01.png" />
+</div>
 <p>本示例在震源位置处绘制了两个震源球。震源球的大小随震级变化。
 <code class="docutils literal notranslate"><span class="pre">-Sa1c</span></code> 的 <code class="docutils literal notranslate"><span class="pre">1c</span></code> 指定了 5 级地震的震源球大小为 1厘米。其它地震震源球的大小根据震级按照如下公式进行缩放:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">size</span> <span class="o">=</span> M / <span class="m">5</span> * &lt;scale&gt;
@@ -253,11 +264,53 @@
 <div class="section" id="id3">
 <h2>14.5.2 固定大小的震源球<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>使用选项 <code class="docutils literal notranslate"><span class="pre">-M</span></code> 使所有震源球的大小均为定值，不随震级变化。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+gmt meca -JQ104/15c -R102.5/105.5/30.5/32.5 -Ba -Sa1c -M -png beachball_2 <span class="s">&lt;&lt; EOF</span>
+<span class="s"># 经度 纬度 深度(km) strike dip rake 震级 newX newY ID</span>
+<span class="s">104.33 31.91 39.8 32 64 85 7 0 0 A</span>
+<span class="s">104.11 31.52 27.1 22 53 57 6 0 0 B</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="../../_images/index-gmtplot-11.png" src="../../_images/index-gmtplot-11.png" />
+</div>
 </div>
 <div class="section" id="id4">
 <h2>14.5.3 震源球大小随震级变化，颜色随深度变化<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>使用 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-E</span></code> 选项可以分别为震源球的压缩象限和拉伸象限指定不同的颜色。使用 <code class="docutils literal notranslate"><span class="pre">-Z</span></code> 选项则可以更进一步，根据某个具体的值动态指定压缩象限的颜色。</p>
 <p>本例中展示如何用压缩象限的颜色表示震源的深度。需要先生成一个CPT文件，为每个深度段设置不同的颜色。然后，使用 <a class="reference internal" href="../../module/meca/"><span class="doc">meca</span></a> 模块的 <code class="docutils literal notranslate"><span class="pre">-Z</span></code> 选项即可。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">CPT</span><span class="o">=</span>meca.cpt
+
+<span class="c1"># 生成CPT文件，为每个深度段设置不同的颜色</span>
+cat <span class="s">&lt;&lt; EOF &gt; $CPT</span>
+<span class="s"> 0   0-1-1   20   0-1-1</span>
+<span class="s">20  60-1-1   40  60-1-1</span>
+<span class="s">40 120-1-1   60 120-1-1</span>
+<span class="s">60 240-1-1  100 240-1-1</span>
+<span class="s">EOF</span>
+
+gmt begin beachball_3 png,pdf
+gmt basemap -JQ104/15c -R102.5/105.5/30.5/32.5 -Ba -BWSEN
+gmt meca -C+s5p -Sa1.3c -Z<span class="nv">$CPT</span> <span class="s">&lt;&lt; EOF</span>
+<span class="s"># 经度 纬度 深度(km) strike dip rake 震级 newX newY ID</span>
+<span class="s">104.33 31.91 39.8  32 64   85 7.0      0     0 A</span>
+<span class="s">104.11 31.52 27.1  22 53   57 6.0      0     0 B</span>
+<span class="s">103.67 31.13  6.4  86 32  -65 8.0      0     0 C</span>
+<span class="s">103.90 31.34 43.6 194 84  179 4.9 104.18 30.84 D</span>
+<span class="s">103.72 31.44 67.3  73 84 -162 4.9 103.12 31.64 E</span>
+<span class="s">104.12 31.78 12.7 186 68  107 4.7 103.83 32.26 F</span>
+<span class="s">104.23 31.61 62.0  86 63  -51 4.7 104.96 31.69 G</span>
+<span class="s">EOF</span>
+
+gmt colorbar -C<span class="nv">$CPT</span> -DjBL+w5c/0.5c+ml+o0.8c/0.4c -Bx+lDepth -By+lkm -L -S
+gmt end
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="../../_images/index-gmtplot-21.png" src="../../_images/index-gmtplot-21.png" />
+</div>
 </div>
 </div>
 
