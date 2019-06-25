@@ -295,7 +295,7 @@
 <dt><code class="docutils literal notranslate"><span class="pre">-B</span></code></dt>
 <dd><p class="first">绘制底图边框。 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项是GMT的通用选项，见GMT中文手册中相关内容。</p>
 <p>示例:</p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R-180/180/-70/70 -JM10c -Bx60 -By30 &gt; test.ps
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -R-180/180/-70/70 -JM10c -Bx60 -By30 -pdf <span class="nb">test</span>
 </pre></div>
 </div>
 </dd>
@@ -326,9 +326,9 @@
 </dl>
 <blockquote>
 <div><p>示例:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R90/110/30/40 -JM10c -Bx5 -By5 -Lg95/35+c35+w800k+lscale+u+f &gt; test.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -R90/110/30/40 -JM10c -Bx5 -By5 -Lg95/35+c35+w800k+lscale+u+f -png <span class="nb">test</span>
 
-gmt psbasemap -R90/180/-50/50 -Jm0.025i -Bafg -B+tMercator -Lx1i/1i+c0+w5000k &gt; mercator.ps
+gmt basemap -R90/180/-50/50 -Jm0.025i -Bafg -B+tMercator -Lx1i/1i+c0+w5000k -png mercator
 </pre></div>
 </div>
 </div></blockquote>
@@ -400,7 +400,7 @@ gmt psbasemap -R90/180/-50/50 -Jm0.025i -Bafg -B+tMercator -Lx1i/1i+c0+w5000k &g
 <li>边框的采样间隔由参数 <code class="docutils literal notranslate"><span class="pre">MAP_LINE_STEP</span></code> 决定</li>
 </ol>
 <p>示例:</p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R0/10/0/10 -JX10c/5c -Aoutline.txt
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -R0/10/0/10 -JX10c/5c -Aoutline.txt
 </pre></div>
 </div>
 </dd>
@@ -565,7 +565,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年06月24日.
+        最后更新于 2019年06月25日.
       </span>
 
     </p>

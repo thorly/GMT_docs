@@ -402,17 +402,19 @@ r 是以 km 为单位的距离</li>
 <div class="section" id="id3">
 <h2>13.55.3 示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>利用 SAC 的命令 <code class="docutils literal notranslate"><span class="pre">funcgen</span> <span class="pre">seismogram</span></code> 生成了波形，想要绘制单个波形，并分别为正负部分涂色:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pssac seis.SAC -JX10c/5c -R9/20/-2/2 -Baf -Fr -Gp+gblack -Gn+gred &gt; single.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt sac seis.SAC -JX10c/5c -R9/20/-2/2 -Baf -Fr -Gp+gblack -Gn+gred -png single
 </pre></div>
 </div>
 <p>利用 SAC 命令 <code class="docutils literal notranslate"><span class="pre">datagen</span> <span class="pre">sub</span> <span class="pre">tel</span> <span class="pre">*.z</span></code> 生成多个波形，将其绘制在距离剖面上:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pssac *.z -R200/1600/12/45 -JX15c/5c -Bx200+l<span class="s1">&#39;T(s)&#39;</span> -By5+lDegree -BWSen <span class="se">\</span>
-     -Ed -M1.5c -W0.5p,red &gt; distance_profile.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt sac *.z -R200/1600/12/45 -JX15c/5c -Bx200+l<span class="s1">&#39;T(s)&#39;</span> -By5+lDegree -BWSen <span class="se">\</span>
+     -Ed -M1.5c -W0.5p,red -png distance_profile
 </pre></div>
 </div>
 <p>利用 SAC 命令 <code class="docutils literal notranslate"><span class="pre">datagen</span> <span class="pre">sub</span> <span class="pre">tel</span> <span class="pre">*.z</span></code> 生成多个波形，将其绘制在地图上:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pssac *.z -JM15c -R-120/-40/35/65 -Baf -M1i -S300c -K &gt; map.ps
-saclst stlo stla f *.z <span class="p">|</span> gmt psxy -J -R -St0.4c -Gblack -i1,2 -O &gt;&gt; map.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map pdf
+gmt sac *.z -JM15c -R-120/-40/35/65 -Baf -M1i -S300c
+saclst stlo stla f *.z <span class="p">|</span> gmt plot -St0.4c -Gblack -i1,2
+gmt end
 </pre></div>
 </div>
 </div>
@@ -463,7 +465,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年06月24日.
+        最后更新于 2019年06月25日.
       </span>
 
     </p>

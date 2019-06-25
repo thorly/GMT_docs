@@ -327,7 +327,7 @@ Fault plane:  <span class="nv">strike</span><span class="o">=</span><span class=
 <li><code class="docutils literal notranslate"><span class="pre">newX</span></code> 和 <code class="docutils literal notranslate"><span class="pre">newY</span></code> 放置震源球的经纬度，这样可以避免震源球覆盖震源位置。若值为0，则表示将震源球放在震源位置</li>
 <li><code class="docutils literal notranslate"><span class="pre">title</span></code> 出现中震源球上方/下方的字符串（可选）</li>
 </ul>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psmeca -Rg -JN15c -Sa2c &gt; meca.ps <span class="s">&lt;&lt; EOF</span>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt meca -Rg -JN15c -Sa2c -pdf meca <span class="s">&lt;&lt; EOF</span>
 <span class="s">-176.96 -29.25 47.8 202 30 93 7.3 0 0 197601010129</span>
 <span class="s">EOF</span>
 </pre></div>
@@ -344,7 +344,7 @@ Fault plane:  <span class="nv">strike</span><span class="o">=</span><span class=
 <li>两组 <code class="docutils literal notranslate"><span class="pre">strike</span></code> 、 <code class="docutils literal notranslate"><span class="pre">dip</span></code> 、 <code class="docutils literal notranslate"><span class="pre">rake</span></code> 分别是两个断层面的参数</li>
 <li><code class="docutils literal notranslate"><span class="pre">mantissa</span></code> 和 <code class="docutils literal notranslate"><span class="pre">exponent</span></code> 是地震标量矩的尾数和指数部分。例如，地震标量矩为9.56e+26 dyne-cm，则 <code class="docutils literal notranslate"><span class="pre">mantissa=9.56</span></code> 、 <code class="docutils literal notranslate"><span class="pre">exponent=26</span></code></li>
 </ul>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psmeca -Rg -JN15c -Sc2c &gt; meca.ps <span class="s">&lt;&lt; EOF</span>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt meca -Rg -JN15c -Sc2c -pdf meca <span class="s">&lt;&lt; EOF</span>
 <span class="s">-176.96 -29.25 47.8 202 30 93 18 60 88 9.56 26 0 0 197601010129</span>
 <span class="s">EOF</span>
 </pre></div>
@@ -372,7 +372,7 @@ Fault plane:  <span class="nv">strike</span><span class="o">=</span><span class=
 <li><code class="docutils literal notranslate"><span class="pre">m</span></code> 和 <code class="docutils literal notranslate"><span class="pre">z</span></code> 是一个东西？还是我的理解有误？ TODO</li>
 <li>GMCT所使用的rtf坐标，实际上就是USE坐标系</li>
 </ul>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psmeca -Rg -JN15c -Sm2c &gt; meca.ps <span class="s">&lt;&lt; EOF</span>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt meca -Rg -JN15c -Sm2c -pdf meca <span class="s">&lt;&lt; EOF</span>
 <span class="s">-176.96 -29.25 47.8 7.680 0.090 -7.770 1.390 4.520 -3.260 26 0 0 title</span>
 <span class="s">EOF</span>
 </pre></div>
@@ -515,7 +515,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年06月24日.
+        最后更新于 2019年06月25日.
       </span>
 
     </p>

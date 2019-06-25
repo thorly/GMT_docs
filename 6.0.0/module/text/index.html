@@ -293,7 +293,7 @@
 </pre></div>
 </div>
 <p>示例:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">2</span> <span class="m">2</span> SHOW TEXTS <span class="p">|</span> gmt pstext -JX10c -R0/5/0/5 -Ba &gt; test.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">2</span> <span class="m">2</span> SHOW TEXTS <span class="p">|</span> gmt text -JX10c -R0/5/0/5 -Ba -pdf <span class="nb">test</span>
 </pre></div>
 </div>
 <p>若使用了 <code class="docutils literal notranslate"><span class="pre">-F</span></code> 选项，则输入数据的格式为:</p>
@@ -339,7 +339,7 @@
 <li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 文本对齐方式，见 <a class="reference internal" href="../../basis/anchor/"><span class="doc">锚点</span></a></li>
 </ol>
 <p>下面的命令中，统一设置了所有文本的字号为30p，4号字体，红色，文本旋转45度，且以左上角对齐:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pstext -R0/10/0/10 -JX10c/10c -B1g1 -F+f30p,4,red+a45+jTL &gt; text.ps <span class="s">&lt;&lt; EOF</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt text -R0/10/0/10 -JX10c/10c -B1g1 -F+f30p,4,red+a45+jTL -pdf text <span class="s">&lt;&lt; EOF</span>
 <span class="s">3 4 Text1</span>
 <span class="s">6 8 Text2</span>
 <span class="s">EOF</span>
@@ -370,13 +370,13 @@
 </pre></div>
 </div>
 <p>使用 <code class="docutils literal notranslate"><span class="pre">+c&lt;justify&gt;</span></code> 选项，则输入数据中不需要XY坐标，只需要文本即可，该选项直接从 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项中提取出范围信息，并由对齐方式决定文本的坐标位置。比如 <code class="docutils literal notranslate"><span class="pre">-F+cTL</span></code> 表示将文本放在底图的左上角，在加上合适的偏移量即可放在任意位置。例如:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;(a)&#39;</span> <span class="p">|</span> gmt pstext -R0/10/0/10 -JX10c/10c -B1 -F+cTL -Dj0.2c/0.2c &gt; text.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;(a)&#39;</span> <span class="p">|</span> gmt text -R0/10/0/10 -JX10c/10c -B1 -F+cTL -Dj0.2c/0.2c -pdf text
 </pre></div>
 </div>
 <p>通常来说，要绘制的文本都来自于输入数据的某一列。对于多段数据而言，还可以使用其他子选项来设置文本的来源：</p>
 <ul class="last">
 <li><p class="first"><code class="docutils literal notranslate"><span class="pre">+h</span></code> 会直接从多段数据的段头记录中提取文本:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pstext -R0/10/0/10 -JX10c/10c -B1 -F+h &gt; text.ps <span class="s">&lt;&lt; EOF</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt text -R0/10/0/10 -JX10c/10c -B1 -F+h -pdf text <span class="s">&lt;&lt; EOF</span>
 <span class="s">&gt; TEXT1</span>
 <span class="s">2  2</span>
 <span class="s">&gt; TEXT2</span>
@@ -386,7 +386,7 @@
 </div>
 </li>
 <li><p class="first"><code class="docutils literal notranslate"><span class="pre">+l</span></code> 会直接从多段数据的段头记录里的 <code class="docutils literal notranslate"><span class="pre">-L&lt;label&gt;</span></code> 中提取信息:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pstext -R0/10/0/10 -JX10c/10c -B1 -F+l &gt; text.ps <span class="s">&lt;&lt; EOF</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt text -R0/10/0/10 -JX10c/10c -B1 -F+l -pdf text <span class="s">&lt;&lt; EOF</span>
 <span class="s">&gt; -LTEXT1</span>
 <span class="s">2  2</span>
 <span class="s">&gt; -LTEXT2</span>
@@ -409,7 +409,7 @@
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-L</span></code></dt>
 <dd><p class="first">用于列出GMT所支持的所有字体名及其对应的字号:</p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pstext -L
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt text -L
 </pre></div>
 </div>
 </dd>
@@ -474,7 +474,7 @@ rm gmt.*
 <div class="section" id="id3">
 <h2>13.61.3 示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>下面的例子中设置文本框的相关属性：蓝色边框、淡蓝填充色、圆角矩形，空白为 <code class="docutils literal notranslate"><span class="pre">100%/100%</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pstext -R0/10/0/5 -JX10c/5c -B1 -Wblue -Glightblue -TO -C100%/100% &gt; text.ps <span class="s">&lt;&lt; EOF</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt text -R0/10/0/5 -JX10c/5c -B1 -Wblue -Glightblue -TO -C100%/100% -pdf text <span class="s">&lt;&lt; EOF</span>
 <span class="s">3   1   Text1</span>
 <span class="s">6   3   Text2</span>
 <span class="s">EOF</span>
@@ -528,7 +528,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年06月24日.
+        最后更新于 2019年06月25日.
       </span>
 
     </p>
