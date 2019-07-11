@@ -275,7 +275,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://docs.generic-mapping-tools.org/latest/text.html" title="(在 GMT v6.1.0rc2)"><span>text</span></a></td>
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://docs.generic-mapping-tools.org/latest/text.html" title="(在 GMT v6.1.0)"><span>text</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">在图上写文本</td>
 </tr>
@@ -430,14 +430,12 @@
 </ol>
 <p>段头记录后即为要显示在图上的文本，每段数据之间用空行分隔。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-gmt pstext -R0/3/0/5 -JX3i -F+f+a+j -B1 -M -N -Y4c <span class="s">&lt;&lt; EOF &gt; pstext_-M.ps</span>
+gmt text -R0/3/0/5 -JX3i -F+f+a+j -B1 -M -N -Y4c -pdf pstext_-M <span class="s">&lt;&lt; EOF</span>
 <span class="s">&gt; 0 -0.5 12p,black 0 LT 13p 3i j</span>
 <span class="s">@%5%Figure 1.@%% This illustration shows nothing useful, but it still needs</span>
 <span class="s">a figure caption. Highlighted in @;255/0/0;red@;; you can see the locations</span>
 <span class="s">of cities where it is @_impossible@_ to get any good Thai food; these are to be avoided.</span>
 <span class="s">EOF</span>
-
-rm gmt.*
 </pre></div>
 </div>
 <div class="last figure align-center" id="id4">
@@ -528,7 +526,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年07月05日.
+        最后更新于 2019年07月11日.
       </span>
 
     </p>
