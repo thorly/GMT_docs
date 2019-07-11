@@ -368,8 +368,10 @@ Z=100-150的色块宽度的两倍。</p>
 </div>
 <div class="section" id="id3">
 <h2>13.6.3 示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt makecpt -T-200/1000/100 -Crainbow &gt; t.cpt
-gmt psscale -Ct.cpt -Dx8c/1c+w12c/0.5c+jTC+h -Bxaf+l<span class="s2">&quot;topography&quot;</span> -By+lkm &gt; map.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map
+gmt makecpt -T-200/1000/100 -Crainbow
+gmt colorbar -C -Dx8c/1c+w12c/0.5c+jTC+h -Bxaf+l<span class="s2">&quot;topography&quot;</span> -By+lkm
+gmt end
 </pre></div>
 </div>
 </div>
