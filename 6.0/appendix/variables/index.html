@@ -29,8 +29,6 @@
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script defer="defer" type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-        <script defer="defer" type="text/javascript" src="../../_static/algolia.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
@@ -41,8 +39,6 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/algolia.css" type="text/css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
     <link rel="next" title="16.7 目录参数" href="../special-dirs/" />
@@ -206,7 +202,7 @@
         
             
             
-              <a href="https://github.com/gmt-china/GMT_Docs/blob/6.0.0/source/appendix/variables.rst" class="fa fa-github"> 编辑本页</a>
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/appendix/variables.rst" class="fa fa-github"> 编辑本页</a>
             
           
         
@@ -229,14 +225,13 @@
 <div class="section" id="gmt-datadir">
 <h2>16.6.2 <code class="docutils literal notranslate"><span class="pre">$GMT_DATADIR</span></code><a class="headerlink" href="#gmt-datadir" title="永久链接至标题">¶</a></h2>
 <p>用于指定用户自己的数据文件的放置目录。当在命令中给定文件名时，GMT首先会在当前目录寻找该文件。若找不到，则会到环境变量 <code class="docutils literal notranslate"><span class="pre">$GMT_DATADIR</span></code> 所指定的目录中寻找。</p>
-<p>对于一些常用的数据文件，可以放在特定的目录中，并将任意一个环境变量指向该目录，则在命令中使用该文件时只需要指定文件名而不必给出完整路径。</p>
-<p>Linux下多个目录之间用冒号分隔；Windows下用分号分隔。</p>
+<p>对于一些常用的数据文件，可以放在特定的目录中，并将任意一个环境变量指向该目录，则在命令中使用该文件时只需要指定文件名而不必给出完整路径。多个目录之间用逗号分隔。</p>
 <p>Linux下以 <code class="docutils literal notranslate"><span class="pre">/</span></code> 结尾的目录会被递归搜索。（此句存疑）。</p>
 </div>
 <div class="section" id="gmt-userdir">
 <h2>16.6.3 <code class="docutils literal notranslate"><span class="pre">$GMT_USERDIR</span></code><a class="headerlink" href="#gmt-userdir" title="永久链接至标题">¶</a></h2>
 <p>用于指定用户自定义的配置文件的放置目录。比如 <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code> 、自定义的符号、CPT、数学宏、网格文件自定义后缀 <code class="docutils literal notranslate"><span class="pre">gmt.io</span></code> 等。</p>
-<p>若 <code class="docutils literal notranslate"><span class="pre">$GMT_USERDIR</span></code> 未定义，则使用默认值 <code class="docutils literal notranslate"><span class="pre">${HOME}/.gmt</span></code> 。</p>
+<p>若 <code class="docutils literal notranslate"><span class="pre">$GMT_USERDIR</span></code> 未定义，则使用默认值 <code class="docutils literal notranslate"><span class="pre">${HOME}/.gmt</span></code>。</p>
 </div>
 <div class="section" id="gmt-tmpdir">
 <h2>16.6.4 <code class="docutils literal notranslate"><span class="pre">$GMT_TMPDIR</span></code><a class="headerlink" href="#gmt-tmpdir" title="永久链接至标题">¶</a></h2>
@@ -293,7 +288,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年06月20日.
+        最后更新于 2019年08月02日.
       </span>
 
     </p>

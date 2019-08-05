@@ -29,8 +29,6 @@
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script defer="defer" type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-        <script defer="defer" type="text/javascript" src="../../_static/algolia.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
@@ -41,8 +39,6 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/algolia.css" type="text/css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
     <link rel="next" title="3 GMT初探" href="../../get-started/" />
@@ -106,8 +102,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../linux/">2.1 Linux 下安装GMT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../windows/">2.2 Windows 下安装 GMT</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.3 macOS 下安装 GMT</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#homebrew">2.3.1 使用 homebrew 安装</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gmt">2.3.2 使用 GMT 安装包</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gmt">2.3.1 使用 GMT 安装包</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#homebrew">2.3.2 使用 homebrew 安装</a></li>
 </ul>
 </li>
 </ul>
@@ -198,7 +194,7 @@
         
             
             
-              <a href="https://github.com/gmt-china/GMT_Docs/blob/6.0.0/source/install/macOS.rst" class="fa fa-github"> 编辑本页</a>
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/install/macOS.rst" class="fa fa-github"> 编辑本页</a>
             
           
         
@@ -215,23 +211,34 @@
   <div class="section" id="macos-gmt">
 <h1>2.3 macOS 下安装 GMT<a class="headerlink" href="#macos-gmt" title="永久链接至标题">¶</a></h1>
 <p>macOS 下 GMT 的安装方法有很多，可以直接使用安装包，也可以使用各种软件管理工具。</p>
-<div class="admonition note">
-<p class="first admonition-title">注解</p>
-<p>由于GMT6.0.0尚未正式发布，因而只能通过编译源码的方式在 macOS 上安装。</p>
-<p>建议用 homebrew 安装软件。</p>
-<p>首先下载GMT6的formula： <a class="reference external" href="/install/gmt6.rb">gmt6.rb</a></p>
-<p>下载完成后执行如下命令:</p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>brew unlink gmt <span class="c1"># 删除 gmt5</span>
-brew install --HEAD gmt6.rb <span class="c1"># 安装 gmt6</span>
+<div class="section" id="gmt">
+<h2>2.3.1 使用 GMT 安装包<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
+<p>GMT 为 macOS 用户提供了 dmg 安装包，可以直接双击安装使用。</p>
+<ol class="arabic">
+<li><p class="first">下载：<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0rc3-darwin-x86_64.dmg">gmt-6.0.0rc3-darwin-x86_64.dmg</a></p>
+</li>
+<li><p class="first">双击 dmg 包以解压，将解压得到的 <code class="docutils literal notranslate"><span class="pre">GMT-6.0.0rc3.app</span></code> 拖动到 Applications 目录即可。</p>
+</li>
+<li><p class="first">GMT 默认会安装到 <code class="docutils literal notranslate"><span class="pre">/Applications/GMT-6.0.0rc3.app/</span></code> 目录下，将如下语句:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>:/Applications/GMT-6.0.0rc3.app/Contents/Resources/bin
 </pre></div>
 </div>
+<p>加入到 <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> 中即可。</p>
+</li>
+<li><p class="first">测试安装是否成功:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt --version
+<span class="m">6</span>.0.0rc3
+</pre></div>
 </div>
+</li>
+</ol>
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
-<p class="last">由于GMT 6.0.0尚未发布，请忽略以下内容。</p>
+<p class="last">homebrew 尚未将GMT更新到6.0.0rc3，故而目前无法使用homebrew安装GMT6。</p>
+</div>
 </div>
 <div class="section" id="homebrew">
-<h2>2.3.1 使用 homebrew 安装<a class="headerlink" href="#homebrew" title="永久链接至标题">¶</a></h2>
+<h2>2.3.2 使用 homebrew 安装<a class="headerlink" href="#homebrew" title="永久链接至标题">¶</a></h2>
 <p><a class="reference external" href="https://brew.sh/">Homebrew</a> 是 macOS 下的第三方软件包管理工具。</p>
 <ol class="arabic">
 <li><p class="first">安装 Homebrew:</p>
@@ -272,28 +279,6 @@ $ find . -size -4c -delete       <span class="c1"># 删除所有文件大小小�
 <span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="s1">&#39;${LD_LIBRARY_PATH}:${GMT4HOME}/lib64&#39;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="gmt">
-<h2>2.3.2 使用 GMT 安装包<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
-<p>GMT 为 macOS 用户提供了 dmg 安装包，可以直接双击安装使用。</p>
-<ol class="arabic">
-<li><p class="first">下载：<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0-darwin-x86_64.dmg">gmt-6.0.0-darwin-x86_64.dmg</a></p>
-</li>
-<li><p class="first">双击 dmg 包以解压，将解压得到的 <code class="docutils literal notranslate"><span class="pre">GMT-6.0.0.app</span></code> 拖动到 Applications 目录即可。</p>
-</li>
-<li><p class="first">GMT 默认会安装到 <code class="docutils literal notranslate"><span class="pre">/Applications/GMT-6.0.0.app/</span></code> 目录下，将如下语句:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>:/Applications/GMT-6.0.0.app/Contents/Resources/bin
-</pre></div>
-</div>
-<p>加入到 <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> 中即可。</p>
-</li>
-<li><p class="first">测试安装是否成功:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt --version
-<span class="m">6</span>.0.0
-</pre></div>
-</div>
-</li>
-</ol>
 </div>
 </div>
 
@@ -342,7 +327,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年06月20日.
+        最后更新于 2019年08月02日.
       </span>
 
     </p>

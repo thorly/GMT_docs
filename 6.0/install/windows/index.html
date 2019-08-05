@@ -29,8 +29,6 @@
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script defer="defer" type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-        <script defer="defer" type="text/javascript" src="../../_static/algolia.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
@@ -41,8 +39,6 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/algolia.css" type="text/css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
     <link rel="next" title="2.3 macOS 下安装 GMT" href="../macOS/" />
@@ -107,13 +103,6 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.2 Windows 下安装 GMT</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#windows">2.2.1 使用Windows下的安装包进行安装</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#windows-subsystem-for-linux-wsl-gmt">2.2.2 在 Windows Subsystem for Linux (WSL) 下安装 GMT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gmt">2.2.3 编译GMT源码</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id1">准备工作</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#vcpkg">安装vcpkg</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id3">安装依赖库</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id4">编译GMT</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../macOS/">2.3 macOS 下安装 GMT</a></li>
@@ -205,7 +194,7 @@
         
             
             
-              <a href="https://github.com/gmt-china/GMT_Docs/blob/6.0.0/source/install/windows.rst" class="fa fa-github"> 编辑本页</a>
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/install/windows.rst" class="fa fa-github"> 编辑本页</a>
             
           
         
@@ -230,10 +219,10 @@
 </div>
 <ol class="arabic">
 <li><p class="first">下载</p>
-<p>由于GMT6.0.0尚未正式发布，请到
-<a class="reference external" href="http://w3.ualg.pt/~jluis/mirone/downloads/gmt.html">http://w3.ualg.pt/~jluis/mirone/downloads/gmt.html</a>
-下载最新开发版源码的二进制安装包。</p>
 <ul class="simple">
+<li>GMT 6.0.0rc3:
+<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0rc3-win32.exe">32位</a>
+<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0rc3-win64.exe">64位</a></li>
 <li>ghostscript 9.26:
 <a class="reference external" href="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/gs926aw32.exe">32位</a>
 <a class="reference external" href="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/gs926aw64.exe">64位</a></li>
@@ -256,12 +245,12 @@
 <ol class="last arabic simple">
 <li>点击“计算机”-&gt;“属性”-&gt;“高级系统设置”-&gt;“环境变量”打开“环境变量”编辑工具</li>
 <li>在“系统变量”部分中，选中“Path”并点击“编辑”</li>
-<li>在“变量值”的最后加上GMT的bin目录的路径，默认值为 <code class="docutils literal notranslate"><span class="pre">C:\programs\gmt5\bin</span></code>。需要注意“path”变量值中多个路径之间用英文分号分隔</li>
+<li>在“变量值”的最后加上GMT的bin目录的路径，默认值为 <code class="docutils literal notranslate"><span class="pre">C:\programs\gmt6\bin</span></code>。需要注意“path”变量值中多个路径之间用英文分号分隔</li>
 </ol>
 </div>
 <p>安装完成后，“开始”-&gt;“所有程序”-&gt;“附件”-&gt;“命令提示符”以启动cmd。在cmd窗口中执行:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\U</span>sers<span class="se">\x</span>xxx&gt; gmt --version
-<span class="m">6</span>.0.0
+<span class="m">6</span>.0.0rc3
 </pre></div>
 </div>
 <p>即表示安装成功。</p>
@@ -306,79 +295,6 @@ GMT4 和 GMT6 之后到 GMT6 的 bin目录下，将该目录下的所有文件�
 <p>然后，重启电脑。</p>
 <p>访问“Windows 软件商店”，并下载安装 Ubuntu 或 Debian 等任一 Linux 发行版。下载及安装过程完全自动。安装完成后，在开始菜单中即可看到 Ubuntu 或 Debian，点击即可启动 Linux。</p>
 <p>启动Linux后，则可完全按照 <a class="reference internal" href="../linux/"><span class="doc">Linux下安装GMT</span></a> 的说明在WSL中安装GMT。</p>
-</div>
-<div class="section" id="gmt">
-<h2>2.2.3 编译GMT源码<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
-<p>高级用户可以自行在Windows下编译GMT源码。</p>
-<div class="section" id="id1">
-<h3>准备工作<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h3>
-<p>在Windows下编译GMT源码，需要满足如下条件：</p>
-<ol class="arabic simple">
-<li>Windows版本为Windows 7, Windows 8.1 或 Windows 10</li>
-<li>已安装 <a class="reference external" href="https://visualstudio.microsoft.com/">Visual Studio 2015 Update 3</a> 或更新版本。需要注意，安装 Visual Studio 时要选中“Desktop development with C++”，即安装
-C/C++开发工具</li>
-<li>已安装 <a class="reference external" href="https://git-scm.com/">git</a></li>
-<li>已安装 <a class="reference external" href="https://cmake.org/">cmake</a></li>
-<li>安装ghostscript</li>
-<li>安装gsview</li>
-</ol>
-</div>
-<div class="section" id="vcpkg">
-<h3>安装vcpkg<a class="headerlink" href="#vcpkg" title="永久链接至标题">¶</a></h3>
-<p><a class="reference external" href="https://github.com/microsoft/vcpkg">vcpkg</a> 是微软开发的跨平台C/C++开发库管理工具。这里安装vcpkg并通过vcpkg编译安装GMT所需的依赖库。</p>
-<p>打开终端，执行如下命令以安装vcpkg。这里假定安装到 <code class="docutils literal notranslate"><span class="pre">C:\vcpkg</span></code> 目录下:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> C:<span class="se">\</span>
-git clone https://github.com/microsoft/vcpkg.git
-<span class="nb">cd</span> C:<span class="se">\v</span>cpkg
-.<span class="se">\b</span>ootstrap-vcpkg.bat
-</pre></div>
-</div>
-<p>稍等片刻即安装完成。</p>
-</div>
-<div class="section" id="id3">
-<h3>安装依赖库<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
-<p>vcpkg在编译库文件时，默认会编译两次，分别生成Release和Debug两个版本的库文件。一般用户只需要Release版本的库文件即可，因而可以设置vcpkg只编译Release版本，以节省将近一半的编译时间。具体做法为，在 <code class="docutils literal notranslate"><span class="pre">C:\vcpkg\triplets\</span></code> 目录下找到文件
-<code class="docutils literal notranslate"><span class="pre">x64-windows.cmake</span></code> 和 <code class="docutils literal notranslate"><span class="pre">x86-windows.cmake</span></code>，在两个文件的末尾加上
-<code class="docutils literal notranslate"><span class="pre">set(VCPKG_BUILD_TYPE</span> <span class="pre">release)</span></code> 即可。</p>
-<p>设置完成后执行如下命令以安装依赖库:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> C:<span class="se">\v</span>cpkg
-vcpkg install netcdf-c gdal pcre clapack openblas
-vcpkg integrate install
-</pre></div>
-</div>
-<p>vcpkg会编译安装一堆库文件，这一过程较为耗时，大概需要30分钟到1小时。</p>
-<p>安装的库文件位于 <code class="docutils literal notranslate"><span class="pre">C:\vcpkg\installed\x64-windows</span></code> 目录下，需要手动修改环境变量将 <code class="docutils literal notranslate"><span class="pre">C:\vcpkg\installed\x64-windows\bin</span></code> 加到 PATH 中。</p>
-</div>
-<div class="section" id="id4">
-<h3>编译GMT<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
-<p>下载GMT源码包或者从GitHub获取开发版源码:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/GenericMappingTools/gmt.git
-</pre></div>
-</div>
-<p>下载GSHHG数据和DCW数据，并解压。</p>
-<p>进入 gmt 源码目录，并在 <code class="docutils literal notranslate"><span class="pre">cmake</span></code> 目录下创建文件 <code class="docutils literal notranslate"><span class="pre">ConfigUser.cmake</span></code>,其内容为:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="o">(</span>CMAKE_INSTALL_PREFIX <span class="s2">&quot;C:/programs/gmt&quot;</span><span class="o">)</span>
-<span class="nb">set</span> <span class="o">(</span>GSHHG_ROOT <span class="s2">&quot;D:/datas/gshhg-gmt-2.2.7&quot;</span><span class="o">)</span>
-<span class="nb">set</span> <span class="o">(</span>DCW_ROOT <span class="s2">&quot;D:/datas/dcw-gmt-1.1.4&quot;</span><span class="o">)</span>
-<span class="nb">set</span> <span class="o">(</span>COPY_GSHHG <span class="nb">true</span><span class="o">)</span>
-<span class="nb">set</span> <span class="o">(</span>COPY_DCW <span class="nb">true</span><span class="o">)</span>
-<span class="nb">set</span> <span class="o">(</span>GMT_INSTALL_MODULE_LINKS FALSE<span class="o">)</span>
-<span class="nb">set</span> <span class="o">(</span>CMAKE_C_FLAGS <span class="s2">&quot;/D_CRT_SECURE_NO_WARNINGS /D_CRT_SECURE_NO_DEPRECATE </span><span class="si">${</span><span class="nv">CMAKE_C_FLAGS</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">)</span>
-<span class="nb">set</span> <span class="o">(</span>CMAKE_C_FLAGS <span class="s2">&quot;/D_CRT_NONSTDC_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE </span><span class="si">${</span><span class="nv">CMAKE_C_FLAGS</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">)</span>
-</pre></div>
-</div>
-<p>其中 <code class="docutils literal notranslate"><span class="pre">CMAKE_INSTALL_PREFIX</span></code> 是GMT安装路径，<code class="docutils literal notranslate"><span class="pre">GSHHG_ROOT</span></code> 和 <code class="docutils literal notranslate"><span class="pre">DCW_ROOT</span></code> 是之前解压的GSHHG和DCW数据文件夹的路径。</p>
-<p>修改为配置文件后。从程序中找到“Developer Command Prompt for VS 2017”并打开（注意，不要使用CMD），并执行如下命令:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> gmt
-mkdir build
-<span class="nb">cd</span> build
-cmake .. -DCMAKE_TOOLCHAIN_FILE<span class="o">=</span>C:<span class="se">\v</span>cpkg<span class="se">\s</span>cripts<span class="se">\b</span>uildsystems<span class="se">\v</span>cpkg.cmake
-cmake --build . --config Release
-cmake --build . --config Release --target install
-</pre></div>
-</div>
-<p>安装完成后，需要将GMT安装目录的bin目录（即 <code class="docutils literal notranslate"><span class="pre">C:\programs\gmt\bin</span></code> ）手动添加到环境变量PATH中。</p>
-</div>
 </div>
 </div>
 
@@ -427,7 +343,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年06月20日.
+        最后更新于 2019年08月02日.
       </span>
 
     </p>

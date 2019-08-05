@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>13.51 plot &mdash; GMT中文手册</title>
+  <title>13.50 plot &mdash; GMT中文手册</title>
   
 
   
@@ -29,8 +29,6 @@
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script defer="defer" type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-        <script defer="defer" type="text/javascript" src="../../_static/algolia.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
@@ -41,12 +39,10 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/algolia.css" type="text/css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="13.52 polar" href="../polar/" />
-    <link rel="prev" title="13.50 meca" href="../meca/" /> 
+    <link rel="next" title="13.51 polar" href="../polar/" />
+    <link rel="prev" title="13.49 meca" href="../meca/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -158,33 +154,32 @@
 <li class="toctree-l2"><a class="reference internal" href="../histogram/">13.42 histogram</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../image/">13.43 image</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../inset/">13.44 inset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../isogmt/">13.45 isogmt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">13.46 kml2gmt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../legend/">13.47 legend</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../makecpt/">13.48 makecpt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mapproject/">13.49 mapproject</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../meca/">13.50 meca</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">13.51 plot</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">13.51.1 可选选项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s">13.51.2 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">13.51.3 输入数据格式</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">13.51.4 多段数据</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">13.51.5 示例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">13.45 kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">13.46 legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">13.47 makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">13.48 mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">13.49 meca</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">13.50 plot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">13.50.1 可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s">13.50.2 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">13.50.3 输入数据格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">13.50.4 多段数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">13.50.5 示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../polar/">13.52 polar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../project/">13.53 project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../psconvert/">13.54 psconvert</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../rose/">13.55 rose</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sac/">13.56 sac</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sample1d/">13.57 sample1d</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../solar/">13.58 solar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">13.59 spectrum1d</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../subplot/">13.60 subplot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ternary/">13.61 ternary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../text/">13.62 text</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../velo/">13.63 velo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">13.64 xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">13.51 polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">13.52 project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">13.53 psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">13.54 rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">13.55 sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">13.56 sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">13.57 solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">13.58 spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">13.59 subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">13.60 ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">13.61 text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">13.62 velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">13.63 xyz2grd</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
@@ -255,14 +250,14 @@
         
           <li><a href="../">13 模块手册</a> &raquo;</li>
         
-      <li>13.51 plot</li>
+      <li>13.50 plot</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/gmt-china/GMT_Docs/blob/6.0.0/source/module/plot.rst" class="fa fa-github"> 编辑本页</a>
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/module/plot.rst" class="fa fa-github"> 编辑本页</a>
             
           
         
@@ -277,12 +272,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="plot">
-<span id="index-0"></span><h1>13.51 plot<a class="headerlink" href="#plot" title="永久链接至标题">¶</a></h1>
+<span id="index-0"></span><h1>13.50 plot<a class="headerlink" href="#plot" title="永久链接至标题">¶</a></h1>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://docs.generic-mapping-tools.org/latest/plot.html" title="(在 GMT v6.0.0)"><span>plot</span></a></td>
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://docs.generic-mapping-tools.org/dev/plot.html" title="(在 GMT v6.1.0)"><span>plot</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">在图上绘制线段、多边形和符号</td>
 </tr>
@@ -290,7 +285,7 @@
 </table>
 <p>该命令既可以用于画线段（多边形可以认为是闭合的线段）也可以用于画符号，唯一的区别在于是否使用了 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项。在不使用 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项的情况下，默认会将所有的数据点连成线，使用 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项则仅在数据点所在位置绘制符号。</p>
 <div class="section" id="id1">
-<h2>13.51.1 可选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>13.50.1 可选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <dl class="docutils">
 <dt><code class="docutils literal notranslate"><span class="pre">-A[m|p|x|y]</span></code></dt>
 <dd><p class="first">修改两点间的连接方式。</p>
@@ -460,7 +455,7 @@
 </dl>
 </div>
 <div class="section" id="s">
-<h2>13.51.2 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项<a class="headerlink" href="#s" title="永久链接至标题">¶</a></h2>
+<h2>13.50.2 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项<a class="headerlink" href="#s" title="永久链接至标题">¶</a></h2>
 <p>使用 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项，则表示要绘制符号。 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项的基本语法是:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-S<span class="o">[</span>&lt;symbol&gt;<span class="o">][</span>&lt;size&gt;<span class="o">[</span>&lt;u&gt;<span class="o">]]</span>
 </pre></div>
@@ -795,7 +790,7 @@ rm gmt.*
 </dl>
 </div>
 <div class="section" id="id2">
-<h2>13.51.3 输入数据格式<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>13.50.3 输入数据格式<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项相对复杂，与不同的选项连用，或者后面接不同的参数，所需要的输入数据的格式也不同。不管是什么符号，至少都需要给定符号的位置，即X和Y是必须的:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X   Y
 </pre></div>
@@ -824,7 +819,7 @@ rm gmt.*
 <p>其中 <code class="docutils literal notranslate"><span class="pre">...</span></code> 为某些符号所要求的特殊的数据列， <code class="docutils literal notranslate"><span class="pre">symbol</span></code> 是未指定符号时必须的输入列， <code class="docutils literal notranslate"><span class="pre">size</span></code> 是未指定大小时的输入列。</p>
 </div>
 <div class="section" id="id3">
-<h2>13.51.4 多段数据<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>13.50.4 多段数据<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>对于多段数据而言，每段数据的头段记录中都可以包含一些选项，以使得不同段数据拥有不同的属性。头段记录中的选项会覆盖命令中选项的参数：</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">-Gfill</span></code> ：设置当前段数据的填充色</li>
@@ -838,7 +833,7 @@ rm gmt.*
 </ul>
 </div>
 <div class="section" id="id4">
-<h2>13.51.5 示例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>13.50.5 示例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>最简单的命令，绘制线段或多边形，此时数据输入需要两列，即X和Y:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psxy -R0/10/0/10 -JX10c -B1 &gt; test.ps <span class="s">&lt;&lt; EOF</span>
 <span class="s">3 5</span>
@@ -967,10 +962,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../polar/" class="btn btn-neutral float-right" title="13.52 polar" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../polar/" class="btn btn-neutral float-right" title="13.51 polar" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../meca/" class="btn btn-neutral float-left" title="13.50 meca" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+        <a href="../meca/" class="btn btn-neutral float-left" title="13.49 meca" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
       
     </div>
   
@@ -981,7 +976,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年06月20日.
+        最后更新于 2019年08月02日.
       </span>
 
     </p>
