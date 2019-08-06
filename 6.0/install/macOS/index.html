@@ -41,7 +41,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="3 GMT初探" href="../../get-started/" />
+    <link rel="next" title="3 入门教程" href="../../tutorial/" />
     <link rel="prev" title="2.2 Windows 下安装 GMT" href="../windows/" /> 
 </head>
 
@@ -108,7 +108,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">3 入门教程</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
@@ -225,60 +225,50 @@
 </div>
 <p>加入到 <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> 中即可。</p>
 </li>
-<li><p class="first">测试安装是否成功:</p>
+<li><p class="first">重新打开一个终端，输入如下命令，检测安装是否成功:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt --version
 <span class="m">6</span>.0.0rc3
 </pre></div>
 </div>
 </li>
+<li><p class="first">安装GMT依赖的其它软件（此处使用homebrew进行安装）</p>
+<blockquote>
+<div><p># 必须软件包
+$ brew install ghostscript
+# 生成动画所需要的软件包（可选）$ brew install graphicsmagick ffmpeg</p>
+</div></blockquote>
+</li>
 </ol>
+</div>
+<div class="section" id="homebrew">
+<h2>2.3.2 使用 homebrew 安装<a class="headerlink" href="#homebrew" title="永久链接至标题">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
 <p class="last">homebrew 尚未将GMT更新到6.0.0rc3，故而目前无法使用homebrew安装GMT6。</p>
 </div>
-</div>
-<div class="section" id="homebrew">
-<h2>2.3.2 使用 homebrew 安装<a class="headerlink" href="#homebrew" title="永久链接至标题">¶</a></h2>
 <p><a class="reference external" href="https://brew.sh/">Homebrew</a> 是 macOS 下的第三方软件包管理工具。</p>
 <ol class="arabic">
-<li><p class="first">安装 Homebrew:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ /usr/bin/ruby -e <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span class="k">)</span><span class="s2">&quot;</span>
-</pre></div>
-</div>
-</li>
 <li><p class="first">安装 GMT:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ brew update <span class="o">&amp;&amp;</span> brew upgrade
 $ brew install gmt
 </pre></div>
 </div>
 </li>
-<li><p class="first">安装 ghostscript:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ brew install ghostscript
+<li><p class="first">安装GMT依赖的其它软件:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 必须软件包</span>
+$ brew install ghostscript
+<span class="c1"># 生成动画所需要的软件包（可选）</span>
+$ brew install graphicsmagick ffmpeg
 </pre></div>
 </div>
 </li>
-<li><p class="first">测试安装是否成功:</p>
+<li><p class="first">重新打开一个终端，检测安装是否成功:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt --version
 <span class="m">6</span>.0.0
 </pre></div>
 </div>
 </li>
 </ol>
-<p>如果想同时安装 GMT4 和 GMT5，还需要执行以下步骤:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 安装 GMT4</span>
-$ brew install gmt4
-
-<span class="c1"># 删除 GMT5 带的软链接</span>
-$ <span class="nb">cd</span> /usr/local/opt/gmt@5/bin/
-$ find . -size -4c -delete       <span class="c1"># 删除所有文件大小小于4字节的软链接</span>
-</pre></div>
-</div>
-<p>然后向 <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> 中写入如下语句以修改环境变量:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">GMT4HOME</span><span class="o">=</span><span class="s1">&#39;/usr/local/opt/gmt@4&#39;</span>
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">GMT4HOME</span><span class="si">}</span>/bin:<span class="nv">$PATH</span>
-<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="s1">&#39;${LD_LIBRARY_PATH}:${GMT4HOME}/lib64&#39;</span>
-</pre></div>
-</div>
 </div>
 </div>
 
@@ -313,7 +303,7 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../get-started/" class="btn btn-neutral float-right" title="3 GMT初探" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../tutorial/" class="btn btn-neutral float-right" title="3 入门教程" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../windows/" class="btn btn-neutral float-left" title="2.2 Windows 下安装 GMT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
@@ -327,7 +317,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月05日.
+        最后更新于 2019年08月06日.
       </span>
 
     </p>

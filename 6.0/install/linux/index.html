@@ -111,7 +111,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../macOS/">2.3 macOS 下安装 GMT</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../get-started/">3 GMT初探</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">3 入门教程</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
@@ -241,7 +241,7 @@ sudo yum install GMT gshhg-gmt-nc4-all dcw-gmt
 $ sudo apt-get update
 
 <span class="c1"># 安装编译所需软件包</span>
-$ sudo apt-get install gcc g++ cmake make libc6
+$ sudo apt-get install build-essential cmake
 
 <span class="c1"># 安装必须软件包</span>
 $ sudo apt-get install ghostscript
@@ -254,6 +254,9 @@ $ sudo apt-get install liblapack3
 $ sudo apt-get install libglib2.0-dev
 $ sudo apt-get install libpcre3-dev
 $ sudo apt-get install libfftw3-dev
+
+<span class="c1"># 安装制作动画所需的软件包</span>
+$ sudo apt-get install graphicsmagick ffmpeg
 </pre></div>
 </div>
 <p>对于CentOS/RHEL/Fedora:</p>
@@ -274,14 +277,16 @@ $ sudo yum install lapack64-devel lapack-devel
 $ sudo yum install glib2-devel
 $ sudo yum install pcre-devel
 $ sudo yum install fftw-devel
+
+<span class="c1"># 安装其他可选包</span>
+$ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-7.noarch.rpm
+$ sudo yum install GraphicsMagick ffmpeg
 </pre></div>
 </div>
-<p>安装完依赖包后，需要进一步确认 netCDF 是否支持 netCDF-4/HDF5 格式:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ nc-config --has-nc4
-yes
-</pre></div>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">GMT需要使用 ghostscript 生成PDF、JPG等格式的图片。但ghostscript 9.27存在严重bug，会导致生成的图片中有用信息被裁剪。请使用 <code class="docutils literal notranslate"><span class="pre">gs</span> <span class="pre">--version</span></code> 确认安装的ghostscript不是9.27版本。</p>
 </div>
-<p>若输出为 <code class="docutils literal notranslate"><span class="pre">yes</span></code> 则表示安装的 netCDF 支持 netCDF-4/HDF5 格式，则可继续安装 GMT，否则无法安装 GMT。</p>
 </div>
 <div class="section" id="id2">
 <h2>2.1.2 下载<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
@@ -316,7 +321,6 @@ $ gedit cmake/ConfigUser.cmake
 <span class="nb">set</span> <span class="o">(</span>COPY_GSHHG TRUE<span class="o">)</span>
 <span class="nb">set</span> <span class="o">(</span>COPY_DCW TRUE<span class="o">)</span>
 <span class="nb">set</span> <span class="o">(</span>GMT_INSTALL_MODULE_LINKS FALSE<span class="o">)</span>
-<span class="nb">set</span> <span class="o">(</span>GMT_USE_THREADS TRUE<span class="o">)</span>
 </pre></div>
 </div>
 <p>其中，</p>
@@ -325,16 +329,12 @@ $ gedit cmake/ConfigUser.cmake
 <code class="docutils literal notranslate"><span class="pre">/opt/GMT-6.0.0rc3</span></code> 目录下，用户可以自行修改为其他路径。没有 root 权限的一般用户，可以将安装路径设置为 <code class="docutils literal notranslate"><span class="pre">/home/xxx/software/GMT-6.0.0rc3</span></code> 等有可读写权限的路径；</li>
 <li><code class="docutils literal notranslate"><span class="pre">COPY_GSHHG</span></code> 和 <code class="docutils literal notranslate"><span class="pre">COPY_DCW</span></code> 设置为 TRUE 会将相关数据复制到 GMT 的 share 目录下</li>
 <li><code class="docutils literal notranslate"><span class="pre">GMT_INSTALL_MODULE_LINKS</span></code> 为 <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>，表明不在GMT的bin目录下建立命令的软链接，不建议设置为 <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> （可选）</li>
-<li><code class="docutils literal notranslate"><span class="pre">GMT_USE_THREADS</span></code> 表示是否开启某些模块的并行功能（可选）</li>
 </ul>
-<div class="admonition warning">
-<p class="first admonition-title">警告</p>
-<p class="last">CentOS 6 用户需要将用户配置文件的最后一行改为 <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">(GMT_USE_THREADS</span> <span class="pre">FALSE)</span></code></p>
-</div>
 <div class="admonition tip">
 <p class="first admonition-title">小技巧</p>
 <p>此处为了便于一般用户理解，只向 <code class="docutils literal notranslate"><span class="pre">cmake/ConfigUser.cmake</span></code> 中写入了必要的语句。</p>
-<p class="last">高级用户可以直接在 GMT 提供的模板配置文件的基础上进行更多配置。将 <code class="docutils literal notranslate"><span class="pre">cmake/ConfigUserTemplate.cmake</span></code> 复制为 <code class="docutils literal notranslate"><span class="pre">cmake/ConfigUser.cmake</span></code>，然后根据配置文件中的大量注释说明信息自行修改配置文件。</p>
+<p class="last">用户可以将GMT提供的配置模板 <code class="docutils literal notranslate"><span class="pre">cmake/ConfigUserTemplate.cmake</span></code> 复制为
+<code class="docutils literal notranslate"><span class="pre">cmake/ConfigUser.cmake</span></code>，然后根据配置文件中的大量注释说明信息自行修改配置文件。</p>
 </div>
 <p>继续执行如下命令以检查GMT的依赖是否满足:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 注意，此处新建的 build 文件夹位于 gmt-6.0.0rc3 目录下，不是 gmt-6.0.0rc3/cmake 目录下</span>
@@ -366,8 +366,8 @@ $ cmake ..
 *  License restriction        : no
 *  Triangulation method       : Shewchuk
 *  OpenMP support             : enabled
-*  GLIB GTHREAD support       : enabled
-*  PTHREAD support            : enabled
+*  GLIB GTHREAD support       : disabled
+*  PTHREAD support            : disabled
 *  Build mode                 : shared
 *  Build GMT core             : always <span class="o">[</span>libgmt.so<span class="o">]</span>
 *  Build PSL library          : always <span class="o">[</span>libpostscriptlight.so<span class="o">]</span>
@@ -409,7 +409,7 @@ $ sudo make -j install
 </div>
 <div class="section" id="id3">
 <h2>2.1.4 修改环境变量<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>向 <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> 中加入如下语句以修改环境变量，并重启终端使其生效:</p>
+<p>向 <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> （某些系统需要修改 <code class="docutils literal notranslate"><span class="pre">~/.bash_profile</span></code>）中加入如下语句以修改环境变量，并重启终端使其生效:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">GMT6HOME</span><span class="o">=</span>/opt/GMT-6.0.0rc3
 <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">GMT6HOME</span><span class="si">}</span>/bin:<span class="nv">$PATH</span>
 <span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">LD_LIBRARY_PATH</span><span class="si">}</span>:<span class="si">${</span><span class="nv">GMT6HOME</span><span class="si">}</span>/lib64
@@ -424,9 +424,8 @@ $ sudo make -j install
 </div>
 <div class="section" id="id4">
 <h2>2.1.5 测试是否安装成功<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
-<p>打开终端，键入如下命令，若正确显示GMT版本号，则表示安装成功:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">source</span> ~/.bashrc
-$ gmt --version
+<p>重新打开一个终端，键入如下命令，若正确显示GMT版本号，则表示安装成功:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt --version
 <span class="m">6</span>.0.0rc3
 </pre></div>
 </div>
@@ -478,7 +477,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月05日.
+        最后更新于 2019年08月06日.
       </span>
 
     </p>
