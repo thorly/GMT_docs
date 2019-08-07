@@ -314,11 +314,14 @@
 <div class="section" id="id3">
 <h2>13.20.3 示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>单独绘制一个2英寸宽的GMT logo:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt logo -P -Dx0/0+w2i &gt; logo.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt logo -Dx0/0+w2i -pdf map
 </pre></div>
 </div>
 <p>将GMT logo作为一个图层放在当前底图的左上角:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt logo -R -J -DjTR+o0.1i/0.1i+w3i -F+glightblue+s -K -O &gt;&gt; bigmap.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin logo
+gmt ...
+gmt logo -DjTR+o0.1i/0.1i+w3i -F+glightblue+s
+gmt end
 </pre></div>
 </div>
 </div>
@@ -369,7 +372,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月06日.
+        最后更新于 2019年08月07日.
       </span>
 
     </p>
@@ -389,7 +392,7 @@ gitalk.render('gitalk-container');
 
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.Navigation.enable(false);
       });
   </script>
 

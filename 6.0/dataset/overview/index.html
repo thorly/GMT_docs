@@ -236,8 +236,8 @@
 </pre></div>
 </div>
 <p>对于Windows用户，可以把数据放在 <code class="docutils literal notranslate"><span class="pre">D:\GMTDB</span></code> 下，然后打开“我的电脑”-&gt;“属性”-&gt;“高级”-&gt;“环境变量”，然后添加环境变量，变量名为 <code class="docutils literal notranslate"><span class="pre">GMT_DATADIR</span></code>，值为 <code class="docutils literal notranslate"><span class="pre">D:\GMTDB</span></code>，最后重启电脑使得环境变量生效。</p>
-<p>如果喜欢将不同的数据分类放在不同的目录下，则可以向 <code class="docutils literal notranslate"><span class="pre">GMT_DATADIR</span></code> 添加多个目录。Linux和macOS下多个目录之间用冒号 <code class="docutils literal notranslate"><span class="pre">:</span></code> 分隔，Windows下多个目录之间用 <code class="docutils literal notranslate"><span class="pre">;</span></code> 分隔。例如:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">GMT_DATADIR</span><span class="o">=</span>~/GMTDB/data1:~/GMTDB/data2
+<p>如果喜欢将不同的数据分类放在不同的目录下，则可以向 <code class="docutils literal notranslate"><span class="pre">GMT_DATADIR</span></code> 添加多个目录。多个目录之间用逗号 <code class="docutils literal notranslate"><span class="pre">,</span></code> 分隔。例如:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">GMT_DATADIR</span><span class="o">=</span>~/GMTDB/data1,~/GMTDB/data2
 </pre></div>
 </div>
 </div>
@@ -288,7 +288,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月06日.
+        最后更新于 2019年08月07日.
       </span>
 
     </p>
@@ -308,7 +308,7 @@ gitalk.render('gitalk-container');
 
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.Navigation.enable(false);
       });
   </script>
 

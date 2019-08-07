@@ -215,8 +215,10 @@
 </div>
 <p>下面的色标是利用 <a class="reference internal" href="../../module/makecpt/"><span class="doc">makecpt</span></a> 对原始CPT文件做离散处理得到的单色型
 CPT文件，可以用如下命令绘制得到:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt makecpt -C&lt;cpt&gt; -T-1/1/0.25 &gt; new.cpt
-gmt colorbar -D0c/0c+w10c/1c+h -B0 -Cnew.cpt -pdf CPT
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin CPT png,pdf
+gmt makecpt -C&lt;cpt&gt; -T-1/1/0.25
+gmt colorbar -C -D0c/0c+w10c/1c+h -B0
+gmt end
 </pre></div>
 </div>
 <table border="1" class="docutils">
@@ -631,7 +633,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月06日.
+        最后更新于 2019年08月07日.
       </span>
 
     </p>
@@ -651,7 +653,7 @@ gitalk.render('gitalk-container');
 
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.Navigation.enable(false);
       });
   </script>
 

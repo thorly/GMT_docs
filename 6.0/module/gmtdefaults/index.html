@@ -130,7 +130,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#id1">13.17.1 必选选项</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id2">13.17.2 可选选项</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">13.17.3 示例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#bugs">13.17.4 BUGS</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../gmtget/">13.18 gmtget</a></li>
@@ -306,15 +305,9 @@
 </pre></div>
 </div>
 <p>搜索与 <code class="docutils literal notranslate"><span class="pre">LABEL</span></code> 有关的参数的值:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt gmtdefaults <span class="p">|</span> grep LABEL
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt gmtdefaults -D <span class="p">|</span> grep LABEL
 </pre></div>
 </div>
-</div>
-<div class="section" id="bugs">
-<h2>13.17.4 BUGS<a class="headerlink" href="#bugs" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">-D</span></code> 选项无效（v5.1.2）</li>
-</ul>
 </div>
 </div>
 
@@ -363,7 +356,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月06日.
+        最后更新于 2019年08月07日.
       </span>
 
     </p>
@@ -383,7 +376,7 @@ gitalk.render('gitalk-container');
 
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.Navigation.enable(false);
       });
   </script>
 
