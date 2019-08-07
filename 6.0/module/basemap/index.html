@@ -404,34 +404,12 @@ gmt basemap -R90/180/-50/50 -Jm0.025i -Bafg -B+tMercator -Lx1i/1i+c0+w5000k -png
 </pre></div>
 </div>
 </dd>
-</dl>
-<p><code class="docutils literal notranslate"><span class="pre">-D[&lt;unit&gt;]&lt;xmin&gt;/&lt;xmax&gt;/&lt;ymin&gt;/&lt;ymax&gt;[r][+s&lt;file&gt;][+t]</span></code></p>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-D[g|j|J|n|x]&lt;refpoint&gt;+w&lt;width&gt;[/&lt;height&gt;][+j&lt;justify&gt;][+o&lt;dx&gt;[/&lt;dy&gt;]][+s&lt;file&gt;][+t]</span></code></dt>
-<dd><p class="first">在底图中绘制图中图（inset map box），需要 <code class="docutils literal notranslate"><span class="pre">-F</span></code> 选项，该选项有两种语法。</p>
-<p>先解释图中图（inset box）的概念。在绘制一个小区域时，为了表明该小区域在地球上的位置，通常需要在一张更大范围（比如整个中国或整个地球）的底图上标出小区域所在的位置，这种绘图形式通常称为inset map。而inset box就是inset map的边框。</p>
-<p>指定inset map box的范围有三种方法：</p>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">-D&lt;xmin&gt;/&lt;xmax&gt;/&lt;ymin&gt;/&lt;ymax&gt;[r]</span></code> ：类似 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 的语法，直接指定
-inset box在地图上的范围</li>
-<li><code class="docutils literal notranslate"><span class="pre">-D&lt;unit&gt;&lt;xmin&gt;/&lt;xmax&gt;/&lt;ymin&gt;/&lt;ymax&gt;</span></code> ：类似 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 的语法，指定投影后的坐标范围， <code class="docutils literal notranslate"><span class="pre">&lt;unit&gt;</span></code> 为投影后的坐标单位</li>
-<li>指定参考点和锚点，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节<ol class="arabic">
-<li><code class="docutils literal notranslate"><span class="pre">[g|j|J|n|x]&lt;refpoint&gt;</span></code> 指定大区域底图上的参考点</li>
-<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify&gt;</span></code> 指定inset box上的锚点</li>
-<li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;/&lt;dy&gt;</span></code> 指定参考点的额外偏移量</li>
-<li><code class="docutils literal notranslate"><span class="pre">+w&lt;width&gt;[/&lt;height&gt;]</span></code> 指定inset box的宽度或/和高度</li>
-</ol>
-</li>
-<li><code class="docutils literal notranslate"><span class="pre">+s&lt;file&gt;</span></code> ：将inset box的左下角位置以及其长宽写到文件中，坐标值以及长度值均使用当前地图单位</li>
-<li><code class="docutils literal notranslate"><span class="pre">+t</span></code> 将绘图原点移动到inset box的左下角</li>
-</ol>
-</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-F[d|l|t][+c&lt;clearances&gt;][+g&lt;fill&gt;][+i[[&lt;gap&gt;/]&lt;pen&gt;]][+p[&lt;pen&gt;]][+r[&lt;radius&gt;]][+s[[&lt;dx&gt;/&lt;dy&gt;/][&lt;shade&gt;]]]</span></code></dt>
-<dd><p class="first">控制inset box、比例尺和方向玫瑰的背景边框的属性</p>
+<dd><p class="first">控制比例尺和方向玫瑰的背景边框的属性</p>
 <p>说明：</p>
 <ol class="last arabic simple">
-<li>该选项用于给inset box、比例尺和方向玫瑰绘制背景边框，默认同时控制三者的属性</li>
-<li><code class="docutils literal notranslate"><span class="pre">d|l|t</span></code> 表示该选项定义的属性仅适用于 <code class="docutils literal notranslate"><span class="pre">-D</span></code> 、 <code class="docutils literal notranslate"><span class="pre">-L</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-T</span></code> 选项</li>
+<li>该选项用于给比例尺和方向玫瑰绘制背景边框，默认同时控制三者的属性</li>
+<li><code class="docutils literal notranslate"><span class="pre">d|l|t</span></code> 表示该选项定义的属性仅适用于 <code class="docutils literal notranslate"><span class="pre">-D</span></code>、<code class="docutils literal notranslate"><span class="pre">-L</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-T</span></code> 选项</li>
 <li>直接使用 <code class="docutils literal notranslate"><span class="pre">-F</span></code> 选项，则绘制背景边框，边框属性由参数 <code class="docutils literal notranslate"><span class="pre">MAP_FRAME_PEN</span></code> 控制</li>
 <li>其他子选项的含义见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节的详细介绍</li>
 </ol>
@@ -440,38 +418,6 @@ inset box在地图上的范围</li>
 </div>
 <div class="section" id="id3">
 <h2>13.1.3 示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>下面的脚本展示了一种inset box的用法：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="nv">R</span><span class="o">=</span><span class="m">115</span>/123/35/40             <span class="c1"># 小区域地图的范围-R</span>
-<span class="nv">J</span><span class="o">=</span>M20c                      <span class="c1"># 小区域的投影方式-J</span>
-<span class="nv">PS</span><span class="o">=</span>psbasemap_ex1.ps
-
-<span class="c1"># 打开GMT</span>
-gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -T -K &gt; <span class="nv">$PS</span>
-
-<span class="c1"># 绘制小区域的地图</span>
-gmt pscoast -R<span class="nv">$R</span> -J<span class="nv">$J</span> -B1 -Df -W2p -I2p -N1/2p -A1000 -K -O &gt;&gt; <span class="nv">$PS</span>
-<span class="c1"># ...</span>
-<span class="c1"># 此处可以任意添加其他绘图命令</span>
-<span class="c1"># ...</span>
-
-<span class="c1"># 开始绘制inset map</span>
-<span class="nv">Rg</span><span class="o">=</span><span class="m">72</span>/135/16/55     <span class="c1"># 大区域地图的范围-R</span>
-<span class="nv">Jg</span><span class="o">=</span>M7c              <span class="c1"># 大区域地图的投影方式-J</span>
-<span class="c1"># 绘制大区域地图的海岸线及边框</span>
-gmt pscoast -R<span class="nv">$Rg</span> -J<span class="nv">$Jg</span> -B0 -B+gwhite -Df -N1 -W -A5000 -K -O --MAP_FRAME_TYPE<span class="o">=</span>plain &gt;&gt; <span class="nv">$PS</span>
-<span class="c1"># 在大区域地图内绘制小区域所在的方框</span>
-gmt psbasemap -R<span class="nv">$Rg</span> -J<span class="nv">$Jg</span> -D<span class="nv">$R</span> -F+p2p,blue -K -O &gt;&gt; <span class="nv">$PS</span>
-
-<span class="c1"># 结束GMT绘图</span>
-gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -T -O &gt;&gt; <span class="nv">$PS</span>
-rm gmt.*
-</pre></div>
-</div>
-<div class="figure align-center" id="id5">
-<a class="reference internal image-reference" href="../../_images/psbasemap_ex1.png"><img alt="../../_images/psbasemap_ex1.png" src="../../_images/psbasemap_ex1.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">用psbasemap命令-D选项绘制图中图</span></p>
-</div>
 <p>下面的脚本绘制了磁场玫瑰图：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#	$Id$</span>
@@ -507,7 +453,7 @@ gmt psxy -R -J -O -T &gt;&gt; <span class="nv">$ps</span>
 rm gmt.*
 </pre></div>
 </div>
-<div class="figure align-center" id="id6">
+<div class="figure align-center" id="id5">
 <a class="reference internal image-reference" href="../../_images/psbasemap_ex4.png"><img alt="../../_images/psbasemap_ex4.png" src="../../_images/psbasemap_ex4.png" style="width: 100%;" /></a>
 <p class="caption"><span class="caption-text">磁场玫瑰图</span></p>
 </div>
