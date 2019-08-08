@@ -302,9 +302,10 @@
 </ol>
 <p>下图中，黑色曲线为默认情况；红线为使用 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 的效果；蓝线为使用 <code class="docutils literal notranslate"><span class="pre">-Ap</span></code>
 的效果；黄线为使用 <code class="docutils literal notranslate"><span class="pre">-Am</span></code> 的效果：</p>
+<p><a class="reference download internal" download="" href="../../_downloads/d57a119cd2256f2ca273df54d93c0792/plot-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center" id="id5">
-<a class="reference internal image-reference" href="../../_images/psxy_-A.png"><img alt="../../_images/psxy_-A.png" src="../../_images/psxy_-A.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">psxy -A选项示意图</span></p>
+<a class="reference internal image-reference" href="../../_images/plot-gmtplot-0.png"><img alt="../../_images/plot-gmtplot-0.png" src="../../_images/plot-gmtplot-0.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">plot -A选项示意图</span></p>
 </div>
 <p class="last">注：由于这里投影比较特别，所以沿着经线的线和沿着纬线的线，看上去都是直线，在其他投影方式下可能不会是这样。</p>
 </dd>
@@ -318,7 +319,7 @@
 <code class="docutils literal notranslate"><span class="pre">-Z&lt;val&gt;</span></code> ，然后从cpt文件中查找 <code class="docutils literal notranslate"><span class="pre">&lt;val&gt;</span></code> 所对应的颜色，以控制线段或多边形的线条颜色</li>
 </ol>
 <p>下面的例子展示了 <code class="docutils literal notranslate"><span class="pre">-C&lt;color1&gt;,&lt;color2&gt;..</span></code> 用法:</p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psxy -JX10c/10c -R0/10/0/10 -B1 -Cblue,red -W2p &gt; test.ps <span class="s">&lt;&lt; EOF</span>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt plot -JX10c/10c -R0/10/0/10 -B1 -Cblue,red -W2p -png <span class="nb">test</span> <span class="s">&lt;&lt; EOF</span>
 <span class="s">&gt; -Z0</span>
 <span class="s">1 1</span>
 <span class="s">2 2</span>
@@ -340,11 +341,11 @@
 </pre></div>
 </div>
 <p>例如，X方向误差为1:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">5</span> <span class="m">5</span> <span class="m">1</span> <span class="p">|</span> gmt psxy -R0/10/0/10 -JX10c/10c -B1 -Sc0.1c -Ex -W2p &gt; test.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">5</span> <span class="m">5</span> <span class="m">1</span> <span class="p">|</span> gmt plot -R0/10/0/10 -JX10c/10c -B1 -Sc0.1c -Ex -W2p -png <span class="nb">test</span>
 </pre></div>
 </div>
 <p>X方向误差为1，Y方向误差为0.5:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">5</span> <span class="m">5</span> <span class="m">1</span> <span class="m">0</span>.5 <span class="p">|</span> gmt psxy -R0/10/0/10 -JX10c/10c -B1 -Sc0.1c -Exy -W2p &gt; test.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">5</span> <span class="m">5</span> <span class="m">1</span> <span class="m">0</span>.5 <span class="p">|</span> gmt plot -R0/10/0/10 -JX10c/10c -B1 -Sc0.1c -Exy -W2p -png <span class="nb">test</span>
 </pre></div>
 </div>
 <p>使用 <code class="docutils literal notranslate"><span class="pre">+a</span></code> 表示X方向和/或Y方向为非对称误差棒，此时输入数据的格式为:</p>
@@ -352,7 +353,7 @@
 </pre></div>
 </div>
 <p>例如:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">5</span> <span class="m">5</span> <span class="m">1</span> <span class="m">0</span>.4 <span class="m">0</span>.5 <span class="m">0</span>.25 <span class="p">|</span> gmt psxy -R0/10/0/10 -JX10c/10c -B1 -Sc0.1c -Exy+a -W2p &gt; test.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">5</span> <span class="m">5</span> <span class="m">1</span> <span class="m">0</span>.4 <span class="m">0</span>.5 <span class="m">0</span>.25 <span class="p">|</span> gmt plot -R0/10/0/10 -JX10c/10c -B1 -Sc0.1c -Exy+a -W2p -png <span class="nb">test</span>
 </pre></div>
 </div>
 <p>使用 <code class="docutils literal notranslate"><span class="pre">X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Y</span></code> 则绘制box-and-whisker（即stem-and-leaf）符号。以 <code class="docutils literal notranslate"><span class="pre">-EX</span></code>
@@ -361,7 +362,7 @@
 </pre></div>
 </div>
 <p>25%到75%之间的方框内可以用 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项填充颜色:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">5</span> <span class="m">5</span> <span class="m">4</span> <span class="m">4</span>.25 <span class="m">5</span>.4 <span class="m">7</span> <span class="p">|</span> gmt psxy -R0/10/0/10 -JX10c/10c -B1 -Sc0.1c -EX -Gred -W2p &gt; test.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">5</span> <span class="m">5</span> <span class="m">4</span> <span class="m">4</span>.25 <span class="m">5</span>.4 <span class="m">7</span> <span class="p">|</span> gmt plot -R0/10/0/10 -JX10c/10c -B1 -Sc0.1c -EX -Gred -W2p -png <span class="nb">test</span>
 </pre></div>
 </div>
 <ul class="last simple">
@@ -404,7 +405,7 @@
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-L[+b|d|D][+xl|r|&lt;x0&gt;][+yl|r|&lt;y0&gt;][+p&lt;pen&gt;]</span></code></dt>
 <dd><p class="first">构建闭合多边形。</p>
-<p>默认情况下，psxy只将数据点连起来，若首尾两个点不相同，则不会形成闭合多边形。使用 <code class="docutils literal notranslate"><span class="pre">-F</span></code> ，则自动将数据的首尾两个点连起来，形成闭合多边形。</p>
+<p>默认情况下，plot只将数据点连起来，若首尾两个点不相同，则不会形成闭合多边形。使用 <code class="docutils literal notranslate"><span class="pre">-F</span></code> ，则自动将数据的首尾两个点连起来，形成闭合多边形。</p>
 <p>除了简单的首尾相连之外，还可以给线段加上包络线（类似于线段的误差）：</p>
 <ol class="arabic simple">
 <li><code class="docutils literal notranslate"><span class="pre">+d</span></code> build symmetrical envelope around y(x) using deviations dy(x) given in extra column 3</li>
@@ -419,7 +420,7 @@
 <dd><p class="first">区域范围外的符号不会被裁剪，而会被正常绘制。</p>
 <p>默认情况下，位于 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 范围外的符号不会被绘制的。使用该选项使得即便符号的坐标位于 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 指定的范围外，也会被绘制。需要注意的是，该选项对线段或多边形无效，线段和多边形总会被区域的范围裁剪。</p>
 <p>对于存在周期性的地图而言，若符号出现在重复边界上，则会被重复绘制两次。比如:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psxy -R0/360/-60/60 -JM10c -Bx60 -By15 -Sc2c &gt; test.ps <span class="s">&lt;&lt; EOF</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt plot -R0/360/-60/60 -JM10c -Bx60 -By15 -Sc2c -png <span class="nb">test</span> <span class="s">&lt;&lt; EOF</span>
 <span class="s">360 0</span>
 <span class="s">EOF</span>
 </pre></div>
@@ -429,17 +430,6 @@
 <li><code class="docutils literal notranslate"><span class="pre">-N</span></code> 关闭裁剪，符号仅绘制一次</li>
 <li><code class="docutils literal notranslate"><span class="pre">-Nr</span></code> 关闭裁剪，但符号依然绘制两次</li>
 <li><code class="docutils literal notranslate"><span class="pre">-Nc</span></code> 不关闭裁剪，但符号仅绘制一次</li>
-</ol>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-T</span></code></dt>
-<dd><p class="first">忽略所有输入文件，包括标准输入流</p>
-<p>该选项会忽略命令行中的输入文件以及标准输入流，在Linux下相当于将空文件
-<code class="docutils literal notranslate"><span class="pre">/dev/null</span></code> 作为输入文件，因而该命令不会在PS文件中绘制任何图形。</p>
-<p>该选项有如下几个用途：</p>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">psxy</span> <span class="pre">-J$J</span> <span class="pre">-R$R</span> <span class="pre">-T</span> <span class="pre">-K</span> <span class="pre">&gt;</span> <span class="pre">$PS</span></code> 只写入文件头，见 <code class="docutils literal notranslate"><span class="pre">-K</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-O</span></code> 选项的介绍</li>
-<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">psxy</span> <span class="pre">-J$J</span> <span class="pre">-R$R</span> <span class="pre">-T</span> <span class="pre">-O</span> <span class="pre">&gt;&gt;</span> <span class="pre">$PS</span></code> 只写入文件尾，见 <code class="docutils literal notranslate"><span class="pre">-K</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-O</span></code> 选项的介绍</li>
-<li><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">psxy</span> <span class="pre">-J$J</span> <span class="pre">-R$R</span> <span class="pre">-T</span> <span class="pre">-X10c</span> <span class="pre">-Y10c</span> <span class="pre">&gt;&gt;</span> <span class="pre">$PS</span></code> 只移动坐标原点而不绘制任何图形</li>
 </ol>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-W[&lt;pen&gt;][&lt;attr&gt;]</span></code></dt>
@@ -488,9 +478,10 @@
 <p>对于小写符号 <code class="docutils literal notranslate"><span class="pre">acdghinst</span></code> ， <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 表示外接圆直径；对于大写符号 <code class="docutils literal notranslate"><span class="pre">ACDGHINST</span></code>， <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 表示符号的面积与直径为 <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code>
 的圆的面积相同。</p>
 <p>下图给出了上面所给出的symbol所对应的符号：</p>
+<p><a class="reference download internal" download="" href="../../_downloads/3a2ad1e28240ab0b4c8e497b86391108/plot-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center" id="id6">
-<a class="reference internal image-reference" href="../../_images/psxy_symbols.png"><img alt="psxy simple symbols" src="../../_images/psxy_symbols.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">psxy -S选项示意图</span></p>
+<a class="reference internal image-reference" href="../../_images/plot-gmtplot-1.png"><img alt="../../_images/plot-gmtplot-1.png" src="../../_images/plot-gmtplot-1.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">plot -S选项示意图</span></p>
 </div>
 <p class="last">除了上述简单的符号之外，还有更多复杂的符号。</p>
 </dd>
@@ -505,7 +496,7 @@
 <li>加上 <code class="docutils literal notranslate"><span class="pre">b</span></code> 但未指定 <code class="docutils literal notranslate"><span class="pre">&lt;base&gt;</span></code> ，则需要额外的一列数据来指定base的值</li>
 <li><code class="docutils literal notranslate"><span class="pre">-SB</span></code> 与 <code class="docutils literal notranslate"><span class="pre">-Sb</span></code> 类似，区别在于 <code class="docutils literal notranslate"><span class="pre">-SB</span></code> 绘制水平bar</li>
 </ol>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psxy -R0/10/0/5 -JX15c/5c -B1 -Sb1cb &gt; test.ps <span class="s">&lt;&lt; EOF</span>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt plot -R0/10/0/5 -JX15c/5c -B1 -Sb1cb -png <span class="nb">test</span> <span class="s">&lt;&lt; EOF</span>
 <span class="s">2 3 1 0.5</span>
 <span class="s">4 2 1 1.5</span>
 <span class="s">8 4 1 2.5</span>
@@ -527,26 +518,26 @@
 <li>对于地理投影，长轴和短轴的长度单位为千米，且不可更改</li>
 </ul>
 <p>用长度单位指定一个椭圆:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">180</span> <span class="m">0</span> <span class="m">45</span> 5c 3c <span class="p">|</span> gmt psxy -R0/360/-90/90 -JN15c -B60 -Se &gt; test.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">180</span> <span class="m">0</span> <span class="m">45</span> 5c 3c <span class="p">|</span> gmt plot -R0/360/-90/90 -JN15c -B60 -Se -png <span class="nb">test</span>
 </pre></div>
 </div>
 <p>线性投影下 <code class="docutils literal notranslate"><span class="pre">-SE</span></code> 的长短轴的单位为数据单位:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">180</span> <span class="m">0</span> <span class="m">45</span> <span class="m">300</span> <span class="m">100</span> <span class="p">|</span> gmt psxy -R0/360/-90/90 -JX10c -B60 -SE &gt; test.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">180</span> <span class="m">0</span> <span class="m">45</span> <span class="m">300</span> <span class="m">100</span> <span class="p">|</span> gmt plot -R0/360/-90/90 -JX10c -B60 -SE -png <span class="nb">test</span>
 </pre></div>
 </div>
 <p>地理投影下 <code class="docutils literal notranslate"><span class="pre">-SE</span></code> 的长短轴的单位是地理单位，默认长度单位为千米:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">80</span> <span class="m">0</span> <span class="m">45</span> <span class="m">22200</span> <span class="m">11100</span> <span class="p">|</span> gmt psxy -R0/360/-90/90 -JN15c -B60 -SE &gt; test.ps
-<span class="nb">echo</span> <span class="m">80</span> <span class="m">0</span> <span class="m">45</span> 200d  100d  <span class="p">|</span> gmt psxy -R0/360/-90/90 -JN15c -B60 -SE &gt; test2.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">80</span> <span class="m">0</span> <span class="m">45</span> <span class="m">22200</span> <span class="m">11100</span> <span class="p">|</span> gmt plot -R0/360/-90/90 -JN15c -B60 -SE -png <span class="nb">test</span>
+<span class="nb">echo</span> <span class="m">80</span> <span class="m">0</span> <span class="m">45</span> 200d  100d  <span class="p">|</span> gmt plot -R0/360/-90/90 -JN15c -B60 -SE -png test2
 </pre></div>
 </div>
 <p>若长短轴长度相等，则椭圆退化成圆，可以用于绘制直径以千米为单位的圆，从而解决了
 <code class="docutils literal notranslate"><span class="pre">-Sc</span></code> 只能用长度单位而不能用距离单位画圆的不足。这一特性可以用于绘制等震中距线。比如如下命令可以绘制30度等震中距线:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">80</span> <span class="m">0</span> <span class="m">0</span> 60d 60d <span class="p">|</span> gmt psxy -R0/360/-90/90 -JN15c -B60 -SE &gt; test.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">80</span> <span class="m">0</span> <span class="m">0</span> 60d 60d <span class="p">|</span> gmt plot -R0/360/-90/90 -JN15c -B60 -SE -png <span class="nb">test</span>
 </pre></div>
 </div>
 <p>上面示例的输入数据中，方向和短轴长度都是多余的，所以GMT提供了 <code class="docutils literal notranslate"><span class="pre">-SE-[&lt;size&gt;]</span></code>
 选项用于绘制直径为 <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> 的圆，若未指定 <code class="docutils literal notranslate"><span class="pre">&lt;size&gt;</span></code> ，则需要在数据中指定圆的直径。比如30度和60度等震中距线可以用如下命令绘制:</p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psxy -R0/360/-90/90 -JN15c -B60 -SE- &gt; test.ps <span class="s">&lt;&lt; EOF</span>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt plot -R0/360/-90/90 -JN15c -B60 -SE- -png <span class="nb">test</span> <span class="s">&lt;&lt; EOF</span>
 <span class="s">180 0 60d</span>
 <span class="s">180 0 120d</span>
 <span class="s">EOF</span>
@@ -573,37 +564,34 @@
 </ol>
 <p>下面的例子分别绘制了 <code class="docutils literal notranslate"><span class="pre">+b</span></code> 、 <code class="docutils literal notranslate"><span class="pre">+c</span></code> 、 <code class="docutils literal notranslate"><span class="pre">+f</span></code> 、 <code class="docutils literal notranslate"><span class="pre">+s</span></code> 、 <code class="docutils literal notranslate"><span class="pre">+t</span></code> 所对应的符号：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="nv">R</span><span class="o">=</span><span class="m">150</span>/200/20/50
-<span class="nv">J</span><span class="o">=</span>M15c
-<span class="nv">PS</span><span class="o">=</span>psxy_-Sf.ps
-gmt psbasemap -R<span class="nv">$R</span> -J<span class="nv">$J</span> -B10 -K &gt; <span class="nv">$PS</span>
-gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -Sf2c/0.1i+l+b -Gblack -W -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+gmt begin plot_-Sf pdf,png
+gmt basemap -R150/200/20/50 -JM15c -B10
+gmt plot -Sf2c/0.1i+l+b -Gblack -W <span class="s">&lt;&lt; EOF</span>
 <span class="s">155 30</span>
 <span class="s">160 40</span>
 <span class="s">EOF</span>
-gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -Sf2c/0.1i+l+c -Gblue -W -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+gmt plot -Sf2c/0.1i+l+c -Gblue -W <span class="s">&lt;&lt; EOF</span>
 <span class="s">165 30</span>
 <span class="s">170 40</span>
 <span class="s">EOF</span>
-gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -Sf2c/0.1i+l+f -Gred -W -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+gmt plot -Sf2c/0.1i+l+f -Gred -W <span class="s">&lt;&lt; EOF</span>
 <span class="s">175 30</span>
 <span class="s">180 40</span>
 <span class="s">EOF</span>
-gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -Sf2c/0.3i+l+s+o1 -Gyellow -W -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+gmt plot -Sf2c/0.3i+l+s+o1 -Gyellow -W <span class="s">&lt;&lt; EOF</span>
 <span class="s">185 30</span>
 <span class="s">190 40</span>
 <span class="s">EOF</span>
-gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -Sf1c/0.1i+l+t -Gwhite -W -B10 -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+gmt plot -Sf1c/0.1i+l+t -Gwhite -W -B10 <span class="s">&lt;&lt; EOF</span>
 <span class="s">195 30</span>
 <span class="s">200 40</span>
 <span class="s">EOF</span>
-gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -T -O &gt;&gt; <span class="nv">$PS</span>
-rm gmt.*
+gmt end
 </pre></div>
 </div>
 <div class="last figure align-center" id="id7">
-<a class="reference internal image-reference" href="../../_images/psxy_-Sf.png"><img alt="psxy -Sf example" src="../../_images/psxy_-Sf.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">psxy -Sf示意图</span></p>
+<a class="reference internal image-reference" href="../../_images/plot-gmtplot-2.png"><img alt="../../_images/plot-gmtplot-2.png" src="../../_images/plot-gmtplot-2.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">plot -Sf示意图</span></p>
 </div>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-Sj|J</span></code></dt>
@@ -650,29 +638,24 @@ rm gmt.*
 <li>圆弧的两端可加上额外的箭头，见 <a class="reference internal" href="../../basis/vector/"><span class="doc">绘制矢量/箭头</span></a> 一节</li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="nv">R</span><span class="o">=</span><span class="m">0</span>/4/0.5/1.5
-<span class="nv">J</span><span class="o">=</span>X6c/3c
-<span class="nv">PS</span><span class="o">=</span>psxy_-Sm.ps
-
-gmt psbasemap -R<span class="nv">$R</span> -J<span class="nv">$J</span> -Bxa1g1 -Bya0.5g0.5 -BWSen -K &gt; <span class="nv">$PS</span>
-gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -Sc0.15c -Gblack -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+gmt begin plot_-Sm pdf,png
+gmt basemap -R0/4/0.5/1.5 -JX6c/3c -Bxa1g1 -Bya0.5g0.5 -BWSen
+gmt plot -Sc0.15c -Gblack <span class="s">&lt;&lt; EOF</span>
 <span class="s">1 1</span>
 <span class="s">3 1</span>
 <span class="s">EOF</span>
-gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -Sm0.2c+b+e+g -Gblack -W0.5p,red -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+gmt plot -Sm0.2c+b+e+g -Gblack -W0.5p,red <span class="s">&lt;&lt; EOF</span>
 <span class="s">1 1 1 10 60</span>
 <span class="s">EOF</span>
-gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -Sm0.2c+b+l -Gblack -W0.5p,blue -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+gmt plot -Sm0.2c+b+l -Gblack -W0.5p,blue <span class="s">&lt;&lt; EOF</span>
 <span class="s">3 1 1 10 150</span>
 <span class="s">EOF</span>
-gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -T -O &gt;&gt; <span class="nv">$PS</span>
-
-rm gmt.*
+gmt end
 </pre></div>
 </div>
 <div class="last figure align-center" id="id8">
-<a class="reference internal image-reference" href="../../_images/psxy_-Sm.png"><img alt="psxy angle arc" src="../../_images/psxy_-Sm.png" style="width: 50%;" /></a>
-<p class="caption"><span class="caption-text">psxy -Sm 示意图</span></p>
+<a class="reference internal image-reference" href="../../_images/plot-gmtplot-3.png"><img alt="../../_images/plot-gmtplot-3.png" src="../../_images/plot-gmtplot-3.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-text">plot -Sm 示意图</span></p>
 </div>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-Sq[&lt;type&gt;]&lt;info&gt;[:&lt;labelinfo&gt;]</span></code></dt>
@@ -744,7 +727,7 @@ rm gmt.*
 <li><code class="docutils literal notranslate"><span class="pre">-SV</span></code> 与 <code class="docutils literal notranslate"><span class="pre">-Sv</span></code> 类似，区别在于第三列是方位角而不是方向</li>
 <li><code class="docutils literal notranslate"><span class="pre">-S=</span></code> 与 <code class="docutils literal notranslate"><span class="pre">-SV</span></code> 类似，区别在于第四列长度的单位是地理单位</li>
 </ol>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">2</span> <span class="m">2</span> <span class="m">45</span> 5c <span class="p">|</span> gmt psxy -R0/10/0/10 -JX10c/10c -B1 -Sv1c+e -W2p &gt; test.ps
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">2</span> <span class="m">2</span> <span class="m">45</span> 5c <span class="p">|</span> gmt plot -R0/10/0/10 -JX10c/10c -B1 -Sv1c+e -W2p -png <span class="nb">test</span>
 </pre></div>
 </div>
 </dd>
@@ -762,28 +745,22 @@ X轴正方向（即东向）逆时针旋转的角度</li>
 </ol>
 <p>下面的示例分别用 <code class="docutils literal notranslate"><span class="pre">-SW</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Sw</span></code> 画了两个不同大小的楔形饼图：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="nv">R</span><span class="o">=</span><span class="m">0</span>/10/0/5
-<span class="nv">J</span><span class="o">=</span>x1c
-<span class="nv">PS</span><span class="o">=</span>psxy_-Sw.ps
-gmt psbasemap -R<span class="nv">$R</span> -J<span class="nv">$J</span> -Ba1g1 -K &gt; <span class="nv">$PS</span>
-gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -Sw2c -Glightblue -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+gmt begin plot_-Sw pdf,png
+gmt basemap -R0/10/0/5 -Jx1c -Ba1g1
+gmt plot -Sw2c -Glightblue <span class="s">&lt;&lt; EOF</span>
 <span class="s">2 2 0 45</span>
 <span class="s">EOF</span>
-
-gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -SW3c -Glightblue -K -O &gt;&gt; <span class="nv">$PS</span> <span class="s">&lt;&lt; EOF</span>
+gmt plot -SW3c -Glightblue <span class="s">&lt;&lt; EOF</span>
 <span class="s">6 2 0 45</span>
 <span class="s">EOF</span>
-gmt psxy -R<span class="nv">$R</span> -J<span class="nv">$J</span> -T -O &gt;&gt; <span class="nv">$PS</span>
-
-rm gmt.*
+gmt end
 </pre></div>
 </div>
-<div class="last figure align-center" id="id9">
-<a class="reference internal image-reference" href="../../_images/psxy_-Sw.png"><img alt="psxy pie wedge" src="../../_images/psxy_-Sw.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">psxy -Sw示意图。</span></p>
-<div class="legend">
-左边-Sw，右边-SW；图中1格表示1cm。</div>
+<div class="figure align-center" id="id9">
+<a class="reference internal image-reference" href="../../_images/plot-gmtplot-4.png"><img alt="../../_images/plot-gmtplot-4.png" src="../../_images/plot-gmtplot-4.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">plot -Sw示意图。</span></p>
 </div>
+<p class="last">左边-Sw，右边-SW；图中1格表示1cm。</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-S~[d|D|f|l|L|n|N|s|S|x|X]&lt;info&gt;[:&lt;symbolinfo&gt;]</span></code></dt>
 <dd>绘制decorated line，即带有符号的线段。详见官方文档。</dd>
@@ -835,7 +812,7 @@ rm gmt.*
 <div class="section" id="id4">
 <h2>13.50.5 示例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>最简单的命令，绘制线段或多边形，此时数据输入需要两列，即X和Y:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psxy -R0/10/0/10 -JX10c -B1 &gt; test.ps <span class="s">&lt;&lt; EOF</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt plot -R0/10/0/10 -JX10c -B1 -png <span class="nb">test</span> <span class="s">&lt;&lt; EOF</span>
 <span class="s">3 5</span>
 <span class="s">5 8</span>
 <span class="s">7 4</span>
@@ -844,88 +821,89 @@ rm gmt.*
 </div>
 <p>下面的脚本展示了 <code class="docutils literal notranslate"><span class="pre">-F</span></code> 选项的用法：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="nv">ps</span><span class="o">=</span>psxy_-F.ps
 
 <span class="c1"># 此处定义了函数plotpts，用于绘制图中绿色和蓝色的圆圈，并加上文字</span>
 <span class="k">function</span> plotpts
 <span class="o">{</span>
     <span class="c1"># Plots the two data tables and places given text</span>
-	gmt psxy -R -J -O -K -Sc0.2c -Ggreen -Wfaint t1.txt
-	gmt psxy -R -J -O -K -Sc0.2c -Gblue -Wfaint t2.txt
-	<span class="nb">echo</span> <span class="nv">$*</span> <span class="p">|</span> gmt pstext -R -J -O -K -F+cTL+jTL+f12p -Dj0.05i
+    gmt plot -Sc0.2c -Ggreen -Wfaint t1.txt
+    gmt plot -Sc0.2c -Gblue -Wfaint t2.txt
+    <span class="nb">echo</span> <span class="nv">$*</span> <span class="p">|</span> gmt text -F+cTL+jTL+f12p -Dj0.05i
 <span class="o">}</span>
 <span class="c1"># 生成测试用的第一个数据文件</span>
 cat <span class="s">&lt;&lt; EOF &gt; t1.txt</span>
-<span class="s">10	10</span>
-<span class="s">48	15</span>
-<span class="s">28	20</span>
+<span class="s">10 10</span>
+<span class="s">48 15</span>
+<span class="s">28 20</span>
 <span class="s">&gt;</span>
-<span class="s">40	40</span>
-<span class="s">30	5</span>
-<span class="s">5	15</span>
+<span class="s">40 40</span>
+<span class="s">30  5</span>
+<span class="s">5  15</span>
 <span class="s">EOF</span>
 <span class="c1"># 生成测试用的第二个数据文件</span>
 cat <span class="s">&lt;&lt; EOF &gt; t2.txt</span>
-<span class="s">7	20</span>
-<span class="s">29	11</span>
-<span class="s">8	4</span>
+<span class="s">7  20</span>
+<span class="s">29 11</span>
+<span class="s">8   4</span>
 <span class="s">EOF</span>
-<span class="nv">scl</span><span class="o">=</span><span class="m">0</span>.06i
 <span class="c1"># -Fcs: 默认的连接方式</span>
-gmt psxy -R0/50/0/45 -Jx<span class="si">${</span><span class="nv">scl</span><span class="si">}</span> -P -Ba10 -BWSne -W1p t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt -K &gt; <span class="nv">$ps</span>
-plotpts TWO DATA TABLES &gt;&gt; <span class="nv">$ps</span>
+gmt begin plot_-F pdf,png
+gmt basemap -R0/50/0/45 -Jx0.06i -Ba10 -BWSne
+gmt plot -W1p t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt
+plotpts TWO DATA TABLES
 
 <span class="c1"># -Fra</span>
-gmt psxy -R -J -Ba10 -BwSnE -W1p t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt -Fra -O -K -X3.25i &gt;&gt; <span class="nv">$ps</span>
-plotpts DATASET ORIGIN &gt;&gt; <span class="nv">$ps</span>
+gmt plot -W1p t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt -Fra -X3.25i
+plotpts DATASET ORIGIN
 
 <span class="c1"># -Frf</span>
-gmt psxy -R -J -W1p -Ba10 -BWSne t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt -Frf -O -K -X-3.25i -Y3.15i &gt;&gt; <span class="nv">$ps</span>
-plotpts TABLE ORIGIN &gt;&gt; <span class="nv">$ps</span>
+gmt plot -W1p t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt -Frf -X-3.25i -Y3.15i
+plotpts TABLE ORIGIN
 
 <span class="c1"># -Frs</span>
-gmt psxy -R -J -Ba10 -BwSnE -W1p t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt -Frs -O -K -X3.25i &gt;&gt; <span class="nv">$ps</span>
-plotpts SEGMENT ORIGIN &gt;&gt; <span class="nv">$ps</span>
+gmt plot -W1p t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt -Frs -X3.25i
+plotpts SEGMENT ORIGIN
 
 <span class="c1"># -Fr10/35</span>
-gmt psxy -R -J -Ba10 -BWSne -W1p t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt -Fr10/35 -O -K -X-3.25i -Y3.15i &gt;&gt; <span class="nv">$ps</span>
-plotpts FIXED ORIGIN &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="m">10</span> <span class="m">35</span> <span class="p">|</span> gmt psxy -R -J -O -K -Sa0.4c -Gred -Wfaint &gt;&gt; <span class="nv">$ps</span>
+gmt plot -W1p t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt -Fr10/35 -X-3.25i -Y3.15i
+plotpts FIXED ORIGIN
+<span class="nb">echo</span> <span class="m">10</span> <span class="m">35</span> <span class="p">|</span> gmt plot -Sa0.4c -Gred -Wfaint
 
 <span class="c1"># -Fna</span>
-gmt psxy -R -J -Ba10 -BwSnE -W1p t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt -Fna -O -K -X3.25i &gt;&gt; <span class="nv">$ps</span>
-plotpts NETWORK &gt;&gt; <span class="nv">$ps</span>
+gmt plot -W1p t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt -Fna -X3.25i
+plotpts NETWORK
 
-gmt psxy -R -J -O -T &gt;&gt; <span class="nv">$ps</span>
-rm gmt.* t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt
+gmt end
+rm t<span class="o">[</span><span class="m">12</span><span class="o">]</span>.txt
 </pre></div>
 </div>
 <div class="figure align-center" id="id10">
-<a class="reference internal image-reference" href="../../_images/psxy_-F.png"><img alt="../../_images/psxy_-F.png" src="../../_images/psxy_-F.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">psxy -F选项示意图</span></p>
+<a class="reference internal image-reference" href="../../_images/plot-gmtplot-5.png"><img alt="../../_images/plot-gmtplot-5.png" src="../../_images/plot-gmtplot-5.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">plot -F选项示意图</span></p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">-L</span></code> 选项的示例：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="nv">ps</span><span class="o">=</span>psxy_-L.ps
 cat <span class="s">&lt;&lt; EOF &gt; t.txt</span>
 <span class="s">1 1</span>
 <span class="s">2 3</span>
 <span class="s">3 2</span>
 <span class="s">4 4</span>
 <span class="s">EOF</span>
-gmt psxy -R0/5/0/5 -JX3i -K -B0 t.txt -Gred -W2p -L+xl &gt; <span class="nv">$ps</span>
-gmt psxy -R -J -O -K -B0 t.txt -Gred -W2p -L+xr -X3.25i &gt;&gt; <span class="nv">$ps</span>
-gmt psxy -R -J -O -K -B0 t.txt -Gred -W2p -L+x4.5 -X3.25i &gt;&gt; <span class="nv">$ps</span>
-gmt psxy -R -J -O -K -B0 t.txt -Gred -W2p -L+yt -X-6.5i -Y3.25i &gt;&gt; <span class="nv">$ps</span>
-gmt psxy -R -J -O -K -B0 t.txt -Gred -W2p -L+yb -X3.25i &gt;&gt; <span class="nv">$ps</span>
-gmt psxy -R -J -O -K -B0 t.txt -Gred -W2p -L+y4 -X3.25i &gt;&gt; <span class="nv">$ps</span>
-gmt psxy -R -J -O -T &gt;&gt; <span class="nv">$ps</span>
-rm gmt.* t.txt
+gmt begin plot_-L pdf,png
+gmt basemap -R0/5/0/5 -JX3i -B0
+gmt plot t.txt -Gred -W2p -L+xl
+gmt plot t.txt -Gred -W2p -L+xr -X3.25i
+gmt plot t.txt -Gred -W2p -L+x4.5 -X3.25i
+gmt plot t.txt -Gred -W2p -L+yt -X-6.5i -Y3.25i
+gmt plot t.txt -Gred -W2p -L+yb -X3.25i
+gmt plot t.txt -Gred -W2p -L+y4 -X3.25i
+gmt end
+rm t.txt
 </pre></div>
 </div>
 <div class="figure align-center" id="id11">
-<a class="reference internal image-reference" href="../../_images/psxy_-L.png"><img alt="../../_images/psxy_-L.png" src="../../_images/psxy_-L.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">psxy -L选项示意图</span></p>
+<a class="reference internal image-reference" href="../../_images/plot-gmtplot-6.png"><img alt="../../_images/plot-gmtplot-6.png" src="../../_images/plot-gmtplot-6.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">plot -L选项示意图</span></p>
 </div>
 <p>更多示例见 <a class="reference internal" href="../../gallery/lines/"><span class="doc">绘制线条</span></a>。</p>
 </div>
@@ -976,7 +954,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月07日.
+        最后更新于 2019年08月08日.
       </span>
 
     </p>
