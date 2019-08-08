@@ -343,6 +343,10 @@
 <dt><code class="docutils literal notranslate"><span class="pre">-A[&lt;autolabel&gt;][+j|J&lt;refpoint&gt;][+c&lt;dx&gt;/&lt;dy&gt;][+g&lt;fill&gt;][+p&lt;pen&gt;][+o&lt;dx&gt;/&lt;dy&gt;][+r][+R][+v]</span></code></dt>
 <dd><p class="first">为每个子图自动指定编号。</p>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;autolabel&gt;</span></code> 可以是一个数字或字母，也可以在数字或字母的一侧或两侧加上括号，其设置了左上角第一张子图的编号，而其余子图则按照递增的顺序依次编号。</p>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">括号在Unix Shell中有特殊含义，可以将其用单引号括起来，即 <code class="docutils literal notranslate"><span class="pre">'(a)'</span></code>。</p>
+</div>
 <p>可以加上子选项以指定编号的更多属性：</p>
 <ul class="last simple">
 <li><code class="docutils literal notranslate"><span class="pre">+j|J&lt;refpoint&gt;</span></code> 指定子图编号在底图上的位置，默认值为 <code class="docutils literal notranslate"><span class="pre">TL</span></code>，即编号位于底图的左上角。<code class="docutils literal notranslate"><span class="pre">+j</span></code> 和 <code class="docutils literal notranslate"><span class="pre">+J</span></code> 分别适用于子图编号位于底图内部和底图外部的情况。</li>
@@ -407,8 +411,8 @@
 <h2>13.59.2 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code><a class="headerlink" href="#subplot-set" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 通过指定子图的行号和列号以激活某个特定的子图，接下来的所有绘图命令将只在该子图内进行绘制。子图的行号和列号均从1开始算起。
 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 的功能与 <a class="reference internal" href="../../option/c/"><span class="doc">-c 选项</span></a> 类似但其更加灵活。</p>
-<p>若使用 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 但未指定子图的行和列，则GMT会自动激活“下一个”子图面板。例如，对于一个2行2列的图而言，每次使用 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 而不指定子图行和列，则按照行优先顺序依次激活子图 <code class="docutils literal notranslate"><span class="pre">1,1</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">1,2</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">2,1</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">2,2</span></code>。若 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">begin</span></code> 中使用了 <code class="docutils literal notranslate"><span class="pre">-A+v</span></code> 选项，则按照列优先顺序依次激活子图
-<code class="docutils literal notranslate"><span class="pre">1,1</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">2,1</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">1,2</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">2,2</span></code>。</p>
+<p>若使用 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 但未指定子图的行和列，则GMT会自动激活“下一个”子图面板。例如，对于一个2行2列的图而言，每次使用 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">set</span></code> 而不指定子图行和列，则按照行优先顺序依次激活子图 <code class="docutils literal notranslate"><span class="pre">0,0</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">0,1</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">1,0</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">1,1</span></code>。若 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">begin</span></code> 中使用了 <code class="docutils literal notranslate"><span class="pre">-A+v</span></code> 选项，则按照列优先顺序依次激活子图
+<code class="docutils literal notranslate"><span class="pre">0,0</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">1,0</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">0,1</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">1,1</span></code>。</p>
 <p>需要注意，子图中所有的投影方式均不能指定绘图宽度，因为底图的尺寸完全由子图的大小和 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项指定的研究区域决定。在需要指定绘图宽度的地方，需要用问号
 <code class="docutils literal notranslate"><span class="pre">?</span></code> 代替绘图宽度。</p>
 <div class="section" id="id4">
@@ -421,7 +425,7 @@
 <h3>可选选项<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <dl class="docutils">
 <dt><code class="docutils literal notranslate"><span class="pre">&lt;row&gt;,&lt;col&gt;</span></code></dt>
-<dd>要激活的子图所在的行和列。行列均从1开始数起。</dd>
+<dd>要激活的子图所在的行和列。行列均从0开始数起。</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-A&lt;fixedlabel&gt;</span></code></dt>
 <dd>设置当前子图的编号，而忽略 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">begin</span></code> 中 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 选项的设置的自动编号。但该选项只能修改编号的字符串，其余属性（如位置、文本框）等均只能继承自
 <code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">begin</span></code> 的 <code class="docutils literal notranslate"><span class="pre">-A</span></code> 选项。</dd>
