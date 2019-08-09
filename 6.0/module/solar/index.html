@@ -303,7 +303,7 @@
 作为参考点</p>
 </div>
 <p>示例:</p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt pssolar -I120/40+d2016-11-01T01:00:00+z8 -C
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt solar -I120/40+d2016-11-01T01:00:00+z8 -C
 <span class="m">160</span>.885755836   -14.5068940782  <span class="m">38</span>.6719503593   -59.513608404   <span class="m">0</span>.270214374769  <span class="m">0</span>.706928713211  <span class="m">0</span>.48857154399   <span class="m">628</span>.868647356   -59.5102114599  <span class="m">16</span>.4569766548
 </pre></div>
 </div>
@@ -312,7 +312,7 @@
 <dd>根据晨昏线对黑夜区域填充颜色或图案，见 <a class="reference internal" href="../../basis/fill/"><span class="doc">填充</span></a> 一节。也可以使用 <code class="docutils literal notranslate"><span class="pre">-Gc</span></code> 剪裁黑夜区域，并通过使用 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">psclip</span> <span class="pre">-C</span></code> 停止区域剪裁，见 <a class="reference external" href="https://docs.generic-mapping-tools.org/dev/clip.html" title="(在 GMT v6.1.0)"><span>clip</span></a> 。</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-I[&lt;lon&gt;/&lt;lat&gt;][+d&lt;date&gt;][+z&lt;TZ&gt;]</span></code></dt>
 <dd><p class="first">输出太阳的当前位置、方位角和高度角。加上 <code class="docutils literal notranslate"><span class="pre">&lt;lon&gt;/&lt;lat&gt;</span></code> 则输出日出、日落、正午时间以及一天时间长度。用 <code class="docutils literal notranslate"><span class="pre">+d&lt;data&gt;</span></code> 指定ISO格式的日期时间（ 比如 <code class="docutils literal notranslate"><span class="pre">+d2000-04-25T10:00:00</span></code> ）来计算特定时刻的太阳参数。如果有需要，也可以通过 <code class="docutils literal notranslate"><span class="pre">+z&lt;TZ&gt;</span></code> 加上时区。</p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt pssolar -I120/40+d2016-11-01T01:00:00+z8
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt solar -I120/40+d2016-11-01T01:00:00+z8
     Sun current position:    <span class="nv">long</span> <span class="o">=</span> <span class="m">160</span>.885756    <span class="nv">lat</span> <span class="o">=</span> -14.506894
                           <span class="nv">Azimuth</span> <span class="o">=</span> <span class="m">38</span>.6720    <span class="nv">Elevation</span> <span class="o">=</span> -59.5136
 <span class="nv">Sunrise</span>  <span class="o">=</span> <span class="m">06</span>:29
@@ -351,8 +351,10 @@
 <li>天文曙暮光指太阳中心位于地平线以下 0˚50’ 至 18˚ 这段时间</li>
 </ul>
 <p>下面的命令绘制了晨昏线以及三条曙暮光线:</p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt coast -Rd -W0.1p -JQ0/14c -Ba -BWSen -Dl -A1000 -P -K &gt; terminator.ps
-$ gmt pssolar -R -J -W1p -Tdcna -O &gt;&gt; terminator.ps
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin terminator png
+gmt coast -Rd -W0.1p -JQ0/14c -Ba -BWSen -Dl -A1000
+gmt solar -W1p -Tdcna -O
+gmt end
 </pre></div>
 </div>
 </dd>
@@ -417,7 +419,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月08日.
+        最后更新于 2019年08月09日.
       </span>
 
     </p>
