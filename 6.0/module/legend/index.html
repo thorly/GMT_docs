@@ -410,8 +410,8 @@
 <div class="section" id="id3">
 <h2>13.46.3 示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-gmt pslegend -R-10/10/-10/10 -JM6i -F+gazure1 -Dx0.5i/0.5i+w5i/3.3i+jBL+l1.2 <span class="se">\</span>
-    -C0.1i/0.1i -B5f1 <span class="s">&lt;&lt; EOF &gt; pslegend_ex1.ps</span>
+gmt begin legend pdf,png
+gmt legend -R-10/10/-10/10 -JM6i -F+gazure1 -Dx0.5i/0.5i+w5i/3.3i+jBL+l1.2 -C0.1i/0.1i -B5f1 <span class="s">&lt;&lt; EOF</span>
 <span class="s"># Legend test for pslegend</span>
 <span class="s"># G is vertical gap, V is vertical line, N sets # of columns, D draws horizontal line.</span>
 <span class="s"># H is header, L is label, S is symbol, T is paragraph text, M is map scale.</span>
@@ -443,18 +443,14 @@ gmt pslegend -R-10/10/-10/10 -JM6i -F+gazure1 -Dx0.5i/0.5i+w5i/3.3i+jBL+l1.2 <sp
 <span class="s">T There is no easy way to predetermine how many lines will be required,</span>
 <span class="s">T so we may have to adjust the box height to get the right size box.</span>
 <span class="s">EOF</span>
-rm gmt.*
+gmt end
 </pre></div>
 </div>
 <div class="figure align-center" id="id4">
-<a class="reference internal image-reference" href="../../_images/pslegend_ex1.png"><img alt="../../_images/pslegend_ex1.png" src="../../_images/pslegend_ex1.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">pslegend示例图1</span></p>
+<a class="reference internal image-reference" href="../../_images/legend-gmtplot-0.png"><img alt="../../_images/legend-gmtplot-0.png" src="../../_images/legend-gmtplot-0.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">legend示例图1</span></p>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="nv">ps</span><span class="o">=</span>pslegend_ex2.ps
-
-gmt gmtset FONT_ANNOT_PRIMARY 12p  FONT_LABEL 12p
-
 cat <span class="s">&lt;&lt;EOF &gt; table.txt</span>
 <span class="s">#G 0.04i</span>
 <span class="s">H 24 Times-Roman Eight Largest Cities in North America</span>
@@ -553,14 +549,16 @@ cat <span class="s">&lt;&lt; EOF &gt; t.cpt</span>
 <span class="s">7	magenta</span>
 <span class="s">8	white</span>
 <span class="s">EOF</span>
-gmt pslegend -Dx0/0+w5.6i+jBL+l1.1 -C0.05i -F+p+gsnow1 -B0 table.txt -P --FONT_ANNOT_PRIMARY<span class="o">=</span>12p <span class="se">\</span>
-        --FONT_LABEL<span class="o">=</span>12p &gt; <span class="nv">$ps</span>
-rm -f table.txt t.cpt gmt.*
+gmt begin legend pdf,png
+gmt gmtset FONT_ANNOT_PRIMARY 12p  FONT_LABEL 12p
+gmt legend -Dx0/0+w5.6i+jBL+l1.1 -C0.05i -F+p+gsnow1 -B0 table.txt
+gmt end
+rm -f table.txt t.cpt
 </pre></div>
 </div>
 <div class="figure align-center" id="id5">
-<a class="reference internal image-reference" href="../../_images/pslegend_ex2.png"><img alt="../../_images/pslegend_ex2.png" src="../../_images/pslegend_ex2.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">pslegend示例图2</span></p>
+<a class="reference internal image-reference" href="../../_images/legend-gmtplot-1.png"><img alt="../../_images/legend-gmtplot-1.png" src="../../_images/legend-gmtplot-1.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">legend示例图2</span></p>
 </div>
 </div>
 </div>
@@ -610,7 +608,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月09日.
+        最后更新于 2019年08月11日.
       </span>
 
     </p>
