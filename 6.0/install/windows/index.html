@@ -206,28 +206,16 @@
             
   <div class="section" id="windows-gmt">
 <h1>2.2 Windows 下安装 GMT<a class="headerlink" href="#windows-gmt" title="永久链接至标题">¶</a></h1>
-<p>GMT 为 Windows 用户提供了安装包，可以直接安装使用。Windows 下需要安装 GMT、ghostscript，查看PS文件需要使用 GSview。日常数据处理需要Linux下的小工具。</p>
+<p>GMT 提供了 Windows 下的安装包，可以直接双击使用。</p>
 <div class="admonition warning">
 <p class="first admonition-title">警告</p>
 <p class="last">从 GMT 5.2.1 开始，GMT 提供的安装包已经不再支持 Windows XP。</p>
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">警告</p>
-<p class="last">GMT需要使用 ghostscript 生成PDF、JPG等格式的图片。但ghostscript 9.27存在严重bug，会导致生成的图片中有用信息被裁剪。请确保自己安装的不是 9.27 版本。</p>
-</div>
 <ol class="arabic">
-<li><p class="first">下载</p>
+<li><p class="first">下载 GMT 6.0.0rc3 安装包</p>
 <ul class="simple">
-<li>GMT 6.0.0rc3:
-<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0rc3-win32.exe">32位</a>
-<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0rc3-win64.exe">64位</a></li>
-<li>ghostscript 9.26:
-<a class="reference external" href="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/gs926aw32.exe">32位</a>
-<a class="reference external" href="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/gs926aw64.exe">64位</a></li>
-<li>GSview 5.0:
-<a class="reference external" href="http://www.ghostgum.com.au/download/gsv50w32.exe">32位</a>
-<a class="reference external" href="http://www.ghostgum.com.au/download/gsv50w64.exe">64位</a></li>
-<li><a class="reference external" href="https://gmt-china.org/data/UnixTools.zip">UnixTools.zip</a></li>
+<li><a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0rc3-win64.exe">64位安装包</a></li>
+<li><a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0rc3-win32.exe">32位安装包</a></li>
 </ul>
 </li>
 <li><p class="first">安装GMT</p>
@@ -253,15 +241,35 @@
 </div>
 <p>即表示安装成功。</p>
 </li>
-<li><p class="first">安装ghostscript</p>
-<p>安装的过程没什么可说的，在最后一步，记得勾选
-<code class="docutils literal notranslate"><span class="pre">Generate</span> <span class="pre">cidfmap</span> <span class="pre">for</span> <span class="pre">Windows</span> <span class="pre">CJK</span> <span class="pre">TrueType</span> <span class="pre">fonts</span></code>。</p>
+<li><p class="first">安装ghostscript 9.26</p>
+<p>GMT需要使用 ghostscript 生成PDF、JPG等格式的图片，因而必须安装 ghostscript。</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/gs926aw64.exe">64位安装包</a></li>
+<li><a class="reference external" href="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/gs926aw32.exe">32位安装包</a></li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">ghostscript 9.27存在严重bug，会导致生成的图片中有用信息被裁剪。请确保自己安装的不是 9.27 版本。</p>
+</div>
+<p>安装过程很简单，双击安装即可。在最后一步，记得勾选 <code class="docutils literal notranslate"><span class="pre">Generate</span> <span class="pre">cidfmap</span> <span class="pre">for</span> <span class="pre">Windows</span> <span class="pre">CJK</span> <span class="pre">TrueType</span> <span class="pre">fonts</span></code>。</p>
 </li>
-<li><p class="first">安装GSview</p>
-<p>双击直接安装即可。</p>
+<li><p class="first">安装GSview 5.0（可选）</p>
+<p>GSview是一个PostScript阅读器。GMT默认生成PDF格式的图片，如果需要生成并查看
+PS格式的图片，则需要安装GSview，否则无需安装。</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.ghostgum.com.au/download/gsv50w64.exe">64位安装包</a></li>
+<li><a class="reference external" href="http://www.ghostgum.com.au/download/gsv50w32.exe">32位安装包</a></li>
+</ul>
+<p>安装过程很简单，双击直接安装即可。</p>
 </li>
-<li><p class="first">安装 UnixTools</p>
-<p>解压压缩包，并将解压得到的 exe 文件移动到 GMT 的 bin 目录即可。</p>
+<li><p class="first">安装 UnixTools （可选）</p>
+<p><a class="reference external" href="https://gmt-china.org/data/UnixTools.zip">UnixTools.zip</a></p>
+<p>UnixTools是中文社区整理的Unix下小工具的合集。下载并解压，将解压得到的
+exe 文件移动到 GMT 的 bin 目录即可。</p>
+</li>
+<li><p class="first">安装生成动画所需的软件（可选）</p>
+<p>GMT在制作 gif 动画时需要使用 <a class="reference external" href="http://www.graphicsmagick.org/">GraphicsMagick</a>，在制作 MP4 动画视频时需要使用 <a class="reference external" href="https://ffmpeg.org/">FFmpeg</a>。</p>
+<p>如有制作动画的需求，请自行下载安装这两个软件，并将其bin目录加入到系统环境变量 <code class="docutils literal notranslate"><span class="pre">PATH</span></code> 中，以保证 GMT 可以找到其提供的 <code class="docutils literal notranslate"><span class="pre">gm</span></code> 和 <code class="docutils literal notranslate"><span class="pre">ffmpeg</span></code> 命令。</p>
 </li>
 </ol>
 </div>
