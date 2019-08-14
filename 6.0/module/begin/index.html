@@ -39,6 +39,7 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
     <link rel="next" title="13.3 clear" href="../clear/" />
@@ -115,7 +116,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#id1">13.2.1 语法</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id2">13.2.2 可选选项</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id4">13.2.3 示例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">13.2.4 注意事项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ps">13.2.4 PS文件注意事项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unix-shell">13.2.5 UNIX shell 注意事项</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../clear/">13.3 clear</a></li>
@@ -282,25 +284,31 @@
 </tr>
 </tbody>
 </table>
-<p>在GMT现代模式下，一个GMT会话总是用 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">begin</span></code> 开始，用 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">end</span></code> 结束。</p>
-<p><code class="docutils literal notranslate"><span class="pre">begin</span></code> 模块告诉GMT要开始一个新的现代模式会话。如果你的脚本只绘制一张图，那么你可以直接指定要生成的图片的文件名和文件格式。如果你的脚本绘制多张图，则你需要使用 <a class="reference internal" href="../figure/"><span class="doc">figure</span></a> 来分别为每张图指定文件名和文件格式。现代会话模式下，每个会话均独立于其他进程，每个会话负责管理各自的配置参数、命令历史等，因而可以同时执行多个GMT会话而不会互相干扰。</p>
+<p>在GMT现代模式下，一个GMT绘图总是以 <strong>gmt begin</strong> 开始，以 <strong>gmt end</strong> 结束。</p>
+<p><strong>begin</strong> 模块告诉GMT要开始一个新的现代模式会话。如果你的脚本只绘制一张图，那么你可以直接指定要生成的图片的文件名和文件格式。如果你的脚本绘制多张图，则你需要使用 <a class="reference internal" href="../figure/"><span class="doc">figure</span></a> 来分别为每张图指定文件名和文件格式。现代会话模式下，每个会话均独立于其他进程，每个会话负责管理各自的配置参数、命令历史等，因而可以同时执行多个GMT会话而不会互相干扰。</p>
 <div class="section" id="id1">
 <h2>13.2.1 语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin &lt;prefix&gt; &lt;formats&gt;
-</pre></div>
-</div>
+<p><strong>gmt begin</strong>
+[ <em>prefix</em> ]
+[ <em>formats</em> ]
+[ <em>psoptions</em> ]
+[ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]</p>
 </div>
 <div class="section" id="id2">
 <h2>13.2.2 可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;prefix&gt;</span></code></dt>
-<dd><p class="first">文件名前缀，默认文件名前缀为 <code class="docutils literal notranslate"><span class="pre">gmtsession</span></code>。后缀由文件格式自动决定。</p>
-<p class="last">如果一个GMT会话只用于进行计算而不绘图，或者需要绘制多张图，则不需要指定该参数。</p>
+<dt><em>prefix</em></dt>
+<dd><p class="first">图片文件名前缀，默认值为 <code class="docutils literal notranslate"><span class="pre">gmtsession</span></code>。图片文件名后缀由 <em>formats</em> 自动决定。</p>
+<p>如果一个GMT会话只用于进行计算而不绘图，或者需要绘制多张图，则不需要指定该参数。</p>
+<div class="last admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">文件名中应尽量避免出现空格。若存在空格，则文件名必须用单引号括起来。</p>
+</div>
 </dd>
 </dl>
 <dl class="docutils" id="fig-formats">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;formats&gt;</span></code></dt>
-<dd><p class="first">图片文件格式。多个格式之间可以用逗号分开。默认为 <code class="docutils literal notranslate"><span class="pre">pdf</span></code>。</p>
+<dt><em>formats</em></dt>
+<dd><p class="first">图片文件格式。多个格式之间可以用逗号分开。默认图片格式为 <code class="docutils literal notranslate"><span class="pre">pdf</span></code>，由参数 <a class="reference internal" href="../../conf/misc/#gmt-graphics-format"><span class="std std-ref">GMT_GRAPHICS_FORMAT</span></a> 控制。</p>
 <p>GMT支持输出如下矢量图片格式：</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">pdf</span></code>：<a class="reference external" href="https://zh.wikipedia.org/wiki/可移植文档格式">Portable Document Format</a> [默认格式]</li>
@@ -317,24 +325,75 @@
 <li><code class="docutils literal notranslate"><span class="pre">tif</span></code>：<a class="reference external" href="https://zh.wikipedia.org/wiki/TIFF">Tagged Image Format File</a></li>
 </ul>
 </dd>
+<dt><em>psoptions</em></dt>
+<dd><p class="first">GMT现代模式本质上是先生成PS文件，再通过调用 <a class="reference internal" href="../psconvert/"><span class="doc">psconvert</span></a> 自动转换成用户指定的图片格式。此处可以设置要传递给模块 <a class="reference internal" href="../psconvert/"><span class="doc">psconvert</span></a> 的选项，多个选项之间用逗号分隔。</p>
+<p>默认值为 <strong>A</strong>，表示将 <strong>-A</strong> 选项传给 <a class="reference internal" href="../psconvert/"><span class="doc">psconvert</span></a>。</p>
+<p>其他可选的选项包括：</p>
+<ul class="simple">
+<li><strong>A</strong>[<em>args</em>]: 裁剪选项</li>
+<li><strong>C</strong><em>args</em>: 额外传递给GhostScript的选项</li>
+<li><strong>D</strong><em>dir</em>: 指定图片的输出目录</li>
+<li><strong>E</strong><em>dpi</em>: 设置图片分辨率</li>
+<li><strong>H</strong><em>factor</em></li>
+<li><strong>M</strong><em>args</em></li>
+<li><strong>Q</strong><em>args</em></li>
+<li><strong>S</strong></li>
+</ul>
+<p class="last">详细解释见 <a class="reference internal" href="../psconvert/"><span class="doc">psconvert</span></a> 的说明文档。</p>
+</dd>
+</dl>
+<dl class="docutils" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../option/V/"><span class="doc">(more …)</span></a></dt>
+<dd>设置 verbose 等级 [c].</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt>
+<dd>显示简短的帮助信息，包括模块简介和基本语法信息 （Windows下只能使用 <strong>-</strong>）</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt>
+<dd>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</dd>
+<dt><strong>-?</strong> 或无参数</dt>
+<dd>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</dd>
 </dl>
 </div>
 <div class="section" id="id4">
 <h2>13.2.3 示例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>开始一个会话，并使用默认值。此时会生成名为 gmtsession.pdf 的图片文件:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
+gmt ...
+gmt end
+</pre></div>
+</div>
 <p>开始一个GMT会话，并指定图片名为 <code class="docutils literal notranslate"><span class="pre">Figure_2</span></code>，图片格式为PDF和PNG格式:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin Figure_2 pdf,png
+gmt ...
+gmt end show
 </pre></div>
 </div>
-<p>若想要一个只用于计算而不产生绘图的现代会话，则可以直接使用:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
+<p>设置额外的参数以控制PS到输出格式之间的转换:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map pdf,png A+m1c
+gmt ...
+gmt end show
 </pre></div>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>13.2.4 注意事项<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
-<p>如果用户想要输出PS格式的图片，则应额外留意画布尺寸。对于其他图片格式而言，GMT默认使用无穷大的画布，而对于PS格式而言，GMT则默认使用A4大小的画布。若用户绘制的图片超过A4纸张的大小，则可能会造成显示不完全。针对这种情况，建议用户修改参数 <a class="reference external" href="https://docs.generic-mapping-tools.org/dev/gmt.conf.html#ps-media" title="(在 GMT v6.1.0)"><span class="xref std std-ref">PS_MEDIA</span></a> 以显式指定纸张大小。例如:</p>
+<div class="section" id="ps">
+<h2>13.2.4 PS文件注意事项<a class="headerlink" href="#ps" title="永久链接至标题">¶</a></h2>
+<p>如果用户想要输出PS格式的图片，则应额外留意画布尺寸。对于其他图片格式而言，GMT默认使用无穷大（10米x10米）的画布。而对于PS格式而言，GMT则默认使用A4大小的画布。若用户绘制的图片超过A4纸张的大小，则可能会造成显示不完全。针对这种情况，建议用户修改参数 <a class="reference external" href="https://docs.generic-mapping-tools.org/dev/gmt.conf.html#ps-media" title="(在 GMT v6.1.0)"><span class="xref std std-ref">PS_MEDIA</span></a> 以显式指定纸张大小。例如:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map ps
 gmt <span class="nb">set</span> PS_MEDIA A3
+gmt ...
+gmt end
+</pre></div>
+</div>
+</div>
+<div class="section" id="unix-shell">
+<h2>13.2.5 UNIX shell 注意事项<a class="headerlink" href="#unix-shell" title="永久链接至标题">¶</a></h2>
+<p>现代模式的工作原理是，在使用 <strong>gmt begin</strong> 时利用父进程ID创建唯一的会话目录，并将很多信息保存到该会话目录中。脚本中接下来的命令拥有共同的父进程ID，因而接下来的命令可以向唯一会话目录中写入信息或读取信息，以实现多个命令之间的互相通信。</p>
+<p>然而，UNIX下某些shell的实现不完全统一，脚本执行过程中父进程ID可能出现变化，后面执行的命令无法正确获取前面命令的父进程ID，因而导致命令之间的信息交流出现错误。最常见的情况是在使用UNIX管道时，可能会生成子shell进而导致父进程ID出现变化。</p>
+<p>如果你在GMT现代模式脚本中使用了管道，执行过程中出现了类似无法找到目录 <code class="docutils literal notranslate"><span class="pre">gmt6.#####</span></code>
+这样的错误，这极有可能意味着你所使用的UNIX shell存在此类问题。解决办法是，在脚本开始的地方设置环境变量 GMT_SESSION_NAME 为进程ID，即GMT脚本为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">GMT_SESSION_NAME</span><span class="o">=</span><span class="nv">$$</span>
+gmt begin
 gmt ...
 gmt end
 </pre></div>
@@ -387,7 +446,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月13日.
+        最后更新于 2019年08月14日.
       </span>
 
     </p>

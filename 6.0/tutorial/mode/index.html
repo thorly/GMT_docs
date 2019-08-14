@@ -39,6 +39,7 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
     <link rel="next" title="3.4 绘制第一张图" href="../first-plot/" />
@@ -227,11 +228,11 @@ gmt end <span class="o">[</span>show<span class="o">]</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">begin</span></code> 用于开启一个绘图，其中:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>- <span class="sb">``</span>&lt;figname&gt;<span class="sb">``</span> 指定了要生成的图片名，默认文件名为 <span class="sb">``</span>gmtsession<span class="sb">``</span>
-- <span class="sb">``</span>&lt;formats&gt;<span class="sb">``</span> 指定了图片的格式，默认图片格式为PDF
-- <span class="sb">``</span>&lt;psconvert_options&gt;<span class="sb">``</span> 指定了生成图片过程中的一些转换细节（比如裁剪方式、图片分辨率等）
-</pre></div>
-</div>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">&lt;figname&gt;</span></code> 指定了要生成的图片名，默认文件名为 <code class="docutils literal notranslate"><span class="pre">gmtsession</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;formats&gt;</span></code> 指定了图片的格式，默认图片格式为PDF</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;psconvert_options&gt;</span></code> 指定了生成图片过程中的一些转换细节（比如裁剪方式、图片分辨率等）</li>
+</ul>
 <p><code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">end</span></code> 则用于结束一个绘图，其中 <code class="docutils literal notranslate"><span class="pre">show</span></code> 表示在绘图结束后自动打开图片。</p>
 <p>例如:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map pdf,png
@@ -380,7 +381,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月13日.
+        最后更新于 2019年08月14日.
       </span>
 
     </p>

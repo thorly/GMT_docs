@@ -39,6 +39,7 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
     <link rel="next" title="13.9 end" href="../end/" />
@@ -119,8 +120,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../coupe/">13.7 coupe</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">13.8 docs</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">13.8.1 语法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">13.8.2 可选选项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">13.8.3 示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">13.8.2 必须参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">13.8.3 可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">13.8.4 示例</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../end/">13.9 end</a></li>
@@ -281,39 +283,72 @@
 </tr>
 </tbody>
 </table>
-<p><code class="docutils literal notranslate"><span class="pre">docs</span></code> 模块可以用默认的浏览器打开指定模块的网页版文档，还可以用于打开本地文件（如PDF或其他图片文件）以及网页链接。</p>
+<p><strong>docs</strong> 用系统默认的浏览器打开指定模块的HTML文档。若本地存在HTML文档，则优先使用本地文档。</p>
 <div class="section" id="id1">
 <h2>13.8.1 语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<blockquote>
-<div>gmt docs [-Q] &lt;module-name&gt; [&lt;options&gt;]</div></blockquote>
+<p><strong>gmt docs</strong>
+[ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong> ]
+[ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
+<em>module-name</em>
+[<em>-option</em>]</p>
 </div>
 <div class="section" id="id2">
-<h2>13.8.2 可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>13.8.2 必须参数<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-Q</span></code></dt>
-<dd>不打开文档，仅显示文档的网页链接。适合没有安装GUI的服务器使用。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;module-name&gt;</span></code></dt>
-<dd>模块名。除此之外，还可以打开 cookbook、tutorial、api、gmt.conf 等文档。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;option&gt;</span></code></dt>
-<dd>指定选项（例如 <code class="docutils literal notranslate"><span class="pre">-R</span></code>）以直接跳转到模块文档的该选项处。</dd>
+<dt><em>module-name</em></dt>
+<dd><p class="first">要查看文档的模块名。</p>
+<p>除了模块名之外，还支持几个特殊的名字:</p>
+<ul class="last simple">
+<li><strong>cookbook</strong>: 打开GMT参考手册</li>
+<li><strong>tutorial</strong>: 打开GMT入门教程</li>
+<li><strong>api</strong>: 打开GMT API手册</li>
+<li><strong>defaults</strong>: 打开GMT配置参数文档</li>
+<li><strong>gallery</strong>: 打开GMT图库</li>
+</ul>
+</dd>
 </dl>
 </div>
 <div class="section" id="id3">
-<h2>13.8.3 示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>13.8.3 可选选项<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<dl class="docutils" id="q">
+<dt><strong>-Q</strong></dt>
+<dd>仅显示文档的网页链接而不打开文档。适合没有安装图形界面的服务器。若使用该选项，则其必须是 <strong>docs</strong> 的第一个选项。</dd>
+<dt><strong>-</strong><em>option</em></dt>
+<dd>指定选项（例如 <strong>-R</strong>），则 <strong>docs</strong> 会打开模块文档并定位到模块文档的该选项处。</dd>
+</dl>
+<dl class="docutils" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../option/V/"><span class="doc">(more …)</span></a></dt>
+<dd>设置 verbose 等级 [c].</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt>
+<dd>显示简短的帮助信息，包括模块简介和基本语法信息 （Windows下只能使用 <strong>-</strong>）</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt>
+<dd>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</dd>
+<dt><strong>-?</strong> 或无参数</dt>
+<dd>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</dd>
+</dl>
+</div>
+<div class="section" id="id4">
+<h2>13.8.4 示例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>查看 <a class="reference internal" href="../grdimage/"><span class="doc">grdimage</span></a> 的文档:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt docs grdimage
 </pre></div>
 </div>
-<p>查看 <a class="reference internal" href="../coast/"><span class="doc">coast</span></a> 的 <code class="docutils literal notranslate"><span class="pre">-B</span></code> 选项:</p>
+<p>查看 <a class="reference internal" href="../grdimage/"><span class="doc">grdimage</span></a> 的文档链接:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt docs -Q grdimage
+</pre></div>
+</div>
+<p>查看 <a class="reference internal" href="../coast/"><span class="doc">coast</span></a> 的 <strong>-B</strong> 选项:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt docs coast -B
+</pre></div>
+</div>
+<p>查看GMT配置参数列表:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt docs defaults
 </pre></div>
 </div>
 <p>查看图库:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt docs gallery
-</pre></div>
-</div>
-<p>查看本地创建的PDF文件:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt docs my_beautiful_figure.pdf
 </pre></div>
 </div>
 </div>
@@ -364,7 +399,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月13日.
+        最后更新于 2019年08月14日.
       </span>
 
     </p>
