@@ -330,14 +330,14 @@
 <p>默认值为 <strong>A</strong>，表示将 <strong>-A</strong> 选项传给 <a class="reference internal" href="../psconvert/"><span class="doc">psconvert</span></a>。</p>
 <p>其他可选的选项包括：</p>
 <ul class="simple">
-<li><strong>A</strong>[<em>args</em>]: 裁剪选项</li>
+<li><strong>A</strong>[<em>args</em>]: 裁剪图片</li>
 <li><strong>C</strong><em>args</em>: 额外传递给GhostScript的选项</li>
 <li><strong>D</strong><em>dir</em>: 指定图片的输出目录</li>
 <li><strong>E</strong><em>dpi</em>: 设置图片分辨率</li>
-<li><strong>H</strong><em>factor</em></li>
-<li><strong>M</strong><em>args</em></li>
-<li><strong>Q</strong><em>args</em></li>
-<li><strong>S</strong></li>
+<li><strong>H</strong><em>factor</em>: 对图片做平滑以避免混叠</li>
+<li><strong>M</strong><em>args</em>: 为当前图片叠加前景图片或背景图片</li>
+<li><strong>Q</strong><em>args</em>: 设置图像和文本的抗锯齿选项</li>
+<li><strong>S</strong> : 把 GhostScript 命令输出到标准错误输出，且不删除所有中间文件</li>
 </ul>
 <p class="last">详细解释见 <a class="reference internal" href="../psconvert/"><span class="doc">psconvert</span></a> 的说明文档。</p>
 </dd>
@@ -391,10 +391,17 @@ gmt end
 <p>现代模式的工作原理是，在使用 <strong>gmt begin</strong> 时利用父进程ID创建唯一的会话目录，并将很多信息保存到该会话目录中。脚本中接下来的命令拥有共同的父进程ID，因而接下来的命令可以向唯一会话目录中写入信息或读取信息，以实现多个命令之间的互相通信。</p>
 <p>然而，UNIX下某些shell的实现不完全统一，脚本执行过程中父进程ID可能出现变化，后面执行的命令无法正确获取前面命令的父进程ID，因而导致命令之间的信息交流出现错误。最常见的情况是在使用UNIX管道时，可能会生成子shell进而导致父进程ID出现变化。</p>
 <p>如果你在GMT现代模式脚本中使用了管道，执行过程中出现了类似无法找到目录 <code class="docutils literal notranslate"><span class="pre">gmt6.#####</span></code>
-这样的错误，这极有可能意味着你所使用的UNIX shell存在此类问题。解决办法是，在脚本开始的地方设置环境变量 GMT_SESSION_NAME 为进程ID，即GMT脚本为:</p>
+这样的错误，这极有可能是你所使用的UNIX shell存在此类问题。解决办法是，在脚本开始的地方设置环境变量 GMT_SESSION_NAME 为进程ID。在Bash shell应该是:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">GMT_SESSION_NAME</span><span class="o">=</span><span class="nv">$$</span>
 gmt begin
 gmt ...
+gmt end
+</pre></div>
+</div>
+<p>在CShell中应该是:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>setenv GMT_SESSION_NAME <span class="nv">$$</span>
+gmt begin
+gmt ..
 gmt end
 </pre></div>
 </div>
