@@ -73,7 +73,7 @@
             
             <option value="/6.0/" > v6.0 </option>
             
-            <option value="/5.4/" > v5.4 </option>
+            <option value="/5.4/"  selected > v5.4 </option>
             
         </select>
     </div>
@@ -140,7 +140,7 @@
         </p>
         <ul>
             
-                <li class="toctree-l1"><a href="https://docs.gmt-china.org/5.4.5/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
+                <li class="toctree-l1"><a href="https://docs.gmt-china.org/5.4/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
             
                 <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
             
@@ -286,6 +286,10 @@ yes
 </pre></div>
 </div>
 <p>若输出为 <code class="docutils literal notranslate"><span class="pre">yes</span></code> 则表示安装的 netCDF 支持 netCDF-4/HDF5 格式，则可继续安装 GMT，否则无法安装 GMT。</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">GMT需要使用 ghostscript 生成PDF、JPG等格式的图片。但ghostscript 9.27存在严重bug，会导致生成的图片中有用信息被裁剪。请使用 <code class="docutils literal notranslate"><span class="pre">gs</span> <span class="pre">--version</span></code> 确认安装的ghostscript不是9.27版本。</p>
+</div>
 </div>
 <div class="section" id="id2">
 <h2>2.1.2 下载<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
@@ -471,7 +475,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月13日.
+        最后更新于 2019年08月14日.
       </span>
 
     </p>
