@@ -229,12 +229,12 @@
             
   <div class="section" id="id1">
 <h1>16.7 等值线标注和“线条标注”<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<p>GMT 中可以使用采用 <code class="docutils literal notranslate"><span class="pre">grdcontour</span></code> 和 <code class="docutils literal notranslate"><span class="pre">pscontour</span></code> 模块来绘制等值线，每条等值线都可以附加一个标注。GMT 中 <code class="docutils literal notranslate"><span class="pre">psxy</span></code> 和 <code class="docutils literal notranslate"><span class="pre">psxyz</span></code> 模块也可以使用
+<p>GMT 中可以使用采用 <code class="docutils literal notranslate"><span class="pre">grdcontour</span></code> 和 <code class="docutils literal notranslate"><span class="pre">pscontour</span></code> 模块来绘制等值线，每条等值线都可以附加一个标注。GMT 中 <code class="docutils literal notranslate"><span class="pre">plot</span></code> 和 <code class="docutils literal notranslate"><span class="pre">plot3d</span></code> 模块也可以使用
 <code class="docutils literal notranslate"><span class="pre">-Sq</span></code> 选项绘制带有标注的线段。</p>
 <p>在需要为等值线/线段附加标注的时候，如何优化标注的位置是一个很困难的主题。GMT提供了不同的算法确定标注的位置，并且可以自由地指定标注的属性。本章总结了标注的属性和位置确定方法，并给出了一些应用实例。</p>
 <div class="section" id="id2">
 <h2>16.7.1 标注的位置<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p>GMT 中提供了5种算法来自动确定标注的位置。对于 <code class="docutils literal notranslate"><span class="pre">grdcontour</span></code> 和 <code class="docutils literal notranslate"><span class="pre">pscontour</span></code> 模块，可以通过 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项指定使用哪种标注定位算法，对于 <code class="docutils literal notranslate"><span class="pre">psxy</span></code> 和 <code class="docutils literal notranslate"><span class="pre">psxyz</span></code> 模块，则可以通过 <code class="docutils literal notranslate"><span class="pre">-Sq</span></code> 选项指定使用哪种标注定位算法。</p>
+<p>GMT 中提供了5种算法来自动确定标注的位置。对于 <code class="docutils literal notranslate"><span class="pre">grdcontour</span></code> 和 <code class="docutils literal notranslate"><span class="pre">pscontour</span></code> 模块，可以通过 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项指定使用哪种标注定位算法，对于 <code class="docutils literal notranslate"><span class="pre">plot</span></code> 和 <code class="docutils literal notranslate"><span class="pre">plot3d</span></code> 模块，则可以通过 <code class="docutils literal notranslate"><span class="pre">-Sq</span></code> 选项指定使用哪种标注定位算法。</p>
 <p>不管是 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 还是 <code class="docutils literal notranslate"><span class="pre">-Sq</span></code>，其所需要的信息是完全相同的，采用 <code class="docutils literal notranslate"><span class="pre">&lt;code&gt;&lt;info&gt;</span></code>
 的格式来指定算法和相应参数，其中 <code class="docutils literal notranslate"><span class="pre">&lt;code&gt;</span></code> 取不同的值代表不同的算法，<code class="docutils literal notranslate"><span class="pre">&lt;info&gt;</span></code>
 则是各个算法所对应的参数。</p>
@@ -438,7 +438,7 @@ gmt end
 </div>
 <div class="section" id="id10">
 <h2>16.7.4 标注属性实例<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
-<p>本节通过实例说明标注属性的作用，采用 <code class="docutils literal notranslate"><span class="pre">psxy</span></code> 绘制了大地水准面极值点之间的大圆弧，并且沿着该大圆弧从ETOPO5数据集中提取了高程数据。高程数据文件(transect.txt)中包括了 <em>经度、纬度、距离、大地水准面、高程</em> 数据。</p>
+<p>本节通过实例说明标注属性的作用，采用 <code class="docutils literal notranslate"><span class="pre">plot</span></code> 绘制了大地水准面极值点之间的大圆弧，并且沿着该大圆弧从ETOPO5数据集中提取了高程数据。高程数据文件(transect.txt)中包括了 <em>经度、纬度、距离、大地水准面、高程</em> 数据。</p>
 <div class="section" id="id11">
 <h3>按照沿大圆弧距离放置标注, 1<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
 <p>在本实例中将标注的走向从沿大圆弧改变为跨大圆弧，并指定了不透明的文本框和轮廓线，增加了标注的可读性。沿大圆弧每1000km放置一个标注，使用距离值作为标注的内容。标注的方向与大圆弧垂直：</p>
