@@ -155,13 +155,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../histogram/">13.42 histogram</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../image/">13.43 image</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">13.44 inset</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#inset-begin">13.44.1 <code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">begin</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id1">语法</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id2">必须选项</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#inset-end">13.44.2 <code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">end</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">13.44.3 示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inset-begin">13.44.1 inset begin语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">13.44.2 必须选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">13.44.3 可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">13.44.4 示例</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">13.45 kml2gmt</a></li>
@@ -275,7 +272,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="inset">
-<span id="index-0"></span><h1>13.44 inset<a class="headerlink" href="#inset" title="永久链接至标题">¶</a></h1>
+<h1>13.44 inset<a class="headerlink" href="#inset" title="永久链接至标题">¶</a></h1>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -286,38 +283,72 @@
 </tr>
 </tbody>
 </table>
-<p><code class="docutils literal notranslate"><span class="pre">inset</span></code> 模块用于创建图中图模式，即在纸张上规划出一小片区域，并限制接下来的绘制操作均只在该小区域内操作。</p>
-<p><code class="docutils literal notranslate"><span class="pre">inset</span></code> 模块包含两个命令：</p>
+<p><strong>inset</strong> 模块用于管理图中图模式。即在纸张上规划出一小片区域，并限制接下来的绘制操作均只在该小区域内操作。</p>
+<p><strong>inset</strong> 模块包含两个命令：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">begin</span></code> 用于设置图中图模式，其定义了图中图区域的位置和大小</li>
-<li><code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">end</span></code> 用于结束图中图模式，此时所有的操作都会回到大区域图中</li>
+<li><strong>inset begin</strong> 用于设置图中图模式，其定义了图中图区域的位置和大小</li>
+<li><strong>inset end</strong> 用于结束图中图模式，所有的操作都会回到原大图中。</li>
 </ul>
+<p>在图中图中，用户可以使用任意的投影方式和投影区域。若投影方式中底图宽度或比例用 <code class="docutils literal notranslate"><span class="pre">?</span></code> 表示，则会根据 <strong>-D</strong> 选项设置的小图大小自动确定小图的最佳尺寸。</p>
 <div class="section" id="inset-begin">
-<h2>13.44.1 <code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">begin</span></code><a class="headerlink" href="#inset-begin" title="永久链接至标题">¶</a></h2>
+<h2>13.44.1 inset begin语法<a class="headerlink" href="#inset-begin" title="永久链接至标题">¶</a></h2>
+<p><strong>gmt inset begin</strong>
+<a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>inset-box</em>
+[ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong><em>box</em> ]
+[ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong><em>margins</em> ]
+[ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <strong>--PAR</strong>=<em>value</em> ]</p>
+</div>
 <div class="section" id="id1">
-<h3>语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt inset begin -D&lt;inset-box&gt; <span class="o">[</span>-F&lt;box&gt;<span class="o">]</span> <span class="o">[</span>-M&lt;margins&gt;<span class="o">]</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="id2">
-<h3>必须选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-D[unit]xmin/xmax/ymin/ymax[r]</span></code></dt>
-<dd>类似 <a class="reference internal" href="../../option/R/"><span class="doc">-R 选项</span></a> 选项，使用该选项会在大区域地图中框出该选项所指定的小区域。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-D[g|j|J|n|x]&lt;refpoint&gt;+w&lt;width&gt;[/&lt;height&gt;][+j&lt;justify&gt;][+o&lt;dx&gt;[/&lt;dy&gt;]]</span></code></dt>
-<dd><p class="first">确定一个图中图区域，接下来的所有绘图操作仅在该小区域内操作。</p>
+<h2>13.44.2 必须选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<dl class="docutils" id="d">
+<dt><strong>-D</strong><em>xmin/xmax/ymin/ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt>
+<dd><p class="first">类似于 <a class="reference internal" href="../../option/R/"><span class="doc">-R</span></a> 选项，通过指定大图中的一个矩形区域作为小图的绘图区域。</p>
 <ul class="last simple">
-<li><code class="docutils literal notranslate"><span class="pre">g|j|J|n|x&lt;refpoint&gt;</span></code> 用于指定图中图区域的参考点，通常用 <code class="docutils literal notranslate"><span class="pre">j</span></code> 比较方便，例如 <code class="docutils literal notranslate"><span class="pre">jTL</span></code> 表示图中图区域位于左上角，<code class="docutils literal notranslate"><span class="pre">jBR</span></code> 表示图中图区域位于右下角。详情见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</li>
-<li><code class="docutils literal notranslate"><span class="pre">+w&lt;width&gt;/&lt;height&gt;</span></code> 指定了图中图区域的宽度和高度</li>
-<li><code class="docutils literal notranslate"><span class="pre">+j&lt;justify</span></code> 控制图中图区域的锚点，见 <a class="reference internal" href="../../basis/anchor/"><span class="doc">锚点</span></a> 一节</li>
-<li><code class="docutils literal notranslate"><span class="pre">+o&lt;dx&gt;/&lt;dy&gt;</span></code> 见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</li>
+<li><strong>+r</strong>: 与 <a class="reference internal" href="../../option/R/"><span class="doc">-R</span></a> 选项类似，表明坐标为矩形区域的左下角和右上角坐标。</li>
+<li><strong>+u</strong><em>unit</em>: 与 <a class="reference internal" href="../../option/R/"><span class="doc">-R</span></a> 选项类似，表明此时的坐标为投影后坐标</li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-F[+c&lt;clearances&gt;][+g&lt;fill&gt;][+i[[&lt;gap&gt;/]&lt;pen&gt;]][+p[&lt;pen&gt;]][+r[&lt;radius&gt;]][+s[[&lt;dx&gt;/&lt;dy&gt;/][&lt;shade&gt;]]]</span></code></dt>
-<dd>设置图中图区域的背景色、轮廓等属性，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-M&lt;margins&gt;</span></code></dt>
-<dd><p class="first">图中图内部的额外空白区域。其可以取三种形式：</p>
+<dt><strong>-D</strong>[<strong>g</strong>|<strong>j</strong>|<strong>J</strong>|<strong>n</strong>|<strong>x</strong>]<em>refpoint</em><strong>+w</strong><em>width</em>[/<em>height</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt>
+<dd><p class="first">指定小图区域的位置和大小。</p>
+<ul class="last simple">
+<li><strong>g</strong>|<strong>j</strong>|<strong>J</strong>|<strong>n</strong>|<strong>x</strong>]<em>refpoint</em>:
+指定小图区域的参考点，通常用 <strong>j</strong> 比较方便。例如 <code class="docutils literal notranslate"><span class="pre">jTL</span></code> 表示小图区域位于左上角，<strong>jBR</strong> 表示小图区域位于右下角。详情见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</li>
+<li><strong>+w</strong><em>width</em>[/<em>height</em>]: 设置小图区域的宽度和高度</li>
+<li><strong>+j</strong><em>justify</em>: 控制小图区域的锚点，见 <a class="reference internal" href="../../basis/anchor/"><span class="doc">锚点</span></a> 一节</li>
+<li><strong>+o</strong><em>dx</em>[/<em>dy</em>]: 控制小图区域相对于参考点的额外偏移量，见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h2>13.44.3 可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<dl class="docutils" id="f">
+<dt><strong>-F</strong>[<strong>+c</strong><em>clearances</em>][<strong>+g</strong><em>fill</em>][<strong>+i</strong>[[<em>gap</em>/]<em>pen</em>]][<strong>+p</strong>[<em>pen</em>]][<strong>+r</strong>[<em>radius</em>]][<strong>+s</strong>[[<em>dx</em>/<em>dy</em>/][<em>shade</em>]]]</dt>
+<dd><p class="first">设置小图区域的背景面板属性。</p>
+<ul class="simple">
+<li><strong>+g</strong><em>fill</em>: 设置背景面板填充色，默认不填充</li>
+<li><strong>+p</strong>[<em>pen</em>]]: 设置背景面板的边框，默认使用参数 <a class="reference internal" href="../../conf/map/#map-frame-pen"><span class="std std-ref">MAP_FRAME_PEN</span></a> 的值</li>
+<li><strong>+r</strong>[<em>radius</em>]: 设置背景面板边框为圆角矩形，<em>radius</em> 为圆角半径</li>
+<li><strong>+i</strong>[[<em>gap</em>/]<em>pen</em>]: 在背景面板边框的内部绘制一个内边框，<em>gap</em> 为内外边框的距离，<em>pen</em> 为内边框线条属性</li>
+<li><dl class="first docutils">
+<dt><strong>+c</strong><em>clearances</em>: 面板边框内部的额外空白</dt>
+<dd><ul class="first last">
+<li><strong>+c</strong><em>gap</em> 为四个方向增加相同的空白距离</li>
+<li><strong>+c</strong><em>xgap</em>/<em>ygap</em> 分别为X方向和Y方向指定不同的空白距离</li>
+<li><strong>+c</strong><em>lgap</em>/<em>rgap</em>/<em>bgap</em>/<em>tgap</em> 分别为四个方向指定不同的空白距离</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><strong>+s</strong>[[<em>dx</em>/<em>dy</em>/][<em>shade</em>]]: 为背景面板添加阴影效果。<em>dx</em>/<em>dy</em> 为阴影相对面板的偏移量，<em>shade</em> 为阴影颜色。</li>
+</ul>
+<p class="last">详情见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a> 一节。</p>
+</dd>
+</dl>
+<dl class="docutils" id="m">
+<dt><strong>-M</strong><em>margins</em></dt>
+<dd><p class="first">小图区域内部的额外空白区域，默认值为 0.5c。其可以取三种形式：</p>
 <ol class="last arabic simple">
 <li>一个值，表示四个边的空白相同</li>
 <li>两个用斜杠分隔的值，分别设置水平和垂直方向的空白</li>
@@ -325,23 +356,46 @@
 </ol>
 </dd>
 </dl>
-</div>
-</div>
-<div class="section" id="inset-end">
-<h2>13.44.2 <code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">end</span></code><a class="headerlink" href="#inset-end" title="永久链接至标题">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">inset</span> <span class="pre">end</span></code> 用于结束图中图模式。</p>
+<dl class="docutils" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../option/V/"><span class="doc">(more …)</span></a></dt>
+<dd>设置 verbose 等级 [c].</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt>
+<dd>显示简短的帮助信息，包括模块简介和基本语法信息 （Windows下只能使用 <strong>-</strong>）</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt>
+<dd>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</dd>
+<dt><strong>-?</strong> 或无参数</dt>
+<dd>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</dd>
+</dl>
 </div>
 <div class="section" id="id3">
-<h2>13.44.3 示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin inset png
-    gmt basemap -R0/40/20/60 -JM6.5i -Bafg -B+glightgreen
-    gmt inset begin -DjTR+w2.5i+o0.2i -F+gpink+p0.5p -M0.1i
-        gmt basemap -Rg -JA20/20/2.3i -Bafg
-        <span class="nb">echo</span> INSET <span class="p">|</span> gmt text -F+f12p+cTR
+<h2>13.44.4 示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>下面的示例绘制了澳大利亚的地图，并在地图右上角绘制了小图。小图中绘制了全球地图，并以特殊颜色标注了澳大利亚的位置。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin inset-example png,pdf
+    gmt coast -R110E/170E/44S/9S -JM6i -B -BWSne -Wfaint -N2/1p -Gbrown -EAU+gbisque
+    gmt inset begin -DjTR+w1.5i+o0.15i/0.1i -F+gwhite+p1p+c0.1c -M0
+        gmt coast -JG120/30S/? -Rg -Bg -Wfaint -Gbrown -EAU+gbisque -A5000
     gmt inset end
-    <span class="nb">echo</span> MAP <span class="p">|</span> gmt text -F+f18p+cBL -Dj0.2i
 gmt end
 </pre></div>
+</div>
+<div class="figure align-center">
+<img alt="../../_images/inset-gmtplot-0.png" src="../../_images/inset-gmtplot-0.png" />
+</div>
+<p>下面的示例绘制了一个日本的区域地图，并在左下角的小图中绘制了日本全图，同时在小图中标出了大图的研究区域。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin inset-map png,pdf
+    gmt coast -R139.2E/140.5E/34.8N/36N -JM12c -Baf -BWSne -W2p -A1000 -Glightbrown -Sazure1 --FORMAT_GEO_MAP<span class="o">=</span>dddF
+    gmt inset begin -DjBL+w3c/3.6c+o0.1c -F+gwhite+p1p -M0
+        gmt coast -R129E/146E/30N/46N -JM3c -Df -W0.5p -A1000 -Glightbrown -Sazure1
+        <span class="c1"># 使用 -Sr+s 绘制矩形区域</span>
+        <span class="nb">echo</span> <span class="m">139</span>.2 <span class="m">34</span>.8 <span class="m">140</span>.5 <span class="m">36</span> <span class="p">|</span> gmt plot -Sr+s -W1p,blue
+    gmt inset end
+gmt end
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="../../_images/inset-gmtplot-1.png" src="../../_images/inset-gmtplot-1.png" />
 </div>
 </div>
 </div>
@@ -391,7 +445,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月14日.
+        最后更新于 2019年08月15日.
       </span>
 
     </p>
