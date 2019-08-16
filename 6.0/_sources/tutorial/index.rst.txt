@@ -5,6 +5,14 @@
    :maxdepth: 2
 
    prerequisite
-   command
-   mode
    first-plot
+   coastline
+   lines
+   symbols
+   texts
+   grids
+   oneliner
+   multifig
+   subplot
+   inset
+   last-plot

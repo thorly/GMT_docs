@@ -102,9 +102,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../install/">2 安装</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">3 入门教程</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="prerequisite/">3.1 准备工作</a></li>
-<li class="toctree-l2"><a class="reference internal" href="command/">3.2 命令格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode/">3.3 绘图模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="first-plot/">3.4 绘制第一张图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first-plot/">3.2 绘制第一张图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coastline/">3.3 绘制海岸线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lines/">3.4 绘制线条</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symbols/">3.5 绘制符号</a></li>
+<li class="toctree-l2"><a class="reference internal" href="texts/">3.6 添加文字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grids/">3.7 绘制网格文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oneliner/">3.8 GMT单行模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multifig/">3.9 GMT多图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subplot/">3.10 GMT子图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inset/">3.11 GMT图中图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="last-plot/">3.12 绘制第一张图</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../basis/">4 GMT基础</a></li>
@@ -216,22 +224,28 @@
 <li class="toctree-l2"><a class="reference internal" href="prerequisite/#id6">3.1.5 写第一个脚本</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="command/">3.2 命令格式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mode/">3.3 绘图模式</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="mode/#id2">3.3.1 基本用法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode/#id3">3.3.2 单行模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode/#id4">3.3.3 多图模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode/#subplot-mode">3.3.4 子图模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode/#id6">3.3.5 图中图模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first-plot/">3.2 绘制第一张图</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="first-plot/#gmt">3.2.1 GMT绘图模板</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first-plot/#id2">3.2.2 绘制第一张图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first-plot/#id3">3.2.3 GMT命令格式</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="first-plot/">3.4 绘制第一张图</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="first-plot/#id2">3.4.1 图件分析与拆解</a></li>
-<li class="toctree-l2"><a class="reference internal" href="first-plot/#id3">3.4.2 绘制底图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="first-plot/#id4">3.4.3 绘制震中和台站位置</a></li>
-<li class="toctree-l2"><a class="reference internal" href="first-plot/#id5">3.4.4 绘制射线路径</a></li>
-<li class="toctree-l2"><a class="reference internal" href="first-plot/#id6">3.4.5 添加台站名</a></li>
-<li class="toctree-l2"><a class="reference internal" href="first-plot/#id7">3.4.6 图层的先后顺序</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coastline/">3.3 绘制海岸线</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lines/">3.4 绘制线条</a></li>
+<li class="toctree-l1"><a class="reference internal" href="symbols/">3.5 绘制符号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="texts/">3.6 添加文字</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grids/">3.7 绘制网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oneliner/">3.8 GMT单行模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multifig/">3.9 GMT多图模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="subplot/">3.10 GMT子图模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inset/">3.11 GMT图中图模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="last-plot/">3.12 绘制第一张图</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="last-plot/#id2">3.12.1 图件分析与拆解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="last-plot/#id3">3.12.2 绘制底图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="last-plot/#id4">3.12.3 绘制震中和台站位置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="last-plot/#id5">3.12.4 绘制射线路径</a></li>
+<li class="toctree-l2"><a class="reference internal" href="last-plot/#id6">3.12.5 添加台站名</a></li>
+<li class="toctree-l2"><a class="reference internal" href="last-plot/#id7">3.12.6 图层的先后顺序</a></li>
 </ul>
 </li>
 </ul>
