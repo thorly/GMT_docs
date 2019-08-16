@@ -251,10 +251,10 @@
 </ul>
 <p>如果在安装GMT时，GMT已经正确链接了GDAL库，则Shapefile格式的数据可以直接用于绘图。实际绘图时，可能只想要一小部分数据（比如某个省的省界），这种情况下，则需要将数据转换成纯文本文件，以方便从数据中提取出需要的部分。</p>
 <p>GDAL 的 <a class="reference external" href="https://www.gdal.org/ogr2ogr.html">ogr2ogr</a> 可以实现多种地理数据格式之间的互相转换。该软件的安装及介绍见
-<a class="reference external" href="https://gmt-china.org/blog/gdal-ogr/">GDAL/OGR: 地理空间数据格式转换神器</a>。本文使用的是 GDAL 2.4.0，其他版本的GDAL可能用法略有不同。</p>
+<a class="reference external" href="https://gmt-china.org/blog/gdal-ogr/">GDAL/OGR: 地理空间数据格式转换神器</a>。本文使用的是 GDAL 2.4.2，其他版本的GDAL可能用法略有不同。</p>
 <div class="section" id="geopackagegmt">
 <h3>Geopackage转GMT<a class="headerlink" href="#geopackagegmt" title="永久链接至标题">¶</a></h3>
-<p>以China数据为例，解压得到文件 <code class="docutils literal notranslate"><span class="pre">gadm36_CHN.gpkg</span></code>。使用如下命令查看文件的信息:</p>
+<p>以China数据为例，解压得到文件 <code class="file docutils literal notranslate"><span class="pre">gadm36_CHN.gpkg</span></code>。使用如下命令查看文件的信息:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ogrinfo gadm36_CHN.gpkg
 INFO: Open of <span class="sb">`</span>gadm36_CHN.gpkg<span class="s1">&#39;</span>
 <span class="s1">      using driver `GPKG&#39;</span> successful.
@@ -264,19 +264,19 @@ INFO: Open of <span class="sb">`</span>gadm36_CHN.gpkg<span class="s1">&#39;</sp
 <span class="m">4</span>: gadm36_CHN_3 <span class="o">(</span>Multi Polygon<span class="o">)</span>
 </pre></div>
 </div>
-<p>可以看到Geopackage文件中包含了四个文件，使用如下命令（注意其中的一对单引号）将其转换为GMT可识别的格式:</p>
+<p>可以看到Geopackage文件中包含了四个文件，使用如下命令（注意其中的一对单引号不可省略）将其转换为GMT可识别的格式:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ogr2ogr -f OGR_GMT <span class="s1">&#39;&#39;</span> gadm36_CHN.gpkg gadm36_CHN_0
 ogr2ogr -f OGR_GMT <span class="s1">&#39;&#39;</span> gadm36_CHN.gpkg gadm36_CHN_1
 ogr2ogr -f OGR_GMT <span class="s1">&#39;&#39;</span> gadm36_CHN.gpkg gadm36_CHN_2
 ogr2ogr -f OGR_GMT <span class="s1">&#39;&#39;</span> gadm36_CHN.gpkg gadm36_CHN_3
 </pre></div>
 </div>
-<p>同理，对Hong Kong、Macao和Taiwan的数据做同样的处理即可。最终得到以 <code class="docutils literal notranslate"><span class="pre">.gmt</span></code> 结尾的数据12个，其中 CHN 四个、HKG 两个、MAC 三个、TWN 三个。</p>
+<p>同理，对Hong Kong、Macao和Taiwan的数据做同样的处理即可。最终得到以 <code class="file docutils literal notranslate"><span class="pre">.gmt</span></code> 结尾的数据12个，其中 CHN 四个、HKG 两个、MAC 三个、TWN 三个。</p>
 </div>
 <div class="section" id="shapefilegmt">
 <h3>Shapefile转GMT<a class="headerlink" href="#shapefilegmt" title="永久链接至标题">¶</a></h3>
 <p>以 China 数据为例，将下载的ZIP压缩包解压会得到一堆文件，其中
-<code class="docutils literal notranslate"><span class="pre">gadm36_CHN_[0123].shp</span></code> 是真正需要的4个Shapefile的数据文件。</p>
+<code class="file docutils literal notranslate"><span class="pre">gadm36_CHN_[0123].shp</span></code> 是真正需要的4个Shapefile的数据文件。</p>
 <p>使用如下命令即可将Shapefile转换为GMT可识别的格式:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ogr2ogr -f OGR_GMT gadm36_CHN_0.gmt gadm36_CHN_0.shp
 ogr2ogr -f OGR_GMT gadm36_CHN_1.gmt gadm36_CHN_1.shp
@@ -284,12 +284,12 @@ ogr2ogr -f OGR_GMT gadm36_CHN_2.gmt gadm36_CHN_2.shp
 ogr2ogr -f OGR_GMT gadm36_CHN_3.gmt gadm36_CHN_3.shp
 </pre></div>
 </div>
-<p>对于 Hong Kong、Macao、Taiwan 的数据做类似操作。最终得到以 <code class="docutils literal notranslate"><span class="pre">.gmt</span></code> 结尾的数据12个，其中 CHN 四个、HKG 两个、MAC 三个、TWN 三个。</p>
+<p>对于 Hong Kong、Macao、Taiwan 的数据做类似操作。最终得到以 <code class="file docutils literal notranslate"><span class="pre">.gmt</span></code> 结尾的数据12个，其中 CHN 四个、HKG 两个、MAC 三个、TWN 三个。</p>
 </div>
 </div>
 <div class="section" id="id3">
 <h2>11.5.3 数据分级<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>提取得到的数据文件的文件名类似 <code class="docutils literal notranslate"><span class="pre">gadm36_CHN_0.gmt</span></code>，其中 <code class="docutils literal notranslate"><span class="pre">CHN</span></code> 为国家/地区代码，<code class="docutils literal notranslate"><span class="pre">0</span></code> 表示行政等级。</p>
+<p>提取得到的数据文件的文件名类似 <code class="file docutils literal notranslate"><span class="pre">gadm36_CHN_0.gmt</span></code>，其中 <strong>CHN</strong> 为国家/地区代码，<strong>0</strong> 表示行政等级。</p>
 <p>以中国数据为例，其数据包含了四个等级：</p>
 <ul class="simple">
 <li>0级：即国界</li>
@@ -338,7 +338,7 @@ gmt end
 </div>
 <div class="section" id="id7">
 <h3>2 级行政区划/市界<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
-<p>2 级数据中包含了全国所有的市级边界。此处以安徽省为例，用文本编辑器打开 <code class="docutils literal notranslate"><span class="pre">gadm36_CHN_2.gmt</span></code>，从中提取安徽相关的数据保存到文件 <code class="docutils literal notranslate"><span class="pre">gadm36_CHN_Anhui_2.gmt</span></code> 中，绘图效果如下：</p>
+<p>2 级数据中包含了全国所有的市级边界。此处以安徽省为例，用文本编辑器打开 <code class="file docutils literal notranslate"><span class="pre">gadm36_CHN_2.gmt</span></code>，从中提取安徽相关的数据保存到文件 <code class="file docutils literal notranslate"><span class="pre">gadm36_CHN_Anhui_2.gmt</span></code> 中，绘图效果如下：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt plot -JM10c -R114/120/29/35 gadm36_CHN_Anhui_2.gmt -png gadm_level2
 </pre></div>
 </div>
@@ -403,7 +403,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月15日.
+        最后更新于 2019年08月16日.
       </span>
 
     </p>

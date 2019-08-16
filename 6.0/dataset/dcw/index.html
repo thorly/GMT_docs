@@ -233,10 +233,10 @@
 <li>全球250个国家或地区的边界</li>
 <li>8个大国的省界/州界</li>
 </ol>
-<p>GMT的 <a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 模块可以直接绘制DCW数据中提供的行政边界数据，也可以使用 <a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 的 <code class="docutils literal notranslate"><span class="pre">-M</span></code> 选项将边界数据导出为纯文本文件供其他程序使用。</p>
+<p>GMT的 <a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 模块可以直接绘制DCW数据中提供的行政边界数据，也可以使用 <a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 的 <strong>-M</strong> 选项将边界数据导出为纯文本文件供其它程序使用。</p>
 <p>GMT提供的DCW数据默认位于GMT安装目录下的 <code class="docutils literal notranslate"><span class="pre">share/dcw</span></code> 下，其中主要包含了三个文件：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">dcw-gmt.nc</span></code>: netCDF格式的DCW数据</li>
+<li><code class="file docutils literal notranslate"><span class="pre">dcw-gmt.nc</span></code>: netCDF格式的DCW数据</li>
 <li><a class="reference download internal" download="" href="../../_downloads/d7130ea9354cea6cd45f9d56d0e8beb0/dcw-countries.txt"><code class="xref download docutils literal notranslate"><span class="pre">dcw-countries.txt</span></code></a>: 辅助文件，内含国家代码</li>
 <li><a class="reference download internal" download="" href="../../_downloads/2d83257bed3bc83e90befdf93540d18c/dcw-states.txt"><code class="xref download docutils literal notranslate"><span class="pre">dcw-states.txt</span></code></a>: 辅助文件，内含省界代码</li>
 </ul>
@@ -247,21 +247,22 @@
 <h3>洲代码<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <p>七大洲都有各自的代码，其代码分别为:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">AF</span></code>: 非洲（Africa）</li>
-<li><code class="docutils literal notranslate"><span class="pre">AN</span></code>: 南极洲（Antarctica）</li>
-<li><code class="docutils literal notranslate"><span class="pre">AS</span></code>: 亚洲（Asia）</li>
-<li><code class="docutils literal notranslate"><span class="pre">EU</span></code>: 欧洲（Europe）</li>
-<li><code class="docutils literal notranslate"><span class="pre">OC</span></code>: 大洋洲（Oceania）</li>
-<li><code class="docutils literal notranslate"><span class="pre">NA</span></code>: 北美洲（North America）</li>
-<li><code class="docutils literal notranslate"><span class="pre">SA</span></code>: 南美洲（South America）</li>
+<li><strong>AF</strong>: 非洲（Africa）</li>
+<li><strong>AN</strong>: 南极洲（Antarctica）</li>
+<li><strong>AS</strong>: 亚洲（Asia）</li>
+<li><strong>EU</strong>: 欧洲（Europe）</li>
+<li><strong>OC</strong>: 大洋洲（Oceania）</li>
+<li><strong>NA</strong>: 北美洲（North America）</li>
+<li><strong>SA</strong>: 南美洲（South America）</li>
 </ul>
 </div>
 <div class="section" id="id3">
 <h3>国家代码<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
-<p>每个国家也有各自的编码。国家代码可以从DCW的辅助文件 <a class="reference download internal" download="" href="../../_downloads/d7130ea9354cea6cd45f9d56d0e8beb0/dcw-countries.txt"><code class="xref download docutils literal notranslate"><span class="pre">dcw-countries.txt</span></code></a> 中查找，其文件格式为:</p>
+<p>每个国家都有一个国家代码，国家代码可以直接从 <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO Country Codes</a> 中查找。也可以从DCW辅助文件 <a class="reference download internal" download="" href="../../_downloads/d7130ea9354cea6cd45f9d56d0e8beb0/dcw-countries.txt"><code class="xref download docutils literal notranslate"><span class="pre">dcw-countries.txt</span></code></a> 中查找，其文件格式为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>洲代码 国家代码 国家名
 </pre></div>
 </div>
+<p>也可以直接在  中查看。</p>
 <p>该文件共计 250 个国家。文件内容大致如下:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>AS BH Bahrain
 AS BN Brunei
@@ -338,14 +339,14 @@ CN <span class="m">92</span> Aomen <span class="o">(</span>Macao<span class="o">
 <h2>11.3.2 使用说明<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>GMT中至少有两处会使用DCW数据：</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">-R&lt;code1&gt;,&lt;code2&gt;,...</span></code>: 通过指定区域代码 <code class="docutils literal notranslate"><span class="pre">&lt;code&gt;</span></code> 间接指定绘图范围</li>
-<li><a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 模块 <code class="docutils literal notranslate"><span class="pre">-E&lt;code1&gt;,&lt;code2&gt;,...</span></code> 选项调用 DCW 数据绘制或导出国界/省界</li>
+<li><a class="reference internal" href="../../option/R/"><span class="doc">-R 选项</span></a> 中可以直接使用区域代码以间接指定绘图范围</li>
+<li><a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 模块 <strong>-E</strong><em>code1</em>,<em>code2</em>,… 选项调用 DCW 数据绘制或导出国界/省界</li>
 </ol>
-<p>洲代码、国家代码和省代码都是字母，GMT通过如下方式区分：</p>
+<p>洲代码、国家代码和省代码都由两个字符构成，为了避免可能的冲突，GMT通过如下方式区分：</p>
 <ul class="simple">
-<li>在洲代码前加上 <code class="docutils literal notranslate"><span class="pre">=</span></code> 号表示某个大洲，比如 <code class="docutils literal notranslate"><span class="pre">=AS</span></code> 表示亚洲</li>
-<li>国家代码不需要做任何处理格式，比如 <code class="docutils literal notranslate"><span class="pre">GB</span></code> 表示英国</li>
-<li>省代码的格式为 <code class="docutils literal notranslate"><span class="pre">country.state</span></code>，即必须在省代码前加上国家代码才可以，比如 <code class="docutils literal notranslate"><span class="pre">US.TX</span></code> 表示美国 Texas 州</li>
+<li>在洲代码前加上 <strong>=</strong> 号表示某个大洲，比如 <strong>=AS</strong> 表示亚洲</li>
+<li>国家代码不需要做任何处理格式，比如 <strong>GB</strong> 表示英国</li>
+<li>省代码的格式为 <code class="docutils literal notranslate"><span class="pre">country.state</span></code>，即必须在省代码前加上国家代码才可以，比如 <strong>US.TX</strong> 表示美国 Texas 州</li>
 </ul>
 </div>
 <div class="section" id="id6">
@@ -362,7 +363,7 @@ CN <span class="m">92</span> Aomen <span class="o">(</span>Macao<span class="o">
 </div>
 <div class="section" id="id8">
 <h3>绘制国界<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
-<p>绘制中国大陆边界（不含台湾、香港、澳门），其中 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项可省略：</p>
+<p>绘制中国大陆边界（不含台湾、香港、澳门），其中 <strong>-R</strong> 选项可省略：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -JM15c -Baf -ECN+p0.25p,red -R70/140/10/60 -png dataset_dcw_02
 </pre></div>
 </div>
@@ -372,7 +373,7 @@ CN <span class="m">92</span> Aomen <span class="o">(</span>Macao<span class="o">
 </div>
 <div class="section" id="id9">
 <h3>绘制省界<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
-<p>绘制内蒙古，并设置边界颜色和填充颜色，其中 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项可省略:</p>
+<p>绘制内蒙古，并设置边界颜色和填充颜色，其中 <strong>-R</strong> 选项可省略:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -JM12c -Baf -ECN.15+p1p,blue+gred -R90/130/35/55 -png dataset_dcw_03
 </pre></div>
 </div>
@@ -386,7 +387,7 @@ CN <span class="m">92</span> Aomen <span class="o">(</span>Macao<span class="o">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -ECN.15 -M &gt; neimenggu.dat
 </pre></div>
 </div>
-<p>这里只需要使用 <code class="docutils literal notranslate"><span class="pre">-M</span></code> 选项即可。</p>
+<p>这里只需要使用 <strong>-M</strong> 选项即可。</p>
 </div>
 </div>
 <div class="section" id="id11">
@@ -440,7 +441,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月15日.
+        最后更新于 2019年08月16日.
       </span>
 
     </p>

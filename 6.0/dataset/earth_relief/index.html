@@ -114,10 +114,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../dcw/">11.3 DCW: 世界数字图表</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">11.4 earth_relief: 全球地形起伏数据</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">11.4.1 地形起伏数据简介</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">11.4.2 使用方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">11.4.3 缓存空间问题</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">11.4.4 技术细节</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">11.4.5 数据来源及引用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">11.4.2 使用方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">11.4.3 缓存空间问题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">11.4.4 技术细节</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">11.4.5 数据来源及引用</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../gadm/">11.5 GADM: 全球行政区划数据库</a></li>
@@ -218,7 +218,7 @@
 <h1>11.4 earth_relief: 全球地形起伏数据<a class="headerlink" href="#earth-relief" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id1">
 <h2>11.4.1 地形起伏数据简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<p>GMT提供了从15弧秒到60弧分的多种不同精度的全球地形起伏网格数据供用户使用。</p>
+<p>GMT提供了从1弧秒到60弧分的多种不同精度的全球地形起伏网格数据供用户使用。</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="35%" />
@@ -236,104 +236,145 @@
 <tbody valign="top">
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_60m</span></code></td>
 <td>60 弧分</td>
-<td>112 Kb</td>
+<td>112 KB</td>
 <td>ETOPO1高斯球面滤波得到</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_30m</span></code></td>
 <td>30 弧分</td>
-<td>377 Kb</td>
+<td>377 KB</td>
 <td>ETOPO1高斯球面滤波得到</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_20m</span></code></td>
 <td>20 弧分</td>
-<td>783 Kb</td>
+<td>783 KB</td>
 <td>ETOPO1高斯球面滤波得到</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_15m</span></code></td>
-<td>20 弧分</td>
-<td>1.4 Mb</td>
+<td>15 弧分</td>
+<td>1.4 MB</td>
 <td>ETOPO1高斯球面滤波得到</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_10m</span></code></td>
 <td>10 弧分</td>
-<td>2.9 Mb</td>
+<td>2.9 MB</td>
 <td>ETOPO1高斯球面滤波得到</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_06m</span></code></td>
 <td>6 弧分</td>
-<td>7.5 Mb</td>
+<td>7.5 MB</td>
 <td>ETOPO1高斯球面滤波得到</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_05m</span></code></td>
 <td>5 弧分</td>
-<td>11 Mb</td>
+<td>11 MB</td>
 <td>ETOPO1高斯球面滤波得到</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_04m</span></code></td>
 <td>4 弧分</td>
-<td>16 Mb</td>
+<td>16 MB</td>
 <td>ETOPO1高斯球面滤波得到</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_03m</span></code></td>
 <td>3 弧分</td>
-<td>28 Mb</td>
+<td>28 MB</td>
 <td>ETOPO1高斯球面滤波得到</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_02m</span></code></td>
 <td>2 弧分</td>
-<td>58 Mb</td>
+<td>58 MB</td>
 <td>ETOPO2v2冰层表面</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_01m</span></code></td>
 <td>1 弧分</td>
-<td>214 Mb</td>
+<td>214 MB</td>
 <td>ETOPO1冰层表面</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_30s</span></code></td>
 <td>30 弧秒</td>
-<td>778 Mb</td>
+<td>778 MB</td>
 <td>SRTM30+</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_15s</span></code></td>
 <td>15 弧秒</td>
-<td>2.6 Gb</td>
+<td>2.6 GB</td>
 <td>SRTM15+</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_03s</span></code></td>
+<td>3 弧秒</td>
+<td>6.8 GB</td>
+<td>SRTM3S</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_01s</span></code></td>
+<td>1 弧秒</td>
+<td>41 GB</td>
+<td>SRTM1S</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">srtm_relief_03s</span></code></td>
+<td>3 弧秒</td>
+<td>6.8 GB</td>
+<td>SRTM3S（仅限陆地）</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">srtm_relief_01s</span></code></td>
+<td>1 弧秒</td>
+<td>41 GB</td>
+<td>SRTM1S（仅限陆地）</td>
 </tr>
 </tbody>
 </table>
-<p>这些数据保存在GMT的 <a class="reference external" href="ftp://ftp.soest.hawaii.edu/gmt/data/">FTP服务器</a> 上（<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/data/">国内镜像</a>）。当用户第一次使用某个精度的地形起伏数据时，GMT会自动从服务器上下载该数据文件，并保存到GMT的缓存文件夹下（由 <a class="reference internal" href="../../conf/dir/#dir-cache"><span class="std std-ref">DIR_CACHE</span></a> 控制，默认为 <code class="docutils literal notranslate"><span class="pre">~/.gmt/server</span></code> 目录），然后再读取该文件。以后再使用该数据时，GMT会自动从缓存文件夹下读取该数据文件，而无需再次从服务器下载。</p>
-<p>建议用户自行手动下载所有的地形起伏数据并将数据放在 <code class="docutils literal notranslate"><span class="pre">~/.gmt/server</span></code> 下，以免绘图时第一次使用地形数据下载耗时太久，耽误绘图。</p>
+<p>这些地形起伏数据保存在GMT的服务器上。当用户<strong>第一次</strong>使用某个精度的地形起伏数据时，GMT会自动从服务器上下载该数据文件，并保存到GMT的缓存文件夹下（由 <a class="reference internal" href="../../conf/dir/#dir-cache"><span class="std std-ref">DIR_CACHE</span></a> 控制，默认为 <code class="docutils literal notranslate"><span class="pre">~/.gmt/server</span></code> 目录），然后再读取该文件。以后再使用该数据时，GMT会自动从缓存文件夹下读取该数据文件，而无需再次从服务器下载。</p>
+<div class="admonition tip">
+<p class="first admonition-title">小技巧</p>
+<p>由于第一次使用地形数据时，GMT需要从服务器下载数据，通常会需要很长时间。建议用户可以在闲置时提前将精度为15弧秒到60弧秒的地形数据下载到自己的计算机上。</p>
+<p>Linux和macOS用户可以执行如下批量下载脚本:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> res in 60m 30m 20m 15m 10m 06m 05m 04m 03m 02m 01m 30s 15s<span class="p">;</span> <span class="k">do</span>
+    gmt which -Gu @earth_relief_<span class="si">${</span><span class="nv">res</span><span class="si">}</span>
+<span class="k">done</span>
+</pre></div>
 </div>
-<div class="section" id="id3">
-<h2>11.4.2 使用方法<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>当需要使用地形数据时，可以直接通过 <code class="docutils literal notranslate"><span class="pre">&#64;earth_relief_&lt;res&gt;</span></code> 的形式调用这些地形起伏数据，其中 <code class="docutils literal notranslate"><span class="pre">&lt;res&gt;</span></code> 表示网格文件的精度。如果命令中使用了 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项，则只会读取该区域内的地学起伏数据。</p>
+<p>Windows用户可以打开CMD执行如下批量下载命令:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> %%i in <span class="o">(</span>60m 30m 20m 15m 10m 06m 05m 04m 03m 02m 01m 30s 15s<span class="o">)</span> <span class="k">do</span> <span class="o">(</span>
+    gmt which -Gu @earth_relief_%%i
+<span class="o">)</span>
+</pre></div>
+</div>
+<p class="last">不建议提前下载1弧秒和3弧秒的地形数据，主要原因在于，这两套数据占据硬盘空间太大。基于同样的理由，GMT服务器上这两套数据不是以单个文件的形式存放，而是被分成了多个小块，当用户需要绘制某个区域的高精度地形时，GMT会自动下载该区域的所有区块的地形数据，然后合并成单个网格数据供用户使用。</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>11.4.2 使用方法<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>当需要使用地形数据时，可以直接通过 <strong>&#64;earth_relief_</strong><em>res</em> 的形式调用这些地形起伏数据，其中 <em>res</em> 表示网格文件的精度。如果命令中使用了 <strong>-R</strong> 选项，则只会读取该区域内的地形起伏数据。</p>
 <p>使用示例:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdinfo @earth_relief_60m
 
-gmt grdimage -Rg -JH15c @earth_relief_05m -Cglobe &gt; map.ps
+gmt grdimage -JH15c @earth_relief_15m -pdf map
 </pre></div>
 </div>
 </div>
-<div class="section" id="id4">
-<h2>11.4.3 缓存空间问题<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h2>11.4.3 缓存空间问题<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>你可以使用多种方式来控制你的缓存目录所占用的空间大小：</p>
 <ol class="arabic simple">
-<li>通过参数 <a class="reference internal" href="../../conf/misc/#gmt-data-url-limit"><span class="std std-ref">GMT_DATA_URL_LIMIT</span></a> 设置缓存目录空间大小的上限，默认无限制；</li>
-<li>可以通过 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">clear</span> <span class="pre">cache</span></code> 命令清理整个缓存目录</li>
+<li>通过参数 <a class="reference internal" href="../../conf/misc/#gmt-data-server-limit"><span class="std std-ref">GMT_DATA_SERVER_LIMIT</span></a> 设置缓存目录空间大小的上限，默认无限制；</li>
+<li>可以通过 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">clear</span> <span class="pre">data</span></code> 命令清空整个数据缓存目录</li>
 </ol>
 </div>
+<div class="section" id="id4">
+<h2>11.4.4 技术细节<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>3弧分及更低分辨率的全球地形数据均是NOAA ETOPO1全球地形起伏网格数据的衍生产品。GMT利用球面高斯滤波对其进行重采样以防止混叠现象。可以使用 <a class="reference internal" href="../../module/grdinfo/"><span class="doc">grdinfo</span></a> 查看生成网格文件所使用的滤波命令。</li>
+<li>2弧分的数据直接使用了NOAA提供的ETOPO2v2文件（冰层表面版本）。30弧秒和15弧秒的数据来自于SRTM30+和SRTM15+。</li>
+<li>3弧秒和1弧秒的数据来自于NASA提供的SRTM数据。数据被划为为1度x1度的区块。在使用时，GMT会根据 <strong>-R</strong> 选项指定的区域范围只下载区域内的地形数据。</li>
+<li>原始的SRTM3和SRTM1数据只在北纬60度到南纬60度的陆地上有数据。当使用 <strong>&#64;earth_relief_01s</strong> 或 <strong>&#64;earth_relief_03s</strong> 时，GMT会自动对
+<strong>&#64;earth_relief_15s</strong> 数据对增采样以填充缺失的海洋部分。</li>
+<li>如果想使用最原始的只包含陆地的SRTM地形数据，则可以使用 <strong>&#64;srtm_relief_03s</strong>
+或 <strong>srtm_relief_01s</strong>。</li>
+<li>所有的网格文件都是网格线配准的。网格文件采用了更高效的文件格式，使得其文件大小远小于原始文件的大小，且完全保持数据精度。对于3弧秒和1弧秒的数据，是以JPEG2000
+图片格式保存在GMT服务器上的，一旦数据下载到本地目录中，则会被转换为压缩的netCDF4
+格式，这一步通过GDAL来实现，且要求GDAL支持openjpeg。</li>
+</ul>
+</div>
 <div class="section" id="id5">
-<h2>11.4.4 技术细节<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
-<p>如上表所示，3弧分及更低分辨率的全球地形数据均是NOAA ETOPO1全球地形起伏网格数据的衍生产品。GMT利用球面高斯滤波对其进行重采样以防止混叠现象。使用:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdinfo @earth_relief_60m
-</pre></div>
-</div>
-<p>可以在输出中看到生成这些网格文件所使用的滤波命令。</p>
-<p>2弧分的数据直接使用了NOAA提供的ETOPO2v2文件（冰层表面版本）。30弧秒和15弧秒的数据来自于SRTM30+和SRTM15+。</p>
-<p>所有的网格文件都是网格线配准的。网格文件采用了更高效的文件格式，使得其文件大小远小于原始文件的大小，且完全保持数据精度。</p>
-</div>
-<div class="section" id="id6">
-<h2>11.4.5 数据来源及引用<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<h2>11.4.5 数据来源及引用<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
 <li>ETOPO2v2: <a class="reference external" href="https://dx.doi.org/10.7289/V5J1012Q">https://dx.doi.org/10.7289/V5J1012Q</a>.</li>
 <li>ETOPO1:
@@ -351,6 +392,8 @@ Olson, C. L., J. J. Becker, and D. T. Sandwell (2014),
 A new global bathymetry map at 15 arcsecond resolution for resolving seafloor fabric: SRTM15_PLUS,
 in Eos Trans. AGU, edited, pp. Abstract OS34A-03
 <a class="reference external" href="ftp://topex.ucsd.edu/pub/srtm15_plus/topo15.grd">原始数据下载链接</a></li>
+<li>SRTMGL3数据: <a class="reference external" href="https://lpdaac.usgs.gov/dataset_discovery/measures/measures_products_table/srtmgl3_v003">https://lpdaac.usgs.gov/dataset_discovery/measures/measures_products_table/srtmgl3_v003</a></li>
+<li>SRTMGL1数据: <a class="reference external" href="https://lpdaac.usgs.gov/dataset_discovery/measures/measures_products_table/srtmgl1_v003">https://lpdaac.usgs.gov/dataset_discovery/measures/measures_products_table/srtmgl1_v003</a></li>
 </ol>
 </div>
 </div>
@@ -400,7 +443,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月15日.
+        最后更新于 2019年08月16日.
       </span>
 
     </p>
