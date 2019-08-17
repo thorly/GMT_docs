@@ -385,9 +385,9 @@ gmt end
 </div>
 <p>下面的示例绘制了一个日本的区域地图，并在左下角的小图中绘制了日本全图，同时在小图中标出了大图的研究区域。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin inset-map png,pdf
-    gmt coast -R139.2E/140.5E/34.8N/36N -JM12c -Baf -BWSne -W2p -A1000 -Glightbrown -Sazure1 --FORMAT_GEO_MAP<span class="o">=</span>dddF
+    gmt coast -R139.2/140.5/34.8/36 -JM12c -Baf -BWSne -W2p -A1000 -Glightbrown -Sazure1 --FORMAT_GEO_MAP<span class="o">=</span>dddF
     gmt inset begin -DjBL+w3c/3.6c+o0.1c -F+gwhite+p1p -M0
-        gmt coast -R129E/146E/30N/46N -JM3c -Df -W0.5p -A1000 -Glightbrown -Sazure1
+        gmt coast -R129/146/30/46 -JM? -EJP+glightbrown+p0.2p -A10000
         <span class="c1"># 使用 -Sr+s 绘制矩形区域</span>
         <span class="nb">echo</span> <span class="m">139</span>.2 <span class="m">34</span>.8 <span class="m">140</span>.5 <span class="m">36</span> <span class="p">|</span> gmt plot -Sr+s -W1p,blue
     gmt inset end
