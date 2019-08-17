@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>14.13 多子图 &mdash; GMT中文手册</title>
+  <title>14.12 多子图 &mdash; GMT中文手册</title>
   
 
   
@@ -42,8 +42,8 @@
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="14.14 制作动画" href="../animation/" />
-    <link rel="prev" title="14.12 绘制等值线图" href="../contour/" /> 
+    <link rel="next" title="14.13 制作动画" href="../animation/" />
+    <link rel="prev" title="14.11 绘制等值线图" href="../contour/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -120,17 +120,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../legend/">14.6 绘制图例</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../earth-relief/">14.7 绘制地形起伏图</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../histogram/">14.8 绘制直方图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../inset-map/">14.9 绘制图中图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sac-waveforms/">14.10 绘制SAC格式地震波形图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ternary-diagram/">14.11 绘制三角图解</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contour/">14.12 绘制等值线图</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">14.13 多子图</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">14.13.1 常规方式</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">14.13.2 现代方式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac-waveforms/">14.9 绘制SAC格式地震波形图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary-diagram/">14.10 绘制三角图解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contour/">14.11 绘制等值线图</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">14.12 多子图</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">14.12.1 常规方式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">14.12.2 现代方式</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../animation/">14.14 制作动画</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chinese-texts/">14.15 中文图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../animation/">14.13 制作动画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chinese-texts/">14.14 中文图</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
@@ -200,7 +199,7 @@
         
           <li><a href="../">14 绘图示例</a> &raquo;</li>
         
-      <li>14.13 多子图</li>
+      <li>14.12 多子图</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -222,7 +221,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>14.13 多子图<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>14.12 多子图<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>GMT6中绘制多子图有两种方式：</p>
 <ul class="simple">
 <li>常规方式：即利用 <a class="reference internal" href="../../option/XY/"><span class="doc">-X 和 -Y 选项</span></a> 移动每个子图的原点</li>
@@ -230,7 +229,7 @@
 </ul>
 <p>两种方法各有利弊，现代方式更加简洁，但通常只适用于所有子图的底图类似的情况；常规方式更加灵活，但使用起来相对比较繁琐。</p>
 <div class="section" id="id2">
-<h2>14.13.1 常规方式<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>14.12.1 常规方式<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>常规方式下使用 <a class="reference internal" href="../../option/XY/"><span class="doc">-X 和 -Y 选项</span></a> 移动每个子图的原点，并使用 <a class="reference internal" href="../../module/text/"><span class="doc">text</span></a>
 为子图添加编号。</p>
 <p>下面的命令展示了如何绘制四个子图，并给每个子图进行编号。需要注意，绘图时通常从左下角开始画起，因而这里绘制子图的顺序是 c =&gt; d =&gt; a =&gt; b。</p>
@@ -275,7 +274,7 @@ gmt end
 </ol>
 </div>
 <div class="section" id="id3">
-<h2>14.13.2 现代方式<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>14.12.2 现代方式<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>现代方式使用 <a class="reference internal" href="../../module/subplot/"><span class="doc">subplot</span></a> 绘制多子图。</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">subplot</span> <span class="pre">begin</span></code> 将整个绘图区域分为2x2的网格并设置子图的大小及其它属性</li>
@@ -381,10 +380,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../animation/" class="btn btn-neutral float-right" title="14.14 制作动画" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../animation/" class="btn btn-neutral float-right" title="14.13 制作动画" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../contour/" class="btn btn-neutral float-left" title="14.12 绘制等值线图" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+        <a href="../contour/" class="btn btn-neutral float-left" title="14.11 绘制等值线图" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
       
     </div>
   
