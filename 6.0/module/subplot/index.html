@@ -312,7 +312,7 @@
 <em>nrows</em><strong>x</strong><em>ncols</em>
 <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<strong>f</strong>|<strong>s</strong>]<em>width</em>/<em>height</em>[<strong>+f</strong><em>wfracs</em>/<em>hfracs</em>][<strong>+c</strong><em>dx/dy</em>][<strong>+g</strong><em>fill</em>][<strong>+p</strong><em>pen</em>]
 [ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong>[<em>autolabel</em>][<strong>+j</strong>|<strong>J</strong><em>refpoint</em>][<strong>+c</strong><em>dx</em>/<em>dy</em>][<strong>+g</strong><em>fill</em>][<strong>+p</strong><em>pen</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>][<strong>+r</strong>][<strong>+R</strong>][<strong>+v</strong>] ]
-[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>side</em>/<em>clearance</em>[<strong>u</strong>] ]
+[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong>[<em>side</em>]/<em>clearance</em>[<strong>u</strong>] ]
 [ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong><em>parameters</em> ]
 [ <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><em>projection</em> ]
 [ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong><em>margins</em> ]
@@ -395,10 +395,11 @@
 <dd>设置底图边框和轴属性。 该选项会应用到所有子图。</dd>
 </dl>
 <dl class="docutils" id="c">
-<dt><strong>-C</strong><em>side</em>/<em>clearance</em>[<em>u</em>]</dt>
-<dd><p class="first">设置子图的某个边的额外空白量。这些额外的空白量可以用于绘制比例尺、添加额外的文字等。</p>
-<p><em>side</em> 可以取 <strong>e</strong> <strong>w</strong> <strong>s</strong> <strong>n</strong> 分别代表东西南北四条边。该选项可以重复多次，对不同边分别设置不同的间距。
-<strong>subplot begin</strong> 该选项对所有子图均有效，而 <strong>subplot set</strong> 中使用该选项则仅对当前子图有效。</p>
+<dt><strong>-C</strong>[<em>side</em>]/<em>clearance</em>[<strong>u</strong>]</dt>
+<dd><p class="first">设置子图区域内某个边的额外空白量。这些额外的空白量可以用于绘制比例尺、添加额外的文字等。</p>
+<p><em>side</em> 可以取 <strong>e</strong> <strong>w</strong> <strong>s</strong> <strong>n</strong> 分别代表东西南北四条边；也可以取 <strong>x</strong> 或 <strong>y</strong>，分别表示设置东西和南北方向四条边的空白；若不指定 <em>side</em>，则表示同时设置四条边上的空白量。</p>
+<p>该选项可以重复多次，对不同边分别设置不同的间距。</p>
+<p><strong>subplot begin</strong> 中该选项对所有子图均有效，而 <strong>subplot set</strong> 中使用该选项则仅对当前子图有效。</p>
 <div class="last admonition note">
 <p class="first admonition-title">注解</p>
 <p class="last">在子图模式下不能使用 <strong>-X</strong> 和 <strong>-Y</strong>，可以使用 <strong>-C</strong> 作为替代。</p>
