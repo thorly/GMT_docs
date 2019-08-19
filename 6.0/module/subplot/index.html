@@ -310,7 +310,7 @@
 <h2>13.59.1 subplot begin 语法<a class="headerlink" href="#subplot-begin" title="永久链接至标题">¶</a></h2>
 <p><strong>gmt subplot begin</strong>
 <em>nrows</em><strong>x</strong><em>ncols</em>
-<a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<strong>f</strong>|<strong>s</strong>]<em>width</em>/<em>height</em>[<strong>+f</strong><em>wfracs</em>/<em>hfracs</em>][<strong>+c</strong><em>dx/dy</em>][<strong>+g</strong><em>fill</em>][<strong>+p</strong><em>pen</em>]
+<a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<strong>f</strong>|<strong>s</strong>]<em>width</em>/<em>height</em>[<strong>+f</strong><em>wfracs</em>/<em>hfracs</em>][<strong>+c</strong><em>dx/dy</em>][<strong>+g</strong><em>fill</em>][<strong>+p</strong><em>pen</em>][<strong>+w</strong><em>pen</em>]
 [ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong>[<em>autolabel</em>][<strong>+j</strong>|<strong>J</strong><em>refpoint</em>][<strong>+c</strong><em>dx</em>/<em>dy</em>][<strong>+g</strong><em>fill</em>][<strong>+p</strong><em>pen</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>][<strong>+r</strong>][<strong>+R</strong>][<strong>+v</strong>] ]
 [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong>[<em>side</em>]/<em>clearance</em>[<strong>u</strong>] ]
 [ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong><em>parameters</em> ]
@@ -331,7 +331,7 @@
 </dd>
 </dl>
 <dl class="docutils" id="f">
-<dt><strong>-F</strong>[<strong>f</strong>|<strong>s</strong>]<em>width</em>/<em>height</em>[<strong>+f</strong><em>wfracs</em>/<em>hfracs</em>][<strong>+c</strong><em>dx/dy</em>][<strong>+g</strong><em>fill</em>][<strong>+p</strong><em>pen</em>]</dt>
+<dt><strong>-F</strong>[<strong>f</strong>|<strong>s</strong>]<em>width</em>/<em>height</em>[<strong>+f</strong><em>wfracs</em>/<em>hfracs</em>][<strong>+c</strong><em>dx/dy</em>][<strong>+g</strong><em>fill</em>][<strong>+p</strong><em>pen</em>][<strong>+w</strong><em>pen</em>]</dt>
 <dd><p class="first">指定图片的尺寸。有两种方式：</p>
 <ul class="simple">
 <li><strong>-Ff</strong>: 直接指定整张图片的尺寸</li>
@@ -340,6 +340,7 @@
 <p>除此之外，还可以为整张图加上背景色和边框:</p>
 <ul class="simple">
 <li><strong>+p</strong><em>pen</em>: 为整张图加上背景矩形边框</li>
+<li><strong>+w</strong><em>pen</em>: 绘制子图区域之间的水平和垂直分割线</li>
 <li><strong>+g</strong><em>fill</em>: 为整张图的背景矩形填充颜色</li>
 <li><strong>+c</strong><em>dx/dy</em>: 设置背景矩形与整张图之间的额外空白</li>
 </ul>
@@ -672,7 +673,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月18日.
+        最后更新于 2019年08月19日.
       </span>
 
     </p>
