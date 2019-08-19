@@ -231,7 +231,8 @@
 </div>
 <div class="section" id="gmt">
 <h2>11.1.2 建立GMT数据库<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
-<p>将数据集放在某个特定目录下，然后修改环境变量 <code class="docutils literal notranslate"><span class="pre">GMT_DATADIR</span></code> 使得其包含该目录即可。</p>
+<p>建立GMT数据库的方法很简单，只要将数据集放在某个特定目录下，然后修改环境变量
+<code class="docutils literal notranslate"><span class="pre">GMT_DATADIR</span></code> 使得其包含该目录即可。</p>
 <p>比如Linux和macOS下数据库可以放在 <code class="docutils literal notranslate"><span class="pre">~/GMTDB</span></code>，然后向 <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> 中加入如下语句:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">GMT_DATADIR</span><span class="o">=</span>~/GMTDB
 </pre></div>
@@ -241,6 +242,11 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">GMT_DATADIR</span><span class="o">=</span>~/GMTDB/data1,~/GMTDB/data2
 </pre></div>
 </div>
+<p>Linux和macOS用户，可以进一步简化为:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">GMT_DATADIR</span><span class="o">=</span>~/GMTDB/
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">GMT_DATADIR</span></code> 中的目录以 <code class="docutils literal notranslate"><span class="pre">/</span></code> 结尾，GMT则会在 <code class="docutils literal notranslate"><span class="pre">~/GMTDB</span></code> 及其子目录下递归地寻找文件。需要注意，Windows似乎不支持这一功能。</p>
 </div>
 </div>
 
