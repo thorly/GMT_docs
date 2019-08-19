@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.11 GMT子图模式 &mdash; GMT中文手册</title>
+  <title>3.12 GMT子图模式 &mdash; GMT中文手册</title>
   
 
   
@@ -42,8 +42,8 @@
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="3.12 GMT多图模式" href="../multifig/" />
-    <link rel="prev" title="3.10 GMT图中图模式" href="../inset/" /> 
+    <link rel="next" title="3.13 GMT多图模式" href="../multifig/" />
+    <link rel="prev" title="3.11 GMT图中图模式" href="../inset/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -107,18 +107,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../lines/">3.4 绘制线条</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../symbols/">3.5 绘制符号</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../texts/">3.6 添加文字</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../earth-relief/">3.7 绘制地形起伏</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../layers/">3.8 理解图层</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../oneliner/">3.9 GMT单行模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../inset/">3.10 GMT图中图模式</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.11 GMT子图模式</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">3.11.1 子图布局</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">3.11.2 第一张子图</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#x-y">3.11.3 共用X/Y轴</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">3.11.4 复杂布局</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">3.7 添加图例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earth-relief/">3.8 绘制地形起伏</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../layers/">3.9 理解图层</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oneliner/">3.10 GMT单行模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">3.11 GMT图中图模式</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.12 GMT子图模式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">3.12.1 子图布局</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">3.12.2 第一张子图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-y">3.12.3 共用X/Y轴</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">3.12.4 复杂布局</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../multifig/">3.12 GMT多图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multifig/">3.13 GMT多图模式</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
@@ -199,7 +200,7 @@
         
           <li><a href="../">3 入门教程</a> &raquo;</li>
         
-      <li>3.11 GMT子图模式</li>
+      <li>3.12 GMT子图模式</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -221,7 +222,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gmt">
-<h1>3.11 GMT子图模式<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h1>
+<h1>3.12 GMT子图模式<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h1>
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
 <p><strong>subplot</strong> 模块在6.0.0rc3发布后进行了一系列修正，最大的改变在于，新版中行列号以及索引号均从0开始。本模块文档采用的是最新版本的用法，对于 6.0.0rc3 用户并不完全适用。</p>
@@ -235,7 +236,7 @@
 </ul>
 <p>现代方式更加简洁易用，建议使用现代方式。仅当图片非常复杂或不规则时，才推荐使用常规方式。</p>
 <div class="section" id="id1">
-<h2>3.11.1 子图布局<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>3.12.1 子图布局<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p><a class="reference internal" href="../../module/subplot/"><span class="doc">subplot</span></a> 模块提供的子图模式可以非常方便地绘制多子图。</p>
 <p><strong>subplot begin</strong> 用于设计子图的布局、尺寸以及其它属性。其将整张画布划分为
 N行M列的规则网格区域，每个网格区域内都可以包含一张独立的子图。例如:</p>
@@ -265,7 +266,7 @@ gmt subplot <span class="nb">set</span> <span class="m">3</span>
 </div>
 </div>
 <div class="section" id="id2">
-<h2>3.11.2 第一张子图<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>3.12.2 第一张子图<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>下面就利用上面学到的知识绘制一张2行2列的子图。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map png,pdf
   gmt <span class="nb">set</span> FONT_TAG 15p FONT_HEADING 20p MAP_HEADING_OFFSET 0p
@@ -310,7 +311,7 @@ gmt subplot <span class="nb">set</span> <span class="m">3</span>
 </div>
 </div>
 <div class="section" id="x-y">
-<h2>3.11.3 共用X/Y轴<a class="headerlink" href="#x-y" title="永久链接至标题">¶</a></h2>
+<h2>3.12.3 共用X/Y轴<a class="headerlink" href="#x-y" title="永久链接至标题">¶</a></h2>
 <p>上面示例中的四张子图，每行的两张子图有相同的Y轴范围，每列的两张子图有相同的
 X轴范围。此时可以使用 <strong>-S</strong> 选项设置各子图之间共用X或Y轴。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map png,pdf
@@ -332,7 +333,7 @@ gmt end
 <p>当然你也可以不使用 <strong>-S</strong> 选项，而是在每个子图中使用不同的 <strong>-B</strong> 选项分别为每个子图设置不同的轴属性。</p>
 </div>
 <div class="section" id="id3">
-<h2>3.11.4 复杂布局<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>3.12.4 复杂布局<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p><strong>subplot</strong> 目前尚不支持嵌套。如果想要使用更复杂的子图布局，则需要更多的人工调整。</p>
 <p>下面的例子在一个2行2列的子图布局中绘制了三张子图，其中第一张子图占据了第一行。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin complex-subplot png,pdf
@@ -387,10 +388,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../multifig/" class="btn btn-neutral float-right" title="3.12 GMT多图模式" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../multifig/" class="btn btn-neutral float-right" title="3.13 GMT多图模式" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../inset/" class="btn btn-neutral float-left" title="3.10 GMT图中图模式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+        <a href="../inset/" class="btn btn-neutral float-left" title="3.11 GMT图中图模式" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
       
     </div>
   

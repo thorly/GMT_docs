@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.8 理解图层 &mdash; GMT中文手册</title>
+  <title>3.9 理解图层 &mdash; GMT中文手册</title>
   
 
   
@@ -42,8 +42,8 @@
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="3.9 GMT单行模式" href="../oneliner/" />
-    <link rel="prev" title="3.7 绘制地形起伏" href="../earth-relief/" /> 
+    <link rel="next" title="3.10 GMT单行模式" href="../oneliner/" />
+    <link rel="prev" title="3.8 绘制地形起伏" href="../earth-relief/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -107,20 +107,21 @@
 <li class="toctree-l2"><a class="reference internal" href="../lines/">3.4 绘制线条</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../symbols/">3.5 绘制符号</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../texts/">3.6 添加文字</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../earth-relief/">3.7 绘制地形起伏</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.8 理解图层</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">3.8.1 图件分析与拆解</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">3.8.2 绘制底图</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">3.8.3 绘制震中和台站位置</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">3.8.4 绘制射线路径</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">3.8.5 添加台站名</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">3.8.6 图层的先后顺序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">3.7 添加图例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earth-relief/">3.8 绘制地形起伏</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.9 理解图层</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">3.9.1 图件分析与拆解</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">3.9.2 绘制底图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">3.9.3 绘制震中和台站位置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">3.9.4 绘制射线路径</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">3.9.5 添加台站名</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">3.9.6 图层的先后顺序</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../oneliner/">3.9 GMT单行模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../inset/">3.10 GMT图中图模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../subplot/">3.11 GMT子图模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../multifig/">3.12 GMT多图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oneliner/">3.10 GMT单行模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">3.11 GMT图中图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">3.12 GMT子图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multifig/">3.13 GMT多图模式</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
@@ -201,7 +202,7 @@
         
           <li><a href="../">3 入门教程</a> &raquo;</li>
         
-      <li>3.8 理解图层</li>
+      <li>3.9 理解图层</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -223,7 +224,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>3.8 理解图层<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>3.9 理解图层<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>这一节将通过绘制一张地震学常见的射线路径分布图，来展示GMT模块化作图的思想以及
 GMT中图层的概念。</p>
 <div class="admonition important">
@@ -232,7 +233,7 @@ GMT中图层的概念。</p>
 Windows下使用bat脚本，并且对bash和bat脚本的区别不太了解，强烈建议先阅读 <a class="reference internal" href="../../appendix/cmd/"><span class="doc">命令行及脚本基础</span></a> 一节。</p>
 </div>
 <div class="section" id="id2">
-<h2>3.8.1 图件分析与拆解<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>3.9.1 图件分析与拆解<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>一个完整的图件通常是由很多部分组成的。GMT在制图时遵循模块化思想，每个模块只绘制整张图的一部分，因而通常一张图需要使用多个GMT命令才能绘制完成。绘制的过程中，若想修改图中的某个部分，只需修改绘制该部分所使用的命令即可，而不会影响其他部分。这就是模块化作图。</p>
 <p>下图展示了我们最终想要实现的绘图效果。整张图由如下几个部分构成：</p>
 <ol class="arabic simple">
@@ -248,7 +249,7 @@ Windows下使用bat脚本，并且对bash和bat脚本的区别不太了解，强
 <p>下面会一步步地把整张图绘制出来。</p>
 </div>
 <div class="section" id="id3">
-<h2>3.8.2 绘制底图<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>3.9.2 绘制底图<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>GMT中的 <a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 模块，可以绘制带海岸线的底图，并可以给陆地和海洋分别填充不同的颜色，绘图命令及效果如下：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin first-plot pdf,png
 gmt coast -JH110/24c -Rg -Bg30 -Glightgreen -Slightblue -A1000 -Dc
@@ -270,7 +271,7 @@ PDF和PNG格式。</p>
 <p>至此，即得到了我们需要的底图。</p>
 </div>
 <div class="section" id="id4">
-<h2>3.8.3 绘制震中和台站位置<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>3.9.3 绘制震中和台站位置<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p><a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a> 模块可以用于绘制多种不同类型的符号，比如五角星和三角形。绘图脚本如下：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 gmt begin first-plot pdf,png
@@ -312,7 +313,7 @@ gmt end
 </ol>
 </div>
 <div class="section" id="id5">
-<h2>3.8.4 绘制射线路径<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<h2>3.9.4 绘制射线路径<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">plot</span></code> 模块还可以用于绘制线段，默认情况下，<code class="docutils literal notranslate"><span class="pre">plot</span></code> 会自动用大圆路径连接地球上的两个位置，不需要额外设置。首先直接看代码：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 gmt begin first-plot pdf,png
@@ -368,7 +369,7 @@ gmt end
 <p>用于绘制射线路径的 <code class="docutils literal notranslate"><span class="pre">plot</span></code> 命令和之前的命令的区别在于没有了 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项。为了绘制一条线段，至少需要指定两个端点，输入数据中每个 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 之后的两行数据分别代表一条线条的两个端点位置。</p>
 </div>
 <div class="section" id="id6">
-<h2>3.8.5 添加台站名<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<h2>3.9.5 添加台站名<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>最后还需要往图画里添加台站所在地区的名字。添加文字使用 <a class="reference internal" href="../../module/text/"><span class="doc">text</span></a> 模块：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 gmt begin fist-plot pdf,png
@@ -449,7 +450,7 @@ gmt end
 </ol>
 </div>
 <div class="section" id="id7">
-<h2>3.8.6 图层的先后顺序<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<h2>3.9.6 图层的先后顺序<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
 <p>上面的绘图脚本已经基本绘制出我们最初想要的图件了。细细看会发现，还有一些不完美的地方：比如黄色五角星和三角形被线段盖住了。</p>
 <p>这是因为，GMT的每一个绘图命令都会产生一个图层，后绘制的图层会覆盖在先绘制的图层的上面，即后来者居上。解决办法也很简单，先绘制线段，再绘制三角形和五角星即可。</p>
 <p>对脚本中命令的先后顺序进行微调，如下所示：</p>
@@ -556,10 +557,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../oneliner/" class="btn btn-neutral float-right" title="3.9 GMT单行模式" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../oneliner/" class="btn btn-neutral float-right" title="3.10 GMT单行模式" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../earth-relief/" class="btn btn-neutral float-left" title="3.7 绘制地形起伏" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+        <a href="../earth-relief/" class="btn btn-neutral float-left" title="3.8 绘制地形起伏" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
       
     </div>
   
