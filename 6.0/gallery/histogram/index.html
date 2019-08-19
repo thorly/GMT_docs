@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>14.8 绘制直方图 &mdash; GMT中文手册</title>
+  <title>14.5 绘制直方图 &mdash; GMT中文手册</title>
   
 
   
@@ -42,8 +42,8 @@
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="14.9 绘制SAC格式地震波形图" href="../sac-waveforms/" />
-    <link rel="prev" title="14.7 绘制地形起伏图" href="../earth-relief/" /> 
+    <link rel="next" title="14.6 制作动画" href="../animation/" />
+    <link rel="prev" title="14.4 绘制地形起伏图" href="../earth-relief/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -114,23 +114,17 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../">14 绘图示例</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../basemap/">14.1 绘制底图</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lines/">14.2 绘制线条</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../symbols/">14.3 绘制符号</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../coast/">14.4 绘制海岸线</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../beachball/">14.5 绘制震源球</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../legend/">14.6 绘制图例</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../earth-relief/">14.7 绘制地形起伏图</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">14.8 绘制直方图</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">14.8.1 垂直直方图</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">14.8.2 水平直方图</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">14.8.3 累积直方图</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">14.8.4 百分比直方图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../beachball/">14.3 绘制震源球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earth-relief/">14.4 绘制地形起伏图</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">14.5 绘制直方图</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">14.5.1 垂直直方图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">14.5.2 水平直方图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">14.5.3 累积直方图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">14.5.4 百分比直方图</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../sac-waveforms/">14.9 绘制SAC格式地震波形图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ternary-diagram/">14.10 绘制三角图解</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contour/">14.11 绘制等值线图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../animation/">14.12 制作动画</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chinese-texts/">14.13 中文图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../animation/">14.6 制作动画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chinese-texts/">14.7 中文图</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
@@ -200,7 +194,7 @@
         
           <li><a href="../">14 绘图示例</a> &raquo;</li>
         
-      <li>14.8 绘制直方图</li>
+      <li>14.5 绘制直方图</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -222,7 +216,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>14.8 绘制直方图<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>14.5 绘制直方图<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p><a class="reference internal" href="../../module/histogram/"><span class="doc">histogram</span></a> 模块可以用于统计并绘制直方图。</p>
 <p>该模块可以绘制不同类型的直方图，具体选项为：</p>
 <ol class="arabic simple">
@@ -232,7 +226,7 @@
 </ol>
 <p>以下示例使用的数据为  <a class="reference download internal" download="" href="../../_downloads/0ccc5de41f1278ef0014c92708d6ebc8/eq.dat"><code class="xref download docutils literal notranslate"><span class="pre">eq.dat</span></code></a>。数据格式为三列，分别为：地震纬度、地震经度、震源深度。</p>
 <div class="section" id="id2">
-<h2>14.8.1 垂直直方图<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>14.5.1 垂直直方图<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt histogram eq.dat -R0/35/0/600 -JX8c -Bxa5+l<span class="s2">&quot;Depth/km&quot;</span> -Bya100+l<span class="s2">&quot;Counts&quot;</span> -BWSne -D+f10p,4+o8p -W5+b -L1p -i2 -png histVert
 </pre></div>
 </div>
@@ -252,7 +246,7 @@
 </ul>
 </div>
 <div class="section" id="id3">
-<h2>14.8.2 水平直方图<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>14.5.2 水平直方图<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">-A</span></code> 用于控制绘制水平直方图，上一个例子中默认绘制垂直直方图。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt histogram eq.dat -R0/35/0/600 -JX8c -Bxa5+l<span class="s2">&quot;Depth/km&quot;</span> -Bya100+l<span class="s2">&quot;Counts&quot;</span> -BWSne -D+f10p,4+o8p -A -W5+b -L1p -i2 -png histHori
 </pre></div>
@@ -263,7 +257,7 @@
 </div>
 </div>
 <div class="section" id="id4">
-<h2>14.8.3 累积直方图<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>14.5.3 累积直方图<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">-Q</span></code> 表示绘制累积直方图。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt histogram eq.dat -R0/35/0/1000 -JX8c -Bxa5+l<span class="s2">&quot;Depth/km&quot;</span> -Bya200+l<span class="s2">&quot;Counts&quot;</span> -BWSne -W5+b -L1p -i2 -Q -png histCumu
 </pre></div>
@@ -274,7 +268,7 @@
 </div>
 </div>
 <div class="section" id="id5">
-<h2>14.8.4 百分比直方图<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<h2>14.5.4 百分比直方图<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">-Z1</span></code> 设置纵轴为百分比，<code class="docutils literal notranslate"><span class="pre">-N</span></code> 绘制等效的正态分布曲线。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt histogram eq.dat -R0/35/0/100 -JX8c/8c -Bxa5+l<span class="s2">&quot;Depth/km&quot;</span> -Bya20+l<span class="s2">&quot;Frequency&quot;</span> -BWSne -W5+b -L1p -i2 -N -Z1 -png histFreq
 </pre></div>
@@ -317,10 +311,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../sac-waveforms/" class="btn btn-neutral float-right" title="14.9 绘制SAC格式地震波形图" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../animation/" class="btn btn-neutral float-right" title="14.6 制作动画" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../earth-relief/" class="btn btn-neutral float-left" title="14.7 绘制地形起伏图" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+        <a href="../earth-relief/" class="btn btn-neutral float-left" title="14.4 绘制地形起伏图" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
       
     </div>
   

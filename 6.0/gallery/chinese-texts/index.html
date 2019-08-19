@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>14.13 中文图 &mdash; GMT中文手册</title>
+  <title>14.7 中文图 &mdash; GMT中文手册</title>
   
 
   
@@ -43,7 +43,7 @@
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
     <link rel="next" title="15 API" href="../../api/" />
-    <link rel="prev" title="14.12 制作动画" href="../animation/" /> 
+    <link rel="prev" title="14.6 制作动画" href="../animation/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -114,20 +114,14 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../">14 绘图示例</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../basemap/">14.1 绘制底图</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lines/">14.2 绘制线条</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../symbols/">14.3 绘制符号</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../coast/">14.4 绘制海岸线</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../beachball/">14.5 绘制震源球</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../legend/">14.6 绘制图例</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../earth-relief/">14.7 绘制地形起伏图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../histogram/">14.8 绘制直方图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sac-waveforms/">14.9 绘制SAC格式地震波形图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ternary-diagram/">14.10 绘制三角图解</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contour/">14.11 绘制等值线图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../animation/">14.12 制作动画</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">14.13 中文图</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">14.13.1 中文文字</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">14.13.2 中文月份</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">14.13.3 中文星期</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../beachball/">14.3 绘制震源球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earth-relief/">14.4 绘制地形起伏图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">14.5 绘制直方图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../animation/">14.6 制作动画</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">14.7 中文图</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">14.7.1 中文文字</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">14.7.2 中文月份</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">14.7.3 中文星期</a></li>
 </ul>
 </li>
 </ul>
@@ -199,7 +193,7 @@
         
           <li><a href="../">14 绘图示例</a> &raquo;</li>
         
-      <li>14.13 中文图</li>
+      <li>14.7 中文图</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -221,7 +215,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>14.13 中文图<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>14.7 中文图<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
 <p class="last">GMT本身不支持中文，若需要在GMT上显示中文，需要进行额外的配置。具体方法见
@@ -238,7 +232,7 @@ UTF8编码才能正常显示中文的月份和星期。Windows用户则不需要
 </div>
 </div>
 <div class="section" id="id2">
-<h2>14.13.1 中文文字<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>14.7.1 中文文字<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>本例中展示了如何在绘图时使用中文标签和中文标题，以及如何打印横排和竖排的中文。左图中Y轴标签与纵轴平行，中图中Y轴标签与X轴平行，右图中Y轴标签单独绘制并使用了竖排中文字体。右图中也可以使用 <a class="reference internal" href="../../module/text/"><span class="doc">text</span></a> 模块手动添加Y轴标签。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin chinese-texts png
 <span class="c1"># 左图</span>
@@ -274,7 +268,7 @@ gmt end
 </div>
 </div>
 <div class="section" id="id3">
-<h2>14.13.2 中文月份<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>14.7.2 中文月份<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>GMT支持中文的月份。要想使用中文表示月份，需要设置 <a class="reference internal" href="../../conf/misc/#gmt-language"><span class="std std-ref">GMT_LANGUAGE</span></a> 为中文，即 <code class="docutils literal notranslate"><span class="pre">cn1</span></code>，并设置标注的字体为中文。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin chinese-months png
 <span class="c1"># 设置GMT语言为中文</span>
@@ -297,7 +291,7 @@ gmt end
 </div>
 </div>
 <div class="section" id="id4">
-<h2>14.13.3 中文星期<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>14.7.3 中文星期<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>GMT支持中文的星期。要想使用中文表示星期几，需要设置 <a class="reference internal" href="../../conf/misc/#gmt-language"><span class="std std-ref">GMT_LANGUAGE</span></a> 为中文，即 <code class="docutils literal notranslate"><span class="pre">cn1</span></code>，并设置标注的字体为中文。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin chinese-weeks png
 <span class="c1"># 设置GMT语言为中文</span>
@@ -355,7 +349,7 @@ gitalk.render('gitalk-container');
         <a href="../../api/" class="btn btn-neutral float-right" title="15 API" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../animation/" class="btn btn-neutral float-left" title="14.12 制作动画" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+        <a href="../animation/" class="btn btn-neutral float-left" title="14.6 制作动画" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
       
     </div>
   
