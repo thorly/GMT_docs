@@ -398,7 +398,7 @@
 <dl class="docutils" id="c">
 <dt><strong>-C</strong>[<em>side</em>]/<em>clearance</em>[<strong>u</strong>]</dt>
 <dd><p class="first">设置子图区域内某个边的额外空白量。这些额外的空白量可以用于绘制比例尺、添加额外的文字等。</p>
-<p><em>side</em> 可以取 <strong>e</strong> <strong>w</strong> <strong>s</strong> <strong>n</strong> 分别代表东西南北四条边；也可以取 <strong>x</strong> 或 <strong>y</strong>，分别表示设置东西和南北方向四条边的空白；若不指定 <em>side</em>，则表示同时设置四条边上的空白量。</p>
+<p><em>side</em> 可以取 <strong>e</strong> <strong>w</strong> <strong>s</strong> <strong>n</strong> 分别代表东西南北四条边；也可以取 <strong>x</strong> 或 <strong>y</strong>，分别表示设置东西或南北方向两条边的空白；若不指定 <em>side</em>，则表示同时设置四条边上的空白量。</p>
 <p>该选项可以重复多次，对不同边分别设置不同的间距。</p>
 <p><strong>subplot begin</strong> 中该选项对所有子图均有效，而 <strong>subplot set</strong> 中使用该选项则仅对当前子图有效。</p>
 <div class="last admonition note">
@@ -523,7 +523,7 @@
 </div>
 <div class="section" id="id6">
 <h2>13.59.9 示例<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
-<p>下面的示例展示了如何设置一张2x2布局的图，并使用不同的方式指定要激活的子图。</p>
+<p>下面的示例展示了如何设置一张2x2布局的图，并使用不同的方式指定要激活的子图。不同的设置方式的效果是相同的，用户在使用时可根据需求选择最直观最简便的方式。</p>
 <p><strong>方法1: 使用 subplot set 指定子图行列号</strong></p>
 <p>注意行列号均从0开始。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map png,pdf
