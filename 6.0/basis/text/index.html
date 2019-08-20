@@ -42,7 +42,7 @@
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="4.7 转义序列" href="../escape-character/" />
+    <link rel="next" title="4.7 特殊字符" href="../special-character/" />
     <link rel="prev" title="4.5 填充" href="../fill/" /> 
 </head>
 
@@ -115,8 +115,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#id6">4.6.5 小练习</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../escape-character/">4.7 转义序列</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-character/">4.8 特殊字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-character/">4.7 特殊字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../escape-character/">4.8 转义序列</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vector/">4.9 绘制矢量/箭头</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../line/">4.10 线条属性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../anchor/">4.11 锚点</a></li>
@@ -224,16 +224,14 @@
             
   <div class="section" id="index-0">
 <span id="id1"></span><h1>4.6 文字<a class="headerlink" href="#index-0" title="永久链接至标题">¶</a></h1>
-<p>文字，或者称文本或字符串，主要由三个属性控制：文字大小、字体、颜色。三个属性之间用逗号分隔，即:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;size&gt;,&lt;fonttype&gt;,&lt;fill&gt;
-</pre></div>
-</div>
-<p>三者均是可选的，但先后顺序不可乱。若其中任意一个属性被省略，则使用该属性的默认值或上一次的设置值。</p>
+<p>文字，也称文本或字符串。主要由三个属性控制：文字大小、字体、颜色。三个属性之间用逗号分隔，即：<em>size</em>,<em>fonttype</em>,<em>fill</em>。</p>
+<p>在模块的语法介绍中，通常使用 <em>font</em> 表示需要用户指定文字属性，用户应自行将其脑补为 <em>size</em>,<em>fonttype</em>,<em>fill</em>。</p>
+<p>三者均是可选的，但先后顺序不可乱。若其中任意一个属性被省略，则使用该属性的默认值。</p>
 <div class="section" id="id2">
 <h2>4.6.1 文字大小<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p>文字大小，可以理解成字号，用数字加单位表示。在不指定单位的情况下默认单位为
-<code class="docutils literal notranslate"><span class="pre">p</span></code>，也可加上 <code class="docutils literal notranslate"><span class="pre">c</span></code>、<code class="docutils literal notranslate"><span class="pre">p</span></code> 或者 <code class="docutils literal notranslate"><span class="pre">i</span></code> 显式指定单位，比如 <code class="docutils literal notranslate"><span class="pre">15p</span></code>。</p>
-<p>有些中文期刊可以会有类似“图片标题是四号字”这样的要求，这就需要知道GMT中的字体大小与MS Word中字号大小的对应关系。如下表所示：</p>
+<p>文字大小，即常说的字号，可以用数字加单位表示。在不指定单位的情况下默认单位为
+<strong>p</strong>，也可加上 <strong>c</strong>、<strong>p</strong> 或者 <strong>i</strong> 显式指定单位，比如 <strong>15p</strong>。</p>
+<p>有些中文期刊可以会有类似“图片标题是四号字”这样的要求，这就需要知道GMT中的字体大小与Microsoft Word中字号大小的对应关系。如下表所示：</p>
 <table border="1" class="docutils align-center" id="id7">
 <caption><span class="caption-text">Word字号与GMT中字号(p)对应关系</span><a class="headerlink" href="#id7" title="永久链接至表格">¶</a></caption>
 <colgroup>
@@ -298,33 +296,34 @@
 <p>GMT默认支持35种标准字体。下图给出了GMT支持的35种字体的名字及对应的编号:</p>
 <p><a class="reference download internal" download="" href="../../_downloads/8d4da6c7d3fb53eb848be489b1794b70/text-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center">
-<img alt="../../_images/text-gmtplot-0.png" src="../../_images/text-gmtplot-0.png" />
+<a class="reference internal image-reference" href="../../_images/text-gmtplot-0.png"><img alt="../../_images/text-gmtplot-0.png" src="../../_images/text-gmtplot-0.png" style="width: 80%;" /></a>
 </div>
 <p>GMT中可以用字体名（<strong>区分大小写</strong>）或对应的字体编号来指定字体 （比如
-<code class="docutils literal notranslate"><span class="pre">Helvetica-Bold</span></code> 或者 <code class="docutils literal notranslate"><span class="pre">1</span></code>）。上图中给出了每种字体的字体编号以及字体名称。每个字体名称使用的是自己相对应的字体，所以可以从图中直观地看出不同字体的区别。</p>
+<strong>Helvetica-Bold</strong> 或者 <strong>1</strong>）。上图中给出了每种字体的字体编号以及字体名称。每个字体名称使用的是自己相对应的字体，所以可以从图中直观地看出不同字体的区别。</p>
 <div class="admonition tip">
 <p class="first admonition-title">小技巧</p>
-<p class="last">使用 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">text</span> <span class="pre">-L</span></code> 可以列出GMT所支持的字体及其编号。</p>
+<p class="last">使用 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">text</span> <span class="pre">-L</span></code> 可以在命令行查看GMT所支持的字体及其编号。</p>
 </div>
 <p>图中大多数字体都很直观，比较特别的字体有两个，Symbol（12号）和ZapfDingbats（34号），前者常用于输出希腊字母，后者则用于输出特殊图案，详情见 <a class="reference internal" href="../special-character/"><span class="doc">特殊字符</span></a>。</p>
 </div>
 <div class="section" id="id4">
 <h2>4.6.3 填充色<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
-<p>可以为文字指定颜色或图案，也就是常说的文字颜色，见 <a class="reference internal" href="../fill/"><span class="doc">填充</span></a> 一节。</p>
+<p>可以为文字指定填充色或填充图案，也就是常说的文字颜色。</p>
+<p>在 <a class="reference internal" href="../color/"><span class="doc">颜色</span></a> 和 <a class="reference internal" href="../fill/"><span class="doc">填充</span></a> 一节中我们已经介绍了如何设置填充色和填充图案，其中介绍的内容均可用于设置文本颜色。</p>
 </div>
 <div class="section" id="id5">
 <h2>4.6.4 描边<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
-<p>在给文字指定填充色的同时，可以在填充色 <code class="docutils literal notranslate"><span class="pre">&lt;fill&gt;</span></code> 后加上 <code class="docutils literal notranslate"><span class="pre">=&lt;pen&gt;</span></code> 来指定文本轮廓（即描边）的画笔属性。<code class="docutils literal notranslate"><span class="pre">&lt;pen&gt;</span></code> 的用法见 <a class="reference internal" href="../pen/"><span class="doc">画笔</span></a> 一节。比如 <code class="docutils literal notranslate"><span class="pre">red=2p,blue</span></code> 表示将文字填充为红色，并使用宽度为 <code class="docutils literal notranslate"><span class="pre">2p</span></code> 的蓝色线条给文字描边。若填充色 <code class="docutils literal notranslate"><span class="pre">&lt;fill&gt;</span></code> 为 <code class="docutils literal notranslate"><span class="pre">-</span></code>，则不对文字做填充，即实现空心文字的效果。</p>
-<p>使用 <code class="docutils literal notranslate"><span class="pre">=&lt;pen&gt;</span></code> 语法绘制文本轮廓时，轮廓线条有一半宽度位于文字外部，另一半宽度会遮住字体。为了避免这一现象，可以使用 <code class="docutils literal notranslate"><span class="pre">=~&lt;pen&gt;</span></code> 语法，此时在绘制文字轮廓时只绘制文字外部的半个线宽的线条。</p>
+<p>在给文字指定填充色的同时，还可以在填充色 <em>fill</em> 后加上 <strong>=</strong><em>pen</em> 以指定文本轮廓（即描边）的画笔属性。画笔属性<em>pen</em> 的用法见 <a class="reference internal" href="../pen/"><span class="doc">画笔</span></a> 一节。比如 <strong>red=2p,blue</strong> 表示将文字填充为红色，并使用宽度为 <strong>2p</strong> 的蓝色线条给文字描边。若填充色 <em>fill</em> 为 <strong>-</strong>，则不对文字做填充，即实现空心文字的效果。</p>
+<p>使用 <strong>=</strong><em>pen</em> 语法绘制文本轮廓时，轮廓线条有一半宽度位于文字外部，另一半宽度会遮住字体。为了避免这一现象，可以使用 <strong>=~</strong><em>pen</em> 语法，此时在绘制文字轮廓时只绘制文字外部的半个线宽的线条。</p>
 </div>
 <div class="section" id="id6">
 <h2>4.6.5 小练习<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
-<p><a class="reference internal" href="../../module/text/"><span class="doc">text</span></a> 模块可以用于绘制文字。下面的命令在图上写了文字 <code class="docutils literal notranslate"><span class="pre">TEXT</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">2</span>.5 <span class="m">0</span>.5 TEXT <span class="p">|</span> gmt text -R0/5/0/1 -JX15c/2c -F+f&lt;font&gt; -pdf text
+<p><a class="reference internal" href="../../module/text/"><span class="doc">text</span></a> 模块可以用于添加文字。下面的命令在图上写了文字 <strong>TEXT</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">2</span>.5 <span class="m">0</span>.5 TEXT <span class="p">|</span> gmt text -R0/5/0/1 -JX15c/2c -F+ffont -pdf text
 </pre></div>
 </div>
-<p>将其中的 <code class="docutils literal notranslate"><span class="pre">&lt;font&gt;</span></code> 修改为不同的值并查看绘图效果，以理解这一节的内容。</p>
-<p>下图给出了一些 <code class="docutils literal notranslate"><span class="pre">&lt;font&gt;</span></code> 的示例：</p>
+<p>将 <strong>-F+f</strong><em>font</em> 中的 <em>font</em> 修改为不同的值并查看绘图效果以理解这一节的内容。</p>
+<p>下图给出了 <em>font</em> 取不同值的效果：</p>
 <p><a class="reference download internal" download="" href="../../_downloads/f9df6ea7027dbaf79acce4ab8c3ac68f/text-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../../_images/text-gmtplot-1.png"><img alt="../../_images/text-gmtplot-1.png" src="../../_images/text-gmtplot-1.png" style="width: 60%;" /></a>
@@ -363,7 +362,7 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../escape-character/" class="btn btn-neutral float-right" title="4.7 转义序列" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../special-character/" class="btn btn-neutral float-right" title="4.7 特殊字符" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../fill/" class="btn btn-neutral float-left" title="4.5 填充" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
@@ -377,7 +376,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月19日.
+        最后更新于 2019年08月20日.
       </span>
 
     </p>

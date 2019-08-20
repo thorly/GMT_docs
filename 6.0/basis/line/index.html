@@ -108,8 +108,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../pen/">4.4 画笔</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../fill/">4.5 填充</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../text/">4.6 文字</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../escape-character/">4.7 转义序列</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-character/">4.8 特殊字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-character/">4.7 特殊字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../escape-character/">4.8 转义序列</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vector/">4.9 绘制矢量/箭头</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">4.10 线条属性</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id2">4.10.1 端点偏移量</a></li>
@@ -228,16 +228,14 @@
 <p>线条的额外属性包括：端点偏移量、线条平滑和端点箭头。</p>
 <div class="section" id="id2">
 <h2>4.10.1 端点偏移量<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p>在给定若干个数据点绘制线条时，一般都是从起点（第一个点）一直画到终点（最后一个点）。可以使用 <code class="docutils literal notranslate"><span class="pre">+o</span></code> 子选项为线段两端指定偏移量，使得绘制线段时的起点和终点与输入数据中指定的起点和终点间存在一定的偏移量。该子选项的语法是:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>+o&lt;offset&gt;<span class="o">[</span>&lt;u&gt;<span class="o">]</span>
-</pre></div>
-</div>
+<p>在给定若干个数据点绘制线条时，一般都是从起点（第一个点）一直画到终点（最后一个点）。可以使用 <strong>+o</strong> 子选项为线段两端指定偏移量，使得绘制线段时的起点和终点与输入数据中指定的起点和终点间存在一定的偏移量。该子选项的语法是：
+<strong>+o</strong><em>offset</em>[<em>u</em>]</p>
 <ul class="simple">
-<li>若只给了一个 <code class="docutils literal notranslate"><span class="pre">&lt;offset&gt;</span></code>，则表示起点和终点共用同一个偏移量</li>
-<li>也可以用 <code class="docutils literal notranslate"><span class="pre">&lt;offset&gt;/&lt;offset&gt;</span></code> 分别为起点和终点指定不同的偏移量</li>
-<li>对于每个偏移量，都可以使用长度单位 <code class="docutils literal notranslate"><span class="pre">c|i|p</span></code> 或距离单位</li>
+<li>若只给了一个 <em>offset</em>，则表示起点和终点共用同一个偏移量</li>
+<li>也可以用 <em>offset</em>/<em>offset</em> 分别为起点和终点指定不同的偏移量</li>
+<li>对于每个偏移量，都可以使用长度单位 <strong>c</strong>|<strong>i</strong>|<strong>p</strong> 或距离单位</li>
 </ul>
-<p>下面的示例展示了 <code class="docutils literal notranslate"><span class="pre">+o</span></code> 子选项的用法。图中，细线和粗线使用了相同的输入数据，其中细线没有使用 <code class="docutils literal notranslate"><span class="pre">+o</span></code>，此时线段的起点和终点与数据指定的点重合；粗线在绘制线条时使用了 <code class="docutils literal notranslate"><span class="pre">-W2p+o1c/500k</span></code> 选项，即在起点处偏移1厘米，在终点处偏移500千米。</p>
+<p>下面的示例展示了 <strong>+o</strong> 子选项的用法和使用效果。图中，细线和粗线使用了相同的输入数据，其中细线没有使用 <strong>+o</strong>，此时线段的起点和终点与数据指定的点重合；粗线在绘制线条时使用了 <strong>-W2p+o1c/500k</strong> 选项，即在起点处偏移1厘米，在终点处偏移500千米。</p>
 <p><a class="reference download internal" download="" href="../../_downloads/f3f26ac1c806972b4a1693b6c6a864d2/line-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center" id="id6">
 <img alt="../../_images/line-gmtplot-0.png" src="../../_images/line-gmtplot-0.png" />
@@ -246,8 +244,8 @@
 </div>
 <div class="section" id="id3">
 <h2>4.10.2 线条平滑<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>通常情况下，在绘制线条时，两点之间是用直线连接的（地图上两点之间默认用大圆弧连接）。使用 <code class="docutils literal notranslate"><span class="pre">+s</span></code> 子选项会使用 Bezier splines 在两点之间做样条插值以得到更光滑的曲线。</p>
-<p>下图中，左图使用了 <code class="docutils literal notranslate"><span class="pre">-W2p</span></code> 选项，右边使用了 <code class="docutils literal notranslate"><span class="pre">-W2p+s</span></code>。</p>
+<p>通常情况下，在绘制线条时，两点之间是用直线连接的（地图上两点之间默认用大圆弧连接）。使用 <strong>+s</strong> 子选项会使用 Bezier splines 在两点之间做样条插值以得到更光滑的曲线。</p>
+<p>下图中，左图使用了 <strong>-W2p</strong> 选项，右边使用了 <strong>-W2p+s</strong>。</p>
 <p><a class="reference download internal" download="" href="../../_downloads/da4cf9bc3eb09490cddc3ee7365b767c/line-gmtplot-1.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center" id="id7">
 <img alt="../../_images/line-gmtplot-1.png" src="../../_images/line-gmtplot-1.png" />
@@ -256,15 +254,13 @@
 </div>
 <div class="section" id="id4">
 <h2>4.10.3 端点箭头<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
-<p>默认情况下，在绘制线段时，线段的两个端点并没有什么特别的。使用 <code class="docutils literal notranslate"><span class="pre">+v</span></code> 子选项，可以在线段的一端或两段绘制端点箭头。该子选项的语法为:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>+v<span class="o">[</span>b<span class="p">|</span>e<span class="o">]</span>&lt;vspecs&gt;
-</pre></div>
-</div>
+<p>默认情况下，在绘制线段时，线段的两个端点并没有什么特别的。使用 <strong>+v</strong> 子选项，可以在线段的一端或两段绘制端点箭头。该子选项的语法为：
+<strong>+v</strong>[<strong>b</strong>|<strong>e</strong>]<em>vspecs</em></p>
 <ul class="simple">
-<li>默认会在线段两端都加上箭头，<code class="docutils literal notranslate"><span class="pre">b|e</span></code> 表示只绘制开头或结尾的箭头</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;vspecs&gt;</span></code> 用于指定端点箭头的属性，详见 <a class="reference internal" href="../vector/"><span class="doc">绘制矢量/箭头</span></a></li>
+<li>默认会在线段两端都加上箭头，<strong>b</strong>|<strong>e</strong> 表示只绘制开头或结尾的箭头</li>
+<li><em>vspecs</em> 用于指定端点箭头的属性，详见 <a class="reference internal" href="../vector/"><span class="doc">绘制矢量/箭头</span></a></li>
 </ul>
-<p>下图中细线是通常绘制的线段，粗线使用的选项是 <code class="docutils literal notranslate"><span class="pre">-W2p+o1c/500k+vb0.2i+gred+pfaint+bc+ve0.3i+gblue</span></code>。</p>
+<p>下图中细线是通常绘制的线段，粗线使用的选项是 <strong>-W2p+o1c/500k+vb0.2i+gred+pfaint+bc+ve0.3i+gblue</strong></p>
 <p><a class="reference download internal" download="" href="../../_downloads/a3eea3566b0f798ffb5dd7b5f07e6487/line-gmtplot-2.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center" id="id8">
 <img alt="../../_images/line-gmtplot-2.png" src="../../_images/line-gmtplot-2.png" />
@@ -327,7 +323,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月19日.
+        最后更新于 2019年08月20日.
       </span>
 
     </p>

@@ -117,8 +117,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../pen/">4.4 画笔</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../fill/">4.5 填充</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../text/">4.6 文字</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../escape-character/">4.7 转义序列</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-character/">4.8 特殊字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-character/">4.7 特殊字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../escape-character/">4.8 转义序列</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vector/">4.9 绘制矢量/箭头</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../line/">4.10 线条属性</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../anchor/">4.11 锚点</a></li>
@@ -236,13 +236,13 @@
 </ol>
 <div class="section" id="id2">
 <h2>4.3.1 颜色名<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p>通过颜色名指定颜色是最直观的方式了。常见的颜色如 <code class="docutils literal notranslate"><span class="pre">white</span></code>、
-<code class="docutils literal notranslate"><span class="pre">black</span></code>、<code class="docutils literal notranslate"><span class="pre">red</span></code>、<code class="docutils literal notranslate"><span class="pre">orange</span></code>、<code class="docutils literal notranslate"><span class="pre">yellow</span></code>、<code class="docutils literal notranslate"><span class="pre">green</span></code>、
-<code class="docutils literal notranslate"><span class="pre">cyan</span></code>、<code class="docutils literal notranslate"><span class="pre">blue</span></code>、<code class="docutils literal notranslate"><span class="pre">magenta</span></code>、<code class="docutils literal notranslate"><span class="pre">gray</span></code> （或<code class="docutils literal notranslate"><span class="pre">grey</span></code>）和 <code class="docutils literal notranslate"><span class="pre">brown</span></code> 等。除 <code class="docutils literal notranslate"><span class="pre">white</span></code> 和 <code class="docutils literal notranslate"><span class="pre">black</span></code> 之外，其余的几种常见颜色名还可以加上前缀 <code class="docutils literal notranslate"><span class="pre">light</span></code>
-或 <code class="docutils literal notranslate"><span class="pre">dark</span></code>，以表示浅色和深色。比如 <code class="docutils literal notranslate"><span class="pre">lightblue</span></code>、<code class="docutils literal notranslate"><span class="pre">blue</span></code>、<code class="docutils literal notranslate"><span class="pre">darkblue</span></code>
+<p>通过颜色名指定颜色是最直观的方式了。常见的颜色如 <strong>white</strong>、
+<strong>black</strong>、<strong>red</strong>、<strong>orange</strong>、<strong>yellow</strong>、<strong>green</strong>、
+<strong>cyan</strong>、<strong>blue</strong>、<strong>magenta</strong>、<strong>gray</strong> （或<strong>grey</strong>）和 <strong>brown</strong> 等。除 <strong>white</strong> 和 <strong>black</strong> 之外，其余的几种常见颜色名还可以加上前缀 <strong>light</strong>
+或 <strong>dark</strong>，以表示浅色和深色。比如 <strong>lightblue</strong>、<strong>blue</strong>、<strong>darkblue</strong>
 分别表示浅蓝、蓝色和深蓝。</p>
-<p>所有的颜色名都是不区分大小写的，所以 <code class="docutils literal notranslate"><span class="pre">lightblue</span></code>、<code class="docutils literal notranslate"><span class="pre">LIGHTBLUE</span></code>
-或者 <code class="docutils literal notranslate"><span class="pre">LightBlue</span></code> 都是合法的颜色名。</p>
+<p>所有的颜色名都是不区分大小写的，所以 <strong>lightblue</strong>、<strong>LIGHTBLUE</strong>
+或者 <strong>LightBlue</strong> 都是合法的颜色名。</p>
 <p>GMT 支持通过颜色名指定663种颜色。下图中列出了GMT支持的所有颜色名及其对应的RGB值。</p>
 <div class="figure align-center" id="color-list">
 <a class="reference internal image-reference" href="../../_images/GMT_RGBchart_a4.png"><img alt="../../_images/GMT_RGBchart_a4.png" src="../../_images/GMT_RGBchart_a4.png" style="width: 100%;" /></a>
@@ -256,27 +256,27 @@
 <div class="section" id="rgb">
 <h2>4.3.2 RGB<a class="headerlink" href="#rgb" title="永久链接至标题">¶</a></h2>
 <p>即三原色光模型，或又称RGB颜色模型，是一种加色模型，将红（<strong>R</strong>ed）、绿（<strong>G</strong>reen）、蓝（<strong>B</strong>lue）三原色的色光以不同的比例相加，以产生多种多样的色光。</p>
-<p>GMT中可以通过 <code class="docutils literal notranslate"><span class="pre">r/g/b</span></code> 的格式来指定RGB颜色，其中 <code class="docutils literal notranslate"><span class="pre">r</span></code>、<code class="docutils literal notranslate"><span class="pre">g</span></code>、<code class="docutils literal notranslate"><span class="pre">b</span></code>
-的取值范围都是0到255，三者用反斜线 <code class="docutils literal notranslate"><span class="pre">/</span></code> 分开。</p>
+<p>GMT中可以通过 <em>r</em>/<em>g</em>/<em>b</em> 的格式来指定RGB颜色，其中 <em>r</em>、<em>g</em>、<em>b</em>
+的取值范围都是0到255，三者用反斜线 <strong>/</strong> 分开。</p>
 <p>RGB颜色示例：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">0/0/0</span></code>：黑色；</li>
-<li><code class="docutils literal notranslate"><span class="pre">255/255/255</span></code>：白色；</li>
-<li><code class="docutils literal notranslate"><span class="pre">255/0/0</span></code>：红色；</li>
-<li><code class="docutils literal notranslate"><span class="pre">0/255/0</span></code>：绿色；</li>
-<li><code class="docutils literal notranslate"><span class="pre">0/0/255</span></code>：蓝色；</li>
+<li><strong>0/0/0</strong>：黑色；</li>
+<li><strong>255/255/255</strong>：白色；</li>
+<li><strong>255/0/0</strong>：红色；</li>
+<li><strong>0/255/0</strong>：绿色；</li>
+<li><strong>0/0/255</strong>：蓝色；</li>
 </ul>
-<p>RGB颜色除了可以用上面的表示法之外，还可以用HTML中常用的表示法 <code class="docutils literal notranslate"><span class="pre">#RRGGBB</span></code>，即分别用两位的十六进制数字表示每个颜色通道，0对应的16进制是 <code class="docutils literal notranslate"><span class="pre">00</span></code>，255对应的16进制是 <code class="docutils literal notranslate"><span class="pre">FF</span></code>。例如 <code class="docutils literal notranslate"><span class="pre">#000000</span></code> 即黑色，<code class="docutils literal notranslate"><span class="pre">#FF0000</span></code> 即红色。十六进制数用大小写表示均可。</p>
+<p>RGB颜色除了可以用上面的表示法之外，还可以用HTML中常用的表示法 <strong>#</strong><em>RRGGBB</em>，即分别用两位的十六进制数字表示每个颜色通道，0对应的16进制是 <strong>00</strong>，255对应的16进制是 <strong>FF</strong>。例如 <strong>#000000</strong> 即黑色，<strong>#FF0000</strong> 即红色。十六进制数用大小写表示均可。</p>
 </div>
 <div class="section" id="hsv">
 <h2>4.3.3 HSV<a class="headerlink" href="#hsv" title="永久链接至标题">¶</a></h2>
-<p>通过 <code class="docutils literal notranslate"><span class="pre">h-s-v</span></code> 格式指定颜色，其中HSV分别代表色相（Hue）、饱和度（Saturation）和明度（Value），三者之间用破折号 <code class="docutils literal notranslate"><span class="pre">-</span></code> 分开。</p>
+<p>通过 <em>h</em>-<em>s</em>-<em>v</em> 格式指定颜色，其中HSV分别代表色相（<strong>H</strong>ue）、饱和度（<strong>S</strong>aturation）和明度（<strong>V</strong>alue），三者之间用破折号 <strong>-</strong> 分开。</p>
 <ul class="simple">
-<li>色相（H）是色彩的基本属性，就是平常所说的颜色名称（如红色、黄色等），取值范围为0到360。</li>
-<li>饱和度（S）是指色彩的纯度，越高色彩越纯，低则逐渐变灰，取值范围为0到1。</li>
-<li>明度（V）是色彩的亮度，取值范围为0（dark）到1（light）。</li>
+<li>色相（<strong>H</strong>）是色彩的基本属性，就是平常所说的颜色名称（如红色、黄色等），取值范围为0到360。</li>
+<li>饱和度（<strong>S</strong>）是指色彩的纯度，越高色彩越纯，低则逐渐变灰，取值范围为0到1。</li>
+<li>明度（<strong>V</strong>）是色彩的亮度，取值范围为0（dark）到1（light）。</li>
 </ul>
-<p>例如 <code class="docutils literal notranslate"><span class="pre">200-0.1-0.1</span></code>。</p>
+<p>例如 <strong>200-0.1-0.1</strong>。</p>
 </div>
 <div class="section" id="cmyk">
 <h2>4.3.4 CMYK<a class="headerlink" href="#cmyk" title="永久链接至标题">¶</a></h2>
@@ -287,26 +287,27 @@
 <li><strong>Y</strong>ellow：黄色</li>
 <li>blac<strong>K</strong>：定位套版色（黑色）</li>
 </ul>
-<p>四者的取值范围均为0到1，用反斜线 <code class="docutils literal notranslate"><span class="pre">/</span></code> 分开，例如 <code class="docutils literal notranslate"><span class="pre">0.2/0.3/0.4/0.4</span></code>。</p>
+<p>GMT中可以通过 <em>c</em>/<em>m</em>/<em>y</em>/<em>k</em>的方式指定CMYK格式的颜色。<em>c</em>、<em>m</em>、<em>y</em>、
+<em>k</em> 的取值范围均为0到1，用反斜线 <strong>/</strong> 分开，例如 <strong>0.2/0.3/0.4/0.4</strong>。</p>
 </div>
 <div class="section" id="id3">
 <h2>4.3.5 灰色<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>灰色是常见的一种颜色，而灰色又可以根据灰的不同程度细分为不同的灰色。指定灰色的办法很简单，用一个数值表示灰度即可，其取值范围为0到255。例如 <code class="docutils literal notranslate"><span class="pre">0</span></code> 表示黑色，<code class="docutils literal notranslate"><span class="pre">255</span></code> 表示白色，<code class="docutils literal notranslate"><span class="pre">128</span></code> 表示灰色。</p>
+<p>灰色是常见的一种颜色，而灰色又可以根据灰的不同程度细分为不同的灰色。指定灰色的办法很简单，用一个数值表示灰度即可，其取值范围为0到255。例如 0 表示黑色，255 表示白色，128 表示灰色。</p>
 <p>除了用灰度表示之外，灰色还可以用前面提到的几种形式表示：</p>
 <ol class="arabic">
 <li><p class="first">用RGB表示灰度</p>
-<p>灰色本质上就是 R=G=B 的一种颜色。因而 <code class="docutils literal notranslate"><span class="pre">128/128/128</span></code> 代表灰度为 <code class="docutils literal notranslate"><span class="pre">128</span></code>，<code class="docutils literal notranslate"><span class="pre">200/200/200</span></code> 代表灰度是 <code class="docutils literal notranslate"><span class="pre">200</span></code>。</p>
+<p>灰色本质上就是 <em>R</em>=<em>G</em>=<em>B</em> 的一种颜色。因而 <strong>128/128/128</strong> 代表灰度为 128 ，<strong>200/200/200</strong> 代表灰度是 200。</p>
 </li>
 <li><p class="first">用GMT颜色名表示灰度</p>
-<p>GMT自定义了多个名字来表示不同程度的灰色。除了前面说过的 <code class="docutils literal notranslate"><span class="pre">gray</span></code>、<code class="docutils literal notranslate"><span class="pre">lightgray</span></code> 和 <code class="docutils literal notranslate"><span class="pre">darkgray</span></code> 之外，还有 <code class="docutils literal notranslate"><span class="pre">gray0</span></code>、<code class="docutils literal notranslate"><span class="pre">gray1</span></code> 一直到 <code class="docutils literal notranslate"><span class="pre">gray100</span></code>。其中 <code class="docutils literal notranslate"><span class="pre">gray0</span></code> 即黑色，<code class="docutils literal notranslate"><span class="pre">gray100</span></code> 即白色。</p>
+<p>GMT自定义了多个颜色名来表示不同程度的灰色。除了前面说过的 <strong>gray</strong>、<strong>lightgray</strong> 和 <strong>darkgray</strong> 之外，还有 <strong>gray0</strong>、<strong>gray1</strong> 一直到 <strong>gray100</strong>。其中 <strong>gray0</strong> 即黑色，<strong>gray100</strong> 即白色。</p>
 </li>
 </ol>
 </div>
 <div class="section" id="id4">
 <h2>4.3.6 透明色<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
-<p>在上面提到的几种指定颜色的方法的基础上，还可以额外指定颜色的透明度。</p>
-<p>GMT中可以通过在颜色后加上 <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> 再加上透明度来得到不同程度的透明色。透明度的取值范围是0到100，0表示不透明，100表示全透明。</p>
-<p>例如：<code class="docutils literal notranslate"><span class="pre">red&#64;25</span></code>、<code class="docutils literal notranslate"><span class="pre">30/25/128&#64;60</span></code>。</p>
+<p>每一种颜色，都可以额外指定其透明度。</p>
+<p>GMT中可以通过在颜色后加上 <strong>&#64;</strong> 再加上透明度来得到不同程度的透明色。透明度的取值范围是0到100，0表示不透明，100表示全透明。</p>
+<p>例如：<strong>red&#64;25</strong>、<strong>30/25/128&#64;60</strong>。</p>
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
 <p class="last">PS格式不支持透明色。</p>
@@ -316,11 +317,11 @@
 <h2>4.3.7 颜色小结<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>GMT中可以用五种方法指定颜色，分别是：</p>
 <ul class="simple">
-<li>颜色名：<code class="docutils literal notranslate"><span class="pre">red</span></code></li>
-<li>RGB值：<code class="docutils literal notranslate"><span class="pre">30/25/128</span></code> 或 <code class="docutils literal notranslate"><span class="pre">#00FA84</span></code></li>
-<li>HSV值：<code class="docutils literal notranslate"><span class="pre">200-0.1-0.1</span></code></li>
-<li>CMYK值：<code class="docutils literal notranslate"><span class="pre">0.2/0.3/0.4/0.5</span></code></li>
-<li>灰度：<code class="docutils literal notranslate"><span class="pre">30</span></code></li>
+<li>颜色名：<strong>red</strong></li>
+<li>RGB值：<strong>30/25/128</strong> 或 <strong>#00FA84</strong></li>
+<li>HSV值：<strong>200-0.1-0.1</strong></li>
+<li>CMYK值：<strong>0.2/0.3/0.4/0.5</strong></li>
+<li>灰度：<strong>30</strong></li>
 </ul>
 </div>
 </div>
@@ -370,7 +371,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月19日.
+        最后更新于 2019年08月20日.
       </span>
 
     </p>
