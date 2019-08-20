@@ -214,8 +214,7 @@
 <p>有一些环境变量以及GMT配置参数，可以用于指定某些特殊用途的目录。这些环境变量和配置参数包括：</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">$GMT_SHAREDIR</span></code> GMT的share目录所在位置，通常不用设置，GMT会自动猜测其所在位置</li>
-<li><code class="docutils literal notranslate"><span class="pre">$GMT_DATADIR</span></code> 或 <a class="reference internal" href="../../conf/dir/#dir-data"><span class="std std-ref">DIR_DATA</span></a> 可以指向一个或多个目录，用于放置用户常用的数据文件。目录之间用冒号分隔（Windows下用分号分隔）。任何以斜杠 <code class="docutils literal notranslate"><span class="pre">/</span></code>
-结尾的目录会被递归搜索（Windows下不会）。若二者同时有值，以 <a class="reference internal" href="../../conf/dir/#dir-data"><span class="std std-ref">DIR_DATA</span></a>
+<li><code class="docutils literal notranslate"><span class="pre">$GMT_DATADIR</span></code> 或 <a class="reference internal" href="../../conf/dir/#dir-data"><span class="std std-ref">DIR_DATA</span></a> 可以指向一个或多个目录，用于放置用户常用的数据文件。目录之间用逗号分隔。任何以斜杠 <code class="docutils literal notranslate"><span class="pre">/</span></code> 结尾的目录会被递归搜索（Windows不支持此功能）。若二者同时有值，以 <a class="reference internal" href="../../conf/dir/#dir-data"><span class="std std-ref">DIR_DATA</span></a>
 的值优先</li>
 <li><code class="docutils literal notranslate"><span class="pre">$GMT_CACHEDIR</span></code> 或 <a class="reference internal" href="../../conf/dir/#dir-cache"><span class="std std-ref">DIR_CACHE</span></a> 用于放置GMT模块从GMT服务器上下载的临时数据</li>
 <li><code class="docutils literal notranslate"><span class="pre">$GMT_USERDIR</span></code> 用户放置自定义配置文件的地方，比如用户自定义的 <code class="file docutils literal notranslate"><span class="pre">gmt.conf</span></code>
