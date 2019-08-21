@@ -251,7 +251,7 @@ Windows下使用bat脚本，并且对bash和bat脚本的区别不太了解，强
 <div class="section" id="id3">
 <h2>3.9.2 绘制底图<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>GMT中的 <a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 模块，可以绘制带海岸线的底图，并可以给陆地和海洋分别填充不同的颜色，绘图命令及效果如下：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin first-plot pdf,png
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin layers pdf,png
 gmt coast -JH110/24c -Rg -Bg30 -Glightgreen -Slightblue -A1000 -Dc
 gmt end
 </pre></div>
@@ -259,7 +259,7 @@ gmt end
 <div class="figure align-center">
 <img alt="../../_images/layers-gmtplot-1.png" src="../../_images/layers-gmtplot-1.png" />
 </div>
-<p>GMT绘图脚本总是以 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">begin</span></code> 开始制图，并以 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">end</span></code> 结束制图。其中 <code class="docutils literal notranslate"><span class="pre">first-plot</span></code> 为生成的图件名，<code class="docutils literal notranslate"><span class="pre">pdf,png</span></code> 表示最终生成的图片格式为
+<p>GMT绘图脚本总是以 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">begin</span></code> 开始制图，并以 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">end</span></code> 结束制图。其中 <code class="docutils literal notranslate"><span class="pre">layers</span></code> 为生成的图件名，<code class="docutils literal notranslate"><span class="pre">pdf,png</span></code> 表示最终生成的图片格式为
 PDF和PNG格式。</p>
 <p>解释一下 <code class="docutils literal notranslate"><span class="pre">coast</span></code> 模块中的一些选项：</p>
 <ol class="arabic simple">
@@ -274,7 +274,7 @@ PDF和PNG格式。</p>
 <h2>3.9.3 绘制震中和台站位置<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p><a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a> 模块可以用于绘制多种不同类型的符号，比如五角星和三角形。绘图脚本如下：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-gmt begin first-plot pdf,png
+gmt begin layers pdf,png
 gmt coast -JH110/24c -Rg -Bg30 -Glightgreen -Slightblue -A1000 -Dc
 
 <span class="c1"># 绘制震中位置</span>
@@ -316,7 +316,7 @@ gmt end
 <h2>3.9.4 绘制射线路径<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">plot</span></code> 模块还可以用于绘制线段，默认情况下，<code class="docutils literal notranslate"><span class="pre">plot</span></code> 会自动用大圆路径连接地球上的两个位置，不需要额外设置。首先直接看代码：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-gmt begin first-plot pdf,png
+gmt begin layers pdf,png
 gmt coast -JH110/24c -Rg -Bg30 -Glightgreen -Slightblue -A1000 -Dc
 
 <span class="c1"># 绘制震中位置</span>
@@ -372,7 +372,7 @@ gmt end
 <h2>3.9.5 添加台站名<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>最后还需要往图画里添加台站所在地区的名字。添加文字使用 <a class="reference internal" href="../../module/text/"><span class="doc">text</span></a> 模块：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-gmt begin fist-plot pdf,png
+gmt begin layers pdf,png
 gmt coast -JH110/24c -Rg -Bg30 -Glightgreen -Slightblue -A1000 -Dc
 
 <span class="c1"># 绘制震中位置</span>
@@ -455,7 +455,7 @@ gmt end
 <p>这是因为，GMT的每一个绘图命令都会产生一个图层，后绘制的图层会覆盖在先绘制的图层的上面，即后来者居上。解决办法也很简单，先绘制线段，再绘制三角形和五角星即可。</p>
 <p>对脚本中命令的先后顺序进行微调，如下所示：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-gmt begin fist-plot pdf,png
+gmt begin layers pdf,png
 gmt coast -JH110/24c -Rg -Bg30 -Glightgreen -Slightblue -A1000 -Dc
 
 <span class="c1"># 绘制大圆路径</span>
@@ -571,7 +571,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月20日.
+        最后更新于 2019年08月21日.
       </span>
 
     </p>
