@@ -233,9 +233,7 @@
 并开始使用现代模式进行绘图。</p>
 </div>
 <p>一个最最基本的GMT绘图脚本的模板是:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
-
-gmt begin
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
 <span class="c1">#</span>
 <span class="c1"># 其它命令，包括GMT绘图命令、数据处理命令以及其它UNIX命令</span>
 <span class="c1">#</span>
@@ -244,9 +242,7 @@ gmt end
 </div>
 <p>你可以直接执行这个脚本，但是因为我们什么也没有画，所以这个脚本不会生成任何图片。</p>
 <p>绘图时我们通常需要指定图片文件名和图片格式，因而更实用的绘图脚本模板为:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
-
-gmt begin FigureName pdf
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin FigureName pdf
 <span class="c1">#</span>
 <span class="c1"># 其它命令，包括GMT绘图命令、数据处理命令以及其它UNIX命令</span>
 <span class="c1">#</span>
@@ -352,7 +348,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月21日.
+        最后更新于 2019年08月22日.
       </span>
 
     </p>
