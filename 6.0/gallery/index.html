@@ -42,7 +42,7 @@
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex/" />
     <link rel="search" title="搜索" href="../search/" />
-    <link rel="next" title="14.1 绘制底图" href="basemap/" />
+    <link rel="next" title="14.1 绘制线条" href="lines/" />
     <link rel="prev" title="13.63 xyz2grd" href="../module/xyz2grd/" /> 
 </head>
 
@@ -112,13 +112,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../chinese/">12 中文支持</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module/">13 模块手册</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">14 绘图示例</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="basemap/">14.1 绘制底图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lines/">14.2 绘制线条</a></li>
-<li class="toctree-l2"><a class="reference internal" href="beachball/">14.3 绘制震源球</a></li>
-<li class="toctree-l2"><a class="reference internal" href="earth-relief/">14.4 绘制地形起伏图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="histogram/">14.5 绘制直方图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="animation/">14.6 制作动画</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chinese-texts/">14.7 中文图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lines/">14.1 绘制线条</a></li>
+<li class="toctree-l2"><a class="reference internal" href="beachball/">14.2 绘制震源球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="earth-relief/">14.3 绘制地形起伏图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="histogram/">14.4 绘制直方图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation/">14.5 制作动画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chinese-texts/">14.6 中文图</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../api/">15 API</a></li>
@@ -211,43 +210,35 @@
 <h1>14 绘图示例<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="basemap/">14.1 绘制底图</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="basemap/#id2">14.1.1 线性坐标系</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basemap/#id3">14.1.2 对数坐标系</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basemap/#y">14.1.3 双Y轴坐标系</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basemap/#id4">14.1.4 区域地图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basemap/#id5">14.1.5 全球地图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lines/">14.1 绘制线条</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lines/#id2">14.1.1 简单线段</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lines/#id3">14.1.2 不同连接方式的线段</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lines/#id4">14.1.3 绘制不同颜色的线段</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="lines/">14.2 绘制线条</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lines/#id2">14.2.1 简单线段</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lines/#id3">14.2.2 不同连接方式的线段</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lines/#id4">14.2.3 绘制不同颜色的线段</a></li>
+<li class="toctree-l1"><a class="reference internal" href="beachball/">14.2 绘制震源球</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="beachball/#id2">14.2.1 震源球大小随震级变化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="beachball/#id3">14.2.2 固定大小的震源球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="beachball/#id4">14.2.3 震源球大小随震级变化，颜色随深度变化</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="beachball/">14.3 绘制震源球</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="beachball/#id2">14.3.1 震源球大小随震级变化</a></li>
-<li class="toctree-l2"><a class="reference internal" href="beachball/#id3">14.3.2 固定大小的震源球</a></li>
-<li class="toctree-l2"><a class="reference internal" href="beachball/#id4">14.3.3 震源球大小随震级变化，颜色随深度变化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="earth-relief/">14.3 绘制地形起伏图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="histogram/">14.4 绘制直方图</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="histogram/#id2">14.4.1 垂直直方图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="histogram/#id3">14.4.2 水平直方图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="histogram/#id4">14.4.3 累积直方图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="histogram/#id5">14.4.4 百分比直方图</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="earth-relief/">14.4 绘制地形起伏图</a></li>
-<li class="toctree-l1"><a class="reference internal" href="histogram/">14.5 绘制直方图</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="histogram/#id2">14.5.1 垂直直方图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="histogram/#id3">14.5.2 水平直方图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="histogram/#id4">14.5.3 累积直方图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="histogram/#id5">14.5.4 百分比直方图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="animation/">14.5 制作动画</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="animation/#id2">14.5.1 绘制正弦函数动画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation/#id3">14.5.2 绘制旋转的地球</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="animation/">14.6 制作动画</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="animation/#id2">14.6.1 绘制正弦函数动画</a></li>
-<li class="toctree-l2"><a class="reference internal" href="animation/#id3">14.6.2 绘制旋转的地球</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="chinese-texts/">14.7 中文图</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="chinese-texts/#id2">14.7.1 中文文字</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chinese-texts/#id3">14.7.2 中文月份</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chinese-texts/#id4">14.7.3 中文星期</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chinese-texts/">14.6 中文图</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chinese-texts/#id2">14.6.1 中文文字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chinese-texts/#id3">14.6.2 中文月份</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chinese-texts/#id4">14.6.3 中文星期</a></li>
 </ul>
 </li>
 </ul>
@@ -285,7 +276,7 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="basemap/" class="btn btn-neutral float-right" title="14.1 绘制底图" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="lines/" class="btn btn-neutral float-right" title="14.1 绘制线条" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../module/xyz2grd/" class="btn btn-neutral float-left" title="13.63 xyz2grd" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>

@@ -42,7 +42,7 @@
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="3.3 绘制海岸线" href="../coastline/" />
+    <link rel="next" title="3.3 绘制底图" href="../basemap/" />
     <link rel="prev" title="3.1 准备工作" href="../prerequisite/" /> 
 </head>
 
@@ -108,17 +108,18 @@
 <li class="toctree-l3"><a class="reference internal" href="#id3">3.2.3 GMT命令格式</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../coastline/">3.3 绘制海岸线</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lines/">3.4 绘制线条</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../symbols/">3.5 绘制符号</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../texts/">3.6 添加文字</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../legend/">3.7 添加图例</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../earth-relief/">3.8 绘制地形起伏</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../layers/">3.9 理解图层</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../oneliner/">3.10 GMT单行模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../inset/">3.11 GMT图中图模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../subplot/">3.12 GMT子图模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../multifig/">3.13 GMT多图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">3.3 绘制底图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coastline/">3.4 绘制海岸线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lines/">3.5 绘制线条</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../symbols/">3.6 绘制符号</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../texts/">3.7 添加文字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">3.8 添加图例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earth-relief/">3.9 绘制地形起伏</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../layers/">3.10 理解图层</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oneliner/">3.11 GMT单行模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">3.12 GMT图中图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">3.13 GMT子图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multifig/">3.14 GMT多图模式</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
@@ -256,7 +257,8 @@ gmt end show
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
-<p class="last">在本手册中，所有示例里 <strong>gmt end</strong> 后面都没有加上 <strong>show</strong>，这主要是制作网站时的一些技术原因所限制的。对于实际用户而言，建议总是在 <strong>gmt end</strong> 后加上 <strong>show</strong> 以便于在生成图片后预览图片效果。</p>
+<p>由于制作网站过程中的一些技术原因，本手册中的所有示例里，在 <strong>gmt begin</strong> 中指定同时生成 PNG 和 PDF 格式的图片；在 <strong>gmt end</strong> 后面都没有加上 <strong>show</strong>。</p>
+<p class="last">用户在阅读本手册时，建议只指定生成PDF格式的图片，且总是在 <strong>gmt end</strong> 后加上 <strong>show</strong> 以便于在生成图片后自动预览图片效果。</p>
 </div>
 </div>
 <div class="section" id="id2">
@@ -270,7 +272,7 @@ gmt end show
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">小技巧</p>
-<p class="last">不理解 <strong>gmt coast</strong> 这一行命令的含义？没关系，在下一节会详细介绍。</p>
+<p class="last">不理解 <strong>gmt coast</strong> 这一行命令的含义？没关系，稍后会详细介绍。</p>
 </div>
 <p><a class="reference download internal" download="" href="../../_downloads/8deba76eb849886d14b2ab4531552412/first-plot-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center" id="id4">
@@ -334,7 +336,7 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../coastline/" class="btn btn-neutral float-right" title="3.3 绘制海岸线" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../basemap/" class="btn btn-neutral float-right" title="3.3 绘制底图" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../prerequisite/" class="btn btn-neutral float-left" title="3.1 准备工作" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
