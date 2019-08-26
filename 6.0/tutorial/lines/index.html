@@ -233,19 +233,26 @@
 <p>绘制线条和多边形是日常绘图最常见的需求之一，也是所有绘图软件必备的功能。这一节我们将学习如何使用 GMT 的 <a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a> 模块绘制线段和多边形。</p>
 <div class="section" id="id2">
 <h2>3.5.1 绘制一条线段<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p>既然是要绘制一条线段，我们就必须提供线段上数据点的信息，即数据的X坐标和Y坐标。因而我们的输入数据中需要有两列，第一列为X坐标，第二列为Y坐标。</p>
-<p>以下面的数据为例，这个数据中包含了三个坐标点的信息:</p>
+<p>要绘制一条线段，就必须提供线段上数据点的信息，即数据的X坐标和Y坐标。
+<a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a> 会自动将输入数据中相邻的两点连接起来。</p>
+<p>以下面的数据为例，这个数据中包含了三个坐标点 (2,2)、(8,2) 和 (5,7):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">2</span>   <span class="m">2</span>
 <span class="m">8</span>   <span class="m">2</span>
 <span class="m">5</span>   <span class="m">7</span>
 </pre></div>
 </div>
-<p>为了利用这三个数据点绘制一条线段，我们将数据保存到文件名为 <code class="file docutils literal notranslate"><span class="pre">lines-1.dat</span></code> 的文件中，供下面的GMT脚本使用。</p>
-<p>下面的例子中，我们使用 <strong>basemap</strong> 模块绘制了一张底图，并使用 <strong>plot</strong> 模块绘制输入文件 <code class="file docutils literal notranslate"><span class="pre">lines-1.dat</span></code> 中的数据。</p>
+<p>下面的例子中，我们首先使用 UNIX 下的 <code class="docutils literal notranslate"><span class="pre">cat</span></code> 命令将数据写入到文件
+<code class="file docutils literal notranslate"><span class="pre">points.dat</span></code> 中，然后使用 <strong>basemap</strong> 模块绘制了一张底图，并使用 <strong>plot</strong> 模块绘制输入文件 <code class="file docutils literal notranslate"><span class="pre">points.dat</span></code> 中的数据。</p>
 <p>图中，<strong>plot</strong> 模块在绘图时自动将三个点连接起来，绘制出了一条线段。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin SimpleLine png,pdf
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat &gt; points.dat <span class="s">&lt;&lt; EOF</span>
+<span class="s">2   2</span>
+<span class="s">8   2</span>
+<span class="s">5   7</span>
+<span class="s">EOF</span>
+
+gmt begin SimpleLine png,pdf
 gmt basemap -JX10c -R0/10/0/10 -Baf
-gmt plot lines-1.dat
+gmt plot points.dat
 gmt end
 </pre></div>
 </div>
@@ -253,10 +260,16 @@ gmt end
 <a class="reference internal image-reference" href="../../_images/lines-gmtplot-0.png"><img alt="../../_images/lines-gmtplot-0.png" src="../../_images/lines-gmtplot-0.png" style="width: 50%;" /></a>
 </div>
 <p>想要修改线段的粗细或颜色？很简单，可以使用 <strong>plot</strong> 模块的 <strong>-W</strong> 选项设置画笔属性。画笔属性包括三个部分：线宽、颜色以及线型，三者之间用逗号隔开。</p>
-<p>下面的脚本中，我们给 <strong>plot</strong> 模块添加了 <strong>-W2p,red,-</strong> 选项，设置了画笔属性为 <strong>2p</strong> 宽的红色虚线。<strong>p</strong> 是GMT中的一个长度单位。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin SimpleLine png,pdf
+<p>下面的脚本中，我们给 <strong>plot</strong> 模块添加了 <strong>-W2p,red,-</strong> 选项，即设置了画笔属性为 <strong>2p</strong> 宽的红色虚线。<strong>p</strong> 是GMT中的一个长度单位。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat &gt; points.dat <span class="s">&lt;&lt; EOF</span>
+<span class="s">2   2</span>
+<span class="s">8   2</span>
+<span class="s">5   7</span>
+<span class="s">EOF</span>
+
+gmt begin SimpleLine png,pdf
 gmt basemap -JX10c -R0/10/0/10 -Baf
-gmt plot lines-1.dat -W2p,red,-
+gmt plot points.dat -W2p,red,-
 gmt end
 </pre></div>
 </div>
@@ -269,9 +282,15 @@ gmt end
 <div class="section" id="id3">
 <h2>3.5.2 绘制一个多边形<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p><strong>plot</strong> 在绘制线段时默认是不将线段首尾连接起来的，可以使用 <strong>-L</strong> 选项将线段的首尾连接起来，构成了一个闭合多边形。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin polygon png,pdf
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat &gt; points.dat <span class="s">&lt;&lt; EOF</span>
+<span class="s">2   2</span>
+<span class="s">8   2</span>
+<span class="s">5   7</span>
+<span class="s">EOF</span>
+
+gmt begin polygon png,pdf
 gmt basemap -JX10c -R0/10/0/10 -Baf
-gmt plot lines-1.dat -W4p,lightblue -L
+gmt plot points.dat -W4p,lightblue -L
 gmt end
 </pre></div>
 </div>
@@ -279,9 +298,15 @@ gmt end
 <a class="reference internal image-reference" href="../../_images/lines-gmtplot-2.png"><img alt="../../_images/lines-gmtplot-2.png" src="../../_images/lines-gmtplot-2.png" style="width: 50%;" /></a>
 </div>
 <p>我们还可以使用 <strong>-G</strong> 选项为闭合多边形填充颜色。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin polygon png,pdf
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat &gt; points.dat <span class="s">&lt;&lt; EOF</span>
+<span class="s">2   2</span>
+<span class="s">8   2</span>
+<span class="s">5   7</span>
+<span class="s">EOF</span>
+
+gmt begin polygon png,pdf
 gmt basemap -JX10c -R0/10/0/10 -Baf
-gmt plot lines-1.dat -W4p,lightblue -Glightred -L
+gmt plot points.dat -W4p,lightblue -Glightred -L
 gmt end
 </pre></div>
 </div>
@@ -289,9 +314,15 @@ gmt end
 <a class="reference internal image-reference" href="../../_images/lines-gmtplot-3.png"><img alt="../../_images/lines-gmtplot-3.png" src="../../_images/lines-gmtplot-3.png" style="width: 50%;" /></a>
 </div>
 <p>这样我们就得到了一个内部为浅红色、轮廓为浅蓝色的多边形了。如果只想要填充颜色而不绘制轮廓，只需要使用 <strong>-G</strong> 而不使用 <strong>-W</strong> 即可。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin polygon png,pdf
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat &gt; points.dat <span class="s">&lt;&lt; EOF</span>
+<span class="s">2   2</span>
+<span class="s">8   2</span>
+<span class="s">5   7</span>
+<span class="s">EOF</span>
+
+gmt begin polygon png,pdf
 gmt basemap -JX10c -R0/10/0/10 -Baf
-gmt plot lines-1.dat -Glightred -L
+gmt plot points.dat -Glightred -L
 gmt end
 </pre></div>
 </div>
@@ -301,7 +332,7 @@ gmt end
 </div>
 <div class="section" id="id4">
 <h2>3.5.3 绘制多条线段<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
-<p>学会了如何绘制一条线段，我们就可以通过多次调用 <strong>plot</strong> 模块来绘制多条线段了。但是，如果画几十条线段就需要写几十行 <strong>plot</strong> 命令并准确几十个输入文件了，这样太麻烦也太不切实际了。</p>
+<p>学会了如何绘制一条线段，我们就可以通过多次调用 <strong>plot</strong> 模块来绘制多条线段了。但是，如果画几十条线段就需要写几十行 <strong>plot</strong> 命令并准备几十个输入文件了，这样太麻烦也太不切实际了。</p>
 <p>实际上，我们可以将所有线段的数据点都保存到一个输入文件中，例如:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;
 <span class="m">1</span>   <span class="m">2</span>
@@ -313,11 +344,22 @@ gmt end
 <span class="m">6</span>   <span class="m">8</span>
 </pre></div>
 </div>
-<p>每个线段都包含了三个数据点，在第一个数据点之前有一个 <strong>&gt;</strong> 用于标记新的一段数据的开始。这种数据称之为<strong>多段数据</strong>。我们将上面的数据保存到文件 <code class="file docutils literal notranslate"><span class="pre">lines-2.dat</span></code> 中，供下面的脚本使用。</p>
+<p>每个线段都包含了若干个数据点，在第一个数据点之前有一个 <strong>&gt;</strong> 用于标记新的一段数据的开始。这种数据称之为<strong>多段数据</strong>。</p>
 <p>与绘制一条线段的命令完全相同，由于输入数据中有两段数据，<strong>plot</strong> 模块为我们绘制出了两条线段。同样的，两条线段均为线宽为 <strong>1p</strong> 的红色实线。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin MultiLines png,pdf
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat &gt; lines.dat <span class="s">&lt;&lt; EOF</span>
+<span class="s">&gt;</span>
+<span class="s">1   2</span>
+<span class="s">4   2</span>
+<span class="s">4   8</span>
+<span class="s">&gt;</span>
+<span class="s">9   2</span>
+<span class="s">6   2</span>
+<span class="s">6   8</span>
+<span class="s">EOF</span>
+
+gmt begin MultiLines png,pdf
 gmt basemap -JX10c -R0/10/0/10 -Baf
-gmt plot lines-2.dat -W1p,red
+gmt plot lines.dat -W1p,red
 gmt end
 </pre></div>
 </div>
@@ -328,9 +370,20 @@ gmt end
 <div class="section" id="id5">
 <h2>3.5.4 绘制多个多边形<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>使用相同的输入数据，通过加上 <strong>-L</strong> 可以构成闭合多边形，加上 <strong>-G</strong> 为多边形设置填充色。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin MultiPolygons png,pdf
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat &gt; lines.dat <span class="s">&lt;&lt; EOF</span>
+<span class="s">&gt;</span>
+<span class="s">1   2</span>
+<span class="s">4   2</span>
+<span class="s">4   8</span>
+<span class="s">&gt;</span>
+<span class="s">9   2</span>
+<span class="s">6   2</span>
+<span class="s">6   8</span>
+<span class="s">EOF</span>
+
+gmt begin MultiPolygons png,pdf
 gmt basemap -JX10c -R0/10/0/10 -Baf
-gmt plot lines-2.dat -W1p,red -L -Glightred
+gmt plot lines.dat -W1p,red -L -Glightred
 gmt end
 </pre></div>
 </div>
@@ -405,7 +458,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月23日.
+        最后更新于 2019年08月26日.
       </span>
 
     </p>
