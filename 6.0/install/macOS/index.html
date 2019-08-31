@@ -244,6 +244,12 @@ $ brew install graphicsmagick ffmpeg
 </pre></div>
 </div>
 </li>
+<li><p class="first">卸载GMT</p>
+<p>若想要卸载GMT，可直接到 Application 目录下找到 GMT 包，直接删除即可。</p>
+</li>
+<li><p class="first">升级GMT</p>
+<p>GMT包不支持自动升级，因而要先删除原GMT包，再下载新版安装包并按照上面的步骤重新安装，即实现升级GMT。</p>
+</li>
 </ol>
 </div>
 <div class="section" id="homebrew">
@@ -275,6 +281,16 @@ $ brew install graphicsmagick ffmpeg
 <li><p class="first">重新打开一个终端，检测安装是否成功:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt --version
 <span class="m">6</span>.0.0
+</pre></div>
+</div>
+</li>
+<li><p class="first">升级GMT。当有新版本发布时，可以执行如下命令升级GMT:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew upgrade gmt
+</pre></div>
+</div>
+</li>
+<li><p class="first">卸载GMT。执行如下命令即可卸载GMT:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew uninstall gmt
 </pre></div>
 </div>
 </li>
@@ -327,7 +343,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年08月26日.
+        最后更新于 2019年08月31日.
       </span>
 
     </p>
