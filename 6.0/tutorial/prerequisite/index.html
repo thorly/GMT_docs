@@ -249,18 +249,24 @@ and volunteers from around the world.
 GMT is distributed under the GNU LGP License <span class="o">(</span>http://www.gnu.org/licenses/lgpl.html<span class="o">)</span>.
 
 usage: gmt <span class="o">[</span>options<span class="o">]</span>
-       gmt &lt;module name&gt; <span class="o">[</span>&lt;module-options&gt;<span class="o">]</span>
+    gmt &lt;module name&gt; <span class="o">[</span>&lt;module-options&gt;<span class="o">]</span>
 
 options:
 --help            List descriptions of available GMT modules.
+--new-script      Write GMT modern mode script template to stdout.
 --show-bindir     Show directory with GMT executables.
+--show-citation   Show the most recent citation <span class="k">for</span> GMT.
 --show-cores      Show number of available cores.
 --show-datadir    Show directory/ies with user data.
+--show-dataserver Show URL of the remote GMT data server.
+--show-doi        Show the DOI <span class="k">for</span> the current release.
 --show-modules    Show all module names.
 --show-library    Show path of the shared GMT library.
 --show-plugindir  Show directory <span class="k">for</span> plug-ins.
 --show-sharedir   Show directory <span class="k">for</span> shared GMT resources.
 --version         Print GMT version number.
+
+<span class="k">if</span> &lt;module-options&gt; is <span class="s1">&#39;=&#39;</span> we call <span class="nb">exit</span> <span class="o">(</span><span class="m">0</span><span class="o">)</span> <span class="k">if</span> module exist and non-zero otherwise.
 </pre></div>
 </div>
 <p>从中可以看到GMT的版本，请确保你所使用的GMT版本是与本手册的版本一致。</p>
@@ -379,7 +385,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年09月03日.
+        最后更新于 2019年09月05日.
       </span>
 
     </p>
