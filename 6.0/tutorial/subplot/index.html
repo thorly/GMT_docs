@@ -242,7 +242,7 @@ N行M列的规则网格区域，每个网格区域内都可以包含一张独立
 <p>定义了一个2行3列的子图布局。<strong>-Fs5c/3c</strong> 则指定了每个子图区域的宽度为5厘米，高度为3厘米。相邻子图之间的间隔则可以用 <strong>-M</strong> 选项控制。最终得到的子图布局如下图所示：</p>
 <p><a class="reference download internal" download="" href="../../_downloads/13c5b89907694106908cd5c5aca35f4e/subplot-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/subplot-gmtplot-0.png"><img alt="../../_images/subplot-gmtplot-0.png" src="../../_images/subplot-gmtplot-0.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../../_images/subplot-gmtplot-01.png"><img alt="../../_images/subplot-gmtplot-01.png" src="../../_images/subplot-gmtplot-01.png" style="width: 80%;" /></a>
 </div>
 <p><strong>subplot set</strong> 用于激活指定的子图，接下来的所有绘图命令都将在该子图内进行绘制。为了指定某个子图，则需要知道每个子图的编号。GMT中可以通过 <strong>行号,列号</strong> 或者
 <strong>索引号</strong> （即第几个子图）的方式来指定子图。</p>
@@ -283,7 +283,7 @@ gmt end
 </pre></div>
 </div>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/subplot-gmtplot-1.png"><img alt="../../_images/subplot-gmtplot-1.png" src="../../_images/subplot-gmtplot-1.png" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="../../_images/subplot-gmtplot-11.png"><img alt="../../_images/subplot-gmtplot-11.png" src="../../_images/subplot-gmtplot-11.png" style="width: 60%;" /></a>
 </div>
 <p>在这个例子中，我们用 <strong>subplot begin</strong> 定义了一个2行2列（<strong>2x2</strong>）的子图布局，每个子图区域宽5厘米高3厘米（<strong>-Fs5c/3c</strong>）。除此之外，我们还使用了一些可选选项对图的细节进行微调：</p>
 <ul class="simple">
@@ -322,7 +322,7 @@ gmt end
 </pre></div>
 </div>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/subplot-gmtplot-2.png"><img alt="../../_images/subplot-gmtplot-2.png" src="../../_images/subplot-gmtplot-2.png" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="../../_images/subplot-gmtplot-21.png"><img alt="../../_images/subplot-gmtplot-21.png" src="../../_images/subplot-gmtplot-21.png" style="width: 60%;" /></a>
 </div>
 <p><strong>-SRl</strong> 表示一行内（<strong>R</strong>ow）的子图共用Y轴，且只在左边（<strong>l</strong>）轴显示标注，
 <strong>-SCb</strong> 表示一列内（<strong>C</strong>olumn）的子图共用X轴，且只在底部（<strong>b</strong>）轴显示标注。</p>
