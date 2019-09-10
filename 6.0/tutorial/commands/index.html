@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.2 绘制第一张图 &mdash; GMT中文手册</title>
+  <title>3.2 命令初探 &mdash; GMT中文手册</title>
   
 
   
@@ -17,7 +17,7 @@
   
   
   
-    <link rel="canonical" href="https://docs.gmt-china.org/latest/tutorial/first-plot.html"/>
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/tutorial/commands.html"/>
   
 
   
@@ -102,7 +102,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../">3 入门教程</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../get-started/">3.1 GMT初探</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.2 绘制第一张图</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.2 命令初探</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#gmt">3.2.1 GMT绘图脚本模板</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id2">3.2.2 绘制第一张图</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">3.2.3 GMT命令格式</a></li>
@@ -200,14 +200,14 @@
         
           <li><a href="../">3 入门教程</a> &raquo;</li>
         
-      <li>3.2 绘制第一张图</li>
+      <li>3.2 命令初探</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/tutorial/first-plot.rst" class="fa fa-github"> 编辑本页</a>
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/tutorial/commands.rst" class="fa fa-github"> 编辑本页</a>
             
           
         
@@ -222,7 +222,8 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>3.2 绘制第一张图<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>3.2 命令初探<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>上一节中我们使用GMT绘制了第一张图，但是没有对其中的细节做任何的介绍。这一节我们将简单介绍一下GMT的命令。</p>
 <div class="section" id="gmt">
 <h2>3.2.1 GMT绘图脚本模板<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
 <p>GMT在绘图时，总是以 <a class="reference internal" href="../../module/begin/"><span class="doc">begin</span></a> 开始，并以 <a class="reference internal" href="../../module/end/"><span class="doc">end</span></a> 结束。所有的<strong>绘图命令</strong>都放在 <strong>begin</strong> 与 <strong>end</strong> 之间。</p>
@@ -274,9 +275,13 @@ gmt end show
 <p class="first admonition-title">小技巧</p>
 <p class="last">不理解 <strong>gmt coast</strong> 这一行命令的含义？没关系，稍后会详细介绍。</p>
 </div>
-<p><a class="reference download internal" download="" href="../../_downloads/8deba76eb849886d14b2ab4531552412/first-plot-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="admonition tip">
+<p class="first admonition-title">小技巧</p>
+<p class="last">想了解 <strong>gmt coast</strong> 的具体用法？打开终端，敲入 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">docs</span> <span class="pre">coast</span></code>，GMT会自动帮你打开 <strong>coast</strong> 模块的说明文档。</p>
+</div>
+<p><a class="reference download internal" download="" href="../../_downloads/e1a810492fb52b45ec677c1f4ba731bc/commands-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center" id="id4">
-<a class="reference internal image-reference" href="../../_images/first-plot-gmtplot-0.png"><img alt="../../_images/first-plot-gmtplot-0.png" src="../../_images/first-plot-gmtplot-0.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../../_images/commands-gmtplot-0.png"><img alt="../../_images/commands-gmtplot-0.png" src="../../_images/commands-gmtplot-0.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-text">使用GMT绘制的第一张图</span></p>
 </div>
 </div>
