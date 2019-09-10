@@ -325,16 +325,20 @@
 <div class="admonition tip">
 <p class="first admonition-title">小技巧</p>
 <p>由于第一次使用地形数据时，GMT需要从服务器下载数据，通常会需要很长时间。建议用户可以在闲置时提前将精度为15弧秒到60弧秒的地形数据下载到自己的计算机上。</p>
-<p>Linux和macOS用户可以执行如下批量下载脚本:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> res in 60m 30m 20m 15m 10m 06m 05m 04m 03m 02m 01m 30s 15s<span class="p">;</span> <span class="k">do</span>
-    gmt which -Gu @earth_relief_<span class="si">${</span><span class="nv">res</span><span class="si">}</span>
-<span class="k">done</span>
-</pre></div>
-</div>
-<p>Windows用户可以打开CMD执行如下批量下载命令:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> %%i in <span class="o">(</span>60m 30m 20m 15m 10m 06m 05m 04m 03m 02m 01m 30s 15s<span class="o">)</span> <span class="k">do</span> <span class="o">(</span>
-    gmt which -Gu @earth_relief_%%i
-<span class="o">)</span>
+<p>可以复制并执行如下命令以下载不同精度的地形数据:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt which -Gu @earth_relief_60m
+gmt which -Gu @earth_relief_30m
+gmt which -Gu @earth_relief_20m
+gmt which -Gu @earth_relief_15m
+gmt which -Gu @earth_relief_10m
+gmt which -Gu @earth_relief_06m
+gmt which -Gu @earth_relief_05m
+gmt which -Gu @earth_relief_04m
+gmt which -Gu @earth_relief_03m
+gmt which -Gu @earth_relief_02m
+gmt which -Gu @earth_relief_01m
+gmt which -Gu @earth_relief_30s
+gmt which -Gu @earth_relief_15s
 </pre></div>
 </div>
 <p class="last">不建议提前下载1弧秒和3弧秒的地形数据，主要原因在于，这两套数据占据硬盘空间太大。基于同样的理由，GMT服务器上这两套数据不是以单个文件的形式存放，而是被分成了多个小块，当用户需要绘制某个区域的高精度地形时，GMT会自动下载该区域的所有区块的地形数据，然后合并成单个网格数据供用户使用。</p>
