@@ -105,6 +105,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.3 macOS 下安装 GMT</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#gmt">2.3.1 使用 GMT 安装包</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#homebrew">2.3.2 使用 homebrew 安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#macports">2.3.3 使用 macports 安装</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../cross-platform/">2.4 跨平台GMT安装方案</a></li>
@@ -296,6 +297,40 @@ $ brew install graphicsmagick ffmpeg
 </li>
 </ol>
 </div>
+<div class="section" id="macports">
+<h2>2.3.3 使用 macports 安装<a class="headerlink" href="#macports" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="https://www.macports.org/">macports</a> 是 macOS 下的第三方软件包管理工具。</p>
+<ol class="arabic">
+<li><p class="first">安装GMT:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo port install gdal +curl +geos +hdf5 +netcdf
+$ sudo port install gmt6
+</pre></div>
+</div>
+</li>
+<li><p class="first">安装GMT依赖的其他软件</p>
+<blockquote>
+<div><p>$ sudo port install ghostscript graphicsmagick ffmpeg</p>
+</div></blockquote>
+</li>
+<li><p class="first">重新打开一个终端，检测安装是否成功:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt --version
+<span class="m">6</span>.0.0rc4
+</pre></div>
+</div>
+</li>
+<li><p class="first">升级GMT。当有新版本发布时，可以执行如下命令升级GMT:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo port selfupdate
+$ sudo port upgrade gmt6
+</pre></div>
+</div>
+</li>
+<li><p class="first">卸载GMT。执行如下命令即可卸载GMT:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo port uninstall gmt6
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
 </div>
 
 
@@ -343,7 +378,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年09月11日.
+        最后更新于 2019年09月16日.
       </span>
 
     </p>
