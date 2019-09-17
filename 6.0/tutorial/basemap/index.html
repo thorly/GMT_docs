@@ -224,11 +224,6 @@
             
   <div class="section" id="id1">
 <h1>3.3 绘制底图<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<div class="admonition note">
-<p class="first admonition-title">注解</p>
-<p>由于制作网站过程中的一些技术原因，本手册中的所有示例里，在 <strong>gmt begin</strong> 中指定同时生成 PNG 和 PDF 格式的图片；在 <strong>gmt end</strong> 后面都没有加上 <strong>show</strong>。</p>
-<p class="last">用户在阅读本手册时，建议只指定生成PDF格式的图片，且总是在 <strong>gmt end</strong> 后加上 <strong>show</strong> 以便于在生成图片后自动预览图片效果。</p>
-</div>
 <p>GMT可以绘制多种不同类型的底图，包括全球地图、区域地图，以及线性坐标轴、对数轴、指数轴、极坐标轴，甚至3D坐标轴。</p>
 <p>这一节我们将通过使用 <a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 和 <a class="reference internal" href="../../module/basemap/"><span class="doc">basemap</span></a> 模块绘制不同类型的底图，并了解GMT中 <strong>-J</strong>、<strong>-R</strong>和 <strong>-B</strong> 选项的基本用法。</p>
 <div class="section" id="id2">
@@ -237,7 +232,7 @@
 <p>下面用最简单的命令绘制了一张全球地图。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GlobalMap png,pdf
 gmt coast -JH180/12c -R0/360/-90/90 -W0.5p -A10000
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center" id="id6">
@@ -252,7 +247,7 @@ gmt end
 <p>上面使用了非常简单的GMT命令即绘制出了一张全球地图的底图，但其跟我们常见的全球地图比还缺了个底图边框。GMT中可以使用 <strong>-B</strong> 选项为地理底图加上边框并绘制经纬线。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GlobalMap png,pdf
 gmt coast -JH180/12c -Rg -Bg -W0.5p -A10000
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center" id="id7">
@@ -283,7 +278,7 @@ gmt end
 <p>下面的GMT命令绘制了一张新西兰地图。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin NewZealandMap png,pdf
 gmt coast -JM12c -RNZ -Ba -W0.5p -A10000
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center" id="id8">
@@ -301,7 +296,7 @@ gmt end
 <strong>-R165/180/-48/-32</strong> 指定绘图区域。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin NewZealandMap png,pdf
 gmt coast -JM12c -R165/180/-48/-32 -Ba -W0.5p -A10000
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center" id="id9">
@@ -317,7 +312,7 @@ gmt end
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin NewZealandMap png,pdf
 gmt coast -JM12c -R165/180/-48/-32 -Bxa4 -Bya3 -BWSen+t<span class="s2">&quot;New Zealand&quot;</span> -W0.5p -A10000
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center" id="id10">
@@ -338,7 +333,7 @@ gmt end
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin linearXY png,pdf
 gmt basemap -R10/70/-4/8 -JX8c/5c -Bxa10f5g10+l<span class="s2">&quot;X Label&quot;</span> -Bya4f2g2+l<span class="s2">&quot;Y Label&quot;</span> -BWSen+t<span class="s2">&quot;Linear X-Y Plot&quot;</span>
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center" id="id11">
@@ -359,7 +354,7 @@ gmt end
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin 3DMap png,pdf
 gmt basemap -R10/70/-4/8/-10/10 -JX8c5c -JZ5c -Bxa10+lX -Bya4+lY -Bzaf+lDepth -BSEwnZ+b+t<span class="s1">&#39;3D Plot&#39;</span> -p130/30
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center" id="id12">
@@ -414,7 +409,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年09月16日.
+        最后更新于 2019年09月17日.
       </span>
 
     </p>

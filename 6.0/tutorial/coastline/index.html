@@ -237,7 +237,7 @@
 0.5p宽的黑色线条。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin coastline png,pdf
 gmt coast -R-130/-50/20/60 -JM15c -Baf -W0.5p,black
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center" id="id7">
@@ -248,7 +248,7 @@ gmt end
 <p>因而，我们可以在使用 <strong>-W</strong> 选项时指定要绘制哪一个等级的岸线。下面的脚本中，我们使用 <strong>-W1/0.5p,black</strong> 表示用 0.5p 宽的黑色线条绘制1级海岸线。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin coastline png,pdf
 gmt coast -R-130/-50/20/60 -JM15c -Baf -W1/0.5p,black
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center" id="id8">
@@ -259,7 +259,7 @@ gmt end
 绘制1p宽的浅红色湖岸线。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin coastline png,pdf
 gmt coast -R-130/-50/20/60 -JM15c -Baf -W1/0.5p,black -W2/1p,lightred
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center" id="id9">
@@ -272,7 +272,7 @@ gmt end
 <p>上图看上去依然有些乱。主要是因为美国有大大小小的很多岛屿和湖泊，GMT默认会把这些岛屿和湖泊都画出来。如果能够只绘制比较大的岛屿或湖泊就好了，我们可以通过 <strong>-A</strong> 选项设置要绘制的对象的最小面积（单位为平方千米）。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin coastline png,pdf
 gmt coast -R-130/-50/20/60 -JM15c -Baf -W1/0.5p,black -W2/1p,lightred -A5000
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center" id="id10">
@@ -286,7 +286,7 @@ gmt end
 <p>上面介绍了如何使用 <strong>-W</strong> 绘制海岸线和湖岸线。我们还可以不绘制岸线，而是为陆地和水体设置不同的填充色。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin coastline png,pdf
 gmt coast -R-130/-50/20/60 -JM15c -Baf -A5000 -Gred -Slightblue -Clightred
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center" id="id11">
@@ -303,7 +303,7 @@ gmt end
 <strong>-N2</strong> 表示绘制州界/省界线（目前只有美洲各国以及澳大利亚的国界的数据）。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin coastline png,pdf
 gmt coast -R-130/-50/20/60 -JM15c -Baf -A5000 -Gred -Slightblue -Clightred -N1/1p -N2/0.25p
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center" id="id12">
@@ -331,7 +331,7 @@ gmt end
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin coastline png,pdf
 gmt coast -R-130/-50/20/60 -JM15c -Baf -A5000 -Gred -Slightblue -Clightred -Lg-60/25+c25+w1000k+f+u
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center" id="id13">
@@ -386,7 +386,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年09月16日.
+        最后更新于 2019年09月17日.
       </span>
 
     </p>

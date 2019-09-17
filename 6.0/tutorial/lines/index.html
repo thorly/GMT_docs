@@ -225,11 +225,6 @@
             
   <div class="section" id="id1">
 <h1>3.5 绘制线段和多边形<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<div class="admonition note">
-<p class="first admonition-title">注解</p>
-<p>由于制作网站过程中的一些技术原因，本手册中的所有示例里，在 <strong>gmt begin</strong> 中指定同时生成 PNG 和 PDF 格式的图片；在 <strong>gmt end</strong> 后面都没有加上 <strong>show</strong>。</p>
-<p class="last">用户在阅读本手册时，建议只指定生成PDF格式的图片，且总是在 <strong>gmt end</strong> 后加上 <strong>show</strong> 以便于在生成图片后自动预览图片效果。</p>
-</div>
 <p>绘制线条和多边形是日常绘图最常见的需求之一，也是所有绘图软件必备的功能。这一节我们将学习如何使用 GMT 的 <a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a> 模块绘制线段和多边形。</p>
 <div class="section" id="id2">
 <h2>3.5.1 绘制一条线段<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
@@ -253,7 +248,7 @@
 gmt begin SimpleLine png,pdf
 gmt basemap -JX10c -R0/10/0/10 -Baf
 gmt plot points.dat
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center">
@@ -270,7 +265,7 @@ gmt end
 gmt begin SimpleLine png,pdf
 gmt basemap -JX10c -R0/10/0/10 -Baf
 gmt plot points.dat -W2p,red,-
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center">
@@ -291,7 +286,7 @@ gmt end
 gmt begin polygon png,pdf
 gmt basemap -JX10c -R0/10/0/10 -Baf
 gmt plot points.dat -W4p,lightblue -L
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center">
@@ -307,7 +302,7 @@ gmt end
 gmt begin polygon png,pdf
 gmt basemap -JX10c -R0/10/0/10 -Baf
 gmt plot points.dat -W4p,lightblue -Glightred -L
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center">
@@ -323,7 +318,7 @@ gmt end
 gmt begin polygon png,pdf
 gmt basemap -JX10c -R0/10/0/10 -Baf
 gmt plot points.dat -Glightred -L
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center">
@@ -360,7 +355,7 @@ gmt end
 gmt begin MultiLines png,pdf
 gmt basemap -JX10c -R0/10/0/10 -Baf
 gmt plot lines.dat -W1p,red
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center">
@@ -384,7 +379,7 @@ gmt end
 gmt begin MultiPolygons png,pdf
 gmt basemap -JX10c -R0/10/0/10 -Baf
 gmt plot lines.dat -W1p,red -L -Glightred
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center">
@@ -404,7 +399,7 @@ gmt begin map png,pdf
 gmt coast -JH180/12c -Rg -B0 -W0.5p -A10000
 gmt plot twopoints.dat -W2p,red
 gmt plot twopoints.dat -W2p,blue -A
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center">
@@ -458,7 +453,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年09月16日.
+        最后更新于 2019年09月17日.
       </span>
 
     </p>

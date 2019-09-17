@@ -241,7 +241,7 @@
 <p>下面我们将使用 <strong>grdimage</strong> 模块绘制5弧分精度的全球地形起伏数据（<code class="file docutils literal notranslate"><span class="pre">&#64;earth_relief_05m</span></code>）。不同的高程用不同的颜色表示，从中我们很容易看出不同地区的地形变化。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin global_relief png,pdf
 gmt grdimage @earth_relief_05m -JH180/10c
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center" id="id7">
@@ -258,7 +258,7 @@ gmt end
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin taiwan_relief png,pdf
 gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center" id="id8">
@@ -272,7 +272,7 @@ gmt end
 <p>下面的示例中，我们加上了 <strong>-I+d</strong> 以增加光照效果。跟上图比一比，是否图片更加立体也更加美观了呢？</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin taiwan_relief png,pdf
 gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen -I+d
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center" id="id9">
@@ -287,7 +287,7 @@ gmt end
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin taiwan_relief png,pdf
 gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen -I+d
 gmt colorbar
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center">
@@ -297,7 +297,7 @@ gmt end
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin taiwan_relief png,pdf
 gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen -I+d
 gmt colorbar -Bxaf+l<span class="s2">&quot;Elevation (m)&quot;</span>
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center">
@@ -308,7 +308,7 @@ gmt end
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin taiwan_relief png,pdf
 gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen -I+d
 gmt colorbar -DJMR+w10c+o1.5c/0c+ml -Bxa1000f+l<span class="s2">&quot;Elevation (m)&quot;</span>
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center">
@@ -325,7 +325,7 @@ gmt basemap -JM15c -R118/125/20/26 -Baf -BWSen
 gmt makecpt -Cglobe -T-8000/8000
 gmt grdimage @earth_relief_30s -I+d
 gmt colorbar -Bxa2000+l<span class="s2">&quot;Elevation/m&quot;</span>
-gmt end
+gmt end show
 </pre></div>
 </div>
 <div class="figure align-center">
@@ -379,7 +379,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年09月16日.
+        最后更新于 2019年09月17日.
       </span>
 
     </p>
