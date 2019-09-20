@@ -316,33 +316,7 @@
 <code class="docutils literal notranslate"><span class="pre">-W</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项时才有效。</p>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;dx&gt;</span></code> 可以是具体的距离值也可以接 <code class="docutils literal notranslate"><span class="pre">%</span></code> 表示空白与当前字号的百分比。例如 <code class="docutils literal notranslate"><span class="pre">-C1c/1c</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-C20%/30%</span></code>。</p>
 <p>下图展示了 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 选项的作用。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-gmt pstext -R0/3/-0.1/1.5 -Jx1i -P -K -C0.2i -TO -Wthick -F+f36p,Helvetica-Bold <span class="s">&lt;&lt; EOF &gt; GMT_pstext_clearance.ps</span>
-<span class="s">1.5	0.5	My Text</span>
-<span class="s">EOF</span>
-gmt pstext -R -J -O -K -C0 -Wthin,- -F+f36p,Helvetica-Bold <span class="s">&lt;&lt; EOF &gt;&gt; GMT_pstext_clearance.ps</span>
-<span class="s">1.5	0.5	My Text</span>
-<span class="s">EOF</span>
-gmt pstext -R -J -O -K -F+f9p+j <span class="s">&lt;&lt; EOF &gt;&gt; GMT_pstext_clearance.ps</span>
-<span class="s">2.00	0.80	LM	dy</span>
-<span class="s">2.52	0.65	CB	dx</span>
-<span class="s">0.56	0.75	LB	r</span>
-<span class="s">EOF</span>
-gmt psxy -R -J -O <span class="s">&lt;&lt; EOF &gt;&gt; GMT_pstext_clearance.ps</span>
-<span class="s">&gt;</span>
-<span class="s">1.95	0.69</span>
-<span class="s">1.95	0.89</span>
-<span class="s">&gt;</span>
-<span class="s">2.42	0.60</span>
-<span class="s">2.62	0.60</span>
-<span class="s">&gt;</span>
-<span class="s">0.59	0.69</span>
-<span class="s">0.46	0.82</span>
-<span class="s">EOF</span>
-
-rm gmt.*
-</pre></div>
-</div>
+<p><a class="reference download internal" download="" href="../../_downloads/3652a91841808f6580e794830ab49c6c/text-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="last figure align-center">
 <a class="reference internal image-reference" href="../../_images/text-gmtplot-01.png"><img alt="../../_images/text-gmtplot-01.png" src="../../_images/text-gmtplot-01.png" style="width: 80%;" /></a>
 </div>
@@ -556,7 +530,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年09月18日.
+        最后更新于 2019年09月20日.
       </span>
 
     </p>
