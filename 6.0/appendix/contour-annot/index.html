@@ -495,7 +495,6 @@ gmt end
 <p>最后，采用之前章节中论述的多个标注位置确定方法和属性设置，绘制了一幅比较复杂的综合性图件。假设在Canary Islands发生了灾难性滑坡，图件显示了所引发的的海啸的走时(以小时为单位)。根据海啸走时和海底地形绘制了彩图，对等值线和线条进行了标注。完整的脚本如下：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 gmt begin contour_annot9 pdf,png
-gmt grdgradient topo5.nc -Nt1 -A45 -Gtopo5_int.nc
 gmt <span class="nb">set</span> FORMAT_GEO_MAP ddd:mm:ssF FONT_ANNOT_PRIMARY +9p FONT_TITLE 22p
 gmt project -E-74/41 -C-17/28 -G10 -Q &gt; great_NY_Canaries.txt
 gmt project -E-74/41 -C2.33/48.87 -G100 -Q &gt; great_NY_Paris.txt
@@ -505,6 +504,7 @@ cat <span class="s">&lt;&lt; EOF &gt; ttt.cpt</span>
 <span class="s">3	lightyellow	6	lightyellow</span>
 <span class="s">6	lightgreen	100	lightgreen</span>
 <span class="s">EOF</span>
+gmt grdgradient @earth_relief_05m -R-85/5/10/55 -Nt1 -A45 -Gtopo5_int.nc
 gmt grdimage ttt_atl.nc -Itopo5_int.nc -Cttt.cpt -R-85/5/10/55 -JM5.3i -nc+t1
 gmt grdcontour ttt_atl.nc -C0.5 -A1+u<span class="s2">&quot; hour&quot;</span>+v+f8p,Bookman-Demi -GL80W/31N/17W/26N,17W/28N/17W/50N -S2
 gmt plot -Wfatter,white great_NY_Canaries.txt
