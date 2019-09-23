@@ -218,7 +218,7 @@
 <h1>10.10 PS参数<a class="headerlink" href="#ps" title="永久链接至标题">¶</a></h1>
 <p>本节列出所有与PS相关的参数，参数的默认值在中括号内列出。</p>
 <dl class="docutils" id="ps-char-encoding">
-<dt>PS_CHAR_ENCODING</dt>
+<dt><strong>PS_CHAR_ENCODING</strong></dt>
 <dd><p class="first">字符集编码方式 [<code class="docutils literal notranslate"><span class="pre">ISOLatin1+|Standard+</span></code>]</p>
 <p>GMT使用的字符集编码方式。可选值包括：</p>
 <ul class="simple">
@@ -232,19 +232,19 @@
 </dd>
 </dl>
 <dl class="docutils" id="ps-color-model">
-<dt>PS_COLOR_MODEL</dt>
+<dt><strong>PS_COLOR_MODEL</strong></dt>
 <dd><p class="first">生成PS代码时颜色所使用的色彩模型 [<code class="docutils literal notranslate"><span class="pre">rgb</span></code>]</p>
 <p class="last">可以取RGB、HSV、CMYK或GRAY。若设置为HSV，其不会影响绘图过程中使用RGB指定的颜色；若设置为GRAY，则所有的颜色都将使用YIQ方法转换成灰度。</p>
 </dd>
 </dl>
 <dl class="docutils" id="ps-comments">
-<dt>PS_COMMENTS</dt>
+<dt><strong>PS_COMMENTS</strong></dt>
 <dd><p class="first">生成的PS代码中是否包含注释信息 [false]</p>
 <p class="last">若为 <code class="docutils literal notranslate"><span class="pre">true</span></code>，则生成的PS文件中会包含注释，用于解释文件中操作的逻辑，当你需要手动编辑PS文件时比较有用。默认情况下，其值为 <code class="docutils literal notranslate"><span class="pre">false</span></code>，即PS文件中不会包含注释，此时生成的PS文件更小。</p>
 </dd>
 </dl>
 <dl class="docutils" id="ps-line-cap">
-<dt>PS_LINE_CAP</dt>
+<dt><strong>PS_LINE_CAP</strong></dt>
 <dd><p class="first">控制线段的<strong>端点</strong>的绘制方式 [<code class="docutils literal notranslate"><span class="pre">butt</span></code>]</p>
 <p>可以取如下值：</p>
 <ul class="simple">
@@ -260,7 +260,7 @@
 </dd>
 </dl>
 <dl class="docutils" id="ps-line-join">
-<dt>PS_LINE_JOIN</dt>
+<dt><strong>PS_LINE_JOIN</strong></dt>
 <dd><p class="first">控制线段拐点的绘制方式 [<code class="docutils literal notranslate"><span class="pre">miter</span></code>]</p>
 <p>可以取 <code class="docutils literal notranslate"><span class="pre">miter</span></code>、<code class="docutils literal notranslate"><span class="pre">round</span></code>、<code class="docutils literal notranslate"><span class="pre">bevel</span></code></p>
 <p>下图展示了 <code class="docutils literal notranslate"><span class="pre">PS_LINE_JOIN</span></code> 取不同值时线段拐点的绘图效果。当线宽较小时，几乎看不出来区别，这里为了显示的效果，将线宽设置为 <code class="docutils literal notranslate"><span class="pre">20p</span></code>。</p>
@@ -271,13 +271,13 @@
 </dd>
 </dl>
 <dl class="docutils" id="ps-miter-limit">
-<dt>PS_MITER_LIMIT</dt>
+<dt><strong>PS_MITER_LIMIT</strong></dt>
 <dd><p class="first">设置mitered拐点的角度阈值 [35]</p>
 <p class="last">当两个相交的线段之间的夹角小于该阈值时，则该拐角会被bevelled而不是被mitered。该参数的取值范围为0到180。若设置为0，则使用PS的默认值（11度），若设置为180，则所有拐角都会被beveled。</p>
 </dd>
 </dl>
 <dl class="docutils" id="ps-media">
-<dt>PS_MEDIA</dt>
+<dt><strong>PS_MEDIA</strong></dt>
 <dd><p class="first">设置当前纸张的尺寸 [a4|letter]</p>
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
@@ -437,11 +437,11 @@ paper2        <span class="m">3000</span>  <span class="m">0</span>
 </dd>
 </dl>
 <dl class="docutils" id="ps-page-color">
-<dt>PS_PAGE_COLOR</dt>
+<dt><strong>PS_PAGE_COLOR</strong></dt>
 <dd>设置纸张的背景色 [<code class="docutils literal notranslate"><span class="pre">white</span></code>]</dd>
 </dl>
 <dl class="docutils" id="ps-page-orientation">
-<dt>PS_PAGE_ORIENTATION</dt>
+<dt><strong>PS_PAGE_ORIENTATION</strong></dt>
 <dd><p class="first">设置纸张方向 [<code class="docutils literal notranslate"><span class="pre">landscape</span></code>]</p>
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
@@ -451,30 +451,30 @@ paper2        <span class="m">3000</span>  <span class="m">0</span>
 </dd>
 </dl>
 <dl class="docutils" id="ps-scale-x">
-<dt>PS_SCALE_X</dt>
+<dt><strong>PS_SCALE_X</strong></dt>
 <dd><p class="first">绘图时X方向的全局比例 [1.0]</p>
 <p class="last">用于实现图像的整体缩放。</p>
 </dd>
 </dl>
 <dl class="docutils" id="ps-scale-y">
-<dt>PS_SCALE_Y</dt>
+<dt><strong>PS_SCALE_Y</strong></dt>
 <dd><p class="first">绘图时Y方向的全局比例 [1.0]</p>
 <p class="last">用于实现图像的整体缩放。</p>
 </dd>
 </dl>
 <dl class="docutils" id="ps-transparency">
-<dt>PS_TRANSPARENCY</dt>
+<dt><strong>PS_TRANSPARENCY</strong></dt>
 <dd><p class="first">设置生成PS文件所使用的透明模式 [Normal]</p>
 <p class="last">可取值包括Color、ColorBurn、ColorDodge、Darken、Difference、Exclusion、HardLight、Hue、Lighten、Luminosity、Multiply、Normal、Overlay、Saturation、SoftLight、Screen</p>
 </dd>
 </dl>
 <dl class="docutils" id="ps-convert">
-<dt>PS_CONVERT</dt>
+<dt><strong>PS_CONVERT</strong></dt>
 <dd>现在模式下在执行 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">end</span></code> 命令时GMT会自动调用 <a class="reference internal" href="../../module/psconvert/"><span class="doc">psconvert</span></a>
 生成用户指定格式的图片。该选项用于控制调用 <code class="docutils literal notranslate"><span class="pre">psconvert</span></code> 是的默认参数，多个参数之间以逗号分隔 [<code class="docutils literal notranslate"><span class="pre">A,P</span></code>]</dd>
 </dl>
 <dl class="docutils" id="ps-image-compress">
-<dt>PS_IMAGE_COMPRESS</dt>
+<dt><strong>PS_IMAGE_COMPRESS</strong></dt>
 <dd><p class="first">设置PS中的图像压缩算法 [deflate,5]</p>
 <p>可以取值为：</p>
 <ul class="last simple">
@@ -532,7 +532,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年09月20日.
+        最后更新于 2019年09月23日.
       </span>
 
     </p>

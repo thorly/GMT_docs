@@ -261,7 +261,11 @@ gmt end show
 <h2>3.2.2 绘制第一张图<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>在GMT绘图脚本模板的基础上，向 <strong>begin</strong> 和 <strong>end</strong> 语句中间加入正确的GMT绘图命令，即可实现用GMT绘图。</p>
 <p>下面的脚本使用 <a class="reference internal" href="../../module/coast/"><span class="doc">coast</span></a> 绘制了一张全球地图。执行该脚本，会生成文件名为 <code class="file docutils literal notranslate"><span class="pre">GlobalMap</span></code>、格式为PNG和PDF的图片文件，并且GMT会在绘图结束后自动打开生成的图片文件。</p>
-<p><a class="reference download internal" download="" href="../../_downloads/e1a810492fb52b45ec677c1f4ba731bc/commands-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GlobalMap png,pdf
+    gmt coast -Rg -JH15c -Gpurple -Baf -B+t<span class="s2">&quot;My First Plot&quot;</span>
+gmt end show
+</pre></div>
+</div>
 <div class="figure align-center" id="id4">
 <a class="reference internal image-reference" href="../../_images/commands-gmtplot-0.png"><img alt="../../_images/commands-gmtplot-0.png" src="../../_images/commands-gmtplot-0.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-text">使用GMT绘制的第一张图</span></p>
@@ -345,7 +349,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年09月20日.
+        最后更新于 2019年09月23日.
       </span>
 
     </p>

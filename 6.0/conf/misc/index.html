@@ -225,15 +225,15 @@
 <div class="section" id="id2">
 <h2>10.12.1 数据下载相关参数<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <dl class="docutils" id="gmt-auto-download">
-<dt>GMT_AUTO_DOWNLOAD</dt>
+<dt><strong>GMT_AUTO_DOWNLOAD</strong></dt>
 <dd>是否允许GMT自动从GMT服务器（由 <code class="docutils literal notranslate"><span class="pre">GMT_DATA_URL</span></code> 控制）下载数据文件到缓存目录 [<code class="docutils literal notranslate"><span class="pre">on</span></code>]</dd>
 </dl>
 <dl class="docutils" id="gmt-data-server">
-<dt>GMT_DATA_SERVER</dt>
+<dt><strong>GMT_DATA_SERVER</strong></dt>
 <dd>GMT数据服务器地址，默认使用SOEST官方镜像 [<a class="reference external" href="http://www.soest.hawaii.edu/gmt/data">http://www.soest.hawaii.edu/gmt/data</a>]</dd>
 </dl>
 <dl class="docutils" id="gmt-data-server-limit">
-<dt>GMT_DATA_SERVER_LIMIT</dt>
+<dt><strong>GMT_DATA_SERVER_LIMIT</strong></dt>
 <dd>从GMT服务器上下载的文件的大小上限，即GMT缓存目录的空间上限，默认无限制。可以给定文件大小上限的字节数，也可以加上 <code class="docutils literal notranslate"><span class="pre">k</span></code>、<code class="docutils literal notranslate"><span class="pre">m</span></code>或 <code class="docutils literal notranslate"><span class="pre">g</span></code> 表示
 KB、MB 或 GB。</dd>
 </dl>
@@ -241,14 +241,14 @@ KB、MB 或 GB。</dd>
 <div class="section" id="id3">
 <h2>10.12.2 算法选择相关参数<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <dl class="docutils" id="gmt-triangulate">
-<dt>GMT_TRIANGULATE</dt>
+<dt><strong>GMT_TRIANGULATE</strong></dt>
 <dd><p class="first">设置 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/triangulate.html" title="(在 GMT v6.0)"><span>triangulate</span></a> 模块中算法代码的来源 [Watson]</p>
 <p class="last"><a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/triangulate.html" title="(在 GMT v6.0)"><span>triangulate</span></a> 模块的核心源码有两个版本，
 <code class="docutils literal notranslate"><span class="pre">Watson</span></code> 的版本遵循GPL，<code class="docutils literal notranslate"><span class="pre">Shewchuk</span></code> 的版本不遵循GPL。该选项用于控制要使用哪个版本，<code class="docutils literal notranslate"><span class="pre">Shewchuk</span></code> 版本拥有更多功能。</p>
 </dd>
 </dl>
 <dl class="docutils" id="gmt-fft">
-<dt>GMT_FFT</dt>
+<dt><strong>GMT_FFT</strong></dt>
 <dd><p class="first">要使用的FFT算法 [auto]</p>
 <p>可以取：</p>
 <ol class="last arabic simple">
@@ -261,7 +261,7 @@ KB、MB 或 GB。</dd>
 </dd>
 </dl>
 <dl class="docutils" id="gmt-interpolant">
-<dt>GMT_INTERPOLANT</dt>
+<dt><strong>GMT_INTERPOLANT</strong></dt>
 <dd><p class="first">程序中一维插值所使用的算法 [<code class="docutils literal notranslate"><span class="pre">akima</span></code>]</p>
 <ol class="last arabic simple">
 <li><code class="docutils literal notranslate"><span class="pre">linear</span></code>：线性插值</li>
@@ -272,7 +272,7 @@ KB、MB 或 GB。</dd>
 </dd>
 </dl>
 <dl class="docutils" id="gmt-extrapolate-val">
-<dt>GMT_EXTRAPOLATE_VAL</dt>
+<dt><strong>GMT_EXTRAPOLATE_VAL</strong></dt>
 <dd><p class="first">外插时超过数据区时如何处理 [NaN]</p>
 <p>可选值包括：</p>
 <ol class="last arabic simple">
@@ -286,14 +286,14 @@ KB、MB 或 GB。</dd>
 <div class="section" id="id4">
 <h2>10.12.3 其他参数<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <dl class="docutils" id="gmt-export-type">
-<dt>GMT_EXPORT_TYPE</dt>
+<dt><strong>GMT_EXPORT_TYPE</strong></dt>
 <dd><p class="first">控制表数据的数据类型，仅被外部接口使用 [<code class="docutils literal notranslate"><span class="pre">double</span></code>]</p>
 <p class="last">可以取 <code class="docutils literal notranslate"><span class="pre">double</span></code>、<code class="docutils literal notranslate"><span class="pre">single</span></code>、<code class="docutils literal notranslate"><span class="pre">[u]long</span></code>、<code class="docutils literal notranslate"><span class="pre">[u]int</span></code>、
 <code class="docutils literal notranslate"><span class="pre">[u]short</span></code>、<code class="docutils literal notranslate"><span class="pre">[u]char</span></code>。</p>
 </dd>
 </dl>
 <dl class="docutils" id="gmt-custom-libs">
-<dt>GMT_CUSTOM_LIBS</dt>
+<dt><strong>GMT_CUSTOM_LIBS</strong></dt>
 <dd><p class="first">要链接的自定义GMT库文件，默认值为空</p>
 <p>GMT支持自定义模块。用户可以写一个GMT模块，并将其编译成动态函数库。通过设置该参数告知GMT该函数库的位置，即可通过 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">xxx</span></code> 的语法调用自定义模块，以实现扩充GMT功能的目的。</p>
 <p class="last">该参数用于指定自定义动态库函数的路径，多个路径之间用逗号分隔。路径可以是共享库文件的绝对路径，也可以是其所在的目录。若路径是一个目录名，该目录必须需斜杠或反斜杠结尾，表明使用该目录下的全部共享库文件。在Windows下，若目录名是 <code class="docutils literal notranslate"><span class="pre">/</span></code>，则表示在GMT的bin目录下的 <code class="docutils literal notranslate"><span class="pre">gmt_plugins</span></code>
@@ -301,7 +301,7 @@ KB、MB 或 GB。</dd>
 </dd>
 </dl>
 <dl class="docutils" id="gmt-language">
-<dt>GMT_LANGUAGE</dt>
+<dt><strong>GMT_LANGUAGE</strong></dt>
 <dd><p class="first">设置GMT绘图时使用的语言 [<code class="docutils literal notranslate"><span class="pre">us</span></code>]</p>
 <p>不同的语言中，月份、星期几、东西南北的表达方法是不同的。该参数用于设置GMT绘图时所使用的语言。GMT支持多种语言，各语言的定义文件位于GMT安装目录中 <code class="docutils literal notranslate"><span class="pre">share/localization</span></code> 目录下的文件。</p>
 <p>此处仅列举几个常见语言如下：</p>
@@ -319,7 +319,7 @@ KB、MB 或 GB。</dd>
 </dd>
 </dl>
 <dl class="docutils" id="gmt-compatibility">
-<dt>GMT_COMPATIBILITY</dt>
+<dt><strong>GMT_COMPATIBILITY</strong></dt>
 <dd><p class="first">是否开启兼容模式 [4]</p>
 <ul class="last simple">
 <li>若值为4，表示兼容GMT4语法并给出警告</li>
@@ -328,14 +328,14 @@ KB、MB 或 GB。</dd>
 </dd>
 </dl>
 <dl class="docutils" id="gmt-verbose">
-<dt>GMT_VERBOSE</dt>
+<dt><strong>GMT_VERBOSE</strong></dt>
 <dd><p class="first">控制GMT命令的verbose级别 [<code class="docutils literal notranslate"><span class="pre">c</span></code>]</p>
 <p class="last">可选值包括 <code class="docutils literal notranslate"><span class="pre">quiet</span></code>、<code class="docutils literal notranslate"><span class="pre">normal</span></code>、<code class="docutils literal notranslate"><span class="pre">compat</span></code>、<code class="docutils literal notranslate"><span class="pre">verbose</span></code>、
 <code class="docutils literal notranslate"><span class="pre">long</span></code>、<code class="docutils literal notranslate"><span class="pre">debug</span></code>。也可以直接使用每个级别的第一个字母。每个级别的具体含义见 <a class="reference internal" href="../../option/V/"><span class="doc">-V 选项</span></a> 一节。</p>
 </dd>
 </dl>
 <dl class="docutils" id="gmt-history">
-<dt>GMT_HISTORY</dt>
+<dt><strong>GMT_HISTORY</strong></dt>
 <dd><p class="first">GMT历史文件 <code class="docutils literal notranslate"><span class="pre">gmt.history</span></code> 的处理方式 [true]</p>
 <ul class="last simple">
 <li><code class="docutils literal notranslate"><span class="pre">true</span></code> 可以读写</li>
@@ -345,7 +345,7 @@ KB、MB 或 GB。</dd>
 </dd>
 </dl>
 <dl class="docutils" id="gmt-graphics-format">
-<dt>GMT_GRAPHICS_FORMAT</dt>
+<dt><strong>GMT_GRAPHICS_FORMAT</strong></dt>
 <dd>现代模式下默认的图片文件格式 [pdf]</dd>
 </dl>
 </div>
@@ -396,7 +396,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年09月20日.
+        最后更新于 2019年09月23日.
       </span>
 
     </p>

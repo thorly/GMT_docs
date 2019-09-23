@@ -218,13 +218,13 @@
 <h1>10.9 PROJ参数<a class="headerlink" href="#proj" title="永久链接至标题">¶</a></h1>
 <p>本节列出投影相关参数，参数的默认值在中括号内列出。</p>
 <dl class="docutils" id="proj-length-unit">
-<dt>PROJ_LENGTH_UNIT</dt>
+<dt><strong>PROJ_LENGTH_UNIT</strong></dt>
 <dd><p class="first">长度量的默认单位 [<code class="docutils literal notranslate"><span class="pre">c</span></code>]</p>
 <p class="last">见 <a class="reference internal" href="../../basis/unit/"><span class="doc">单位</span></a> 一节的介绍。</p>
 </dd>
 </dl>
 <dl class="docutils" id="proj-ellipsoid">
-<dt>PROJ_ELLIPSOID</dt>
+<dt><strong>PROJ_ELLIPSOID</strong></dt>
 <dd><p class="first">地图投影中使用的地球椭球标准 [<code class="docutils literal notranslate"><span class="pre">WGS-84</span></code>]</p>
 <p>GMT支持几十种地球椭球标准（此处不一一列举，详见官方文档）。除此之外，GMT还支持自定义椭球，用户只需按照固定的格式对椭球命名，GMT会从椭球名字中提取半长轴以及扁率。可用的格式如下：</p>
 <ul class="simple">
@@ -237,7 +237,7 @@
 </dd>
 </dl>
 <dl class="docutils" id="proj-aux-latitude">
-<dt>PROJ_AUX_LATITUDE</dt>
+<dt><strong>PROJ_AUX_LATITUDE</strong></dt>
 <dd><p class="first">球体近似时的辅助纬线 [authalic]</p>
 <p>在使用大圆弧距离计算方式时，需要将真实地球近似为一个半径为
 <a class="reference internal" href="#proj-mean-radius"><span class="std std-ref">PROJ_MEAN_RADIUS</span></a> 的球体，在做球体近似时需要选择合适的辅助纬线。可选值包括</p>
@@ -253,7 +253,7 @@
 </dd>
 </dl>
 <dl class="docutils" id="proj-mean-radius">
-<dt>PROJ_MEAN_RADIUS</dt>
+<dt><strong>PROJ_MEAN_RADIUS</strong></dt>
 <dd><p class="first">地球/行星的平均半径 [authalic]</p>
 <p>在计算两点间的大圆弧距离或区域的表面积时才会被使用。可选值包括</p>
 <ul class="last simple">
@@ -266,7 +266,7 @@
 </dd>
 </dl>
 <dl class="docutils" id="proj-scale-factor">
-<dt>PROJ_SCALE_FACTOR</dt>
+<dt><strong>PROJ_SCALE_FACTOR</strong></dt>
 <dd><p class="first">修改某些投影的地图缩放因子以减小面积失真</p>
 <ul class="last simple">
 <li>Polar Stereographic：默认值为0.9996</li>
@@ -276,7 +276,7 @@
 </dd>
 </dl>
 <dl class="docutils" id="proj-geodesic">
-<dt>PROJ_GEODESIC</dt>
+<dt><strong>PROJ_GEODESIC</strong></dt>
 <dd><p class="first">指定大地测量距离中所使用的算法 [Vincenty]</p>
 <p>可以取：</p>
 <ol class="last arabic simple">
@@ -333,7 +333,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年09月20日.
+        最后更新于 2019年09月23日.
       </span>
 
     </p>
