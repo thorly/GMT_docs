@@ -250,14 +250,14 @@ PS 文件时没有找到汉字所对应的字体文件。</p>
 <p>新建GMT自定义字体配置文件 <code class="docutils literal notranslate"><span class="pre">C:\Users\用户名\.gmt\PSL_custom_fonts.txt</span></code>
 （若不存在 <code class="docutils literal notranslate"><span class="pre">C:\Users\用户名\.gmt</span></code> 目录则需新建该目录）。</p>
 <p>向 GMT自定义字体配置文件 <code class="docutils literal notranslate"><span class="pre">C:\Users\用户名\.gmt\PSL_custom_fonts.txt</span></code> 中加入如下语句:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>STSong-Light-GB-EUC-H  <span class="m">0</span>.700    <span class="m">1</span>
-STFangsong-Light-GB-EUC-H  <span class="m">0</span>.700    <span class="m">1</span>
-STHeiti-Regular-GB-EUC-H   <span class="m">0</span>.700   <span class="m">1</span>
-STKaiti-Regular-GB-EUC-H   <span class="m">0</span>.700   <span class="m">1</span>
-STSong-Light-GB-EUC-V  <span class="m">0</span>.700    <span class="m">1</span>
-STFangsong-Light-GB-EUC-V  <span class="m">0</span>.700    <span class="m">1</span>
-STHeiti-Regular-GB-EUC-V   <span class="m">0</span>.700   <span class="m">1</span>
-STKaiti-Regular-GB-EUC-V   <span class="m">0</span>.700   <span class="m">1</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>STSong-Light--GB-EUC-H  <span class="m">0</span>.700    <span class="m">1</span>
+STFangsong-Light--GB-EUC-H  <span class="m">0</span>.700    <span class="m">1</span>
+STHeiti-Regular--GB-EUC-H   <span class="m">0</span>.700   <span class="m">1</span>
+STKaiti-Regular--GB-EUC-H   <span class="m">0</span>.700   <span class="m">1</span>
+STSong-Light--GB-EUC-V  <span class="m">0</span>.700    <span class="m">1</span>
+STFangsong-Light--GB-EUC-V  <span class="m">0</span>.700    <span class="m">1</span>
+STHeiti-Regular--GB-EUC-V   <span class="m">0</span>.700   <span class="m">1</span>
+STKaiti-Regular--GB-EUC-V   <span class="m">0</span>.700   <span class="m">1</span>
 </pre></div>
 </div>
 <p>用 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">text</span> <span class="pre">-L</span></code> 查看 GMT 字体:</p>
@@ -267,14 +267,14 @@ Font <span class="c1">#  Font Name</span>
 <span class="m">0</span>   Helvetica
 <span class="m">1</span>   Helvetica-Bold
 ...    ......
-<span class="m">39</span> STSong-Light-GB-EUC-H
-<span class="m">40</span> STFangsong-Light-GB-EUC-H
-<span class="m">41</span> STHeiti-Regular-GB-EUC-H
-<span class="m">42</span> STKaiti-Regular-GB-EUC-H
-<span class="m">43</span> STSong-Light-GB-EUC-V
-<span class="m">44</span> STFangsong-Light-GB-EUC-V
-<span class="m">45</span> STHeiti-Regular-GB-EUC-V
-<span class="m">46</span> STKaiti-Regular-GB-EUC-V
+<span class="m">39</span> STSong-Light--GB-EUC-H
+<span class="m">40</span> STFangsong-Light--GB-EUC-H
+<span class="m">41</span> STHeiti-Regular--GB-EUC-H
+<span class="m">42</span> STKaiti-Regular--GB-EUC-H
+<span class="m">43</span> STSong-Light--GB-EUC-V
+<span class="m">44</span> STFangsong-Light--GB-EUC-V
+<span class="m">45</span> STHeiti-Regular--GB-EUC-V
+<span class="m">46</span> STKaiti-Regular--GB-EUC-V
 </pre></div>
 </div>
 <p>可以看到，新添加的四种中文字体对应的字体编号为 39 到 46。其中 <code class="docutils literal notranslate"><span class="pre">STSong-Light-GB-EUC-H</span></code> 即为宋体，<code class="docutils literal notranslate"><span class="pre">GB-EUC</span></code> 是文字编码方式，
