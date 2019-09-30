@@ -118,6 +118,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#id4">13.2.3 示例</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ps">13.2.4 PS文件注意事项</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#unix-shell">13.2.5 UNIX shell 注意事项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">13.2.6 相关模块</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../clear/">13.3 clear</a></li>
@@ -286,12 +287,13 @@
 </table>
 <p>在GMT现代模式下，一个GMT绘图总是以 <strong>gmt begin</strong> 开始，以 <strong>gmt end</strong> 结束。</p>
 <p><strong>begin</strong> 模块告诉GMT要开始一个新的现代模式会话。如果你的脚本只绘制一张图，那么你可以直接指定要生成的图片的文件名和文件格式。如果你的脚本绘制多张图，则你需要使用 <a class="reference internal" href="../figure/"><span class="doc">figure</span></a> 来分别为每张图指定文件名和文件格式。现代会话模式下，每个会话均独立于其他进程，每个会话负责管理各自的配置参数、命令历史等，因而可以同时执行多个GMT会话而不会互相干扰。</p>
+<p>除了可以指定图片文件名和文件格式之外，还可以通过 <em>options</em> 指定生成图片过程中所使用的 <a class="reference internal" href="../psconvert/"><span class="doc">psconvert</span></a> 选项。</p>
 <div class="section" id="id1">
 <h2>13.2.1 语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p><strong>gmt begin</strong>
 [ <em>prefix</em> ]
 [ <em>formats</em> ]
-[ <em>psoptions</em> ]
+[ <em>options</em> ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]</p>
 </div>
 <div class="section" id="id2">
@@ -325,19 +327,19 @@
 <li><code class="docutils literal notranslate"><span class="pre">tif</span></code>：<a class="reference external" href="https://zh.wikipedia.org/wiki/TIFF">Tagged Image Format File</a></li>
 </ul>
 </dd>
-<dt><em>psoptions</em></dt>
+<dt><em>options</em></dt>
 <dd><p class="first">GMT现代模式本质上是先生成PS文件，再通过调用 <a class="reference internal" href="../psconvert/"><span class="doc">psconvert</span></a> 自动转换成用户指定的图片格式。此处可以设置要传递给模块 <a class="reference internal" href="../psconvert/"><span class="doc">psconvert</span></a> 的选项，多个选项之间用逗号分隔。</p>
 <p>默认值为 <strong>A</strong>，表示将 <strong>-A</strong> 选项传给 <a class="reference internal" href="../psconvert/"><span class="doc">psconvert</span></a>。</p>
 <p>其他可选的选项包括：</p>
 <ul class="simple">
 <li><strong>A</strong>[<em>args</em>]: 裁剪图片</li>
-<li><strong>C</strong><em>args</em>: 额外传递给GhostScript的选项</li>
+<li><strong>C</strong><em>args</em>: 额外传递给Ghostscript的选项</li>
 <li><strong>D</strong><em>dir</em>: 指定图片的输出目录</li>
 <li><strong>E</strong><em>dpi</em>: 设置图片分辨率</li>
 <li><strong>H</strong><em>factor</em>: 对图片做平滑以避免混叠</li>
 <li><strong>M</strong><em>args</em>: 为当前图片叠加前景图片或背景图片</li>
 <li><strong>Q</strong><em>args</em>: 设置图像和文本的抗锯齿选项</li>
-<li><strong>S</strong> : 把 GhostScript 命令输出到标准错误输出，且不删除所有中间文件</li>
+<li><strong>S</strong> : 把 Ghostscript 命令输出到标准错误输出，且不删除所有中间文件</li>
 </ul>
 <p class="last">详细解释见 <a class="reference internal" href="../psconvert/"><span class="doc">psconvert</span></a> 的说明文档。</p>
 </dd>
@@ -369,7 +371,7 @@ gmt ...
 gmt end show
 </pre></div>
 </div>
-<p>设置额外的参数以控制PS到输出格式之间的转换:</p>
+<p>设置额外的参数，以控制生成图片时的额外空白:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map pdf,png A+m1c
 gmt ...
 gmt end show
@@ -388,23 +390,31 @@ gmt end
 </div>
 <div class="section" id="unix-shell">
 <h2>13.2.5 UNIX shell 注意事项<a class="headerlink" href="#unix-shell" title="永久链接至标题">¶</a></h2>
-<p>现代模式的工作原理是，在使用 <strong>gmt begin</strong> 时利用父进程ID创建唯一的会话目录，并将很多信息保存到该会话目录中。脚本中接下来的命令拥有共同的父进程ID，因而接下来的命令可以向唯一会话目录中写入信息或读取信息，以实现多个命令之间的互相通信。</p>
-<p>然而，UNIX下某些shell的实现不完全统一，脚本执行过程中父进程ID可能出现变化，后面执行的命令无法正确获取前面命令的父进程ID，因而导致命令之间的信息交流出现错误。最常见的情况是在使用UNIX管道时，可能会生成子shell进而导致父进程ID出现变化。</p>
+<p>现代模式的工作原理是，在使用 <strong>gmt begin</strong> 时利用父进程ID创建唯一的会话目录，并将很多信息保存到该会话目录中。脚本中接下来的命令拥有共同的父进程ID，因而接下来的命令可以向唯一会话目录中写入信息或读取信息，以实现多个命令之间的互相通信。然而，UNIX下某些shell的实现不完全统一，脚本执行过程中父进程ID可能出现变化，后面执行的命令无法正确获取前面命令的父进程ID，因而导致命令之间的信息交流出现错误。最常见的情况是在使用UNIX管道时，可能会生成子shell进而导致父进程ID出现变化。</p>
 <p>如果你在GMT现代模式脚本中使用了管道，执行过程中出现了类似无法找到目录 <code class="docutils literal notranslate"><span class="pre">gmt6.#####</span></code>
-这样的错误，这极有可能是你所使用的UNIX shell存在此类问题。解决办法是，在脚本开始的地方设置环境变量 GMT_SESSION_NAME 为进程ID。在Bash shell应该是:</p>
+这样的错误，这极有可能是你所使用的UNIX shell存在此类问题。解决办法是，在脚本开始的地方设置环境变量 <strong>GMT_SESSION_NAME</strong> 为进程ID。在Bash shell应该是:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">GMT_SESSION_NAME</span><span class="o">=</span><span class="nv">$$</span>
 gmt begin
 gmt ...
-gmt end
+gmt end show
 </pre></div>
 </div>
-<p>在CShell中应该是:</p>
+<p>在C shell中应该是:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>setenv GMT_SESSION_NAME <span class="nv">$$</span>
 gmt begin
 gmt ..
-gmt end
+gmt end show
 </pre></div>
 </div>
+</div>
+<div class="section" id="id5">
+<h2>13.2.6 相关模块<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p><a class="reference internal" href="../clear/"><span class="doc">clear</span></a>,
+<a class="reference internal" href="../docs/"><span class="doc">docs</span></a>,
+<a class="reference internal" href="../end/"><span class="doc">end</span></a>,
+<a class="reference internal" href="../figure/"><span class="doc">figure</span></a>,
+<a class="reference internal" href="../inset/"><span class="doc">inset</span></a>,
+<a class="reference internal" href="../subplot/"><span class="doc">subplot</span></a></p>
 </div>
 </div>
 
@@ -453,7 +463,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年09月27日.
+        最后更新于 2019年09月30日.
       </span>
 
     </p>

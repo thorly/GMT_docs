@@ -123,6 +123,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#id2">13.8.2 必须参数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">13.8.3 可选选项</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id4">13.8.4 示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">13.8.5 相关模块</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../end/">13.9 end</a></li>
@@ -288,6 +289,7 @@
 <h2>13.8.1 语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p><strong>gmt docs</strong>
 [ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong> ]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong> ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
 <em>module-name</em>
 [<em>-option</em>]</p>
@@ -312,7 +314,11 @@
 <h2>13.8.3 可选选项<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <dl class="docutils" id="q">
 <dt><strong>-Q</strong></dt>
-<dd>仅显示文档的网页链接而不打开文档。适合没有安装图形界面的服务器。若使用该选项，则其必须是 <strong>docs</strong> 的第一个选项。</dd>
+<dd>仅显示文档的网页链接而不打开文档，适用于没有安装图形界面的服务器。若使用该选项，则其必须是 <strong>docs</strong> 的第一个选项。</dd>
+</dl>
+<dl class="docutils" id="s">
+<dt><strong>-S</strong></dt>
+<dd><strong>docs</strong> 默认优先打开本地文档，若本地文档不存在，则打开GMT文档网站。该选项强制 <strong>docs</strong> 使用浏览器打开GMT文档网站上的网页。</dd>
 <dt><strong>-</strong><em>option</em></dt>
 <dd>指定选项（例如 <strong>-R</strong>），则 <strong>docs</strong> 会打开模块文档并定位到模块文档的该选项处。</dd>
 </dl>
@@ -339,6 +345,10 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt docs -Q grdimage
 </pre></div>
 </div>
+<p>查看 <a class="reference internal" href="../grdimage/"><span class="doc">grdimage</span></a> 在GMT文档网站上的链接:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt docs -Q -S grdimage
+</pre></div>
+</div>
 <p>查看 <a class="reference internal" href="../coast/"><span class="doc">coast</span></a> 的 <strong>-B</strong> 选项:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt docs coast -B
 </pre></div>
@@ -351,6 +361,15 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt docs gallery
 </pre></div>
 </div>
+</div>
+<div class="section" id="id5">
+<h2>13.8.5 相关模块<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p><a class="reference internal" href="../begin/"><span class="doc">begin</span></a>,
+<a class="reference internal" href="../clear/"><span class="doc">clear</span></a>,
+<a class="reference internal" href="../end/"><span class="doc">end</span></a>,
+<a class="reference internal" href="../figure/"><span class="doc">figure</span></a>,
+<a class="reference internal" href="../inset/"><span class="doc">inset</span></a>,
+<a class="reference internal" href="../subplot/"><span class="doc">subplot</span></a></p>
 </div>
 </div>
 
@@ -399,7 +418,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年09月27日.
+        最后更新于 2019年09月30日.
       </span>
 
     </p>
