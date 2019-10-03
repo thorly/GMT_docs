@@ -283,8 +283,8 @@
 </tbody>
 </table>
 <p>该模块会从输入文件中读取XY数据，由此构成一个或多个多边形，进而构建出一个或多个裁剪路径。接下来的所有绘图命令中，只有在多边形内部的部分才会被绘制。</p>
-<p>为了判断某个点是在裁剪区域内还是在裁剪区域外，psclip使用了“奇偶规则”。从任意一点绘制一条任意方向的射线，若该射线穿过裁剪路径线段奇数次，则该点位于裁剪区域内；若穿过偶数次，则该点位于裁剪区域外。</p>
-<p>最后，记得再次调用 <code class="docutils literal notranslate"><span class="pre">psclip</span> <span class="pre">-C</span></code> 以关闭裁剪区域。</p>
+<p>为了判断某个点是在裁剪区域内还是在裁剪区域外，clip使用了“奇偶规则”。从任意一点绘制一条任意方向的射线，若该射线穿过裁剪路径线段奇数次，则该点位于裁剪区域内；若穿过偶数次，则该点位于裁剪区域外。</p>
+<p>最后，记得再次调用 <code class="docutils literal notranslate"><span class="pre">clip</span> <span class="pre">-C</span></code> 以关闭裁剪区域。</p>
 <div class="section" id="id1">
 <h2>13.4.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">-J</span></code> <code class="docutils literal notranslate"><span class="pre">-R</span></code></p>
@@ -328,12 +328,14 @@
 <div class="section" id="id3">
 <h2>13.4.3 示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 打开裁剪路径</span>
-gmt psclip my_region.xy -R0/40/0/40 -Jm0.3i -K &gt; clip_mask_on.ps
+gmt begin
+gmt clip my_region.xy -R0/40/0/40 -Jm0.3i
 <span class="c1"># 其他绘图命令</span>
 <span class="c1"># ...</span>
 
 <span class="c1"># 关闭裁剪路径</span>
-gmt psclip -C -O &gt;&gt; complex_plot.ps
+gmt clip -C
+gmt end show
 </pre></div>
 </div>
 </div>
