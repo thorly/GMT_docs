@@ -42,7 +42,7 @@
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex/" />
     <link rel="search" title="搜索" href="../search/" />
-    <link rel="next" title="2.1 Linux 下安装GMT" href="linux/" />
+    <link rel="next" title="2.1 Linux 下安装 GMT" href="linux/" />
     <link rel="prev" title="1.4 学习资源" href="../intro/resources/" /> 
 </head>
 
@@ -100,10 +100,11 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../intro/">1 简介</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2 安装</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="linux/">2.1 Linux 下安装GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux/">2.1 Linux 下安装 GMT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="windows/">2.2 Windows 下安装 GMT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="macOS/">2.3 macOS 下安装 GMT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cross-platform/">2.4 跨平台GMT安装方案</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build-source/">2.5 Linux 下编译GMT源码</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/">3 入门教程</a></li>
@@ -208,13 +209,10 @@
 <h1>2 安装<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="linux/">2.1 Linux 下安装GMT</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="linux/#id1">2.1.1 解决依赖关系</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linux/#id2">2.1.2 下载</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linux/#gmt">2.1.3 安装GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linux/#id3">2.1.4 修改环境变量</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linux/#id4">2.1.5 测试是否安装成功</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linux/#id5">2.1.6 升级/卸载GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux/">2.1 Linux 下安装 GMT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="linux/#fedora">2.1.1 Fedora</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux/#rhel-centos">2.1.2 RHEL/CentOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux/#ubuntu-debian">2.1.3 Ubuntu/Debian用户</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="windows/">2.2 Windows 下安装 GMT</a><ul>
@@ -230,6 +228,15 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="cross-platform/">2.4 跨平台GMT安装方案</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="cross-platform/#conda">2.4.1 通过 conda 安装</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build-source/">2.5 Linux 下编译GMT源码</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build-source/#id1">2.5.1 解决依赖关系</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build-source/#id2">2.5.2 下载</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build-source/#gmt">2.5.3 安装GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build-source/#id3">2.5.4 修改环境变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build-source/#id4">2.5.5 测试是否安装成功</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build-source/#id5">2.5.6 升级/卸载GMT</a></li>
 </ul>
 </li>
 </ul>
@@ -267,7 +274,7 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="linux/" class="btn btn-neutral float-right" title="2.1 Linux 下安装GMT" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="linux/" class="btn btn-neutral float-right" title="2.1 Linux 下安装 GMT" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../intro/resources/" class="btn btn-neutral float-left" title="1.4 学习资源" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
@@ -281,7 +288,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年10月09日.
+        最后更新于 2019年10月14日.
       </span>
 
     </p>
