@@ -232,8 +232,13 @@ dnf update gmt
 </pre></div>
 </div>
 <p>除此之外，还可以安装如下可选包以使用GMT的更多功能:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dnf install GraphicsMagick gdal
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 地理数据格式转换工具</span>
+dnf install gdal
 
+<span class="c1"># 制作GIF格式动画需要GraphicsMagick</span>
+dnf install GraphicsMagick
+
+<span class="c1"># 制作MP4、WebM格式动画需要ffmpeg</span>
 dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-<span class="k">$(</span>rpm -E %fedora<span class="k">)</span>.noarch.rpm
 dnf install ffmpeg
 </pre></div>
@@ -268,10 +273,15 @@ yum update gmt
 </pre></div>
 </div>
 <p>除此之外，还可以安装如下可选包以使用GMT的更多功能:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>yum install GraphicsMagick gdal
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 地理数据格式转换工具</span>
+yum install gdal
 
+<span class="c1"># 制作GIF格式动画需要GraphicsMagick</span>
+yum install GraphicsMagick
+
+<span class="c1"># 制作MP4、WebM格式动画需要ffmpeg</span>
 yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-<span class="k">$(</span>rpm -E %rhel<span class="k">)</span>.noarch.rpm
-yum install GraphicsMagick ffmpeg gdal
+yum install ffmpeg
 </pre></div>
 </div>
 <div class="admonition note">
@@ -333,7 +343,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年10月14日.
+        最后更新于 2019年10月16日.
       </span>
 
     </p>
