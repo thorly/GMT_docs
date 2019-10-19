@@ -270,36 +270,36 @@
 <h2>2.2.2 安装其它可选软件<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>为了更好地使用GMT，你还可以根据自己的需求安装如下软件。</p>
 <ol class="arabic">
-<li><p class="first">安装 GraphicsMagick</p>
-<p>GMT 的 <strong>movie</strong> 模块在制作 GIF 格式的动画时需要使用 <a class="reference external" href="http://www.graphicsmagick.org/">GraphicsMagick</a>。</p>
+<li><p class="first">安装 Git for Windows (<strong>推荐</strong>)</p>
+<p>Git for Windows 为Windows用户提供了Bash以及Linux下常用的多个命令。如果想要在Windows下运行Bash脚本，推荐安装Git for Windows。</p>
+<p>下载地址: <a class="reference external" href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
+</li>
+<li><p class="first">安装 GraphicsMagick (<strong>根据需求选择是否安装</strong>)</p>
+<p>GMT 的 <span class="xref std std-doc">/module/movie</span> 模块在制作 GIF 格式的动画时需要使用 <a class="reference external" href="http://www.graphicsmagick.org/">GraphicsMagick</a>。</p>
 <p>如有制作GIF动画的需求，可以下载安装这个软件，并将其 bin 目录加入到系统环境变量 <strong>PATH</strong> 中，以保证 GMT 可以找到其提供的 <strong>gm</strong> 命令。</p>
 </li>
-<li><p class="first">安装GSview 5.0</p>
-<p>GSview是一个PostScript阅读器。GMT6默认生成PDF格式的图片，因而无需安装GSview。如果坚持想要生成并查看PS格式的图片，则可以安装GSview。</p>
-<ul class="simple">
-<li><a class="reference external" href="http://www.ghostgum.com.au/download/gsv50w64.exe">gsv50w64.exe (64位)</a></li>
-<li><a class="reference external" href="http://www.ghostgum.com.au/download/gsv50w32.exe">gsv50w32.exe (32位)</a></li>
-</ul>
-</li>
-<li><p class="first">安装ghostscript 9.26</p>
+<li><p class="first">安装ghostscript 9.50 (<strong>根据是否需要中文支持决定是否安装</strong>)</p>
 <p>GMT需要使用 ghostscript 生成PDF、JPG等格式的图片，因而 ghostscript 是必须的。GMT安装包中自带了ghostscript，但是其并不支持在GMT图片中添加中文。</p>
 <p>如果有在GMT图片中添加中文的需求，则需要在安装GMT时不安装ghostscript组件，然后自己再自行安装 ghostscript。安装过程的最后一步，记得勾选
 <code class="docutils literal notranslate"><span class="pre">Generate</span> <span class="pre">cidfmap</span> <span class="pre">for</span> <span class="pre">Windows</span> <span class="pre">CJK</span> <span class="pre">TrueType</span> <span class="pre">fonts</span></code>。</p>
 <p>安装包下载地址:</p>
 <ul class="simple">
-<li><a class="reference external" href="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/gs926aw64.exe">gs926aw64.exe (64位)</a></li>
-<li><a class="reference external" href="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs926/gs926aw32.exe">gs926aw32.exe (32位)</a></li>
+<li><a class="reference external" href="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs950/gs950w32.exe">gs950w64.exe (64位)</a></li>
+<li><a class="reference external" href="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs950/gs950w64.exe">gs950w32.exe (32位)</a></li>
 </ul>
 <div class="admonition warning">
 <p class="first admonition-title">警告</p>
 <p class="last">ghostscript 9.27存在严重bug，会导致生成的图片中有用信息被裁剪。请确保自己安装的不是 9.27 版本。</p>
 </div>
 </li>
-<li><p class="first">安装 Git for Windows</p>
-<p>Git for Windows 为Windows用户提供了Bash以及Linux下常用的多个命令。如果想要在Windows下运行Bash脚本，推荐安装Git for Windows。</p>
-<p>下载地址: <a class="reference external" href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
+<li><p class="first">安装GSview 5.0 (<strong>不推荐</strong>)</p>
+<p>GSview是一个PostScript阅读器。GMT6默认生成PDF格式的图片，因而无需安装GSview。如果坚持想要生成并查看PS格式的图片，则可以安装GSview。</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.ghostgum.com.au/download/gsv50w64.exe">gsv50w64.exe (64位)</a></li>
+<li><a class="reference external" href="http://www.ghostgum.com.au/download/gsv50w32.exe">gsv50w32.exe (32位)</a></li>
+</ul>
 </li>
-<li><p class="first">安装 UnixTools</p>
+<li><p class="first">安装 UnixTools (<strong>不推荐</strong>)</p>
 <p>如果想要在Windows下运行Batch脚本，但同时想要使用各种Linux下的常用命令，则可以使用GMT中文社区整理的Unix小工具合集包 UnixTools。</p>
 <p>直接下载并解压，将解压得到的 exe 文件移动到 GMT 的 bin 目录即可。</p>
 <p>下载地址: <a class="reference external" href="https://gmt-china.org/data/UnixTools.zip">UnixTools.zip</a></p>
@@ -353,7 +353,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年10月16日.
+        最后更新于 2019年10月19日.
       </span>
 
     </p>
