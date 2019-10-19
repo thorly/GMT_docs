@@ -105,7 +105,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.3 macOS 下安装 GMT</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#gmt">2.3.1 使用 GMT 安装包</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#homebrew">2.3.2 使用 homebrew 安装</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#macports">2.3.3 使用 macports 安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#macports">2.3.3 使用 Macports 安装</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../cross-platform/">2.4 跨平台GMT安装方案</a></li>
@@ -214,7 +214,7 @@
             
   <div class="section" id="macos-gmt">
 <h1>2.3 macOS 下安装 GMT<a class="headerlink" href="#macos-gmt" title="永久链接至标题">¶</a></h1>
-<p>macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew 软件管理工具进行安装。</p>
+<p>macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew 或 Macports 软件管理工具进行安装。</p>
 <div class="section" id="gmt">
 <h2>2.3.1 使用 GMT 安装包<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
 <p>GMT 为 macOS 用户提供了 dmg 安装包，可以直接双击安装使用。</p>
@@ -299,18 +299,18 @@ $ brew install graphicsmagick ffmpeg
 </ol>
 </div>
 <div class="section" id="macports">
-<h2>2.3.3 使用 macports 安装<a class="headerlink" href="#macports" title="永久链接至标题">¶</a></h2>
-<p><a class="reference external" href="https://www.macports.org/">macports</a> 是 macOS 下的第三方软件包管理工具。</p>
+<h2>2.3.3 使用 Macports 安装<a class="headerlink" href="#macports" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="https://www.macports.org/">Macports</a> 是 macOS 下的第三方软件包管理工具。</p>
 <ol class="arabic">
 <li><p class="first">安装GMT:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo port install gdal +curl +geos +hdf5 +netcdf
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo port install gdal +hdf5 +netcdf +openjpeg
 $ sudo port install gmt6
 </pre></div>
 </div>
 </li>
 <li><p class="first">安装GMT依赖的其他软件</p>
 <blockquote>
-<div><p>$ sudo port install ghostscript graphicsmagick ffmpeg</p>
+<div><p>$ sudo port install graphicsmagick ffmpeg</p>
 </div></blockquote>
 </li>
 <li><p class="first">重新打开一个终端，检测安装是否成功:</p>
