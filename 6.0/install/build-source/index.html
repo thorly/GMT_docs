@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.5 Linux 下编译GMT源码 &mdash; GMT中文手册</title>
+  <title>2.5 Linux/macOS 下编译GMT源码 &mdash; GMT中文手册</title>
   
 
   
@@ -104,13 +104,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../windows/">2.2 Windows 下安装 GMT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../macOS/">2.3 macOS 下安装 GMT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cross-platform/">2.4 跨平台GMT安装方案</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.5 Linux 下编译GMT源码</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">2.5.1 解决依赖关系</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">2.5.2 下载</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gmt">2.5.3 安装GMT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">2.5.4 修改环境变量</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">2.5.5 测试是否安装成功</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">2.5.6 升级/卸载GMT</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.5 Linux/macOS 下编译GMT源码</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">2.5.1 编译及运行依赖</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">2.5.2 安装依赖软件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">2.5.3 下载源码及数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gmt">2.5.4 安装GMT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">2.5.5 修改环境变量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">2.5.6 测试是否安装成功</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">2.5.7 升级/卸载GMT</a></li>
 </ul>
 </li>
 </ul>
@@ -194,7 +195,7 @@
         
           <li><a href="../">2 安装</a> &raquo;</li>
         
-      <li>2.5 Linux 下编译GMT源码</li>
+      <li>2.5 Linux/macOS 下编译GMT源码</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -215,36 +216,38 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="linux-gmt">
-<h1>2.5 Linux 下编译GMT源码<a class="headerlink" href="#linux-gmt" title="永久链接至标题">¶</a></h1>
-<p>尽管大多数Linux发行版都提供了预编译的GMT二进制包，但其GMT版本都很老。姑不推荐直接安装发行版提供的版本，建议按照下面的安装说明直接从源码编译。</p>
-<div class="section" id="id1">
-<h2>2.5.1 解决依赖关系<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<p>GMT 在运行时依赖 fftw（&gt;=3.3）、netCDF（&gt;4.0且支持netCDF-4/HDF5）、ghostscript等。GMT在安装时主要依赖GCC编译器和 cmake（&gt;=2.8.5）。因而，需要先安装GMT所依赖的软件包。</p>
-<div class="admonition warning">
-<p class="first admonition-title">警告</p>
-<p class="last">由于 Linux 发行版众多，不同发行版下软件包的名称不同。因而，以下仅所列仅供参考，其他用户应自行根据关键词到
-<a class="reference external" href="https://pkgs.org">https://pkgs.org</a> 上确认自己使用的发行版上软件包的具体名字。</p>
+  <div class="section" id="linux-macos-gmt">
+<h1>2.5 Linux/macOS 下编译GMT源码<a class="headerlink" href="#linux-macos-gmt" title="永久链接至标题">¶</a></h1>
+<p>这一节介绍如何在 Linux 或者 macOS 下编译GMT源代码。Windows用户如果想编译
+GMT源码请参考GMT官方
+<a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/BUILDING.md">编译指南</a>。</p>
+<div class="section" id="id2">
+<h2>2.5.1 编译及运行依赖<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>GMT的编译及运行需要如下软件：</p>
+<ul class="simple">
+<li>CMake: &gt;=2.8.5</li>
+<li><a class="reference external" href="https://www.ghostscript.com/">Ghostscript</a></li>
+<li>netCDF（&gt;4.0且支持netCDF-4/HDF5）</li>
+<li>curl</li>
+</ul>
+<p>除此之外，还可以安装如下软件库以增强GMT的更多功能：</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.gdal.org/">GDAL</a>: 读写其他地学常用的网格和图片格式</li>
+<li><a class="reference external" href="https://www.pcre.org/">PCRE</a>: 正则表达式支持</li>
+<li><a class="reference external" href="http://www.fftw.org/">FFTW</a>: 快速傅里叶变换库（&gt;=3.3，macOS下不需要）</li>
+<li>LAPACK: 快速矩阵反演库 （macOS下不需要）</li>
+<li>BLAS：快速矩阵运算库 （macOS下不需要）</li>
+<li><a class="reference external" href="http://www.graphicsmagick.org">GraphicsMagick</a>: 生成GIF格式的动画</li>
+<li><a class="reference external" href="http://www.ffmpeg.org/">FFmpeg</a>: 生成MP4格式的动画</li>
+</ul>
 </div>
+<div class="section" id="id3">
+<h2>2.5.2 安装依赖软件<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>对于Ubuntu/Debian:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 更新</span>
-$ sudo apt update
-
-<span class="c1"># 安装编译所需软件包</span>
-$ sudo apt-get install build-essential cmake
-
-<span class="c1"># 安装必须软件包</span>
-$ sudo apt install ghostscript
-$ sudo apt install libnetcdf-dev
-$ sudo apt install libcurl4-gnutls-dev
-
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 安装编译所需软件包</span>
+$ sudo apt-get install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev ghostscript
 <span class="c1"># 安装可选软件包</span>
-$ sudo apt install gdal-bin libgdal-dev python-gdal
-$ sudo apt install liblapack3
-$ sudo apt install libglib2.0-dev
-$ sudo apt install libpcre3-dev
-$ sudo apt install libfftw3-dev
-
+$ sudo apt install gdal-bin libgdal-dev liblapack3 libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
 <span class="c1"># 安装制作动画所需的软件包</span>
 $ sudo apt install graphicsmagick ffmpeg
 </pre></div>
@@ -252,25 +255,20 @@ $ sudo apt install graphicsmagick ffmpeg
 <p>对于CentOS/RHEL/Fedora:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># CentOS用户必须先安装epel-release, RHEL/Fedora用户无需安装</span>
 $ sudo yum install epel-release
-
 <span class="c1"># 安装编译所需软件包</span>
-$ sudo yum install gcc gcc-c++ cmake make glibc
-
-<span class="c1"># 安装必须软件包</span>
-$ sudo yum install ghostscript
-$ sudo yum install netcdf-devel
-$ sudo yum install libcurl-devel
-
+$ sudo yum install gcc cmake make glibc ghostscript netcdf-devel libcurl-devel
 <span class="c1"># 安装可选软件包</span>
-$ sudo yum install gdal gdal-devel gdal-python
-$ sudo yum install lapack64-devel lapack-devel
-$ sudo yum install glib2-devel
-$ sudo yum install pcre-devel
-$ sudo yum install fftw-devel
-
+$ sudo yum install gdal gdal-devel lapack64-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
 <span class="c1"># 安装其他可选包</span>
-$ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-7.noarch.rpm
+$ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-<span class="k">$(</span>rpm -E %rhel<span class="k">)</span>.noarch.rpm
 $ sudo yum install GraphicsMagick ffmpeg
+</pre></div>
+</div>
+<p>对于macOS用户，建议使用 [Homebrew](<a class="reference external" href="https://brew.sh/">https://brew.sh/</a>) 安装依赖:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 安装必须依赖</span>
+brew install cmake curl netcdf ghostscript
+<span class="c1"># 安装可选依赖</span>
+brew install gdal pcre2 fftw graphicsmagick ffmpeg
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -278,9 +276,9 @@ $ sudo yum install GraphicsMagick ffmpeg
 <p class="last">GMT需要使用 ghostscript 生成PDF、JPG等格式的图片。但ghostscript 9.27存在严重bug，会导致生成的图片中有用信息被裁剪。请使用 <code class="docutils literal notranslate"><span class="pre">gs</span> <span class="pre">--version</span></code> 确认安装的ghostscript不是9.27版本。</p>
 </div>
 </div>
-<div class="section" id="id2">
-<h2>2.5.2 下载<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p>Linux下安装GMT需要下载如下三个文件：</p>
+<div class="section" id="id4">
+<h2>2.5.3 下载源码及数据<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>编译GMT需要下载如下三个文件：</p>
 <ol class="arabic simple">
 <li>GMT 6.0.0rc4 源码：<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/gmt-6.0.0rc4-src.tar.gz">gmt-6.0.0rc4-src.tar.gz</a></li>
 <li>全球海岸线数据GSHHG：<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz">gshhg-gmt-2.3.7.tar.gz</a></li>
@@ -288,7 +286,7 @@ $ sudo yum install GraphicsMagick ffmpeg
 </ol>
 </div>
 <div class="section" id="gmt">
-<h2>2.5.3 安装GMT<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
+<h2>2.5.4 安装GMT<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
 <p>将下载的三个压缩文件放在同一个目录里，按照如下步骤进行安装：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解压三个压缩文件</span>
 $ tar -xvf gmt-6.0.0rc4.tar.gz
@@ -339,7 +337,7 @@ $ cmake ..
 *  Options:
 *  Found GSHHG database       : /home/user/GMT/gmt-6.0.0rc4/share/gshhg <span class="o">(</span><span class="m">2</span>.3.7<span class="o">)</span>
 *  Found DCW-GMT database     : /home/user/GMT/gmt-6.0.0rc4/share/dcw-gmt
-*  Found GMT data server      : http://oceania.generic-mapping-tools.org
+*  Found GMT data server      : https://oceania.generic-mapping-tools.org
 *  NetCDF library             : /usr/lib64/libnetcdf.so
 *  NetCDF include dir         : /usr/include
 *  GDAL library               : /usr/lib64/libgdal.so
@@ -395,8 +393,8 @@ $ sudo make -j install
 <p class="last"><code class="docutils literal notranslate"><span class="pre">-j</span></code> 选项可以实现并行编译以减少编译时间。但据用户报告，某些Ubuntu发行版下使用 <code class="docutils literal notranslate"><span class="pre">-j</span></code> 选项会导致编译过程卡死。若出现此种情况，建议去除 <code class="docutils literal notranslate"><span class="pre">-j</span></code> 选项。</p>
 </div>
 </div>
-<div class="section" id="id3">
-<h2>2.5.4 修改环境变量<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id5">
+<h2>2.5.5 修改环境变量<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>打开终端，使用如下命令用文件编辑器打开Bash配置文件 <code class="file docutils literal notranslate"><span class="pre">~/.bashrc</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gedit ~/.bashrc
 </pre></div>
@@ -414,16 +412,16 @@ $ sudo make -j install
 <li>第三个命令将 GMT6 的 lib 目录加入到动态链接库路径中。通常，32位系统的路径为 <code class="docutils literal notranslate"><span class="pre">lib</span></code>，64位系统的路径为 <code class="docutils literal notranslate"><span class="pre">lib64</span></code></li>
 </ul>
 </div>
-<div class="section" id="id4">
-<h2>2.5.5 测试是否安装成功<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id6">
+<h2>2.5.6 测试是否安装成功<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>重新打开一个终端，键入如下命令，若正确显示GMT版本号，则表示安装成功:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt --version
 <span class="m">6</span>.0.0rc4
 </pre></div>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>2.5.6 升级/卸载GMT<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id7">
+<h2>2.5.7 升级/卸载GMT<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
 <p>按照上面的配置，GMT会被安装到 <code class="docutils literal notranslate"><span class="pre">/opt/GMT-6.0.0rc4</span></code> 目录下。若想要卸载GMT，可以直接删除整个 <code class="docutils literal notranslate"><span class="pre">/opt/GMT-6.0.0rc4</span></code> 即可。</p>
 <p>GMT不支持自动更新，因而若想要升级GMT，通常建议先卸载GMT，然后再下载新版源码并按照上面的步骤重新编译安装。</p>
 <p>当然，高级用户也可以同时安装多个版本的GMT，但需要注意环境变量PATH的设置。</p>
@@ -475,7 +473,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年10月19日.
+        最后更新于 2019年10月20日.
       </span>
 
     </p>
