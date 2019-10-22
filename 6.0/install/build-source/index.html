@@ -264,7 +264,7 @@ $ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpm
 $ sudo yum install GraphicsMagick ffmpeg
 </pre></div>
 </div>
-<p>对于macOS用户，建议使用 [Homebrew](<a class="reference external" href="https://brew.sh/">https://brew.sh/</a>) 安装依赖:</p>
+<p>对于macOS用户，建议使用 <a class="reference external" href="https://brew.sh">Homebrew</a> 安装依赖:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 安装必须依赖</span>
 brew install cmake curl netcdf ghostscript
 <span class="c1"># 安装可选依赖</span>
@@ -396,7 +396,11 @@ $ sudo make -j install
 <div class="section" id="id5">
 <h2>2.5.5 修改环境变量<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>打开终端，使用如下命令用文件编辑器打开Bash配置文件 <code class="file docutils literal notranslate"><span class="pre">~/.bashrc</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gedit ~/.bashrc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Linux 用户</span>
+gedit ~/.bashrc
+
+<span class="c1"># macOS 用户</span>
+open ~/.bash_profile
 </pre></div>
 </div>
 <p>然后向文件末尾加入如下语句以修改环境变量。修改完成后保存文件并退出，然后重启终端使其生效:</p>
