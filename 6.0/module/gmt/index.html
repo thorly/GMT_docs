@@ -123,7 +123,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../figure/">13.10 figure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../filter1d/">13.11 filter1d</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../fitcircle/">13.12 fitcircle</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">13.13 gmt</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">13.13 gmt</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">13.13.1 示例</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../gmt-config/">13.14 gmt-config</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gmt5syntax/">13.15 gmt5syntax</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">13.16 gmtconnect</a></li>
@@ -283,7 +286,7 @@
 <p>除了调用模块外，GMT还有自己的一些选项可以使用：</p>
 <ul class="simple">
 <li><strong>gmt --help</strong>：列出GMT提供的所有模块名及其功能</li>
-<li><strong>gmt --new-script</strong>：生成GMT脚本模板</li>
+<li><strong>gmt --new-script</strong>[=<em>L</em>]：生成现代模式模板脚本。默认会根据当前Shell环境确定脚本语言，用户也可以自行指定脚本语言 <em>L</em> （可以取 <strong>bash</strong>、<strong>csh</strong>或 <strong>batch</strong>）</li>
 <li><strong>gmt --show-bindir</strong>：显示GMT的bin目录</li>
 <li><strong>gmt --show-citation</strong>：显示GMT的参考文献引用信息</li>
 <li><strong>gmt --show-cores</strong>：显示当前计算机可以使用的核数</li>
@@ -297,6 +300,17 @@
 <li><strong>gmt --version</strong>：显示GMT版本</li>
 <li><strong>gmt</strong> <em>module</em> <strong>=</strong>：检测模块 <em>module</em> 是否存在，若存在则返回0，否则返回非零值</li>
 </ul>
+<div class="section" id="id1">
+<h2>13.13.1 示例<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>使用 <strong>gmt --new-script</strong> 会根据用户当前使用的SHELL环境生成对应的模板脚本。例如，在Bash环境下可以使用如下命令生成模板脚本:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt --new-script &gt; plot.sh
+</pre></div>
+</div>
+<p>在Windows DOS下默认会生成 batch脚本。可以直接指定要生成某种脚本语言的模板:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt --new-script<span class="o">=</span>bash &gt; plot.sh
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -344,7 +358,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年10月20日.
+        最后更新于 2019年10月22日.
       </span>
 
     </p>

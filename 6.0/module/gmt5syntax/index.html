@@ -276,11 +276,14 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/gmt5syntax.html" title="(在 GMT v6.0)"><span>gmt5syntax</span></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">将旧的GMT脚本修改成新的 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">&lt;module&gt;</span></code> 语法。</td>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">将旧的GMT4脚本修改成GMT5的 <strong>gmt</strong> <em>module</em> 语法</td>
 </tr>
 </tbody>
 </table>
-<p><code class="docutils literal notranslate"><span class="pre">gmt5syntax</span></code> 是一个Perl脚本，作用是在命令前加上 <code class="docutils literal notranslate"><span class="pre">gmt</span></code> 使得旧版本的语法变成新版本语法。该脚本位于 <code class="docutils literal notranslate"><span class="pre">${GMTHOME}/share/tools</span></code> 目录下。</p>
+<p>GMT4中每个模块都是一个单独的命令，这可能会造成命令冲突。从GMT5开始，GMT只提供一个命令，即 <strong>gmt</strong>。其他所有命令都变成了 <strong>gmt</strong> 的模块。</p>
+<p>因而，GMT4中的 <strong>psbasemap</strong> 命令在GMT5中应写作 <strong>gmt psbasemap</strong>。</p>
+<p><strong>gmt5syntax</strong> 是一个Perl脚本，作用是在命令前加上 <strong>gmt</strong> 将GMT4的语法改成
+GMT5的新语法。该脚本位于 <code class="docutils literal notranslate"><span class="pre">${GMTHOME}/share/tools</span></code> 目录下。</p>
 <div class="section" id="id1">
 <h2>13.15.1 用法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt5syntax old_script &gt; new_script
@@ -334,7 +337,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年10月20日.
+        最后更新于 2019年10月22日.
       </span>
 
     </p>

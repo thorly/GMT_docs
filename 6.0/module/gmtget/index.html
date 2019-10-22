@@ -129,8 +129,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">13.16 gmtconnect</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">13.17 gmtdefaults</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">13.18 gmtget</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">13.18.1 必选选项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">13.18.2 可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">13.18.1 语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">13.18.2 必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">13.18.3 可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">13.18.4 示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">13.18.5 相关模块</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">13.19 gmtinfo</a></li>
@@ -270,7 +273,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gmtget">
-<span id="index-0"></span><h1>13.18 gmtget<a class="headerlink" href="#gmtget" title="永久链接至标题">¶</a></h1>
+<h1>13.18 gmtget<a class="headerlink" href="#gmtget" title="永久链接至标题">¶</a></h1>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -282,42 +285,62 @@
 </tbody>
 </table>
 <div class="section" id="id1">
-<h2>13.18.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>13.18.1 语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p><strong>gmt get</strong>
+[ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>defaultsfile</em> ]
+[ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong> ]
+<em>PARAMETER1</em> [ <em>PARAMETER2</em> <em>PARAMETER3</em> … ]</p>
+</div>
+<div class="section" id="id2">
+<h2>13.18.2 必选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;PARAMETER&gt;</span></code></dt>
-<dd><p class="first">GMT的参数名，见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></p>
-<p><code class="docutils literal notranslate"><span class="pre">gmtset</span></code> 后直接跟一个或多个参数名:</p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt gmtget PS_MEDIA
-a4
-
-$ gmt get MAP_GRID_CROSS_SIZE_PRIMARY MAP_GRID_CROSS_SIZE_SECONDARY
-24p,Helvetica,black 16p,Helvetica,black fancy
+<dt><strong>PARAMETER</strong></dt>
+<dd>要查看的GMT参数名。GMT中参数列表见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a></dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h2>13.18.3 可选选项<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<dl class="docutils" id="g">
+<dt><strong>-G</strong><em>defaultsfile</em></dt>
+<dd><p class="first">读取指定的GMT配置文件</p>
+<p>默认情况下，该模块会按照如下优先级寻找配置文件 <strong>gmt.conf</strong>:</p>
+<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>./gmt.conf  -&gt; ~/gmt.conf -&gt; ~/.gmt/gmt.conf -&gt; 系统默认参数
 </pre></div>
 </div>
 </dd>
 </dl>
+<dl class="docutils" id="l">
+<dt><strong>-L</strong></dt>
+<dd><p class="first">输出时一行只输出一个返回值。</p>
+<p class="last">一次指定多个参数名时，默认会将所有返回值输出在一行，各值之间以空格分隔。该选项会一行只输出一个返回值。</p>
+</dd>
+</dl>
 </div>
-<div class="section" id="id2">
-<h2>13.18.2 可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;defaultsfile&gt;</span></code></dt>
-<dd><p class="first">读取指定的GMT配置文件</p>
-<p>默认情况下，该模块会按照如下优先级寻找配置文件 <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code></p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>./gmt.conf  &gt; ~/gmt.conf &gt; ~/.gmt/gmt.conf &gt; 系统默认参数
+<div class="section" id="id4">
+<h2>13.18.4 示例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>列出一个参数的当前值:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt get MAP_FRAME_TYPE
+fancy
 </pre></div>
 </div>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-L</span></code></dt>
-<dd><p class="first">输出时一行只输出一个返回值。</p>
-<p>一次指定多个参数名时，默认会将所有返回值输出在一行，各值之间以空格分隔。该选项会一行只输出一个返回值:</p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt get FONT_TITLE FONT_LABEL MAP_FRAME_TYPE -L
+<p>列出多个参数的当前值:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt get MAP_GRID_CROSS_SIZE_PRIMARY MAP_GRID_CROSS_SIZE_SECONDARY
+24p,Helvetica,black 16p,Helvetica,black
+</pre></div>
+</div>
+<p>使用 <strong>-L</strong> 选项一行显示一个参数值:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt get FONT_TITLE FONT_LABEL MAP_FRAME_TYPE -L
 24p,Helvetica,black
 16p,Helvetica,black
 fancy
 </pre></div>
 </div>
-</dd>
-</dl>
+</div>
+<div class="section" id="id5">
+<h2>13.18.5 相关模块<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/gmt.conf.html" title="(在 GMT v6.0)"><span class="xref std std-doc">gmt.conf</span></a>,
+<a class="reference internal" href="../gmtdefaults/"><span class="doc">gmtdefaults</span></a>,
+<a class="reference internal" href="../gmtset/"><span class="doc">gmtset</span></a></p>
 </div>
 </div>
 
@@ -366,7 +389,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年10月20日.
+        最后更新于 2019年10月22日.
       </span>
 
     </p>

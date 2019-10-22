@@ -284,7 +284,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>docs</strong> 用系统默认的浏览器打开GMT官方的HTML文档。若本地存在HTML文档，则优先使用本地文档。</p>
+<p><strong>docs</strong> 用系统默认浏览器打开指定模块的HTML文档。若本地存在HTML文档，则优先使用本地文档；否则则打开GMT文档网站。除了指定模块外，还可以打开
+<em>cookbook</em>、<em>gallery</em>、<em>defaults</em>、<em>api</em> 和 <em>tutorial</em> 页面。</p>
 <div class="section" id="id1">
 <h2>13.8.1 语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p><strong>gmt docs</strong>
@@ -320,7 +321,9 @@
 <dt><strong>-S</strong></dt>
 <dd><strong>docs</strong> 默认优先打开本地文档，若本地文档不存在，则打开GMT文档网站。该选项强制 <strong>docs</strong> 使用浏览器打开GMT文档网站上的网页。</dd>
 <dt><strong>-</strong><em>option</em></dt>
-<dd>指定选项（例如 <strong>-R</strong>），则 <strong>docs</strong> 会打开模块文档并定位到模块文档的该选项处。</dd>
+<dd><p class="first">指定选项（例如 <strong>-R</strong>），则 <strong>docs</strong> 会打开模块文档并定位到模块文档的该选项处。</p>
+<p class="last">注意，该功能对本地文档无效，因而当使用该功能时GMT会默认添加 <strong>-S</strong> 选项以打开远程文档。</p>
+</dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../option/V/"><span class="doc">(more …)</span></a></dt>
@@ -328,7 +331,7 @@
 </dl>
 <dl class="docutils">
 <dt><strong>-^</strong> 或 <strong>-</strong></dt>
-<dd>显示简短的帮助信息，包括模块简介和基本语法信息 （Windows下只能使用 <strong>-</strong>）</dd>
+<dd>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</dd>
 <dt><strong>-+</strong> 或 <strong>+</strong></dt>
 <dd>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</dd>
 <dt><strong>-?</strong> 或无参数</dt>
@@ -369,7 +372,8 @@
 <a class="reference internal" href="../end/"><span class="doc">end</span></a>,
 <a class="reference internal" href="../figure/"><span class="doc">figure</span></a>,
 <a class="reference internal" href="../inset/"><span class="doc">inset</span></a>,
-<a class="reference internal" href="../subplot/"><span class="doc">subplot</span></a></p>
+<a class="reference internal" href="../subplot/"><span class="doc">subplot</span></a>,
+<a class="reference internal" href="../gmt/"><span class="doc">gmt</span></a></p>
 </div>
 </div>
 
@@ -418,7 +422,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年10月20日.
+        最后更新于 2019年10月22日.
       </span>
 
     </p>

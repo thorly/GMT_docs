@@ -221,112 +221,93 @@
 <p>GMT提供了从1弧秒到60弧分的多种不同精度的全球地形起伏网格数据供用户使用。</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="35%" />
-<col width="14%" />
-<col width="13%" />
-<col width="38%" />
+<col width="56%" />
+<col width="23%" />
+<col width="21%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">地形数据名称</th>
 <th class="head">精度</th>
 <th class="head">大小</th>
-<th class="head">说明</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_60m</span></code></td>
-<td>60 弧分</td>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_01d</span></code></td>
+<td>1 弧度</td>
 <td>112 KB</td>
-<td>ETOPO1高斯球面滤波得到</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_30m</span></code></td>
 <td>30 弧分</td>
 <td>377 KB</td>
-<td>ETOPO1高斯球面滤波得到</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_20m</span></code></td>
 <td>20 弧分</td>
 <td>783 KB</td>
-<td>ETOPO1高斯球面滤波得到</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_15m</span></code></td>
 <td>15 弧分</td>
 <td>1.4 MB</td>
-<td>ETOPO1高斯球面滤波得到</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_10m</span></code></td>
 <td>10 弧分</td>
 <td>2.9 MB</td>
-<td>ETOPO1高斯球面滤波得到</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_06m</span></code></td>
 <td>6 弧分</td>
 <td>7.5 MB</td>
-<td>ETOPO1高斯球面滤波得到</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_05m</span></code></td>
 <td>5 弧分</td>
 <td>11 MB</td>
-<td>ETOPO1高斯球面滤波得到</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_04m</span></code></td>
 <td>4 弧分</td>
 <td>16 MB</td>
-<td>ETOPO1高斯球面滤波得到</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_03m</span></code></td>
 <td>3 弧分</td>
 <td>28 MB</td>
-<td>ETOPO1高斯球面滤波得到</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_02m</span></code></td>
 <td>2 弧分</td>
 <td>58 MB</td>
-<td>ETOPO2v2冰层表面</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_01m</span></code></td>
 <td>1 弧分</td>
 <td>214 MB</td>
-<td>ETOPO1冰层表面</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_30s</span></code></td>
 <td>30 弧秒</td>
 <td>778 MB</td>
-<td>SRTM30+</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_15s</span></code></td>
 <td>15 弧秒</td>
 <td>2.6 GB</td>
-<td>SRTM15+</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_03s</span></code></td>
 <td>3 弧秒</td>
 <td>6.8 GB</td>
-<td>SRTM3S</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">earth_relief_01s</span></code></td>
 <td>1 弧秒</td>
 <td>41 GB</td>
-<td>SRTM1S</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">srtm_relief_03s</span></code></td>
 <td>3 弧秒</td>
 <td>6.8 GB</td>
-<td>SRTM3S（仅限陆地）</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">srtm_relief_01s</span></code></td>
 <td>1 弧秒</td>
 <td>41 GB</td>
-<td>SRTM1S（仅限陆地）</td>
 </tr>
 </tbody>
 </table>
 <p>这些地形起伏数据保存在GMT的服务器上。当用户<strong>第一次</strong>使用某个精度的地形起伏数据时，GMT会自动从服务器上下载该数据文件，并保存到GMT的缓存文件夹下（由 <a class="reference internal" href="../../conf/dir/#dir-cache"><span class="std std-ref">DIR_CACHE</span></a> 控制，默认为 <code class="docutils literal notranslate"><span class="pre">~/.gmt/server</span></code> 目录），然后再读取该文件。以后再使用该数据时，GMT会自动从缓存文件夹下读取该数据文件，而无需再次从服务器下载。</p>
 <div class="admonition tip">
 <p class="first admonition-title">小技巧</p>
-<p>由于第一次使用地形数据时，GMT需要从服务器下载数据，通常会需要很长时间。建议用户可以在闲置时提前将精度为15弧秒到60弧秒的地形数据下载到自己的计算机上。</p>
+<p>由于第一次使用地形数据时，GMT需要从服务器下载数据，通常会需要很长时间。建议用户可以在闲置时提前将精度为15弧秒到1户分的地形数据下载到自己的计算机上。</p>
 <p>可以复制并执行如下命令以下载不同精度的地形数据:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt which -Gu @earth_relief_60m
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt which -Gu @earth_relief_01d
 gmt which -Gu @earth_relief_30m
 gmt which -Gu @earth_relief_20m
 gmt which -Gu @earth_relief_15m
@@ -359,14 +340,14 @@ gmt grdimage -JH15c @earth_relief_15m -pdf map
 <p>你可以使用多种方式来控制你的缓存目录所占用的空间大小：</p>
 <ol class="arabic simple">
 <li>通过参数 <a class="reference internal" href="../../conf/misc/#gmt-data-server-limit"><span class="std std-ref">GMT_DATA_SERVER_LIMIT</span></a> 设置缓存目录空间大小的上限，默认无限制；</li>
-<li>可以通过 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">clear</span> <span class="pre">data</span></code> 命令清空整个数据缓存目录</li>
+<li>可以通过 <strong>gmt clear data</strong> 命令清空整个数据缓存目录</li>
 </ol>
 </div>
 <div class="section" id="id4">
 <h2>11.4.4 技术细节<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li>3弧分及更低分辨率的全球地形数据均是NOAA ETOPO1全球地形起伏网格数据的衍生产品。GMT利用球面高斯滤波对其进行重采样以防止混叠现象。可以使用 <a class="reference internal" href="../../module/grdinfo/"><span class="doc">grdinfo</span></a> 查看生成网格文件所使用的滤波命令。</li>
-<li>2弧分的数据直接使用了NOAA提供的ETOPO2v2文件（冰层表面版本）。30弧秒和15弧秒的数据来自于SRTM30+和SRTM15+。</li>
+<li>15弧秒的数据来源于 SRTM15+V2 [<a class="reference external" href="http://dx.doi.org/10.1029/2019EA000658">http://dx.doi.org/10.1029/2019EA000658</a>]</li>
+<li>30弧秒及更低分辨率的全球地形数据均是SRTM15+V2 的衍生产品。GMT利用笛卡尔高斯滤波对其进行重采样以防止混叠现象。可以使用 <a class="reference internal" href="../../module/grdinfo/"><span class="doc">grdinfo</span></a> 查看生成网格文件所使用的滤波命令。</li>
 <li>3弧秒和1弧秒的数据来自于NASA提供的SRTM数据。数据被划为为1度x1度的区块。在使用时，GMT会根据 <strong>-R</strong> 选项指定的区域范围只下载区域内的地形数据。</li>
 <li>原始的SRTM3和SRTM1数据只在北纬60度到南纬60度的陆地上有数据。当使用 <strong>&#64;earth_relief_01s</strong> 或 <strong>&#64;earth_relief_03s</strong> 时，GMT会自动对
 <strong>&#64;earth_relief_15s</strong> 数据对增采样以填充缺失的海洋部分。</li>
@@ -380,22 +361,7 @@ gmt grdimage -JH15c @earth_relief_15m -pdf map
 <div class="section" id="id5">
 <h2>11.4.5 数据来源及引用<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
-<li>ETOPO2v2: <a class="reference external" href="https://dx.doi.org/10.7289/V5J1012Q">https://dx.doi.org/10.7289/V5J1012Q</a>.</li>
-<li>ETOPO1:
-Amante, C., and B. W. Eakins (2008),
-ETOPO1 1 arc-minute global relief model: Procedures, data sources and analysis,
-National Geophysical Data Center, Boulder, CO.
-<a class="reference external" href="https://www.ngdc.noaa.gov/mgg/global/relief/ETOPO1/data/ice_surface/grid_registered/netcdf/ETOPO1_Ice_g_gmt4.grd.gz">原始数据下载链接</a></li>
-<li>SRTM30+:
-Becker, J. J., et al. (2009),
-Global Bathymetry and Elevation Data at 30 Arc Seconds Resolution: SRTM30_PLUS,
-Marine Geodesy, 32, 355-371.
-<a class="reference external" href="ftp://topex.ucsd.edu/pub/srtm30_plus/topo30/topo30.grd">原始数据下载链接</a></li>
-<li>SRTM15+:
-Olson, C. L., J. J. Becker, and D. T. Sandwell (2014),
-A new global bathymetry map at 15 arcsecond resolution for resolving seafloor fabric: SRTM15_PLUS,
-in Eos Trans. AGU, edited, pp. Abstract OS34A-03
-<a class="reference external" href="ftp://topex.ucsd.edu/pub/srtm15_plus/topo15.grd">原始数据下载链接</a></li>
+<li>SRTM15+V2 [<a class="reference external" href="http://dx.doi.org/10.1029/2019EA000658">http://dx.doi.org/10.1029/2019EA000658</a>]</li>
 <li>SRTMGL3数据: <a class="reference external" href="https://lpdaac.usgs.gov/dataset_discovery/measures/measures_products_table/srtmgl3_v003">https://lpdaac.usgs.gov/dataset_discovery/measures/measures_products_table/srtmgl3_v003</a></li>
 <li>SRTMGL1数据: <a class="reference external" href="https://lpdaac.usgs.gov/dataset_discovery/measures/measures_products_table/srtmgl1_v003">https://lpdaac.usgs.gov/dataset_discovery/measures/measures_products_table/srtmgl1_v003</a></li>
 </ol>
@@ -447,7 +413,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年10月20日.
+        最后更新于 2019年10月22日.
       </span>
 
     </p>
