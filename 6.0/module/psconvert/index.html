@@ -288,7 +288,7 @@
 <p class="first admonition-title">注解</p>
 <p class="last">本模块原名为 <code class="docutils literal notranslate"><span class="pre">ps2raster</span></code> ，v5.2.1 版本起更名为 <code class="docutils literal notranslate"><span class="pre">psconvert</span></code></p>
 </div>
-<p>该模块通过调用 GhostScript 将 PS/EPS 文件转换为其他图片格式，包括BMP、EPS、JPEG、PDF、PNG、PPM、SVG、TIFF 格式。</p>
+<p>该模块通过调用 Ghostscript 将 PS/EPS 文件转换为其他图片格式，包括BMP、EPS、JPEG、PDF、PNG、PPM、SVG、TIFF 格式。</p>
 <div class="section" id="id1">
 <h2>13.53.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <dl class="docutils">
@@ -338,9 +338,9 @@ gmt psconvert test1.ps test2.ps map*.ps
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-C&lt;gs_options&gt;</span></code></dt>
-<dd><p class="first">传递给 GhostScript 的选项</p>
-<p>该选项用于在调用 GhostScript 时传给 GhostScript 额外的选项，若要额外给
-GhostScript增加多个选项，可重复使用 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 命令。</p>
+<dd><p class="first">传递给 Ghostscript 的选项</p>
+<p>该选项用于在调用 Ghostscript 时传给 Ghostscript 额外的选项，若要额外给
+Ghostscript增加多个选项，可重复使用 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 命令。</p>
 <p>在Windows下，若PS文件中含中文，则可能需要使用 <code class="docutils literal notranslate"><span class="pre">-C</span></code> 选项告诉ghostscript字体路径:</p>
 <div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert -C-sFONTPATH<span class="o">=</span>C:<span class="se">\W</span>indows<span class="se">\F</span>onts chinese.ps
 </pre></div>
@@ -371,8 +371,8 @@ GhostScript增加多个选项，可重复使用 <code class="docutils literal no
 </div>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-G&lt;ghost_path&gt;</span></code></dt>
-<dd><p class="first">指定GhostScript可执行文件的路径</p>
-<p><code class="docutils literal notranslate"><span class="pre">psconvert</span></code> 底层调用了 GhostScript 来实现PS到其他格式的转换，因而成功转换的前提是必须能够找到 GhostScript 的可执行文件。 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项即用于显式指定
+<dd><p class="first">指定Ghostscript可执行文件的路径</p>
+<p><code class="docutils literal notranslate"><span class="pre">psconvert</span></code> 底层调用了 Ghostscript 来实现PS到其他格式的转换，因而成功转换的前提是必须能够找到 Ghostscript 的可执行文件。 <code class="docutils literal notranslate"><span class="pre">-G</span></code> 选项即用于显式指定
 ghostscript可执行文件的路径。</p>
 <p>说明：</p>
 <ol class="last arabic simple">
@@ -382,13 +382,13 @@ ghostscript可执行文件的路径。</p>
 </ol>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-I</span></code></dt>
-<dd>Enforce gray-shades by using ICC profiles.  GhostScript versions
-&gt;= 9.00 change gray-shades by using ICC profiles.  GhostScript 9.05
+<dd>Enforce gray-shades by using ICC profiles.  Ghostscript versions
+&gt;= 9.00 change gray-shades by using ICC profiles.  Ghostscript 9.05
 and above provide the ‘-dUseFastColor=true’ option to prevent that
 and that is what <strong>psconvert</strong> does by default, unless option <strong>-I</strong> is
-set.  Note that for GhostScript &gt;= 9.00 and &lt; 9.05 the gray-shade
+set.  Note that for Ghostscript &gt;= 9.00 and &lt; 9.05 the gray-shade
 shifting is applied to all but PDF format.  We have no solution to
-offer other than upgrade GhostScript.</dd>
+offer other than upgrade Ghostscript.</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-L&lt;listfile&gt;</span></code></dt>
 <dd><code class="docutils literal notranslate"><span class="pre">&lt;listfile&gt;</span></code> 中包含要转换的所有PS文件名</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-P</span></code></dt>
@@ -519,7 +519,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年10月24日.
+        最后更新于 2019年10月25日.
       </span>
 
     </p>
