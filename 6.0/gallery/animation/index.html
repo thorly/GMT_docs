@@ -276,9 +276,11 @@ gmt movie main.sh -Sbpre.sh -C4ix2ix125 -Tsin_point.txt -Z -Nanim01 -D5 -M10,png
 
 <span class="c1"># 绘制静态背景图层的脚本并生成绘图过程中需要使用的数据</span>
 cat <span class="s">&lt;&lt; EOF &gt; pre.sh</span>
-<span class="s">gmt math -T0/360/5 -I T 5 SUB = longitudes.txt</span>
-<span class="s">gmt makecpt -Cdem2 -T0/6000 &gt; movie_dem.cpt</span>
-<span class="s">gmt grdgradient @earth_relief_20m -Nt1.25 -A45 -Gintens.nc</span>
+<span class="s">gmt begin</span>
+<span class="s">	gmt math -T0/360/5 -I T 5 SUB = longitudes.txt</span>
+<span class="s">	gmt makecpt -Cdem2 -T0/6000 -H &gt; t.cpt</span>
+<span class="s">	gmt grdgradient @earth_relief_20m -Nt1.25 -A45 -Gintens.nc</span>
+<span class="s">gmt end</span>
 <span class="s">EOF</span>
 
 <span class="c1"># 生成绘图主脚本</span>
@@ -293,7 +295,7 @@ cat <span class="s">&lt;&lt; EOF &gt; main.sh</span>
 <span class="s">	# Clip to expose land areas only</span>
 <span class="s">	gmt coast -Gc</span>
 <span class="s">	# Overlay relief over land only using dem cpt</span>
-<span class="s">	gmt grdimage @earth_relief_20m -Is.nc -Cmovie_dem.cpt</span>
+<span class="s">	gmt grdimage @earth_relief_20m -Is.nc -Ct.cpt</span>
 <span class="s">	# Undo clipping and overlay gridlines</span>
 <span class="s">	gmt coast -Q -B30g30</span>
 <span class="s">gmt end</span>
@@ -357,7 +359,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年10月25日.
+        最后更新于 2019年10月30日.
       </span>
 
     </p>
