@@ -235,6 +235,7 @@ GMT源码请参考GMT官方
 <li><a class="reference external" href="https://www.gdal.org/">GDAL</a>: 读写其他地学常用的网格和图片格式</li>
 <li><a class="reference external" href="https://www.pcre.org/">PCRE</a>: 正则表达式支持</li>
 <li><a class="reference external" href="http://www.fftw.org/">FFTW</a>: 快速傅里叶变换库（&gt;=3.3，macOS下不需要）</li>
+<li><a class="reference external" href="https://developer.gnome.org/glib/">GLib</a>: GTHREAD多线程支持</li>
 <li>LAPACK: 快速矩阵反演库 （macOS下不需要）</li>
 <li>BLAS：快速矩阵运算库 （macOS下不需要）</li>
 <li><a class="reference external" href="http://www.graphicsmagick.org">GraphicsMagick</a>: 生成GIF格式的动画</li>
@@ -258,7 +259,7 @@ $ sudo yum install epel-release
 <span class="c1"># 安装编译所需软件包</span>
 $ sudo yum install gcc cmake make glibc ghostscript netcdf-devel libcurl-devel
 <span class="c1"># 安装可选软件包</span>
-$ sudo yum install gdal gdal-devel lapack64-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
+$ sudo yum install gdal gdal-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
 <span class="c1"># 安装其他可选包</span>
 $ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-<span class="k">$(</span>rpm -E %rhel<span class="k">)</span>.noarch.rpm
 $ sudo yum install GraphicsMagick ffmpeg
@@ -268,7 +269,7 @@ $ sudo yum install GraphicsMagick ffmpeg
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 安装必须依赖</span>
 brew install cmake curl netcdf ghostscript
 <span class="c1"># 安装可选依赖</span>
-brew install gdal pcre2 fftw graphicsmagick ffmpeg
+brew install gdal pcre2 glib fftw graphicsmagick ffmpeg
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -300,8 +301,11 @@ $ mv dcw-gmt-1.1.4 gmt-6.0.0/share/dcw-gmt
 <span class="c1"># 切换到gmt源码目录下</span>
 $ <span class="nb">cd</span> gmt-6.0.0
 
-<span class="c1"># 新建用户配置文件</span>
+<span class="c1"># 用文本编辑器新建并打开CMake用户配置文件</span>
+<span class="c1"># Linux用户</span>
 $ gedit cmake/ConfigUser.cmake
+<span class="c1"># macOS用户</span>
+$ open -a TextEdit cmake/ConfigUser.cmake
 </pre></div>
 </div>
 <p>向 <code class="docutils literal notranslate"><span class="pre">cmake/ConfigUser.cmake</span></code> 文件中加入如下语句:</p>
@@ -316,7 +320,7 @@ $ gedit cmake/ConfigUser.cmake
 <li><code class="docutils literal notranslate"><span class="pre">CMAKE_INSTALL_PREFIX</span></code> 用于设置GMT的安装路径，上面的语句会将GMT安装在
 <code class="docutils literal notranslate"><span class="pre">/opt/GMT-6.0.0</span></code> 目录下，用户可以自行修改为其他路径。没有 root 权限的一般用户，可以将安装路径设置为 <code class="docutils literal notranslate"><span class="pre">/home/xxx/software/GMT-6.0.0</span></code> 等有可读写权限的路径；</li>
 <li><code class="docutils literal notranslate"><span class="pre">COPY_GSHHG</span></code> 和 <code class="docutils literal notranslate"><span class="pre">COPY_DCW</span></code> 设置为 TRUE 会将相关数据复制到 GMT 的 share 目录下</li>
-<li><code class="docutils literal notranslate"><span class="pre">GMT_INSTALL_MODULE_LINKS</span></code> 为 <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>，表明不在GMT的bin目录下建立命令的软链接，不建议设置为 <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> （可选）</li>
+<li><code class="docutils literal notranslate"><span class="pre">GMT_INSTALL_MODULE_LINKS</span></code> 建议设置为 <code class="docutils literal notranslate"><span class="pre">FALSE</span></code></li>
 </ul>
 <div class="admonition tip">
 <p class="first admonition-title">小技巧</p>
@@ -353,25 +357,25 @@ $ cmake ..
 *  License restriction        : no
 *  Triangulation method       : Shewchuk
 *  OpenMP support             : enabled
-*  GLIB GTHREAD support       : disabled
-*  PTHREAD support            : disabled
+*  GLIB GTHREAD support       : enabled
 *  Build mode                 : shared
 *  Build GMT core             : always <span class="o">[</span>libgmt.so<span class="o">]</span>
 *  Build PSL library          : always <span class="o">[</span>libpostscriptlight.so<span class="o">]</span>
 *  Build GMT supplements      : yes <span class="o">[</span>supplements.so<span class="o">]</span>
 *  Build GMT Developer        : yes
 *  Build proto supplements    : none
-*  Found Ghostscript <span class="o">(</span>gs<span class="o">)</span>     : yes
-*  Found GraphicsMagick <span class="o">(</span>gm<span class="o">)</span>  : yes
-*  Found ffmpeg               : yes
+*  Found Ghostscript <span class="o">(</span>gs<span class="o">)</span>     : yes <span class="o">(</span><span class="m">9</span>.50<span class="o">)</span>
+*  Found GraphicsMagick <span class="o">(</span>gm<span class="o">)</span>  : yes <span class="o">(</span><span class="m">1</span>.3.33<span class="o">)</span>
+*  Found ffmpeg               : yes <span class="o">(</span><span class="m">4</span>.2.1<span class="o">)</span>
 *  Found open                 : yes
-*  Found ogr2ogr              : yes
-*  Found gdal_translate       : yes
+*  Found ogr2ogr              : yes <span class="o">(</span><span class="m">2</span>.4.2<span class="o">)</span>
+*  Found gdal_translate       : yes <span class="o">(</span><span class="m">2</span>.4.2<span class="o">)</span>
 *
 *  Locations:
 *  Installing GMT in          : /opt/GMT-6.0.0
 *  GMT_DATADIR                : /opt/GMT-6.0.0/share
 *  GMT_DOCDIR                 : /opt/GMT-6.0.0/share/doc
+*  GMT_MANDIR                 : /opt/GMT-6.0.0/share/man
 -- Configuring <span class="k">done</span>
 -- Generating <span class="k">done</span>
 </pre></div>
@@ -476,7 +480,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月03日.
+        最后更新于 2019年11月05日.
       </span>
 
     </p>

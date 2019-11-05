@@ -216,14 +216,13 @@
 <div class="section" id="conda">
 <h2>2.4.1 通过 conda 安装<a class="headerlink" href="#conda" title="永久链接至标题">¶</a></h2>
 <p><a class="reference external" href="https://conda.io/">conda</a> 是由 <a class="reference external" href="https://www.anaconda.com/">Anaconda</a> 提供的一个跨平台软件包管理器。conda的 <a class="reference external" href="https://conda-forge.org/">conda-forge</a>
-频道中提供了最新的GMT。</p>
+通道提供了最新的GMT。</p>
 <p>如果你是 Anaconda 用户，则可以直接通过如下命令安装。</p>
 <p>安装GMT 6.0.0:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install gmt -c conda-forge
 </pre></div>
 </div>
-<p>注意：由于conda-forge并提供Windows下的graphicsmagick，因而需要用户自行下载并安装
-graphicsmagick。</p>
+<p>注意：由于conda-forge没有提供Windows下的GraphicsMagick，因而Windows用户还需自行下载并安装 GraphicsmMgick 才能制作GIF格式的动画。</p>
 <p>安装完成后，在终端执行如下命令以验证:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt --version
 <span class="m">6</span>.0.0
@@ -277,7 +276,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月03日.
+        最后更新于 2019年11月05日.
       </span>
 
     </p>

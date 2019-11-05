@@ -234,7 +234,11 @@
 </ul>
 </li>
 <li><p class="first">安装GMT</p>
-<p>双击安装包即可安装。在“Choose components”页面，建议将所有选项都勾选上。若想要让GMT支持中文，则需要取消ghostscript组件。</p>
+<p>双击安装包即可安装。在“Choose components”页面，建议将所有选项都勾选上。</p>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">GMT安装包中内置了Ghostscript最新版，但其不支持中文。若想要GMT支持中文，则需要在安装GMT时不选择Ghostscript组件，待GMT安装完成后再自行安装 Ghostscript。</p>
+</div>
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
 <p>安装过程中可能会出现如下警告:</p>
@@ -275,12 +279,12 @@
 <p>下载地址: <a class="reference external" href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
 </li>
 <li><p class="first">安装 GraphicsMagick (<strong>根据需求选择是否安装</strong>)</p>
-<p>GMT 的 <span class="xref std std-doc">/module/movie</span> 模块在制作 GIF 格式的动画时需要使用 <a class="reference external" href="http://www.graphicsmagick.org/">GraphicsMagick</a>。</p>
+<p>GMT 的 <strong>movie</strong> 模块在制作 GIF 格式的动画时需要使用 <a class="reference external" href="http://www.graphicsmagick.org/">GraphicsMagick</a>。</p>
 <p>如有制作GIF动画的需求，可以下载安装这个软件，并将其 bin 目录加入到系统环境变量 <strong>PATH</strong> 中，以保证 GMT 可以找到其提供的 <strong>gm</strong> 命令。</p>
 </li>
-<li><p class="first">安装ghostscript 9.50 (<strong>根据是否需要中文支持决定是否安装</strong>)</p>
-<p>GMT需要使用 ghostscript 生成PDF、JPG等格式的图片，因而 ghostscript 是必须的。GMT安装包中自带了ghostscript，但是其并不支持在GMT图片中添加中文。</p>
-<p>如果有在GMT图片中添加中文的需求，则需要在安装GMT时不安装ghostscript组件，然后自己再自行安装 ghostscript。安装过程的最后一步，记得勾选
+<li><p class="first">安装 Ghostscript 9.50 (<strong>根据是否需要中文支持决定是否安装</strong>)</p>
+<p>GMT需要使用 Ghostscript 生成PDF、JPG等格式的图片，因而 Ghostscript 是必须的。GMT安装包中自带了Ghostscript，但是其并不支持在GMT图片中添加中文。</p>
+<p>如果有在GMT图片中添加中文的需求，则需要在安装GMT时不安装Ghostscript组件，然后自己再自行安装 Ghostscript。安装过程中记得勾选
 <code class="docutils literal notranslate"><span class="pre">Generate</span> <span class="pre">cidfmap</span> <span class="pre">for</span> <span class="pre">Windows</span> <span class="pre">CJK</span> <span class="pre">TrueType</span> <span class="pre">fonts</span></code>。</p>
 <p>安装包下载地址:</p>
 <ul class="simple">
@@ -353,7 +357,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月03日.
+        最后更新于 2019年11月05日.
       </span>
 
     </p>

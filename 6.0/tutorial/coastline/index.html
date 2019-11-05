@@ -236,7 +236,7 @@
 <p><strong>coast</strong> 模块的选项 <strong>-W0.5p,black</strong> 表示绘制岸线，并设置岸线为
 0.5p宽的黑色线条。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin coastline png,pdf
-gmt coast -R-130/-50/20/60 -JM15c -Baf -W0.5p,black
+    gmt coast -R-130/-50/20/60 -JM15c -Baf -W0.5p,black
 gmt end show
 </pre></div>
 </div>
@@ -247,7 +247,7 @@ gmt end show
 <p>上图看上去有些复杂。这是因为默认情况下 <strong>-W</strong> 选项会绘制所有水体与陆地的界限，包括海岸线、湖岸线、湖中岛的边界等。根据水体或陆地的不同，<strong>coast</strong>模块将岸线分为从1到4的四个级别，依次指海岸线、湖岸线、湖中岛，以及湖中岛内的湖边界。</p>
 <p>因而，我们可以在使用 <strong>-W</strong> 选项时指定要绘制哪一个等级的岸线。下面的脚本中，我们使用 <strong>-W1/0.5p,black</strong> 表示用 0.5p 宽的黑色线条绘制1级海岸线。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin coastline png,pdf
-gmt coast -R-130/-50/20/60 -JM15c -Baf -W1/0.5p,black
+    gmt coast -R-130/-50/20/60 -JM15c -Baf -W1/0.5p,black
 gmt end show
 </pre></div>
 </div>
@@ -255,10 +255,10 @@ gmt end show
 <a class="reference internal image-reference" href="../../_images/coastline-gmtplot-1.png"><img alt="../../_images/coastline-gmtplot-1.png" src="../../_images/coastline-gmtplot-1.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-text">绘制海岸线</span></p>
 </div>
-<p>也可以在一个命令中多次使用 <strong>-W</strong> 选项，分别用不同的线条绘制不同等级的岸线。这里我们使用 <strong>-W1/0.5p,black</strong> 绘制0.5p黑色的海岸线，同时使用 <strong>-W2/1p,lightred</strong>
+<p>可以在一个命令中多次使用 <strong>-W</strong> 选项，分别用不同的线条绘制不同等级的岸线。这里我们使用 <strong>-W1/0.5p,black</strong> 绘制0.5p黑色的海岸线，同时使用 <strong>-W2/1p,lightred</strong>
 绘制1p宽的浅红色湖岸线。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin coastline png,pdf
-gmt coast -R-130/-50/20/60 -JM15c -Baf -W1/0.5p,black -W2/1p,lightred
+    gmt coast -R-130/-50/20/60 -JM15c -Baf -W1/0.5p,black -W2/1p,lightred
 gmt end show
 </pre></div>
 </div>
@@ -271,7 +271,7 @@ gmt end show
 <h2>3.4.2 设置要绘制的对象的最小面积<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>上图看上去依然有些乱。主要是因为美国有大大小小的很多岛屿和湖泊，GMT默认会把这些岛屿和湖泊都画出来。如果能够只绘制比较大的岛屿或湖泊就好了，我们可以通过 <strong>-A</strong> 选项设置要绘制的对象的最小面积（单位为平方千米）。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin coastline png,pdf
-gmt coast -R-130/-50/20/60 -JM15c -Baf -W1/0.5p,black -W2/1p,lightred -A5000
+    gmt coast -R-130/-50/20/60 -JM15c -Baf -W1/0.5p,black -W2/1p,lightred -A5000
 gmt end show
 </pre></div>
 </div>
@@ -285,12 +285,12 @@ gmt end show
 <h2>3.4.3 填充陆地与水体<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>上面介绍了如何使用 <strong>-W</strong> 绘制海岸线和湖岸线。我们还可以不绘制岸线，而是为陆地和水体设置不同的填充色。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin coastline png,pdf
-gmt coast -R-130/-50/20/60 -JM15c -Baf -A5000 -Gred -Slightblue -Clightred
+    gmt coast -R-130/-50/20/60 -JM15c -Baf -A5000 -Gred -Slightblue -Clightred
 gmt end show
 </pre></div>
 </div>
 <div class="figure align-center" id="id11">
-<a class="reference internal image-reference" href="../../_images/coastline-gmtplot-4.png"><img alt="../../_images/coastline-gmtplot-4.png" src="../../_images/coastline-gmtplot-4.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../../_images/coastline-gmtplot-4.png"><img alt="../../_images/coastline-gmtplot-4.png" src="../../_images/coastline-gmtplot-4.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-text">填充颜色</span></p>
 </div>
 <p>其中，<strong>-G</strong> 设置了陆地区域的填充色，<strong>-S</strong> 设置水体的颜色，
@@ -302,7 +302,7 @@ gmt end show
 <p>使用 <strong>-N</strong> 选项可以绘制国界/州界等行政边界。<strong>-N1</strong> 表示绘制国界线，
 <strong>-N2</strong> 表示绘制州界/省界线（目前只有美洲各国以及澳大利亚的国界的数据）。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin coastline png,pdf
-gmt coast -R-130/-50/20/60 -JM15c -Baf -A5000 -Gred -Slightblue -Clightred -N1/1p -N2/0.25p
+    gmt coast -R-130/-50/20/60 -JM15c -Baf -A5000 -Gred -Slightblue -Clightred -N1/1p -N2/0.25p
 gmt end show
 </pre></div>
 </div>
@@ -311,7 +311,7 @@ gmt end show
 <p class="caption"><span class="caption-text">绘制国界与州界</span></p>
 </div>
 <p>除了 <strong>-N</strong> 选项之外，<strong>-E</strong> 选项也可以用于绘制州界、国界和省界，在
-<a class="reference internal" href="../../dataset/dcw/"><span class="doc">DCW: 世界数字图表</span></a> 一节会详细介绍，这里姑且略过。</p>
+<a class="reference internal" href="../../dataset/dcw/"><span class="doc">DCW: 世界数字图表</span></a> 一节会详细介绍。本入门教程中暂时略过。</p>
 </div>
 <div class="section" id="id6">
 <h2>3.4.5 添加比例尺<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
@@ -386,7 +386,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月03日.
+        最后更新于 2019年11月05日.
       </span>
 
     </p>

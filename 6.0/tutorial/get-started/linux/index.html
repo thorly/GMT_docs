@@ -300,9 +300,9 @@ gmt begin figurename
 gmt end show
 </pre></div>
 </div>
-<p>其中，以 <strong>#</strong> 开头的行尾注释行，<strong>export GMT_SESSION_NAME=$$</strong> 这一行属于高级用法，也可以忽略，核心内容只有两行，即 <strong>gmt begin</strong> 和 <strong>gmt end</strong> 这两行。</p>
+<p>其中，以 <strong>#</strong> 开头的行尾注释行，<strong>export GMT_SESSION_NAME=$$</strong> 这一行属于高级用法，可以忽略。因而核心内容只有两行，即 <strong>gmt begin</strong> 和 <strong>gmt end</strong> 这两行。</p>
 <p>编辑脚本，在 <strong>gmt begin</strong> 和 <strong>gmt end</strong> 中间添加GMT命令，将脚本修改如下:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env -S bash -e</span>
 <span class="c1"># GMT modern mode bash template</span>
 <span class="c1"># Date:    2019-09-10T00:44:39</span>
 <span class="c1"># User:    seisman</span>
@@ -380,7 +380,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月03日.
+        最后更新于 2019年11月05日.
       </span>
 
     </p>

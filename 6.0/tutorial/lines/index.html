@@ -238,6 +238,20 @@
 </div>
 <p>下面的例子中，我们首先使用 UNIX 下的 <code class="docutils literal notranslate"><span class="pre">cat</span></code> 命令将数据写入到文件
 <code class="file docutils literal notranslate"><span class="pre">points.dat</span></code> 中，然后使用 <strong>basemap</strong> 模块绘制了一张底图，并使用 <strong>plot</strong> 模块绘制输入文件 <code class="file docutils literal notranslate"><span class="pre">points.dat</span></code> 中的数据。</p>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p><strong>Windows Batch 用户请注意！Batch 不支持 EOF 语法！</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat &gt; points.dat <span class="s">&lt;&lt; EOF</span>
+<span class="s">2   2</span>
+<span class="s">8   2</span>
+<span class="s">5   7</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+<p>这一段代码的作用是将两个EOF中间的三行数据保存到文件 points.dat 中。由于Batch不支持这一语法，Batch用户需要在当前目录手动创建文件 points.dat
+并将数据复制到文件中并保存。</p>
+<p class="last">其它示例也有相同的问题，Batch用户自行修改，不再专门解释。</p>
+</div>
 <p>图中，<strong>plot</strong> 模块在绘图时自动将三个点连接起来，绘制出了一条线段。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat &gt; points.dat <span class="s">&lt;&lt; EOF</span>
 <span class="s">2   2</span>
@@ -246,8 +260,8 @@
 <span class="s">EOF</span>
 
 gmt begin SimpleLine png,pdf
-gmt basemap -JX10c -R0/10/0/10 -Baf
-gmt plot points.dat
+    gmt basemap -JX10c -R0/10/0/10 -Baf
+    gmt plot points.dat
 gmt end show
 </pre></div>
 </div>
@@ -263,8 +277,8 @@ gmt end show
 <span class="s">EOF</span>
 
 gmt begin SimpleLine png,pdf
-gmt basemap -JX10c -R0/10/0/10 -Baf
-gmt plot points.dat -W2p,red,-
+    gmt basemap -JX10c -R0/10/0/10 -Baf
+    gmt plot points.dat -W2p,red,-
 gmt end show
 </pre></div>
 </div>
@@ -284,8 +298,8 @@ gmt end show
 <span class="s">EOF</span>
 
 gmt begin polygon png,pdf
-gmt basemap -JX10c -R0/10/0/10 -Baf
-gmt plot points.dat -W4p,lightblue -L
+    gmt basemap -JX10c -R0/10/0/10 -Baf
+    gmt plot points.dat -W4p,lightblue -L
 gmt end show
 </pre></div>
 </div>
@@ -300,8 +314,8 @@ gmt end show
 <span class="s">EOF</span>
 
 gmt begin polygon png,pdf
-gmt basemap -JX10c -R0/10/0/10 -Baf
-gmt plot points.dat -W4p,lightblue -Glightred -L
+    gmt basemap -JX10c -R0/10/0/10 -Baf
+    gmt plot points.dat -W4p,lightblue -Glightred -L
 gmt end show
 </pre></div>
 </div>
@@ -316,8 +330,8 @@ gmt end show
 <span class="s">EOF</span>
 
 gmt begin polygon png,pdf
-gmt basemap -JX10c -R0/10/0/10 -Baf
-gmt plot points.dat -Glightred -L
+    gmt basemap -JX10c -R0/10/0/10 -Baf
+    gmt plot points.dat -Glightred -L
 gmt end show
 </pre></div>
 </div>
@@ -353,8 +367,8 @@ gmt end show
 <span class="s">EOF</span>
 
 gmt begin MultiLines png,pdf
-gmt basemap -JX10c -R0/10/0/10 -Baf
-gmt plot lines.dat -W1p,red
+    gmt basemap -JX10c -R0/10/0/10 -Baf
+    gmt plot lines.dat -W1p,red
 gmt end show
 </pre></div>
 </div>
@@ -377,8 +391,8 @@ gmt end show
 <span class="s">EOF</span>
 
 gmt begin MultiPolygons png,pdf
-gmt basemap -JX10c -R0/10/0/10 -Baf
-gmt plot lines.dat -W1p,red -L -Glightred
+    gmt basemap -JX10c -R0/10/0/10 -Baf
+    gmt plot lines.dat -W1p,red -L -Glightred
 gmt end show
 </pre></div>
 </div>
@@ -396,9 +410,9 @@ gmt end show
 <span class="s">EOF</span>
 
 gmt begin map png,pdf
-gmt coast -JH180/12c -Rg -B0 -W0.5p -A10000
-gmt plot twopoints.dat -W2p,red
-gmt plot twopoints.dat -W2p,blue -A
+    gmt coast -JH180/12c -Rg -B0 -W0.5p -A10000
+    gmt plot twopoints.dat -W2p,red
+    gmt plot twopoints.dat -W2p,blue -A
 gmt end show
 </pre></div>
 </div>
@@ -453,7 +467,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月03日.
+        最后更新于 2019年11月05日.
       </span>
 
     </p>

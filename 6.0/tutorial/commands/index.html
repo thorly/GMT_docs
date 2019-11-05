@@ -223,18 +223,18 @@
             
   <div class="section" id="id1">
 <h1>3.2 命令初探<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<p>上一节中我们使用GMT绘制了第一张图，但是没有对其中的细节做任何的介绍。这一节我们将简单介绍一下GMT的命令。</p>
+<p>上一节我们使用GMT绘制了第一张图，但是没有对其中的细节做任何介绍。这一节我们将简单介绍一下GMT的命令。</p>
 <div class="section" id="gmt">
 <h2>3.2.1 GMT绘图脚本模板<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
-<p>GMT在绘图时，总是以 <a class="reference internal" href="../../module/begin/"><span class="doc">begin</span></a> 开始，并以 <a class="reference internal" href="../../module/end/"><span class="doc">end</span></a> 结束。所有的<strong>绘图命令</strong>都放在 <strong>begin</strong> 与 <strong>end</strong> 之间。</p>
+<p>GMT在绘图时，总是以 <a class="reference internal" href="../../module/begin/"><span class="doc">begin</span></a> 开始，并以 <a class="reference internal" href="../../module/end/"><span class="doc">end</span></a> 结束。所有的<strong>绘图命令</strong>都放在 <strong>begin</strong> 与 <strong>end</strong> 之间，而非绘图命令可以放在任何地方。</p>
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
 <p>GMT老用户可能会对此比较陌生。</p>
 <p>GMT自6.0.0版本开始，引入了一种全新的绘图命令执行模式，称之为现代模式。GMT5及之前的命令风格称之为经典模式。GMT6既支持经典模式也支持现代模式。现代模式与经典模式可以完成相同的绘图功能，但现代模式大大简化了绘图代码，并极大避免了用户最容易出错的地方，因而推荐用户使用现代模式而非经典模式。</p>
 <p class="last">本手册将只使用现代模式，而不介绍经典模式。GMT新用户只需要按照本手册直接学习现代模式即可；对于GMT老用户，建议阅读 <a class="reference internal" href="../../appendix/modes-difference/"><span class="doc">现代模式与经典模式的差异</span></a>
-并开始使用现代模式进行绘图。</p>
+或者观看视频教程 <a class="reference external" href="https://www.bilibili.com/video/av73835957">GMT6新特性</a>，并开始使用现代模式进行绘图。</p>
 </div>
-<p>一个最最基本的GMT绘图脚本的模板是:</p>
+<p>在前一节中我们使用 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--new-script</span></code> 命令生成一个绘图模板。忽略掉绘图模板中的注释语句，一个最最基本的GMT绘图脚本的模板是:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
 <span class="c1">#</span>
 <span class="c1"># 其它命令，包括GMT绘图命令、数据处理命令以及其它UNIX命令</span>
@@ -242,7 +242,7 @@
 gmt end
 </pre></div>
 </div>
-<p>你可以直接执行这个脚本，但是因为我们什么也没有画，所以这个脚本不会生成任何图片。</p>
+<p>你可以直接执行这个脚本，但是因为这里什么命令也没用，所以这个脚本不会生成任何图片。</p>
 <p>绘图时我们通常需要指定图片文件名和图片格式，因而更实用的绘图脚本模板为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin FigureName pdf
 <span class="c1">#</span>
@@ -299,7 +299,7 @@ gmt end show
 <li>选项以 <strong>-</strong> 开头，后接<strong>单个字符</strong>表示某个选项，字符后接选项的参数以及子选项</li>
 <li>子选项以 <strong>+</strong> 开头，后接<strong>单个字符</strong>以及子选项的参数</li>
 <li>不以 <strong>-</strong> 开头的参数，通常都会被当做文件，GMT会尝试去读取</li>
-<li>各选项间以空格分隔，选项内部不能有空格。选项内部的字符串中若存在空格，可以用单引号或双引号括起来</li>
+<li>各选项间以空格分隔，选项内部不能有空格。选项内部的字符串中若存在空格，在Bash下可以使用单引号或双引号括起来，而在Windows的Batch下则只能使用双引号。</li>
 </ul>
 </div>
 </div>
@@ -349,7 +349,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月03日.
+        最后更新于 2019年11月05日.
       </span>
 
     </p>

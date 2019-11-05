@@ -103,8 +103,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../linux/">2.1 Linux 下安装 GMT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../windows/">2.2 Windows 下安装 GMT</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.3 macOS 下安装 GMT</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#gmt">2.3.1 使用 GMT 安装包</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#homebrew">2.3.2 使用 Homebrew 安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#homebrew">2.3.1 使用 Homebrew 安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gmt">2.3.2 使用 GMT 安装包</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#macports">2.3.3 使用 Macports 安装</a></li>
 </ul>
 </li>
@@ -214,40 +214,11 @@
             
   <div class="section" id="macos-gmt">
 <h1>2.3 macOS 下安装 GMT<a class="headerlink" href="#macos-gmt" title="永久链接至标题">¶</a></h1>
-<p>macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew 或 Macports 软件管理工具进行安装。</p>
-<div class="section" id="gmt">
-<h2>2.3.1 使用 GMT 安装包<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
-<p>GMT 为 macOS 用户提供了 dmg 安装包，可以直接双击安装使用。</p>
-<ol class="arabic">
-<li><p class="first">下载：<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0-darwin-x86_64.dmg">gmt-6.0.0-darwin-x86_64.dmg</a></p>
-</li>
-<li><p class="first">双击 dmg 包，在弹出的Finder窗口中，将 <strong>GMT-6.0.0.app</strong> 拖动到 Applications 目录</p>
-</li>
-<li><p class="first">将如下语句添加到 <code class="file docutils literal notranslate"><span class="pre">~/.bashrc</span></code> 中以修改PATH环境变量:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">GMTHOME</span><span class="o">=</span>/Applications/GMT-6.0.0.app/Contents/Resources
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">GMTHOME</span><span class="si">}</span>/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>
-<span class="nb">export</span> <span class="nv">PROJ_LIB</span><span class="o">=</span><span class="nv">$GMTHOME</span>/share/proj6
-<span class="nb">export</span> <span class="nv">MAGICK_CONFIGURE_PATH</span><span class="o">=</span><span class="nv">$GMTHOME</span>/lib/GraphicsMagick-1.3.33/config
-</pre></div>
-</div>
-</li>
-<li><p class="first">打开一个终端，输入如下命令，检测安装是否成功:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt --version
-<span class="m">6</span>.0.0
-</pre></div>
-</div>
-</li>
-<li><p class="first">卸载GMT</p>
-<p>若想要卸载GMT，可直接到 <code class="docutils literal notranslate"><span class="pre">/Application</span></code> 目录下找到 GMT，直接删除即可。</p>
-</li>
-<li><p class="first">升级GMT</p>
-<p>GMT包不支持自动升级，因而要先删除旧GMT包，再下载新版安装包并按照上面的步骤重新安装，即实现升级GMT。</p>
-</li>
-</ol>
-</div>
+<p>macOS 下可以直接使用 GMT 提供的安装包，也可以使用 Homebrew 或 Macports 软件管理工具进行安装。<strong>推荐使用Homebrew</strong>。</p>
 <div class="section" id="homebrew">
-<h2>2.3.2 使用 Homebrew 安装<a class="headerlink" href="#homebrew" title="永久链接至标题">¶</a></h2>
-<p><a class="reference external" href="https://brew.sh/">Homebrew</a> 是 macOS 下的第三方软件包管理工具。</p>
+<h2>2.3.1 使用 Homebrew 安装<a class="headerlink" href="#homebrew" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="https://brew.sh/">Homebrew</a> 是 macOS 下的第三方软件包管理工具。未安装 Homebrew 的用户，可以访问其 <a class="reference external" href="https://brew.sh/index_zh-cn">官网</a>
+以了解如何安装与使用。</p>
 <ol class="arabic">
 <li><p class="first">安装 GMT:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ brew update <span class="o">&amp;&amp;</span> brew upgrade
@@ -279,6 +250,41 @@ $ brew install graphicsmagick ffmpeg
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew uninstall gmt
 </pre></div>
 </div>
+</li>
+</ol>
+</div>
+<div class="section" id="gmt">
+<h2>2.3.2 使用 GMT 安装包<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
+<p>GMT 为 macOS 用户提供了 dmg 安装包，其不仅包含了GMT，还包含了运行GMT所需的
+Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。</p>
+<ol class="arabic">
+<li><p class="first">下载：<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0-darwin-x86_64.dmg">gmt-6.0.0-darwin-x86_64.dmg</a></p>
+</li>
+<li><p class="first">双击 dmg 包，在弹出的Finder窗口中，将 <strong>GMT-6.0.0.app</strong> 拖动到 Applications 目录</p>
+</li>
+<li><p class="first">双击应用中的GMT图标以启动GMT。GMT会启动一个终端并显示欢迎信息。根据欢迎信息中的提示将如下语句添加到 <code class="file docutils literal notranslate"><span class="pre">~/.bash_profile</span></code> 中以修改PATH环境变量:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">GMTHOME</span><span class="o">=</span>/Applications/GMT-6.0.0.app/Contents/Resources
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">GMTHOME</span><span class="si">}</span>/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>
+<span class="nb">export</span> <span class="nv">PROJ_LIB</span><span class="o">=</span><span class="nv">$GMTHOME</span>/share/proj6
+<span class="nb">export</span> <span class="nv">MAGICK_CONFIGURE_PATH</span><span class="o">=</span><span class="nv">$GMTHOME</span>/lib/GraphicsMagick-1.3.33/config
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">以上内容仅供参考，请务必根据GMT欢迎信息中的提示修改环境变量。</p>
+</div>
+</li>
+<li><p class="first">打开一个终端，输入如下命令，检测安装是否成功:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt --version
+<span class="m">6</span>.0.0
+</pre></div>
+</div>
+</li>
+<li><p class="first">卸载GMT</p>
+<p>若想要卸载GMT，可直接到 <code class="docutils literal notranslate"><span class="pre">/Application</span></code> 目录下找到 GMT，直接删除即可。</p>
+</li>
+<li><p class="first">升级GMT</p>
+<p>GMT包不支持自动升级，因而要先删除旧GMT包，再下载新版安装包并按照上面的步骤重新安装，即实现升级GMT。</p>
 </li>
 </ol>
 </div>
@@ -363,7 +369,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月03日.
+        最后更新于 2019年11月05日.
       </span>
 
     </p>
