@@ -335,7 +335,8 @@ gmt end show
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin complex-subplot png,pdf
   gmt subplot begin 2x2 -Fs5c/3c -A
     gmt subplot <span class="nb">set</span> <span class="m">0</span> -A<span class="s1">&#39;(a)&#39;</span>
-    gmt basemap -R0/10/0/10 -JX11.75/3c -Baf -BWSen
+    gmt basemap -R0/10/0/10 -JX11.75c/3c -Baf -BWSen
+    <span class="nb">echo</span> <span class="m">5</span> <span class="m">5</span> TEXT <span class="p">|</span> gmt text -JX11.75c/3c
     gmt subplot <span class="nb">set</span> <span class="m">2</span> -A<span class="s1">&#39;(b)&#39;</span>
     gmt basemap -R0/5/0/5 -JX? -Baf -BWSen
     gmt subplot <span class="nb">set</span> <span class="m">3</span> -A<span class="s1">&#39;(c)&#39;</span>
@@ -349,7 +350,17 @@ gmt end show
 </div>
 <p>在绘制三个底图时，后两个底图均使用了 <strong>-JX?</strong>，因而GMT会自动根据子图区域的大小确定子图的尺寸；而为了使得第一张子图占据两个子图区域的空间，我们使用了
 <strong>-JX11.75c/3c</strong> 来人工指定其子图宽度，其中子图宽度11.75厘米是需要人工调整的。</p>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p>以上示例存在尚未修复的BUG。</p>
+<p>子图模式下每张子图的大小是由 <strong>subplot begin</strong> 的 <strong>-F</strong> 选项控制。用户可以使用 <strong>-J</strong> 指定某个子图的尺寸，但该尺寸不会被记住，接下来的命令若不指定 <strong>-J</strong> 则会使用子图模式默认的尺寸，继而出错。</p>
+<p class="last">目前的解决办法是，在该子图内的所有命令中均使用相同的 <strong>-J</strong> 选项。例如，子图a强行指定了子图大小为 <strong>-JX11.75c/3c</strong>，则该子图内的其余命令（如 <strong>text</strong> 命令）必须也使用 <strong>-JX11.75c/3c</strong>。若省去，则图会出错。</p>
+</div>
 <p>由于我们跳过了第二个子图区域，自动标签功能会将三个子图依次编号为a、c、d，这显然不是我们想要的，因而我们使用了 <strong>-A’(a)’</strong> 选项手动设置子图编号。需要注意的是，由于小括号在Bash中有特殊含义，所以这里 <strong>(a)</strong> 两边加了单引号以避免Bash对小括号进行解释。</p>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">对于Windows Batch用户，不可使用单引号。可以使用双引号，或者不使用引号。</p>
+</div>
 </div>
 </div>
 
