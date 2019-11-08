@@ -110,6 +110,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#id2">4.5.1 填充颜色</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">4.5.2 填充图案</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id4">4.5.3 小练习</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gmt">4.5.4 附录: GMT预定义填充图案</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../text/">4.6 文字</a></li>
@@ -238,7 +239,7 @@
 <strong>-GP</strong>|<strong>p</strong><em>pattern</em>[<strong>+b</strong><em>color</em>][<strong>+f</strong><em>color</em>][<strong>+r</strong><em>dpi</em>]</p>
 <p><em>pattern</em> 有两种取法：</p>
 <ul class="simple">
-<li>取1到90内的整数，表示使用GMT提供的<a class="reference internal" href="../../appendix/patterns/"><span class="doc">90种内置位图图案</span></a></li>
+<li>取1到90内的整数，表示使用GMT提供的<a class="reference internal" href="#gmt-patterns"><span class="std std-ref">GMT预定义填充图案</span></a></li>
 <li>取文件名，表示使用一个1、8或24位Sun光栅文件作为位图图案</li>
 </ul>
 <p><strong>+r</strong><em>dpi</em> 设置了用于填充的位图图案的分辨率。<em>dpi</em> 越大，则填充区域内位图重复的次数越多。<em>dpi</em> 的默认值为1200。</p>
@@ -274,6 +275,18 @@
 <li><strong>-Gp7+bred+r300</strong></li>
 <li><strong>-Gp7+bred+f-+r300</strong></li>
 </ul>
+</div>
+<div class="section" id="gmt">
+<span id="gmt-patterns"></span><h2>4.5.4 附录: GMT预定义填充图案<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
+<p>下图列出了GMT中预定义的90种位图图案（右键查看大图并放大才能看到差异），所有图案都是使用默认的黑白色在 <code class="docutils literal notranslate"><span class="pre">&lt;dpi&gt;</span></code> 取300的环境下生成的。每张小图中左半部分使用
+<code class="docutils literal notranslate"><span class="pre">-Gp</span></code> 绘制，右半部分使用 <code class="docutils literal notranslate"><span class="pre">-GP</span></code> 绘制。</p>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/GMT_patterns.png"><img alt="../../_images/GMT_patterns.png" src="../../_images/GMT_patterns.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">GMT内置位图图案</span></p>
+</div>
+<p><strong>下载：</strong>
+<a class="reference download internal" download="" href="../../_downloads/b4e91c25097673bf1eb2b6a6c5af5d9e/GMT_patterns.pdf"><code class="xref download docutils literal notranslate"><span class="pre">PDF格式</span></code></a> |
+<a class="reference download internal" download="" href="../../_downloads/d2ed53ac42aadedc484bc85457d82b24/GMT_patterns.png"><code class="xref download docutils literal notranslate"><span class="pre">PNG格式</span></code></a></p>
 </div>
 </div>
 
@@ -322,7 +335,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月07日.
+        最后更新于 2019年11月08日.
       </span>
 
     </p>

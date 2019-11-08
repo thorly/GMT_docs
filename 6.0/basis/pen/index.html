@@ -331,7 +331,7 @@
 <li><p class="first">复杂线型</p>
 <p>通过 <em>string</em>[<strong>:</strong><em>offset</em>] 的形式可以自定义任意复杂的线型。</p>
 <p><em>string</em> 是一系列由下划线 <strong>_</strong> 分隔的数字组成。这一系列数字中，第奇数个数字表示实线的长度，第偶数个数字表示空白的长度。通过实线和空白的长度的不同组合，即可构成多种复杂的线型。
-<strong>offset</strong> 表示线段开始处整个线型的初始相位移动。</p>
+<strong>offset</strong> 表示线段开始处整个线型的初始相位移动（默认值为0）。</p>
 <p>例如，<strong>4_8_5_8:2</strong> 表示线型首先是长度为 <strong>4p</strong> 的实线，然后是长度为 <strong>8p</strong>
 的空白，紧接着长度为 <strong>5p</strong> 的实线和长度为 <strong>8p</strong> 的空白，然后按照该模式不断重复。此处的 <strong>offset</strong> 值为 <strong>2p</strong>，因而线段的最开始处，第一条实线的长度
 <strong>4p</strong> 经过相移后长度为 <strong>2p</strong>。</p>
@@ -406,7 +406,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月07日.
+        最后更新于 2019年11月08日.
       </span>
 
     </p>
