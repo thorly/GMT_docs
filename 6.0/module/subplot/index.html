@@ -289,7 +289,7 @@
 </tbody>
 </table>
 <p><strong>subplot</strong> 模块可以将当前纸张分隔成若干个网格区域，每个区域内都可以包含一张单独的子图。</p>
-<p><strong>subplot</strong>  模块提供了三条命令：</p>
+<p><strong>subplot</strong>  模块提供了三条指令：</p>
 <ul class="simple">
 <li><strong>subplot begin</strong> 进入子图模式，并设置子图的布局</li>
 <li><strong>subplot set</strong> 用于指定接下来的绘图操作在哪一个子图中进行</li>
@@ -315,6 +315,8 @@
 [ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>layout</em> ]
 [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>title</em> ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
+[ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
 [ <strong>--PAR</strong>=<em>value</em> ]</p>
 </div>
 <div class="section" id="id1">
@@ -453,6 +455,14 @@
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../option/V/"><span class="doc">(more …)</span></a></dt>
 <dd>设置 verbose 等级 [c]</dd>
+</dl>
+<dl class="docutils" id="x">
+<dt><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] <a class="reference internal" href="../../option/XY/"><span class="doc">(more …)</span></a></dt>
+<dd>沿X方向移动绘图原点。</dd>
+</dl>
+<dl class="docutils" id="y">
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="../../option/XY/"><span class="doc">(more …)</span></a></dt>
+<dd>沿Y方向移动绘图原点。</dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-^</strong> 或 <strong>-</strong></dt>
@@ -668,7 +678,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月08日.
+        最后更新于 2019年11月09日.
       </span>
 
     </p>

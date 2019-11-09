@@ -296,6 +296,7 @@
 <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>inset-box</em>
 [ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong><em>box</em> ]
 [ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong><em>margins</em> ]
+[ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong> ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
 [ <strong>--PAR</strong>=<em>value</em> ]</p>
 </div>
@@ -356,6 +357,10 @@
 </ol>
 </dd>
 </dl>
+<dl class="docutils" id="n">
+<dt><strong>-N</strong></dt>
+<dd>不裁剪超过小图区域边界的部分。</dd>
+</dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../option/V/"><span class="doc">(more …)</span></a></dt>
 <dd>设置 verbose 等级 [c]</dd>
@@ -367,38 +372,13 @@
 <dd>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</dd>
 <dt><strong>-?</strong> 或无参数</dt>
 <dd>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt>
+<dd>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/gmt.conf.html" title="(在 GMT v6.0)"><span class="xref std std-doc">gmt.conf</span></a>。</dd>
 </dl>
 </div>
 <div class="section" id="id3">
 <h2>13.44.4 示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>下面的示例绘制了一个日本的区域地图，并在左下角的小图中绘制了日本全图，同时在小图中标出了大图的研究区域。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
-gmt begin inset-map png,pdf
-    gmt coast -R139.2/140.5/34.8/36 -JM12c -Baf -BWSne -W2p -A1000 -Glightbrown -Sazure1 --FORMAT_GEO_MAP<span class="o">=</span>dddF
-    gmt inset begin -DjBL+w3c/3.6c+o0.1c -F+gwhite+p1p
-        gmt coast -R129/146/30/46 -JM? -EJP+glightbrown+p0.2p -A10000
-        <span class="c1"># 使用 -Sr+s 绘制矩形区域</span>
-        <span class="nb">echo</span> <span class="m">139</span>.2 <span class="m">34</span>.8 <span class="m">140</span>.5 <span class="m">36</span> <span class="p">|</span> gmt plot -Sr+s -W1p,blue
-    gmt inset end
-gmt end show
-</pre></div>
-</div>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/inset-gmtplot-0.png"><img alt="../../_images/inset-gmtplot-0.png" src="../../_images/inset-gmtplot-0.png" style="width: 60%;" /></a>
-</div>
-<p>下面的示例绘制了澳大利亚的地图，并在地图右上角绘制了小图。小图中绘制了全球地图，并以特殊颜色标注了澳大利亚的位置。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
-gmt begin inset-example png,pdf
-    gmt coast -R110E/170E/44S/9S -JM6i -B -BWSne -Wfaint -N2/1p -Gbrown -EAU+gbisque
-    gmt inset begin -DjTR+w1.5i+o0.15i/0.1i -F+gwhite+p1p+c0.1c
-        gmt coast -JG120/30S/? -Rg -Bg -Wfaint -Gbrown -EAU+gbisque -A5000
-    gmt inset end
-gmt end show
-</pre></div>
-</div>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/inset-gmtplot-1.png"><img alt="../../_images/inset-gmtplot-1.png" src="../../_images/inset-gmtplot-1.png" style="width: 60%;" /></a>
-</div>
+<p>示例见 <a class="reference internal" href="../../tutorial/inset/"><span class="doc">GMT图中图模式</span></a>。</p>
 </div>
 </div>
 
@@ -447,7 +427,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月08日.
+        最后更新于 2019年11月09日.
       </span>
 
     </p>
