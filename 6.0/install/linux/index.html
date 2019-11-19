@@ -219,7 +219,8 @@
 <p>针对Fedora/RHEL/CentOS用户，GMT的官方RPM仓库提供了最新版本的GMT。</p>
 <div class="section" id="fedora">
 <h2>2.1.1 Fedora<a class="headerlink" href="#fedora" title="永久链接至标题">¶</a></h2>
-<p>Fedora用户可以启用 <a class="reference external" href="https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/">GMT官方RPM仓库</a>
+<p><strong>Fedora 29</strong> 及之后版本的用户，可以启用
+<a class="reference external" href="https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/">GMT官方RPM仓库</a>
 以安装GMT最新版本:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 启用GMT官方RPM仓库</span>
 dnf copr <span class="nb">enable</span> genericmappingtools/gmt
@@ -239,7 +240,7 @@ dnf install gdal
 dnf install GraphicsMagick
 
 <span class="c1"># 制作MP4、WebM格式动画需要ffmpeg</span>
-dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-<span class="k">$(</span>rpm -E %fedora<span class="k">)</span>.noarch.rpm
+dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-<span class="sb">`</span>rpm -E %fedora<span class="sb">`</span>.noarch.rpm
 dnf install ffmpeg
 </pre></div>
 </div>
@@ -253,7 +254,8 @@ dnf install ffmpeg
 </div>
 <div class="section" id="rhel-centos">
 <h2>2.1.2 RHEL/CentOS<a class="headerlink" href="#rhel-centos" title="永久链接至标题">¶</a></h2>
-<p>RHEL/CentOS用户可以启用 <a class="reference external" href="https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/">GMT官方RPM仓库</a>
+<p><strong>RHEL/CentOS 6/7</strong> 用户可以启用
+<a class="reference external" href="https://copr.fedorainfracloud.org/coprs/genericmappingtools/gmt/">GMT官方RPM仓库</a>
 以安装GMT最新版本:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 安装 epel-release</span>
 yum install epel-release
@@ -280,7 +282,7 @@ yum install gdal
 yum install GraphicsMagick
 
 <span class="c1"># 制作MP4、WebM格式动画需要ffmpeg</span>
-yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-<span class="k">$(</span>rpm -E %rhel<span class="k">)</span>.noarch.rpm
+yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-<span class="sb">`</span>rpm -E %rhel<span class="sb">`</span>.noarch.rpm
 yum install ffmpeg
 </pre></div>
 </div>
@@ -343,7 +345,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月14日.
+        最后更新于 2019年11月19日.
       </span>
 
     </p>

@@ -226,12 +226,12 @@ GMT源码请参考GMT官方
 <p>GMT的编译及运行需要如下软件：</p>
 <ul class="simple">
 <li>CMake: &gt;=2.8.5</li>
-<li><a class="reference external" href="https://www.ghostscript.com/">Ghostscript</a></li>
 <li>netCDF（&gt;4.0且支持netCDF-4/HDF5）</li>
 <li>curl</li>
 </ul>
 <p>除此之外，还可以安装如下软件库以增强GMT的更多功能：</p>
 <ul class="simple">
+<li><a class="reference external" href="https://www.ghostscript.com/">Ghostscript</a>: 生成PDF或者其他位图格式的图片</li>
 <li><a class="reference external" href="https://www.gdal.org/">GDAL</a>: 读写其他地学常用的网格和图片格式</li>
 <li><a class="reference external" href="https://www.pcre.org/">PCRE</a>: 正则表达式支持</li>
 <li><a class="reference external" href="http://www.fftw.org/">FFTW</a>: 快速傅里叶变换库（&gt;=3.3，macOS下不需要）</li>
@@ -246,9 +246,9 @@ GMT源码请参考GMT官方
 <h2>2.5.2 安装依赖软件<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>对于Ubuntu/Debian:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 安装编译所需软件包</span>
-$ sudo apt-get install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev ghostscript
+$ sudo apt-get install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev
 <span class="c1"># 安装可选软件包</span>
-$ sudo apt install gdal-bin libgdal-dev liblapack3 libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
+$ sudo apt install ghostscript gdal-bin libgdal-dev liblapack3 libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
 <span class="c1"># 安装制作动画所需的软件包</span>
 $ sudo apt install graphicsmagick ffmpeg
 </pre></div>
@@ -257,19 +257,19 @@ $ sudo apt install graphicsmagick ffmpeg
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># CentOS用户必须先安装epel-release, RHEL/Fedora用户无需安装</span>
 $ sudo yum install epel-release
 <span class="c1"># 安装编译所需软件包</span>
-$ sudo yum install gcc cmake make glibc ghostscript netcdf-devel libcurl-devel
+$ sudo yum install gcc cmake make glibc netcdf-devel libcurl-devel
 <span class="c1"># 安装可选软件包</span>
-$ sudo yum install gdal gdal-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
+$ sudo yum install ghostscript gdal gdal-devel lapack-devel openblas-devel glib2-devel pcre-devel fftw-devel
 <span class="c1"># 安装其他可选包</span>
-$ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-<span class="k">$(</span>rpm -E %rhel<span class="k">)</span>.noarch.rpm
+$ sudo yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-<span class="sb">`</span>rpm -E %rhel<span class="sb">`</span>.noarch.rpm
 $ sudo yum install GraphicsMagick ffmpeg
 </pre></div>
 </div>
 <p>对于macOS用户，建议使用 <a class="reference external" href="https://brew.sh">Homebrew</a> 安装依赖:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 安装必须依赖</span>
-brew install cmake curl netcdf ghostscript
+brew install cmake curl netcdf
 <span class="c1"># 安装可选依赖</span>
-brew install gdal pcre2 glib fftw graphicsmagick ffmpeg
+brew install ghostscript gdal pcre2 glib fftw graphicsmagick ffmpeg
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -312,7 +312,6 @@ $ open -a TextEdit cmake/ConfigUser.cmake
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="o">(</span>CMAKE_INSTALL_PREFIX <span class="s2">&quot;/opt/GMT-6.0.0&quot;</span><span class="o">)</span>
 <span class="nb">set</span> <span class="o">(</span>COPY_GSHHG TRUE<span class="o">)</span>
 <span class="nb">set</span> <span class="o">(</span>COPY_DCW TRUE<span class="o">)</span>
-<span class="nb">set</span> <span class="o">(</span>GMT_INSTALL_MODULE_LINKS FALSE<span class="o">)</span>
 </pre></div>
 </div>
 <p>其中，</p>
@@ -320,7 +319,6 @@ $ open -a TextEdit cmake/ConfigUser.cmake
 <li><code class="docutils literal notranslate"><span class="pre">CMAKE_INSTALL_PREFIX</span></code> 用于设置GMT的安装路径，上面的语句会将GMT安装在
 <code class="docutils literal notranslate"><span class="pre">/opt/GMT-6.0.0</span></code> 目录下，用户可以自行修改为其他路径。没有 root 权限的一般用户，可以将安装路径设置为 <code class="docutils literal notranslate"><span class="pre">/home/xxx/software/GMT-6.0.0</span></code> 等有可读写权限的路径；</li>
 <li><code class="docutils literal notranslate"><span class="pre">COPY_GSHHG</span></code> 和 <code class="docutils literal notranslate"><span class="pre">COPY_DCW</span></code> 设置为 TRUE 会将相关数据复制到 GMT 的 share 目录下</li>
-<li><code class="docutils literal notranslate"><span class="pre">GMT_INSTALL_MODULE_LINKS</span></code> 建议设置为 <code class="docutils literal notranslate"><span class="pre">FALSE</span></code></li>
 </ul>
 <div class="admonition tip">
 <p class="first admonition-title">小技巧</p>
@@ -480,7 +478,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月14日.
+        最后更新于 2019年11月19日.
       </span>
 
     </p>
