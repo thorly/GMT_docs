@@ -257,12 +257,16 @@ $ brew install graphicsmagick ffmpeg
 <h2>2.3.2 使用 GMT 安装包<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
 <p>GMT 为 macOS 用户提供了 dmg 安装包，其不仅包含了GMT，还包含了运行GMT所需的
 Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。</p>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">GMT的dmg安装包只支持 macOS &gt;= 10.12。</p>
+</div>
 <ol class="arabic">
 <li><p class="first">下载：<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/bin/gmt-6.0.0-darwin-x86_64.dmg">gmt-6.0.0-darwin-x86_64.dmg</a></p>
 </li>
 <li><p class="first">双击 dmg 包，在弹出的Finder窗口中，将 <strong>GMT-6.0.0.app</strong> 拖动到 Applications 目录</p>
 </li>
-<li><p class="first">双击应用中的GMT图标以启动GMT。GMT会启动一个终端并显示欢迎信息。根据欢迎信息中的提示将如下语句添加到 <code class="file docutils literal notranslate"><span class="pre">~/.bash_profile</span></code> 中以修改PATH环境变量:</p>
+<li><p class="first">在Finder中的Applications目录下，找到GMT图标以双击启动。GMT会启动一个终端并显示欢迎信息。根据欢迎信息中的提示将如下语句添加到 <code class="file docutils literal notranslate"><span class="pre">~/.bash_profile</span></code> 中以修改PATH环境变量:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">GMTHOME</span><span class="o">=</span>/Applications/GMT-6.0.0.app/Contents/Resources
 <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">GMTHOME</span><span class="si">}</span>/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>
 <span class="nb">export</span> <span class="nv">PROJ_LIB</span><span class="o">=</span><span class="nv">$GMTHOME</span>/share/proj6
@@ -281,7 +285,7 @@ Ghostscript、GDAL、GraphicsMagick和FFmpeg，可以直接双击安装使用。
 </div>
 </li>
 <li><p class="first">卸载GMT</p>
-<p>若想要卸载GMT，可直接到 <code class="docutils literal notranslate"><span class="pre">/Application</span></code> 目录下找到 GMT，直接删除即可。</p>
+<p>若想要卸载GMT，可直接到 <code class="docutils literal notranslate"><span class="pre">/Applications</span></code> 目录下找到 GMT，直接删除即可。</p>
 </li>
 <li><p class="first">升级GMT</p>
 <p>GMT包不支持自动升级，因而要先删除旧GMT包，再下载新版安装包并按照上面的步骤重新安装，即实现升级GMT。</p>
@@ -369,7 +373,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月19日.
+        最后更新于 2019年11月22日.
       </span>
 
     </p>

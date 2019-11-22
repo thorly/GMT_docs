@@ -280,12 +280,11 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/docs.html" title="(在 GMT v6.0)"><span>docs</span></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">打开指定模块的GMT官方的HTML文档</td>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">打开指定模块的GMT官方HTML文档</td>
 </tr>
 </tbody>
 </table>
-<p><strong>docs</strong> 用系统默认浏览器打开指定模块的HTML文档。若本地存在HTML文档，则优先使用本地文档；否则则打开GMT文档网站。除了指定模块外，还可以打开
-<em>gmt</em>、<em>cookbook</em>、<em>gallery</em>、<em>settings</em>、<em>api</em> 和 <em>tutorial</em> 页面。</p>
+<p><strong>docs</strong> 用系统默认浏览器打开指定模块的HTML文档。若本地存在HTML文档，则优先使用本地文档；否则则打开GMT文档网站。除了可以指定模块外，还支持打开一些常用的文档页面（下面会详细列出）。</p>
 <div class="section" id="id1">
 <h2>13.8.1 语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p><strong>gmt docs</strong>
@@ -300,12 +299,12 @@
 <dl class="docutils">
 <dt><em>module-name</em></dt>
 <dd><p class="first">要查看文档的模块名。</p>
-<p>除了模块名之外，还支持几个特殊的名字:</p>
+<p>除了模块名之外，还支持几个特殊的页面:</p>
 <ul class="last simple">
-<li><strong>gmt</strong>: 打开GMT命令的帮助文档</li>
+<li><strong>gmt</strong>: 打开GMT命令的说明文档</li>
+<li><strong>api</strong>: 打开GMT API手册</li>
 <li><strong>cookbook</strong>: 打开GMT参考手册</li>
 <li><strong>tutorial</strong>: 打开GMT入门教程</li>
-<li><strong>api</strong>: 打开GMT API手册</li>
 <li><strong>settings</strong>: 打开GMT配置参数文档</li>
 <li><strong>gallery</strong>: 打开GMT图库</li>
 </ul>
@@ -423,7 +422,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月19日.
+        最后更新于 2019年11月22日.
       </span>
 
     </p>
