@@ -256,8 +256,16 @@ gmt end show
 </div>
 <div class="section" id="id4">
 <h2>4.1.3 画布大小<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
-<p>GMT中默认画布宽11.55米高11.55米，在生成图片文件时会自动将未使用的白色区域裁减掉，因而用户无需担心。</p>
-<p>唯一的例外是PS图片格式，若选择PS作为图片格式，则默认画布大小为 A4 纸大小。当用户需要更大的画布时，需要修改参数 <a class="reference internal" href="../../conf/ps/#ps-media"><span class="std std-ref">PS_MEDIA</span></a> 来修改画布尺寸:</p>
+<p>GMT中默认使用宽11.55米、高11.55米的画布，在最终生成图片文件时会自动将未使用的白色区域裁减掉，因而用户无需担心。</p>
+<p>若需要生成特定尺寸的图片，而不裁剪周边的白色区域，可以设置参数
+<a class="reference internal" href="../../conf/ps/#ps-media"><span class="std std-ref">PS_MEDIA</span></a> 来指定纸张尺寸:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map
+gmt <span class="nb">set</span> PS_MEDIA A4
+gmt ...
+gmt end show
+</pre></div>
+</div>
+<p>PS图片格式是一个例外。若选择PS作为图片格式，则默认画布大小为 A4 纸大小。当用户需要更大的画布时，需要修改参数 <a class="reference internal" href="../../conf/ps/#ps-media"><span class="std std-ref">PS_MEDIA</span></a> 来修改画布尺寸:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map ps
 gmt <span class="nb">set</span> PS_MEDIA A1
 gmt ...
@@ -312,7 +320,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月22日.
+        最后更新于 2019年11月24日.
       </span>
 
     </p>

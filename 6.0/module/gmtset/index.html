@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>13.22 gmtset &mdash; GMT中文手册</title>
+  <title>13.21 gmtset &mdash; GMT中文手册</title>
   
 
   
@@ -42,8 +42,8 @@
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="13.23 gmtsimplify" href="../gmtsimplify/" />
-    <link rel="prev" title="13.21 gmtselect" href="../gmtselect/" /> 
+    <link rel="next" title="13.22 gmtsimplify" href="../gmtsimplify/" />
+    <link rel="prev" title="13.20 gmtselect" href="../gmtselect/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -125,60 +125,62 @@
 <li class="toctree-l2"><a class="reference internal" href="../fitcircle/">13.12 fitcircle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gmt/">13.13 gmt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gmt-config/">13.14 gmt-config</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gmt5syntax/">13.15 gmt5syntax</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">13.16 gmtconnect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">13.17 gmtdefaults</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gmtget/">13.18 gmtget</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">13.19 gmtinfo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">13.20 gmtlogo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">13.21 gmtselect</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">13.22 gmtset</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">13.22.1 必选选项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">13.22.2 可选选项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#faq">13.22.3 FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtconnect/">13.15 gmtconnect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtdefaults/">13.16 gmtdefaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtget/">13.17 gmtget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtinfo/">13.18 gmtinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtlogo/">13.19 gmtlogo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtselect/">13.20 gmtselect</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">13.21 gmtset</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">13.21.1 语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">13.21.2 必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">13.21.3 可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">13.21.4 示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#faq">13.21.5 FAQ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">13.21.6 相关模块</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">13.23 gmtsimplify</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">13.24 gmtwhich</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">13.25 grd2xyz</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../grdblend/">13.26 grdblend</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../grdclip/">13.27 grdclip</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">13.28 grdconvert</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../grdcut/">13.29 grdcut</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../grdedit/">13.30 grdedit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../grdimage/">13.31 grdimage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">13.32 grdinfo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">13.33 grdlandmask</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../grdmask/">13.34 grdmask</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">13.35 grdpaste</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../grdproject/">13.36 grdproject</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../grdsample/">13.37 grdsample</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">13.38 grdtrack</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">13.39 grdtrend</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../grdvector/">13.40 grdvector</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">13.41 grdvolume</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../histogram/">13.42 histogram</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../image/">13.43 image</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../inset/">13.44 inset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">13.45 kml2gmt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../legend/">13.46 legend</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../makecpt/">13.47 makecpt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mapproject/">13.48 mapproject</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../meca/">13.49 meca</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../plot/">13.50 plot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../polar/">13.51 polar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../project/">13.52 project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../psconvert/">13.53 psconvert</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../rose/">13.54 rose</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sac/">13.55 sac</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sample1d/">13.56 sample1d</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../solar/">13.57 solar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">13.58 spectrum1d</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../subplot/">13.59 subplot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ternary/">13.60 ternary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../text/">13.61 text</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../velo/">13.62 velo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">13.63 xyz2grd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtsimplify/">13.22 gmtsimplify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gmtwhich/">13.23 gmtwhich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">13.24 grd2xyz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdblend/">13.25 grdblend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdclip/">13.26 grdclip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdconvert/">13.27 grdconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdcut/">13.28 grdcut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdedit/">13.29 grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdimage/">13.30 grdimage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdinfo/">13.31 grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">13.32 grdlandmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdmask/">13.33 grdmask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdpaste/">13.34 grdpaste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdproject/">13.35 grdproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdsample/">13.36 grdsample</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrack/">13.37 grdtrack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdtrend/">13.38 grdtrend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvector/">13.39 grdvector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdvolume/">13.40 grdvolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../histogram/">13.41 histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/">13.42 image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">13.43 inset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">13.44 kml2gmt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">13.45 legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../makecpt/">13.46 makecpt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mapproject/">13.47 mapproject</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meca/">13.48 meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot/">13.49 plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polar/">13.50 polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/">13.51 project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../psconvert/">13.52 psconvert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rose/">13.53 rose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sac/">13.54 sac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sample1d/">13.55 sample1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solar/">13.56 solar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spectrum1d/">13.57 spectrum1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">13.58 subplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ternary/">13.59 ternary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">13.60 text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../velo/">13.61 velo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../xyz2grd/">13.62 xyz2grd</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
@@ -249,7 +251,7 @@
         
           <li><a href="../">13 模块手册</a> &raquo;</li>
         
-      <li>13.22 gmtset</li>
+      <li>13.21 gmtset</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -271,82 +273,100 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gmtset">
-<span id="index-0"></span><h1>13.22 gmtset<a class="headerlink" href="#gmtset" title="永久链接至标题">¶</a></h1>
+<span id="index-0"></span><h1>13.21 gmtset<a class="headerlink" href="#gmtset" title="永久链接至标题">¶</a></h1>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/gmtset.html" title="(在 GMT v6.0)"><span>gmtset</span></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">修改单个或多个GMT参数的值</td>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">修改单个或多个GMT配置参数的值</td>
 </tr>
 </tbody>
 </table>
-<p>该命令会修改当前目录下GMT配置文件 <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code> 中指定参数的值。若配置文件不存在，则新建一个并设置对应的参数值。</p>
-<p>由于该命令会修改当前目录下的配置文件 <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code> ，因而该命令修改的参数将对接下来的命令一直有效，直到GMT参数再次被修改或覆盖。若想要参数修改仅对某个命令有效，可以在该命令中使用 <code class="docutils literal notranslate"><span class="pre">--&lt;PARAMETER&gt;=&lt;value&gt;</span></code> 语法。</p>
-<div class="admonition note">
-<p class="first admonition-title">注解</p>
-<p class="last">GMT 5.4.0 之后的版本中， 只有与GMT系统默认值不同的参数才会被写到 <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code> 中。</p>
-</div>
+<p>该命令用于修改GMT配置参数的值以调整接下来的绘图或者命令的运行。</p>
+<p>该命令修改的参数将对接下来的命令一直有效，直到GMT参数再次被修改或覆盖。若想要参数修改仅对某个命令有效，可以在该命令中使用 <strong>--</strong><em>PARAMETER</em><strong>=</strong><em>value</em> 语法。</p>
 <div class="section" id="id1">
-<h2>13.22.1 必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>13.21.1 语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p><strong>gmt set</strong>
+[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong> | <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong>[<strong>s</strong>|<strong>u</strong>] | <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>defaultsfile</em> ]
+[ <strong>-</strong>[<strong>BJRXxYycp</strong>]<em>value</em> ]
+PARAMETER1 [=] <em>value1</em>
+PARAMETER2 [=] <em>value2</em>
+PARAMETER3 [=] <em>value3</em></p>
+</div>
+<div class="section" id="id2">
+<h2>13.21.2 必选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;PARAMETER&gt;=&lt;value&gt;</span></code></dt>
-<dd><p class="first">要修改的GMT参数名 <code class="docutils literal notranslate"><span class="pre">&lt;PARAMETER&gt;</span></code> 以及想要设置的值 <code class="docutils literal notranslate"><span class="pre">&lt;value&gt;</span></code></p>
-<p>参数名和值必须成对存在，二者可以用等号 <code class="docutils literal notranslate"><span class="pre">=</span></code> 连接，也可以省略等号。</p>
+<dt><em>PARAMETER</em><strong>=</strong><em>value</em></dt>
+<dd><p class="first">要修改的GMT配置参数名 <em>PARAMETER</em> 以及想要设置的值 <em>value</em></p>
+<p class="last">参数名和值必须成对存在，二者可以用等号 <strong>=</strong> 连接，也可以省略等号。GMT配置参数见 <a class="reference internal" href="../../conf/"><span class="doc">配置参数</span></a>。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h2>13.21.3 可选选项<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<dl class="docutils" id="c">
+<dt><strong>-C</strong></dt>
+<dd>将 GMT4 创建的 GMT4配置文件 <code class="docutils literal notranslate"><span class="pre">.gmtdefaults4</span></code> 转换为GMT5及之后版本所使用的 <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code>
+文件，并保留原GMT4配置文件。</dd>
+</dl>
+<dl class="docutils" id="d">
+<dt><strong>-D</strong>[<strong>s</strong>|<strong>u</strong>]</dt>
+<dd><p class="first">在系统默认配置的基础上修改参数值</p>
+<ol class="last arabic simple">
+<li><strong>-D</strong>：使用GMT编译过程中指定的默认参数文件（通常是SI单位制配置文件）</li>
+<li><strong>-Du</strong>：使用US单位制下的默认参数文件</li>
+<li><strong>-Ds</strong>：使用SI单位制下的默认参数文件</li>
+</ol>
+</dd>
+</dl>
+<dl class="docutils" id="g">
+<dt><strong>-G</strong><em>defaultsfile</em></dt>
+<dd>指定要读取并修改的配置文件名 <em>defaultsfile</em></dd>
+<dt><strong>-</strong>[<strong>BJRXxYycp</strong>]<em>value</em></dt>
+<dd><p class="first">强行修改GMT命令历史文件 <strong>gmt.history</strong> 中的值。</p>
+<p class="last">GMT在执行一个命令时会在命令历史文件 <strong>gmt.history</strong> 中记录一些选项的参数值，使得接下来的命令可以不用再提供这个选项的参数值。该选项用于在不执行其他绘图命令的前提下强行修改命令历史，但用处不大。</p>
+</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt>
+<dd>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt>
+<dd>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</dd>
+<dt><strong>-?</strong> 或无参数</dt>
+<dd>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt>
+<dd>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/gmt.conf.html" title="(在 GMT v6.0)"><span class="xref std std-doc">gmt.conf</span></a></dd>
+</dl>
+</div>
+<div class="section" id="id4">
+<h2>13.21.4 示例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>修改主标注字体为Helvetica，字号为12p，设置网格交叉线的尺寸为0.2厘米:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt gmtset FONT_ANNOT_PRIMARY 12p,Helvetica MAP_GRID_CROSS_SIZE_PRIMARY <span class="m">0</span>.2c
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> FONT_ANNOT_PRIMARY 12p,Helvetica MAP_GRID_CROSS_SIZE_PRIMARY <span class="m">0</span>.2c
 </pre></div>
 </div>
 <p>也可以用等号将参数名和参数值连接起来:</p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt gmtset <span class="nv">FONT_ANNOT_PRIMARY</span><span class="o">=</span>12p,Helvetica <span class="nv">MAP_GRID_CROSS_SIZE_PRIMARY</span><span class="o">=</span><span class="m">0</span>.2c
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> <span class="nv">FONT_ANNOT_PRIMARY</span><span class="o">=</span>12p,Helvetica <span class="nv">MAP_GRID_CROSS_SIZE_PRIMARY</span><span class="o">=</span><span class="m">0</span>.2c
 </pre></div>
 </div>
-</dd>
-</dl>
-</div>
-<div class="section" id="id2">
-<h2>13.22.2 可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-C</span></code></dt>
-<dd>将当前目录下的GMT4配置文件 <code class="docutils literal notranslate"><span class="pre">.gmtdefaults4</span></code> 转换为GMT5所使用的 <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code>
-文件，并保留原GMT4配置文件。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-D[s|u]</span></code></dt>
-<dd><p class="first">基于系统配置文件修改参数值。</p>
-<ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">-D</span></code> ：使用GMT编译过程中指定的默认参数文件</li>
-<li><code class="docutils literal notranslate"><span class="pre">-Du</span></code> ：使用US单位制下的默认参数文件</li>
-<li><code class="docutils literal notranslate"><span class="pre">-Ds</span></code> ：使用SI单位制下的默认参数文件</li>
-</ol>
-<p>使用 <code class="docutils literal notranslate"><span class="pre">-D</span></code> 选项而不指定其他参数则会在当前目录下生成一个系统配置文件:</p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> -D
-</pre></div>
-</div>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;defaultsfile&gt;</span></code></dt>
-<dd>指定要读取并修改的配置文件名 <code class="docutils literal notranslate"><span class="pre">&lt;defaultsfile&gt;</span></code></dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-[BJRXxYycp]&lt;value&gt;</span></code></dt>
-<dd><p class="first">修改GMT命令历史文件 <code class="docutils literal notranslate"><span class="pre">gmt.history</span></code> 中的值。该选项用于在不执行其他绘图命令的前提下强行修改命令历史，但用处不大。</p>
-<p>例如:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt psbasemap -JX10c/5c -B0/10/0/10 -B1 &gt; test.ps
-$ gmt gmtset -JX5c/5c
-</pre></div>
-</div>
-<p class="last">该命令会将GMT命令历史文件 <code class="docutils literal notranslate"><span class="pre">gmt.history</span></code> 中 <code class="docutils literal notranslate"><span class="pre">-J</span></code> 选项的值从 <code class="docutils literal notranslate"><span class="pre">X10c/5c</span></code>
-改成 <code class="docutils literal notranslate"><span class="pre">X5c/5c</span></code> 。</p>
-</dd>
-</dl>
 </div>
 <div class="section" id="faq">
-<h2>13.22.3 FAQ<a class="headerlink" href="#faq" title="永久链接至标题">¶</a></h2>
+<h2>13.21.5 FAQ<a class="headerlink" href="#faq" title="永久链接至标题">¶</a></h2>
 <ol class="arabic">
 <li><p class="first">错误消息:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmtset: Warning: parameter xxxx is deprecated. Use xxx instead.
 </pre></div>
 </div>
-<p>出现该错误是因为GMT5重命名了几乎所有参数，而当前命令使用的是GMT4的老参数名。解决办法在警告信息中已经说了，使用GMT5的新参数名即可。</p>
+<p>GMT5对所有的配置参数进行了重命令，以使得参数名更容易记忆。出现该报错的原因是，当前命令使用的是GMT4的老参数名。解决办法是根据警告信息替换为新的GMT5配置参数名。</p>
 </li>
 </ol>
+</div>
+<div class="section" id="id5">
+<h2>13.21.6 相关模块<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/gmt.conf.html" title="(在 GMT v6.0)"><span class="xref std std-doc">gmt.conf</span></a>,
+<a class="reference internal" href="../gmtdefaults/"><span class="doc">gmtdefaults</span></a>,
+<a class="reference internal" href="../gmtget/"><span class="doc">gmtget</span></a></p>
 </div>
 </div>
 
@@ -381,10 +401,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../gmtsimplify/" class="btn btn-neutral float-right" title="13.23 gmtsimplify" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../gmtsimplify/" class="btn btn-neutral float-right" title="13.22 gmtsimplify" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../gmtselect/" class="btn btn-neutral float-left" title="13.21 gmtselect" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+        <a href="../gmtselect/" class="btn btn-neutral float-left" title="13.20 gmtselect" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
       
     </div>
   
@@ -395,7 +415,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月22日.
+        最后更新于 2019年11月24日.
       </span>
 
     </p>
