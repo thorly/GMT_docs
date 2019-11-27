@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>11.4 earth_relief: 全球地形起伏数据 &mdash; GMT中文手册</title>
+  <title>earth_relief: 全球地形起伏数据 &mdash; GMT中文手册</title>
   
 
   
@@ -42,8 +42,8 @@
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="11.5 GADM: 全球行政区划数据库" href="../gadm/" />
-    <link rel="prev" title="11.3 DCW: 世界数字图表" href="../dcw/" /> 
+    <link rel="next" title="GADM: 全球行政区划数据库" href="../gadm/" />
+    <link rel="prev" title="DCW: 世界数字图表" href="../dcw/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,36 +98,36 @@
             
               <p class="caption"><span class="caption-text">目 录</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">3 入门教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">11 地学数据集</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../overview/">11.1 地学数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gshhg/">11.2 GSHHG: 全球高精度海岸线数据</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dcw/">11.3 DCW: 世界数字图表</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">11.4 earth_relief: 全球地形起伏数据</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">11.4.1 地形起伏数据简介</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">11.4.2 使用方法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">11.4.3 缓存空间问题</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">11.4.4 技术细节</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">11.4.5 数据来源及引用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">地学数据集</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview/">地学数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gshhg/">GSHHG: 全球高精度海岸线数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dcw/">DCW: 世界数字图表</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">earth_relief: 全球地形起伏数据</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">地形起伏数据简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">使用方法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">缓存空间问题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">技术细节</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">数据来源及引用</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../gadm/">11.5 GADM: 全球行政区划数据库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gadm/">GADM: 全球行政区划数据库</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module/">13 模块手册</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
 </ul>
 
             
@@ -191,9 +191,9 @@
     
       <li><a href="../../">首页</a> &raquo;</li>
         
-          <li><a href="../">11 地学数据集</a> &raquo;</li>
+          <li><a href="../">地学数据集</a> &raquo;</li>
         
-      <li>11.4 earth_relief: 全球地形起伏数据</li>
+      <li>earth_relief: 全球地形起伏数据</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -215,9 +215,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="earth-relief">
-<h1>11.4 earth_relief: 全球地形起伏数据<a class="headerlink" href="#earth-relief" title="永久链接至标题">¶</a></h1>
+<h1>earth_relief: 全球地形起伏数据<a class="headerlink" href="#earth-relief" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id1">
-<h2>11.4.1 地形起伏数据简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>地形起伏数据简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>GMT提供了从1弧秒到60弧分的多种不同精度的全球地形起伏网格数据供用户使用。</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -326,7 +326,7 @@ gmt which -Gu @earth_relief_15s
 </div>
 </div>
 <div class="section" id="id2">
-<h2>11.4.2 使用方法<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>使用方法<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>当需要使用地形数据时，可以直接通过 <strong>&#64;earth_relief_</strong><em>res</em> 的形式调用这些地形起伏数据，其中 <em>res</em> 表示网格文件的精度。如果命令中使用了 <strong>-R</strong> 选项，则只会读取该区域内的地形起伏数据。</p>
 <p>使用示例:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdinfo @earth_relief_60m
@@ -336,7 +336,7 @@ gmt grdimage -JH15c @earth_relief_15m -pdf map
 </div>
 </div>
 <div class="section" id="id3">
-<h2>11.4.3 缓存空间问题<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>缓存空间问题<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>你可以使用多种方式来控制你的缓存目录所占用的空间大小：</p>
 <ol class="arabic simple">
 <li>通过参数 <a class="reference internal" href="../../conf/misc/#gmt-data-server-limit"><span class="std std-ref">GMT_DATA_SERVER_LIMIT</span></a> 设置缓存目录空间大小的上限，默认无限制；</li>
@@ -344,7 +344,7 @@ gmt grdimage -JH15c @earth_relief_15m -pdf map
 </ol>
 </div>
 <div class="section" id="id4">
-<h2>11.4.4 技术细节<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>技术细节<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li>15弧秒的数据来源于 SRTM15+V2 [<a class="reference external" href="http://dx.doi.org/10.1029/2019EA000658">http://dx.doi.org/10.1029/2019EA000658</a>]</li>
 <li>30弧秒及更低分辨率的全球地形数据均是SRTM15+V2 的衍生产品。GMT利用笛卡尔高斯滤波对其进行重采样以防止混叠现象。可以使用 <a class="reference internal" href="../../module/grdinfo/"><span class="doc">grdinfo</span></a> 查看生成网格文件所使用的滤波命令。</li>
@@ -359,7 +359,7 @@ gmt grdimage -JH15c @earth_relief_15m -pdf map
 </ul>
 </div>
 <div class="section" id="id5">
-<h2>11.4.5 数据来源及引用<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<h2>数据来源及引用<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <ol class="arabic simple">
 <li>SRTM15+V2 [<a class="reference external" href="http://dx.doi.org/10.1029/2019EA000658">http://dx.doi.org/10.1029/2019EA000658</a>]</li>
 <li>SRTMGL3数据: <a class="reference external" href="https://lpdaac.usgs.gov/dataset_discovery/measures/measures_products_table/srtmgl3_v003">https://lpdaac.usgs.gov/dataset_discovery/measures/measures_products_table/srtmgl3_v003</a></li>
@@ -399,10 +399,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../gadm/" class="btn btn-neutral float-right" title="11.5 GADM: 全球行政区划数据库" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../gadm/" class="btn btn-neutral float-right" title="GADM: 全球行政区划数据库" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../dcw/" class="btn btn-neutral float-left" title="11.3 DCW: 世界数字图表" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+        <a href="../dcw/" class="btn btn-neutral float-left" title="DCW: 世界数字图表" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
       
     </div>
   
@@ -413,7 +413,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月24日.
+        最后更新于 2019年11月27日.
       </span>
 
     </p>

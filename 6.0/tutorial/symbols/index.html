@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.6 绘制符号 &mdash; GMT中文手册</title>
+  <title>绘制符号 &mdash; GMT中文手册</title>
   
 
   
@@ -42,8 +42,8 @@
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="3.7 添加文字" href="../texts/" />
-    <link rel="prev" title="3.5 绘制线段和多边形" href="../lines/" /> 
+    <link rel="next" title="添加文字" href="../texts/" />
+    <link rel="prev" title="绘制线段和多边形" href="../lines/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,46 +98,46 @@
             
               <p class="caption"><span class="caption-text">目 录</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">3 入门教程</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../get-started/">3.1 GMT初探</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/">3.2 命令初探</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../basemap/">3.3 绘制底图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../coastline/">3.4 绘制海岸线</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lines/">3.5 绘制线段和多边形</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.6 绘制符号</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">3.6.1 符号一览</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">3.6.2 绘制简单符号</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">3.6.3 大小变化的符号</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">3.6.4 颜色变化的符号</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">3.6.5 绘制不同的符号</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">3.6.6 大小、颜色和符号类型都变化的符号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">入门教程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../get-started/">GMT初探</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/">命令初探</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">绘制底图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coastline/">绘制海岸线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lines/">绘制线段和多边形</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">绘制符号</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">符号一览</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">绘制简单符号</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">大小变化的符号</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">颜色变化的符号</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">绘制不同的符号</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">大小、颜色和符号类型都变化的符号</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../texts/">3.7 添加文字</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../legend/">3.8 添加图例</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../earth-relief/">3.9 绘制地形起伏</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../layers/">3.10 理解图层</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../oneliner/">3.11 GMT单行模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../inset/">3.12 GMT图中图模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../subplot/">3.13 GMT子图模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../multifig/">3.14 GMT多图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../texts/">添加文字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../legend/">添加图例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earth-relief/">绘制地形起伏</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../layers/">理解图层</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oneliner/">GMT单行模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">GMT图中图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">GMT子图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multifig/">GMT多图模式</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module/">13 模块手册</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
 </ul>
 
             
@@ -201,9 +201,9 @@
     
       <li><a href="../../">首页</a> &raquo;</li>
         
-          <li><a href="../">3 入门教程</a> &raquo;</li>
+          <li><a href="../">入门教程</a> &raquo;</li>
         
-      <li>3.6 绘制符号</li>
+      <li>绘制符号</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -225,10 +225,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>3.6 绘制符号<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>绘制符号<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>绘制各种类型的符号也是常见的绘图需求之一。GMT支持绘制十几种常见的符号类型，还支持自定义复杂的符号类型，足以满足日常的科研绘图需求。这一节将介绍如何使用 <a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a> 模块绘制多样的符号。</p>
 <div class="section" id="id2">
-<h2>3.6.1 符号一览<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>符号一览<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p><strong>plot</strong> 模块绘制符号需要使用 <strong>-S</strong> 选项。<strong>-S</strong> 选项后面紧跟着符号类型代码，以及符号大小。GMT中常见的十几种简单符号及其对应的符号类型代码如下图所示。比如 <strong>c</strong> 代表圆（<strong>c</strong>ircle），<strong>t</strong> 代表三角形（<strong>t</strong>riangle）。</p>
 <p><a class="reference download internal" download="" href="../../_downloads/5c281a9d0a2873ad120ed29518a6a711/symbols-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center">
@@ -236,7 +236,7 @@
 </div>
 </div>
 <div class="section" id="id3">
-<h2>3.6.2 绘制简单符号<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>绘制简单符号<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>以绘制圆圈为例，通过查询文档或者看上图可知，圆圈对应的符号类型代码为 <strong>c</strong>。
 <strong>-Sc0.5c</strong> 则表示绘制直径为0.5厘米的圆圈。为了绘制圆圈，我们需要给定圆圈的位置，因而输入数据中需要提供圆圈的X和Y坐标。</p>
 <p>下面的示例中在(2,3)、(5,6)、(8,2) 三个点绘制了三个直径为0.5厘米的圆圈。</p>
@@ -270,7 +270,7 @@ gmt end show
 <p>当然，某些符号类型可能需要额外的输入数据。比如 <strong>-Sr</strong> 表示绘制长方形，此时输入数据中除了需要长方形的X和Y坐标之外，还需要长方形的宽和高，因而输入数据需要四列。对于这些输入数据稍复杂的符号，可以阅读文档以了解其输入数据的格式。</p>
 </div>
 <div class="section" id="id4">
-<h2>3.6.3 大小变化的符号<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>大小变化的符号<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>若想要绘制大小变化的符号，则需要在输入数据中额外加上一列以控制每个符号的大小，同时，在 <strong>-S</strong> 选项中则不再需要指定符号大小。</p>
 <p>下面的示例中，<strong>-Sc</strong> 中没有指定圆圈大小，此时输入数据的第三列控制圆圈大小。由此，我们即得到了大小变化的符号。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin symbols png,pdf
@@ -287,7 +287,7 @@ gmt end show
 </div>
 </div>
 <div class="section" id="id5">
-<h2>3.6.4 颜色变化的符号<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<h2>颜色变化的符号<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>前面提到，使用 <strong>-G</strong> 选项可以为符号填充颜色，但其只能同时为所有符号指定单一的颜色。如果想要让符号的颜色根据某个数值的不同而使用不同的颜色，则需要使用 <strong>-C</strong> 选项。
 <strong>-C</strong> 选项表示符号的填充色由某个数值以及CPT颜色表所控制。CPT颜色表给出了数值与颜色之间的对应关系。因而对于任意一个符号，我们都可以给其一个数值，GMT会根据该数值从CPT颜色表中找到对应的颜色作为该符号的填充色。因而，在输入数据中，我们需要在
 X和Y坐标的基础上额外加一列Z值，用于控制符号的填充色。</p>
@@ -308,7 +308,7 @@ gmt end show
 </div>
 </div>
 <div class="section" id="id6">
-<h2>3.6.5 绘制不同的符号<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<h2>绘制不同的符号<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>前面说到，<strong>-S</strong> 选项中指定不同的符号类型代码则代表绘制不同的符号，但每次只能指定一种符号类型代码。如果想要不同的数据使用不同的符号绘制，则可以只指定符号大小而不指定符号类型代码，并在输入数据的最后一列指定符号类型代码。</p>
 <p>下面的示例中，我们使用 <strong>-S0.5c</strong> 指定了符号的大小，但是没有指定符号类型。输入数据的最后一列中 <strong>c</strong>、<strong>t</strong>和 <strong>i</strong> 则分别为三个数据指定了各自的符号类型。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin symbols png,pdf
@@ -326,7 +326,7 @@ gmt end show
 </div>
 </div>
 <div class="section" id="id7">
-<h2>3.6.6 大小、颜色和符号类型都变化的符号<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<h2>大小、颜色和符号类型都变化的符号<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
 <p>前面介绍了如何绘制大小变化或颜色变化或符号类型变化的符号。那么如何实现颜色、大小以及符号三者都变化的符号呢？可以使用 <strong>-S</strong> 但不指定符号类型以及符号大小，同时使用 <strong>-C</strong> 选项。</p>
 <p>关键问题在于，此时的数据数据格式是怎样的。根据GMT的规定，此时输入数据的格式为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>X   Y   Z   size    symbol
@@ -380,10 +380,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../texts/" class="btn btn-neutral float-right" title="3.7 添加文字" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../texts/" class="btn btn-neutral float-right" title="添加文字" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../lines/" class="btn btn-neutral float-left" title="3.5 绘制线段和多边形" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+        <a href="../lines/" class="btn btn-neutral float-left" title="绘制线段和多边形" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
       
     </div>
   
@@ -394,7 +394,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月24日.
+        最后更新于 2019年11月27日.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.5 Linux/macOS 下编译GMT源码 &mdash; GMT中文手册</title>
+  <title>Linux/macOS 下编译GMT源码 &mdash; GMT中文手册</title>
   
 
   
@@ -42,8 +42,8 @@
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="3 入门教程" href="../../tutorial/" />
-    <link rel="prev" title="2.4 跨平台GMT安装方案" href="../cross-platform/" /> 
+    <link rel="next" title="入门教程" href="../../tutorial/" />
+    <link rel="prev" title="跨平台GMT安装方案" href="../cross-platform/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,38 +98,38 @@
             
               <p class="caption"><span class="caption-text">目 录</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">2 安装</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../linux/">2.1 Linux 下安装 GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../windows/">2.2 Windows 下安装 GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../macOS/">2.3 macOS 下安装 GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cross-platform/">2.4 跨平台GMT安装方案</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.5 Linux/macOS 下编译GMT源码</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">2.5.1 编译及运行依赖</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">2.5.2 安装依赖软件</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">2.5.3 下载源码及数据</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gmt">2.5.4 安装GMT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">2.5.5 修改环境变量</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">2.5.6 测试是否安装成功</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">2.5.7 升级/卸载GMT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">安装</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../linux/">Linux 下安装 GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../windows/">Windows 下安装 GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macOS/">macOS 下安装 GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cross-platform/">跨平台GMT安装方案</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Linux/macOS 下编译GMT源码</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">编译及运行依赖</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">安装依赖软件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">下载源码及数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gmt">安装GMT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">修改环境变量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">测试是否安装成功</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">升级/卸载GMT</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">3 入门教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module/">13 模块手册</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
 </ul>
 
             
@@ -193,9 +193,9 @@
     
       <li><a href="../../">首页</a> &raquo;</li>
         
-          <li><a href="../">2 安装</a> &raquo;</li>
+          <li><a href="../">安装</a> &raquo;</li>
         
-      <li>2.5 Linux/macOS 下编译GMT源码</li>
+      <li>Linux/macOS 下编译GMT源码</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -217,12 +217,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="linux-macos-gmt">
-<h1>2.5 Linux/macOS 下编译GMT源码<a class="headerlink" href="#linux-macos-gmt" title="永久链接至标题">¶</a></h1>
+<h1>Linux/macOS 下编译GMT源码<a class="headerlink" href="#linux-macos-gmt" title="永久链接至标题">¶</a></h1>
 <p>这一节介绍如何在 Linux 或者 macOS 下编译GMT源代码。Windows用户如果想编译
 GMT源码请参考GMT官方
 <a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/BUILDING.md">编译指南</a>。</p>
 <div class="section" id="id2">
-<h2>2.5.1 编译及运行依赖<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>编译及运行依赖<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>GMT的编译及运行需要如下软件：</p>
 <ul class="simple">
 <li>CMake: &gt;=2.8.5</li>
@@ -243,7 +243,7 @@ GMT源码请参考GMT官方
 </ul>
 </div>
 <div class="section" id="id3">
-<h2>2.5.2 安装依赖软件<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>安装依赖软件<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>对于Ubuntu/Debian:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 安装编译所需软件包</span>
 $ sudo apt-get install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev
@@ -287,7 +287,7 @@ brew install ghostscript gdal pcre2 glib fftw graphicsmagick ffmpeg
 </div>
 </div>
 <div class="section" id="id4">
-<h2>2.5.3 下载源码及数据<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>下载源码及数据<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>编译GMT需要下载如下三个文件：</p>
 <ol class="arabic simple">
 <li>GMT 6.0.0 源码：<a class="reference external" href="http://mirrors.ustc.edu.cn/gmt/gmt-6.0.0-src.tar.gz">gmt-6.0.0-src.tar.gz</a></li>
@@ -296,7 +296,7 @@ brew install ghostscript gdal pcre2 glib fftw graphicsmagick ffmpeg
 </ol>
 </div>
 <div class="section" id="gmt">
-<h2>2.5.4 安装GMT<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
+<h2>安装GMT<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h2>
 <p>将下载的三个压缩文件放在同一个目录里，按照如下步骤进行安装：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解压三个压缩文件</span>
 $ tar -xvf gmt-6.0.0.tar.gz
@@ -408,7 +408,7 @@ $ sudo make -j install
 </div>
 </div>
 <div class="section" id="id5">
-<h2>2.5.5 修改环境变量<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<h2>修改环境变量<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>打开终端，使用如下命令用文件编辑器打开Bash配置文件:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Linux 用户</span>
 gedit ~/.bashrc
@@ -431,7 +431,7 @@ open ~/.bash_profile
 </ul>
 </div>
 <div class="section" id="id6">
-<h2>2.5.6 测试是否安装成功<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<h2>测试是否安装成功<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <p>重新打开一个终端，键入如下命令，若正确显示GMT版本号，则表示安装成功:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt --version
 <span class="m">6</span>.0.0
@@ -439,7 +439,7 @@ open ~/.bash_profile
 </div>
 </div>
 <div class="section" id="id7">
-<h2>2.5.7 升级/卸载GMT<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<h2>升级/卸载GMT<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
 <p>按照上面的配置，GMT会被安装到 <code class="docutils literal notranslate"><span class="pre">/opt/GMT-6.0.0</span></code> 目录下。若想要卸载GMT，可以直接删除整个 <code class="docutils literal notranslate"><span class="pre">/opt/GMT-6.0.0</span></code> 即可。</p>
 <p>GMT不支持自动更新，因而若想要升级GMT，通常建议先卸载GMT，然后再下载新版源码并按照上面的步骤重新编译安装。</p>
 <p>当然，高级用户也可以同时安装多个版本的GMT，但需要注意环境变量PATH的设置。</p>
@@ -477,10 +477,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../tutorial/" class="btn btn-neutral float-right" title="3 入门教程" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../tutorial/" class="btn btn-neutral float-right" title="入门教程" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../cross-platform/" class="btn btn-neutral float-left" title="2.4 跨平台GMT安装方案" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+        <a href="../cross-platform/" class="btn btn-neutral float-left" title="跨平台GMT安装方案" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
       
     </div>
   
@@ -491,7 +491,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月24日.
+        最后更新于 2019年11月27日.
       </span>
 
     </p>

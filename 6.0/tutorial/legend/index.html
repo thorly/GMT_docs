@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.8 添加图例 &mdash; GMT中文手册</title>
+  <title>添加图例 &mdash; GMT中文手册</title>
   
 
   
@@ -42,8 +42,8 @@
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="3.9 绘制地形起伏" href="../earth-relief/" />
-    <link rel="prev" title="3.7 添加文字" href="../texts/" /> 
+    <link rel="next" title="绘制地形起伏" href="../earth-relief/" />
+    <link rel="prev" title="添加文字" href="../texts/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,42 +98,42 @@
             
               <p class="caption"><span class="caption-text">目 录</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">3 入门教程</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../get-started/">3.1 GMT初探</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../commands/">3.2 命令初探</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../basemap/">3.3 绘制底图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../coastline/">3.4 绘制海岸线</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lines/">3.5 绘制线段和多边形</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../symbols/">3.6 绘制符号</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../texts/">3.7 添加文字</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.8 添加图例</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">3.8.1 自动图例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">3.8.2 手动设置图例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">入门教程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../get-started/">GMT初探</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commands/">命令初探</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basemap/">绘制底图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../coastline/">绘制海岸线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lines/">绘制线段和多边形</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../symbols/">绘制符号</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../texts/">添加文字</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">添加图例</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">自动图例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">手动设置图例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../earth-relief/">3.9 绘制地形起伏</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../layers/">3.10 理解图层</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../oneliner/">3.11 GMT单行模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../inset/">3.12 GMT图中图模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../subplot/">3.13 GMT子图模式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../multifig/">3.14 GMT多图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../earth-relief/">绘制地形起伏</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../layers/">理解图层</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oneliner/">GMT单行模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inset/">GMT图中图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../subplot/">GMT子图模式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multifig/">GMT多图模式</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module/">13 模块手册</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
 </ul>
 
             
@@ -197,9 +197,9 @@
     
       <li><a href="../../">首页</a> &raquo;</li>
         
-          <li><a href="../">3 入门教程</a> &raquo;</li>
+          <li><a href="../">入门教程</a> &raquo;</li>
         
-      <li>3.8 添加图例</li>
+      <li>添加图例</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -221,10 +221,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>3.8 添加图例<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>添加图例<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>绘制了线条与符号后，通常还需要添加图例，以解释不同数据的含义。GMT中使用 <a class="reference internal" href="../../module/legend/"><span class="doc">legend</span></a> 模块添加图例。</p>
 <div class="section" id="id2">
-<h2>3.8.1 自动图例<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>自动图例<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>在使用 <a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a> 模块绘制线条或符号时，可以额外加上 <strong>-l</strong><em>label</em>
 选项以指定当前线段或符号的图例标签。</p>
 <p>下面的示例中，我们利用前面学到的知识绘制了线段和两种符号，同时使用了 <strong>-l</strong>
@@ -252,7 +252,7 @@ gmt end show
 <p><strong>-l</strong> 选项还可以接受更多子选项以实现更多图例效果，在本教程中不再赘述。</p>
 </div>
 <div class="section" id="id3">
-<h2>3.8.2 手动设置图例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>手动设置图例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>如果对于自动生成的图例不满意，还可以使用 <strong>legend</strong> 模块绘制更复杂的图例，其输入文件有自己的一套规则，详情见 <strong>legend</strong> 模块的说明文档。这节只介绍最简单也最常用的图例，即符号和线条的图例。针对绘制符号和线条，<strong>legend</strong> 的输入格式为：</p>
 <blockquote>
 <div><strong>S</strong> <em>dx1</em> <em>symbol</em> <em>size</em> <em>fill</em> <em>pen</em> <em>dx2</em> <em>text</em></div></blockquote>
@@ -328,10 +328,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../earth-relief/" class="btn btn-neutral float-right" title="3.9 绘制地形起伏" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../earth-relief/" class="btn btn-neutral float-right" title="绘制地形起伏" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../texts/" class="btn btn-neutral float-left" title="3.7 添加文字" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+        <a href="../texts/" class="btn btn-neutral float-left" title="添加文字" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
       
     </div>
   
@@ -342,7 +342,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月24日.
+        最后更新于 2019年11月27日.
       </span>
 
     </p>

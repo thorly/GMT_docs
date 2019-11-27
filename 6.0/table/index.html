@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5 表数据 &mdash; GMT中文手册</title>
+  <title>表数据 &mdash; GMT中文手册</title>
   
 
   
@@ -42,8 +42,8 @@
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex/" />
     <link rel="search" title="搜索" href="../search/" />
-    <link rel="next" title="5.1 ASCII表" href="ascii/" />
-    <link rel="prev" title="4.13 数据类型" href="../basis/io-format/" /> 
+    <link rel="next" title="ASCII表" href="ascii/" />
+    <link rel="prev" title="数据类型" href="../basis/io-format/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,28 +98,28 @@
             
               <p class="caption"><span class="caption-text">目 录</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../intro/">1 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install/">2 安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial/">3 入门教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../basis/">4 GMT基础</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">5 表数据</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ascii/">5.1 ASCII表</a></li>
-<li class="toctree-l2"><a class="reference internal" href="binary/">5.2 二进制表</a></li>
-<li class="toctree-l2"><a class="reference internal" href="netcdf/">5.3 netCDF表</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ogr/">5.4 兼容OGR的GMT矢量数据格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basis/">GMT基础</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">表数据</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ascii/">ASCII表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binary/">二进制表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="netcdf/">netCDF表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ogr/">兼容OGR的GMT矢量数据格式</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../grid/">6 网格文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cpt/">7 CPT文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../option/">8 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../proj/">9 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../conf/">10 配置参数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../dataset/">11 地学数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chinese/">12 中文支持</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module/">13 模块手册</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../gallery/">14 绘图示例</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/">15 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../appendix/">16 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proj/">投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module/">模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gallery/">绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/">附录</a></li>
 </ul>
 
             
@@ -183,7 +183,7 @@
     
       <li><a href="../">首页</a> &raquo;</li>
         
-      <li>5 表数据</li>
+      <li>表数据</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -205,26 +205,26 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>5 表数据<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>表数据<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>表数据，也称为列数据或多列数据，英文为table data，常用于表示点和线。</p>
 <p>表数据可以有三种形式：ASCII表、二进制表和netCDF表。最常用的表数据形式是ASCII表，其具有直观、可直接编辑的特点；二进制表和netCDF表相对不直观，但通常文件大小更小。</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="ascii/">5.1 ASCII表</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ascii/#id1">5.1.1 ASCII表简介</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ascii/#id2">5.1.2 文件头记录</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ascii/#id3">5.1.3 多段数据</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ascii/#id4">5.1.4 数据段头记录中的额外属性</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ascii/">ASCII表</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ascii/#id1">ASCII表简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ascii/#id2">文件头记录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ascii/#id3">多段数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ascii/#id4">数据段头记录中的额外属性</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="binary/">5.2 二进制表</a></li>
-<li class="toctree-l1"><a class="reference internal" href="netcdf/">5.3 netCDF表</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ogr/">5.4 兼容OGR的GMT矢量数据格式</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ogr/#id1">5.4.1 简介</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ogr/#ogr-gmt">5.4.2 OGR/GMT格式</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ogr/#id2">5.4.3 OGR/GMT元数据</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ogr/#id3">5.4.4 OGR/GMT数据</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ogr/#id6">5.4.5 示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binary/">二进制表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="netcdf/">netCDF表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ogr/">兼容OGR的GMT矢量数据格式</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ogr/#id1">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ogr/#ogr-gmt">OGR/GMT格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ogr/#id2">OGR/GMT元数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ogr/#id3">OGR/GMT数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ogr/#id6">示例</a></li>
 </ul>
 </li>
 </ul>
@@ -262,10 +262,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ascii/" class="btn btn-neutral float-right" title="5.1 ASCII表" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ascii/" class="btn btn-neutral float-right" title="ASCII表" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../basis/io-format/" class="btn btn-neutral float-left" title="4.13 数据类型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+        <a href="../basis/io-format/" class="btn btn-neutral float-left" title="数据类型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
       
     </div>
   
@@ -276,7 +276,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月24日.
+        最后更新于 2019年11月27日.
       </span>
 
     </p>

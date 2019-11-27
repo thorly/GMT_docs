@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>15.4 GMT/Python &mdash; GMT中文手册</title>
+  <title>GMT/Python &mdash; GMT中文手册</title>
   
 
   
@@ -42,8 +42,8 @@
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="16 附录" href="../../appendix/" />
-    <link rel="prev" title="15.3 GMT/Julia" href="../julia/" /> 
+    <link rel="next" title="附录" href="../../appendix/" />
+    <link rel="prev" title="GMT/Julia" href="../julia/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,28 +98,28 @@
             
               <p class="caption"><span class="caption-text">目 录</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">3 入门教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module/">13 模块手册</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">15 API</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../c/">15.1 GMT C API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../matlab/">15.2 GMT Matlab API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../julia/">15.3 GMT/Julia</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">15.4 GMT/Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">绘图示例</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../c/">GMT C API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../matlab/">GMT Matlab API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../julia/">GMT/Julia</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">GMT/Python</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
 </ul>
 
             
@@ -183,9 +183,9 @@
     
       <li><a href="../../">首页</a> &raquo;</li>
         
-          <li><a href="../">15 API</a> &raquo;</li>
+          <li><a href="../">API</a> &raquo;</li>
         
-      <li>15.4 GMT/Python</li>
+      <li>GMT/Python</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -207,7 +207,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gmt-python">
-<h1>15.4 GMT/Python<a class="headerlink" href="#gmt-python" title="永久链接至标题">¶</a></h1>
+<h1>GMT/Python<a class="headerlink" href="#gmt-python" title="永久链接至标题">¶</a></h1>
 <p>从GMT 6.0 开始，GMT提供了Python接口，用户可以在Python中直接调用GMT绘图。</p>
 <ul class="simple">
 <li>项目地址: <a class="reference external" href="https://github.com/GenericMappingTools/pygmt">https://github.com/GenericMappingTools/pygmt</a></li>
@@ -250,10 +250,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../appendix/" class="btn btn-neutral float-right" title="16 附录" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../appendix/" class="btn btn-neutral float-right" title="附录" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../julia/" class="btn btn-neutral float-left" title="15.3 GMT/Julia" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+        <a href="../julia/" class="btn btn-neutral float-left" title="GMT/Julia" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
       
     </div>
   
@@ -264,7 +264,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月24日.
+        最后更新于 2019年11月27日.
       </span>
 
     </p>

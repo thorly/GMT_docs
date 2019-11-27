@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.9 绘制矢量/箭头 &mdash; GMT中文手册</title>
+  <title>绘制矢量/箭头 &mdash; GMT中文手册</title>
   
 
   
@@ -42,8 +42,8 @@
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="4.10 线条属性" href="../line/" />
-    <link rel="prev" title="4.8 转义序列" href="../escape-character/" /> 
+    <link rel="next" title="线条属性" href="../line/" />
+    <link rel="prev" title="转义序列" href="../escape-character/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,47 +98,47 @@
             
               <p class="caption"><span class="caption-text">目 录</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">3 入门教程</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">4 GMT基础</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../paper/">4.1 画布</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../unit/">4.2 单位</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../color/">4.3 颜色</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pen/">4.4 画笔</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../fill/">4.5 填充</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../text/">4.6 文字</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../special-character/">4.7 特殊字符</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../escape-character/">4.8 转义序列</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.9 绘制矢量/箭头</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">4.9.1 矢量头位置及形状</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">4.9.2 矢量头线条颜色和填充色</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">4.9.3 其它属性</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">4.9.4 矢量类型及输入数据格式</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">入门教程</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">GMT基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../paper/">画布</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unit/">单位</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color/">颜色</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pen/">画笔</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fill/">填充</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/">文字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../special-character/">特殊字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../escape-character/">转义序列</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">绘制矢量/箭头</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">矢量头位置及形状</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">矢量头线条颜色和填充色</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">其它属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">矢量类型及输入数据格式</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id6">笛卡尔矢量和地理矢量</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id7">圆弧矢量</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../line/">4.10 线条属性</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../anchor/">4.11 锚点</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../embellishment/">4.12 绘制修饰物</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../io-format/">4.13 数据类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../line/">线条属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anchor/">锚点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../embellishment/">绘制修饰物</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io-format/">数据类型</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../option/">8 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module/">13 模块手册</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
 </ul>
 
             
@@ -202,9 +202,9 @@
     
       <li><a href="../../">首页</a> &raquo;</li>
         
-          <li><a href="../">4 GMT基础</a> &raquo;</li>
+          <li><a href="../">GMT基础</a> &raquo;</li>
         
-      <li>4.9 绘制矢量/箭头</li>
+      <li>绘制矢量/箭头</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -226,7 +226,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>4.9 绘制矢量/箭头<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>绘制矢量/箭头<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <p>矢量是一个有大小和方向的量，通常用箭头↗ 表征矢量。一个矢量由两个独立的部分组成：矢量线和矢量头。矢量线与一般的线没有区别，通常由画笔属性（<a class="reference internal" href="../pen/"><span class="doc">画笔</span></a>）控制。这一节则主要介绍矢量头的属性及控制方式。</p>
 <p>GMT 中能够绘制矢量的模块有
 <a class="reference internal" href="../../module/plot/"><span class="doc">plot</span></a>、
@@ -245,7 +245,7 @@
 </div>
 <p>接下来将介绍如何通过在 <strong>-Sv0.5c</strong> 后增加更多的子选项来进一步修改矢量头的属性。</p>
 <div class="section" id="id2">
-<h2>4.9.1 矢量头位置及形状<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>矢量头位置及形状<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>在绘制矢量时，默认只绘制矢量线而不绘制矢量头。下面的几个子选项用于指定矢量头的位置以及形状：</p>
 <ul>
 <li><p class="first"><strong>+b</strong>[<strong>t</strong>|<strong>c</strong>|<strong>a</strong>|<strong>A</strong>|<strong>i</strong>|<strong>I</strong>][<strong>l</strong>|<strong>r</strong>]：在矢量线的起点加上矢量头</p>
@@ -288,7 +288,7 @@
 </ul>
 </div>
 <div class="section" id="id3">
-<h2>4.9.2 矢量头线条颜色和填充色<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>矢量头线条颜色和填充色<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>默认情况下，<strong>-W</strong>选项同时控制矢量线和矢量头的画笔属性，<strong>-G</strong> 选项则控制矢量头的填充色。下面两个子选项可以单独控制矢量头的画笔属性和填充色。</p>
 <ul class="simple">
 <li><strong>+p</strong><em>pen</em> 设置矢量头的画笔属性，<em>pen</em> 为 <strong>-</strong> 表示不绘制矢量头的轮廓</li>
@@ -296,7 +296,7 @@
 </ul>
 </div>
 <div class="section" id="id4">
-<h2>4.9.3 其它属性<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>其它属性<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>还可以使用如下子选项进一步控制矢量头的属性：</p>
 <ul class="simple">
 <li><strong>+n</strong><em>norm</em> 默认情况下，矢量头的大小不随着矢量线的长度变化而变化，这可能会出现矢量线很短而矢量头过大，或者矢量线很长而矢量头过小的情况。该子选项使得矢量长度小于 <em>norm</em> 时，矢量头的属性（画笔宽度，箭头大小）会根据矢量长度按照 <em>length</em>/<em>norm</em> 缩放</li>
@@ -305,7 +305,7 @@
 </ul>
 </div>
 <div class="section" id="id5">
-<h2>4.9.4 矢量类型及输入数据格式<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<h2>矢量类型及输入数据格式<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>GMT提供了三类矢量：</p>
 <ul class="simple">
 <li>笛卡尔矢量：矢量起点到终点的矢量线以直线方式连接</li>
@@ -393,10 +393,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../line/" class="btn btn-neutral float-right" title="4.10 线条属性" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../line/" class="btn btn-neutral float-right" title="线条属性" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../escape-character/" class="btn btn-neutral float-left" title="4.8 转义序列" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+        <a href="../escape-character/" class="btn btn-neutral float-left" title="转义序列" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
       
     </div>
   
@@ -407,7 +407,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月24日.
+        最后更新于 2019年11月27日.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>14 绘图示例 &mdash; GMT中文手册</title>
+  <title>绘图示例 &mdash; GMT中文手册</title>
   
 
   
@@ -42,8 +42,8 @@
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
     <link rel="index" title="索引" href="../genindex/" />
     <link rel="search" title="搜索" href="../search/" />
-    <link rel="next" title="14.1 绘制震源球" href="beachball/" />
-    <link rel="prev" title="13.62 xyz2grd" href="../module/xyz2grd/" /> 
+    <link rel="next" title="绘制震源球" href="beachball/" />
+    <link rel="prev" title="xyz2grd" href="../module/xyz2grd/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,28 +98,28 @@
             
               <p class="caption"><span class="caption-text">目 录</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../intro/">1 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install/">2 安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial/">3 入门教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../basis/">4 GMT基础</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../table/">5 表数据</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../grid/">6 网格文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cpt/">7 CPT文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../option/">8 标准选项</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../proj/">9 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../conf/">10 配置参数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../dataset/">11 地学数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chinese/">12 中文支持</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../module/">13 模块手册</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">14 绘图示例</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="beachball/">14.1 绘制震源球</a></li>
-<li class="toctree-l2"><a class="reference internal" href="histogram/">14.2 绘制直方图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="animation/">14.3 制作动画</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chinese-texts/">14.4 中文图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basis/">GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpt/">CPT文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../option/">标准选项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../proj/">投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module/">模块手册</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">绘图示例</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="beachball/">绘制震源球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="histogram/">绘制直方图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation/">制作动画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chinese-texts/">中文图</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../api/">15 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../appendix/">16 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix/">附录</a></li>
 </ul>
 
             
@@ -183,7 +183,7 @@
     
       <li><a href="../">首页</a> &raquo;</li>
         
-      <li>14 绘图示例</li>
+      <li>绘图示例</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -205,31 +205,31 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>14 绘图示例<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>绘图示例<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="beachball/">14.1 绘制震源球</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="beachball/#id2">14.1.1 震源球大小随震级变化</a></li>
-<li class="toctree-l2"><a class="reference internal" href="beachball/#id3">14.1.2 固定大小的震源球</a></li>
-<li class="toctree-l2"><a class="reference internal" href="beachball/#id4">14.1.3 震源球大小随震级变化，颜色随深度变化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="beachball/">绘制震源球</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="beachball/#id2">震源球大小随震级变化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="beachball/#id3">固定大小的震源球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="beachball/#id4">震源球大小随震级变化，颜色随深度变化</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="histogram/">14.2 绘制直方图</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="histogram/#id2">14.2.1 垂直直方图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="histogram/#id3">14.2.2 水平直方图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="histogram/#id4">14.2.3 累积直方图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="histogram/#id5">14.2.4 百分比直方图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="histogram/">绘制直方图</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="histogram/#id2">垂直直方图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="histogram/#id3">水平直方图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="histogram/#id4">累积直方图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="histogram/#id5">百分比直方图</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="animation/">14.3 制作动画</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="animation/#id2">14.3.1 绘制正弦函数动画</a></li>
-<li class="toctree-l2"><a class="reference internal" href="animation/#id3">14.3.2 绘制旋转的地球</a></li>
+<li class="toctree-l1"><a class="reference internal" href="animation/">制作动画</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="animation/#id2">绘制正弦函数动画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation/#id3">绘制旋转的地球</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="chinese-texts/">14.4 中文图</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="chinese-texts/#id2">14.4.1 中文文字</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chinese-texts/#id3">14.4.2 中文月份</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chinese-texts/#id4">14.4.3 中文星期</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chinese-texts/">中文图</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chinese-texts/#id2">中文文字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chinese-texts/#id3">中文月份</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chinese-texts/#id4">中文星期</a></li>
 </ul>
 </li>
 </ul>
@@ -267,10 +267,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="beachball/" class="btn btn-neutral float-right" title="14.1 绘制震源球" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="beachball/" class="btn btn-neutral float-right" title="绘制震源球" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../module/xyz2grd/" class="btn btn-neutral float-left" title="13.62 xyz2grd" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+        <a href="../module/xyz2grd/" class="btn btn-neutral float-left" title="xyz2grd" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
       
     </div>
   
@@ -281,7 +281,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月24日.
+        最后更新于 2019年11月27日.
       </span>
 
     </p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>8.1 -R 选项 &mdash; GMT中文手册</title>
+  <title>-R 选项 &mdash; GMT中文手册</title>
   
 
   
@@ -42,8 +42,8 @@
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="8.2 -J 选项" href="../J/" />
-    <link rel="prev" title="8 标准选项" href="../" /> 
+    <link rel="next" title="-J 选项" href="../J/" />
+    <link rel="prev" title="标准选项" href="../" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,17 +98,17 @@
             
               <p class="caption"><span class="caption-text">目 录</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../intro/">1 简介</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../install/">2 安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">3 入门教程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../basis/">4 GMT基础</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../table/">5 表数据</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../grid/">6 网格文件</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../cpt/">7 CPT文件</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../">8 标准选项</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">8.1 -R 选项</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">8.1.1 五种方式</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">8.1.2 六种坐标</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/">入门教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basis/">GMT基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../table/">表数据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grid/">网格文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpt/">CPT文件</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">标准选项</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">-R 选项</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">五种方式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">六种坐标</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id3">地理坐标</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id4">投影后坐标</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id5">弧度坐标</a></li>
@@ -116,38 +116,39 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../J/">8.2 -J 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../B/">8.3 -B 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../V/">8.4 -V 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../U/">8.5 -U 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../XY/">8.6 -X 和 -Y 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../a/">8.7 -a 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../binary/">8.8 -b 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../c/">8.9 -c 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../d/">8.10 -d 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../e/">8.11 -e 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../f/">8.12 -f 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../g/">8.13 -g 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../h/">8.14 -h 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../io/">8.15 -i 和 -o 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../distcal/">8.16 -j 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../n/">8.17 -n 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gridreg/">8.18 -r 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../perspective/">8.19 -p 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../s/">8.20 -s 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../t/">8.21 -t 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../x/">8.22 -x 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../colon/">8.23 -: 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../J/">-J 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../B/">-B 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../U/">-U 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../XY/">-X 和 -Y 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../a/">-a 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../binary/">-b 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c/">-c 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../d/">-d 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../e/">-e 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../f/">-f 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../g/">-g 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../h/">-h 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../io/">-i 和 -o 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../distcal/">-j 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../l/">-l 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../n/">-n 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gridreg/">-r 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../perspective/">-p 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../s/">-s 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../t/">-t 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x/">-x 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../colon/">-: 选项</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../proj/">9 投影方式</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../conf/">10 配置参数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dataset/">11 地学数据集</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chinese/">12 中文支持</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../module/">13 模块手册</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../gallery/">14 绘图示例</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/">15 API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../appendix/">16 附录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj/">投影方式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conf/">配置参数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset/">地学数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chinese/">中文支持</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module/">模块手册</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/">绘图示例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendix/">附录</a></li>
 </ul>
 
             
@@ -211,9 +212,9 @@
     
       <li><a href="../../">首页</a> &raquo;</li>
         
-          <li><a href="../">8 标准选项</a> &raquo;</li>
+          <li><a href="../">标准选项</a> &raquo;</li>
         
-      <li>8.1 -R 选项</li>
+      <li>-R 选项</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -235,10 +236,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="r">
-<h1>8.1 -R 选项<a class="headerlink" href="#r" title="永久链接至标题">¶</a></h1>
+<h1>-R 选项<a class="headerlink" href="#r" title="永久链接至标题">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项用于指定要绘制的数据范围或地图区域。该选项的参数可以用五种方式指定，同时支持六种不同类型的数据坐标。</p>
 <div class="section" id="id1">
-<h2>8.1.1 五种方式<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>五种方式<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>可以用五种方式指定数据范围。</p>
 <ol class="arabic">
 <li><p class="first"><code class="docutils literal notranslate"><span class="pre">-R&lt;xmin&gt;/&lt;xmax&gt;/&lt;ymin&gt;/&lt;ymax&gt;</span></code></p>
@@ -277,7 +278,7 @@
 </ol>
 </div>
 <div class="section" id="id2">
-<h2>8.1.2 六种坐标<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>六种坐标<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>GMT的坐标轴可以是多种类型，比如地图的经纬度轴、一般的笛卡尔轴、时间轴等等。不同类型的轴需要用不同类型的数据来指定数据的范围。
 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项可以使用五种不同的方式来指定数据范围：</p>
 <ol class="arabic simple">
@@ -359,10 +360,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../J/" class="btn btn-neutral float-right" title="8.2 -J 选项" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../J/" class="btn btn-neutral float-right" title="-J 选项" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../" class="btn btn-neutral float-left" title="8 标准选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+        <a href="../" class="btn btn-neutral float-left" title="标准选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
       
     </div>
   
@@ -373,7 +374,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月24日.
+        最后更新于 2019年11月27日.
       </span>
 
     </p>
