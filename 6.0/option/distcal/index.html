@@ -122,12 +122,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../h/">-h 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../io/">-i 和 -o 选项</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">-j 选项</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">三种距离计算方式</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#flat-earth">Flat Earth距离</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id2">大圆路径距离</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id3">测地距离</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="#flat-earth">Flat Earth距离</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">大圆路径距离</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">测地距离</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../l/">-l 选项</a></li>
@@ -236,20 +233,16 @@
             
   <div class="section" id="j">
 <h1>-j 选项<a class="headerlink" href="#j" title="永久链接至标题">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">-j</span></code> 选项用于控制球面上两点间距离的计算方式。其语法为:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-je<span class="p">|</span>f<span class="p">|</span>g
-</pre></div>
-</div>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">-jg</span></code> 将地球当做球体，用大圆路径公式计算球面距离，GMT默认使用此方式</li>
-<li><code class="docutils literal notranslate"><span class="pre">-jf</span></code> 使用Flat Earth公式计算球面距离</li>
-<li><code class="docutils literal notranslate"><span class="pre">-je</span></code> 使用测地公式计算球面距离，计算距离时考虑了地球椭率</li>
-</ul>
-<div class="section" id="id1">
-<h2>三种距离计算方式<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p><strong>-j</strong> 选项用于控制球面上两点间距离的计算方式。其语法为：</p>
+<p><strong>-j</strong><strong>e</strong>|<strong>f</strong>|<strong>g</strong></p>
 <p>在计算地球或其它星体上任意两点间的距离时，GMT 提供了三种不同的计算方式：Flat Earth 距离、大圆路径距离和测地距离。三种方法的计算精度由低到高，计算速度由高到低。用户可以根据自己的需求选择适合的距离计算方式。</p>
+<ul class="simple">
+<li><strong>-jg</strong> 将地球当做球体，用大圆路径公式计算球面距离，GMT默认使用此方式</li>
+<li><strong>-jf</strong> 使用Flat Earth公式计算球面距离</li>
+<li><strong>-je</strong> 使用测地公式计算球面距离，计算距离时考虑了地球椭率</li>
+</ul>
 <div class="section" id="flat-earth">
-<h3>Flat Earth距离<a class="headerlink" href="#flat-earth" title="永久链接至标题">¶</a></h3>
+<h2>Flat Earth距离<a class="headerlink" href="#flat-earth" title="永久链接至标题">¶</a></h2>
 <p>地球上任意两点 A 和 B 的 Flat Earth 距离计算公式：</p>
 <div class="math notranslate nohighlight">
 \[d_f = R \sqrt{(\theta_A - \theta_B)^2 + \cos \left [ \frac{\theta_A +
@@ -259,8 +252,8 @@
 <span class="math notranslate nohighlight">\(\Delta \lambda = \lambda_A - \lambda_B\)</span> 是经度差。式中地理坐标的单位均是弧度，且需要考虑到跨越经度的周期性问题。</p>
 <p>该方法的特点是计算速度快但精度不高，适用于纬度相差不大且对计算效率要求比较高的情况。</p>
 </div>
-<div class="section" id="id2">
-<h3>大圆路径距离<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id1">
+<h2>大圆路径距离<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>该方法将地球近似为一个半径为R的球，地球上任意两点 A 和 B 的大圆路径距离可以用
 <a class="reference external" href="https://en.wikipedia.org/wiki/Haversine_formula">Haversine 公式</a> 计算：</p>
 <div class="math notranslate nohighlight">
@@ -272,14 +265,13 @@
 <li><a class="reference internal" href="../../conf/proj/#proj-mean-radius"><span class="std std-ref">PROJ_MEAN_RADIUS</span></a> 地球平均半径</li>
 <li><a class="reference internal" href="../../conf/proj/#proj-aux-latitude"><span class="std std-ref">PROJ_AUX_LATITUDE</span></a> 指定将大地纬度转换为多个适合球状近似的辅助纬度中的其中一个</li>
 </ul>
-<p>需要注意，这两个选项仅当 <a class="reference internal" href="../../conf/proj/#proj-ellipsoid"><span class="std std-ref">PROJ_ELLIPSOID</span></a> 不为 <code class="docutils literal notranslate"><span class="pre">sphere</span></code> 时才有效。</p>
+<p>需要注意，这两个选项仅当 <a class="reference internal" href="../../conf/proj/#proj-ellipsoid"><span class="std std-ref">PROJ_ELLIPSOID</span></a> 不为 <strong>sphere</strong> 时才有效。</p>
 </div>
-<div class="section" id="id3">
-<h3>测地距离<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id2">
+<h2>测地距离<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>地球上两点间的精确距离可以用 Vincenty (1975) 的完全椭球公式计算。该方法计算得到的距离精度最高精确到 0.5 毫米，同时也是计算速度的最慢的方式。</p>
 <p>除了 Vincenty 完全椭球公式外，还可以将参数 <a class="reference internal" href="../../conf/proj/#proj-geodesic"><span class="std std-ref">PROJ_GEODESIC</span></a>
-设置成 <code class="docutils literal notranslate"><span class="pre">Rudoe</span></code> （GMT4所使用的计算公式）或 <code class="docutils literal notranslate"><span class="pre">Andoyer</span></code> （近似公式，精确到10米量级）以使用不同的计算公式。</p>
-</div>
+设置成 <strong>Rudoe</strong> （GMT4所使用的计算公式）或 <strong>Andoyer</strong> （近似公式，精确到10米量级）以使用不同的计算公式。</p>
 </div>
 </div>
 
@@ -328,7 +320,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月27日.
+        最后更新于 2019年11月28日.
       </span>
 
     </p>

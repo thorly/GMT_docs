@@ -137,9 +137,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../grd2xyz/">grd2xyz</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grdblend/">grdblend</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">grdclip</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">必选选项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">可选选项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">必须选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">相关模块</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
@@ -277,45 +279,85 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/grdclip.html" title="(在 GMT v6.0)"><span>grdclip</span></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">对网格文件的Z值范围做裁剪</td>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">根据网格文件的Z值对网格进行裁剪</td>
 </tr>
 </tbody>
 </table>
 <div class="section" id="id1">
-<h2>必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p><strong>gmt grdclip</strong> <em>ingrid</em>
+<a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>outgrid</em>
+[ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> ]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><strong>a</strong><em>high/above</em> ]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><strong>b</strong><em>low/below</em> ]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><strong>i</strong><em>low/high/between</em> ]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><strong>r</strong><em>old/new</em> ]
+[ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <strong>--PAR</strong>=<em>value</em> ]</p>
+</div>
+<div class="section" id="id2">
+<h2>必须选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;ingrid&gt;</span></code></dt>
+<dt><em>ingrid</em></dt>
 <dd>输入网格文件名</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;outgrid&gt;</span></code></dt>
+</dl>
+<dl class="docutils" id="g">
+<dt><strong>-G</strong><em>outgrid</em></dt>
 <dd>输出网格文件名</dd>
 </dl>
 </div>
-<div class="section" id="id2">
-<h2>可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h2>可选选项<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<dl class="docutils" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="../../option/R/"><span class="doc">(more …)</span></a></dt>
+<dd>指定绘图区域</dd>
+</dl>
+<blockquote>
+<div>指定要截取的网格区域。若该选项指定的范围超过了网格文件的边界，则仅提取二者公共的区域。</div></blockquote>
+<dl class="docutils" id="s">
+<dt><strong>-Sa</strong><em>high/above</em></dt>
+<dd>将所有大于 <em>high</em> 的值设置为 <em>above</em></dd>
+<dt><strong>-Sb</strong><em>low/below</em></dt>
+<dd>将所有小于 <em>low</em> 的值设置为 <em>below</em></dd>
+<dt><strong>-Si</strong><em>low/high/between</em></dt>
+<dd>将所有在 <em>low</em> 和 <em>high</em> 范围内的值设置为 <em>between</em>。该选项可多次使用</dd>
+<dt><strong>-Sr</strong><em>old/new</em></dt>
+<dd>将所有等于 <em>old</em> 的值设置为 <em>new</em>。该选项可以多次使用</dd>
+</dl>
+<dl class="docutils" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../option/V/"><span class="doc">(more …)</span></a></dt>
+<dd>设置 verbose 等级 [c]</dd>
+</dl>
 <dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-R&lt;west&gt;/&lt;east&gt;/&lt;south&gt;/&lt;north&gt;[+r][+u&lt;unit&gt;]</span></code></dt>
-<dd>指定要截取的网格区域。若该选项指定的范围超过了网格文件的边界，则仅提取二者公共的区域。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-S</span></code></dt>
-<dd><p class="first">裁剪参数，该选项可以多次使用。</p>
-<ul class="last simple">
-<li><code class="docutils literal notranslate"><span class="pre">-Sa&lt;high&gt;/&lt;above&gt;</span></code> 将所有大于 <code class="docutils literal notranslate"><span class="pre">&lt;high&gt;</span></code> 的值设置为 <code class="docutils literal notranslate"><span class="pre">&lt;above&gt;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">-Sb&lt;low&gt;/&lt;below&gt;</span></code> 将所有小于 <code class="docutils literal notranslate"><span class="pre">&lt;low&gt;</span></code> 的值设置为 <code class="docutils literal notranslate"><span class="pre">&lt;below&gt;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">-Si&lt;low&gt;/&lt;high&gt;/&lt;between&gt;</span></code> 将所有在 <code class="docutils literal notranslate"><span class="pre">&lt;low&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;high&gt;</span></code> 范围内的值设置为 <code class="docutils literal notranslate"><span class="pre">&lt;between&gt;</span></code> ，该选项可多次使用</li>
-<li><code class="docutils literal notranslate"><span class="pre">-Sr&lt;old&gt;/&lt;new&gt;</span></code> 将所有等于 <code class="docutils literal notranslate"><span class="pre">&lt;old&gt;</span></code> 的值设置为 <code class="docutils literal notranslate"><span class="pre">&lt;new&gt;</span></code>  ，该选项可以多次使用</li>
-</ul>
-</dd>
+<dt><strong>-^</strong> 或 <strong>-</strong></dt>
+<dd>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt>
+<dd>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</dd>
+<dt><strong>-?</strong> 或无参数</dt>
+<dd>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt>
+<dd>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/gmt.conf.html" title="(在 GMT v6.0)"><span class="xref std std-doc">gmt.conf</span></a></dd>
 </dl>
 </div>
-<div class="section" id="id3">
-<h2>示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>将所有大于70的值设置为NaN，并将小于0的值设置为0:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdclip data.nc -Gnew_data.nc -Sa70/NaN -Sb0/0 -V
+<div class="section" id="id4">
+<h2>示例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>将所有大于0的值设置为NaN，并将小于0的值设置为0:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdclip @AFR.nc -Gnew_AFR.nc -Sa0/NaN -Sb0/0 -V
 </pre></div>
 </div>
 <p>将所有25到30范围内的值设置为99，35到39范围内的值设置为55，将17换成11，将所有小于10的值设置为0:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdclip classes.nc -Gnew_classes.nc -Si25/30/99 -Si35/39/55 -Sr17/11 -Sb10/0 -V
 </pre></div>
 </div>
+</div>
+<div class="section" id="id5">
+<h2>相关模块<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/grdfill.html" title="(在 GMT v6.0)"><span class="xref std std-doc">grdfill</span></a>,
+<a class="reference internal" href="../grdlandmask/"><span class="doc">grdlandmask</span></a>,
+<a class="reference internal" href="../grdmask/"><span class="doc">grdmask</span></a>,
+<a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/grdmath.html" title="(在 GMT v6.0)"><span class="xref std std-doc">grdmath</span></a>,
+<a class="reference internal" href="../grd2xyz/"><span class="doc">grd2xyz</span></a>,
+<a class="reference internal" href="../xyz2grd/"><span class="doc">xyz2grd</span></a></p>
 </div>
 </div>
 
@@ -364,7 +406,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月27日.
+        最后更新于 2019年11月28日.
       </span>
 
     </p>

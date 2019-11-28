@@ -310,19 +310,19 @@
 </div>
 <div class="section" id="id2">
 <h2>可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-A&lt;min_area&gt;[/&lt;min_level&gt;/&lt;max_level&gt;][+ag|i|s|S][+r|l][+p&lt;percent&gt;]</span></code></dt>
+<dl class="docutils" id="a">
+<dt><strong>-A</strong><em>min_area</em>[/<em>min_level</em>/<em>max_level</em>][<strong>+a</strong>[<strong>g</strong>|<strong>i</strong>][<strong>s</strong>|<strong>S</strong>]][<strong>+r</strong>|<strong>l</strong>][<strong>+p</strong><em>percent</em>]</dt>
 <dd><p class="first">不绘制面积过小的区域（湖泊或岛屿），或不绘制某个级别的湖泊边界。</p>
-<p>在绘制湖泊时，若不管湖泊的面积大小而把所有湖泊的边界都画上去，可能导致图看上去比较乱，该选项用于对湖泊进行筛选。面积小于 <code class="docutils literal notranslate"><span class="pre">&lt;min_area&gt;</span></code> 平方千米或者湖泊级别不在 <code class="docutils literal notranslate"><span class="pre">[min_level,max_level]</span></code> 范围的边界都不会被绘制。默认值为 <code class="docutils literal notranslate"><span class="pre">0/0/4</span></code> ，即绘制所有湖泊边界，即绘制0到4级所有级别的面积大于0的湖泊。</p>
-<p>对于level=2，即湖岸线，包括常规的湖以及很宽的河流。加上 <code class="docutils literal notranslate"><span class="pre">+r</span></code> 则只绘制河流，加上 <code class="docutils literal notranslate"><span class="pre">+l</span></code> 则只绘制常规湖。</p>
+<p>在绘制湖泊时，若不管湖泊的面积大小而把所有湖泊的边界都画上去，可能导致图看上去比较乱，该选项用于对湖泊进行筛选。面积小于 <em>min_area</em> 平方千米或者湖泊级别不在 [<em>min_level</em>,*max_level*] 范围的边界都不会被绘制。默认值为 <strong>0/0/4</strong>，即绘制所有湖泊边界，即绘制0到4级所有级别的面积大于0的湖泊。</p>
+<p>对于level=2，即湖岸线，包括常规的湖以及很宽的河流。加上 <strong>+r</strong> 则只绘制河流，加上 <strong>+l</strong> 则只绘制常规湖。</p>
 <p>对于南极洲而言，因为有冰层的存在，所以海岸线有多种处理方式：</p>
-<ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">+ai</span></code> 用ice shell boundary作为南极洲的海岸线，默认值</li>
-<li><code class="docutils literal notranslate"><span class="pre">+ag</span></code> 以ice grounding line作为海岸线</li>
-<li><code class="docutils literal notranslate"><span class="pre">+as</span></code> 忽略南纬60度以南的海岸线，用户可以使用 <a class="reference internal" href="../plot/"><span class="doc">plot</span></a> 绘制自己的南极洲海岸线</li>
-<li><code class="docutils literal notranslate"><span class="pre">+aS</span></code> 忽略南纬60度以北的海岸线</li>
-</ol>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">+p&lt;precent&gt;</span></code> ：一个多边形，降低精度后，边数减少，面积变化，当面积变化过大时再绘制这个多边形就不合适了，该子选项用于去除那些面积与最高精度面积之比小于 <code class="docutils literal notranslate"><span class="pre">&lt;percent&gt;</span></code> 的多边形。</p>
+<ul class="simple">
+<li><strong>+ai</strong> 用ice shell boundary作为南极洲的海岸线，默认值</li>
+<li><strong>+ag</strong> 以ice grounding line作为海岸线</li>
+<li><strong>+as</strong> 忽略南纬60度以南的海岸线，用户可以使用 <a class="reference internal" href="../plot/"><span class="doc">plot</span></a> 绘制自己的南极洲海岸线</li>
+<li><strong>+aS</strong> 忽略南纬60度以北的海岸线</li>
+</ul>
+<p class="last"><strong>+p</strong><em>precent</em>：一个多边形，降低精度后，边数减少，面积变化，当面积变化过大时再绘制这个多边形就不合适了，该子选项用于去除那些面积与最高精度面积之比小于 <em>percent</em> 的多边形。</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-D&lt;resolution&gt;[+]</span></code></dt>
 <dd>选项海岸线数据的精度，见 <a class="reference internal" href="../coast/"><span class="doc">coast</span></a> 中的介绍。</dd>
@@ -402,7 +402,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月27日.
+        最后更新于 2019年11月28日.
       </span>
 
     </p>
