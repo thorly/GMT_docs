@@ -363,13 +363,12 @@ Fault plane:  <span class="nv">strike</span><span class="o">=</span><span class=
 </ul>
 <p>地震矩张量可以分解成各向同性部分（ISO）、双力偶部分（DC）和补偿线性向量偶极部分（CLVD）。</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">m</span></code> 表示绘制地震矩的零迹部分（DC+CLVD）</li>
-<li><code class="docutils literal notranslate"><span class="pre">d</span></code> 表示仅绘制地震矩的双力偶部分（DC）</li>
-<li><code class="docutils literal notranslate"><span class="pre">z</span></code> 表示仅绘制地震矩的零迹各向异性部分（DC+CLVD）</li>
+<li><strong>m</strong> 表示绘制完整的地震矩张量（ISO+DC+CLVD）</li>
+<li><strong>d</strong> 表示仅绘制地震矩的双力偶部分（DC）</li>
+<li><strong>z</strong> 表示仅绘制地震矩的各向异性部分（DC+CLVD）</li>
 </ul>
 <p>说明：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">m</span></code> 和 <code class="docutils literal notranslate"><span class="pre">z</span></code> 是一个东西？还是我的理解有误？ TODO</li>
 <li>GMCT所使用的rtf坐标，实际上就是USE坐标系</li>
 </ul>
 <div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt meca -Rg -JN15c -Sm2c -pdf meca <span class="s">&lt;&lt; EOF</span>
@@ -523,7 +522,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年11月30日.
+        最后更新于 2019年12月04日.
       </span>
 
     </p>
