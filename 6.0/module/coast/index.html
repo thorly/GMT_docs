@@ -292,18 +292,18 @@
 <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em>
 [ <strong>-A</strong><em>min_area</em>[/<em>min_level</em>/<em>max_level</em>][<strong>+a</strong>[<strong>g</strong>|<strong>i</strong>][<strong>s</strong>|<strong>S</strong>]][<strong>+r</strong>|<strong>l</strong>][<strong>+p</strong><em>percent</em>] ]
 [ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong><em>parameters</em> ]
-[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong>[<strong>l</strong>|<strong>r</strong>/]<em>fill</em> ]
+[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>fill</em>[<strong>+l</strong>|<strong>+r</strong>] ]
 [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>resolution</em>[<strong>+f</strong>] ]
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><em>dcw</em> ]
 [ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong><em>box</em> ]
-[ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>fill</em>|<strong>c</strong> ]
+[ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>fill</em> ]
 [ <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong><em>river</em>[/<em>pen</em>] ]
 [ <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><strong>z</strong>|<strong>Z</strong><em>parameters</em> ]
 [ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong><em>scalebar</em> ]
 [ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong> ]
 [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong><em>border</em>[/<em>pen</em>] ]
 [ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong> ]
-[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>fill</em>|<strong>c</strong> ]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>fill</em> ]
 [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>rose</em> ]
 [ <a class="reference internal" href="#u"><span> <strong>-U</strong></span></a></strong>[<em>stamp</em>] ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
@@ -350,14 +350,9 @@
 <dd>设置底图边框和轴属性</dd>
 </dl>
 <dl class="docutils" id="c">
-<dt><strong>-C</strong>[<strong>l</strong>|<strong>r</strong>/]<em>fill</em></dt>
+<dt><strong>-C</strong><em>fill</em>[<strong>+l</strong>|<strong>+r</strong>]</dt>
 <dd><p class="first">设置湖泊与河流湖的颜色。</p>
-<p>默认情况下，湖泊与河流湖会被当做wet区域，直接使用 <strong>-S</strong> 指定的填充值。该选项可以为湖泊和河流湖单独指定颜色，也可以多次使用该选项分别为湖泊和河流湖指定颜色。</p>
-<ul class="last simple">
-<li><strong>-C</strong><em>fill</em> 同时指定湖泊和河流湖的颜色</li>
-<li><strong>-Cl/</strong><em>fill</em> 指定湖泊（lake）颜色</li>
-<li><strong>-Cr/</strong><em>fill</em> 指定河流湖（river-lake）颜色</li>
-</ul>
+<p class="last">默认情况下，湖泊与河流湖会被当做wet区域，直接使用 <strong>-S</strong> 指定的填充值。使用 <strong>+l</strong> 或 <strong>+r</strong> 可以为湖泊或河流湖单独指定颜色。</p>
 </dd>
 </dl>
 <dl class="docutils" id="d">
@@ -411,9 +406,9 @@
 </dd>
 </dl>
 <dl class="docutils" id="g">
-<dt><strong>-G</strong><em>fill</em>|<strong>c</strong></dt>
+<dt><strong>-G</strong><em>fill</em></dt>
 <dd><p class="first">设置dry区域的填充色或裁剪dry区域</p>
-<p class="last"><strong>-G</strong><em>fill</em> 设置dry区域（一般指陆地）的填充色。<strong>-Gc</strong> 将dry区域裁剪出来，使得接下来的绘图只有dry区域内的才会被绘制。</p>
+<p class="last"><strong>-G</strong><em>fill</em> 设置dry区域（一般指陆地）的填充色。若不指定 <em>fill</em> 则会将dry区域裁剪出来，使得接下来的绘图只有dry区域内的才会被绘制。</p>
 </dd>
 </dl>
 <dl class="docutils" id="i">
@@ -495,15 +490,14 @@
 <dl class="docutils" id="q">
 <dt><strong>-Q</strong></dt>
 <dd><p class="first">关闭区域裁剪。</p>
-<p class="last">使用 <strong>-Gc</strong> 和 <strong>-Sc</strong> 可以分别裁剪出dry区域和wet区域，接下来的其他绘图命令中只有在裁剪区域内的部分才会被绘制。在绘图结束后，需要关闭裁剪，就需要再次调用
+<p class="last">使用 <strong>-G</strong> 和 <strong>-S</strong> 可以分别裁剪出dry区域和wet区域，接下来的其他绘图命令中只有在裁剪区域内的部分才会被绘制。在绘图结束后，需要关闭裁剪，就需要再次调用
 <strong>coast</strong>，并加上 <strong>-Q</strong> 选项。若在开启裁剪后使用了 <strong>-X</strong> 和 <strong>-Y</strong> 选项，则在关闭时也要记得使用 <strong>-X</strong> 和  <strong>-Y</strong>。</p>
 </dd>
 </dl>
 <dl class="docutils" id="s">
-<dt><strong>-S</strong><em>fill</em>|<strong>c</strong></dt>
+<dt><strong>-S</strong><em>fill</em></dt>
 <dd><p class="first">设置wet区域的填充色或裁剪wet区域</p>
-<p class="last"><strong>-S</strong><em>fill</em> 设置wet区域（一般指海洋或湖泊）的填充色。
-<strong>-Sc</strong> 将wet区域裁剪出来，使得接下来的绘图只有we区域内的才会被绘制。</p>
+<p class="last"><strong>-S</strong><em>fill</em> 设置wet区域（一般指海洋或湖泊）的填充色。若不指定 <em>fill</em> 则将wet区域裁剪出来，使得接下来的绘图只有wet区域内的才会被绘制。</p>
 </dd>
 </dl>
 <dl class="docutils" id="t">
@@ -629,7 +623,7 @@
 </div>
 <p>将非洲区域裁剪出来，并在其中的陆地部分绘制地形:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map png
-    gmt coast -R-30/30/-40/40 -Jm0.1i -B -Gc
+    gmt coast -R-30/30/-40/40 -Jm0.1i -B -G
     gmt grdimage @earth_relief_05m
     gmt coast -Q
 gmt end show
@@ -713,7 +707,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年12月04日.
+        最后更新于 2019年12月16日.
       </span>
 
     </p>

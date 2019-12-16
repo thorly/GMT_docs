@@ -290,21 +290,24 @@
 <dd>生成的mask网格文件的文件名</dd>
 </dl>
 <dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-I&lt;xinc&gt;[&lt;unit&gt;][+e|+n]/&lt;yinc&gt;[&lt;unit&gt;][+e|+n]</span></code></dt>
+<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt>
 <dd><p class="first">指定X和Y方向的网格间隔</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;</span></code> X方向的网格间隔</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;yinc&gt;</span></code> Y方向的网格间隔</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;unit&gt;</span></code> 网格间隔的单位。对于地理坐标系而言默认值为度，可以设置单位为
-<code class="docutils literal notranslate"><span class="pre">m|s|e|f|k|M|n|u</span></code> 。</li>
-<li><code class="docutils literal notranslate"><span class="pre">+e</span></code> 微调X和Y方向范围的最大值，使得其是网格间隔的整数倍（默认会微调网格间隔以适应给定的数据范围）</li>
-<li><code class="docutils literal notranslate"><span class="pre">+n</span></code> 表明 <code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;yinc&gt;</span></code> 不是网格间隔，而是X和Y方向的节点数。此时会根据节点数、网格区域范围以及网格配准方式重新计算网格间隔。</li>
+<li><em>xinc</em> X方向的网格间隔</li>
+<li><em>yinc</em> Y方向的网格间隔</li>
+<li><em>unit</em> 网格间隔的单位。对于地理坐标系而言默认值为度，也可设置为其他距离单位</li>
+<li><strong>+e</strong> 微调X和Y方向范围的最大值，使得其是网格间隔的整数倍（默认会微调网格间隔以适应给定的数据范围）</li>
+<li><strong>+n</strong> 表明 <em>xinc</em> 和 <em>yinc</em> 不是网格间隔，而是X和Y方向的节点数。此时会根据节点数、网格区域范围以及网格配准方式重新计算网格间隔。</li>
 </ul>
 <p>注意：</p>
-<ol class="last arabic simple">
-<li>若 <code class="docutils literal notranslate"><span class="pre">&lt;yinc&gt;</span></code> 设置为0，则表示其与 <code class="docutils literal notranslate"><span class="pre">&lt;xinc&gt;</span></code> 相同</li>
-<li>若使用 <code class="docutils literal notranslate"><span class="pre">-R&lt;grdfile&gt;</span></code> 选项，则网格网格已经根据网格文件自动初始化，此时依然可以使用 <code class="docutils literal notranslate"><span class="pre">-I</span></code> 覆盖网格文件中的间隔值</li>
-</ol>
+<ul class="last simple">
+<li>若 <em>yinc</em> 设置为0，则表示其与 <em>xinc</em> 相同</li>
+<li><dl class="first docutils">
+<dt>若使用 <strong>-R</strong><em>grdfile</em> 选项，则网格间隔和配准方式已经根据网格文件自动初始化，</dt>
+<dd>此时依然可以使用 <strong>-I</strong> 和 <strong>-r</strong> 覆盖相应的值</dd>
+</dl>
+</li>
+</ul>
 </dd>
 </dl>
 </div>
@@ -402,7 +405,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年12月04日.
+        最后更新于 2019年12月16日.
       </span>
 
     </p>
