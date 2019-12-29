@@ -234,12 +234,12 @@
 <p>维基链接：<a class="reference external" href="https://en.wikipedia.org/wiki/Lambert_conformal_conic_projection">https://en.wikipedia.org/wiki/Lambert_conformal_conic_projection</a></p>
 <p>此投影由Heinrich Lambert于1772年提出，主要用于绘制东西方向范围很大的地图。与Albers投影不同的是，Lambert投影不是等面积的。纬线是共圆心的圆弧，经线是这些圆的等间隔分布的半径。与Albers投影类似，只有两条标准纬线是无畸变的。</p>
 <p>该投影的参数为:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-JB&lt;lon&gt;/&lt;lat&gt;/&lt;lat1&gt;/&lt;lat2&gt;/&lt;width&gt;
--Jb&lt;lon&gt;/&lt;lat&gt;/&lt;lat1&gt;/&lt;lat2&gt;/&lt;scale&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-JL&lt;lon0&gt;/&lt;lat0&gt;/&lt;lat1&gt;/&lt;lat2&gt;/&lt;width&gt;
+-Jl&lt;lon0&gt;/&lt;lat0&gt;/&lt;lat1&gt;/&lt;lat2&gt;/&lt;scale&gt;
 </pre></div>
 </div>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;lon&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;lat&gt;</span></code> 是投影中心的位置</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;lon0&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;lat0&gt;</span></code> 是投影中心的位置</li>
 <li><code class="docutils literal notranslate"><span class="pre">&lt;lat1&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;lat2&gt;</span></code> 是两条标准纬线</li>
 </ul>
 <p>Lambert保角投影场用于绘制美国地图，两个固定的标准纬线是33ºN和45ºN。</p>
@@ -302,7 +302,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2019, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年12月27日.
+        最后更新于 2019年12月29日.
       </span>
 
     </p>
