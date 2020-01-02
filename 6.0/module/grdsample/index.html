@@ -140,6 +140,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
@@ -147,9 +148,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../grdpaste/">grdpaste</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grdproject/">grdproject</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">grdsample</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">必选选项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">可选选项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">注意事项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">相关模块</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../grdtrack/">grdtrack</a></li>
@@ -281,24 +285,38 @@
 </tr>
 </tbody>
 </table>
-<p>该命令读取一个网格文件，并对其做插值以生成一个新的网格文件。新旧网格文件的区别在于：</p>
-<ol class="arabic simple">
-<li>不同的配准方式（ <code class="docutils literal notranslate"><span class="pre">-r</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-T</span></code> ）</li>
-<li>不同的网格间隔或网格节点数（ <code class="docutils literal notranslate"><span class="pre">-I</span></code> ）</li>
-<li>不同的网格范围（ <code class="docutils literal notranslate"><span class="pre">-R</span></code> ）</li>
-</ol>
-<p>默认使用 bicubic 插值方式，可以使用 <code class="docutils literal notranslate"><span class="pre">-n</span></code> 选项设置其他插值方式。该命令可以很安全地将粗网格插值为细网格；反之，将细网格插值为粗网格时，则可能存在混淆效应，因而需要在插值前使用 <code class="docutils literal notranslate"><span class="pre">grdfft</span></code> 或 <code class="docutils literal notranslate"><span class="pre">grdfilter</span></code> 对网格文件做滤波。</p>
+<p><strong>grdsample</strong> 模块读取一个网格文件，并对其做插值以生成一个新的网格文件。新旧网格文件可能的区别在于：</p>
+<ul class="simple">
+<li>不同的配准方式（<strong>-r</strong> 或 <strong>-T</strong>）</li>
+<li>不同的网格间隔或网格节点数（<strong>-I</strong>）</li>
+<li>不同的网格范围（<strong>-R</strong>）</li>
+</ul>
+<p>网格文件插值方式有多重，默认使用 bicubic 插值，可以使用 <strong>-n</strong> 选项设置其它插值方式。该模块可以安全地将粗网格插值为细网格；反之，将细网格插值为粗网格时，则可能存在混叠效应，因而需要在插值前使用 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/grdfft.html" title="(在 GMT v6.0)"><span class="xref std std-doc">grdfft</span></a> 或 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/grdfilter.html" title="(在 GMT v6.0)"><span class="xref std std-doc">grdfilter</span></a>
+对网格文件做滤波。</p>
+<p>若省略 <strong>-R</strong> 选项，则输出网格与输入网格的区域范围相同；若省略 <strong>-I</strong> 选项，则输出网格间距与输入网格间距相同。<strong>-r</strong> 和 <strong>-T</strong> 均可用于修改网格配准方式。若省略这两个选项，则输出网格的配准方式与输入网格相同。</p>
 <div class="section" id="id1">
-<h2>必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;in_grdfile&gt;</span></code></dt>
-<dd>要重采样的2D网格文件</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;out_grdfile&gt;</span></code></dt>
-<dd>重采样生成的网格文件</dd>
-</dl>
+<h2>语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p><strong>gmt grdsample</strong> <em>in_grdfile</em> <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>out_grdfile</em>
+[ <strong>-i</strong><a class="reference internal" href="../../option/io/"><span class="doc">flags</span></a> ]
+[ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> ]
+[ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong> ]
+[ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <strong>-f</strong><a class="reference internal" href="../../option/f/"><span class="doc">flags</span></a> ]
+[ <strong>-n</strong><a class="reference internal" href="../../option/n/"><span class="doc">flags</span></a> ]
+[ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> ]
+[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
+[ <strong>--PAR</strong>=<em>value</em> ]</p>
 </div>
 <div class="section" id="id2">
-<h2>可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>必选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><em>in_grdfile</em></dt>
+<dd>要重采样的2D网格文件</dd>
+</dl>
+<p id="g"><strong>-G</strong><em>out_grdfile</em></p>
+</div>
+<div class="section" id="id3">
+<h2>可选选项<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <dl class="docutils">
 <dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt>
 <dd><p class="first">指定X和Y方向的网格间隔</p>
@@ -319,26 +337,74 @@
 </li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-R&lt;w&gt;/&lt;e&gt;/&lt;s&gt;/&lt;n&gt;</span></code></dt>
-<dd><p class="first">指定新网格的数据范围。</p>
-<p class="last">若只使用 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项，则等效于使用 <code class="docutils literal notranslate"><span class="pre">grdcut</span></code> 或 <code class="docutils literal notranslate"><span class="pre">grdedit</span> <span class="pre">-S</span></code> 。</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-T</span></code></dt>
+</dl>
+<dl class="docutils" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="../../option/R/"><span class="doc">(more …)</span></a></dt>
+<dd>指定数据范围</dd>
+</dl>
+<blockquote>
+<div>若只使用 <strong>-R</strong> 选项，则等效于使用 <strong>grdcut</strong> 或 <strong>grdedit -S</strong>。</div></blockquote>
+<dl class="docutils" id="t">
+<dt><strong>-T</strong></dt>
 <dd>交换网格文件的配准方式。即若输入是网格线配准，则输出为像素点配准；若输入是像素点配准，则输出为网格线配准。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-n[b|c|l|n][+a][+b&lt;BC&gt;][+c][+t&lt;threshold&gt;]</span></code></dt>
-<dd>重采样时使用的插值算法，见 <a class="reference internal" href="../../option/n/"><span class="doc">-n 选项</span></a> 一节。</dd>
+</dl>
+<dl class="docutils" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../option/V/"><span class="doc">(more …)</span></a></dt>
+<dd>设置 verbose 等级 [c]</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="../../option/f/"><span class="doc">(more …)</span></a></dt>
+<dd>指定输入或输出列的数据类型</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>-n</strong>[<strong>b</strong>|<strong>c</strong>|<strong>l</strong>|<strong>n</strong>][<strong>+a</strong>][<strong>+b</strong><em>BC</em>][<strong>+c</strong>][<strong>+t</strong><em>threshold</em>] <a class="reference internal" href="../../option/n/"><span class="doc">(more …)</span></a></dt>
+<dd>设置网格文件的插值方式</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>-r</strong>[<strong>g</strong>|<strong>p</strong>] <a class="reference internal" href="../../option/gridreg/"><span class="doc">(more …)</span></a></dt>
+<dd>设置网格配置方式 [默认为网格线配准]</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>-x</strong>[[-]<em>n</em>] <a class="reference internal" href="../../option/x/"><span class="doc">(more …)</span></a></dt>
+<dd>限制多进程算法中能使用的核数（需要GMT支持OpenMP）</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt>
+<dd>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt>
+<dd>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</dd>
+<dt><strong>-?</strong> 或无参数</dt>
+<dd>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt>
+<dd>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/gmt.conf.html" title="(在 GMT v6.0)"><span class="xref std std-doc">gmt.conf</span></a></dd>
 </dl>
 </div>
-<div class="section" id="id3">
-<h2>示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h2>注意事项<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<ol class="arabic simple">
+<li>网格插值过程中可能会导致插值后的值出现失真或意外值。例如，使用样条插值可能会导致插值后的数据的最大最小值超过原始数据的最大最小值。若这一结果不可接受，可以通过给 <strong>-n</strong> 选项加上 <strong>+c</strong> 以对超过原始数据最值的部分做裁剪。</li>
+<li>若某个插值点不位于输入数据的网格节点上，则插值时若该节点周围的节点值为NaN，则该节点的值也会被插值为NaN。默认的bicubic插值算法会生成连续的一阶导数但需要周围4x4个节点。bilinear插值算法只需要周围的2x2个节点，但其只是零阶连续。若光滑性很重要，则使用bicubic算法；若需要尽量避免NaN值的传播，则使用bilinear算法。</li>
+<li>除了插值之外，还可以使用 <a class="reference internal" href="../grd2xyz/"><span class="doc">grd2xyz</span></a> 将网格数据转换为表数据，然后将输出交给 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/surface.html" title="(在 GMT v6.0)"><span class="xref std std-doc">surface</span></a> 或 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/greenspline.html" title="(在 GMT v6.0)"><span class="xref std std-doc">greenspline</span></a> 重新网格化。</li>
+</ol>
+</div>
+<div class="section" id="id5">
+<h2>示例<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>将5x5弧分的数据采样成1x1弧分:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdsample hawaii_5by5_topo.nc -I1m -Ghawaii_1by1_topo.nc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdsample @earth_relief_05m -R0/20/0/20 -I1m -Gtopo_1m.nc
 </pre></div>
 </div>
 <p>将网格线配准的网格文件修改为像素配准的网格文件:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdsample surface.nc -T -Gpixel.nc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdsample @earth_relief_05m -T -Gpixel.nc
 </pre></div>
 </div>
+</div>
+<div class="section" id="id6">
+<h2>相关模块<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p><a class="reference internal" href="../grdedit/"><span class="doc">grdedit</span></a>,
+<a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/grdfft.html" title="(在 GMT v6.0)"><span class="xref std std-doc">grdfft</span></a>,
+<a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/grdfilter.html" title="(在 GMT v6.0)"><span class="xref std std-doc">grdfilter</span></a>,
+<a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/greenspline.html" title="(在 GMT v6.0)"><span class="xref std std-doc">greenspline</span></a>,
+<a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/surface.html" title="(在 GMT v6.0)"><span class="xref std std-doc">surface</span></a></p>
 </div>
 </div>
 
@@ -385,9 +451,9 @@ gitalk.render('gitalk-container');
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2014 - 2019, GMT中文社区
+        &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年12月29日.
+        最后更新于 2020年01月02日.
       </span>
 
     </p>

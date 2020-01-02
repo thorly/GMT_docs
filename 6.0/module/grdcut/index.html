@@ -139,13 +139,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../grdclip/">grdclip</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">grdcut</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">必选选项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">可选选项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">示例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">相关</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">相关</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
@@ -282,75 +284,110 @@
 </tr>
 </tbody>
 </table>
-<p>该模块可以从一个网格文件中根据条件裁剪出一个新的网格文件：</p>
+<p><strong>grdcut</strong> 模块可以从一个网格文件中根据条件裁剪出一个新的网格文件。子区域的选择有如下几种方式：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项： 直接指定子区域的范围</li>
-<li><code class="docutils literal notranslate"><span class="pre">-Z</span></code> 选项： 通过检查网格节点的值间接限定子区域的范围</li>
-<li><code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项： 通过指定与特定点的距离间接限定子区域的范围</li>
+<li><strong>-R</strong> 选项：直接指定子区域的范围</li>
+<li><strong>-Z</strong> 选项：通过检查网格点的值间接限定子区域的范围</li>
+<li><strong>-S</strong> 选项：通过指定与特定点的距离间接限定子区域的范围</li>
+<li><strong>-J</strong> 和 <strong>-R</strong> 选项：对于倾斜投影，可以使用这两个选项获得覆盖整个倾斜区域的子区域</li>
 </ul>
 <div class="section" id="id1">
-<h2>必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p><strong>gmt grdcut</strong> <em>ingrid</em> <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>outgrid</em>
+<a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em>
+[ <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><em>parameters</em> ]
+[ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong>[<em>nodata</em>] ]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>lon/lat/radius</em>[<em>unit</em>][<strong>+n</strong>] ]
+[ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <a class="reference internal" href="#z"><span> <strong>-Z</strong></span></a></strong>[<em>min/max</em>][<strong>+n</strong>|<strong>N</strong>|<strong>r</strong>] ]
+[ <strong>-f</strong><a class="reference internal" href="../../option/f/"><span class="doc">flags</span></a> ]
+[ <strong>--PAR</strong>=<em>value</em> ]</p>
+</div>
+<div class="section" id="id2">
+<h2>必选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;ingrid&gt;</span></code></dt>
+<dt><em>ingrid</em></dt>
 <dd>输入网格文件名</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;outgrid&gt;</span></code></dt>
+</dl>
+<dl class="docutils" id="g">
+<dt><strong>-G</strong><em>outgrid</em></dt>
 <dd>输出网格文件名</dd>
 </dl>
 </div>
-<div class="section" id="id2">
-<h2>可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-N[&lt;nodata&gt;]</span></code></dt>
+<div class="section" id="id3">
+<h2>可选选项<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<dl class="docutils" id="j">
+<dt><strong>-J</strong><em>projection</em> <a class="reference internal" href="../../option/J/"><span class="doc">(more …)</span></a></dt>
+<dd>设置地图投影方式。</dd>
+</dl>
+<dl class="docutils" id="n">
+<dt><strong>-N</strong>[<em>nodata</em>]</dt>
 <dd><p class="first">允许新网格的区域范围超过原网格的区域范围。</p>
-<p class="last">一般情况下，若指定的区域范围大于输入网格的区域范围，超出的部分会被自动忽略，实际的输出网格的区域范围会自动适应输入网格的区域范围。使用 <code class="docutils literal notranslate"><span class="pre">-N</span></code> 选项，则超出的区域范围内，网格节点会被赋以指定的值，默认赋值为NaN，也可以自己指定其值为 <code class="docutils literal notranslate"><span class="pre">&lt;nodata&gt;</span></code></p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-R&lt;west&gt;/&lt;east&gt;/&lt;south&gt;/&lt;north&gt;</span></code></dt>
-<dd>直接指定要截取的网格子区域的范围</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-S[n]&lt;lon&gt;/&lt;lat&gt;/&lt;radius&gt;[&lt;unit&gt;]</span></code></dt>
-<dd><p class="first">指定圆心位置及其半径，程序会自动计算一个矩形区域，该矩形区域包含了圆上及圆内所有网格点</p>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;lon&gt;/&lt;lat&gt;</span></code> 圆心位置</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;radius&gt;</span></code> 圆半径</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;unit&gt;</span></code> 圆半径所使用的距离单位，见 <a class="reference internal" href="../../basis/unit/"><span class="doc">单位</span></a> 一节</li>
-<li><code class="docutils literal notranslate"><span class="pre">-Sn</span></code> 将所有矩形区域内但不在圆内的节点的值为NaN</li>
-</ol>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Z[n|r]&lt;min&gt;/&lt;max&gt;</span></code></dt>
-<dd><p class="first">定义一个Z值范围 <code class="docutils literal notranslate"><span class="pre">&lt;min&gt;/&lt;max&gt;</span></code> 并据此确定一个新的矩形子区域，使得在该子区域<strong>外</strong>的所有节点值都位于给定的Z值范围外。 <code class="docutils literal notranslate"><span class="pre">&lt;min&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;max&gt;</span></code>
-默认值为正负无穷，可以用 <code class="docutils literal notranslate"><span class="pre">-</span></code> 表示无穷。</p>
-<p>为了理解这个选项，需要了解该选项是如何具体实现的。为了得到满足要求的矩形子区域，代码中首先将矩形子区域的四条边界设置为原始网格文件的四条边界，然后逐步向内收缩，当某条边界上的某个网格点的值在给定的Z值范围内，则此边界停止收缩。需要格外注意的是，该选项只保证了子区域<strong>外</strong>的所有节点值都位于给定的Z值范围外，矩形子区域<strong>内</strong>的网格点的值并不一定都在Z值范围内。</p>
-<p>在收缩四个边界时，正常情况下，值为NaN的记录会被直接跳过：</p>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">-Zn</span></code> 认为NaN记录位于Z值范围之外，故而保证子区域内是没有NaN记录的</li>
-<li><code class="docutils literal notranslate"><span class="pre">-Zr</span></code> 认为NaN记录位于Z值范围之内，因而当遇到NaN记录时，则停止收缩边界</li>
-</ul>
-<div class="admonition-todo last admonition" id="index-1">
-<p class="first admonition-title">待处理</p>
-<ol class="last arabic simple">
-<li>查看源码确认 -Z 选项的解释是否正确</li>
-<li>确认 -Z 选项的示例是否正确</li>
-</ol>
-</div>
+<p class="last">一般情况下，若指定的区域范围大于输入网格的区域范围，超出的部分会被自动忽略，实际的输出网格的区域范围会自动适应输入网格的区域范围。使用 <strong>-N</strong> 选项，则超出的区域范围内，网格节点会被赋以指定的值，默认赋值为NaN，也可以自己指定其值为 <em>nodata</em>。</p>
 </dd>
 </dl>
-</div>
-<div class="section" id="id3">
-<h2>示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>使用 <code class="docutils literal notranslate"><span class="pre">-R</span></code> 选项直接指定子区域的范围:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcut input.nc -Goutput.nc -R0/30/-30/30
-</pre></div>
-</div>
-<p>使用 <code class="docutils literal notranslate"><span class="pre">-S</span></code> 选项生成一个包含了原点(45,30)周围 500 km 以内的所有点的矩形区域，并设置矩形区域内圆外的节点值为NaN:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcut input.nc -Goutput.nc -Sn45/30/500k -V
-</pre></div>
-</div>
-<p>使用 <code class="docutils literal notranslate"><span class="pre">-Z</span></code> 选项使得子区域内的所有节点值都小于0:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcut abc.nc -Gdef.nc -Z-/0 -V
-</pre></div>
-</div>
+<dl class="docutils" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="../../option/R/"><span class="doc">(more …)</span></a></dt>
+<dd>指定数据范围</dd>
+</dl>
+<dl class="docutils" id="s">
+<dt><strong>-S</strong><em>lon/lat/radius</em>[<em>unit</em>][<strong>+n</strong>]</dt>
+<dd>指定圆心位置（<em>lon/lat</em>）及其半径（<em>radius</em>，单位为 <em>unit</em>），程序会自动计算一个矩形区域，该矩形区域包含了圆上及圆内所有网格点。
+<strong>+n</strong> 表示将所有矩形区域内但不在圆内的节点的值设为NaN。</dd>
+</dl>
+<dl class="docutils" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../option/V/"><span class="doc">(more …)</span></a></dt>
+<dd>设置 verbose 等级 [c]</dd>
+</dl>
+<dl class="docutils" id="z">
+<dt><strong>-Z</strong>[<em>min/max</em>][<strong>+n</strong>|<strong>N</strong>|<strong>r</strong>]</dt>
+<dd><p class="first">确定一个新的矩形区域，使得所有该区域外的节点值都在指定的Z值范围 <em>min/max</em> 外
+<em>min</em> 和 <em>max</em> 默认值为正负无穷，可以用 <strong>-</strong> 表示无穷。</p>
+<p>默认情况下，值为NaN的节点会被自动忽略。</p>
+<ul class="last simple">
+<li><strong>+n</strong> 表示将 NaN 节点视作在给定的Z值范围之外，则保证了新生成的子区域内是无NaN的</li>
+<li><strong>+r</strong> 表示将 NaN 节点视作在给定的Z值范围之内，因而子区域的外部是无NaN的</li>
+<li><strong>+N</strong> 若新生成的子区域的某条边界上的所有节点都是NaN，则去除该条边界上的这一行或列</li>
+</ul>
+</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="../../option/f/"><span class="doc">(more …)</span></a></dt>
+<dd>指定输入或输出列的数据类型</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt>
+<dd>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt>
+<dd>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</dd>
+<dt><strong>-?</strong> 或无参数</dt>
+<dd>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt>
+<dd>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/gmt.conf.html" title="(在 GMT v6.0)"><span class="xref std std-doc">gmt.conf</span></a></dd>
+</dl>
 </div>
 <div class="section" id="id4">
-<h2>相关<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>示例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>使用 <strong>-R</strong> 选项直接指定子区域的范围:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcut @earth_relief_02m -Gregion_0_30_-30_30.nc -R0/30/-30/30
+</pre></div>
+</div>
+<p>使用 <strong>-S</strong> 选项生成一个包含了原点(45,30)周围 500 km 以内的所有点的矩形区域，并设置矩形区域内圆外的节点值为NaN:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcut @earth_relief_02m -Goutput.nc -S45/30/500k+n
+</pre></div>
+</div>
+<p>使用 <strong>-Z</strong> 选项使得子区域外被除去的部分大于0:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcut @earth_relief_02m -Goutput.nc -Z-/0
+</pre></div>
+</div>
+<p>对于一个倾斜投影的地图，由于 <strong>grdcut</strong> 获得的区域是由经线、纬度划分出来的矩形区域，而倾斜投影地图的边界不是由经纬线构成的，所以需要使用 <strong>-J</strong> 和 <strong>-R</strong>
+选项指定一个更大的矩形区域以包含倾斜投影地图的研究区域:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcut @earth_relief_02m -R160/20/220/30+r -Joc190/25.5/292/69/1 -Gdata.nc
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>相关<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><a class="reference internal" href="../grdpaste/"><span class="doc">grdpaste</span></a></li>
 <li><a class="reference internal" href="../grdsample/"><span class="doc">grdsample</span></a></li>
@@ -401,9 +438,9 @@ gitalk.render('gitalk-container');
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2014 - 2019, GMT中文社区
+        &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年12月29日.
+        最后更新于 2020年01月02日.
       </span>
 
     </p>

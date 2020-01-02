@@ -140,6 +140,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grdlandmask/">grdlandmask</a></li>
@@ -405,7 +406,7 @@
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-L[+b|d|D][+xl|r|&lt;x0&gt;][+yl|r|&lt;y0&gt;][+p&lt;pen&gt;]</span></code></dt>
 <dd><p class="first">构建闭合多边形。</p>
-<p>默认情况下，plot只将数据点连起来，若首尾两个点不相同，则不会形成闭合多边形。使用 <strong>-F</strong> 则自动将数据的首尾两个点连起来，形成闭合多边形。</p>
+<p>默认情况下，plot只将数据点连起来，若首尾两个点不相同，则不会形成闭合多边形。使用 <strong>-L</strong> 则自动将数据的首尾两个点连起来，形成闭合多边形。</p>
 <p>除了简单的首尾相连之外，还可以给线段加上包络线（类似于线段的误差）：</p>
 <ol class="arabic simple">
 <li><code class="docutils literal notranslate"><span class="pre">+d</span></code> build symmetrical envelope around y(x) using deviations dy(x) given in extra column 3</li>
@@ -959,9 +960,9 @@ gitalk.render('gitalk-container');
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2014 - 2019, GMT中文社区
+        &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年12月29日.
+        最后更新于 2020年01月02日.
       </span>
 
     </p>

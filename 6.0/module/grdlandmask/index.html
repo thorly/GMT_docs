@@ -140,13 +140,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../grdconvert/">grdconvert</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grdcut/">grdcut</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grdimage/">grdimage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">grdlandmask</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">必选选项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">可选选项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">注意事项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">注意事项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">相关模块</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../grdmask/">grdmask</a></li>
@@ -282,12 +285,26 @@
 </tr>
 </tbody>
 </table>
-<p>该命令会根据海岸线数据，确定指定网格内的每个节点是在陆地上还是在水中，并给节点赋予不同的值。</p>
+<p><strong>grdlandmask</strong> 模块读取指定的海岸线数据，用于确定网格内的每个节点是位于陆地还是水域，并给不同类型的节点赋予不同的值，以生成掩膜文件。生成的掩膜文件可进一步用在 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/grdmath.html" title="(在 GMT v6.0)"><span class="xref std std-doc">grdmath</span></a> 中以掩盖掉位于陆地或水域中的数据点。</p>
 <div class="section" id="id1">
-<h2>必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-G&lt;mask_grd_file&gt;</span></code></dt>
-<dd>生成的mask网格文件的文件名</dd>
+<h2>语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p><strong>gmt grdlandmask</strong>
+<a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>mask_grd_file</em>
+<strong>-i</strong><a class="reference internal" href="../../option/io/"><span class="doc">flags</span></a>
+<a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em>
+[ <strong>-A</strong><em>min_area</em>[/<em>min_level</em>/<em>max_level</em>][<strong>+a</strong>[<strong>g</strong>|<strong>i</strong>][<strong>s</strong>|<strong>S</strong>]][<strong>+r</strong>|<strong>l</strong>][<strong>+p</strong><em>percent</em>] ]
+[ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>resolution</em>[<strong>+f</strong>] ]
+[ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong>[<em>bordervalues</em>] ]
+[ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong><em>maskvalues</em> ]
+[ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ] [ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> ]
+[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
+[ <strong>--PAR</strong>=<em>value</em> ]</p>
+</div>
+<div class="section" id="id2">
+<h2>必选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<dl class="docutils" id="g">
+<dt><strong>-G</strong><em>mask_grd_file</em></dt>
+<dd>生成的掩膜网格文件的文件名</dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt>
@@ -310,9 +327,13 @@
 </ul>
 </dd>
 </dl>
+<dl class="docutils" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="../../option/R/"><span class="doc">(more …)</span></a></dt>
+<dd>指定数据范围</dd>
+</dl>
 </div>
-<div class="section" id="id2">
-<h2>可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h2>可选选项<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <dl class="docutils" id="a">
 <dt><strong>-A</strong><em>min_area</em>[/<em>min_level</em>/<em>max_level</em>][<strong>+a</strong>[<strong>g</strong>|<strong>i</strong>][<strong>s</strong>|<strong>S</strong>]][<strong>+r</strong>|<strong>l</strong>][<strong>+p</strong><em>percent</em>]</dt>
 <dd><p class="first">不绘制面积过小的区域（湖泊或岛屿），或不绘制某个级别的湖泊边界。</p>
@@ -327,28 +348,64 @@
 </ul>
 <p class="last"><strong>+p</strong><em>precent</em>：一个多边形，降低精度后，边数减少，面积变化，当面积变化过大时再绘制这个多边形就不合适了，该子选项用于去除那些面积与最高精度面积之比小于 <em>percent</em> 的多边形。</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-D&lt;resolution&gt;[+]</span></code></dt>
-<dd>选项海岸线数据的精度，见 <a class="reference internal" href="../coast/"><span class="doc">coast</span></a> 中的介绍。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-E</span></code></dt>
-<dd>默认情况下会将恰好位于多边形边界上的节点当作是在多边形的内部，使用该选项则会将其认为是在多边形的外部。</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-N&lt;maskvale&gt;[o]</span></code></dt>
-<dd><p class="first">设置网格节点的值，可以是数字，也可以是NaN。该选项可以取两种格式：</p>
-<ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">-N&lt;wet&gt;/&lt;dry&gt;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">-N&lt;ocean&gt;/&lt;land&gt;/&lt;lake&gt;/&lt;island&gt;/&lt;pond&gt;</span></code></li>
-</ol>
-<p class="last">默认值为 <code class="docutils literal notranslate"><span class="pre">0/1/0/1/0</span></code> （即 <code class="docutils literal notranslate"><span class="pre">0/1</span></code> ），即将水域内的网格设置为0，将陆地内的网格设置为1。</p>
+</dl>
+<dl class="docutils" id="d">
+<dt><strong>-D</strong><em>resolution</em>[<strong>+f</strong>]</dt>
+<dd><p class="first">选择海岸线数据精度。</p>
+<p>GMT自带的GSHHG海岸线数据有5个不同精度的版本，从高到低依次为：full、high、intermediate、low和crude。GMT默认使用低精度数据。该选项可以指定要使用的数据精度，其中 <strong>f</strong>|<strong>h</strong>|<strong>i</strong>|<strong>l</strong>|<strong>c</strong>
+分别代表5种不同的数据精度。也可以用 <strong>-Da</strong> 选项，此时GMT会根据当前绘图区域的大小自动选择合适的数据精度 [默认使用 <strong>-Da</strong>]</p>
+<p class="last">默认情况下，若找不到指定精度的海岸线数据，程序会自动报错退出。该选项中加上 <strong>+f</strong> 则命令在找不到当前指定的精度数据时，自动寻找更低精度的数据。选项海岸线数据的精度，见 <a class="reference internal" href="../coast/"><span class="doc">coast</span></a> 中的介绍。</p>
 </dd>
 </dl>
-</div>
-<div class="section" id="id3">
-<h2>注意事项<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">grdlandmask</span></code> 生成的网格文件属于 <strong>分类型</strong> 数据，即所有数据只能取几个固定的值，比如 <code class="docutils literal notranslate"><span class="pre">-N0/1</span></code> 会将水域内的网格值设置为0，将陆地内的网格值设置为1。在这种情况下，对这种数据用标准方法（比如样条）进行插值通常会得到无意义的结果，使用时需要小心。</p>
-<p>然而，当你使用该网格文件绘制地图时，网格数据会被重新投影使得在投影后的坐标下变成一个矩形。这个过程中涉及到了网格插值，默认使用的插值算法是样条插值，因而可能会在图中产生假象。因而建议在使用 <code class="docutils literal notranslate"><span class="pre">grdimage</span></code> 绘制此类数据时使用 <code class="docutils literal notranslate"><span class="pre">-nn</span></code>
-选项即 nearest neighbor 插值算法以避免这一问题。</p>
+<dl class="docutils" id="e">
+<dt><strong>-E</strong>[<em>bordervalues</em>]</dt>
+<dd><p class="first">恰好落在海岸线多边形边界上的数据的处理方式。</p>
+<p>默认情况下，恰好位于海岸线多边形边界上的节点当作是在多边形的内部，使用该选项则会将其认为是在多边形的外部。</p>
+<p class="last">此外，还可以在 <strong>-E</strong> 选项后加上四个值 <em>cborder/lborder/iborder/pborder</em> 或一个值 <em>bordervalue</em> （表示四个值具有相同的值），以启用线段追踪模式。在根据 <strong>-N</strong> 设置掩膜值之后，会进一步修改所有线段穿过的网格单元的值。例如，海岸线穿过的网格单元值将被修改为 <em>cborder</em>；同理，岛边界、湖内岛、湖内岛中的小湖边界穿过的网格单元值会被依次修改为
+<em>lborder</em>、<em>iborder</em>、<em>pborder</em> 的值。</p>
+</dd>
+</dl>
+<dl class="docutils" id="n">
+<dt><strong>-N</strong><em>maskvalues</em></dt>
+<dd><p class="first">设置网格节点的值。可以是数字，也可以是NaN。该选项可以取两种格式：</p>
+<ul class="simple">
+<li><strong>-N</strong><em>wet/dry</em> ：分别为水域和陆地设置不同的值</li>
+<li><strong>-N</strong><em>ocean/land/lake/island/pond</em> ：分别为海洋、陆地、湖泊、岛屿、池塘设置不同的值</li>
+</ul>
+<p class="last">默认值为 <strong>0/1/0/1/0</strong> （即 <strong>0/1</strong>），即将水域内的网格设置为0，将陆地内的网格设置为1。</p>
+</dd>
+</dl>
+<dl class="docutils" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../option/V/"><span class="doc">(more …)</span></a></dt>
+<dd>设置 verbose 等级 [c]</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>-r</strong>[<strong>g</strong>|<strong>p</strong>] <a class="reference internal" href="../../option/gridreg/"><span class="doc">(more …)</span></a></dt>
+<dd>设置网格配置方式 [默认为网格线配准]</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>-x</strong>[[-]<em>n</em>] <a class="reference internal" href="../../option/x/"><span class="doc">(more …)</span></a></dt>
+<dd>限制多进程算法中能使用的核数（需要GMT支持OpenMP）</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt>
+<dd>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt>
+<dd>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</dd>
+<dt><strong>-?</strong> 或无参数</dt>
+<dd>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt>
+<dd>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/gmt.conf.html" title="(在 GMT v6.0)"><span class="xref std std-doc">gmt.conf</span></a></dd>
+</dl>
 </div>
 <div class="section" id="id4">
-<h2>示例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>注意事项<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p><strong>grdlandmask</strong> 生成的掩膜网格文件属于 <strong>分类型</strong> 数据，即所有数据只能取几个固定的值，比如 <strong>-N0/1</strong> 会将水域内的网格值设置为0，将陆地内的网格值设置为1。在这种情况下，对这种数据用标准方法（比如样条）进行插值通常会得到无意义的结果，使用时需要小心。</p>
+<p>然而，当你直接绘制该掩膜网格文件时，网格数据会被重新投影使得在投影后的坐标下变成一个矩形。这个过程中涉及到了网格插值，默认使用的插值算法是样条插值，因而可能会在图中产生假象。因而建议在使用 <a class="reference internal" href="../grdimage/"><span class="doc">grdimage</span></a> 绘制此类数据时使用 <strong>-nn</strong>
+选项即 nearest neighbor 插值算法以避免这一问题。</p>
+</div>
+<div class="section" id="id5">
+<h2>示例<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
 <p>将所有陆地上的节点设置为NaN，水域上的节点设置为1:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdlandmask -R-60/-40/-40/-30 -Dh -I5m -N1/NaN -Gland_mask.nc -V
 </pre></div>
@@ -357,6 +414,14 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdlandmask -R0/360/-90/90 -Dl -I1 -N0/1/2/3/4 -Glevels.nc -V
 </pre></div>
 </div>
+</div>
+<div class="section" id="id6">
+<h2>相关模块<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/grdmath.html" title="(在 GMT v6.0)"><span class="xref std std-doc">grdmath</span></a>,
+<a class="reference internal" href="../grdclip/"><span class="doc">grdclip</span></a>,
+<a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/mask.html" title="(在 GMT v6.0)"><span class="xref std std-doc">mask</span></a>,
+<a class="reference internal" href="../clip/"><span class="doc">clip</span></a>,
+<a class="reference internal" href="../coast/"><span class="doc">coast</span></a></p>
 </div>
 </div>
 
@@ -403,9 +468,9 @@ gitalk.render('gitalk-container');
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2014 - 2019, GMT中文社区
+        &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年12月29日.
+        最后更新于 2020年01月02日.
       </span>
 
     </p>
