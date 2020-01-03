@@ -156,9 +156,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../image/">image</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../inset/">inset</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">kml2gmt</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">必选选项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">可选选项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">相关模块</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
@@ -282,35 +284,82 @@
 </tr>
 </tbody>
 </table>
-<p>该模块可以将 KML 文件中包含的点、线或多边形导出为 GMT 可用的格式。</p>
+<p><strong>kml2gmt</strong> 模块读取 Google Earth KML 文件，并输出GMT可识别的表数据。仅支持包含点、线或多边形的KML文件。</p>
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
 <p class="last">KMZ 文件本质上是一个 ZIP 压缩包，其中包含了一个 KML 文件以及若干个辅助文件。可以将 KMZ 文件解压得到 KML 文件，再使用该模块进行转换。</p>
 </div>
 <div class="section" id="id1">
-<h2>必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p><strong>gmt kml2gmt</strong> [ <em>kmlfiles</em> ]
+[ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong> ]
+[ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong><strong>s</strong>|<strong>l</strong>|<strong>p</strong> ]
+[ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <a class="reference internal" href="#z"><span> <strong>-Z</strong></span></a></strong> ]
+[ <strong>-bo</strong><a class="reference internal" href="../../option/binary/"><span class="doc">binary</span></a> ]
+[ <strong>-do</strong><a class="reference internal" href="../../option/d/"><span class="doc">nodata</span></a> ]
+[ <strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] ]
+[ <strong>--PAR</strong>=<em>value</em> ]</p>
+</div>
+<div class="section" id="id2">
+<h2>必选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;kmlfiles&gt;</span></code></dt>
+<dt><em>kmlfiles</em></dt>
 <dd>要转换的KML文件</dd>
 </dl>
 </div>
-<div class="section" id="id2">
-<h2>可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-F[s|l|p]</span></code></dt>
-<dd><p class="first">指定要输出的数据类型。默认会输出KML中包含的所有点、线或多边形</p>
-<ol class="last arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">-Fs</span></code> 只输出点</li>
-<li><code class="docutils literal notranslate"><span class="pre">-Fl</span></code> 只输出线</li>
-<li><code class="docutils literal notranslate"><span class="pre">-Fp</span></code> 只输出多边形</li>
-</ol>
+<div class="section" id="id3">
+<h2>可选选项<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<dl class="docutils" id="e">
+<dt><strong>-E</strong></dt>
+<dd><p class="first">从 <em>ExtendData</em> 属性中获取高程信息，且忽略 <em>z</em> 坐标。</p>
+<p class="last">KML提供了多种机制来通过 <em>ExtendData</em> 储存信息，但GMT只是想了
+<em>&lt;SimpleData name=”string”&gt;</em> 一种。该选项会自动启动 <strong>-Z</strong> 选项。</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-Z</span></code></dt>
-<dd>默认只输出经纬度信息，若使用 <code class="docutils literal notranslate"><span class="pre">-Z</span></code> 选项，则输出坐标的高程信息作为GMT的Z值</dd>
+</dl>
+<dl class="docutils" id="f">
+<dt><strong>-F</strong><strong>s</strong>|<strong>l</strong>|<strong>p</strong></dt>
+<dd><p class="first">指定要输出的数据类型。默认会输出KML中包含的所有点、线或多边形</p>
+<ul class="last simple">
+<li><strong>-Fs</strong> 只输出点</li>
+<li><strong>-Fl</strong> 只输出线</li>
+<li><strong>-Fp</strong> 只输出多边形</li>
+</ul>
+</dd>
+</dl>
+<dl class="docutils" id="z">
+<dt><strong>-Z</strong></dt>
+<dd>默认只输出经纬度信息，若使用该选项，则输出坐标的高程信息作为GMT的Z值</dd>
+</dl>
+<dl class="docutils" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../option/V/"><span class="doc">(more …)</span></a></dt>
+<dd>设置 verbose 等级 [c]</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>] <a class="reference internal" href="../../option/binary/"><span class="doc">(more …)</span></a></dt>
+<dd>设置二进制输出的数据格式</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>-do</strong><em>nodata</em> <a class="reference internal" href="../../option/d/"><span class="doc">(more …)</span></a></dt>
+<dd>将输出数据中值为 NaN 列替换为 <em>nodata</em></dd>
+</dl>
+<dl class="docutils">
+<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="../../option/colon/"><span class="doc">(more …)</span></a></dt>
+<dd>交换输入或输出中的第1和第二列。</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>-^</strong> 或 <strong>-</strong></dt>
+<dd>显示简短的帮助信息，包括模块简介和基本语法信息（Windows下只能使用 <strong>-</strong>）</dd>
+<dt><strong>-+</strong> 或 <strong>+</strong></dt>
+<dd>显示帮助信息，包括模块简介、基本语法以及模块特有选项的说明</dd>
+<dt><strong>-?</strong> 或无参数</dt>
+<dd>显示完整的帮助信息，包括模块简介、基本语法以及所有选项的说明</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt>
+<dd>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/gmt.conf.html" title="(在 GMT v6.0)"><span class="xref std std-doc">gmt.conf</span></a></dd>
 </dl>
 </div>
-<div class="section" id="id3">
-<h2>示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h2>示例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>从 KML 文件中提取所有经纬度信息:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt kml2gmt google.kml -V &gt; google.txt
 </pre></div>
@@ -320,10 +369,17 @@
 gmt kml2gmt google.kml -Fs -V &gt; points.txt
 </pre></div>
 </div>
-<p>也可以直接用外部命令 <code class="docutils literal notranslate"><span class="pre">ogr2ogr</span></code> 实现转换:</p>
+<p>也可直接用GDAL提供的命令 <strong>ogr2ogr</strong> 实现转换:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ogr2ogr -f <span class="s2">&quot;GMT&quot;</span> somefile.gmt somefile.kml
 </pre></div>
 </div>
+</div>
+<div class="section" id="id5">
+<h2>相关模块<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/supplements/img/img2google.html" title="(在 GMT v6.0)"><span>img2google</span></a>,
+<a class="reference internal" href="../psconvert/"><span class="doc">psconvert</span></a>,
+<a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/gmt2kml.html" title="(在 GMT v6.0)"><span class="xref std std-doc">gmt2kml</span></a>,
+<a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/gmtspatial.html" title="(在 GMT v6.0)"><span class="xref std std-doc">gmtspatial</span></a></p>
 </div>
 </div>
 
@@ -372,7 +428,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月02日.
+        最后更新于 2020年01月03日.
       </span>
 
     </p>

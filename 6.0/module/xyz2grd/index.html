@@ -339,23 +339,25 @@
 </ul>
 </dd>
 </dl>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">-D[+x&lt;xname&gt;][+y&lt;yname&gt;][+z&lt;zname&gt;][+s&lt;scale&gt;][+o&lt;offset&gt;][+n&lt;invalid&gt;][+t&lt;title&gt;][+r&lt;remark&gt;]</span></code></dt>
-<dd><p class="first">修改网格文件头段中的基本信息：</p>
+<dl class="docutils" id="d">
+<dt><strong>-D</strong>[<strong>+x</strong><em>xname</em>][<strong>+y</strong><em>yname</em>][<strong>+z</strong><em>zname</em>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][<strong>+n</strong><em>invalid</em>][<strong>+t</strong><em>title</em>][<strong>+r</strong><em>remark</em>]</dt>
+<dd><p class="first">给定网格文件头段中的基本信息：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">+x&lt;xname&gt;</span></code> X变量名及其单位，格式为 <code class="docutils literal notranslate"><span class="pre">varname</span> <span class="pre">[unit]</span></code> ，比如 <code class="docutils literal notranslate"><span class="pre">&quot;distance</span> <span class="pre">[km]&quot;</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">+s&lt;scale&gt;</span></code> 读入网格数据后要乘以的因子，默认值为 1</li>
-<li><code class="docutils literal notranslate"><span class="pre">+o&lt;offset&gt;</span></code> 读入数据后并乘以因子后要加入的常数，默认值为 0</li>
-<li><code class="docutils literal notranslate"><span class="pre">+n&lt;invalid&gt;</span></code> 指定特定的数用于表示该节点处无有效值，默认为NaN</li>
-<li><code class="docutils literal notranslate"><span class="pre">+t&lt;title&gt;</span></code> 网格文件的标题</li>
-<li><code class="docutils literal notranslate"><span class="pre">+r&lt;remark&gt;</span></code> 网格文件的注释信息</li>
+<li><strong>+x</strong><em>xname</em> X变量名及其单位，格式为 <em>varname</em> [<em>unit</em>]，比如 “distance [km]”</li>
+<li><strong>+s</strong><em>scale</em> 读入网格数据后要乘以的因子，默认值为 1</li>
+<li><strong>+o</strong><em>offset</em> 读入数据后并乘以因子后要加的常数，默认值为 0</li>
+<li><strong>+n</strong><em>invalid</em> 指定值 <em>invalid</em> 用于表示该节点处无有效值，默认为NaN</li>
+<li><strong>+t</strong><em>title</em> 网格文件的标题</li>
+<li><strong>+r</strong><em>remark</em> 网格文件的注释信息</li>
 </ul>
-<p>其他说明：</p>
+<p>其它说明：</p>
 <ol class="last arabic simple">
 <li>未指定的项其值保持不变</li>
-<li>可以给一个空值以重置某一项，比如使用 <code class="docutils literal notranslate"><span class="pre">+t</span></code> 而不指定标题则设置标题为空</li>
-<li>若文本中包含空格则需要用引号括起来</li>
-<li>对于地理数据（比如 <code class="docutils literal notranslate"><span class="pre">-fg</span></code> ）而言， <code class="docutils literal notranslate"><span class="pre">&lt;xname&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&lt;yname&gt;</span></code> 会自动设置</li>
+<li>可以给一个空值以重置某一项，比如使用 <strong>+t</strong> 而不指定标题则设置标题为空</li>
+<li>若字符串中包含空格则需要用引号括起来</li>
+<li>若字符串中包含加号 <strong>+</strong>，需要使用 <strong>+</strong> 对其进行转义。或者可以使用单引号套双引号的方式，例如 ‘“title with + inside”’</li>
+<li>若字符串中使用了shell变量，且变量值中包含加号，则需要使用 <code class="docutils literal notranslate"><span class="pre">${variable/+/\\+}</span></code></li>
+<li>对于地理数据（比如 <strong>-fg</strong> ），<em>xname</em> 和 <em>yname</em> 会自动设置</li>
 </ol>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-S[&lt;zfile&gt;]</span></code></dt>
@@ -451,7 +453,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月02日.
+        最后更新于 2020年01月03日.
       </span>
 
     </p>
