@@ -296,7 +296,7 @@
 <div class="section" id="id1">
 <h2>语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p><strong>gmt grdblend</strong> [ <em>blendfile</em> | <em>grid1</em> <em>grid2</em> … ] <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>outgrid</em>
-<strong>-i</strong><a class="reference internal" href="../../option/io/"><span class="doc">flags</span></a>
+<a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong><em>increment</em>
 <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em>
 [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><strong>f</strong>|<strong>l</strong>|<strong>o</strong>|<strong>u</strong>[<strong>+n</strong>|<strong>p</strong>] ]
 [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong><em>nodata</em> ]
@@ -305,7 +305,7 @@
 [ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong>[<strong>z</strong>] ]
 [ <strong>-f</strong><a class="reference internal" href="../../option/f/"><span class="doc">flags</span></a> ]
 [ <strong>-n</strong><a class="reference internal" href="../../option/n/"><span class="doc">flags</span></a> ]
-[ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> ]
+[ <strong>-r</strong><a class="reference internal" href="../../option/gridreg/"><span class="doc">reg</span></a> ]
 [ <strong>--PAR</strong>=<em>value</em> ]</p>
 </div>
 <div class="section" id="id2">
@@ -345,11 +345,7 @@
 <p>注意：</p>
 <ul class="last simple">
 <li>若 <em>yinc</em> 设置为0，则表示其与 <em>xinc</em> 相同</li>
-<li><dl class="first docutils">
-<dt>若使用 <strong>-R</strong><em>grdfile</em> 选项，则网格间隔和配准方式已经根据网格文件自动初始化，</dt>
-<dd>此时依然可以使用 <strong>-I</strong> 和 <strong>-r</strong> 覆盖相应的值</dd>
-</dl>
-</li>
+<li>若使用 <strong>-R</strong><em>grdfile</em> 选项，则网格间隔和配准方式已经根据网格文件自动初始化，此时依然可以使用 <strong>-I</strong> 和 <strong>-r</strong> 覆盖相应的值</li>
 </ul>
 </dd>
 </dl>
@@ -490,7 +486,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月03日.
+        最后更新于 2020年01月05日.
       </span>
 
     </p>
