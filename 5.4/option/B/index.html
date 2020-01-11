@@ -29,10 +29,8 @@
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script defer="defer" type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-        <script defer="defer" type="text/javascript" src="../../_static/algolia.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -41,8 +39,6 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/algolia.css" type="text/css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
     <link rel="next" title="8.4 -P 选项" href="../P/" />
@@ -459,7 +455,7 @@ gmt psbasemap -R0/10/0/10 -JX5c -Ba2g2 -BWS+glightblue+t<span class="s2">&quot;T
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">o</span></code></td>
 <td>month</td>
-<td>Plot as 2-digit integer (1–12)</td>
+<td>Plot as 2-digit integer (1--12)</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">U</span></code></td>
 <td>ISO week</td>
@@ -467,7 +463,7 @@ gmt psbasemap -R0/10/0/10 -JX5c -Ba2g2 -BWS+glightblue+t<span class="s2">&quot;T
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">u</span></code></td>
 <td>ISO week</td>
-<td>Plot as 2-digit integer (1–53)</td>
+<td>Plot as 2-digit integer (1--53)</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">r</span></code></td>
 <td>Gregorian week</td>
@@ -479,7 +475,7 @@ gmt psbasemap -R0/10/0/10 -JX5c -Ba2g2 -BWS+glightblue+t<span class="s2">&quot;T
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">k</span></code></td>
 <td>weekday</td>
-<td>Plot number of day in the week (1–7) (see <code class="docutils literal notranslate"><span class="pre">TIME_WEEK_START</span></code>)</td>
+<td>Plot number of day in the week (1--7) (see <code class="docutils literal notranslate"><span class="pre">TIME_WEEK_START</span></code>)</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">D</span></code></td>
 <td>date</td>
@@ -487,7 +483,7 @@ gmt psbasemap -R0/10/0/10 -JX5c -Ba2g2 -BWS+glightblue+t<span class="s2">&quot;T
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">d</span></code></td>
 <td>day</td>
-<td>Plot day of month (1–31) or day of year (1–366) (FORMAT_DATE_MAP)</td>
+<td>Plot day of month (1--31) or day of year (1--366) (FORMAT_DATE_MAP)</td>
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">R</span></code></td>
 <td>day</td>
@@ -499,7 +495,7 @@ gmt psbasemap -R0/10/0/10 -JX5c -Ba2g2 -BWS+glightblue+t<span class="s2">&quot;T
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">h</span></code></td>
 <td>hour</td>
-<td>Plot as 2-digit integer (0–24)</td>
+<td>Plot as 2-digit integer (0--24)</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">M</span></code></td>
 <td>minute</td>
@@ -507,7 +503,7 @@ gmt psbasemap -R0/10/0/10 -JX5c -Ba2g2 -BWS+glightblue+t<span class="s2">&quot;T
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">m</span></code></td>
 <td>minute</td>
-<td>Plot as 2-digit integer (0–60)</td>
+<td>Plot as 2-digit integer (0--60)</td>
 </tr>
 <tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">S</span></code></td>
 <td>seconds</td>
@@ -515,7 +511,7 @@ gmt psbasemap -R0/10/0/10 -JX5c -Ba2g2 -BWS+glightblue+t<span class="s2">&quot;T
 </tr>
 <tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">s</span></code></td>
 <td>seconds</td>
-<td>Plot as 2-digit integer (0–60)</td>
+<td>Plot as 2-digit integer (0--60)</td>
 </tr>
 </tbody>
 </table>
@@ -684,9 +680,9 @@ gitalk.render('gitalk-container');
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2014 - 2019, GMT中文社区
+        &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年12月02日.
+        最后更新于 2020年01月11日.
       </span>
 
     </p>

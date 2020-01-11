@@ -29,10 +29,8 @@
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script defer="defer" type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-        <script defer="defer" type="text/javascript" src="../../_static/algolia.js"></script>
         <script type="text/javascript" src="../../_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -41,8 +39,6 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/algolia.css" type="text/css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
     <link rel="next" title="13.57 sample1d" href="../sample1d/" />
@@ -277,7 +273,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/psxy.html" title="(在 GMT v5.4.5)"><span>psxy</span></a></td>
+<tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://docs.generic-mapping-tools.org/5.4/psxy.html" title="(在 GMT v5.4.6)"><span>psxy</span></a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">在图上绘制线段、多边形和符号</td>
 </tr>
@@ -404,7 +400,7 @@
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-L[+b|d|D][+xl|r|&lt;x0&gt;][+yl|r|&lt;y0&gt;][+p&lt;pen&gt;]</span></code></dt>
 <dd><p class="first">构建闭合多边形。</p>
-<p>默认情况下，psxy只将数据点连起来，若首尾两个点不相同，则不会形成闭合多边形。使用 <strong>-F</strong> 则自动将数据的首尾两个点连起来，形成闭合多边形。</p>
+<p>默认情况下，psxy只将数据点连起来，若首尾两个点不相同，则不会形成闭合多边形。使用 <strong>-L</strong> 则自动将数据的首尾两个点连起来，形成闭合多边形。</p>
 <p>除了简单的首尾相连之外，还可以给线段加上包络线（类似于线段的误差）：</p>
 <ol class="arabic simple">
 <li><code class="docutils literal notranslate"><span class="pre">+d</span></code> build symmetrical envelope around y(x) using deviations dy(x) given in extra column 3</li>
@@ -974,9 +970,9 @@ gitalk.render('gitalk-container');
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2014 - 2019, GMT中文社区
+        &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2019年12月02日.
+        最后更新于 2020年01月11日.
       </span>
 
     </p>
