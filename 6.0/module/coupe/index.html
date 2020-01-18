@@ -602,6 +602,21 @@
 <dt><strong>--PAR</strong>=<em>value</em></dt>
 <dd>临时修改GMT参数的值，可重复多次使用。参数列表见 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/gmt.conf.html" title="(在 GMT v6.0)"><span class="xref std std-doc">gmt.conf</span></a></dd>
 </dl>
+<p>示例
+---</p>
+<p>矩张量形式的震源机制解，剖面的起点为130E 43N，终点为140E 36N，90度剖面，即垂直剖面。压缩部分为黑色。建议使用上 <strong>-N</strong>，这样可以防止漏画:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+gmt begin profile
+gmt coupe -JX15c/-6c -Sd0.8 -Aa130/43/140/36/90/100/0/700+f -Gblack -Q -N <span class="s">&lt;&lt; EOF</span>
+<span class="s">131.55 41.48 579  1.14 -0.10 -1.04 -0.51 -2.21 -0.99 26 X Y</span>
+<span class="s">133.74 41.97 604  6.19 -1.14 -5.05 -0.72 -9.03 -4.24 25 X Y</span>
+<span class="s">135.52 37.64 432  0.95  0.11 -1.06 -0.20 -2.32  0.90 25 X Y</span>
+<span class="s">138.37 42.85 248 -2.49  3.40 -0.91  3.09  0.83 -3.64 25 X Y</span>
+<span class="s">EOF</span>
+gmt basemap -BWS -Byaf+l<span class="s2">&quot;Focal depth (km)&quot;</span> -Bxaf+l<span class="s2">&quot;Distance (km)&quot;</span>
+gmt end show
+</pre></div>
+</div>
 </div>
 <div class="section" id="id4">
 <h2>相关模块<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
@@ -657,7 +672,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月16日.
+        最后更新于 2020年01月18日.
       </span>
 
     </p>
