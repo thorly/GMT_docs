@@ -310,7 +310,7 @@ gmt end show
 <strong>-D</strong> 选项将色标放在了地形起伏图的右侧中间（<strong>JMR</strong>）向右偏移1.5厘米，色标长度为10厘米，并将标签放在了色标左侧（<strong>+ml</strong>）。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin taiwan_relief png,pdf
 gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen -I+d
-gmt colorbar -DJMR+w10c+o1.5c/0c+ml -Bxa1000f+l<span class="s2">&quot;Elevation (m)&quot;</span>
+gmt colorbar -DJMR+w10c+o1.5c/0c+ml -Bxa1000f -By+l<span class="s2">&quot;m&quot;</span>
 gmt end show
 </pre></div>
 </div>
@@ -321,13 +321,13 @@ gmt end show
 <div class="section" id="cpt">
 <h2>制作CPT文件<a class="headerlink" href="#cpt" title="永久链接至标题">¶</a></h2>
 <p>上面的示例中使用的是GMT的默认CPT文件。用户也可以使用 <a class="reference internal" href="../../module/makecpt/"><span class="doc">makecpt</span></a> 或
-<a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/grd2cpt.html" title="(在 GMT v6.0)"><span class="xref std std-doc">grd2cpt</span></a> 制作CPT文件。</p>
+<a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/grd2cpt.html" title="(在 GMT v6.0)"><span>grd2cpt</span></a> 制作CPT文件。</p>
 <p>下面的示例中，我们使用 <a class="reference internal" href="../../module/makecpt/"><span class="doc">makecpt</span></a> 模块在GMT内置CPT <strong>globe</strong> 的基础上生成了一个-8000到8000范围内的新CPT文件。生成的CPT文件将作为当前CPT文件，供接下来的 <strong>grdimage</strong> 和 <strong>colorbar</strong> 命令使用。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin taiwan_relief png,pdf
 gmt basemap -JM15c -R118/125/20/26 -Baf -BWSen
 gmt makecpt -Cglobe -T-8000/8000
 gmt grdimage @earth_relief_30s -I+d
-gmt colorbar -Bxa2000+l<span class="s2">&quot;Elevation/m&quot;</span>
+gmt colorbar -Bxa2000 -B+l<span class="s2">&quot;m&quot;</span>
 gmt end show
 </pre></div>
 </div>
