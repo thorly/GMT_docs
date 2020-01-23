@@ -106,6 +106,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#homebrew">使用 Homebrew 安装</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gmt">使用 GMT 安装包</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#macports">使用 Macports 安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fink">使用 Fink 安装</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../cross-platform/">跨平台GMT安装方案</a></li>
@@ -327,6 +328,22 @@ $ sudo port upgrade gmt6
 </li>
 <li><p class="first">卸载GMT。执行如下命令即可卸载GMT:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo port uninstall gmt6
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="fink">
+<h2>使用 Fink 安装<a class="headerlink" href="#fink" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="http://www.finkproject.org/">Fink</a> 是 macOS 下的第三方软件包管理工具。</p>
+<ol class="arabic">
+<li><p class="first">安装GMT:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo fink install gmt6
+</pre></div>
+</div>
+</li>
+<li><p class="first">安装依赖包:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo fink install graphicsmagick ffmpeg
 </pre></div>
 </div>
 </li>

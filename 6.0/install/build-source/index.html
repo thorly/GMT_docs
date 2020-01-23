@@ -227,14 +227,14 @@ GMT源码请参考GMT官方
 <h2>编译及运行依赖<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>GMT的编译及运行需要如下软件：</p>
 <ul class="simple">
-<li>CMake: &gt;=2.8.5</li>
-<li>netCDF（&gt;4.0且支持netCDF-4/HDF5）</li>
+<li>CMake: &gt;=2.8.7</li>
+<li>netCDF（&gt;=4.0且支持netCDF-4/HDF5）</li>
 <li>curl</li>
 </ul>
 <p>除此之外，还可以安装如下软件库以增强GMT的更多功能：</p>
 <ul class="simple">
 <li><a class="reference external" href="https://www.ghostscript.com/">Ghostscript</a>: 生成PDF或者其他位图格式的图片</li>
-<li><a class="reference external" href="https://www.gdal.org/">GDAL</a>: 读写其他地学常用的网格和图片格式</li>
+<li><a class="reference external" href="https://www.gdal.org/">GDAL</a>: 读写其它地学常用的网格和图片格式</li>
 <li><a class="reference external" href="https://www.pcre.org/">PCRE</a>: 正则表达式支持</li>
 <li><a class="reference external" href="http://www.fftw.org/">FFTW</a>: 快速傅里叶变换库（&gt;=3.3，macOS下不需要）</li>
 <li><a class="reference external" href="https://developer.gnome.org/glib/">GLib</a>: GTHREAD多线程支持</li>
@@ -250,7 +250,7 @@ GMT源码请参考GMT官方
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 安装编译所需软件包</span>
 $ sudo apt-get install build-essential cmake libcurl4-gnutls-dev libnetcdf-dev
 <span class="c1"># 安装可选软件包</span>
-$ sudo apt install ghostscript gdal-bin libgdal-dev liblapack3 libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
+$ sudo apt install ghostscript gdal-bin libgdal-dev libglib2.0-dev libpcre3-dev libfftw3-dev liblapack-dev
 <span class="c1"># 安装制作动画所需的软件包</span>
 $ sudo apt install graphicsmagick ffmpeg
 </pre></div>
@@ -285,7 +285,7 @@ brew install ghostscript gdal pcre2 glib fftw graphicsmagick ffmpeg
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">警告</p>
-<p class="last">GMT需要使用 ghostscript 生成PDF、JPG等格式的图片。但ghostscript 9.27存在严重bug，会导致生成的图片中有用信息被裁剪。请使用 <code class="docutils literal notranslate"><span class="pre">gs</span> <span class="pre">--version</span></code> 确认安装的ghostscript不是9.27版本。</p>
+<p class="last">GMT需要使用 Ghostscript 生成PDF、JPG等格式的图片。但Ghostscript 9.27存在严重bug，会导致生成的图片中有用信息被裁剪。请使用 <code class="docutils literal notranslate"><span class="pre">gs</span> <span class="pre">--version</span></code> 确认安装的Ghostscript不是9.27版本。</p>
 </div>
 </div>
 <div class="section" id="id4">
@@ -330,10 +330,10 @@ $ open -a TextEdit cmake/ConfigUser.cmake
 </div>
 <p>其中，</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">CMAKE_INSTALL_PREFIX</span></code> 用于设置GMT的安装路径，上面的语句会将GMT安装在
+<li><strong>CMAKE_INSTALL_PREFIX</strong> 用于设置GMT的安装路径，上面的语句会将GMT安装在
 <code class="docutils literal notranslate"><span class="pre">/opt/GMT-6.0.0</span></code> 目录下，用户可以自行修改为其他路径。没有 root 权限的一般用户，可以将安装路径设置为 <code class="docutils literal notranslate"><span class="pre">/home/xxx/software/GMT-6.0.0</span></code> 等有可读写权限的路径；</li>
-<li><code class="docutils literal notranslate"><span class="pre">COPY_GSHHG</span></code> 和 <code class="docutils literal notranslate"><span class="pre">COPY_DCW</span></code> 设置为 TRUE 会将相关数据复制到 GMT 的 share 目录下</li>
-<li><code class="docutils literal notranslate"><span class="pre">GMT_USE_THREADS</span></code> 和 <code class="docutils literal notranslate"><span class="pre">GMT_ENABLE_OPENMP</span></code> 设置为 TRUE 会为GMT的某些模块增加多线程并行功能以加速计算。</li>
+<li><strong>COPY_GSHHG</strong> 和 <strong>COPY_DCW</strong> 设置为 <strong>TRUE</strong> 会将相关数据复制到 GMT 的 share 目录下</li>
+<li><strong>GMT_USE_THREADS</strong> 和 <strong>GMT_ENABLE_OPENMP</strong> 设置为 <strong>TRUE</strong> 会为GMT的某些模块增加多线程并行功能以加速计算。</li>
 </ul>
 <div class="admonition tip">
 <p class="first admonition-title">小技巧</p>
@@ -406,7 +406,7 @@ $ sudo make -j install
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注解</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">-j</span></code> 选项可以实现并行编译以减少编译时间。但据用户报告，某些Ubuntu发行版下使用 <code class="docutils literal notranslate"><span class="pre">-j</span></code> 选项会导致编译过程卡死。若出现此种情况，建议去除 <code class="docutils literal notranslate"><span class="pre">-j</span></code> 选项。</p>
+<p class="last"><strong>-j</strong> 选项可以实现并行编译以减少编译时间。但据用户报告，某些Ubuntu发行版下使用 <strong>-j</strong> 选项会导致编译过程卡死。若出现此种情况，建议去除 <strong>-j</strong> 选项。</p>
 </div>
 </div>
 <div class="section" id="id5">
@@ -427,8 +427,8 @@ open ~/.bash_profile
 </div>
 <p>说明：</p>
 <ul class="simple">
-<li>第一个命令添加了环境变量 <code class="docutils literal notranslate"><span class="pre">GMT6HOME</span></code></li>
-<li>第二个命令修改 GMT6 的 bin 目录加入到 <code class="docutils literal notranslate"><span class="pre">PATH</span></code> 中，使得终端可以找到GMT命令</li>
+<li>第一个命令添加了环境变量 <strong>GMT6HOME</strong></li>
+<li>第二个命令修改 GMT6 的 bin 目录加入到 <strong>PATH</strong> 中，使得终端可以找到GMT命令</li>
 <li>第三个命令将 GMT6 的 lib 目录加入到动态链接库路径中。通常，32位系统的路径为 <code class="docutils literal notranslate"><span class="pre">lib</span></code>，64位系统的路径为 <code class="docutils literal notranslate"><span class="pre">lib64</span></code></li>
 </ul>
 </div>
