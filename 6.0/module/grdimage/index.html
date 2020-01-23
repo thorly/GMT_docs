@@ -142,9 +142,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../grdedit/">grdedit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../grdfill/">grdfill</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">grdimage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">必选选项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">可选选项</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">必选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">可选选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">示例</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../grdinfo/">grdinfo</a></li>
@@ -163,7 +164,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../kml2gmt/">kml2gmt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../legend/">legend</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../makecpt/">makecpt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mapproject/">mapproject</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../meca/">meca</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../plot/">plot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../polar/">polar</a></li>
@@ -198,6 +198,8 @@
                 <li class="toctree-l1"><a href="https://docs.gmt-china.org/6.0/GMT_docs.pdf"><i class="fa fa-book fa-fw"></i> PDF下载</a></li>
             
                 <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/blob/master/CONTRIBUTING.md"><i class="fa fa-edit fa-fw"></i> 贡献指南</a></li>
             
                 <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
             
@@ -278,19 +280,47 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">官方文档:</th><td class="field-body"><a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/grdimage.html" title="(在 GMT v6.0)"><span>grdimage</span></a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">在地图上绘制网格数据</td>
+<tr class="field-even field"><th class="field-name">简介:</th><td class="field-body">绘制网格数据</td>
 </tr>
 </tbody>
 </table>
 <div class="section" id="id1">
-<h2>必选选项<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">&lt;grid&gt;</span></code></dt>
-<dd>该命令的输入文件必须是2D网格文件，可以是一个只包含Z数据的网格文件，也可以是三个分别包含R、G、B值的网格文件。</dd>
-</dl>
+<h2>语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p><strong>gmt grdimage</strong> <em>grd_z</em> | <em>img</em> | <em>grd_r grd_g grd_b</em>
+[ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong><em>out_img</em>[<strong>=</strong><em>driver</em>] ]
+[ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong><em>parameters</em> ]
+[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>cpt</em> ]
+[ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong>[<strong>r</strong>] ]
+[ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong>[<strong>i</strong>|<em>dpi</em>] ] <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><em>parameters</em>
+[ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>color</em>[<strong>+b</strong>|<strong>+f</strong>] ]
+[ <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong>[<em>intensfile</em>|<em>intensity</em>|<em>modifiers</em>] ]
+[ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong> ] [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong> ]
+[ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong> ]
+[ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>] ]
+[ <a class="reference internal" href="#u"><span> <strong>-U</strong></span></a></strong>[<em>stamp</em>] ]
+[ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
+[ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
+[ <strong>-f</strong><a class="reference internal" href="../../option/f/"><span class="doc">flags</span></a> ]
+[ <strong>-n</strong><a class="reference internal" href="../../option/n/"><span class="doc">flags</span></a> ]
+[ <strong>-p</strong><a class="reference internal" href="../../option/perspective/"><span class="doc">flags</span></a> ]
+[ <strong>-t</strong><a class="reference internal" href="../../option/t/"><span class="doc">transp</span></a> ]
+[ <strong>--PAR</strong>=<em>value</em> ]</p>
 </div>
 <div class="section" id="id2">
-<h2>可选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>必选选项<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<dl class="docutils">
+<dt><em>grd_z</em> | <em>img</em> | <em>grd_r grd_g grd_b</em></dt>
+<dd>输入数据文件，可以是一个只包含Z数据的网格文件，或GDAL支持的图片文件，或三个分别包含red、green、blue值的网格文件。</dd>
+</dl>
+<dl class="docutils" id="j">
+<dt><strong>-J</strong><em>projection</em> <a class="reference internal" href="../../option/J/"><span class="doc">(more …)</span></a></dt>
+<dd>设置地图投影方式。</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h2>可选选项<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p id="a"><strong>-A</strong><em>out_img</em>[<strong>=</strong><em>driver</em>]</p>
 <dl class="docutils">
 <dt><code class="docutils literal notranslate"><span class="pre">-A&lt;out_img&gt;[=&lt;driver&gt;]</span></code></dt>
 <dd><p class="first">将图片以光栅格式保存</p>
@@ -301,12 +331,20 @@
 <li><code class="docutils literal notranslate"><span class="pre">&lt;driver&gt;</span></code> 图片格式，见GDAL的文档</li>
 </ol>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-C&lt;cpt&gt;</span></code></dt>
-<dd><p class="first">绘图时要使用的CPT文件名。</p>
+</dl>
+<dl class="docutils" id="b">
+<dt><strong>-B</strong><em>parameters</em> <a class="reference internal" href="../../option/B/"><span class="doc">(more …)</span></a></dt>
+<dd>设置底图边框和轴属性</dd>
+</dl>
+<dl class="docutils" id="c">
+<dt><strong>-C</strong>[<em>cpt</em> |<em>master</em>[<strong>+i</strong><em>zinc</em>] |<em>color1,color2</em>[,<em>color3</em>,…]]</dt>
+<dd><p class="first">绘制网格文件所使用的CPT。</p>
 <p class="last">也可以直接使用GMT自带的CPT文件名，此时GMT会自动根据网格文件的Z值范围将自带的CPT采样成16级的连续CPT文件。也可以通过 <code class="docutils literal notranslate"><span class="pre">-C&lt;color1&gt;,&lt;color2&gt;[,&lt;color3&gt;,..]</span></code>
 的语法构建一个线性连续CPT文件。</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">-D[r]</span></code></dt>
+</dl>
+<dl class="docutils" id="d">
+<dt><strong>-D</strong>[<strong>r</strong>]</dt>
 <dd>表明输入的网格文件是需要通过GDAL读取的图片文件，见官方文档。</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">-E[i|&lt;dpi&gt;]</span></code></dt>
 <dd>设置投影后网格的精度，默认值为100。</dd>
@@ -341,8 +379,8 @@ the mask (or its inverse, with <strong>-Gb</strong>) with the given color combin
 <dd>设置图层的透明等级，可取值范围为0（不透明）到100（全透明）</dd>
 </dl>
 </div>
-<div class="section" id="id3">
-<h2>示例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h2>示例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>使用默认的光照效果:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdimage stuff.nc -JX6i+ -I+d -pdf map
 </pre></div>
@@ -395,7 +433,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月22日.
+        最后更新于 2020年01月23日.
       </span>
 
     </p>

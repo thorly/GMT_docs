@@ -139,6 +139,8 @@
             
                 <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
             
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/blob/master/CONTRIBUTING.md"><i class="fa fa-edit fa-fw"></i> 贡献指南</a></li>
+            
                 <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
             
                 <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
@@ -214,7 +216,10 @@
 <h1>GMT版本<a class="headerlink" href="#gmt" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id1">
 <h2>版本号<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<p>GMT 版本号遵循 <a class="reference external" href="https://semver.org/lang/zh-CN">语义化版本号规范</a>。GMT 版本号格式为 <em>major.minor.patch</em>，例如 <strong>4.5.18</strong>。其中 <em>major</em> 为主版本号，<em>minor</em> 为次版本号，<em>patch</em> 为补丁版本号。</p>
+<p>GMT 版本号遵循 <a class="reference external" href="https://semver.org/lang/zh-CN">语义化版本号规范</a>，其版本号格式为:</p>
+<blockquote>
+<div><em>major.minor.patch</em></div></blockquote>
+<p>其中 <em>major</em> 为主版本号，<em>minor</em> 为次版本号，<em>patch</em> 为补丁版本号。例如 <strong>5.4.5</strong>。</p>
 <p>根据语义化版本规范的要求：</p>
 <ul class="simple">
 <li>当有极大更新，例如重写底层代码时，会增加主版本号 <em>major</em>。因而 <em>major</em> 不同的两个版本的API接口，以及语法、功能上可能有差异</li>
@@ -223,6 +228,10 @@
 </ul>
 <p>因而，GMT 6.x.x 与 5.x.x 在底层存在很大差异，两个版本的语法不完全兼容。GMT 5.4.x 相对于 5.3.x 增加了更多的功能，而 GMT 5.4.5 相对于 5.4.4
 则主要是修复了一些BUG。</p>
+<div class="admonition note">
+<p class="first admonition-title">注解</p>
+<p class="last">GMT 开发版的版本号略有不同，其格式为: <em>major.minor.patch</em>_<em>hash</em>_<em>YYYY.mm.dd</em>。其中 <em>hash</em> 为当前版本的 git commit hash，<em>YYYY.mm.dd</em> 是当前版本的更新日期。例如：6.1.0_267ce55_2020.01.21。</p>
+</div>
 </div>
 <div class="section" id="id3">
 <h2>GMT主流版本<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
@@ -231,21 +240,21 @@
 <dt><strong>GMT4</strong></dt>
 <dd>GMT4的最终版本为4.5.18，发布于2018年7月。开发者不再对GMT4进行任何维护或更新，所有BUG将不会得到修复。</dd>
 <dt><strong>GMT5</strong></dt>
-<dd><p class="first">GMT5相对于GMT4有诸多改进，其命令语法更统一，选项设计更合理，还增加了很多新功能。其中，有用且常用的功能包括：</p>
-<ul class="simple">
+<dd><p class="first">GMT5的最终版本为5.4.5，发布于2019年1月4日。GMT5将不会再更新，所有BUG将不会得到修复。</p>
+<p>GMT5相对于GMT4有诸多改进，其命令语法更统一，选项设计更合理，还增加了很多新功能。其中，有用且常用的功能包括：</p>
+<ul class="last simple">
 <li><strong>-Bafg</strong> 自动确定坐标轴的标注、刻度和网格间隔</li>
 <li>支持透明色，且支持透明图层</li>
 <li><strong>-X</strong> 和 <strong>-Y</strong> 支持多种指定坐标原点的方式，画多子图的组合图时更加简单</li>
 <li>使用 <strong>-p</strong> 可以绘制任意3D视角图</li>
 </ul>
-<p class="last">目前GMT5已进入维护期，不再增加新功能，仅修复已知BUG。</p>
 </dd>
 <dt><strong>GMT6</strong></dt>
-<dd><p class="first">GMT6是GMT目前的最新版本，也是开发者在着重维护和更新的版本。</p>
+<dd><p class="first">GMT6是GMT目前的最新版本，也是开发者在持续维护和更新的版本。</p>
 <p>GMT6特点在于：</p>
 <ul class="last simple">
 <li>新增现代模式，极大简化了绘图脚本，并且避免了使用中的常见错误</li>
-<li>兼容GMT5和GMT4</li>
+<li>尽可能兼容GMT5和GMT4</li>
 <li>新增模块<ul>
 <li><strong>movie</strong> 模块用于方便地制作动画</li>
 <li><strong>docs</strong> 模块用于直接打开模块的网页文档</li>
@@ -305,7 +314,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月22日.
+        最后更新于 2020年01月23日.
       </span>
 
     </p>

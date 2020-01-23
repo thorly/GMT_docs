@@ -160,6 +160,8 @@
             
                 <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_Docs"><i class="fa fa-github fa-fw"></i> 源代码</a></li>
             
+                <li class="toctree-l1"><a href="https://github.com/gmt-china/GMT_docs/blob/master/CONTRIBUTING.md"><i class="fa fa-edit fa-fw"></i> 贡献指南</a></li>
+            
                 <li class="toctree-l1"><a href="https://gmt-china.org"><i class="fa fa-globe fa-fw"></i> GMT中文社区</a></li>
             
                 <li class="toctree-l1"><a href="mailto:admin@gmt-china.org"><i class="fa fa-envelope fa-fw"></i> 联系我们</a></li>
@@ -511,12 +513,12 @@
 </div>
 <p>也可以直接使用 <a class="reference external" href="http://spatialreference.org">EPSG codes</a>，但需要设置环境变量
 <code class="docutils literal notranslate"><span class="pre">GDAL_DATA</span></code> 指向 GDAL 的 data 子目录。例如 <code class="docutils literal notranslate"><span class="pre">-JEPSG:4326</span></code> 表示使用 WGS-84 系统。</p>
-<p>对于 <a class="reference internal" href="../../module/mapproject/"><span class="doc">mapproject</span></a> 和 <a class="reference internal" href="../../module/grdproject/"><span class="doc">grdproject</span></a> 模块，可以直接使用
+<p>对于 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/mapproject.html" title="(在 GMT v6.0)"><span>mapproject</span></a> 和 <a class="reference internal" href="../../module/grdproject/"><span class="doc">grdproject</span></a> 模块，可以直接使用
 <code class="docutils literal notranslate"><span class="pre">+to</span></code> 关键字直接指定要将A参考系统转换为B参考系统，而不需要中间步骤。例如:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-JEPSG:4326+to+proj<span class="o">=</span>aeqd+ellps<span class="o">=</span>WGS84+units<span class="o">=</span>m
 </pre></div>
 </div>
-<p>对于使用 <a class="reference internal" href="../../module/mapproject/"><span class="doc">mapproject</span></a> 和 <a class="reference internal" href="../../module/grdproject/"><span class="doc">grdproject</span></a> 进行点和网格文件的转换，GMT可以使用所有的 <a class="reference external" href="https://proj4.org/operations/projections/index.html">PROJ.4投影</a>。但对于绘图而言，其用处却很有限。一方面，只有一部分 PROJ.4 的投影方式可以被映射到GMT的投影语法中。另一方面，由于PROJ.4不是一个绘图库，其不支持设置地图比例尺或地图大小。因而，GMT为PROJ.4语法引入了两个扩展：<code class="docutils literal notranslate"><span class="pre">+width=</span></code> 和 <code class="docutils literal notranslate"><span class="pre">+scale=1:xxxx</span></code>
+<p>对于使用 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/mapproject.html" title="(在 GMT v6.0)"><span>mapproject</span></a> 和 <a class="reference internal" href="../../module/grdproject/"><span class="doc">grdproject</span></a> 进行点和网格文件的转换，GMT可以使用所有的 <a class="reference external" href="https://proj4.org/operations/projections/index.html">PROJ.4投影</a>。但对于绘图而言，其用处却很有限。一方面，只有一部分 PROJ.4 的投影方式可以被映射到GMT的投影语法中。另一方面，由于PROJ.4不是一个绘图库，其不支持设置地图比例尺或地图大小。因而，GMT为PROJ.4语法引入了两个扩展：<code class="docutils literal notranslate"><span class="pre">+width=</span></code> 和 <code class="docutils literal notranslate"><span class="pre">+scale=1:xxxx</span></code>
 使得其与经典的GMT中的工作方式相似。也可以在投影参数的最后加上字符串 <code class="docutils literal notranslate"><span class="pre">/1:xxx</span></code>
 来指定比例尺。</p>
 </div>
@@ -567,7 +569,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月22日.
+        最后更新于 2020年01月23日.
       </span>
 
     </p>
