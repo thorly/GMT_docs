@@ -109,8 +109,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../R/">-R 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../J/">-J 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../B/">-B 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../U/">-U 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../XY/">-X 和 -Y 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../a/">-a 选项</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">-b 选项</a></li>
@@ -124,8 +124,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../distcal/">-j 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../l/">-l 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../n/">-n 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gridreg/">-r 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../perspective/">-p 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodereg/">-r 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../s/">-s 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../t/">-t 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../x/">-x 选项</a></li>
@@ -230,35 +230,32 @@
             
   <div class="section" id="b">
 <h1>-b 选项<a class="headerlink" href="#b" title="永久链接至标题">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">-b</span></code> 选项用于控制二进制文件的输入/输出格式。</p>
-<p>在 <a class="reference internal" href="../../table/"><span class="doc">表数据</span></a> 一章中已经中已经介绍过，表数据可以是ASCII格式、二进制格式或netCDF格式。ASCII格式很直观，可以直接看到有多少列数据。而二进制格式的数据，GMT在读入数据时无法数据有多少列，也无法知道每一列的格式。因而需要使用 <code class="docutils literal notranslate"><span class="pre">-b</span></code> 选项告诉GMT输入或输出数据的具体格式。</p>
-<p><code class="docutils literal notranslate"><span class="pre">-b</span></code> 的语法是:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-b<span class="o">[</span>i<span class="p">|</span>o<span class="o">][</span>&lt;ncols&gt;<span class="o">][</span>&lt;type&gt;<span class="o">][</span>w<span class="o">][</span>+L<span class="p">|</span>+B<span class="o">]</span>
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">-bi</span></code> 表示对输入有效，<code class="docutils literal notranslate"><span class="pre">-bo</span></code> 表示对输出有效。
-<code class="docutils literal notranslate"><span class="pre">&lt;ncols&gt;&lt;type&gt;</span></code> 表示有 <code class="docutils literal notranslate"><span class="pre">&lt;ncols&gt;</span></code> 列个 <code class="docutils literal notranslate"><span class="pre">&lt;type&gt;</span></code> 类型的数据。多个 <code class="docutils literal notranslate"><span class="pre">&lt;ncols&gt;&lt;type&gt;</span></code> 可以用逗号分隔。每个 <code class="docutils literal notranslate"><span class="pre">&lt;ncols&gt;&lt;type&gt;</span></code> 都可以 <code class="docutils literal notranslate"><span class="pre">w</span></code>
-表示对这些列数据强制做字节序转换。
-<code class="docutils literal notranslate"><span class="pre">+L</span></code> 或 <code class="docutils literal notranslate"><span class="pre">+B</span></code> 表示整个数据按照little-endian或big-endian字节序读入。</p>
-<p>其中GMT支持的数据类型 <code class="docutils literal notranslate"><span class="pre">&lt;type&gt;</span></code> 可以取：</p>
+<p><strong>-b</strong> 选项用于控制二进制文件的输入/输出格式。</p>
+<p>在 <a class="reference internal" href="../../table/"><span class="doc">表数据</span></a> 一章中已经介绍过，表数据可以是ASCII格式、二进制格式或netCDF格式。ASCII格式很直观，可以直接看到有多少列数据。而二进制格式的数据，GMT在读入数据时无法数据有多少列，也无法知道每一列的格式。因而需要使用 <strong>-b</strong> 选项告诉GMT输入或输出数据的具体格式。</p>
+<p><strong>-b</strong> 的语法是：</p>
+<blockquote>
+<div><strong>-b</strong>[<strong>i</strong>|<strong>o</strong>][<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>]</div></blockquote>
+<p><strong>-bi</strong> 表示对输入有效，<strong>-bo</strong> 表示对输出有效。后面紧跟着指定有 <em>ncols</em> 列个 <em>type</em> 类型的数据，多个 <em>ncols</em><em>type</em> 之间可以用逗号分隔。<strong>w</strong> 表示对这些列数据强制做字节序转换。
+<strong>+l</strong> 或 <strong>+b</strong> 表示整个数据按照little-endian或big-endian字节序读入。</p>
+<p>GMT支持的数据类型 <em>type</em> 可以取：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">c</span></code>：即 <code class="docutils literal notranslate"><span class="pre">int8_t</span></code>，字符型</li>
-<li><code class="docutils literal notranslate"><span class="pre">u</span></code>：即 <code class="docutils literal notranslate"><span class="pre">uint8_t</span></code>，无符号字符型</li>
-<li><code class="docutils literal notranslate"><span class="pre">h</span></code>：即 <code class="docutils literal notranslate"><span class="pre">int16_t</span></code>，两字节有符号整型</li>
-<li><code class="docutils literal notranslate"><span class="pre">H</span></code>：即 <code class="docutils literal notranslate"><span class="pre">uint16_t</span></code>，两字节无符号整型</li>
-<li><code class="docutils literal notranslate"><span class="pre">i</span></code>：即 <code class="docutils literal notranslate"><span class="pre">int32_t</span></code>，四字节有符号整型</li>
-<li><code class="docutils literal notranslate"><span class="pre">I</span></code>：即 <code class="docutils literal notranslate"><span class="pre">uint32_t</span></code>，四字节无符号整型</li>
-<li><code class="docutils literal notranslate"><span class="pre">l</span></code>：即 <code class="docutils literal notranslate"><span class="pre">int64_t</span></code>，八字节有符号整型</li>
-<li><code class="docutils literal notranslate"><span class="pre">L</span></code>：即 <code class="docutils literal notranslate"><span class="pre">uint64_t</span></code>，八字节无符号整型</li>
-<li><code class="docutils literal notranslate"><span class="pre">f</span></code>：四字节单精度浮点型</li>
-<li><code class="docutils literal notranslate"><span class="pre">d</span></code>：八字节双精度浮点型</li>
-<li><code class="docutils literal notranslate"><span class="pre">x</span></code>：不代表某种数据类型，表示跳过 <code class="docutils literal notranslate"><span class="pre">&lt;ncols&gt;</span></code> 个字节</li>
+<li><strong>c</strong>：即 <strong>int8_t</strong>，字符型</li>
+<li><strong>u</strong>：即 <strong>uint8_t</strong>，无符号字符型</li>
+<li><strong>h</strong>：即 <strong>int16_t</strong>，两字节有符号整型</li>
+<li><strong>H</strong>：即 <strong>uint16_t</strong>，两字节无符号整型</li>
+<li><strong>i</strong>：即 <strong>int32_t</strong>，四字节有符号整型</li>
+<li><strong>I</strong>：即 <strong>uint32_t</strong>，四字节无符号整型</li>
+<li><strong>l</strong>：即 <strong>int64_t</strong>，八字节有符号整型</li>
+<li><strong>L</strong>：即 <strong>uint64_t</strong>，八字节无符号整型</li>
+<li><strong>f</strong>：四字节单精度浮点型</li>
+<li><strong>d</strong>：八字节双精度浮点型</li>
+<li><strong>x</strong>：不代表某种数据类型，表示跳过 <em>ncols</em> 个字节</li>
 </ul>
-<p>若未指定 <code class="docutils literal notranslate"><span class="pre">&lt;ncols&gt;</span></code>，则假定 <code class="docutils literal notranslate"><span class="pre">&lt;ncols&gt;</span></code> 为程序所期望的数据列数，所有列均为 <code class="docutils literal notranslate"><span class="pre">&lt;type&gt;</span></code> 所指定的数据类型。</p>
+<p>若未指定 <em>ncols</em>，则假定 <em>ncols</em> 为程序所期望的数据列数，所有列均为 <em>type</em> 所指定的数据类型。</p>
 <p>还可以使用 <a class="reference internal" href="../h/"><span class="doc">-h 选项</span></a> 跳过二进制文件开头的若干个字节。</p>
 <p>举几个例子：</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">-bi2f,1i</span></code> 表示要读入的二进制数据中有3列，前两列是单精度浮点型，最后一列为四字节有符号整型</li>
+<li><strong>-bi2f,1i</strong> 表示要读入的二进制数据中有3列，前两列是单精度浮点型，最后一列为四字节有符号整型</li>
 </ol>
 </div>
 
@@ -307,7 +304,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月23日.
+        最后更新于 2020年01月24日.
       </span>
 
     </p>

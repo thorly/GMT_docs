@@ -43,7 +43,7 @@
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
     <link rel="next" title="-a 选项" href="../a/" />
-    <link rel="prev" title="-U 选项" href="../U/" /> 
+    <link rel="prev" title="-V 选项" href="../V/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -109,8 +109,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../R/">-R 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../J/">-J 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../B/">-B 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../U/">-U 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">-X 和 -Y 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../a/">-a 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../binary/">-b 选项</a></li>
@@ -124,8 +124,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../distcal/">-j 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../l/">-l 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../n/">-n 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gridreg/">-r 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../perspective/">-p 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodereg/">-r 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../s/">-s 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../t/">-t 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../x/">-x 选项</a></li>
@@ -230,23 +230,22 @@
             
   <div class="section" id="x-y">
 <h1>-X 和 -Y 选项<a class="headerlink" href="#x-y" title="永久链接至标题">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 选项用于控制绘图的原点。</p>
-<p>当需要在一张图上绘制多个子图时，通常可以使用GMT提供的 <a class="reference internal" href="../../module/subplot/"><span class="doc">子图模式</span></a>。若子图的布局不规则，或对于子图原点有更复杂的需求，则需要使用 <code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 选项移动子图的底图原点的位置。</p>
-<p><code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 的用法类似。下面仅以 <code class="docutils literal notranslate"><span class="pre">-X</span></code> 选项为例介绍其用法。其语法为:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-X<span class="o">[</span>a<span class="p">|</span>c<span class="p">|</span>f<span class="p">|</span>r<span class="o">][</span>&lt;xshift&gt;<span class="o">[</span>&lt;u&gt;<span class="o">]]</span>
-</pre></div>
-</div>
-<p>其中 <code class="docutils literal notranslate"><span class="pre">&lt;xshift&gt;</span></code> 是新原点相对于当前原点的X方向偏移量，<code class="docutils literal notranslate"><span class="pre">&lt;u&gt;</span></code> 为偏移量的单位。</p>
+<p><strong>-X</strong> 和 <strong>-Y</strong> 选项用于控制绘图原点在X和Y方向的偏移量。</p>
+<p>当需要在一张图上绘制多个子图时，通常可以使用GMT提供的 <a class="reference internal" href="../../module/subplot/"><span class="doc">子图模式</span></a>。若子图的布局不规则，或对于子图原点有更复杂的需求，则需要使用 <strong>-X</strong> 和 <strong>-Y</strong> 选项移动子图的底图原点的位置。</p>
+<p><strong>-X</strong> 和 <strong>-Y</strong> 的用法类似。下面仅以 <strong>-X</strong> 选项为例介绍其用法。其语法为：</p>
+<blockquote>
+<div><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</div></blockquote>
+<p>其中 <em>xshift</em> 是新原点相对于当前原点的X方向偏移量，<em>u</em> 为偏移量的单位。</p>
 <p>在偏移量之前加上不同的字符表示不同的含义：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">-X2i</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-Xr2i</span></code>：在<strong>原底图原点</strong>的基础上沿X方向偏移2英寸得到新底图原点</li>
-<li><code class="docutils literal notranslate"><span class="pre">-Xa5c</span></code>：在<strong>原底图原点</strong>的基础上沿X方向偏移5厘米得到临时底图坐标，当前命令执行完成后，底图原点复原到<strong>原底图原点</strong></li>
-<li><code class="docutils literal notranslate"><span class="pre">-Xc</span></code>：将底图绘制在整张纸的中心</li>
-<li><code class="docutils literal notranslate"><span class="pre">-Xc3c</span></code>：在<strong>纸张中心</strong>的基础上沿X方向偏移3厘米得到新底图原点</li>
-<li><code class="docutils literal notranslate"><span class="pre">-Xf4c</span></code>：在<strong>纸张左下角</strong>的基础上沿着X方向偏移4厘米得到新底图原点</li>
-<li><code class="docutils literal notranslate"><span class="pre">-X</span></code> 不接任何额外参数，则继承前一个GMT命令使用该选项时的参数值</li>
+<li><strong>-X2i</strong> 或 <strong>-Xr2i</strong>：在<strong>原底图原点</strong>的基础上沿X方向偏移2英寸得到新底图原点</li>
+<li><strong>-Xa5c</strong>：在<strong>原底图原点</strong>的基础上沿X方向偏移5厘米得到临时底图坐标，当前命令执行完成后，底图原点复原到<strong>原底图原点</strong></li>
+<li><strong>-Xc</strong>：将底图中心放在整张纸的中心</li>
+<li><strong>-Xc3c</strong>：将底图中心放在<strong>纸张中心</strong>，在此基础上沿X方向偏移3厘米</li>
+<li><strong>-Xf4c</strong>：在<strong>纸张左下角</strong>的基础上沿着X方向偏移4厘米得到新底图原点</li>
+<li><strong>-X</strong> 不接任何额外参数，则继承前一个GMT命令使用该选项时的参数值</li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 选项的用法介绍起来有些难度，多试试就好，下面举个简单的例子:</p>
+<p><strong>-X</strong> 和 <strong>-Y</strong> 选项的用法介绍起来有些难度，多试试就好。下面举个简单的例子:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin <span class="nb">test</span> pdf
 gmt basemap -JX5c/2c -R0/5/0/2 -B1
 gmt basemap -B1 -X7c
@@ -255,7 +254,7 @@ gmt basemap -B1 -X7c
 gmt end
 </pre></div>
 </div>
-<p>上图用四个 <code class="docutils literal notranslate"><span class="pre">basemap</span></code> 命令绘制了四张底图，绘图效果如下：</p>
+<p>上图用四个 <a class="reference internal" href="../../module/basemap/"><span class="doc">basemap</span></a> 命令绘制了四张底图，绘图效果如下：</p>
 <p><a class="reference download internal" download="" href="../../_downloads/e90736ed4a3db44b7ba768c2acaf8a0e/XY-gmtplot-0.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center">
 <img alt="../../_images/XY-gmtplot-0.png" src="../../_images/XY-gmtplot-0.png" />
@@ -267,19 +266,18 @@ gmt end
 <li>为了绘制底图3，第三个命令将底图左移了7 cm，并上移4 cm</li>
 <li>第四个命令在底图3的基础上右移7 cm，绘制底图4</li>
 </ol>
-<p>实际绘图时会发现一些不方便的地方。比如 <code class="docutils literal notranslate"><span class="pre">-X</span></code> 和 <code class="docutils literal notranslate"><span class="pre">-Y</span></code> 的偏移量与前一张底图的大小息息相关。若修改了前一张底图的大小，则下一张底图的偏移量也需要相应修改。为解决这一问题，GMT6为该选项引入了一种新的语法:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-X<span class="o">[</span>+<span class="p">|</span>-<span class="o">]</span>w<span class="o">[[</span>+<span class="p">|</span>-<span class="p">|</span>/<span class="o">]</span>&lt;xshift&gt;<span class="o">[</span>u<span class="o">]]</span>
--Y<span class="o">[</span>+<span class="p">|</span>-<span class="o">]</span>h<span class="o">[[</span>+<span class="p">|</span>-<span class="p">|</span>/<span class="o">]</span>&lt;yshift&gt;<span class="o">[</span>u<span class="o">]]</span>
-</pre></div>
-</div>
-<p>其中 <code class="docutils literal notranslate"><span class="pre">w</span></code> 和 <code class="docutils literal notranslate"><span class="pre">h</span></code> 分别表示前一底图的宽度和高度。</p>
+<p>实际绘图时会发现一些不方便的地方。比如 <strong>-X</strong> 和 <strong>-Y</strong> 的偏移量与前一张底图的大小息息相关。若修改了前一张底图的大小，则下一张底图的偏移量也需要相应修改。为解决这一问题，GMT6引入了一种新的语法：</p>
+<blockquote>
+<div><strong>-X</strong>[<strong>+</strong>|<strong>-</strong>]<strong>w</strong>[[<strong>+</strong>|<strong>-</strong>|<strong>/</strong>]<em>xshift</em>[<em>u</em>]]
+<strong>-X</strong>[<strong>+</strong>|<strong>-</strong>]<strong>h</strong>[[<strong>+</strong>|<strong>-</strong>|<strong>/</strong>]<em>xshift</em>[<em>u</em>]]</div></blockquote>
+<p>其中 <strong>w</strong> 和 <strong>h</strong> 分别表示前一底图的宽度和高度。</p>
 <p>看上去语法很复杂，举几个例子：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">-Yh+2c</span></code>：沿着Y轴上移，上移距离为<strong>前一底图高度+2厘米</strong></li>
-<li><code class="docutils literal notranslate"><span class="pre">-Xw-2c</span></code>：沿着X轴右移，右移距离为<strong>前一底图宽度-2厘米</strong></li>
-<li><code class="docutils literal notranslate"><span class="pre">-Xw/2</span></code>：沿着X轴右移，右移距离为<strong>前一底图宽度/2</strong></li>
-<li><code class="docutils literal notranslate"><span class="pre">-Y-h-2c</span></code>：沿着Y轴下移，下移距离<strong>前一底图高度+2厘米</strong></li>
-<li><code class="docutils literal notranslate"><span class="pre">-X-w+2c</span></code>：沿着X轴左移，左移距离<strong>前一底图宽度-2厘米</strong></li>
+<li><strong>-Yh+2c</strong>：沿着Y轴上移，上移距离为<strong>前一底图高度+2厘米</strong></li>
+<li><strong>-Xw-2c</strong>：沿着X轴右移，右移距离为<strong>前一底图宽度-2厘米</strong></li>
+<li><strong>-Xw/2</strong>：沿着X轴右移，右移距离为<strong>前一底图宽度/2</strong></li>
+<li><strong>-Y-h-2c</strong>：沿着Y轴下移，下移距离<strong>前一底图高度+2厘米</strong></li>
+<li><strong>-X-w+2c</strong>：沿着X轴左移，左移距离<strong>前一底图宽度-2厘米</strong></li>
 </ul>
 <p>因而，上面的示例可以改写为更灵活的版本:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin <span class="nb">test</span> pdf
@@ -326,7 +324,7 @@ gitalk.render('gitalk-container');
         <a href="../a/" class="btn btn-neutral float-right" title="-a 选项" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../U/" class="btn btn-neutral float-left" title="-U 选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+        <a href="../V/" class="btn btn-neutral float-left" title="-V 选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
       
     </div>
   
@@ -337,7 +335,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月23日.
+        最后更新于 2020年01月24日.
       </span>
 
     </p>

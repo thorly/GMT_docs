@@ -109,8 +109,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../R/">-R 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../J/">-J 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../B/">-B 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../U/">-U 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../XY/">-X 和 -Y 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../a/">-a 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../binary/">-b 选项</a></li>
@@ -129,8 +129,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../l/">-l 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../n/">-n 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gridreg/">-r 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../perspective/">-p 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodereg/">-r 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../s/">-s 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../t/">-t 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../x/">-x 选项</a></li>
@@ -236,13 +236,15 @@
   <div class="section" id="j">
 <h1>-j 选项<a class="headerlink" href="#j" title="永久链接至标题">¶</a></h1>
 <p><strong>-j</strong> 选项用于控制球面上两点间距离的计算方式。其语法为：</p>
-<p><strong>-j</strong><strong>e</strong>|<strong>f</strong>|<strong>g</strong></p>
-<p>在计算地球或其它星体上任意两点间的距离时，GMT 提供了三种不同的计算方式：Flat Earth 距离、大圆路径距离和测地距离。三种方法的计算精度由低到高，计算速度由高到低。用户可以根据自己的需求选择适合的距离计算方式。</p>
+<blockquote>
+<div><strong>-j</strong><strong>e</strong>|<strong>f</strong>|<strong>g</strong></div></blockquote>
+<p>在计算地球或其它星体上任意两点间的距离时，GMT 提供了三种不同的计算方式：Flat Earth 距离、大圆路径距离和测地距离。</p>
 <ul class="simple">
 <li><strong>-jg</strong> 将地球当做球体，用大圆路径公式计算球面距离，GMT默认使用此方式</li>
 <li><strong>-jf</strong> 使用Flat Earth公式计算球面距离</li>
 <li><strong>-je</strong> 使用测地公式计算球面距离，计算距离时考虑了地球椭率</li>
 </ul>
+<p>三种方法的计算精度由低到高，计算速度由高到低。用户可以根据自己的需求选择适合的距离计算方式。</p>
 <div class="section" id="flat-earth">
 <h2>Flat Earth距离<a class="headerlink" href="#flat-earth" title="永久链接至标题">¶</a></h2>
 <p>地球上任意两点 A 和 B 的 Flat Earth 距离计算公式：</p>
@@ -322,7 +324,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月23日.
+        最后更新于 2020年01月24日.
       </span>
 
     </p>

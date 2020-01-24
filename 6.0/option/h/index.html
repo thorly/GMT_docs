@@ -109,8 +109,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../R/">-R 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../J/">-J 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../B/">-B 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../U/">-U 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../XY/">-X 和 -Y 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../a/">-a 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../binary/">-b 选项</a></li>
@@ -124,8 +124,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../distcal/">-j 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../l/">-l 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../n/">-n 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gridreg/">-r 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../perspective/">-p 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodereg/">-r 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../s/">-s 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../t/">-t 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../x/">-x 选项</a></li>
@@ -230,31 +230,30 @@
             
   <div class="section" id="h">
 <h1>-h 选项<a class="headerlink" href="#h" title="永久链接至标题">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">-h</span></code> 选项用于在读/写数据时跳过文件开头的若干个记录。其语法为:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-h<span class="o">[</span>i<span class="p">|</span>o<span class="o">][</span>&lt;n&gt;<span class="o">][</span>+c<span class="o">][</span>+d<span class="o">][</span>+r&lt;remark&gt;<span class="o">][</span>+t&lt;title&gt;<span class="o">]</span>
-</pre></div>
-</div>
+<p><strong>-h</strong> 选项用于在读/写数据时跳过文件开头的若干个记录。其语法为：</p>
+<blockquote>
+<div><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>]</div></blockquote>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;n&gt;</span></code> 表示要跳过的记录数</li>
-<li><code class="docutils literal notranslate"><span class="pre">i</span></code> 和 <code class="docutils literal notranslate"><span class="pre">o</span></code> 分别表示仅对读数据或写数据时有效</li>
+<li><em>n</em> 表示要跳过的记录数</li>
+<li><strong>i</strong> 和 <strong>o</strong> 分别表示仅对读数据或写数据时有效</li>
 </ul>
 <p>对于输出数据，默认会将输入文件中的头段信息原样输出。使用如下子选项可以修改这一行为：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">+c</span></code> 将列名写到输出的头段记录中</li>
-<li><code class="docutils literal notranslate"><span class="pre">+d</span></code> 删除之前的头段信息</li>
-<li><code class="docutils literal notranslate"><span class="pre">+r&lt;remark&gt;</span></code> 加一个remarke注释语句到输出文件的开头</li>
-<li><code class="docutils literal notranslate"><span class="pre">+t&lt;title&gt;</span></code> 加一个title语句到输出文件的开头</li>
+<li><strong>+c</strong> 将列名写到输出的头段记录中</li>
+<li><strong>+d</strong> 删除之前的头段信息</li>
+<li><strong>+r</strong><em>remark</em> 加一个remarke注释语句到输出文件的开头</li>
+<li><strong>+t</strong><em>title</em> 加一个title语句到输出文件的开头</li>
 </ul>
 <p>几点注意事项：</p>
 <ol class="arabic simple">
-<li>输入文件中的空行以及以“#”开头的行都会被自动当做头段记录，因而会被自动跳过，在指定 <code class="docutils literal notranslate"><span class="pre">&lt;n&gt;</span></code> 时不需要再考虑空行以及以“#”开头的行。</li>
-<li>对于二进制输入文件，<code class="docutils literal notranslate"><span class="pre">&lt;n&gt;</span></code> 表示输入数据中要跳过的字节数，或输出数据中用空白字符补充的字节数。</li>
+<li>输入文件中的空行以及以“#”开头的行都会被自动当做头段记录，因而会被自动跳过。但当使用 <strong>-h</strong> 选项时，这些行也会被算在 <em>n</em> 行之内。</li>
+<li>对于二进制输入文件，<em>n</em> 表示输入数据中要跳过的字节数，或输出数据中用空白字符补充的字节数。</li>
 </ol>
 <p>几种常见的用法：</p>
-<ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">-h</span></code>：使用GMT参数 <a class="reference internal" href="../../conf/io/#io-n-header-recs"><span class="std std-ref">IO_N_HEADER_RECS</span></a> 的值作为头段记录数（默认值为0）</li>
-<li><code class="docutils literal notranslate"><span class="pre">-h3</span></code>：表示跳过3个头段记录</li>
-</ol>
+<ul class="simple">
+<li><strong>-h</strong>：使用GMT参数 <a class="reference internal" href="../../conf/io/#io-n-header-recs"><span class="std std-ref">IO_N_HEADER_RECS</span></a> 的值作为头段记录数（默认值为0）</li>
+<li><strong>-h3</strong>：表示跳过3个头段记录</li>
+</ul>
 </div>
 
 
@@ -302,7 +301,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月23日.
+        最后更新于 2020年01月24日.
       </span>
 
     </p>

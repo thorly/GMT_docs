@@ -109,8 +109,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../R/">-R 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../J/">-J 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../B/">-B 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../U/">-U 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../XY/">-X 和 -Y 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../a/">-a 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../binary/">-b 选项</a></li>
@@ -124,8 +124,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../distcal/">-j 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../l/">-l 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../n/">-n 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gridreg/">-r 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../perspective/">-p 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodereg/">-r 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../s/">-s 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../t/">-t 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../x/">-x 选项</a></li>
@@ -230,14 +230,17 @@
             
   <div class="section" id="e">
 <h1>-e 选项<a class="headerlink" href="#e" title="永久链接至标题">¶</a></h1>
-<p>GMT命令在读入数据时默认会处理读入的所有数据记录。<code class="docutils literal notranslate"><span class="pre">-e</span></code> 选项的作用是筛选或排除匹配某个字符串或者正则表达式的数据记录。</p>
-<p><code class="docutils literal notranslate"><span class="pre">-e</span></code> 选项的用法有两种：</p>
-<ol class="arabic simple">
-<li>匹配某个字符串：<code class="docutils literal notranslate"><span class="pre">-e[~]&quot;&lt;pattern&gt;&quot;</span></code></li>
-<li>匹配某个正则表达式：<code class="docutils literal notranslate"><span class="pre">-e[~]/&lt;regexp&gt;/[i]</span></code></li>
-</ol>
-<p>在匹配字符串或正则表达式前加上 <code class="docutils literal notranslate"><span class="pre">~</span></code> 表示取反，即排除匹配字符串或正则表达式的数据记录。如果数据记录中本身就包括字符 <code class="docutils literal notranslate"><span class="pre">~</span></code>，则需要使用 <code class="docutils literal notranslate"><span class="pre">\~</span></code> 对其进行转义。对于匹配正则表达式而言，还可以加上 <code class="docutils literal notranslate"><span class="pre">i</span></code> 表示忽略大小写。</p>
-<p>以一个常见的应用场景举例。假如文件 <code class="docutils literal notranslate"><span class="pre">input.dat</span></code> 中有一堆数据点，每个数据都对应某个分类，文件内容如下:</p>
+<p>GMT命令在读入数据时默认会处理读入的所有数据记录。<strong>-e</strong> 选项的作用是筛选或排除匹配某个字符串或者正则表达式的数据记录。</p>
+<p><strong>-e</strong> 选项的用法有两种：</p>
+<ul class="simple">
+<li>匹配某个字符串： <strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em></li>
+<li>匹配某个正则表达式： <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>]</li>
+</ul>
+<p>在匹配字符串或正则表达式前加上 <strong>~</strong> 表示取反，即排除匹配字符串或正则表达式的数据记录。如果数据记录中本身就包括字符 <strong>~</strong>，则需要使用 <strong>~</strong> 对其进行转义。对于匹配正则表达式而言，还可以加上 <strong>i</strong> 表示忽略大小写。</p>
+<p>如果需要指定多个可能的匹配字符串或表达式，则可以加上 <strong>+f</strong><em>file</em>。其中 <em>file</em> 中每行列出一个匹配字符串或表达式。</p>
+<p>如果某个匹配字符串以 <strong>+f</strong> 开头，则会被GMT当作是 <strong>-e</strong> 的子选项，因而需要使用 <strong>+f</strong>
+以实现转义。</p>
+<p>以一个常见的应用场景举例。假如文件 <em>input.dat</em> 中有一堆数据点，每个数据都对应某个分类，文件内容如下:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="m">1</span> type1
 <span class="m">2</span> <span class="m">2</span> type1
 <span class="m">3</span> <span class="m">3</span> type1
@@ -250,8 +253,8 @@
 <span class="m">10</span> <span class="m">10</span> null
 </pre></div>
 </div>
-<p>可以使用 <code class="docutils literal notranslate"><span class="pre">-e</span></code> 选项筛选出自己需要的数据记录。</p>
-<p>筛选出所有匹配 <code class="docutils literal notranslate"><span class="pre">type</span></code> 的记录:</p>
+<p>可以使用 <strong>-e</strong> 选项筛选出自己需要的数据记录。</p>
+<p>筛选出所有匹配 <em>type</em> 的记录:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt <span class="k">select</span> input.dat -e<span class="s1">&#39;type&#39;</span>
 <span class="m">1</span>   <span class="m">1</span>       type1
 <span class="m">2</span>   <span class="m">2</span>       type1
@@ -264,7 +267,7 @@
 <span class="m">9</span>   <span class="m">9</span>       type10
 </pre></div>
 </div>
-<p>排除所有匹配 <code class="docutils literal notranslate"><span class="pre">null</span></code> 的记录:</p>
+<p>排除所有匹配 <em>null</em> 的记录:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt <span class="k">select</span> input.dat -e~<span class="s1">&#39;null&#39;</span>
 <span class="m">1</span>   <span class="m">1</span>       type1
 <span class="m">2</span>   <span class="m">2</span>       type1
@@ -277,14 +280,14 @@
 <span class="m">9</span>   <span class="m">9</span>       type10
 </pre></div>
 </div>
-<p>筛选所有匹配 <code class="docutils literal notranslate"><span class="pre">type2</span></code> 的记录:</p>
+<p>筛选所有匹配 <em>type2</em> 的记录:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt <span class="k">select</span> input.dat -e<span class="s1">&#39;type2&#39;</span>
 <span class="m">4</span>   <span class="m">4</span>       type2
 <span class="m">5</span>   <span class="m">5</span>       type2
 <span class="m">6</span>   <span class="m">6</span>       type2
 </pre></div>
 </div>
-<p>筛选所有匹配 <code class="docutils literal notranslate"><span class="pre">type1</span></code> 的记录:</p>
+<p>筛选所有匹配 <em>type1</em> 的记录:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 错误写法，因为 type1 也包含在字符串 type10 中</span>
 $ gmt <span class="k">select</span> input.dat -e<span class="s1">&#39;type1&#39;</span>
 <span class="m">1</span>   <span class="m">1</span>       type1
@@ -294,7 +297,7 @@ $ gmt <span class="k">select</span> input.dat -e<span class="s1">&#39;type1&#39;
 <span class="m">9</span>   <span class="m">9</span>       type10
 
 <span class="c1"># 正确写法</span>
-<span class="c1"># 此处使用了正则表达式，\ ``$`` 表示行末匹配</span>
+<span class="c1"># 此处使用了正则表达式，符号 $ 表示行末匹配</span>
 $ gmt <span class="k">select</span> input.dat -e/type1$/
 <span class="m">1</span>   <span class="m">1</span>       type1
 <span class="m">2</span>   <span class="m">2</span>       type1
@@ -349,7 +352,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月23日.
+        最后更新于 2020年01月24日.
       </span>
 
     </p>

@@ -109,8 +109,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../R/">-R 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../J/">-J 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../B/">-B 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../U/">-U 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../XY/">-X 和 -Y 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../a/">-a 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../binary/">-b 选项</a></li>
@@ -124,8 +124,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../distcal/">-j 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../l/">-l 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../n/">-n 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gridreg/">-r 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../perspective/">-p 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodereg/">-r 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../s/">-s 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../t/">-t 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../x/">-x 选项</a></li>
@@ -230,19 +230,29 @@
             
   <div class="section" id="f">
 <h1>-f 选项<a class="headerlink" href="#f" title="永久链接至标题">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">-f</span></code> 选项用于显式指定当前输入或输出数据中每一列的具体含义。其基本语法为:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-f<span class="o">[</span>i<span class="p">|</span>o<span class="o">]</span>&lt;colinfo&gt;
-</pre></div>
-</div>
-<p>默认情况下，该选项对输入输出同时有效，<code class="docutils literal notranslate"><span class="pre">-fi</span></code> 表明该选项仅对输入数据有效，
-<code class="docutils literal notranslate"><span class="pre">-fo</span></code> 表明该选项仅对输出数据有效。</p>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;colinfo&gt;</span></code> 是一系列用逗号分隔的字符串。每个字符串包含两个部分：列号和数据类型，其指定了输入/输出数据中每一列的含义。</p>
-<p>列号是一个从零开始起算的整数（比如第6列的列号为 <code class="docutils literal notranslate"><span class="pre">5</span></code>）；当多个连续的列有相同的数据类型时，也可以指定一个列号的范围。列号范围的格式为 <code class="docutils literal notranslate"><span class="pre">&lt;start&gt;[:&lt;inc&gt;]:&lt;stop&gt;</span></code>，若未给定 <code class="docutils literal notranslate"><span class="pre">&lt;inc&gt;</span></code> 则默认为 1。比如 <code class="docutils literal notranslate"><span class="pre">0:2:5</span></code> 表示第1、3、5列数据；<code class="docutils literal notranslate"><span class="pre">1:5</span></code>
+<p><strong>-f</strong> 选项用于显式指定当前输入或输出数据中每一列的数据类型。其基本语法为：</p>
+<blockquote>
+<div><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em></div></blockquote>
+<p>默认情况下，该选项对输入输出同时有效，<strong>-fi</strong> 表明该选项仅对输入数据有效，
+<strong>-fo</strong> 表明该选项仅对输出数据有效。</p>
+<p><em>colinfo</em> 是一系列用逗号分隔的字符串。每个字符串包含两个部分：列号和数据类型，其指定了输入/输出数据中每一列的含义。</p>
+<p>列号是一个从零开始起算的整数（比如第6列的列号为5）；当多个连续的列有相同的数据类型时，也可以指定一个列号的范围。列号范围的格式为 <em>start</em>[:<em>inc</em>]:<em>stop</em>，若未给定 <em>inc</em> 则默认为 1。比如 <strong>0:2:5</strong> 表示第1、3、5列数据；<strong>1:5</strong>
 表示第2至6列数据。</p>
-<p>数据类型可以取 <code class="docutils literal notranslate"><span class="pre">x</span></code>、<code class="docutils literal notranslate"><span class="pre">y</span></code>、<code class="docutils literal notranslate"><span class="pre">T</span></code>、<code class="docutils literal notranslate"><span class="pre">t</span></code>、<code class="docutils literal notranslate"><span class="pre">f</span></code>，分别表示这一列是经度、纬度、绝对时间、相对时间或普通的浮点数。</p>
-<p>例如，<code class="docutils literal notranslate"><span class="pre">-fi0y,1x,3:4T</span></code> 表明输入数据中第一列是纬度，第二列是经度，第3、4列是绝对时间，其他列数据则假定是默认的浮点数类型。</p>
-<p><code class="docutils literal notranslate"><span class="pre">-fg</span></code> 是 <code class="docutils literal notranslate"><span class="pre">-f0x,1y</span></code> 的缩写，表明输入/输出是地理坐标。除此之外，还可以使用
-<code class="docutils literal notranslate"><span class="pre">-fp&lt;unit&gt;</span></code>，该选项可以使用投影之后的坐标作为输入，在读入数据时投影后的坐标值会自动转换为经纬度值。</p>
+<p>数据类型可以取 ：</p>
+<ul class="simple">
+<li><strong>x</strong> 表示这一列是经度</li>
+<li><strong>y</strong> 表示这一列是纬度</li>
+<li><strong>f</strong> 表示这一列是一般的浮点数</li>
+<li><strong>T</strong> 表示这一列是绝对时间</li>
+<li><strong>t</strong> 表示这一列是相对时间（相对时间由 <a class="reference internal" href="../../conf/time/#time-unit"><span class="std std-ref">TIME_UNIT</span></a> 和 <a class="reference internal" href="../../conf/time/#time-epoch"><span class="std std-ref">TIME_EPOCH</span></a> 控制）</li>
+<li><strong>p</strong>[<em>unit</em>] 表示投影后坐标 [默认单位为 m]，在读入数据时投影后坐标值会自动转换为经纬度值</li>
+</ul>
+<p>对于两种常见的数据类型，GMT提供了缩写形式：</p>
+<ul class="simple">
+<li><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<strong>g</strong> 等效于 <strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]0<strong>x</strong>,1<strong>y</strong>，表明输入/输出是地理坐标</li>
+<li><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<strong>c</strong> 等效于 <strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]0:1<strong>f</strong>，表明输入/输出是笛卡尔坐标</li>
+</ul>
+<p>例如，<strong>-fi0y,1x,3:4T</strong> 表明输入数据中第一列是纬度，第二列是经度，第4、5列是绝对时间，其他列数据则假定是默认的浮点数类型。</p>
 </div>
 
 
@@ -290,7 +300,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月23日.
+        最后更新于 2020年01月24日.
       </span>
 
     </p>

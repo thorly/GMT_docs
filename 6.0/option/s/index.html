@@ -43,7 +43,7 @@
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
     <link rel="next" title="-t 选项" href="../t/" />
-    <link rel="prev" title="-p 选项" href="../perspective/" /> 
+    <link rel="prev" title="-r 选项" href="../nodereg/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -109,8 +109,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../R/">-R 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../J/">-J 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../B/">-B 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../U/">-U 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../XY/">-X 和 -Y 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../a/">-a 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../binary/">-b 选项</a></li>
@@ -124,8 +124,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../distcal/">-j 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../l/">-l 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../n/">-n 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gridreg/">-r 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../perspective/">-p 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodereg/">-r 选项</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">-s 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../t/">-t 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../x/">-x 选项</a></li>
@@ -230,49 +230,49 @@
             
   <div class="section" id="s">
 <h1>-s 选项<a class="headerlink" href="#s" title="永久链接至标题">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">-s</span></code> 选项用于控制是否输出含有 NaN 的记录。</p>
-<p>默认情况下，命令会输出所有记录，包括那些某列值为 NaN 的记录。使用该选项可以控制含 NaN 的记录的输出。其语法为:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-s<span class="o">[</span>&lt;cols&gt;<span class="o">][</span>+a<span class="p">|</span>+r<span class="o">]</span>
-</pre></div>
-</div>
+<p><strong>-s</strong> 选项用于控制是否输出含有 NaN 的记录。</p>
+<p>默认情况下，GMT命令会输出所有记录，包括那些某列值为 NaN 的记录。使用 <strong>-s</strong> 选项可以控制是否输出含 NaN 的记录。其语法为：</p>
+<blockquote>
+<div><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>+r</strong>]</div></blockquote>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">-s</span></code> 若Z值（即第三列）为NaN则不输出</li>
-<li><code class="docutils literal notranslate"><span class="pre">-s+a</span></code> 表示任意一列有NaN则不输出</li>
-<li><code class="docutils literal notranslate"><span class="pre">-s+r</span></code> 表示反操作，即只输出某列有 NaN 的记录</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;cols&gt;</span></code> 用于指定要检查的列，即只有指定的所有列都为NaN时，才输出或不输出该记录。
-<code class="docutils literal notranslate"><span class="pre">&lt;cols&gt;</span></code> 是一系列用逗号分隔的列号或者列号范围。列号范围的格式为 <code class="docutils literal notranslate"><span class="pre">&lt;start&gt;[:&lt;inc&gt;]:&lt;stop&gt;</span></code>，若省略 <code class="docutils literal notranslate"><span class="pre">&lt;inc&gt;</span></code> 则默认其值为1。比如 <code class="docutils literal notranslate"><span class="pre">2,5,7</span></code> 和 <code class="docutils literal notranslate"><span class="pre">1,2:4</span></code>，表示检测这些列数据是否全是 NaN。</li>
+<li>只使用 <strong>-s</strong>，则不输出Z值（即第三列）为NaN的记录</li>
+<li><strong>+a</strong> 表示任意一列有NaN则不输出</li>
+<li><strong>+r</strong> 表示反操作，即只输出某列有 NaN 的记录</li>
+<li><em>cols</em> 用于指定要检查的列，即只有指定的所有列都为NaN时，才输出或不输出该记录。
+<em>cols</em> 是一系列用逗号分隔的列号或者列号范围。列号范围的格式为 <em>start</em>[:<em>inc</em>]:<em>stop</em>。若省略 <em>inc</em> 则默认其值为1。比如 <strong>2,5,7</strong> 表示检查第3、6、8列（列号从0开始）；
+<strong>0,2:3</strong> 表示检查第1、3、4 列。</li>
 </ul>
-<p>举几个例子。输入数据 <code class="docutils literal notranslate"><span class="pre">input.dat</span></code> 的内容为:</p>
+<p>举几个例子。输入数据 <em>input.dat</em> 的内容为:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="m">1</span> <span class="m">1</span>   <span class="m">0</span>
 <span class="m">2</span> <span class="m">2</span> NaN <span class="m">0</span>
 <span class="m">3</span> <span class="m">3</span> <span class="m">3</span>   NaN
 </pre></div>
 </div>
-<p>不使用 <code class="docutils literal notranslate"><span class="pre">-s</span></code> 选项则会输出所有记录:</p>
+<p>不使用 <strong>-s</strong> 选项则会输出所有记录:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt <span class="k">select</span> input.dat
 <span class="m">1</span>   <span class="m">1</span>       <span class="m">1</span>       <span class="m">0</span>
 <span class="m">2</span>   <span class="m">2</span>       NaN     <span class="m">0</span>
 <span class="m">3</span>   <span class="m">3</span>       <span class="m">3</span>       NaN
 </pre></div>
 </div>
-<p>使用 <code class="docutils literal notranslate"><span class="pre">-s</span></code> 选项则会抑制第三列为NaN的记录的输出:</p>
+<p>使用 <strong>-s</strong> 选项则会压制第三列为NaN的记录的输出:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt <span class="k">select</span> input.dat -s
 <span class="m">1</span>   <span class="m">1</span>       <span class="m">1</span>       <span class="m">0</span>
 <span class="m">3</span>   <span class="m">3</span>       <span class="m">3</span>       NaN
 </pre></div>
 </div>
-<p>使用 <code class="docutils literal notranslate"><span class="pre">-sa</span></code> 选项则只有任意一列有NaN则不输出该记录:</p>
+<p>使用 <strong>-s+a</strong> 选项则只有任意一列有NaN则不输出该记录:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt <span class="k">select</span> input.dat -s+a
 <span class="m">1</span>   <span class="m">1</span>       <span class="m">1</span>       <span class="m">0</span>
 </pre></div>
 </div>
-<p>使用 <code class="docutils literal notranslate"><span class="pre">-s2</span></code> 选项则检查第三列（列号从0开始）是否为NaN:</p>
+<p>使用 <strong>-s2</strong> 选项则检查第三列（列号从0开始）是否为NaN:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt <span class="k">select</span> input.dat -s2
 <span class="m">1</span>   <span class="m">1</span>       <span class="m">1</span>       <span class="m">0</span>
 <span class="m">3</span>   <span class="m">3</span>       <span class="m">3</span>       NaN
 </pre></div>
 </div>
-<p>使用 <code class="docutils literal notranslate"><span class="pre">-s2,3</span></code> 则抑制第3和4列均为NaN的记录的输出:</p>
+<p>使用 <strong>-s2,3</strong> 则压制第3和4列均为NaN的记录的输出:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gmt <span class="k">select</span> input.dat -s2,3
 <span class="m">1</span>   <span class="m">1</span>       <span class="m">1</span>       <span class="m">0</span>
 <span class="m">2</span>   <span class="m">2</span>       NaN     <span class="m">0</span>
@@ -315,7 +315,7 @@ gitalk.render('gitalk-container');
         <a href="../t/" class="btn btn-neutral float-right" title="-t 选项" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../perspective/" class="btn btn-neutral float-left" title="-p 选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+        <a href="../nodereg/" class="btn btn-neutral float-left" title="-r 选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
       
     </div>
   
@@ -326,7 +326,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月23日.
+        最后更新于 2020年01月24日.
       </span>
 
     </p>

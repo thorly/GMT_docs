@@ -42,7 +42,7 @@
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="-r 选项" href="../gridreg/" />
+    <link rel="next" title="-p 选项" href="../perspective/" />
     <link rel="prev" title="-l 选项" href="../l/" /> 
 </head>
 
@@ -109,8 +109,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../R/">-R 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../J/">-J 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../B/">-B 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../U/">-U 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../XY/">-X 和 -Y 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../a/">-a 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../binary/">-b 选项</a></li>
@@ -124,8 +124,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../distcal/">-j 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../l/">-l 选项</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">-n 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gridreg/">-r 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../perspective/">-p 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodereg/">-r 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../s/">-s 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../t/">-t 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../x/">-x 选项</a></li>
@@ -230,21 +230,27 @@
             
   <div class="section" id="n">
 <h1>-n 选项<a class="headerlink" href="#n" title="永久链接至标题">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">-n</span></code> 选项用于控制网格数据重采样过程中的插值算法。其语法为:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-n<span class="o">[</span>b<span class="p">|</span>c<span class="p">|</span>l<span class="p">|</span>n<span class="o">][</span>+a<span class="o">][</span>+b&lt;BC&gt;<span class="o">][</span>+c<span class="o">][</span>+t&lt;threshold&gt;<span class="o">]</span>
-</pre></div>
-</div>
+<p><strong>-n</strong> 选项用于控制网格数据重采样过程中的插值算法。其语法为：</p>
+<blockquote>
+<div><strong>-n</strong>[<strong>b</strong>|<strong>c</strong>|<strong>l</strong>|<strong>n</strong>][<strong>+a</strong>][<strong>+b</strong><em>BC</em>][<strong>+c</strong>][<strong>+t</strong><em>threshold</em>]</div></blockquote>
+<p>网格插值的四种算法：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">b</span></code> 表示B-sphine平滑算法</li>
-<li><code class="docutils literal notranslate"><span class="pre">c</span></code> 表示使用bicubic插值算法（默认值）</li>
-<li><code class="docutils literal notranslate"><span class="pre">l</span></code> 表示bilinear插值算法</li>
-<li><code class="docutils literal notranslate"><span class="pre">n</span></code>  表示nearest-neighbor值。</li>
-<li><code class="docutils literal notranslate"><span class="pre">+a</span></code>：关闭抗混淆（仅在算法支持的前提下有效），默认打开抗混淆选项</li>
-<li><code class="docutils literal notranslate"><span class="pre">+b&lt;BC&gt;</span></code>：设置网格的 <a class="reference internal" href="../../grid/boundary-condition/"><span class="doc">边界条件</span></a>。
-<code class="docutils literal notranslate"><span class="pre">&lt;BC&gt;</span></code> 可以取 <code class="docutils literal notranslate"><span class="pre">g</span></code>、<code class="docutils literal notranslate"><span class="pre">p</span></code>、<code class="docutils literal notranslate"><span class="pre">n</span></code>，分别代表地理边界条件、周期边界条件和自然边界条件。对于后两种边界条件，可以进一步加上 <code class="docutils literal notranslate"><span class="pre">x</span></code> 或 <code class="docutils literal notranslate"><span class="pre">y</span></code> 表示边界条件仅对一个方向有效。比如 <code class="docutils literal notranslate"><span class="pre">-nb+bnxpy</span></code>
+<li><strong>b</strong> 表示B-sphine平滑算法</li>
+<li><strong>c</strong> 表示使用bicubic插值算法（默认值）</li>
+<li><strong>l</strong> 表示bilinear插值算法</li>
+<li><strong>n</strong>  表示nearest-neighbor值</li>
+</ul>
+<p>其它子选项:</p>
+<ul class="simple">
+<li><strong>+a</strong>：关闭抗混淆（仅在算法支持的前提下有效），默认打开抗混淆选项</li>
+<li><strong>+b</strong><em>BC</em> 设置网格的 <a class="reference internal" href="../../grid/boundary-condition/"><span class="doc">边界条件</span></a>。
+<em>BC</em> 可以取 <strong>g</strong>、<strong>p</strong>、<strong>n</strong>，分别代表地理边界条件、周期边界条件和自然边界条件。对于后两种边界条件，可以进一步加上 <strong>x</strong> 或 <strong>y</strong> 表示边界条件仅对一个方向有效。比如 <strong>-nb+bnxpy</strong>
 表明X方向使用自然边界条件，Y方向使用周期边界条件</li>
-<li><code class="docutils literal notranslate"><span class="pre">+c</span></code>：假设原网格的Z值范围为zmin到zmax，插值后的网格范围可能为超过这一范围，使用 <code class="docutils literal notranslate"><span class="pre">+c</span></code> 则将超过zmin和zmax的部分裁剪掉，以保证插值后的网格数据的范围不超过输入网格数据的范围</li>
-<li><code class="docutils literal notranslate"><span class="pre">+t&lt;threshold&gt;</span></code> 用于控制NaN网格点的插值行为，默认值为0.5。具体解释见官方文档。</li>
+<li><strong>+c</strong>：假设原网格的Z值范围为 <em>zmin</em> 到 <em>zmax</em>，插值后的网格范围可能为超过这一范围，使用 <strong>+c</strong> 则将超过 <em>zmin</em> 和 <em>zmax</em> 的部分裁剪掉，以保证插值后的网格数据的范围不超过输入网格数据的范围</li>
+<li><strong>+t</strong><em>threshold</em> 用于控制NaN网格点的插值行为 [默认值为0.5]
+A <em>threshold</em> of 1.0 requires all (4 or 16) nodes involved in
+interpolation to be non-NaN. 0.5 will interpolate about half way
+from a non-NaN value; 0.1 will go about 90% of the way, etc.</li>
 </ul>
 </div>
 
@@ -279,7 +285,7 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../gridreg/" class="btn btn-neutral float-right" title="-r 选项" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../perspective/" class="btn btn-neutral float-right" title="-p 选项" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../l/" class="btn btn-neutral float-left" title="-l 选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
@@ -293,7 +299,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月23日.
+        最后更新于 2020年01月24日.
       </span>
 
     </p>

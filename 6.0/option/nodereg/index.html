@@ -17,7 +17,7 @@
   
   
   
-    <link rel="canonical" href="https://docs.gmt-china.org/latest/option/gridreg.html"/>
+    <link rel="canonical" href="https://docs.gmt-china.org/latest/option/nodereg.html"/>
   
 
   
@@ -42,8 +42,8 @@
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex/" />
     <link rel="search" title="搜索" href="../../search/" />
-    <link rel="next" title="-p 选项" href="../perspective/" />
-    <link rel="prev" title="-n 选项" href="../n/" /> 
+    <link rel="next" title="-s 选项" href="../s/" />
+    <link rel="prev" title="-p 选项" href="../perspective/" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -109,8 +109,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../R/">-R 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../J/">-J 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../B/">-B 选项</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../U/">-U 选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../V/">-V 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../XY/">-X 和 -Y 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../a/">-a 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../binary/">-b 选项</a></li>
@@ -124,8 +124,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../distcal/">-j 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../l/">-l 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../n/">-n 选项</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">-r 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../perspective/">-p 选项</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">-r 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../s/">-s 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../t/">-t 选项</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../x/">-x 选项</a></li>
@@ -214,7 +214,7 @@
         
             
             
-              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/option/gridreg.rst" class="fa fa-github"> 编辑本页</a>
+              <a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/option/nodereg.rst" class="fa fa-github"> 编辑本页</a>
             
           
         
@@ -233,8 +233,13 @@
 <p>GMT 中的网格文件有网格线配准和像素配准两种配准方式，详情见
 <a class="reference internal" href="../../grid/registration/#grid-registration"><span class="std std-ref">网格配准</span></a> 一节。</p>
 <p>默认情况下，GMT认为输入/输出的网格文件都采用网格线配准方式。使用 <strong>-r</strong> 选项则可以显式指定输入/输出的网格文件的配准方式。其语法为：</p>
-<p><strong>-r</strong>[<strong>g</strong>|<strong>p</strong>]</p>
-<p>其中，<strong>-rg</strong> 表示网格线配准，<strong>-rp</strong> 表示像素配准。</p>
+<blockquote>
+<div><strong>-r</strong>[<strong>g</strong>|<strong>p</strong>]</div></blockquote>
+<p>其中，</p>
+<ul class="simple">
+<li><strong>-rg</strong> 表示网格线配准</li>
+<li><strong>-r</strong> 或 <strong>-rp</strong> 表示像素配准</li>
+</ul>
 <p>对于相同的网格区域（<strong>-R</strong>）和网格间隔（<strong>-I</strong>）而言，像素配准会比网格线配准少一列和一行数据。</p>
 </div>
 
@@ -269,10 +274,10 @@ gitalk.render('gitalk-container');
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../perspective/" class="btn btn-neutral float-right" title="-p 选项" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../s/" class="btn btn-neutral float-right" title="-s 选项" accesskey="n" rel="next">下页 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../n/" class="btn btn-neutral float-left" title="-n 选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
+        <a href="../perspective/" class="btn btn-neutral float-left" title="-p 选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上页</a>
       
     </div>
   
@@ -283,7 +288,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月23日.
+        最后更新于 2020年01月24日.
       </span>
 
     </p>
