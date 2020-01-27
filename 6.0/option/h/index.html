@@ -232,7 +232,7 @@
 <h1>-h 选项<a class="headerlink" href="#h" title="永久链接至标题">¶</a></h1>
 <p><strong>-h</strong> 选项用于在读/写数据时跳过文件开头的若干个记录。其语法为：</p>
 <blockquote>
-<div><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>]</div></blockquote>
+<div><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>]</div></blockquote>
 <ul class="simple">
 <li><em>n</em> 表示要跳过的记录数</li>
 <li><strong>i</strong> 和 <strong>o</strong> 分别表示仅对读数据或写数据时有效</li>
@@ -241,6 +241,7 @@
 <ul class="simple">
 <li><strong>+c</strong> 将列名写到输出的头段记录中</li>
 <li><strong>+d</strong> 删除之前的头段信息</li>
+<li><strong>+m</strong><em>segheader</em> 在输出的头段记录的后面加上一个新的段记录 <em>segheader</em></li>
 <li><strong>+r</strong><em>remark</em> 加一个remarke注释语句到输出文件的开头</li>
 <li><strong>+t</strong><em>title</em> 加一个title语句到输出文件的开头</li>
 </ul>
@@ -301,7 +302,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月24日.
+        最后更新于 2020年01月27日.
       </span>
 
     </p>

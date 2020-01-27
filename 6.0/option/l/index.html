@@ -230,7 +230,44 @@
             
   <div class="section" id="l">
 <h1>-l 选项<a class="headerlink" href="#l" title="永久链接至标题">¶</a></h1>
-<p><strong>-l</strong> 选项为当前绘制的符号或线条自动加上图例记录，使得在绘图结束时，或使用 <a class="reference internal" href="../../module/legend/"><span class="doc">legend</span></a> 时自动生成图例。</p>
+<p><a class="reference internal" href="../../module/legend/"><span class="doc">legend</span></a> 模块会读入一个图例文件，并根据图例文件中的内容绘制图例。图例文件的格式相对复杂，可以实现复杂的图例效果。</p>
+<p><strong>-l</strong> 选项的作用是为当前绘制的符号或线条自动增加一个图例记录到图例文件中。在绘图结束时 GMT 会自动调用 <a class="reference internal" href="../../module/legend/"><span class="doc">legend</span></a> 会生成图例，用户也可以显式调用 <a class="reference internal" href="../../module/legend/"><span class="doc">legend</span></a> 以进一步控制图例的更多属性。</p>
+<p><strong>-l</strong> 选项的基本语法是：</p>
+<blockquote>
+<div><strong>-l</strong>[<em>label</em>][<strong>+d</strong><em>pen</em>][<strong>+f</strong><em>font</em>][<strong>+g</strong><em>gap</em>][<strong>+h</strong><em>header</em>][<strong>+j</strong><em>just</em>][<strong>+l</strong>[<em>code</em>/]<em>txt</em>][<strong>+n</strong><em>cols</em>][<strong>+s</strong><em>size</em>][<strong>+v</strong>[<em>pen</em>]][<strong>+w</strong><em>width</em>][<strong>+x</strong><em>scale</em>]</div></blockquote>
+<p>最简单的就是直接使用 <strong>-l</strong> 选项，不加任何东西，但是通常会为当前图例记录添加一个 <em>label</em>。</p>
+<p>还可以添加更多子选项以进一步修改图例：</p>
+<ul class="simple">
+<li><strong>+d</strong><em>pen</em> ：在图例记录前绘制一条画笔属性为 <em>pen</em> 的水平线</li>
+<li><strong>+f</strong><em>font</em> ：设置图例标题所使用的字体 [默认为 <a class="reference internal" href="../../conf/font/#font-title"><span class="std std-ref">FONT_TITLE</span></a>]</li>
+<li><strong>+g</strong><em>gap</em> ：增加垂直空白 [0]</li>
+<li><strong>+h</strong><em>header</em> ：添加图例标题 [默认无标题]</li>
+<li><strong>+j</strong><em>just</em> ：设置图例在底图中的位置 [默认为 TR，即右上角]</li>
+<li><strong>+l</strong><em>code</em>/<em>txt</em>: 添加一个字符串，<em>code</em> 可以取 <strong>L</strong>、<strong>C</strong>、<strong>R</strong>
+分别表示左对齐、居中对齐、右对齐 [默认为居中对齐]</li>
+<li><strong>+n</strong><em>ncols</em> 设置接下来图例的列数 [默认为1列]</li>
+<li><strong>+s</strong><em>size</em> 强制修改当前图例符号的符号大小或线段的长度
+[默认与当前绘制的符号大小相同]</li>
+<li><strong>+v</strong><em>pen</em> 绘制一条从前一水平线到当前水平线的垂直线</li>
+<li><strong>+w</strong><em>width</em> 设置图例宽度 [默认为自动宽度]</li>
+<li><strong>+x</strong><em>scale</em> 当图例中所有符号大小和长度大小都乘以比例 <em>scale</em></li>
+</ul>
+<p>需要注意：</p>
+<ul class="simple">
+<li><strong>+h</strong>, <strong>+j</strong>, <strong>+w</strong> 和 <strong>+x</strong> 仅当第一次使用 <strong>-l</strong> 选项时有效；</li>
+<li><strong>+n</strong> 仅当在第一次使用 <strong>+l</strong> 选项时才能自动控制图例的宽度</li>
+</ul>
+<p>示例：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin fruit png,pdf
+  gmt plot -R0/7.2/3/7.2 -Jx2c @Table_5_11.txt -Sc0.35c -Glightgreen -Wfaint -lApples+h<span class="s2">&quot;LEGEND&quot;</span>+f16p+d
+  gmt plot @Table_5_11.txt -St0.35c -Gorange -B -BWStr -lOranges
+  gmt legend -DjTR+w3c+o0.25c -F+p1p+ggray95+s
+gmt end show
+</pre></div>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/l-gmtplot-0.png"><img alt="../../_images/l-gmtplot-0.png" src="../../_images/l-gmtplot-0.png" style="width: 75%;" /></a>
+</div>
 </div>
 
 
@@ -278,7 +315,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月24日.
+        最后更新于 2020年01月27日.
       </span>
 
     </p>
