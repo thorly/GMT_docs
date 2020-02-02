@@ -287,7 +287,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>legend</strong> 模块用于绘制图例，图例由图例文件控制。如无特别说明，标注的字体由 <a class="reference internal" href="../../conf/font/#font-annot-primary"><span class="std std-ref">FONT_ANNOT_PRIMARY</span></a> 控制。</p>
+<p><strong>legend</strong> 模块用于绘制图例，图例由图例文件控制。如无特别说明，标注的字体由 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/gmt.conf.html#font-annot-primary" title="(在 GMT v6.0)"><span class="xref std std-ref">FONT_ANNOT_PRIMARY</span></a> 控制。</p>
 <div class="section" id="id1">
 <h2>语法<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p><strong>gmt legend</strong> [ <em>specfile</em> ]
@@ -351,10 +351,10 @@
 <dd><p class="first">控制图例的背景面板属性</p>
 <p>若只使用 <strong>-F</strong> 而不使用其它子选项，则绘制图例框。下面简单介绍各子选项，详细用法见 <a class="reference internal" href="../../basis/embellishment/"><span class="doc">绘制修饰物</span></a></p>
 <ul class="last simple">
-<li><strong>+p</strong><em>pen</em> 指定背景面板的画笔属性（默认画笔属性由 <a class="reference internal" href="../../conf/map/#map-frame-pen"><span class="std std-ref">MAP_FRAME_PEN</span></a> 决定）</li>
+<li><strong>+p</strong><em>pen</em> 指定背景面板的画笔属性（默认画笔属性由 <a class="reference internal" href="../../conf/map/#term-map-frame-pen"><span class="xref std std-term">MAP_FRAME_PEN</span></a> 决定）</li>
 <li><strong>+g</strong><em>fill</em> 设置背景面板的填充色 [默认不填充]</li>
 <li><strong>+c</strong><em>clearances</em> 以设置不同方向的空白间隔</li>
-<li><strong>+i</strong><em>gap</em>/<em>pen</em> 在背景面板内部绘制一个额外的内边框。<em>gap</em> 为外边框与内边界之间的距离 [2p]，默认边界属性由 <a class="reference internal" href="../../conf/map/#map-default-pen"><span class="std std-ref">MAP_DEFAULT_PEN</span></a> 控制</li>
+<li><strong>+i</strong><em>gap</em>/<em>pen</em> 在背景面板内部绘制一个额外的内边框。<em>gap</em> 为外边框与内边界之间的距离 [2p]，默认边界属性由 <a class="reference internal" href="../../conf/map/#term-map-default-pen"><span class="xref std std-term">MAP_DEFAULT_PEN</span></a> 控制</li>
 <li><strong>+r</strong><em>radius</em> 控制圆角矩形边框，圆角矩形半径 <em>radius</em> 默认为 6p</li>
 <li><strong>+s</strong> 绘制背景面板阴影区。<em>dx</em>/<em>dy</em> 是阴影区相对于背景面板的偏移量 [4p/4p]。
 <em>shade</em> 为阴影区的颜色 [gray50]。</li>
@@ -435,7 +435,7 @@
 <dd><p class="first">绘制一条水平线</p>
 <ul class="last simple">
 <li><em>offset</em> 为线条左右顶端与图例边框的空白距离 [默认为0]</li>
-<li><em>pen</em> 为线条的画笔属性。若未指定 <em>pen</em>，则使用 <a class="reference internal" href="../../conf/map/#map-grid-pen-primary"><span class="std std-ref">MAP_GRID_PEN_PRIMARY</span></a>。若 <em>pen</em> 设置为 <strong>-</strong>，则绘制一条不可见的线（供 <strong>V</strong> 记录使用）</li>
+<li><em>pen</em> 为线条的画笔属性。若未指定 <em>pen</em>，则使用 <a class="reference internal" href="../../conf/map/#term-map-grid-pen-primary"><span class="xref std std-term">MAP_GRID_PEN_PRIMARY</span></a>。若 <em>pen</em> 设置为 <strong>-</strong>，则绘制一条不可见的线（供 <strong>V</strong> 记录使用）</li>
 <li>默认情况下，线条上下各留出四分之一的行间距，<strong>-</strong>|<strong>+</strong>|<strong>=</strong>
 分别表示线条上方无空白、线条下方无空白和线条上下均无空白。</li>
 </ul>
@@ -450,7 +450,7 @@
 </dd>
 <dt><em>H*</em> <em>font</em>|<strong>-</strong> <em>header</em></dt>
 <dd><p class="first">为图例指定一个居中的标题。</p>
-<p class="last"><em>header</em> 为标题，<em>font</em> 为文字属性。若字体为 <strong>-</strong> 则使用默认字体 <a class="reference internal" href="../../conf/font/#font-title"><span class="std std-ref">FONT_TITLE</span></a>。</p>
+<p class="last"><em>header</em> 为标题，<em>font</em> 为文字属性。若字体为 <strong>-</strong> 则使用默认字体 <a class="reference internal" href="../../conf/font/#term-font-title"><span class="xref std std-term">FONT_TITLE</span></a>。</p>
 </dd>
 <dt><strong>I</strong> <em>imagefile width justification</em></dt>
 <dd><p class="first">将EPS或光栅文件放在图例中</p>
@@ -459,7 +459,7 @@
 <dt><strong>L</strong> <em>font</em>|<strong>-</strong> <em>justification label</em></dt>
 <dd><p class="first">在某一列增加指定的文字</p>
 <p class="last"><em>label</em> 为显示的文本，<em>font</em> 为字体。若 <em>font</em> 为 <strong>-</strong> 则使用默认字体
-<a class="reference internal" href="../../conf/font/#font-label"><span class="std std-ref">FONT_LABEL</span></a>。<em>justification</em> 为对齐方式，可以取
+<a class="reference internal" href="../../conf/font/#term-font-label"><span class="xref std std-term">FONT_LABEL</span></a>。<em>justification</em> 为对齐方式，可以取
 <strong>L</strong>|<strong>C</strong>|<strong>R</strong>，分别表示左对齐、居中对齐和右对齐</p>
 </dd>
 <dt><strong>M</strong> <em>slon</em>|<strong>-</strong> <em>slat</em> <em>length</em>[<strong>+f</strong>][<strong>+l</strong>[<em>label</em>]][<strong>+u</strong>] [<strong>-F</strong><em>param</em>] [ <strong>-R</strong><em>w/e/s/n</em> <strong>-J</strong><em>param</em> ]</dt>
@@ -487,12 +487,12 @@
 <li><em>fill</em> 符号的填充色。使用 <strong>-</strong> 表示不填充。<em>fill</em> 也可以用 z=<em>val</em> 的形式从CPT文件中根据Z值查找颜色</li>
 <li><em>pen</em> 符号的轮廓属性。使用 <strong>-</strong> 表示不绘制轮廓</li>
 <li><em>dx2</em> 是 <em>text</em> 与左边框的距离。使用 <strong>-</strong> 则自动设置为最大符号大小的1.5倍</li>
-<li><em>text</em> 是符号的文字说明，字体由 <a class="reference internal" href="../../conf/font/#font-annot-primary"><span class="std std-ref">FONT_ANNOT_PRIMARY</span></a> 控制</li>
+<li><em>text</em> 是符号的文字说明，字体由 <a class="reference internal" href="../../conf/font/#term-font-annot-primary"><span class="xref std std-term">FONT_ANNOT_PRIMARY</span></a> 控制</li>
 </ul>
 <p class="last">若只有 <strong>S</strong> 而不接其它任何信息，则直接跳至下一列。若 <em>symbol</em> 取 <strong>f</strong> <strong>q</strong> 或 <strong>v</strong>，可以在符号后加上更多的子选项，详情见 <a class="reference internal" href="../plot/"><span class="doc">plot</span></a> 模块 <strong>-S</strong> 选项。某些符号（例如矩形、椭圆等）需要指定多个 <em>size</em>，应将多个 <em>size</em> 用逗号分隔作为 <em>size</em> 即可。如果只给了一个 <em>size</em>，则其余 <em>size</em> 由GMT默认值决定。</p>
 </dd>
 <dt><strong>T</strong> <em>paragraph-text</em></dt>
-<dd>打印一段文本，字体由 <a class="reference internal" href="../../conf/font/#font-annot-primary"><span class="std std-ref">FONT_ANNOT_PRIMARY</span></a> 控制</dd>
+<dd>打印一段文本，字体由 <a class="reference internal" href="../../conf/font/#term-font-annot-primary"><span class="xref std std-term">FONT_ANNOT_PRIMARY</span></a> 控制</dd>
 <dt><strong>V</strong> [<em>offset</em>] <em>pen</em></dt>
 <dd><p class="first">在两列之间绘制垂直的线条</p>
 <p class="last"><em>offset</em> 为线条上下两端与图例边框的空白距离 [默认为0]。</p>
@@ -615,7 +615,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月29日.
+        最后更新于 2020年02月02日.
       </span>
 
     </p>

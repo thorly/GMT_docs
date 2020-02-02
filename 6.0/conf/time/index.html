@@ -219,14 +219,12 @@
   <div class="section" id="time">
 <h1>TIME参数<a class="headerlink" href="#time" title="永久链接至标题">¶</a></h1>
 <p>本节列出所有时间相关参数，参数的默认值在中括号内列出。</p>
-<dl class="docutils" id="time-epoch">
-<dt><strong>TIME_EPOCH</strong></dt>
+<dl class="glossary docutils">
+<dt id="term-time-epoch"><strong>TIME_EPOCH</strong></dt>
 <dd><p class="first">指定所有相对时间的参考时刻 [1970-01-01T00:00:00]</p>
 <p class="last">其格式为 <code class="docutils literal notranslate"><span class="pre">yyyy-mm-ddT[hh:mm:ss]</span></code> 或 <code class="docutils literal notranslate"><span class="pre">yyyy-Www-ddTT[hh:mm:ss]</span></code></p>
 </dd>
-</dl>
-<dl class="docutils" id="time-unit">
-<dt><strong>TIME_UNIT</strong></dt>
+<dt id="term-time-unit"><strong>TIME_UNIT</strong></dt>
 <dd><p class="first">指定相对时间数据相对于参考时间的单位 [s]</p>
 <p>可以取：</p>
 <ol class="last arabic simple">
@@ -238,9 +236,7 @@
 <li>s：秒；</li>
 </ol>
 </dd>
-</dl>
-<dl class="docutils" id="time-system">
-<dt><strong>TIME_SYSTEM</strong></dt>
+<dt id="term-time-system"><strong>TIME_SYSTEM</strong></dt>
 <dd><p class="first"><code class="docutils literal notranslate"><span class="pre">TIME_EPOCH</span></code> 和 <code class="docutils literal notranslate"><span class="pre">TIME_UNIT</span></code> 的合并版</p>
 <p>即指定 <code class="docutils literal notranslate"><span class="pre">TIME_SYSTEM</span></code> 相当于同时指定了 <code class="docutils literal notranslate"><span class="pre">TIME_EPOCH</span></code> 和 <code class="docutils literal notranslate"><span class="pre">TIME_UNIT</span></code>。可取如下值：</p>
 <ol class="arabic simple">
@@ -255,20 +251,14 @@
 <p class="last">该参数并不存在于 <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code> 中，当指定该参数时，其会被自动转换为
 <code class="docutils literal notranslate"><span class="pre">TIME_EPOCH</span></code> 和 <code class="docutils literal notranslate"><span class="pre">TIME_UNIT</span></code> 对应的值。</p>
 </dd>
-</dl>
-<dl class="docutils" id="time-week-start">
-<dt><strong>TIME_WEEK_START</strong></dt>
+<dt id="term-time-week-start"><strong>TIME_WEEK_START</strong></dt>
 <dd>指定周几是一周的第一天，可取值为Monday或Sunday [Monday]</dd>
-</dl>
-<dl class="docutils" id="time-y2k-offset-year">
-<dt><strong>TIME_Y2K_OFFSET_YEAR</strong></dt>
+<dt id="term-time-y2k-offset-year"><strong>TIME_Y2K_OFFSET_YEAR</strong></dt>
 <dd><p class="first">当用两位数字表示四位数字的年份时，TIME_Y2K_OFFSET_YEAR给定了100年序列的第一年 [1950]</p>
 <p class="last">比如，若TIME_Y2K_OFFSET_YEAR=1729，则数字29到99分别表示1729到1799，而数字00
 到28则表示1800到1828。默认值为1950，即00到99表示的年份范围为1950到2049。</p>
 </dd>
-</dl>
-<dl class="docutils" id="time-report">
-<dt><strong>TIME_REPORT</strong></dt>
+<dt id="term-time-report"><strong>TIME_REPORT</strong></dt>
 <dd><p class="first">控制GMT运行进度报告中是否显示时间戳 [<code class="docutils literal notranslate"><span class="pre">none</span></code>]</p>
 <p>可以取三个值：</p>
 <ul class="last simple">
@@ -277,9 +267,7 @@
 <li><code class="docutils literal notranslate"><span class="pre">elapsed</span></code> 显示自会话开始所经历的时间</li>
 </ul>
 </dd>
-</dl>
-<dl class="docutils" id="time-is-interval">
-<dt><strong>TIME_IS_INTERVAL</strong></dt>
+<dt id="term-time-is-interval"><strong>TIME_IS_INTERVAL</strong></dt>
 <dd><p class="first">控制输入的日期时间数据截断和微调 [<code class="docutils literal notranslate"><span class="pre">off</span></code>]</p>
 <p>其可以取如下三类值：</p>
 <ul class="simple">
@@ -311,9 +299,7 @@
 <img alt="../../_images/time-gmtplot-0.png" src="../../_images/time-gmtplot-0.png" />
 </div>
 </dd>
-</dl>
-<dl class="docutils" id="time-interval-fraction">
-<dt><strong>TIME_INTERVAL_FRACTION</strong></dt>
+<dt id="term-time-interval-fraction"><strong>TIME_INTERVAL_FRACTION</strong></dt>
 <dd><p class="first">确定时间轴开头和结尾的部分时间间隔是否需要标注 [0.5]</p>
 <p class="last">对于时间轴而言，若开头/结尾部分的时间间隔大于指定的时间间隔的某个比例，则绘制开头/结尾部分的标注并将标注置于时间间隔的中间。</p>
 </dd>
@@ -365,7 +351,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月29日.
+        最后更新于 2020年02月02日.
       </span>
 
     </p>

@@ -234,8 +234,8 @@
 <ol class="arabic simple">
 <li>使用数据段头记录来标记一段数据的开始，详见 <a class="reference internal" href="../../table/ascii/"><span class="doc">ASCII表</span></a></li>
 <li>若输入数据中，某个记录的某个关键列的值为NaN，则也可以用于将该记录作为数据段的开始标识<ul>
-<li>当 <a class="reference internal" href="../../conf/io/#io-nan-records"><span class="std std-ref">IO_NAN_RECORDS</span></a> 为 <code class="docutils literal notranslate"><span class="pre">skip</span></code> 时，这些包含NaN值的记录会被自动跳过</li>
-<li>当 <a class="reference internal" href="../../conf/io/#io-nan-records"><span class="std std-ref">IO_NAN_RECORDS</span></a> 为 <code class="docutils literal notranslate"><span class="pre">pass</span></code> 时，这些包含NaN值的记录会被当做数据段的开始标识</li>
+<li>当 <a class="reference internal" href="../../conf/io/#term-io-nan-records"><span class="xref std std-term">IO_NAN_RECORDS</span></a> 为 <code class="docutils literal notranslate"><span class="pre">skip</span></code> 时，这些包含NaN值的记录会被自动跳过</li>
+<li>当 <a class="reference internal" href="../../conf/io/#term-io-nan-records"><span class="xref std std-term">IO_NAN_RECORDS</span></a> 为 <code class="docutils literal notranslate"><span class="pre">pass</span></code> 时，这些包含NaN值的记录会被当做数据段的开始标识</li>
 </ul>
 </li>
 <li>也可以使用 <strong>-g</strong> 选项，通过判断两个相邻的数据点是否符合某个准则来决定数据分段</li>
@@ -253,8 +253,8 @@
 <p><em>u</em> 用于指定 <em>gap</em> 的单位：</p>
 <ul class="simple">
 <li>对于 <strong>-g</strong><strong>x</strong>|<strong>y</strong>|<strong>d</strong>，<em>u</em> 可以取距离单位 [默认为 m]</li>
-<li>对于 <strong>-g</strong><strong>X</strong>|<strong>Y</strong>|<strong>D</strong>，<em>u</em> 可以取长度单位 [默认为 <a class="reference internal" href="../../conf/proj/#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a>]</li>
-<li>对于 <strong>-g</strong><strong>x</strong>|<strong>y</strong>，若输入是时间数据，则单位由 <a class="reference internal" href="../../conf/time/#time-unit"><span class="std std-ref">TIME_UNIT</span></a> 控制</li>
+<li>对于 <strong>-g</strong><strong>X</strong>|<strong>Y</strong>|<strong>D</strong>，<em>u</em> 可以取长度单位 [默认为 <a class="reference internal" href="../../conf/proj/#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>]</li>
+<li>对于 <strong>-g</strong><strong>x</strong>|<strong>y</strong>，若输入是时间数据，则单位由 <a class="reference internal" href="../../conf/time/#term-time-unit"><span class="xref std std-term">TIME_UNIT</span></a> 控制</li>
 </ul>
 <p>一般而言，当两点间的X坐标、Y坐标或距离的绝对值超过 <em>gap</em> 即分段。可以进一步控制两点的差的计算方式。
 <em>gap</em><strong>+n</strong> 表示用前一数据减去当前数据作为 <em>gap</em>；
@@ -307,7 +307,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月29日.
+        最后更新于 2020年02月02日.
       </span>
 
     </p>

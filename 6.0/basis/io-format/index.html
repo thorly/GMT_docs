@@ -267,9 +267,9 @@
 <p>例如 <code class="docutils literal notranslate"><span class="pre">10:10:35.120</span></code>。</p>
 <p>使用过程中需要注意：</p>
 <ol class="arabic simple">
-<li>GMT的时间数据的输入/输出格式默认为 <code class="docutils literal notranslate"><span class="pre">yyyy-mm-ddThh:mm:ss.xxx</span></code>。若想要输入其他格式的时间数据，需要修改 <a class="reference internal" href="../../conf/format/#format-date-in"><span class="std std-ref">FORMAT_DATE_IN</span></a>
-和 <a class="reference internal" href="../../conf/format/#format-clock-in"><span class="std std-ref">FORMAT_CLOCK_IN</span></a>；若想要输出其他格式的时间数据，需要修改 <a class="reference internal" href="../../conf/format/#format-date-out"><span class="std std-ref">FORMAT_DATE_OUT</span></a>
-和 <a class="reference internal" href="../../conf/format/#format-clock-out"><span class="std std-ref">FORMAT_CLOCK_OUT</span></a></li>
+<li>GMT的时间数据的输入/输出格式默认为 <code class="docutils literal notranslate"><span class="pre">yyyy-mm-ddThh:mm:ss.xxx</span></code>。若想要输入其他格式的时间数据，需要修改 <a class="reference internal" href="../../conf/format/#term-format-date-in"><span class="xref std std-term">FORMAT_DATE_IN</span></a>
+和 <a class="reference internal" href="../../conf/format/#term-format-clock-in"><span class="xref std std-term">FORMAT_CLOCK_IN</span></a>；若想要输出其他格式的时间数据，需要修改 <a class="reference internal" href="../../conf/format/#term-format-date-out"><span class="xref std std-term">FORMAT_DATE_OUT</span></a>
+和 <a class="reference internal" href="../../conf/format/#term-format-clock-out"><span class="xref std std-term">FORMAT_CLOCK_OUT</span></a></li>
 <li>若未指定 <code class="docutils literal notranslate"><span class="pre">&lt;date&gt;</span></code> 则假定 <code class="docutils literal notranslate"><span class="pre">&lt;date&gt;</span></code> 为今日</li>
 <li>若未指定 <code class="docutils literal notranslate"><span class="pre">&lt;clock&gt;</span></code> 则认为是 <code class="docutils literal notranslate"><span class="pre">00:00:00</span></code></li>
 <li>若指定了 <code class="docutils literal notranslate"><span class="pre">&lt;clock&gt;</span></code> 则必须要加 <code class="docutils literal notranslate"><span class="pre">T</span></code>，比如 <code class="docutils literal notranslate"><span class="pre">T10:20:34</span></code> 表示今天的早晨10点多</li>
@@ -285,12 +285,12 @@
 <div class="section" id="relative-time-coordinates">
 <span id="id4"></span><h2>相对时间坐标<a class="headerlink" href="#relative-time-coordinates" title="永久链接至标题">¶</a></h2>
 <p>相对时间坐标即某个时间相对于参考时刻的秒数、小时数、天数或年数。因而在使用相对时间时，首先要给定两个参数：参考时刻以及相对时间所使用的单位。</p>
-<p>GMT参数 <a class="reference internal" href="../../conf/time/#time-epoch"><span class="std std-ref">TIME_EPOCH</span></a> 用于指定参考时刻，
-<a class="reference internal" href="../../conf/time/#time-unit"><span class="std std-ref">TIME_UNIT</span></a> 用于指定相对时间的单位。也可以用参数 <a class="reference internal" href="../../conf/time/#time-system"><span class="std std-ref">TIME_SYSTEM</span></a> 同时指定这两个参数。默认的参考时刻为1970年1月1日午夜，默认的相对时间单位为秒。</p>
+<p>GMT参数 <a class="reference internal" href="../../conf/time/#term-time-epoch"><span class="xref std std-term">TIME_EPOCH</span></a> 用于指定参考时刻，
+<a class="reference internal" href="../../conf/time/#term-time-unit"><span class="xref std std-term">TIME_UNIT</span></a> 用于指定相对时间的单位。也可以用参数 <a class="reference external" href="https://docs.generic-mapping-tools.org/6.0/gmt.conf.html#time-system" title="(在 GMT v6.0)"><span class="xref std std-ref">TIME_SYSTEM</span></a> 同时指定这两个参数。默认的参考时刻为1970年1月1日午夜，默认的相对时间单位为秒。</p>
 <p>在指定了参考时刻后，相对时间就跟一般的浮点数没什么区别了。那如何区分一般的浮点数与相对时间呢？有两种方式：</p>
 <ol class="arabic simple">
-<li>在数据后加上小写的 <code class="docutils literal notranslate"><span class="pre">t</span></code>，比如 <code class="docutils literal notranslate"><span class="pre">30t</span></code> 表示相对于 <a class="reference internal" href="../../conf/time/#time-epoch"><span class="std std-ref">TIME_EPOCH</span></a>
-间隔了 30 个 <a class="reference internal" href="../../conf/time/#time-unit"><span class="std std-ref">TIME_UNIT</span></a> 时间单位的时刻</li>
+<li>在数据后加上小写的 <code class="docutils literal notranslate"><span class="pre">t</span></code>，比如 <code class="docutils literal notranslate"><span class="pre">30t</span></code> 表示相对于 <a class="reference internal" href="../../conf/time/#term-time-epoch"><span class="xref std std-term">TIME_EPOCH</span></a>
+间隔了 30 个 <a class="reference internal" href="../../conf/time/#term-time-unit"><span class="xref std std-term">TIME_UNIT</span></a> 时间单位的时刻</li>
 <li>在命令行中使用 <code class="docutils literal notranslate"><span class="pre">-ft</span></code> 选项表明当前数据是相对时间，此时不需要在数字后加 <code class="docutils literal notranslate"><span class="pre">t</span></code></li>
 </ol>
 </div>
@@ -350,7 +350,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月29日.
+        最后更新于 2020年02月02日.
       </span>
 
     </p>

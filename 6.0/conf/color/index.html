@@ -225,20 +225,14 @@
 <p>这一节列出所有与颜色相关的配置参数，参数的默认值在中括号内列出。</p>
 <div class="section" id="cpt">
 <h2>CPT相关参数<a class="headerlink" href="#cpt" title="永久链接至标题">¶</a></h2>
-<dl class="docutils" id="color-background">
-<dt><strong>COLOR_BACKGROUND</strong></dt>
+<dl class="glossary docutils">
+<dt id="term-color-background"><strong>COLOR_BACKGROUND</strong></dt>
 <dd>数据Z值小于CPT文件中最小值时使用的背景色 [<code class="docutils literal notranslate"><span class="pre">black</span></code>]</dd>
-</dl>
-<dl class="docutils" id="color-foreground">
-<dt><strong>COLOR_FOREGROUND</strong></dt>
+<dt id="term-color-foreground"><strong>COLOR_FOREGROUND</strong></dt>
 <dd>数据Z值大于CPT文件中最大值时使用的前景色 [<code class="docutils literal notranslate"><span class="pre">white</span></code>]</dd>
-</dl>
-<dl class="docutils" id="color-nan">
-<dt><strong>COLOR_NAN</strong></dt>
+<dt id="term-color-nan"><strong>COLOR_NAN</strong></dt>
 <dd>数值Z值为 NaN 时使用的颜色 [<code class="docutils literal notranslate"><span class="pre">127.5</span></code>]</dd>
-</dl>
-<dl class="docutils" id="color-model">
-<dt><strong>COLOR_MODEL</strong></dt>
+<dt id="term-color-model"><strong>COLOR_MODEL</strong></dt>
 <dd><p class="first">对CPT文件做插值生成新CPT时所使用的色彩模型 [<code class="docutils literal notranslate"><span class="pre">none</span></code>]</p>
 <p>可以取如下值：</p>
 <ul class="last simple">
@@ -253,20 +247,14 @@
 <div class="section" id="id1">
 <h2>光照相关参数<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>某些绘图模块（如 <a class="reference internal" href="../../module/grdimage/"><span class="doc">grdimage</span></a>、<a class="reference internal" href="../../module/colorbar/"><span class="doc">colorbar</span></a>）可以利用强度文件模拟光照效果。光照效果的实现，本质上是先将任意颜色转换成HSV模型，然后根据强度的正负，增大/减小HSV模型中的S（饱和度）和V（明度），以达到模拟光照的效果。下面的四个参数控制了模拟光照过程中S和V变化的极限值，以避免模拟的光照过亮或过暗。</p>
-<dl class="docutils" id="color-hsv-min-s">
-<dt><strong>COLOR_HSV_MIN_S</strong></dt>
+<dl class="glossary docutils">
+<dt id="term-color-hsv-min-s"><strong>COLOR_HSV_MIN_S</strong></dt>
 <dd>负强度最小值对应的S值，取值范围0到1 [1.0]</dd>
-</dl>
-<dl class="docutils" id="color-hsv-max-s">
-<dt><strong>COLOR_HSV_MAX_S</strong></dt>
+<dt id="term-color-hsv-max-s"><strong>COLOR_HSV_MAX_S</strong></dt>
 <dd>正强度最大值对应的S值，取值范围0到1 [0.1]</dd>
-</dl>
-<dl class="docutils" id="color-hsv-min-v">
-<dt><strong>COLOR_HSV_MIN_V</strong></dt>
+<dt id="term-color-hsv-min-v"><strong>COLOR_HSV_MIN_V</strong></dt>
 <dd>负强度最小值对应的V值，取值范围0到1 [0.3]</dd>
-</dl>
-<dl class="docutils" id="color-hsv-max-v">
-<dt><strong>COLOR_HSV_MAX_V</strong></dt>
+<dt id="term-color-hsv-max-v"><strong>COLOR_HSV_MAX_V</strong></dt>
 <dd>正强度最大值对应的V值，取值范围0到1 [1.0]</dd>
 </dl>
 </div>
@@ -317,7 +305,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月29日.
+        最后更新于 2020年02月02日.
       </span>
 
     </p>

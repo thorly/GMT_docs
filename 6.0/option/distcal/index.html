@@ -251,7 +251,7 @@
 <div class="math notranslate nohighlight">
 \[d_f = R \sqrt{(\theta_A - \theta_B)^2 + \cos \left [ \frac{\theta_A +
 \theta_B}{2} \right ] \Delta \lambda^2}\]</div>
-<p>其中 R 是地球平均半径（由参数 <a class="reference internal" href="../../conf/proj/#proj-mean-radius"><span class="std std-ref">PROJ_MEAN_RADIUS</span></a> 控制），
+<p>其中 R 是地球平均半径（由参数 <a class="reference internal" href="../../conf/proj/#term-proj-mean-radius"><span class="xref std std-term">PROJ_MEAN_RADIUS</span></a> 控制），
 <span class="math notranslate nohighlight">\(\theta\)</span> 是纬度，
 <span class="math notranslate nohighlight">\(\Delta \lambda = \lambda_A - \lambda_B\)</span> 是经度差。式中地理坐标的单位均是弧度，且需要考虑到跨越经度的周期性问题。</p>
 <p>该方法的特点是计算速度快但精度不高，适用于纬度相差不大且对计算效率要求比较高的情况。</p>
@@ -266,15 +266,15 @@
 <p>该方法是 GMT 默认使用的距离计算方法，适用于大多数情况。</p>
 <p>有两个 GMT 参数可以控制大圆路径距离的计算细节，分别是：</p>
 <ul class="simple">
-<li><a class="reference internal" href="../../conf/proj/#proj-mean-radius"><span class="std std-ref">PROJ_MEAN_RADIUS</span></a> 地球平均半径</li>
-<li><a class="reference internal" href="../../conf/proj/#proj-aux-latitude"><span class="std std-ref">PROJ_AUX_LATITUDE</span></a> 指定将大地纬度转换为多个适合球状近似的辅助纬度中的其中一个</li>
+<li><a class="reference internal" href="../../conf/proj/#term-proj-mean-radius"><span class="xref std std-term">PROJ_MEAN_RADIUS</span></a> 地球平均半径</li>
+<li><a class="reference internal" href="../../conf/proj/#term-proj-aux-latitude"><span class="xref std std-term">PROJ_AUX_LATITUDE</span></a> 指定将大地纬度转换为多个适合球状近似的辅助纬度中的其中一个</li>
 </ul>
-<p>需要注意，这两个选项仅当 <a class="reference internal" href="../../conf/proj/#proj-ellipsoid"><span class="std std-ref">PROJ_ELLIPSOID</span></a> 不为 <strong>sphere</strong> 时才有效。</p>
+<p>需要注意，这两个选项仅当 <a class="reference internal" href="../../conf/proj/#term-proj-ellipsoid"><span class="xref std std-term">PROJ_ELLIPSOID</span></a> 不为 <strong>sphere</strong> 时才有效。</p>
 </div>
 <div class="section" id="id2">
 <h2>测地距离<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>地球上两点间的精确距离可以用 Vincenty (1975) 的完全椭球公式计算。该方法计算得到的距离精度最高精确到 0.5 毫米，同时也是计算速度的最慢的方式。</p>
-<p>除了 Vincenty 完全椭球公式外，还可以将参数 <a class="reference internal" href="../../conf/proj/#proj-geodesic"><span class="std std-ref">PROJ_GEODESIC</span></a>
+<p>除了 Vincenty 完全椭球公式外，还可以将参数 <a class="reference internal" href="../../conf/proj/#term-proj-geodesic"><span class="xref std std-term">PROJ_GEODESIC</span></a>
 设置成 <strong>Rudoe</strong> （GMT4所使用的计算公式）或 <strong>Andoyer</strong> （近似公式，精确到10米量级）以使用不同的计算公式。</p>
 </div>
 </div>
@@ -324,7 +324,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月29日.
+        最后更新于 2020年02月02日.
       </span>
 
     </p>

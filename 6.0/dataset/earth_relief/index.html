@@ -305,7 +305,7 @@
 </tr>
 </tbody>
 </table>
-<p>这些地形起伏数据保存在GMT的服务器上。当用户<strong>第一次</strong>使用某个精度的地形起伏数据时，GMT会自动从服务器上下载该数据文件，并保存到GMT的缓存文件夹下（由 <a class="reference internal" href="../../conf/dir/#dir-cache"><span class="std std-ref">DIR_CACHE</span></a> 控制，默认为 <code class="docutils literal notranslate"><span class="pre">~/.gmt/server</span></code> 目录），然后再读取该文件。以后再使用该数据时，GMT会自动从缓存文件夹下读取该数据文件，而无需再次从服务器下载。</p>
+<p>这些地形起伏数据保存在GMT的服务器上。当用户<strong>第一次</strong>使用某个精度的地形起伏数据时，GMT会自动从服务器上下载该数据文件，并保存到GMT的缓存文件夹下（由 <a class="reference internal" href="../../conf/dir/#term-dir-cache"><span class="xref std std-term">DIR_CACHE</span></a> 控制，默认为 <code class="docutils literal notranslate"><span class="pre">~/.gmt/server</span></code> 目录），然后再读取该文件。以后再使用该数据时，GMT会自动从缓存文件夹下读取该数据文件，而无需再次从服务器下载。</p>
 <div class="admonition tip">
 <p class="first admonition-title">小技巧</p>
 <p>由于第一次使用地形数据时，GMT需要从服务器下载数据，通常会需要很长时间。建议用户可以在闲置时提前将精度为15弧秒到1户分的地形数据下载到自己的计算机上。</p>
@@ -342,7 +342,7 @@ gmt grdimage -JH15c @earth_relief_15m -pdf map
 <h2>缓存空间问题<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>你可以使用多种方式来控制你的缓存目录所占用的空间大小：</p>
 <ol class="arabic simple">
-<li>通过参数 <a class="reference internal" href="../../conf/misc/#gmt-data-server-limit"><span class="std std-ref">GMT_DATA_SERVER_LIMIT</span></a> 设置缓存目录空间大小的上限，默认无限制；</li>
+<li>通过参数 <a class="reference internal" href="../../conf/misc/#term-gmt-data-server-limit"><span class="xref std std-term">GMT_DATA_SERVER_LIMIT</span></a> 设置缓存目录空间大小的上限，默认无限制；</li>
 <li>可以通过 <strong>gmt clear data</strong> 命令清空整个数据缓存目录</li>
 </ol>
 </div>
@@ -416,7 +416,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月29日.
+        最后更新于 2020年02月02日.
       </span>
 
     </p>

@@ -417,7 +417,7 @@
 <dt><strong>-M</strong><em>size</em>[<em>u</em>][<em>/alpha</em>]</dt>
 <dd><p class="first">控制Y方向的缩放。不使用的话，Y方向即为振幅</p>
 <ul class="last simple">
-<li><em>size</em>[<em>u</em>] 将所有波形在地图上的高度缩放到 <em>size</em>[<em>u</em>]，其中 <em>u</em> 可以取 <strong>i</strong>|<strong>c</strong>|<strong>p</strong> ，默认单位由 <a class="reference internal" href="../../conf/proj/#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a> 控制。</li>
+<li><em>size</em>[<em>u</em>] 将所有波形在地图上的高度缩放到 <em>size</em>[<em>u</em>]，其中 <em>u</em> 可以取 <strong>i</strong>|<strong>c</strong>|<strong>p</strong> ，默认单位由 <a class="reference internal" href="../../conf/proj/#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> 控制。</li>
 <li><em>size</em>/<em>alpha</em><ul>
 <li>若 <em>alpha</em> 小于0，则所有波形使用相同的比例因子。比例因子由第一个波形决定，第一个波形将被缩放到 <em>size</em>[<em>u</em>]</li>
 <li>若 <em>alpha</em> 等于0，则将所有波形乘以 <em>size</em> ，此时不允许有单位</li>
@@ -435,7 +435,7 @@ r 是以 km 为单位的距离</li>
 <dl class="docutils" id="s">
 <dt><strong>-S</strong>[<strong>i</strong>]<em>scale</em>[<em>unit</em>]</dt>
 <dd><p class="first">指定时间比例尺。</p>
-<p>对于地理投影而言，即表示图上一个单位距离所代表的波形描述。其中单位 <em>unit</em> 可以取 <strong>c</strong>|<strong>i</strong>|<strong>p</strong>。若未指定 <em>unit</em>，则默认使用 <a class="reference internal" href="../../conf/proj/#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a> 所指定的单位。</p>
+<p>对于地理投影而言，即表示图上一个单位距离所代表的波形描述。其中单位 <em>unit</em> 可以取 <strong>c</strong>|<strong>i</strong>|<strong>p</strong>。若未指定 <em>unit</em>，则默认使用 <a class="reference internal" href="../../conf/proj/#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> 所指定的单位。</p>
 <p class="last">在 <em>scale</em> 前加上 <strong>i</strong> 则时间比例尺的含义反过来，即 <em>scale</em> 表示
 1秒长度的波形在图上的实际长度。</p>
 </dd>
@@ -565,7 +565,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月29日.
+        最后更新于 2020年02月02日.
       </span>
 
     </p>

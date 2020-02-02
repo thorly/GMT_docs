@@ -260,7 +260,7 @@
 <p>其中：</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">&lt;axes&gt;</span></code> 控制显示底图的哪几条边，具体写法在下面会进一步介绍</li>
-<li><code class="docutils literal notranslate"><span class="pre">+t&lt;title&gt;</span></code> 指定当前底图的标题。该标题位于底图上方的中间位置。标题可以是任意字符串，如果是字符串中有空格，则必须用引号将字符串括起来。标题的文本属性由 <a class="reference internal" href="../../conf/font/#font-title"><span class="std std-ref">FONT_TITLE</span></a> 控制。标题与上边框之间的距离由 <a class="reference internal" href="../../conf/map/#map-title-offset"><span class="std std-ref">MAP_TITLE_OFFSET</span></a> 控制。</li>
+<li><code class="docutils literal notranslate"><span class="pre">+t&lt;title&gt;</span></code> 指定当前底图的标题。该标题位于底图上方的中间位置。标题可以是任意字符串，如果是字符串中有空格，则必须用引号将字符串括起来。标题的文本属性由 <a class="reference internal" href="../../conf/font/#term-font-title"><span class="xref std std-term">FONT_TITLE</span></a> 控制。标题与上边框之间的距离由 <a class="reference internal" href="../../conf/map/#term-map-title-offset"><span class="xref std std-term">MAP_TITLE_OFFSET</span></a> 控制。</li>
 <li><code class="docutils literal notranslate"><span class="pre">+g&lt;fill&gt;</span></code> 为底图内部填充背景色，见 <a class="reference internal" href="../../basis/fill/"><span class="doc">填充</span></a></li>
 <li><code class="docutils literal notranslate"><span class="pre">+n</span></code> 只绘制边框，而不绘制刻度线和标注</li>
 <li><code class="docutils literal notranslate"><span class="pre">+b</span></code> 仅适用于3D底图，使用该子选项则会根据绘制3D底图的12条边</li>
@@ -332,7 +332,7 @@
 <li><code class="docutils literal notranslate"><span class="pre">+s&lt;label&gt;</span></code> 与 <code class="docutils literal notranslate"><span class="pre">+l&lt;label&gt;</span></code> 类似，也用于给指定的轴添加标签。当同时使用
 <code class="docutils literal notranslate"><span class="pre">+l&lt;label&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">+s&lt;label&gt;</span></code> 时，前者用于指定左轴或下轴的标签，而后者用于指定右轴和上轴的标签。</li>
 <li><code class="docutils literal notranslate"><span class="pre">+p&lt;prefix&gt;</span></code> 在选中的轴的标注加前缀</li>
-<li><code class="docutils literal notranslate"><span class="pre">+u&lt;unit&gt;</span></code> 给选中的轴的标注加单位。对于地图而言，标注的单位为度，该符号是自动添加的，由 <a class="reference internal" href="../../conf/format/#format-geo-map"><span class="std std-ref">FORMAT_GEO_MAP</span></a> 控制</li>
+<li><code class="docutils literal notranslate"><span class="pre">+u&lt;unit&gt;</span></code> 给选中的轴的标注加单位。对于地图而言，标注的单位为度，该符号是自动添加的，由 <a class="reference internal" href="../../conf/format/#term-format-geo-map"><span class="xref std std-term">FORMAT_GEO_MAP</span></a> 控制</li>
 </ul>
 <div class="section" id="x-y-z">
 <h3><code class="docutils literal notranslate"><span class="pre">x|y|z</span></code><a class="headerlink" href="#x-y-z" title="永久链接至标题">¶</a></h3>
@@ -378,7 +378,7 @@
 </div>
 <div class="section" id="id3">
 <h2>地理底图<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>地理底图与一般的坐标轴不同，其底图类型 <a class="reference internal" href="../../conf/map/#map-frame-type"><span class="std std-ref">MAP_FRAME_TYPE</span></a>
+<p>地理底图与一般的坐标轴不同，其底图类型 <a class="reference internal" href="../../conf/map/#term-map-frame-type"><span class="xref std std-term">MAP_FRAME_TYPE</span></a>
 使用 <code class="docutils literal notranslate"><span class="pre">fancy</span></code> 形式。</p>
 <p><a class="reference download internal" download="" href="../../_downloads/0302520f3a32db686e7eff9864cfcca8/B-gmtplot-4.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center" id="id8">
@@ -397,8 +397,8 @@
 </div>
 <div class="section" id="id4">
 <h2>笛卡尔线性轴<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
-<p>对于一般的线性轴而言，标注的格式由 <a class="reference internal" href="../../conf/format/#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a>
-决定，其默认值为 <code class="docutils literal notranslate"><span class="pre">%g</span></code>，即根据数据的大小决定用一般表示还是指数表示，小数位的数目会根据 <code class="docutils literal notranslate"><span class="pre">&lt;stride&gt;</span></code> 自动决定。若设置 <a class="reference internal" href="../../conf/format/#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a>
+<p>对于一般的线性轴而言，标注的格式由 <a class="reference internal" href="../../conf/format/#term-format-float-out"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a>
+决定，其默认值为 <code class="docutils literal notranslate"><span class="pre">%g</span></code>，即根据数据的大小决定用一般表示还是指数表示，小数位的数目会根据 <code class="docutils literal notranslate"><span class="pre">&lt;stride&gt;</span></code> 自动决定。若设置 <a class="reference internal" href="../../conf/format/#term-format-float-out"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a>
 为其他值，则会严格使用其定义的格式，比如 <code class="docutils literal notranslate"><span class="pre">%.2f</span></code> 表示显示两位小数。</p>
 <p><a class="reference download internal" download="" href="../../_downloads/fd854ab6e256e3e282a526c65e93cbcc/B-gmtplot-6.sh"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Code</span></code></a></p>
 <div class="figure align-center" id="id10">
@@ -543,7 +543,7 @@ gmt end
 <img alt="../../_images/B-gmtplot-9.png" src="../../_images/B-gmtplot-9.png" />
 <p class="caption"><span class="caption-text">时间轴示例1</span></p>
 </div>
-<p>需要注意，<code class="docutils literal notranslate"><span class="pre">-Bsa1O</span></code> 指定了次级标注的间隔为一个月，由于此处使用的是大写的 <code class="docutils literal notranslate"><span class="pre">O</span></code>，因而具体的显式方式由 <a class="reference internal" href="../../conf/format/#format-date-map"><span class="std std-ref">FORMAT_DATE_MAP</span></a> 决定。根据 <a class="reference internal" href="../../conf/format/#format-date-map"><span class="std std-ref">FORMAT_DATE_MAP</span></a> 的说明可知，其值为 <code class="docutils literal notranslate"><span class="pre">-o</span></code> 表明以月份名格式显式。破折号表示要去掉日期前面的前置零（即02变成2）。</p>
+<p>需要注意，<code class="docutils literal notranslate"><span class="pre">-Bsa1O</span></code> 指定了次级标注的间隔为一个月，由于此处使用的是大写的 <code class="docutils literal notranslate"><span class="pre">O</span></code>，因而具体的显式方式由 <a class="reference internal" href="../../conf/format/#term-format-date-map"><span class="xref std std-term">FORMAT_DATE_MAP</span></a> 决定。根据 <a class="reference internal" href="../../conf/format/#term-format-date-map"><span class="xref std std-term">FORMAT_DATE_MAP</span></a> 的说明可知，其值为 <code class="docutils literal notranslate"><span class="pre">-o</span></code> 表明以月份名格式显式。破折号表示要去掉日期前面的前置零（即02变成2）。</p>
 <p>下面的例子用两种不同的方式标注了1969年的两天。图中下面的例子使用周来标注，上面的例子使用日期来标注。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time2 pdf,png
 gmt <span class="nb">set</span> FORMAT_DATE_MAP <span class="s2">&quot;o dd&quot;</span> FORMAT_CLOCK_MAP hh:mm FONT_ANNOT_PRIMARY +9p
@@ -724,7 +724,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月29日.
+        最后更新于 2020年02月02日.
       </span>
 
     </p>

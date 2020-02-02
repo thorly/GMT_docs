@@ -243,7 +243,7 @@
 <dt>d:</dt>
 <dd><p class="first">完整的语法为 <code class="docutils literal notranslate"><span class="pre">d&lt;dist&gt;[c|i|p][/frac]</span></code></p>
 <p class="last">根据地图上的投影距离确定标注的位置，可以指定长度单位或采用默认值
-[<a class="reference internal" href="../../conf/proj/#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a>]。从等值线的起始位置开始，以 <code class="docutils literal notranslate"><span class="pre">&lt;dist&gt;</span></code> 为步长，沿着等值线布置标注。为了保证可以标注总长度小于 <code class="docutils literal notranslate"><span class="pre">&lt;dist&gt;</span></code> 的封闭曲线，可以指定 <code class="docutils literal notranslate"><span class="pre">&lt;frac&gt;</span></code> 参数，将第一个标注放置在距封闭曲线起点 d = &lt;dist&gt; * &lt;frac&gt; 的位置上，<code class="docutils literal notranslate"><span class="pre">frac</span></code> 的默认值为0.25。</p>
+[<a class="reference internal" href="../../conf/proj/#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>]。从等值线的起始位置开始，以 <code class="docutils literal notranslate"><span class="pre">&lt;dist&gt;</span></code> 为步长，沿着等值线布置标注。为了保证可以标注总长度小于 <code class="docutils literal notranslate"><span class="pre">&lt;dist&gt;</span></code> 的封闭曲线，可以指定 <code class="docutils literal notranslate"><span class="pre">&lt;frac&gt;</span></code> 参数，将第一个标注放置在距封闭曲线起点 d = &lt;dist&gt; * &lt;frac&gt; 的位置上，<code class="docutils literal notranslate"><span class="pre">frac</span></code> 的默认值为0.25。</p>
 </dd>
 <dt>D:</dt>
 <dd><p class="first">完整的语法为 <code class="docutils literal notranslate"><span class="pre">D&lt;dist&gt;[d|m|s|e|f|k|M|n][/&lt;frac&gt;]</span></code></p>
@@ -253,7 +253,7 @@
 <dt>f:</dt>
 <dd><p class="first">完整的语法为 <code class="docutils literal notranslate"><span class="pre">f&lt;fix.txt&gt;[/&lt;slop&gt;[c|i|p]]</span></code></p>
 <p class="last">其中，ASCII文件 <code class="docutils literal notranslate"><span class="pre">&lt;fix.txt&gt;</span></code> 中每条记录的前两列（坐标）指定了标注的位置。当文件中的坐标与等值线的距离小于 <code class="docutils literal notranslate"><span class="pre">&lt;slop&gt;</span></code>
-（附加单位或使用默认值 <a class="reference internal" href="../../conf/proj/#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a> ）时，才会显示标注。<code class="docutils literal notranslate"><span class="pre">&lt;slope&gt;</span></code> 的默认值为0，即文件中的坐标必须与线段上的坐标完全匹配。</p>
+（附加单位或使用默认值 <a class="reference internal" href="../../conf/proj/#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> ）时，才会显示标注。<code class="docutils literal notranslate"><span class="pre">&lt;slope&gt;</span></code> 的默认值为0，即文件中的坐标必须与线段上的坐标完全匹配。</p>
 </dd>
 <dt>l:</dt>
 <dd><p class="first">完整的语法为 <code class="docutils literal notranslate"><span class="pre">l&lt;line1&gt;[,&lt;line2&gt;[,</span> <span class="pre">...]]</span></code></p>
@@ -302,9 +302,9 @@
 <dt>+d:</dt>
 <dd>延迟模式, 延迟标注文字的绘制。</dd>
 <dt>+f:</dt>
-<dd>指定标注文字的字体、大小和颜色等，可参考 <code class="docutils literal notranslate"><span class="pre">pstext</span></code> 。字体的默认值参见 <a class="reference internal" href="../../conf/font/#font-annot-primary"><span class="std std-ref">FONT_ANNOT_PRIMARY</span></a> 。</dd>
+<dd>指定标注文字的字体、大小和颜色等，可参考 <code class="docutils literal notranslate"><span class="pre">pstext</span></code> 。字体的默认值参见 <a class="reference internal" href="../../conf/font/#term-font-annot-primary"><span class="xref std std-term">FONT_ANNOT_PRIMARY</span></a> 。</dd>
 <dt>+g:</dt>
-<dd>指定文本框的填充效果，颜色的默认值与 <a class="reference internal" href="../../conf/ps/#ps-page-color"><span class="std std-ref">PS_PAGE_COLOR</span></a> 相同。</dd>
+<dd>指定文本框的填充效果，颜色的默认值与 <a class="reference internal" href="../../conf/ps/#term-ps-page-color"><span class="xref std std-term">PS_PAGE_COLOR</span></a> 相同。</dd>
 <dt>+j:</dt>
 <dd>指定标注内容与标注位置之间的对齐方式，默认值为 <strong>CM</strong> ，指定值可以覆盖默认值，参数值由2个字母组成，取值范围分别为 <code class="docutils literal notranslate"><span class="pre">[L|C|R][B|M|T]</span></code> 。对于弯曲的标注文字 (<strong>+v</strong>)，只有竖直向对齐方式起作用。</dd>
 <dt>+o:</dt>
@@ -333,7 +333,7 @@
 <dd>采用多段数据的头记录作为标注内容(假设输入为多段数据，如果不是多段数据，则采用文件头记录)。首先扫描 <code class="docutils literal notranslate"><span class="pre">-L&lt;子选项&gt;</span></code> 属性，若没有指定该选项，则采用数据段头记录首字符(默认为 &gt; )后的第一个单词。</dd>
 <dt>+Ld:</dt>
 <dd>采用笛卡尔坐标系内的距离作为标注内容的距离单位，可以指定单位，如 <code class="docutils literal notranslate"><span class="pre">c|i|p</span></code>，默认值为
-[<a class="reference internal" href="../../conf/proj/#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a>]。标注内容的格式参见:ref:<cite>FORMAT_FLOAT_OUT &lt;FORMAT_FLOAT_OUT&gt;</cite> 。</dd>
+[<a class="reference internal" href="../../conf/proj/#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>]。标注内容的格式参见:term:<cite>FORMAT_FLOAT_OUT</cite> 。</dd>
 <dt>+LD:</dt>
 <dd>采用真实地表距离计算标注内容，可以指定单位，如
 <code class="docutils literal notranslate"><span class="pre">d|e|f|k|m|M|n|s</span></code>，默认值为弧度 <strong>d</strong> 。</dd>
@@ -572,7 +572,7 @@ gitalk.render('gitalk-container');
     <p>
         &copy; Copyright 2014 - 2020, GMT中文社区
       <span class="lastupdated">
-        最后更新于 2020年01月29日.
+        最后更新于 2020年02月02日.
       </span>
 
     </p>
