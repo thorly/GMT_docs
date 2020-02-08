@@ -15,7 +15,7 @@ ghostscript 的中文支持
 启动 cmd，键入如下命令::
 
     cd "C:\Program Files\gs\gs9.26\bin"
-    gswin64.exe ..\examples\cjk\gscjk_ag.ps
+    gswin64c.exe ..\examples\cjk\gscjk_ag.ps
 
 该命令用命令行版本的 ``gswin64c`` 打开 ``gscjk_ag.ps``\ ，若能看到中文，则说明
 ghostscript 是可以正常支持中文的。
